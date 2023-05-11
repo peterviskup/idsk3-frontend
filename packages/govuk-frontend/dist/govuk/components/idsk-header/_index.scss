@@ -17,7 +17,7 @@
     color: $idsk-header-text;
     background: $idsk-header-background;
 
-    &:after {
+    &::after {
       content: "";
       display: block;
       width: 100%;
@@ -178,7 +178,7 @@
       @include govuk-focused-text;
     }
 
-    &:after {
+    &::after {
       @include govuk-shape-arrow(
         $direction: down,
         $base: 10px,
@@ -194,7 +194,7 @@
   }
 
   .idsk-header__menu-button--open {
-    &:after {
+    &::after {
       @include govuk-shape-arrow(
         $direction: up,
         $base: 10px,
@@ -350,7 +350,7 @@
       }
 
       // Do not append link href to GOV.UK link when printing (e.g. '(/)')
-      &:after {
+      &::after {
         display: none;
       }
     }

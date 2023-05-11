@@ -87,8 +87,8 @@
             text-decoration-line: underline;
     cursor: pointer;
 
-    &:before,
-    &:after {
+    &::before,
+    &::after {
       content: "";
       display: inline-block;
       top: 15px;
@@ -109,11 +109,11 @@
       }
     }
 
-    &:after {
+    &::after {
       margin: 5px 0 0 20px;
     }
 
-    &:before {
+    &::before {
       margin: 5px 22px 0 0;
     }
 
@@ -132,8 +132,8 @@
     }
   }
 
-  .idsk-crossroad__collapse--arrow .idsk-crossroad__colapse--button:before,
-  .idsk-crossroad__collapse--arrow .idsk-crossroad__colapse--button:after {
+  .idsk-crossroad__collapse--arrow .idsk-crossroad__colapse--button::before,
+  .idsk-crossroad__collapse--arrow .idsk-crossroad__colapse--button::after {
     margin: 11px 12px 0;
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);

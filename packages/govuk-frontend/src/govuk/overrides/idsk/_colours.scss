@@ -1,0 +1,51 @@
+// stylelint-disable value-list-max-empty-lines -- allow empty lines in lists
+
+$_idsk-colour-palette: (
+  "idsk-white": #ffffff,
+  "idsk-black": #000000,
+
+  "idsk-blue-100": #eff5fe,
+  "idsk-blue-200": #c3d9f9,
+  "idsk-blue-300": #88b3f6,
+  "idsk-blue-400": #126dff,
+  "idsk-blue-500": #0b4199,
+  "idsk-blue-600": #072c66,
+
+  "idsk-green-100": #f4f4ec,
+  "idsk-green-200": #d5d6a2,
+  "idsk-green-300": #b4b764,
+  "idsk-green-400": #727b0f,
+  "idsk-green-500": #444a09,
+  "idsk-green-600": #2e3106,
+
+  "idsk-basic": #126dff,
+  "idsk-basic-dark": #072c66,
+  "idsk-basic-medium": #c3d9f9,
+  "idsk-basic-light": #eff5fe,
+
+  "idsk-warning": #c3112b,
+  "idsk-warning-dark": #4e0711,
+  "idsk-warning-medium": #f8b5b9,
+  "idsk-warning-light": #fbeef0,
+
+  "idsk-positive": #078814,
+  "idsk-positive-dark": #033608,
+  "idsk-positive-medium": #9fdaa5,
+  "idsk-positive-light": #ebf5ec,
+
+  "idsk-attention": #bd730c,
+  "idsk-attention-dark": #4e2a00,
+  "idsk-attention-medium": #ebcfaa,
+  "idsk-attention-light": #faf4ec,
+
+  "idsk-focus-state": #e06e00,
+
+  "idsk-primary": #126dff,
+  "idsk-primary-dark": #072c66,
+  "idsk-primary-medium": #0b4199,
+  "idsk-primary-light": #eff5fe,
+);
+
+@function idsk-colour($colour) {
+  @return map-get($_idsk-colour-palette, $colour);
+}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../src/govuk/overrides/idsk/_card.scss"],"names":[],"mappings":"AAAA;EACE,gBAAgB;EAChB,wCAAwC;EACxC,oBAAoB;AACtB","file":"_card.scss","sourcesContent":[".idsk-card {\n  padding: 1.25rem;\n  border: 1px solid govuk-colour(\"grey-2\");\n  border-radius: .5rem;\n}\n"]}

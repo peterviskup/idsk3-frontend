@@ -1,6 +1,7 @@
 // stylelint-disable order/properties-order
 // stylelint-disable max-nesting-depth
 // stylelint-disable selector-no-qualifying-type
+// stylelint-disable selector-not-notation
 
 @include govuk-exports("idsk/component/filter") {
   .idsk-table-filter {

@@ -73,7 +73,7 @@
         font-weight: bold;
         position: relative;
 
-        &:before {
+        &::before {
           @include govuk-shape-arrow($direction: right, $base: 10px, $display: inline-block);
 
           content: "";
@@ -102,7 +102,7 @@
         transition: all .2s ease-in;
       }
 
-      .idsk-in-page-navigation__link-panel-button:before {
+      .idsk-in-page-navigation__link-panel-button::before {
         top: 20px;
         -webkit-transform: rotate(-45deg);
                 transform: rotate(-45deg);
@@ -148,7 +148,7 @@
         }
       }
 
-      &-button:before {
+      &-button::before {
         border-style: solid;
         border-width: .25em .25em 0 0;
         color: govuk-colour("white");
@@ -170,7 +170,7 @@
         }
       }
 
-      &-button:focus:before {
+      &-button:focus::before {
         color: govuk-colour("black");
       }
     }
@@ -197,7 +197,7 @@
       overflow-y: hidden;
     }
 
-    .idsk-in-page-navigation__list-item--active:before {
+    .idsk-in-page-navigation__list-item--active::before {
       top: 5px;
     }
   }

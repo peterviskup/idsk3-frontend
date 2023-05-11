@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../src/govuk/overrides/idsk/_textarea.scss"],"names":[],"mappings":"AAAA;EACE,sBAAsB;AACxB","file":"_textarea.scss","sourcesContent":[".govuk-textarea {\n  border-radius: .375rem;\n}\n"]}

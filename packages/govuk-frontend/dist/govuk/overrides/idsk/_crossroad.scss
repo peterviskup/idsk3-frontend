@@ -1,0 +1,19 @@
+.idsk-crossroad-1 {
+  border: 1px solid govuk-colour("grey-2");
+  border-radius: .5rem;
+
+  .idsk-crossroad__item {
+    padding: 1.75rem;
+    border-bottom: 1px solid govuk-colour("grey-2");
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .idsk-crossroad-line {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=_crossroad.scss.map */

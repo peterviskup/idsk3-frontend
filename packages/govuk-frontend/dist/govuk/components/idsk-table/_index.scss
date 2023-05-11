@@ -54,12 +54,12 @@
           .govuk-radios__label {
             flex: 1;
 
-            &:before {
+            &::before {
               width: 36px;
               height: 36px;
             }
 
-            &:after {
+            &::after {
               border: 9px solid currentcolor;
               top: 9px;
               left: 9px;
@@ -85,12 +85,12 @@
             .govuk-radios__label {
               padding-top: 2px;
 
-              &:before {
+              &::before {
                 width: 24px;
                 height: 24px;
               }
 
-              &:after {
+              &::after {
                 border: 6px solid currentcolor;
                 top: 6px;
                 left: 6px;
@@ -142,7 +142,7 @@
       padding: 0;
       width: 10px;
 
-      &:after {
+      &::after {
         border-style: solid;
         border-width: 7px 6px 0;
         border-color: #000000 transparent transparent;
@@ -152,7 +152,7 @@
         top: calc(50% + 2px);
       }
 
-      &:before {
+      &::before {
         border-style: solid;
         border-width: 7px 6px 0;
         border-color: #000000 transparent transparent;
@@ -169,8 +169,8 @@
       }
     }
 
-    .des.arrowBtn:before,
-    .aes.arrowBtn:after {
+    .des.arrowBtn::before,
+    .aes.arrowBtn::after {
       display: none;
     }
 

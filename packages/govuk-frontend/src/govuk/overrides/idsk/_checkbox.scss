@@ -1,0 +1,11 @@
+.govuk-checkboxes__label::before {
+  border-radius: .25rem;
+}
+
+.govuk-checkboxes__input:checked + .govuk-checkboxes__label::after {
+  color: idsk-colour("idsk-white");
+}
+
+.govuk-checkboxes__input:checked + .govuk-checkboxes__label::before {
+  background-color: idsk-colour("idsk-black");
+}

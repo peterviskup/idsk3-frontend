@@ -660,7 +660,7 @@
           box-shadow: none;
           background-color: govuk-colour("blue");
 
-          &:before {
+          &::before {
             bottom: -2px;
           }
 

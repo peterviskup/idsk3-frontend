@@ -162,7 +162,7 @@
       display: none;
     }
 
-    &:after {
+    &::after {
       border-style: solid;
       border-width: 3px 3px 0 0;
       color: govuk-colour("blue");
@@ -314,7 +314,7 @@
     padding-bottom: govuk-spacing(3);
     padding-top: 0;
 
-    &:before {
+    &::before {
       content: "";
       border-bottom: 1px solid govuk-colour("black");
       position: absolute;
@@ -326,7 +326,7 @@
     @include mq($from: tablet) {
       font-weight: bold;
 
-      &:before {
+      &::before {
         content: none;
       }
     }
@@ -718,7 +718,7 @@
       }
     }
 
-    .idsk-search-results__link-panel-button:before {
+    .idsk-search-results__link-panel-button::before {
       top: 20px;
       -webkit-transform: rotate(-45deg);
               transform: rotate(-45deg);
@@ -790,13 +790,13 @@
           cursor: text;
         }
 
-        &:before {
+        &::before {
           color: govuk-colour("grey-2");
         }
       }
     }
 
-    &-button:before {
+    &-button::before {
       border-style: solid;
       border-width: 3px 3px 0 0;
       color: govuk-colour("black");
@@ -817,7 +817,7 @@
       }
     }
 
-    &-button:focus:before {
+    &-button:focus::before {
       color: govuk-colour("black");
     }
 
@@ -860,7 +860,7 @@
     overflow-y: hidden;
   }
 
-  .idsk-search-results__list-item--active:before {
+  .idsk-search-results__list-item--active::before {
     top: 5px;
   }
 
@@ -868,7 +868,7 @@
     display: flex;
   }
 
-  .idsk-option-select-filter .govuk-checkboxes__label:before {
+  .idsk-option-select-filter .govuk-checkboxes__label::before {
     width: 44px;
     height: 44px;
     top: 2px;
@@ -879,7 +879,7 @@
     }
   }
 
-  .idsk-option-select-filter .govuk-checkboxes__label:after {
+  .idsk-option-select-filter .govuk-checkboxes__label::after {
     top: 15px;
     left: 12px;
     width: 21px;

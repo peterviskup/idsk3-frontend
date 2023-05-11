@@ -1,0 +1,46 @@
+.idsk-button,
+.govuk-button {
+  padding: 10px;
+  border-radius: .375rem;
+  background-color: idsk-colour("idsk-primary");
+  box-shadow: none;
+  font-size: 16px;
+  font-weight: 700;
+
+  &:hover,
+  &:disabled:hover {
+    background-color: idsk-colour("idsk-primary-medium");
+  }
+
+  &:focus:not(:active):not(:hover) {
+    box-shadow: none;
+  }
+}
+
+.idsk-button--secondary,
+.govuk-button--secondary {
+  border-color: idsk-colour("idsk-blue-400");
+  color: idsk-colour("idsk-blue-600");
+  background-color: idsk-colour("idsk-blue-100");
+
+  &:hover,
+  &:disabled:hover {
+    background-color: idsk-colour("idsk-blue-200");
+  }
+}
+
+.idsk-button--warning,
+.govuk-button--warning {
+  background-color: idsk-colour("idsk-warning");
+
+  &:hover,
+  &:disabled:hover {
+    background-color: idsk-colour("idsk-warning-dark");
+  }
+}
+
+.idsk-button__start-icon,
+.govuk-button__start-icon {
+  width: 1em;
+  height: 1em;
+}

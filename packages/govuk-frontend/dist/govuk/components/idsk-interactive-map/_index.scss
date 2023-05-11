@@ -122,11 +122,11 @@
   }
 
   @include mq($from: desktop) {
-    .idsk-interactive-map .govuk-radios .govuk-radios__input:hover + .govuk-radios__label:before {
+    .idsk-interactive-map .govuk-radios .govuk-radios__input:hover + .govuk-radios__label::before {
       box-shadow: 0 0 0 10px govuk-colour("mid-grey");
     }
 
-    .idsk-interactive-map .govuk-radios .govuk-radios__item:hover .govuk-radios__input:focus + .govuk-radios__label:before {
+    .idsk-interactive-map .govuk-radios .govuk-radios__item:hover .govuk-radios__input:focus + .govuk-radios__label::before {
       box-shadow:
         0 0 0 4px govuk-colour("yellow"),
         0 0 0 10px govuk-colour("mid-grey");
@@ -136,13 +136,13 @@
       padding-left: 0;
     }
 
-    .idsk-interactive-map .govuk-radios__label:before {
+    .idsk-interactive-map .govuk-radios__label::before {
       top: 8px;
       width: 24px;
       height: 24px;
     }
 
-    .idsk-interactive-map .govuk-radios__label:after {
+    .idsk-interactive-map .govuk-radios__label::after {
       top: 15px;
       left: 7px;
       border-width: 5px;

@@ -14,7 +14,7 @@
     color: $idsk-header-dark-blue;
     background: $idsk-header-background;
 
-    &:after {
+    &::after {
       content: "";
       display: block;
       width: 100%;
@@ -204,7 +204,7 @@
 
     padding: 0 govuk-spacing(3) govuk-spacing(1) 0;
 
-    &--active .idsk-header-extended__language-button:after {
+    &--active .idsk-header-extended__language-button::after {
       -webkit-transform: rotate(180deg);
               transform: rotate(180deg);
       transition: -webkit-transform .2s;
@@ -229,7 +229,7 @@
         outline: none;
       }
 
-      &:after {
+      &::after {
         content: "";
         position: absolute;
         margin-top: 8px;
@@ -336,7 +336,7 @@
       }
 
       // arrow
-      .idsk-header-extended__arrow:after {
+      .idsk-header-extended__arrow::after {
         @include govuk-shape-arrow(
           $direction: down,
           $base: 10px,
@@ -371,7 +371,7 @@
           }
         }
 
-        .idsk-header-extended__arrow:after {
+        .idsk-header-extended__arrow::after {
           -webkit-transform: rotate(180deg);
                   transform: rotate(180deg);
           transition: -webkit-transform .2s;
@@ -437,7 +437,7 @@
           padding-bottom: govuk-spacing(2);
         }
 
-        &:before {
+        &::before {
           content: "\2022"; // unicode for a bullet
           display: inline-block;
           width: 20px;
@@ -494,7 +494,7 @@
       }
 
       // Do not append link href to GOV.UK link when printing (e.g. '(/)')
-      &:after {
+      &::after {
         display: none;
       }
     }
@@ -545,7 +545,7 @@
       line-height: 16px;
       cursor: pointer;
 
-      &:after {
+      &::after {
         content: "\2715";
       }
 
@@ -726,7 +726,7 @@
             color: govuk-colour("white");
           }
 
-          &-button:after {
+          &-button::after {
             margin-top: govuk-spacing(2);
             border-width: 8px 5px 0;
             border-color: govuk-colour("white") transparent transparent;

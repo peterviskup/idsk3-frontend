@@ -8,7 +8,7 @@
     margin-left: 45px;
     position: relative;
 
-    &:after {
+    &::after {
       content: "";
       position: absolute;
       z-index: 2;
@@ -63,7 +63,7 @@
     position: relative;
     min-height: 75px;
 
-    &:before {
+    &::before {
       content: "";
       position: absolute;
       z-index: 2;
@@ -82,7 +82,7 @@
   }
 
   .idsk-stepper__bolder-line .idsk-stepper__section-content .govuk-link:focus {
-    &:before {
+    &::before {
       content: "";
       position: absolute;
       z-index: 2;
@@ -111,7 +111,7 @@
   }
 
   .idsk-stepper__bolder-line.idsk-stepper__section--expanded.idsk-stepper__section {
-    &:before {
+    &::before {
       border-color: govuk-colour("black");
     }
 
@@ -121,7 +121,7 @@
   }
 
   .idsk-stepper__section--last-item {
-    &:before {
+    &::before {
       height: calc(100% - 34px);
     }
   }
@@ -312,7 +312,7 @@
     }
 
     // Extend the touch area of the button to span the section header
-    .idsk-stepper__section-button:after {
+    .idsk-stepper__section-button::after {
       content: "";
       position: absolute;
       top: 0;
@@ -349,8 +349,8 @@
       margin-top: -8px;
     }
 
-    .idsk-stepper__icon:after,
-    .idsk-stepper__icon:before {
+    .idsk-stepper__icon::after,
+    .idsk-stepper__icon::before {
       content: "";
       box-sizing: border-box;
       position: absolute;
@@ -365,16 +365,16 @@
       background-color: govuk-colour("black");
     }
 
-    .idsk-stepper__icon:before {
+    .idsk-stepper__icon::before {
       width: 100%;
     }
 
-    .idsk-stepper__icon:after {
+    .idsk-stepper__icon::after {
       height: 100%;
     }
 
     // Vertical bar should be hidden when section is open, to display a '-' icon
-    .idsk-stepper__section--expanded .idsk-stepper__icon:after {
+    .idsk-stepper__section--expanded .idsk-stepper__icon::after {
       content: " ";
       display: none;
     }

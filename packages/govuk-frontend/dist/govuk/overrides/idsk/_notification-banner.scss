@@ -1,0 +1,24 @@
+.govuk-notification-banner {
+  border-width: 1px;
+  border-radius: .375rem;
+}
+
+.govuk-notification-banner__content {
+  border-radius: .375rem;
+  background-color: idsk-colour("idsk-primary-light");
+}
+
+.govuk-notification-banner__header {
+  & + .govuk-notification-banner__content {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+
+.govuk-notification-banner--success {
+  & > .govuk-notification-banner__content {
+    background-color: idsk-colour("idsk-positive-light");
+  }
+}
+
+/*# sourceMappingURL=_notification-banner.scss.map */

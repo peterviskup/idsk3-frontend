@@ -133,7 +133,7 @@
     }
 
     // Extend the touch area of the button to span the section header
-    .govuk-accordion__section-button:after {
+    .govuk-accordion__section-button::after {
       content: "";
       position: absolute;
       top: 0;
@@ -169,8 +169,8 @@
       margin-top: -8px;
     }
 
-    .govuk-accordion__icon:after,
-    .govuk-accordion__icon:before {
+    .govuk-accordion__icon::after,
+    .govuk-accordion__icon::before {
       content: "";
       box-sizing: border-box;
       position: absolute;
@@ -185,16 +185,16 @@
       background-color: govuk-colour("black");
     }
 
-    .govuk-accordion__icon:before {
+    .govuk-accordion__icon::before {
       width: 100%;
     }
 
-    .govuk-accordion__icon:after {
+    .govuk-accordion__icon::after {
       height: 100%;
     }
 
     // Vertical bar should be hidden when section is open, to display a '-' icon
-    .govuk-accordion__section--expanded .govuk-accordion__icon:after {
+    .govuk-accordion__section--expanded .govuk-accordion__icon::after {
       content: " ";
       display: none;
     }

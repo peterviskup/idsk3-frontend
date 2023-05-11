@@ -63,13 +63,13 @@
     text-decoration: none;
 
     &-date {
-      &:after {
+      &::after {
         content: "\00a0-\00a0";
       }
     }
 
     &-tag {
-      &:after {
+      &::after {
         content: "\00a0|\00a0";
       }
     }
@@ -85,7 +85,7 @@
   }
 
   .idsk-card-meta-container span:last-child {
-    &:after {
+    &::after {
       content: "";
     }
   }

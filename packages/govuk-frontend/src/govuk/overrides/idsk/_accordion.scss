@@ -1,0 +1,17 @@
+.govuk-accordion__section {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 1.75rem;
+  border: 1px solid govuk-colour("grey-2");
+  border-radius: .75rem;
+}
+
+.js-enabled {
+  .govuk-accordion__section-header {
+    border-top: none;
+  }
+
+  .govuk-accordion {
+    border-bottom: none;
+  }
+}

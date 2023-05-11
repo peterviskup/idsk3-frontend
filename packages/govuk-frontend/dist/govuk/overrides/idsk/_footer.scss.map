@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../src/govuk/overrides/idsk/_footer.scss"],"names":[],"mappings":"AAAA;EACE,UAAU;EACV,WAAW;EACX,kBAAkB;AACpB","file":"_footer.scss","sourcesContent":[".idsk-footer-extended__up-button-svg {\n  width: 1em;\n  height: 1em;\n  padding: 0 5px 0 0;\n}\n"]}

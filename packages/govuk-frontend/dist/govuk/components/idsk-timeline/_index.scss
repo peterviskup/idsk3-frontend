@@ -137,7 +137,7 @@
     height: calc(100% + 30px);
   }
 
-  .idsk-timeline__content .idsk-timeline__vertical-line--circle:before {
+  .idsk-timeline__content .idsk-timeline__vertical-line--circle::before {
     content: "";
     box-sizing: border-box;
     position: absolute;

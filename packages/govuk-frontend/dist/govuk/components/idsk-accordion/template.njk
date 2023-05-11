@@ -6,7 +6,7 @@
 <div class="govuk-accordion__controls">
   <button class="govuk-accordion__open-all" data-open-title="{{ params.openTitle if params.openTitle else 'Otvoriť všetky' }}" aria-label="{{ params.openTitle if params.openTitle else 'Otvoriť všetky' }}"
   data-close-title="{{ params.closeTitle if params.closeTitle else 'Zatvoriť všetky' }}" type="button" aria-expanded="false">
-     <span class="govuk-visually-hidden govuk-accordion__controls-span" data-section-title="{{ params.sectionTitle if params.sectionTitle else 'sekcie'}}"></span></button>
+    <span class="govuk-visually-hidden govuk-accordion__controls-span" data-section-title="{{ params.sectionTitle if params.sectionTitle else 'sekcie'}}"></span></button>
 </div>
   {% for item in params.items %}
     {% if item %}
