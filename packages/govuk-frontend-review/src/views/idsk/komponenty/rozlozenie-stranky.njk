@@ -1,0 +1,225 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Rozloženie stránky" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Webové komponenty</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Obsah stránky umiestnite do stĺpcového dizajnu (ang. Grid). Návrh začnite vytvárať od najmenších veľkostí obrazovky a až potom ho prispôsobte väčším rozmerom.</p>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-s">Obsah:</h2>
+            <ul class="govuk-list">
+                <li><a class="govuk-link" href="#page-width" title="Šírka strany">Šírka strany</a></li>
+                <li><a class="govuk-link" href="#screen-size" title="Veľkosť obrazovky">Veľkosť obrazovky</a></li>
+                <li><a class="govuk-link" href="#layout-spacing" title="Medzery a vonkajšie okraje">Medzery a vonkajšie okraje</a></li>
+                <li><a class="govuk-link" href="#layout-block" title="Šírka textových blokov">Šírka textových blokov</a></li>
+                <li><a class="govuk-link" href="#layout-grid-unit-proportions" title="Stĺpcový dizajn">Stĺpcový dizajn</a></li>
+                <li><a class="govuk-link" href="#examples" title="Príklady">Príklady</a></li>
+            </ul>
+
+            <h3 class="govuk-heading-m" id="page-width">Šírka strany</h3>
+            <p class="govuk-body">Predvolená maximálna šírka stránky je 1020 px (pixelov). Ak si to obsah nevyhnutne vyžaduje, je prijateľná aj širšia stránka. Myslite však na to, že používatelia s bežnými či menšími obrazovkami budú musieť obsah horizontálne posúvať.</p>
+
+            <h3 class="govuk-heading-m" id="screen-size">Veľkosť obrazovky</h3>
+            <p class="govuk-body">Pri navrhovaní rozloženia obsahu stránky začnite s návrhom pre malé obrazovky (rozmiestnenie obsahu do jedného stĺpca). Následne optimalizujte stránku pre rôzne veľkosti obrazoviek. Obsah stránky umiestnite do predvoleného stĺpcového dizajnu. Aby ste vytvorili vizuálnu hierarchiu obsahu stránky, využite prázdny priestor medzi elementami.</p>
+
+            <h3 class="govuk-heading-m" id="layout-spacing">Medzery a vonkajšie okraje</h3>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>medzery medzi jednotlivými prvkami sú zvyčajne 5 px, 10 px, 15 px alebo násobky 15 px</li>
+                <li>vonkajšie okraje sú 15px pre menšie obrazovky a 30 px pre väčšie obrazovky</li>
+            </ul>
+        </div>
+
+        <div class="govuk-grid-column-full">
+            <div class="example example-images">
+{% set exampleComponentHtml %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+        <img src="/public/assets/images/examples/15px-gutter-example.png" alt="15px príklad vonkajších okrajov">
+    </div>
+    <div class="govuk-grid-column-one-half">
+        <img src="/public/assets/images/examples/30px-gutter-example.png" alt="30px príklad vonkajších okrajov">
+    </div>
+</div>
+{% endset %}
+            {{exampleComponentHtml | safe}}
+            </div>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            <h3 class="govuk-heading-m" id="layout-block">Šírka textových blokov</h3>
+            <p class="govuk-body ">Pri vytváraní stránky pamätajte na to, že dlhé riadky textu znižujú jeho čitateľnosť, čiže všetky riadky s textom by nemali mať viac ako 70 až 80 znakov. Pre zamedzenie dlhých riadkov textu by mal obsah v stĺpci dosahovať maximálne dve tretiny šírky strany.</p>
+            <h3 class="govuk-heading-m">Stĺpcový dizajn</h3>
+            <p class="govuk-body">Pre rozloženie obsahu na stránke použite preddefinovaný stĺpcový dizajn (ang. Grid).</p>
+            <p class="govuk-body">Základné pomery stĺpcov sú:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>1 stĺpec - na celú šírku stránky</li>
+                <li>2 stĺpce - polovice</li>
+                <li>3 stĺpce - tretiny</li>
+                <li>4 stĺpce - štvrtiny</li>
+            </ul>
+            <p class="govuk-body">Pomery stĺpcov sú kombinovateľné podľa potreby. Napríklad 1/4 a 3/4.</p>
+            <p class="govuk-body">
+              Na určenie hraničných bodov pre rôzne veľkosti obrazoviek (ang. Breakpoints) používajte media výrazy (ang. Media query) - nájdete ich na JDMES v tomto súbore
+              <a class="govuk-link" href="https://github.com/id-sk/id-sk-frontend/blob/master/src/govuk/helpers/_media-queries.scss" title="frontend elements">frontend elements</a>.
+            </p>
+        </div>
+
+        <div class="govuk-grid-column-full">
+            <h4 class="govuk-heading-m">Celá šírka (1 stĺpcový dizajn)</h4>
+            <div class="example example-grid">
+{% set exampleComponentHtml %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <p>Obsah</p>
+    </div>
+</div>
+{% endset %}
+            {{exampleComponentHtml | safe}}
+            </div>
+            <pre class="app-code">
+              <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                {{- exampleComponentHtml | highlight("html") | safe -}}
+              </code>
+            </pre>
+
+        <h4 class="govuk-heading-m">Polovice (2 stĺpcový dizajn)</h4>
+        <div class="example example-grid">
+        {% set exampleComponentHtml %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+        <p>Obsah</p>
+    </div>
+    <div class="govuk-grid-column-one-half">
+        <p>Obsah</p>
+    </div>
+</div>
+{% endset %}
+            {{exampleComponentHtml | safe}}
+            </div>
+            <pre class="app-code">
+              <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                {{- exampleComponentHtml | highlight("html") | safe -}}
+              </code>
+            </pre>
+
+        <h4 class="govuk-heading-m">Tretiny (3 stĺpcový dizajn)</h4>
+        <div class="example example-grid">
+        {% set exampleComponentHtml %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+        <p>Obsah</p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <p>Obsah</p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <p>Obsah</p>
+    </div>
+</div>
+{% endset %}
+            {{exampleComponentHtml | safe}}
+            </div>
+            <pre class="app-code">
+              <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                {{- exampleComponentHtml | highlight("html") | safe -}}
+              </code>
+            </pre>
+
+        <h4 class="govuk-heading-m">Dve tretiny / Jedna tretina</h4>
+        <div class="example example-grid">
+        {% set exampleComponentHtml %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <p>Obsah</p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <p>Obsah</p>
+    </div>
+</div>
+{% endset %}
+            {{exampleComponentHtml | safe}}
+            </div>
+            <pre class="app-code">
+              <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                {{- exampleComponentHtml | highlight("html") | safe -}}
+              </code>
+            </pre>
+
+        <h4 class="govuk-heading-m">Jedna tretina / Dve tretiny</h4>
+        <div class="example example-grid">
+        {% set exampleComponentHtml %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+        <p>Obsah</p>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+        <p>Obsah</p>
+    </div>
+</div>
+{% endset %}
+            {{exampleComponentHtml | safe}}
+            </div>
+            <pre class="app-code">
+              <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                {{- exampleComponentHtml | highlight("html") | safe -}}
+              </code>
+            </pre>
+
+        <h4 class="govuk-heading-m">Štvrtiny (4 stĺpcový dizajn)</h4>
+        <div class="example example-grid">
+        {% set exampleComponentHtml %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+        <p>Obsah</p>
+    </div>
+    <div class="govuk-grid-column-one-quarter">
+        <p>Obsah</p>
+    </div>
+    <div class="govuk-grid-column-one-quarter">
+        <p>Obsah</p>
+    </div>
+    <div class="govuk-grid-column-one-quarter">
+        <p>Obsah</p>
+    </div>
+</div>
+{% endset %}
+            {{exampleComponentHtml | safe}}
+            </div>
+            <pre class="app-code">
+              <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                {{- exampleComponentHtml | highlight("html") | safe -}}
+              </code>
+            </pre>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            <h3 class="govuk-heading-m" id="examples">Príklady</h3>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>
+                <a class="govuk-link" href="/full-page-examples/grid" title="Stránka s príkladmi preddefinovaného stĺpcového dizajnu">
+                    Stránka s príkladmi preddefinovaného stĺpcového dizajnu
+                </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+  </div>
+{% endblock %}

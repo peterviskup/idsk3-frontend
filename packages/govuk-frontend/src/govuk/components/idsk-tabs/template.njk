@@ -1,0 +1,46 @@
+{#- If an id 'prefix' is not passed, fall back to using the name attribute
+    instead. We need this for error messages and hints as well -#}
+{% set idPrefix = params.idPrefix if params.idPrefix -%}
+
+<div {%- if params.id %} id="{{params.id}}"{% endif %} class="idsk-tabs {%- if params.classes %} {{ params.classes }}{% endif %}" {%- for attribute, value in params.attributes %} {{attribute}}="{{value}}"{% endfor %} data-module="idsk-tabs">
+  <h2 class="idsk-tabs__title">
+    {{ params.title | default ("Contents") }}
+  </h2>
+  {% if(params.items) %}
+  <ul class="idsk-tabs__list">
+    {% for item in params.items %}
+      {% if item %}
+        {% set id = item.id if item.id else idPrefix + "-" + loop.index %}
+        <li class="idsk-tabs__list-item{% if loop.index == 1 %} idsk-tabs__list-item--selected{% endif %}">
+          <a class="idsk-tabs__tab" href="#{{ id }}" title="{{ item.label }}"
+            {%- for attribute, value in item.attributes %} {{attribute}}="{{value}}"{% endfor %} item="{{ loop.index0 }}">
+            {{ item.label }}
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+  <ul class="idsk-tabs__list--mobile" role="tablist">
+    {% for item in params.items %}
+      {% if item %}
+        {% set id = item.id if item.id else idPrefix + "-" + loop.index %}
+        <li class="idsk-tabs__list-item--mobile" role="presentation">
+          <button class="govuk-caption-l idsk-tabs__mobile-tab" item="{{ loop.index0 }}" role="tab" aria-controls="{{ id }}" aria-selected="false" href="#{{ id }}">
+            {{ item.label }}
+            <span class="idsk-tabs__tab-arrow-mobile"></span>
+          </button>
+          <section class="idsk-tabs__panel{% if loop.index > 1 %} idsk-tabs__panel--hidden{% endif %}" id="{{ id }}"{% for attribute, value in item.panel.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+            <div class="idsk-tabs__panel-content">
+              {{ item.panel.html | safe if item.panel.html else item.panel.text }}
+            </div>
+            <div class="idsk-tabs__mobile-tab-content idsk-tabs__mobile-tab-content--hidden">
+              {{ item.panel.html | safe if item.panel.html else item.panel.text }}
+            </div>
+          </section>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+  {% endif %}
+</div>

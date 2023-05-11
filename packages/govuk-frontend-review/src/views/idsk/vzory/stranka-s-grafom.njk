@@ -1,0 +1,132 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Stránka s grafom" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      { text: 'ID-SK frontend', href: '/' + legacyQuery },
+      { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <span class="govuk-caption-xl">Vzory</span>
+  <h1 class="govuk-heading-xl">{{pageName}}</h1>
+
+  <p class="govuk-body-l">
+    Grafové zobrazenie údajov pomáha používateľom lepšie pochopiť prezentované údaje. Vždy poskytnite prezentované údaje tak, aby boli prístupné aj používateľom so zrakovým znevýhodnením.
+  </p>
+  <p class="govuk-body-l">
+    Grafový vzor použite, keď chcete používateľom zobrazovať nejaký jav v závislosti na ďalšej premennej - napríklad vývoj javu v čase (napr. vývoj počtu nakazených COVID-19 na Slovensku)
+  </p>
+  <p class="govuk-body-l">
+    Prezentácia údajov prostredníctvom grafu zobrazuje jav v súvislostiach a dotvára komplexnejší obraz o danej skutočnosti, než jednotlivé údaje izolovane.
+  </p>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-s">Obsah:</h2>
+      <ul class="govuk-list">
+          <li>
+              <a href="#z-coho-sa-sklada-graf" title="Z čoho sa skladá graf?" class="govuk-link">Z čoho sa skladá graf?</a>
+          </li>
+          <li>
+              <a href="#ako-funguje-graf" title="Ako funguje graf?" class="govuk-link">Ako funguje graf?</a>
+          </li>
+      </ul>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <h2 class="govuk-heading-m" id="z-coho-sa-sklada-graf">Z čoho sa skladá graf?</h2>
+      <p class="govuk-body">
+        Graf sa skladá z:
+      </p>
+      <ol class="idsk-list idsk-list--letters">
+        <li>nadpisu,</li>
+        <li>prepínačov pre výber zobrazenia javu v grafe,</li>
+        <li>priestoru pre popis,</li>
+        <li>tlačidiel zobrazenia údajov z rôznych pohľadov, zobrazenia údajov prostredníctvom tabuľky, podrobného popisu metodiky,</li>
+        <li>grafového okna s interaktívnym grafom repsektíve tabuľkového zobrazenia údajov,</li>
+        <li>vysvetliviek,</li>
+        <li>linku pre stiahnutie zdrojových údajov,</li>
+        <li>linku pre zdieľanie grafu (voliteľné),</li>
+        <li>označenia zdroja údajov.</li>
+      </ol>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <div class="example example-error">
+        {% set exampleComponentHtml %}
+          {% include "../komponenty/examples/graf1.njk" %}
+        {% endset %}
+        {{exampleComponentHtml | safe}}
+      </div>
+      <pre class="app-code">
+        <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+          {{- exampleComponentHtml | highlight("html") | safe -}}
+        </code>
+      </pre>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <h2 class="govuk-heading-m" id="ako-funguje-graf">Ako funguje graf?</h2>
+
+      <h3 class="govuk-heading-s">Prepínače</h3>
+      <p class="govuk-body">
+        Môžete použiť prepínače na prepínanie súvisiacich javov - napríklad PCR testy, antigénové testy a podobne. Ak javy spolu nesúvisia, vytvorte pre ne samostatné grafy.
+      </p>
+
+      <h3 class="govuk-heading-s">Popis</h3>
+      <p class="govuk-body">
+        Do popisu uvádzajte čo graf zobrazuje - aký jav a podľa čoho sa zobrazuje - napríklad počet nakazených COVID-19 na Slovensku podľa dátumu. Ak si to údaje vyžadujú, pridajte do popisu aj doplňujúce informácie.
+      </p>
+
+      <h3 class="govuk-heading-s">Tlačidlá</h3>
+      <p class="govuk-body">
+        Nad grafovým oknom sú textové tlačidlá.
+      </p>
+
+      <h4 class="govuk-heading-s">Pohľady na údaje</h4>
+      <p class="govuk-body">
+        Ak budete zobrazovať napríklad počet nakazených COVID-19 na Slovensku podľa dátumu je dobré ponúknuť používateľovi možnosť vidieť denné prírastky a taktiež ich kumulatívny počet, ktorý zobrazuje celkový stav.
+      </p>
+
+      <h4 class="govuk-heading-s">Zobrazenie údajov v tabuľkovej forme</h4>
+      <p class="govuk-body">
+        Ďalším tlačidlom je zobrazenie údajov prostredníctvom tabuľkového zobrazenie údajov. Namiesto grafu sa zobrazia údaje v tabuľkové forme, z ktorých je vytvorený graf. Údaje v tabuľke je možné zoraďovať.
+      </p>
+
+      <h4 class="govuk-heading-s">Metodika</h4>
+      <p class="govuk-body">
+        Po kliknutí sa zobrazí podrobná metodika - napríklad zberu údajov. Tu je priestor na popísanie ako sa údaje zbierajú, pre popis úzkych miest - kde môžu vznikať diskrepancie a oneskorenia a ako sú ošetrené a podobne.
+      </p>
+
+      <h3 class="govuk-heading-s">Vysvetlivky</h3>
+      <p class="govuk-body">
+        Po kliknutí na graf sa používateľovi zobrazia údaje v danom bode s popisom. Pod grafovým oknom sa umiestnite vysvetlivky.
+      </p>
+
+      <h3 class="govuk-heading-s">Zdieľanie grafu</h3>
+      <p class="govuk-body">
+        Pod grafovým oknom môžete pridať aj link pre jednoduché zdieľanie vášho grafu na rôznyhc platformách.
+      </p>
+
+      <h3 class="govuk-heading-s">Zdrojové údaje a zdroj údajov</h3>
+      <p class="govuk-body">
+        Vždy pridajte ku grafu aj zdrojové údaje. Použite štandardné, strojovo spracovateľné údajové formáty ako napríklad csv, JSON, XML. Môžete dať používateľom na výber z viacerých formátov.
+      </p>
+      <p class="govuk-body">
+        Uvádzajte, kto alebo čo je zdrojom údajov, ktoré prezentujete.
+      </p>
+
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block bodyEnd %}
+  <script type="module" src="/public/assets/js/graph.js"></script>
+{% endblock %}

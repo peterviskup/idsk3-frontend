@@ -1,0 +1,449 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "idsk-header-web/macro.njk" import idskHeaderWeb %}
+{% from "idsk-footer-extended/macro.njk" import idskFooterExtended %}
+{% from "idsk-in-page-navigation/macro.njk" import idskInPageNavigation %}
+{% from "idsk-related-content/macro.njk" import idskRelatedContent %}
+{% set pageName = "Príspevok pri narodení dieťaťa" %}
+
+{% block styles %}
+    <style>
+        #idsk-article-pattern .govuk-body-s {
+            font-size: 16px;
+            line-height: 20px;
+        }
+        .govuk-heading-l.idsk-stepper-pattern__intro-heading {
+            margin-bottom: 20px;
+            padding-top: 0;
+            margin-top: -10px;
+        }
+        .idsk-article-pattern__text-silver--down {
+            padding-top: 10px;
+            padding-bottom: 13px;
+        }
+        .idsk-article-pattern__text-silver--up {
+            border-top: 1px solid #BFC1C3;
+            padding-top: 10px;
+        }
+        @media(min-width: 48.0525em) {
+            .idsk-article-pattern__text-silver--down {
+                border-bottom: 1px solid #BFC1C3;
+            }
+        }
+        #idsk-article__content__news {
+            display: none;
+            margin-left: -15px;
+            padding-top: 10px
+        }
+        #idsk-article__content__news.idsk-article__content__news--visible {
+            display: block;
+        }
+        .idsk-article__social-networks {
+            margin-left: -15px;
+            padding-bottom: 10px;
+            padding-top: 20px;
+        }
+        #idsk-article__content__news .govuk-body-s {
+            margin-bottom: 8px;
+        }
+        .idsk-article__social-networks a {
+            text-decoration: none;
+        }
+        .idsk-article-pattern__subtitle {
+            color: #626A6E;
+            padding-bottom: 5px;
+        }
+        @media(min-width: 48.0525em) {
+            .idsk-article-pattern__element-right {
+                float: right;
+                margin-right: 15px;
+            }
+        }
+    </style>
+{% endblock %}
+{% block beforeContent %}
+    {{ govukBreadcrumbs({
+        "items": [
+        { text: 'ID-SK frontend', href: '/' + legacyQuery },
+        { text: pageName }
+        ]
+    }) }}
+{% endblock %}
+
+{% block skipLink %}
+    {{ idskSkipLink({
+        href: '#main-content',
+        text: 'Preskočiť na hlavný obsah',
+        classes: 'idsk-skip-link--sticky'
+    }) }}
+{% endblock %}
+
+{% block header %}
+  {{ idskHeaderWeb({
+    headerType: "website",
+    assetsPath: "/public/assets/images/header-web/",
+    search: true,
+    brand: {
+      gestor: true,
+      languages: [
+        {
+          text: "Slovenčina",
+          selected: true,
+          link: "#1"
+        },
+        {
+          text: "English",
+          link: "#2"
+        },
+        {
+          text: "German",
+          link: "#3"
+        }
+      ]
+    },
+    main: {
+      showLogo: true,
+      logoSrc: "logo-mirri-farebne.svg",
+      logoAlt: "ID-SK Frontend"
+    },
+    navBar: {
+      navigation: [
+        {
+          text: "Eurofondy",
+          link: "#1"
+        },
+        {
+          text: "Regionálny rozvoj",
+          link: "#2"
+        },
+        {
+          text: "Informatizácia",
+          link: "#3"
+        },
+        {
+          text: "Investície",
+          link: "#4"
+        },
+        {
+          text: "Inovácie",
+          link: "#5"
+        }
+      ]
+    }
+  }) }}
+{% endblock %}
+{% block content %}
+    <div class="govuk-grid-row" id="idsk-article-pattern">
+        <div class="govuk-grid-column-three-quarters-from-desktop idsk-article-pattern__element-right">
+            <div id="uvod">
+                <span class="govuk-caption-xl idsk-article-pattern__subtitle">Aktualita</span>
+                <h2 class="govuk-heading-l idsk-stepper-pattern__intro-heading">Povinná elektronická komunikácia so štátom sa o necelý mesiac dotkne už aj poľovníkov a cirkví</h2>
+            </div>
+            <p class="govuk-body-s idsk-article-pattern__text-silver--down">Aktualizované 8.12.2020 -
+                <a class="govuk-link" href="#" title="zobraziť aktualizácie" onclick="scrollToNews(); return false">
+                    zobraziť aktualizácie</a>
+            </p>
+        </div>
+        {{ idskInPageNavigation({
+                items: [
+                    {
+                    text: "Úvod",
+                    link: "#uvod",
+                    active: true
+                    },
+                    {
+                    text: "Počet subjektov aktuálne",
+                    link: "#nadpis-1"
+                    },
+                    {
+                    text: "Odklad povinnej aktivácie",
+                    link: "#nadpis-2"
+                    },
+                    {
+                    text: "Taktiež súčasťou životných situácii",
+                    link: "#zivotne-situacie"
+                    }
+                ]
+                }) }}
+        <div class="govuk-grid-column-three-quarters-from-desktop">
+            <p class="govuk-body">Štát v súčasnosti eviduje približne 3 200 subjektov zapísaných v Registri poľovníckych organizácií vedenom na Ministerstve pôdohospodárstva a rozvoja vidieka SR. V Registri cirkví a náboženských spoločností štát eviduje do 20 právnických osôb. Štatutári by si mali skontrolovať údaje, ktoré štátu odovzdali pri zápise ich organizácie do registra a overiť, že v nich majú uvedené svoje rodné číslo. V prípade poľovníkov vedie register Národné lesnícke centrum, v prípade cirkví je to Ministerstvo kultúry SR.</p>
+            <p class="govuk-body">Počet elektronických schránok subjektov neziskového mimovládneho sektora aktivovaných na doručovanie úradných rozhodnutí sa tak od 1. augusta zvýši približne zo 63-tisíc na skoro 67-tisíc. Aktiváciu elektronickej schránky na doručovanie NASES zrealizuje automaticky bez toho, aby sa štatutár do svojej e-schránky prihlásil.</p>
+            <p class="govuk-body">„Znamená to, že do takto aktivovaných elektronických schránok sú zo strany úradov doručované úradné rozhodnutia. Štatutári alebo nimi poverené osoby už nechodia so žltým lístkom na poštu, ale rozhodnutia im štát doručuje do úradných e-schránok zriadených na slovensko.sk. Rovnako platí, že tieto organizácie nemusia úradné podania realizovať listinne na pošte, ale majú možnosť tak robiť prostredníctvom svojej elektronickej schránky,“ vysvetľuje Peter Kucer z MIRRI SR.</p>
+            <img src="/public/assets/images/examples/ministerstvo-aktuality-cover.png" alt="ministerstvo-aktuality-img">
+                <h3 class="govuk-heading-m govuk-!-margin-top-6" id="nadpis-1">Počet subjektov aktuálne</h3>
+                <p class="govuk-body">Povinnú aktiváciu elektronických schránok právnických osôb, ktoré odvodzujú právnu subjektivitu od právnej subjektivity cirkví a náboženských spoločností, štát nateraz odkladá. Možná je však dobrovoľná aktivácia elektronických schránok pre tieto tipy právnických osôb, a to formou listinnej žiadosti zaslanej zo strany štatutára do NASES.</p>
+                <p class="govuk-body">Peter Kucer hovorí, že štatutári sú si vedomí zodpovednosti a ich záujem postupne rastie: „Ku koncu júna prišlo do elektronických schránok neziskových organizácií, nadácií, fondov, záujmových či občianskych združení 5 420 úradných rozhodnutí. Chcel by som preto vyzvať aj poľovníkov a cirkvi, keďže oni so štátom komunikujú pomerne často, aby situáciu nepodcenili a počítali s tým, že do schránky im budú doručované úradné rozhodnutia.“</p>
+                <p class="govuk-body">Národná agentúra pre sieťové a elektronické služby (NASES) aktivuje na doručovanie úradných rozhodnutí e-schránky ďalších organizácií mimovládneho neziskového sektora postupne v jednotlivých fázach podľa indikatívneho harmonogramu.</p>
+                <p class="govuk-body">Štatutári nájdu potrebné informácie o elektronických schránkach a prístupe k nim na statutar.sk. Komplexné informácie aj na slovensko.sk.</p>
+                <h3 class="govuk-heading-m" id="nadpis-2">Odklad povinnej aktivácie</h3>
+                <p class="govuk-body">„Na prístup do elektronickej schránky je potrebné mať občiansky preukaz s čipom a bezpečnostný osobný kód – BOK“, pripomína Peter Kucer, poverený riadením sekcie ITVS Ministerstva investícií, regionálneho rozvoja a informatizácie SR (MIRRI) a dodáva, že do elektronickej schránky zriadenej na slovensko.sk sa dostane iba ten štatutár, ktorý má v príslušnom zdrojovom registri správne uvedené údaje v podobe IČO organizácie a meno, priezvisko a rodné číslo štatutára.</p>
+                <p class="govuk-body">Štát v súčasnosti eviduje približne 3 200 subjektov zapísaných v Registri poľovníckych organizácií vedenom na Ministerstve pôdohospodárstva a rozvoja vidieka SR. V Registri cirkví a náboženských spoločností štát eviduje do 20 právnických osôb. Štatutári by si mali skontrolovať údaje, ktoré štátu odovzdali pri zápise ich organizácie do registra a overiť, že v nich majú uvedené svoje rodné číslo. V prípade poľovníkov vedie register Národné lesnícke centrum, v prípade cirkví je to Ministerstvo kultúry SR.</p>
+                <p class="govuk-body">Počet elektronických schránok subjektov neziskového mimovládneho sektora aktivovaných na doručovanie úradných rozhodnutí sa tak od 1. augusta zvýši približne zo 63-tisíc na skoro 67-tisíc. Aktiváciu elektronickej schránky na doručovanie NASES zrealizuje automaticky, bez toho, aby sa štatutár do svojej e-schránky prihlásil.</p>
+                <p class="govuk-body">„Znamená to, že do takto aktivovaných elektronických schránok sú zo strany úradov doručované úradné rozhodnutia. Štatutári alebo nimi poverené osoby už nechodia so žltým lístkom na poštu, ale rozhodnutia im štát doručuje do úradných e-schránok zriadených na slovensko.sk. Rovnako platí, že tieto organizácie nemusia úradné podania realizovať listinne na pošte, ale majú možnosť tak robiť prostredníctvom svojej elektronickej schránky“, vysvetľuje Peter Kucer z MIRRI.</p>
+                <p class="govuk-body">Povinnú aktiváciu elektronických schránok právnických osôb, ktoré odvodzujú právnu subjektivitu od právnej subjektivity cirkví a náboženských spoločností štát nateraz odkladá. Možná je však dobrovoľná aktivácia elektronických schránok pre tieto tipy právnických osôb, a to formou listinnej žiadosti zaslanej zo strany štatutára do NASES.</p>
+                <p class="govuk-body">Peter Kucer hovorí, že štatutári sú si vedomí zodpovednosti a ich záujem postupne rastie: „Ku koncu júna prišlo do elektronických schránok neziskových organizácií, nadácií, fondov, záujmových či občianskych združení 5 420 úradných rozhodnutí. Chcel by som preto vyzvať aj poľovníkov a cirkvi, keďže oni so štátom komunikujú pomerne často, aby situáciu nepodcenili a počítali s tým, že do schránky im budú doručované úradné rozhodnutia“.</p>
+                <p class="govuk-body">Národná agentúra pre sieťové a elektronické služby (NASES) aktivuje na doručovanie úradných rozhodnutí e-schránky ďalších organizácií mimovládneho neziskového sektora postupne v jednotlivých fázach podľa indikatívneho harmonogramu.</p>
+                <p class="govuk-body">Štatutári nájdu potrebné informácie o elektronických schránkach a prístupe k nim na statutar.sk. Komplexné informácie aj na slovensko.sk.</p>
+                <p class="govuk-body-s idsk-article-pattern__text-silver--up">Aktualizované 8.12.2020
+                    <a class="govuk-link" id="idsk-article__content__button" href="#" title="+ zobraziť aktualizácie" onclick="showNews(); return false" data-opened="- schovať aktualizácie" data-closed="+ zobraziť aktualizácie">
+                    + zobraziť aktualizácie</a>
+                </p>
+                <div id="idsk-article__content__news__div">
+                    <div class="govuk-grid-column-two-thirds" id="idsk-article__content__news">
+                        <p class="govuk-body-s govuk-!-font-weight-bold">29.11.2020</p>
+                        <p class="govuk-body-s">Bolo pridané stanovisko GR sekcie informatizácie verejnej správy.</p>
+                        <p class="govuk-body-s govuk-!-font-weight-bold">25.11.2020</p>
+                        <p class="govuk-body-s">Jazyková korektúra.</p>
+                        <p class="govuk-body-s govuk-!-font-weight-bold">15.11.2020</p>
+                        <p class="govuk-body-s">Pridané nová cool fotečka, zároveň boli aktializované termíny vyplávajúce zo zákona.</p>
+                        <p class="govuk-body-s govuk-!-font-weight-bold govuk-!-margin-top-3 govuk-!-margin-bottom-4">Vypublikované 1.10.2020</p>
+                    </div>
+                </div>
+                <br>
+                    <div class="govuk-grid-column-full idsk-article__social-networks">
+                        <p class="govuk-body-s govuk-!-font-weight-bold">Zdielať tento článok</p>
+                        <a href="#" class="govuk-link">
+                            <span>
+                                <svg width="10" height="17" viewBox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.69561 9.43203L9.13639 6.55825H6.37911V4.69334C6.37911 3.90712 6.76427 3.14078 7.99927 3.14078H9.25289V0.694188C9.25289 0.694188 8.11517 0.5 7.02749 0.5C4.75655 0.5 3.27233 1.87631 3.27233 4.36797V6.55825H0.748047V9.43203H3.27233V16.3792C3.77849 16.4586 4.29727 16.5 4.82574 16.5C5.3542 16.5 5.87295 16.4586 6.37911 16.3792V9.43203H8.69561Z" fill="#003078"/>
+                                </svg>
+                                &nbsp;
+                                <svg width="67" height="13" viewBox="0 0 67 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.232 12V1.568H6.808V3.552H2.584V5.968H6.2V7.952H2.584V12H0.232ZM9.82125 12.192C9.45858 12.192 9.12792 12.128 8.82925 12C8.54125 11.8827 8.29592 11.7173 8.09325 11.504C7.89058 11.28 7.73058 11.024 7.61325 10.736C7.50658 10.448 7.45325 10.1333 7.45325 9.792C7.45325 8.96 7.80525 8.30933 8.50925 7.84C9.21325 7.37067 10.3493 7.056 11.9173 6.896C11.8959 6.544 11.7893 6.26667 11.5973 6.064C11.4159 5.85067 11.1066 5.744 10.6693 5.744C10.3279 5.744 9.98658 5.808 9.64525 5.936C9.31458 6.064 8.95725 6.24 8.57325 6.464L7.72525 4.912C8.23725 4.60267 8.77058 4.352 9.32525 4.16C9.89058 3.968 10.4879 3.872 11.1173 3.872C12.1413 3.872 12.9199 4.16533 13.4533 4.752C13.9973 5.328 14.2693 6.22933 14.2693 7.456V12H12.3493L12.1893 11.184H12.1253C11.7839 11.4827 11.4266 11.728 11.0533 11.92C10.6799 12.1013 10.2693 12.192 9.82125 12.192ZM10.6213 10.368C10.8879 10.368 11.1173 10.3093 11.3093 10.192C11.5013 10.0747 11.7039 9.90933 11.9173 9.696V8.304C11.0853 8.42133 10.5093 8.592 10.1893 8.816C9.86925 9.04 9.70925 9.30667 9.70925 9.616C9.70925 9.872 9.78925 10.064 9.94925 10.192C10.1199 10.3093 10.3439 10.368 10.6213 10.368ZM19.7148 12.192C19.1601 12.192 18.6428 12.1013 18.1628 11.92C17.6934 11.728 17.2828 11.456 16.9308 11.104C16.5788 10.752 16.3014 10.32 16.0988 9.808C15.8961 9.28533 15.7948 8.69333 15.7948 8.032C15.7948 7.37067 15.9068 6.784 16.1308 6.272C16.3548 5.74933 16.6534 5.312 17.0268 4.96C17.4108 4.608 17.8534 4.34133 18.3548 4.16C18.8561 3.968 19.3788 3.872 19.9227 3.872C20.4134 3.872 20.8454 3.952 21.2188 4.112C21.6028 4.272 21.9441 4.47467 22.2428 4.72L21.1388 6.24C20.7654 5.93067 20.4081 5.776 20.0668 5.776C19.4908 5.776 19.0374 5.97867 18.7068 6.384C18.3761 6.78933 18.2108 7.33867 18.2108 8.032C18.2108 8.72533 18.3761 9.27467 18.7068 9.68C19.0481 10.0853 19.4748 10.288 19.9868 10.288C20.2428 10.288 20.4881 10.2347 20.7228 10.128C20.9681 10.0107 21.1974 9.872 21.4108 9.712L22.3388 11.248C21.9441 11.5893 21.5174 11.8347 21.0588 11.984C20.6001 12.1227 20.1521 12.192 19.7148 12.192ZM26.8264 12.192C26.261 12.192 25.733 12.1013 25.2424 11.92C24.7517 11.728 24.325 11.456 23.9624 11.104C23.5997 10.7413 23.317 10.304 23.1144 9.792C22.9117 9.28 22.8104 8.69333 22.8104 8.032C22.8104 7.392 22.917 6.816 23.1304 6.304C23.3437 5.78133 23.621 5.344 23.9624 4.992C24.3144 4.62933 24.7144 4.352 25.1624 4.16C25.6104 3.968 26.0744 3.872 26.5544 3.872C27.1197 3.872 27.6104 3.968 28.0264 4.16C28.453 4.352 28.805 4.61867 29.0824 4.96C29.3704 5.30133 29.5837 5.70667 29.7224 6.176C29.861 6.63467 29.9304 7.136 29.9304 7.68C29.9304 7.89333 29.9197 8.096 29.8984 8.288C29.877 8.48 29.8557 8.624 29.8344 8.72H25.0824C25.189 9.296 25.4237 9.72267 25.7864 10C26.1597 10.2667 26.613 10.4 27.1464 10.4C27.7117 10.4 28.2824 10.224 28.8584 9.872L29.6424 11.296C29.237 11.5733 28.7837 11.792 28.2824 11.952C27.7917 12.112 27.3064 12.192 26.8264 12.192ZM25.0664 7.168H27.9304C27.9304 6.72 27.829 6.35733 27.6264 6.08C27.4237 5.80267 27.0824 5.664 26.6024 5.664C26.229 5.664 25.8984 5.78667 25.6104 6.032C25.333 6.27733 25.1517 6.656 25.0664 7.168ZM35.7156 12.192C35.3636 12.192 35.0063 12.1067 34.6436 11.936C34.2916 11.7547 33.961 11.4933 33.6516 11.152H33.5876L33.3956 12H31.5556V0.783999H33.9076V3.536L33.8436 4.752C34.153 4.47467 34.4836 4.26133 34.8356 4.112C35.1983 3.952 35.5663 3.872 35.9396 3.872C36.4196 3.872 36.8516 3.968 37.2356 4.16C37.6196 4.352 37.945 4.624 38.2116 4.976C38.489 5.31733 38.697 5.73867 38.8356 6.24C38.985 6.73067 39.0596 7.28 39.0596 7.888C39.0596 8.57067 38.9636 9.17867 38.7716 9.712C38.5903 10.2453 38.3396 10.6987 38.0196 11.072C37.7103 11.4347 37.353 11.712 36.9476 11.904C36.553 12.096 36.1423 12.192 35.7156 12.192ZM35.1716 10.272C35.577 10.272 35.9236 10.0907 36.2116 9.728C36.4996 9.35467 36.6436 8.75733 36.6436 7.936C36.6436 6.50667 36.185 5.792 35.2676 5.792C34.7983 5.792 34.345 6.032 33.9076 6.512V9.76C34.121 9.952 34.3343 10.0853 34.5476 10.16C34.761 10.2347 34.969 10.272 35.1716 10.272ZM44.1355 12.192C43.6342 12.192 43.1488 12.1013 42.6795 11.92C42.2102 11.728 41.7942 11.456 41.4315 11.104C41.0795 10.752 40.7968 10.32 40.5835 9.808C40.3702 9.28533 40.2635 8.69333 40.2635 8.032C40.2635 7.37067 40.3702 6.784 40.5835 6.272C40.7968 5.74933 41.0795 5.312 41.4315 4.96C41.7942 4.608 42.2102 4.34133 42.6795 4.16C43.1488 3.968 43.6342 3.872 44.1355 3.872C44.6368 3.872 45.1168 3.968 45.5755 4.16C46.0448 4.34133 46.4555 4.608 46.8075 4.96C47.1702 5.312 47.4582 5.74933 47.6715 6.272C47.8848 6.784 47.9915 7.37067 47.9915 8.032C47.9915 8.69333 47.8848 9.28533 47.6715 9.808C47.4582 10.32 47.1702 10.752 46.8075 11.104C46.4555 11.456 46.0448 11.728 45.5755 11.92C45.1168 12.1013 44.6368 12.192 44.1355 12.192ZM44.1355 10.288C44.6155 10.288 44.9782 10.0853 45.2235 9.68C45.4688 9.27467 45.5915 8.72533 45.5915 8.032C45.5915 7.33867 45.4688 6.78933 45.2235 6.384C44.9782 5.97867 44.6155 5.776 44.1355 5.776C43.6448 5.776 43.2768 5.97867 43.0315 6.384C42.7968 6.78933 42.6795 7.33867 42.6795 8.032C42.6795 8.72533 42.7968 9.27467 43.0315 9.68C43.2768 10.0853 43.6448 10.288 44.1355 10.288ZM53.0105 12.192C52.5092 12.192 52.0238 12.1013 51.5545 11.92C51.0852 11.728 50.6692 11.456 50.3065 11.104C49.9545 10.752 49.6718 10.32 49.4585 9.808C49.2452 9.28533 49.1385 8.69333 49.1385 8.032C49.1385 7.37067 49.2452 6.784 49.4585 6.272C49.6718 5.74933 49.9545 5.312 50.3065 4.96C50.6692 4.608 51.0852 4.34133 51.5545 4.16C52.0238 3.968 52.5092 3.872 53.0105 3.872C53.5118 3.872 53.9918 3.968 54.4505 4.16C54.9198 4.34133 55.3305 4.608 55.6825 4.96C56.0452 5.312 56.3332 5.74933 56.5465 6.272C56.7598 6.784 56.8665 7.37067 56.8665 8.032C56.8665 8.69333 56.7598 9.28533 56.5465 9.808C56.3332 10.32 56.0452 10.752 55.6825 11.104C55.3305 11.456 54.9198 11.728 54.4505 11.92C53.9918 12.1013 53.5118 12.192 53.0105 12.192ZM53.0105 10.288C53.4905 10.288 53.8532 10.0853 54.0985 9.68C54.3438 9.27467 54.4665 8.72533 54.4665 8.032C54.4665 7.33867 54.3438 6.78933 54.0985 6.384C53.8532 5.97867 53.4905 5.776 53.0105 5.776C52.5198 5.776 52.1518 5.97867 51.9065 6.384C51.6718 6.78933 51.5545 7.33867 51.5545 8.032C51.5545 8.72533 51.6718 9.27467 51.9065 9.68C52.1518 10.0853 52.5198 10.288 53.0105 10.288ZM58.4775 12V0.783999H60.7655V7.216H60.8295L63.3415 4.064H65.9015L63.1175 7.328L66.1095 12H63.5655L61.7735 8.912L60.7655 10.048V12H58.4775Z" fill="#003078"/>
+                                </svg>
+                            </span>
+                        </a>
+                        &nbsp;
+                        <a href="#" class="govuk-link">
+                            <span>
+                                <svg width="19" height="23" viewBox="0 -2 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.15981 19.4002V6.70247H0.415564V19.4002H4.15981ZM4.15981 2.20169C4.13751 1.06537 3.41499 0.200195 2.24124 0.200195C1.06718 0.200195 0.300049 1.06537 0.300049 2.20169C0.300049 3.31332 1.04487 4.20352 2.19633 4.20352H2.21863C3.41499 4.20352 4.15981 3.31332 4.15981 2.20169ZM10.2684 19.4002V12.1656C10.2684 11.7785 10.295 11.3913 10.4037 11.1153C10.7007 10.3413 11.3765 9.54009 12.5114 9.54009C13.9981 9.54009 14.9305 10.4245 14.9305 12.1656V19.4002H18.7V11.9721C18.7 7.9929 16.6735 6.14133 13.9703 6.14133C11.754 6.14133 10.7811 7.44011 10.2409 8.32411L10.268 6.62585H6.50498C6.55911 7.84144 6.50498 19.4002 6.50498 19.4002H10.2684Z" fill="#003078"/>
+                                </svg>
+                                &nbsp;
+                                <svg width="60" height="13" viewBox="0 0 60 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.232 12V1.568H2.584V10.016H6.712V12H0.232ZM8.32125 12V4.064H10.6733V12H8.32125ZM9.48925 2.896C9.09458 2.896 8.76925 2.784 8.51325 2.56C8.25725 2.32533 8.12925 2.02667 8.12925 1.664C8.12925 1.30133 8.25725 1.008 8.51325 0.783999C8.76925 0.559999 9.09458 0.447999 9.48925 0.447999C9.89458 0.447999 10.2199 0.559999 10.4653 0.783999C10.7213 1.008 10.8493 1.30133 10.8493 1.664C10.8493 2.02667 10.7213 2.32533 10.4653 2.56C10.2199 2.784 9.89458 2.896 9.48925 2.896ZM12.7431 12V4.064H14.6631L14.8231 5.072H14.8871C15.2285 4.752 15.6018 4.47467 16.0071 4.24C16.4125 3.99467 16.8871 3.872 17.4311 3.872C18.2951 3.872 18.9191 4.15467 19.3031 4.72C19.6978 5.28533 19.8951 6.06933 19.8951 7.072V12H17.5431V7.376C17.5431 6.8 17.4631 6.40533 17.3031 6.192C17.1538 5.97867 16.9085 5.872 16.5671 5.872C16.2685 5.872 16.0125 5.94133 15.7991 6.08C15.5858 6.208 15.3511 6.39467 15.0951 6.64V12H12.7431ZM21.8994 12V0.783999H24.1874V7.216H24.2514L26.7634 4.064H29.3234L26.5394 7.328L29.5314 12H26.9874L25.1954 8.912L24.1874 10.048V12H21.8994ZM33.7639 12.192C33.1985 12.192 32.6705 12.1013 32.1799 11.92C31.6892 11.728 31.2625 11.456 30.8999 11.104C30.5372 10.7413 30.2545 10.304 30.0519 9.792C29.8492 9.28 29.7479 8.69333 29.7479 8.032C29.7479 7.392 29.8545 6.816 30.0679 6.304C30.2812 5.78133 30.5585 5.344 30.8999 4.992C31.2519 4.62933 31.6519 4.352 32.0999 4.16C32.5479 3.968 33.0119 3.872 33.4919 3.872C34.0572 3.872 34.5479 3.968 34.9639 4.16C35.3905 4.352 35.7425 4.61867 36.0199 4.96C36.3079 5.30133 36.5212 5.70667 36.6599 6.176C36.7985 6.63467 36.8679 7.136 36.8679 7.68C36.8679 7.89333 36.8572 8.096 36.8359 8.288C36.8145 8.48 36.7932 8.624 36.7719 8.72H32.0199C32.1265 9.296 32.3612 9.72267 32.7239 10C33.0972 10.2667 33.5505 10.4 34.0839 10.4C34.6492 10.4 35.2199 10.224 35.7959 9.872L36.5799 11.296C36.1745 11.5733 35.7212 11.792 35.2199 11.952C34.7292 12.112 34.2439 12.192 33.7639 12.192ZM32.0039 7.168H34.8679C34.8679 6.72 34.7665 6.35733 34.5639 6.08C34.3612 5.80267 34.0199 5.664 33.5399 5.664C33.1665 5.664 32.8359 5.78667 32.5479 6.032C32.2705 6.27733 32.0892 6.656 32.0039 7.168ZM41.3251 12.192C40.8345 12.192 40.3865 12.096 39.9811 11.904C39.5865 11.712 39.2451 11.44 38.9571 11.088C38.6798 10.7253 38.4611 10.288 38.3011 9.776C38.1518 9.264 38.0771 8.68267 38.0771 8.032C38.0771 7.38133 38.1678 6.8 38.3491 6.288C38.5411 5.776 38.7865 5.344 39.0851 4.992C39.3945 4.62933 39.7465 4.352 40.1411 4.16C40.5465 3.968 40.9571 3.872 41.3731 3.872C41.8211 3.872 42.1891 3.94667 42.4771 4.096C42.7651 4.24533 43.0478 4.448 43.3251 4.704L43.2291 3.488V0.783999H45.5811V12H43.6611L43.5011 11.216H43.4371C43.1598 11.4933 42.8345 11.728 42.4611 11.92C42.0878 12.1013 41.7091 12.192 41.3251 12.192ZM41.9331 10.272C42.1891 10.272 42.4185 10.2187 42.6211 10.112C42.8345 10.0053 43.0371 9.81867 43.2291 9.552V6.304C43.0158 6.112 42.7971 5.97867 42.5731 5.904C42.3491 5.82933 42.1305 5.792 41.9171 5.792C41.5438 5.792 41.2131 5.97333 40.9251 6.336C40.6371 6.688 40.4931 7.24267 40.4931 8C40.4931 8.78933 40.6158 9.36533 40.8611 9.728C41.1171 10.0907 41.4745 10.272 41.9331 10.272ZM47.665 12V4.064H50.017V12H47.665ZM48.833 2.896C48.4383 2.896 48.113 2.784 47.857 2.56C47.601 2.32533 47.473 2.02667 47.473 1.664C47.473 1.30133 47.601 1.008 47.857 0.783999C48.113 0.559999 48.4383 0.447999 48.833 0.447999C49.2383 0.447999 49.5637 0.559999 49.809 0.783999C50.065 1.008 50.193 1.30133 50.193 1.664C50.193 2.02667 50.065 2.32533 49.809 2.56C49.5637 2.784 49.2383 2.896 48.833 2.896ZM52.0869 12V4.064H54.0069L54.1669 5.072H54.2309C54.5722 4.752 54.9455 4.47467 55.3509 4.24C55.7562 3.99467 56.2309 3.872 56.7749 3.872C57.6389 3.872 58.2629 4.15467 58.6469 4.72C59.0415 5.28533 59.2389 6.06933 59.2389 7.072V12H56.8869V7.376C56.8869 6.8 56.8069 6.40533 56.6469 6.192C56.4975 5.97867 56.2522 5.872 55.9109 5.872C55.6122 5.872 55.3562 5.94133 55.1429 6.08C54.9295 6.208 54.6949 6.39467 54.4389 6.64V12H52.0869Z" fill="#003078"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="govuk-grid-row" id="zivotne-situacie">
+                        {{ idskRelatedContent({
+                        customWidthClass : "full",
+                        heading: "Súvisiace témy",
+                        items: [
+                            {
+                            title: "Počet subjektov aktuálne",
+                            link: "#"
+                            },
+                            {
+                            title: "Odklad povinnej aktivácie",
+                            link: "#"
+                            }
+                        ]
+                    }) }}
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+{% block footer %}
+            {{ idskFooterExtended({
+                characterLength : 500,
+                showFeedback : "true",
+                upButtonEnabled : "true",
+                designAddress : "#",
+                logo: "footer-extended-logo.svg",
+                feedbackButtonAddress : "idsk.gov.sk",
+                firstColumn: {
+                title: "Navigácia v 2 stĺpcoch (2/3)",
+                leftItems: [
+                    {
+                    name:"Link small Regular 12/20",
+                    href:"#"
+                    },
+                    {
+                    name:"Link small Regular 13/20",
+                    href:"#"
+                    },
+                    {
+                    name:"Link small Regular 14/20",
+                    href:"#"
+                    },
+                    {
+                    name:"Link small Regular 15/20",
+                    href:"#"
+                    }
+                ],
+                rightItems: [
+                    {
+                    name:"Link small Regular 16/20",
+                    href:"#"
+                    },
+                    {
+                    name:"Link small Regular 17/20",
+                    href:"#"
+                    },
+                    {
+                    name:"Link small Regular 18/20",
+                    href:"#"
+                    },
+                    {
+                    name:"Link small Regular 19/20",
+                    href:"#"
+                    }
+                ]
+                },
+
+                secondColumn: {
+                title: "Navigácia v 1 stĺpci (1/3)",
+                items: [
+                    {
+                    name:"Link small Regular 20/20",
+                    href:"#"
+                    },
+                    {
+                    name:"Link small Regular 21/20",
+                    href:"#"
+                    },
+                    {
+                    name:"Link small Regular 22/20",
+                    href:"#"
+                    },
+                    {
+                    name:"Link small Regular 23/20",
+                    href:"#"
+                    }
+                ]
+                },
+
+                thirdColumn: {
+                title: "Dodatočná hyperlinková navigácia (2/3)",
+                leftItems: [
+                    {
+                    name:"Link small Regular 12/20",
+                    href:"#"
+                    },
+                    {
+                    name:"Link small Regular 13/20",
+                    href:"#"
+                    },
+                    {
+                    name:"Link small Regular 14/20",
+                    href:"#"
+                    },
+                    {
+                    name:"Link small Regular 15/20",
+                    href:"#"
+                    }
+                ],
+                rightItems: [
+                    {
+                    name:"Link small Regular 16/20",
+                    href:"#"
+                    },
+                    {
+                    name:"Link small Regular 17/20",
+                    href:"#"
+                    },
+                    {
+                    name:"Link small Regular 18/20",
+                    href:"#"
+                    },
+                    {
+                    name:"Link small Regular 19/20",
+                    href:"#"
+                    }
+                ]
+                },
+
+                fourthColumn: {
+                title: "Navigácia v 1 stĺpci (1/3)",
+                items: [
+                    {
+                    name:"Link small Regular 28/20",
+                    href:"#"
+                    },
+                    {
+                    name:"Link small Regular 29/20",
+                    href:"#"
+                    },
+                    {
+                    name:"Link small Regular 30/20",
+                    href:"#"
+                    },
+                    {
+                    name:"Link small Regular 31/20",
+                    href:"#"
+                    }
+                ]
+                },
+
+                subtitles: [
+                {
+                    item:"Pomoc",
+                    href:"#"
+                },
+                {
+                    item:"Cookies",
+                    href:"#"
+                },
+                {
+                    item:"Kontakty",
+                    href:"#"
+                },
+                {
+                    item:"Mapa Stránky",
+                    href:"#"
+                },
+                {
+                    item:"RSS",
+                    href:"#"
+                },
+                {
+                    item:"Vyhlásenie o prístupnosti",
+                    href:"#"
+                }
+                ],
+                dropdownItems: [
+                {
+                    text:"Gramatická chyba",
+                    value:"#"
+                },
+                {
+                    text:"chyba zobrazovania",
+                    value:"#"
+                },
+                {
+                    text:"chyba obsahu",
+                    value:"#"
+                }
+                ]
+            })
+            }}
+        {% endblock %}
+{% block scripts %}
+  <script>
+  showNews = function (e) {
+    var $contentButton = document.getElementById('idsk-article__content__button');
+    var $content = document.getElementById('idsk-article__content__news');
+
+    if ($content.classList.contains('idsk-article__content__news--visible')){
+        $content.classList.remove('idsk-article__content__news--visible');
+        $contentButton.innerText = $contentButton.dataset.closed;
+    } else {
+        $content.classList.add('idsk-article__content__news--visible');
+        $contentButton.innerText = $contentButton.dataset.opened;
+    }
+  }
+
+  scrollToNews = function (e) {
+        var $news = document.getElementById('idsk-article__content__button');
+        var $panelHeight = document.getElementsByClassName('idsk-in-page-navigation__link-panel')[0].offsetHeight
+
+        showNews();
+        setTimeout(function () {
+            window.scrollTo(0, $news.offsetTop - ($panelHeight * 4))
+        }, 10)
+  }
+
+  </script>
+{% endblock %}

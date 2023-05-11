@@ -1,0 +1,166 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "idsk-table/macro.njk" import idskTable %}
+{% from "idsk-table-filter/macro.njk" import idskTableFilter %}
+
+{% set pageName = "Tabuľky" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      { text: 'ID-SK frontend', href: '/' + legacyQuery },
+      { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <p class="govuk-width-container">
+    <span class="govuk-caption-xl">Webové komponenty</span>
+  <h1 class="govuk-heading-xl">{{ pageName }}</h1>
+  <p class="govuk-body-l">
+    Komponent tabuľka použite ak chcete používateľom prehľadne zobraziť údaje. V tabuľke môže používateľ porovnávať údaje po riadkoch a
+    stĺpcoch. Nepoužívajte tabuľku ako formu rozloženia obsahu na stránke. Na to slúži systém rozloženia na stránke tzv. grid.
+  </p>
+  <h2 class="govuk-heading-l">Z čoho sa skladá tabuľka?</h2>
+  <p class="govuk-body-l">Tabuľka sa skladá z:</p>
+  <ol class="idsk-list idsk-list--letters">
+    <li>nadpisu,</li>
+    <li>filtra,</li>
+    <li>tabuľky,</li>
+    <li>pätičky tabuľky.</li>
+  </ol>
+  <h2 class="govuk-heading-l">Nadpis tabuľky</h2>
+  <p class="govuk-body">
+    Tabuľka nemusí mať nutne nadpis. Ak použijete tabuľku v rámci obsahu, ktorý má vlastný nadpis a tabuľka je logickým doplnením údajov, vtedy nadpis nie je
+    žiaducí.
+  </p>
+  <p class="govuk-body">
+    Ak tabuľka stojí samostatne, dajte jej nadpis aby výstižne popisoval, aké údaje tabuľka zobrazuje. Použite nadpis, ktorý bude sémanticky korektný na
+    zobrazovanej stránke.
+  </p>
+  <p class="govuk-body">
+    Nadpis tabuľky môže obsahovať aj popis, ak je potrebné dovysvetliť alebo popísať zobrazované údaje či ozrejmiť metodiku zberu údajov a podobne.
+  </p>
+  <p class="govuk-body">
+    V nadpise hlavičky môžete použiť aj prepínače. Prepínačmi môžete zobrazovať 2 údajové sady v jednej tabuľke. Pri zobrazovaní 2 údajových sád myslite na
+    to, že údaje spravidla musia mať súvisiaci obsah. Nezobrazujte používateľovi v tabuľkovom komponente prostredníctvom prepínačov napríklad údaje o denných
+    teplotách a finančné údaje firmy. V takomto prípade údaje rozdeľte do samostatných tabuliek s jednoznačným označením.
+  </p>
+  <p class="govuk-body">
+    Ak bude potrebné popísať či vysvetliť údajové sady, môžete použiť nadpis s prepínačmi a popisom.
+  </p>
+
+  <h2 class="govuk-heading-l">Filter</h2>
+
+  <p class="govuk-body">
+    Filter umožní používateľom vybrať si údaje podľa ich potrieb. Filter nepoužívajte pri tabuľkách s malým množstvom údajov.
+  </p>
+  <p class="govuk-body">
+    Filter je vždy umiestnený nad tabuľkou a v prednastavenom stave je zabalený. Obsahuje polia, na základe ktorých je možné vykonávať filtrovacie operácie
+    nad tabuľkou.
+  </p>
+  <p class="govuk-body">
+    Použitie filtrovacích polí popíšte tak, aby im používatelia rozumeli. Ak je to potrebné, dajte používateľovi vedieť aký formát vstupných údajov do filtra
+    vyžadujete, napríklad formát rodného čísla.
+  </p>
+  <p class="govuk-body">
+    Po zvolení a výbratí filtrov sa zobrazia položky vybratých filtrov . Tieto položky je možné zrušiť všetky, respektívne zrušiť vybrané položky filtra.
+  </p>
+
+  <h3 class="govuk-heading-m">Jednoduchý filter</h3>
+  <p class="govuk-body">
+    Jednoduchý tabuľkový filter použite s tabuľkou, v ktorej sa nachádza väčšie množstvo údajov. Obsahuje tematicky nezačlenené polia, na základe ktorých sa
+    budú filtrovať údaje v tabuľke.
+  </p>
+  <h3 class="govuk-heading-m">Zložitý filter</h3>
+  <p class="govuk-body">
+    Zložitý tabuľkový filter použite s tabuľkou, v ktorej sa nachádza veľké množstvo údajov, napríklad ak sa jedná o zobrazovanie údajov z agendového
+    informačného systému. Polia, na základe ktorých sa budú filtrovať údaje v tabuľke sú tematicky začlenené podľa jednotlivých okruhov, napríklad filter pre
+    bydlisko(adresu) - môže obsahovať polia pre filtráciu kraja, okresu, obce a podobne.
+  </p>
+
+  <h2 class="govuk-heading-l">Tabuľka - varianty</h2>
+  <p class="govuk-body">
+    Tabuľka je prispôsobená objemu údajov, ktoré sa v nej budú prezentovať a podľa toho sa prispôsobí.
+  </p>
+  <p class="govuk-body">
+    Ak budete prezentovať malé množstvo údajov odporúčame použiť tabuľku bez zoraďovacích tlačidiel a bez vertikálneho a horizontálneho
+    posuvníka.
+  </p>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="example">
+        {% set exampleComponentHtml %}
+          {% include "../komponenty/examples/exampleTable-1.njk" %}
+        {% endset %}
+        {{ exampleComponentHtml | safe }}
+      </div>
+      <pre class="app-code">
+        <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+          {{- exampleComponentHtml | highlight("html") | safe -}}
+        </code>
+      </pre>
+    </div>
+  </div>
+
+  <p class="govuk-body">
+    V prípade, že budete zobrazovať taký počet stĺpcov, že to bude podľa veľkosti obrazovky potrebné, tabuľka bude obsahovať aj horizontálny
+    posuvník aby sa údaje zobrazovali korektne.
+  </p>
+  <p class="govuk-body">
+    Ak bude potrebné posúvať riadky v tabuľke, zobrazí sa vertikálny posuvník. Hlavička ostane pripnutá na vrchu. V takomto prípade
+    odporúčame zobraziť aj zoraďovacie tlačidlá pre každý stĺpec. Zoraďovanie umožní používateľovi zoradiť si údaje podľa jeho potrieb a preferencií. Zoraďovacie tlačidlá reprezentujú vizuálnu podobu, no neslúžia ako data handler.
+    Funkcionalitu je potrebné prispôsobiť konkrétnemu prípadu použitia.
+  </p>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="example">
+        {% set exampleComponentHtml %}
+          {% include "../komponenty/examples/exampleTable-2.njk" %}
+        {% endset %}
+        {{ exampleComponentHtml | safe }}
+      </div>
+      <pre class="app-code">
+        <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+          {{- exampleComponentHtml | highlight("html") | safe -}}
+        </code>
+      </pre>
+    </div>
+  </div>
+
+  <p class="govuk-body">
+    V prípade, že tabuľka obsahuje veľké množstvo údajov, zvážte koľko riadkov budete zobrazovať používateľom.
+  </p>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="example">
+        {% set exampleComponentHtml %}
+          {% include "../komponenty/examples/exampleTable-3.njk" %}
+        {% endset %}
+        {{ exampleComponentHtml | safe }}
+      </div>
+      <pre class="app-code">
+        <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+          {{- exampleComponentHtml | highlight("html") | safe -}}
+        </code>
+      </pre>
+    </div>
+  </div>
+
+
+  <h2 class="govuk-heading-l">Pätička tabuľky</h2>
+  <p class="govuk-body">
+    V pätičke tabuľky musí byť uvedený zdroj údajov. Zdroj uvádzajte vpravo dole pod tabuľkou.
+    Naľavo pod tabuľkou môžete použiť tlačidlá pre exportu údajov alebo tlačidlo pre tlač.
+  </p>
+
+  <h2 class="govuk-heading-m">Rozšírené príklady:</h2>
+  <ul class="govuk-list govuk-list--bullet">
+    <li><a class="govuk-link" href="/components/idsk-table" title="Rozšírené príklady pre tabuľku">Rozšírené príklady pre tabuľku</a></li>
+    <li><a class="govuk-link" href="/components/idsk-table-filter" title="Rozšírené príklady pre tabuľku">Rozšírené príklady pre tabuľkový filter</a></li>
+  </ul>
+{% endblock %}

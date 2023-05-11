@@ -1,0 +1,174 @@
+[
+    {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "description": "Id of the table filter."
+    },
+    {
+        "name": "formAction",
+        "type": "string",
+        "required": false,
+        "description": "Action called after submitting form"
+    },
+    {
+        "name": "openFilter",
+        "type": "string",
+        "required": false,
+        "description": "Change for another languages"
+    },
+    {
+        "name": "closeFilter",
+        "type": "string",
+        "required": false,
+        "description": "Change for another languages"
+    },
+    {
+        "name": "filterContentTitle",
+        "type": "string",
+        "required": false,
+        "description": "Change for another languages"
+    },
+    {
+        "name": "activeFiltersTitle",
+        "type": "string",
+        "required": false,
+        "description": "Change for another languages"
+    },
+    {
+        "name": "filterSelectedText",
+        "type": "string",
+        "required": false,
+        "description": "Change for another languages"
+    },
+    {
+        "name": "removeAllFilters",
+        "type": "string",
+        "required": false,
+        "description": "Change for another languages"
+    },
+    {
+        "name": "removeFilter",
+        "type": "string",
+        "required": false,
+        "description": "Change for another languages"
+    },
+    {
+        "name": "filters",
+        "type": "array",
+        "required": false,
+        "description": "Array of all filters",
+        "params": [
+            {
+                "name": "id",
+                "type": "string",
+                "required": true,
+                "description": "ID of the filter"
+            },
+            {
+                "name": "inputTitle",
+                "type": "string",
+                "required": true,
+                "description": "Text for filters label"
+            },
+            {
+                "name": "options",
+                "type": "array",
+                "required": false,
+                "description": "Options if input should be select",
+                "params": [
+                    {
+                        "name": "value",
+                        "type": "string",
+                        "required": true,
+                        "description": "Value of the option"
+                    },
+                    {
+                        "name": "inputTitle",
+                        "type": "string",
+                        "required": true,
+                        "description": "Text for the option"
+                    },
+                    {
+                        "name": "disabled",
+                        "type": "boolean",
+                        "required": false,
+                        "description": "True if option should be disabled"
+                    },
+                    {
+                        "name": "selected",
+                        "type": "boolean",
+                        "required": false,
+                        "description": "True if option should be selected by default"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "categories",
+        "type": "array",
+        "required": false,
+        "description": "Filter categories",
+        "params": [
+            {
+                "name": "title",
+                "type": "string",
+                "required": true,
+                "description": "Title of the category"
+            },
+            {
+                "name": "filters",
+                "type": "array",
+                "required": false,
+                "description": "Array of all filters",
+                "params": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "ID of the filter"
+                    },
+                    {
+                        "name": "inputTitle",
+                        "type": "string",
+                        "required": true,
+                        "description": "Text for filters label"
+                    },
+                    {
+                        "name": "options",
+                        "type": "array",
+                        "required": false,
+                        "description": "Options if input should be select",
+                        "params": [
+                            {
+                                "name": "value",
+                                "type": "string",
+                                "required": true,
+                                "description": "Value of the option"
+                            },
+                            {
+                                "name": "inputTitle",
+                                "type": "string",
+                                "required": true,
+                                "description": "Text for the option"
+                            },
+                            {
+                                "name": "disabled",
+                                "type": "boolean",
+                                "required": false,
+                                "description": "True if option should be disabled"
+                            },
+                            {
+                                "name": "selected",
+                                "type": "boolean",
+                                "required": false,
+                                "description": "True if option should be selected by default"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

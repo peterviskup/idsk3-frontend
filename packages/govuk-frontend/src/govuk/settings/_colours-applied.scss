@@ -13,6 +13,42 @@
 /// @type Colour
 /// @access public
 
+$idsk-brand-colour: govuk-colour("blue") !default;
+
+/// Focus colour
+///
+/// Used for outline (and background, where appropriate) when interactive
+/// elements (links, form controls) have keyboard focus.
+///
+/// @type Colour
+/// @access public
+
+$idsk-focus-colour: govuk-colour("yellow") !default;
+
+/// Focused text colour
+///
+/// Ensure that the contrast between the text and background colour passes
+/// WCAG Level AA contrast requirements.
+///
+/// @type Colour
+/// @access public
+
+$idsk-focus-text-colour: govuk-colour("black") !default;
+
+/// Error colour
+///
+/// Used to highlight error messages and form controls in an error state
+///
+/// @type Colour
+/// @access public
+
+$idsk-error-colour: govuk-colour("red") !default;
+
+/// Brand colour
+///
+/// @type Colour
+/// @access public
+
 $govuk-brand-colour: govuk-colour("blue") !default;
 
 /// Text colour

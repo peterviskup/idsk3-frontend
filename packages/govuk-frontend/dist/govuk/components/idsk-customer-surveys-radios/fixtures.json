@@ -1,0 +1,22 @@
+{
+    "component": "idsk-customer-surveys-radios",
+    "fixtures": [
+        {
+            "name": "basic",
+            "options": {
+                "feedbackOptions": [
+                    {
+                        "name": "Radio 1",
+                        "value": "radio-1"
+                    },
+                    {
+                        "name": "Radio 2",
+                        "value": "radio-2"
+                    }
+                ]
+            },
+            "hidden": false,
+            "html": "<div data-module=\"idsk-customer-surveys-radios\" class=\"idsk-customer-surveys-radios \">\n  <div class=\"govuk-radios\" data-id=\"\">\n    <fieldset class=\"govuk-fieldset\">\n      <legend></legend>\n<div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"radio-1\" name=\"\" type=\"radio\" value=\"radio-1\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"radio-1\">\n            Radio 1\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"radio-2\" name=\"\" type=\"radio\" value=\"radio-2\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"radio-2\">\n            Radio 2\n          </label>\n        </div>    </fieldset>\n    <br>\n  </div>\n</div>"
+        }
+    ]
+}

@@ -1,0 +1,68 @@
+<div data-module="idsk-feedback">
+  <div class="govuk-width-container">
+    <div class="idsk-feedback__content">
+      <h2 class="govuk-heading-l">
+        {{ params.mainTitle if params.mainTitle else 'Spätná väzba na službu Podávanie žiadosti o nenávratný príspevok na opravu bicykla' }}
+      </h2>
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h3 class="govuk-fieldset__heading idsk-customer-surveys--subtitle">
+            {{ params.feedbackQuestion if params.feedbackQuestion else 'Ako ste spokojný so službou, ktorú ste práve využili?' }}
+          </h3>
+        </legend>
+        <div class="govuk-radios">
+          {% for item in params.feedbackOptions -%}
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input idsk-feedback__radio-button {{ 'idsk-feedback-textarea--show' if item.textArea }}"
+                id="{{ item.value }}"
+                name="example" type="radio" value="{{ item.value }}">
+              <label class="govuk-label govuk-radios__label" for="{{ item.value }}">
+                {{ item.name }}
+              </label>
+            </div>
+          {%- endfor %}
+          <br>
+        </div>
+        <div id="idsk-feedback__question-bar" class="idsk-feedback--animation idsk-feedback--invisible">
+          <h3 class="govuk-heading-m">
+            {{ params.feedbackQuestionForTextArea if params.feedbackQuestionForTextArea else ' Ako by sme mohli túto službu zlepšiť?' }}
+          </h3>
+          <div>
+            <br>
+            {% from "../../components/character-count/macro.njk" import govukCharacterCount %}
+            {{ govukCharacterCount({
+              name: "feedback",
+              id: "feedback",
+              maxlength: params.characterLength,
+              label: {
+                text: ""
+              },
+              hint: {
+                text: ""
+              }
+            }) }}
+          </div>
+        </div>
+        <div class="idsk-feedback__buttons">
+          <button id="idsk-feedback__send-button" class="govuk-button">
+            Odoslať
+            <svg width="15" height="15" viewbox="0 0 15 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M9.4016 10L0 0H5.59826L15 10H9.4016Z" fill="white"/>
+              <path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M5.5984 20L15 10H9.40174L0 20H5.5984Z"
+                    fill="white"/>
+            </svg>
+          </button>
+          <button class="govuk-button govuk-button--secondary" onclick="location.href='/';">
+            Odísť
+          </button>
+        </div>
+      </fieldset>
+    </div>
+    <div class="idsk-feedback__thanks idsk-feedback--hidden">
+      <h2 class="govuk-heading-l">
+        {{ params.feedbackThankNote if params.feedbackThankNote else 'Ďakujeme za spätnú väzbu.' }}
+      </h2>
+    </div>
+  </div>
+</div>

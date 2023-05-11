@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <title>Interaktívna tabuľka</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="title" content="Interaktívna tabuľka">
+    <meta name="description" content="Príkladová tabuľka na demonštráciu koponentu - interaktívna mapa">
+
+    <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/public/assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/assets/images/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="/public/assets/images/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/public/assets/images/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" href="/public/assets/images/apple-touch-icon.png">
+
+    <!--[if !IE 8]><!-->
+        <link rel="stylesheet" href="/public/app.css">
+    <!--<![endif]-->
+    <!--[if IE 8]>
+        <link rel="stylesheet" href="/public/app-ie8.css">
+    <![endif]-->
+    <!--[if lt IE 9]>
+        <script src="/vendor/html5-shiv/html5shiv.js"></script>
+    <![endif]-->
+
+    <script src="/public/assets/js/d3.min.js"></script>
+
+    <style>
+        #content {
+            font-family: "Source Sans Pro", "Arial", sans-serif;
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table tr {
+            border-bottom: 1px solid #949494;
+        }
+
+        table tr th {
+            position: sticky;
+            position: -webkit-sticky;
+            top: 0;
+            background-color: #FFF;
+        }
+
+        .th-span {
+            display: inline-flex;
+            flex-direction: row;
+            -webkit-box-align: center;
+            align-items: center;
+        }
+
+        .arrowBtn:last-of-type {
+            padding-right: 20px;
+        }
+        .arrowBtn {
+            border: 1px solid transparent;
+            background: transparent;
+            cursor: pointer;
+            display: block;
+            height: 22px;
+            line-height: normal;
+            margin: 0;
+            margin-left: 4px;
+            outline: none;
+            overflow: visible;
+            padding: 0;
+            width: 10px;
+        }
+        .arrowBtn:after {
+            border-style: solid;
+            border-width: 7px 6px 0;
+            border-color: #000 transparent transparent;
+            content: "";
+            margin-left: 4px;
+            position: absolute;
+            top: calc(50% + 2px);
+        }
+        .arrowBtn:before {
+            border-style: solid;
+            border-width: 7px 6px 0;
+            border-color: #000 transparent transparent;
+            content: "";
+            margin-left: 4px;
+            position: absolute;
+            top: calc(50% - 8px);
+            transform: rotate(180deg);
+        }
+        .arrowBtn:focus {
+            border: 1px solid #000;
+        }
+
+        .des.arrowBtn:before,
+        .aes.arrowBtn:after {
+            display: none;
+        }
+
+        table tr th,
+        table tr td {
+            padding: 10px 10px;
+        }
+        table tr td,
+        table tr th {
+            text-align: left;
+        }
+
+        .sr-only {
+            position: absolute;
+            overflow: hidden;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            border: 0;
+            margin: -1px;
+            clip: rect(1px,1px,1px,1px);
+            -webkit-clip-path: inset(50%);
+            clip-path: inset(50%);
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <main id="content"></main>
+    <script>
+
+        var $currentData = "";
+        var $regionsMapping = {
+            1: "Košický",
+            2: "Nitriansky",
+            3: "Bratislavský",
+            4: "Trenčiansky",
+            5: "Žilinský",
+            6: "Banskobystrický",
+            7: "Trnavský",
+            8: "Prešovský"
+        }
+        var $columnsMapping = {
+            "region_id": "Kraj",
+            "dose1_count": "Δ 1. dávka	",
+            "dose2_count": "Δ 2. dávka	",
+            "dose1_sum": "Σ 1. dávka",
+            "dose2_sum": "Σ 2. dávka",
+            "published_on": "Deň"
+        }
+
+        var $params = new URL(location.href).searchParams;
+        var $indicator = $params.get("indicator");
+        var $indicatorExclude = $indicator === "dose1" ? "dose2" : ($indicator === "dose2" ? "dose1" : "")
+        var $timePeriod = $params.get("time");
+
+        var RenderCustomTable = function () {
+            var $columns = Object.keys($currentData[0]);
+            $columns.splice($columns.indexOf("id"), 1);
+            $columns.splice($columns.indexOf("updated_at"), 1);
+            $columns = $columns.filter(function($column){
+                if ($indicatorExclude) {
+                    return $column.indexOf($indicatorExclude) < 0
+                }
+                return $column
+            })
+
+            var $unsortedDesc = "Nezoradený stĺpec - použije vzostupné zoradenie."
+            var $sortedAesDesc = "Zoradený stĺpec (vzostupne) - Použiť zostupné zoradenie."
+            var $sortedDesDesc = "Zoradený stĺpec (zostupne) - použije vzostupné zoradenie."
+
+            var $sortAscending = true;
+            var $table = d3.select("#content").append("table");
+            var $headers = $table.append("thead").append("tr")
+                .selectAll("th")
+                .data($columns).enter()
+                .append("th")
+                .append("span")
+                .attr("class", "th-span")
+                .text(function (d) {
+                    return $columnsMapping[d];
+                })
+                .append("button")
+                .attr("data-th", function (d) {
+                    return d;
+                })
+                .attr("class", "arrowBtn")
+                .on("click", function (d) {
+                    var $target = d.target || d.srcElement
+                    var $key = $target.dataset.th
+                    var $btns = this.closest("thead").querySelectorAll(".arrowBtn")
+                    $btns.forEach(function($btn) {
+                      $btn.classList.remove("aes")
+                      $btn.classList.remove("des")
+                      $btn.querySelector(".sr-only").innerText = $unsortedDesc
+                    })
+                    if ($sortAscending) {
+                        $rows.sort(function(a, b) { return d3.ascending(b[$key], a[$key]); });
+                        $sortAscending = false;
+                        this.classList.add("aes");
+                        this.querySelector(".sr-only").innerText = $sortedAesDesc
+                    } else {
+                        $rows.sort(function(a, b) { return d3.descending(b[$key], a[$key]); });
+                        $sortAscending = true;
+                        this.classList.add("des");
+                        this.querySelector(".sr-only").innerText = $sortedDesDesc
+                    }
+                })
+                .append("span")
+                .attr("class", "sr-only")
+                .text($unsortedDesc)
+
+            var $rows = $table.append("tbody").selectAll("tr")
+                .data($currentData).enter()
+                .append("tr");
+
+            $rows.selectAll("td")
+                .data(function (d) {
+                    return $columns.map(function (k) {
+                        return { "value": d[k], "name": k};
+                    });
+                }).enter()
+                .append("td")
+                .attr("data-th", function (d) {
+                    return d.name;
+                })
+                .text(function (d) {
+                    return d.value;
+                });
+
+        }
+
+        var renderTable = function(){
+            d3.json("/public/assets/data/vaccinations-by-region.json").then(function (data) {
+                $currentData = data.page;
+                var $firstRecordPublishedOn = $currentData[0]["published_on"];
+                if (Number($timePeriod)) {
+                    var $cutoffDate = new Date($firstRecordPublishedOn);
+                    $cutoffDate.setDate($cutoffDate.getDate() - Number($timePeriod));
+                    $currentData = $currentData.filter(function(d) {
+                        var $date = new Date(d["published_on"])
+                        return $date > $cutoffDate;
+                    })
+                }
+                $currentData = $currentData.map(function ($d) {
+                    $d["region_id"] = $regionsMapping[$d["region_id"]]
+                    return $d
+                });
+                RenderCustomTable();
+            })
+        }
+
+        if (document.readyState === "complete" || document.readyState === "interactive") {
+            renderTable();
+        } else {
+            document.addEventListener("DOMContentLoaded", function() {
+                renderTable();
+            });
+        }
+    </script>
+
+</body>
+</html>

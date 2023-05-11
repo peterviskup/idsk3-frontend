@@ -1,0 +1,46 @@
+[
+    {
+        "name": "classes",
+        "type": "string",
+        "required": false,
+        "description": "Classes to add to the header container."
+    },
+    {
+        "name": "columns",
+        "type": "integer",
+        "required": true,
+        "description": "The number of columns into which the crossraod elements are to be divided. The component currently supports splitting elements into one or two columns."
+    },
+    {
+        "name": "hideTiles",
+        "type": "boolean",
+        "required": false,
+        "description": "Determines whether crossroad tiles should be hidden when count of tiles is higher than 5 in one column."
+    },
+    {
+        "name": "items",
+        "type": "array",
+        "required": true,
+        "description": "Array of items to be displayed in the crossroad columns",
+        "params": [
+            {
+                "name": "title",
+                "type": "string",
+                "required": true,
+                "description": "Title of the item"
+            },
+            {
+                "name": "subtitle",
+                "type": "string",
+                "required": false,
+                "description": "Subtitle of the item"
+            },
+            {
+                "name": "link",
+                "type": "string",
+                "required": true,
+                "description": "Link of the item"
+            }
+        ]
+    }
+]

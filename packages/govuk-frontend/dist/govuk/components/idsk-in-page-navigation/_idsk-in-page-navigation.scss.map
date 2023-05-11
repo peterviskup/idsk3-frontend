@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../src/govuk/components/idsk-in-page-navigation/_idsk-in-page-navigation.scss"],"names":[],"mappings":"AAAA,oBAAoB;AACpB,iBAAiB","file":"_idsk-in-page-navigation.scss","sourcesContent":["@import \"../../base\";\n@import \"./index\";\n"]}

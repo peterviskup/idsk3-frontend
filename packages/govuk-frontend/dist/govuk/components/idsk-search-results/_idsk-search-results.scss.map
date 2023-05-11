@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../src/govuk/components/idsk-search-results/_idsk-search-results.scss"],"names":[],"mappings":"AAAA,oBAAoB;AACpB,iBAAiB","file":"_idsk-search-results.scss","sourcesContent":["@import \"../../base\";\n@import \"./index\";\n"]}

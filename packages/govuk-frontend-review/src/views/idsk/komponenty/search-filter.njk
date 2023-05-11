@@ -1,0 +1,335 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "idsk-search-results-filter/macro.njk" import idskSearchResultsFilter %}
+{% set pageName = "Filtre pre filtrovanie výsledkov vyhľadavania / kontaktov" %}
+{% block styles %}
+  <style>
+    @media (min-width: 48.0525em) {
+      .idsk-search-filter .govuk-grid-column-one-half img {
+        width: 75%;
+      }
+    }
+  </style>
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      { text: 'ID-SK frontend', href: '/' + legacyQuery },
+      { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-width-container idsk-search-filter">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">{{ pageName }}</h1>
+    <p class="govuk-body">
+      Filtrovací komponent bol navrhnutý špecificky pre použitie na podstránke s výsledkami všeobecného vyhľadávania
+      alebo pre vyhľadávanie konkrétneho obsahu (napr. kontaktov, služieb a pod.).
+    </p>
+    <p class="govuk-body">
+      Pri výsledkoch vyhľadávania sa filtre používateľovi zobrazia po tom, ako na vašej webovej stránke využije
+      vyhľadávacie pole na <a class="govuk-link" href="../vzory/homepage" title="hlavnej stránke">hlavnej stránke</a>
+      vášho portálu alebo jeho zmenšenú verziu v <a class="govuk-link" href="../komponenty/hlavicka-webove-sidla"
+                                                    title="hlavičke">hlavičke</a>.
+    </p>
+    <p class="govuk-body-l">Základné typy filtrov zahŕňajú:
+    </p>
+    <ul class="govuk-body govuk-list-bullet">
+      <li>
+        filter s možnosťou zvolenia jediného kritéria,
+      </li>
+      <li>
+        filter s možnosťou zvolenia viacerých kritérií,
+      </li>
+      <li>
+        filtrovanie podľa dátumu.
+      </li>
+    </ul>
+    <p class="govuk-body">
+      Preddefinované druhy filtrov môžete kombinovať. Obsah do filtrov by mal v ideálnom prípade korelovať s potrebami
+      používateľov vášho portálu. Nasmerovať vás pri tvorení tematickej hierarchie môžu napríklad výsledky prieskumov či
+      zbierania spätnej väzby, ktoré implikujú, že používatelia na vašom portáli opakovane hľadajú tú istú množinu vecí
+      (informácií, služieb, kontaktov atď.). Vyhnite sa však tomu, aby ste filtre štrukturovali výhradne podľa internej
+      štruktúry alebo biznis architektúry vašej organizácie.
+    </p>
+    <p class="govuk-body">
+      Môžete ho taktiež použiť pri obsahu, ktorý vzájomne súvisí a je možné ho usporiadať do časového radu. Dobrý
+      príkladom sú procesy. Niekde začínajú, majú trvanie a niekde končia. Napríklad legislatívny proces.
+    </p>
+    <h2 class="govuk-heading-l">Filter s možnosťou zvolenia jediného kritéria</h2>
+    <p class="govuk-body">
+      Ak chcete dať používateľom na výber výhradne jednu možnosť, použite <a class="govuk-link" href="../komponenty/formularove-prvky#form-radio-buttons" title="prepínače">prepínače</a> - tie
+      zabezpečujú exkluzivity obsahu. Počet možností v rámci jedného filtra by nemal prekročiť 10 možností. V prípade,
+      že je potrebné sprostredkovať aj viac ako 10 možností, statické prepínače v takom prípade nahradí rozbaľovacie
+      okno. Pre lepšiu prehľadnosť môžete použiť aj dva filtre s prepínačmi, pričom jeden je podmienený druhému. To
+      znamená, že až po výbere jednej možnosti z prvého filtra sú k dispozícii na výber možnosti z druhého filtra.
+    </p>
+    <p class="govuk-body">
+      Napríklad pri nasledujúcom vzore sú témy nadradené podtémam. Podtémy zoskupujú <strong>konkrétny obsah</strong> na
+      vášhom portáli, ktorý spolu tematicky súvisí. Témy musia byť zadefinované širšie tak, aby intuitívne a
+      zrozumiteľne zoskupili podtémy, ktoré spolu súvisia. Filtre “téma” a “podtéma” by mali odrážať hierarchiu a
+      štrukturovanie obsahu vášho portálu.
+    </p>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <div class="example example-error">
+          {% set exampleComponentHtml %}
+            {{ idskSearchResultsFilter({
+              "filters": [
+                {
+                  "name": "Téma",
+                  "group": 1,
+                  "id": "tema",
+                  "isRadio": true,
+                  "searchInputTitle": "Filter podľa témy",
+                  "searchInputId": "idsk-search-input__topic",
+                  "radios": [
+                  {
+                    "name": "Eurofondy",
+                    "value": "Eurofondy"
+                  },
+                  {
+                    "name": "Informatizácia",
+                    "value": "Informatizácia"
+                  },
+                  {
+                    "name": "Regionálny rozvoj a komunity",
+                    "value": "Regionálny-rozvoj-a-komunity"
+                  },
+                  {
+                    "name": "Investície",
+                    "value": "Investície"
+                  },
+                  {
+                    "name": "Inovácie",
+                    "value": "Inovácie"
+                  }
+                ]
+                },
+                {
+                  "name": "Podtéma",
+                  "group": 2,
+                  "id": "podtema",
+                  "isRadio": true,
+                  "isSubtopic": true,
+                  "searchInputTitle": "Filter podľa podtémy",
+                  "searchInputId": "idsk-search-input__subtopic",
+                  "radios": [
+                  {
+                    "name": "Výzvy pre rozvoj regiónov",
+                    "value": "Výzvy-pre-rozvoj-regiónov"
+                  },
+                  {
+                    "name": "WiFi 4u",
+                    "value": "WiFi-4u"
+                  },
+                  {
+                    "name": "Dotácie na obecné školy",
+                    "value": "Dotácie-na-obecné-školy"
+                  },
+                  {
+                    "name": "Agroturistika",
+                    "value": "Agroturistika"
+                  },
+                  {
+                    "name": "Podpora miestnej komunity",
+                    "value": "Podpora-miestnej-komunity"
+                  },
+                  {
+                    "name": "Výzvy pre rozvoj regiónov2",
+                    "value": "Výzvy-pre-rozvoj-regiónov2"
+                  },
+                  {
+                    "name": "WiFi 4u2",
+                    "value": "WiFi-4u2"
+                  },
+                  {
+                    "name": "Dotácie na obecné školy2",
+                    "value": "Dotácie-na-obecné-školy2"
+                  },
+                  {
+                    "name": "Agroturistika2",
+                    "value": "Agroturistika2"
+                  },
+                  {
+                    "name": "Dotácie na obecné školy3",
+                    "value": "Dotácie-na-obecné-školy3"
+                  },
+                  {
+                    "name": "Agroturistika3",
+                    "value": "Agroturistika3"
+                  }
+                ]
+                }
+              ]
+            }) }}
+          {% endset %}
+          {{ exampleComponentHtml | safe }}
+        </div>
+        <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+      </div>
+    </div>
+    <p class="govuk-body">
+      Pri definovaní tém sa riaďte príslovím “Menej je niekedy viac.” Usilujte sa ich teda vytvárať a udržiavať čo
+      najmenšie množstvo tém. S o niečo väčšou voľnosťou, avšak stále triezvo, pristupujte k vytváraniu podtém. So
+      zvyšujúcim počtom tém/podtém totiž môže stúpať pravdepodobnosť, že používateľ nenájde to, čo prišiel na váš portál
+      nájsť.
+    </p>
+    <h2 class="govuk-heading-l">Filter s možnosťou zvolenia viacerých kritérií</h2>
+    <p class="govuk-body">
+      Ak chcete dať používateľom na výber viacero možností, použite začiarkavacie pole (angl. checkbox). Súčasťou
+      multikriteriálneho filtrovania je mini vyhľadávacie pole. Používateľovi môže pomôcť urýchliť dohľadanie želaných
+      kritérií a zároveň môže kritériá dohľadať manuálnym posúvaním.
+    </p>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <div class="example example-error">
+          {% set exampleComponentHtml %}
+            {{ idskSearchResultsFilter({
+              "filters": [
+                {
+                  "name": "Typ obsahu",
+                  "group": 3,
+                  "id": "obsah",
+                  "isCheckBox": true,
+                  "filterClass": "idsk-search-results__content-type-filter",
+                  "searchInputId": "idsk-search-input__content-type",
+                  "searchInputTitle": "Filter podľa typu obsahu",
+                  "checkBoxItems": [
+                  {
+                    "value": "Rozvoj-regiónov",
+                    "text": "Rozvoj regiónov",
+                    "id": "rozvoj"
+                  },
+                  {
+                    "value": "Novinky-a-komunikačné-vyhlásenia",
+                    "text": "Novinky a komunikačné vyhlásenia",
+                    "id": "novinky"
+                  },
+                  {
+                    "value": "Transparentnosť-a-sloboda-prístupu-k-informáciám",
+                    "text": "Transparentnosť a sloboda prístupu k informáciám",
+                    "id": "transparentnost"
+                  },
+                  {
+                    "value": "Legislatíva",
+                    "text": "Legislatíva",
+                    "id": "legislativa"
+                  },
+                  {
+                    "value": "Štatistické-údaje",
+                    "text": "Štatistické údaje",
+                    "id": "statistika"
+                  },
+                  {
+                    "value": "Rodová-rovnosť-a-postavenia-žien-v-pracovom-prostredí",
+                    "text": "Rodová rovnosť a postavenia žien v pracovom prostredí",
+                    "id": "rodova"
+                  },
+                  {
+                    "value": "Rozvoj-regiónov",
+                    "text": "Rozvoj regiónov",
+                    "id": "rozvoj2"
+                  },
+                  {
+                    "value": "Novinky-a-komunikačné-vyhlásenia",
+                    "text": "Novinky a komunikačné vyhlásenia",
+                    "id": "novinky2"
+                  },
+                  {
+                    "value": "Transparentnosť-a-sloboda-prístupu-k-informáciám",
+                    "text": "Transparentnosť a sloboda prístupu k informáciám",
+                    "id": "transparentnost2"
+                  },
+                  {
+                    "value": "Legislatíva",
+                    "text": "Legislatíva",
+                    "id": "legislativa2"
+                  },
+                  {
+                    "value": "Štatistické-údaje",
+                    "text": "Štatistické údaje",
+                    "id": "statistika2"
+                  },
+                  {
+                    "value": "Rodová-ro2vnosť-a-postavenia-žien-v-pracovom-prostredí",
+                    "text": "Rodová rovnosť a postavenia žien v pracovom prostredí",
+                    "id": "rodova2"
+                  }
+                ]
+                }
+              ]
+            }) }}
+          {% endset %}
+          {{ exampleComponentHtml | safe }}
+        </div>
+        <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+      </div>
+    </div>
+    <h2 class="govuk-heading-l">Filtrovanie podľa dátumu</h2>
+    <p class="govuk-body">
+      Najmä pri výsledkoch vyhľadávania by používateľ mal dostať možnosť filtrovať zobrazené výsledky aj podľa dátumu.
+      Vypublikovaný obsah so sebou vždy nesie dátum vypublikovania resp. poslednej aktualizácie. Používateľ zadaním
+      časového intervalu vie zobraziť len výsledky po, pred alebo medzi konkrétnym časom. V nápovede dajte používateľovi
+      jasne vedieť, aký formát dátumu má použiť pre korektné filtrovanie.
+    </p>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <div class="example example-error">
+          {% set exampleComponentHtml %}
+            {{ idskSearchResultsFilter({
+              "filters": [
+                {
+                  "name": "Dátum aktualizácie",
+                  "group": 3,
+                  "idFrom": "datum-od",
+                  "idTo": "datum-do",
+                  "isTextarea": true
+                }
+              ]
+            }) }}
+          {% endset %}
+          {{ exampleComponentHtml | safe }}
+        </div>
+        <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+      </div>
+    </div>
+    <h2 class="govuk-heading-l">Mobilné zobrazenie</h2>
+    <p class="govuk-body">
+      Najmä pri výsledkoch vyhľadávania by používateľ mal dostať možnosť filtrovať zobrazené výsledky aj podľa dátumu.
+      Vypublikovaný obsah so sebou vždy nesie dátum vypublikovania resp. poslednej aktualizácie. Používateľ zadaním
+      časového intervalu vie zobraziť len výsledky po, pred alebo medzi konkrétnym časom. V nápovede dajte používateľovi
+      jasne vedieť, aký formát dátumu má použiť pre korektné filtrovanie.
+    </p>
+    <div class="govuk-grid-column-one-half">
+      <img src="/public/assets/images/examples/searchResultsMobile1.png" class="idsk-search-results__image" alt="search-results-mobile-img" style="width:100%;">
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <img src="/public/assets/images/examples/searchResultsMobile2.png" class="idsk-search-results__image" alt="search-results-mobile-img" style="width:100%;">
+    </div>
+    <p class="govuk-body govuk-!-margin-top-5">
+      Mobilné zobrazenie filtrov má rovnakú formu, ako mobilné zobrazenie menu. Počet zobrazených výsledkov je súčasťou
+      konverzného tlačidla, ktoré používateľa vráti na podstránku s výsledkami vyhľadávania. Vrátiť sa môže používateľ
+      aj prostredníctvom hyperlinkového odkazu “Späť na výsledky” vpravo hore. Používatelia majú taktiež možnosť vypnúť
+      všetky aktivované filtre naraz prostredníctvom textového tlačidla “Vypnúť všetky filtre”.
+    </p>
+    <h2 class="govuk-heading-l">Filtrovanie kontaktov</h2>
+    <p class="govuk-body">
+      Pre použitie komponentu k vyhľadaniu/filtrovaniu kontaktov môžete zameniť názov polí téma/podtéma (napr. za
+      sekcie/oddelenia/odbory), prípadne zaradíte možnosť filtrovať podľa agendy. Customizácia je na vás, mala by
+      vyhovovať používateľovi a pomôcť mu intuitívne nájsť kontakt, ktorý hľadá
+    </p>
+  </div>
+{% endblock %}

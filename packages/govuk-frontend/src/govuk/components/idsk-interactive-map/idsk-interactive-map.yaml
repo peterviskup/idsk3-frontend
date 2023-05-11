@@ -1,0 +1,103 @@
+params:
+  - name: classes
+    type: string
+    required: false
+    description: Classes to add to the interactive map.
+  - name: uniqueId
+    type: string
+    required: true
+    description: unique id for komponent
+  - name: title
+    type: string
+    required: true
+    description: title of map component
+  - name: radioControlsName
+    type: string
+    required: true
+    description: unique name of radio group
+  - name: checkedTable
+    type: boolean
+    required: false
+    description: if true, radio for table will be checked
+  - name: indicatorOptions
+    type: object
+    required: false
+    description: indicator options
+    params:
+      - name: value
+        type: string
+        required: true
+        description: value for indicator radio
+      - name: title
+        type: string
+        required: true
+        description: title for indicator radio
+  - name: mapIframeSrc
+    type: string
+    required: true
+    description: map iframe source
+  - name: mapIframeTitle
+    type: string
+    required: true
+    description: title for map iframe
+  - name: tableIframeSrc
+    type: string
+    required: true
+    description: table iframe source
+  - name: tableIframeTitle
+    type: string
+    required: true
+    description: title for table iframe
+  - name: dataDownload
+    type: string
+    required: false
+    description: data download
+    params:
+      - name: text
+        type: string
+        required: true
+        description: title for data to download
+      - name: link
+        type: string
+        required: true
+        description: link to data for download
+  - name: dataSource
+    type: string
+    required: false
+    description: data source
+
+examples:
+  - name: ' - ukážka mapového komponentu 1'
+    data:
+      uniqueId: map-id
+      title: Počet zaočkovaných ľudí (1. aj 2. dávkou)
+      mapIframeSrc: '/vzory/interactive-map-sample'
+      mapIframeTitle: Príkladová mapa na demonštráciu koponentu - interaktívna mapa
+      tableIframeSrc: '/vzory/interactive-table-sample'
+      tableIframeTitle: Príkladová tabuľka na demonštráciu koponentu - interaktívna mapa
+      radioControlsName: interactive-radios-a
+      dataSource: NCZI
+      dataDownload:
+        text: Stiahnuť údaje (CSV, 42 kb)
+        link: '/public/assets/data/korona.gov.sk.csv'
+
+  - name: ' - ukážka mapového komponentu 2'
+    data:
+      uniqueId: map-id-1
+      title: Koronavírus na Slovensku
+      mapIframeSrc: '/vzory/interactive-map-sample'
+      mapIframeTitle: 'Príkladová mapa na demonštráciu koponentu - interaktívna mapa'
+      tableIframeSrc: '/vzory/interactive-table-sample'
+      tableIframeTitle: 'Príkladová tabuľka na demonštráciu koponentu - interaktívna mapa'
+      radioControlsName: interactive-radios-b
+      indicatorOptions:
+        - title: Celkový stav
+          value: ''
+        - title: Počet zaočkovaných 1. dávkou
+          value: dose1
+        - title: Počet zaočkovaných 2. dávkou
+          value: dose2
+      dataSource: NCZI
+      dataDownload:
+        text: Stiahnuť údaje (CSV, 42 kb)
+        link: '/public/assets/data/korona.gov.sk.csv'

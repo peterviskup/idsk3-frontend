@@ -1,0 +1,51 @@
+{% from "idsk-footer-extended/macro.njk" import idskFooterExtended %}
+{{ idskFooterExtended({
+    characterLength : 350,
+    upButtonEnabled : false,
+    logo: "footer-extended-logo.svg",
+    subtitles: [
+    {
+      item:"Pomoc",
+      href:"#"},
+    {
+      item:"Cookies",
+      href:"#"
+    },
+    {
+      item:"Kontakty",
+      href:"#"
+    },
+    {
+      item:"Mapa Stránky",
+      href:"#"
+    },
+    {
+      item:"RSS",
+      href:"#"
+    },
+    {
+      item:"Vyhlásenie o prístupnosti",
+      href:"#"
+    }
+  ],
+    dropdownItems: [
+    {
+      value: "published",
+      text: "Validačná chyba"
+    },
+    {
+      value: "updated",
+      text: "Gramatická chyba",
+      selected: true
+    },
+    {
+      value: "views",
+      text: "Chyba responzivity"
+    },
+    {
+      value: "comments",
+      text: "Chyba iná"
+    }
+    ]
+  })
+}}

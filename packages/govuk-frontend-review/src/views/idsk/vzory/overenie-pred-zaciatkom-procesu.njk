@@ -1,0 +1,100 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Overenie pred začiatkom procesu" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Vzory</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Tento návod vysvetľuje, ako pomocou série otázok informovať používateľov, či je pre nich vaša služba vhodná.</p>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-s">Obsah:</h2>
+            <ul class="govuk-list">
+                <li><a class="govuk-link" href="#ukazka" title="Ukážka">Ukážka</a></li>
+                <li><a class="govuk-link" href="#preco-pouzit" title="Prečo použiť tento vzor">Prečo použiť tento vzor</a></li>
+                <li><a class="govuk-link" href="#ako-pouzit" title="Ako použiť tento vzor">Ako použiť tento vzor</a></li>
+                <li><a class="govuk-link" href="#pytajte-sa" title="Pýtajte sa jednoduché otázky">Pýtajte sa jednoduché otázky</a></li>
+                <li><a class="govuk-link" href="#prezentovanie" title="Prezentovanie výsledkov">Prezentovanie výsledkov</a></li>
+            </ul>
+
+            <h3 class="govuk-heading-m" id="ukazka">Ukážka</h3>
+            <img src="/public/assets/images/patterns/check1.png" alt="check">
+
+
+            <h3 class="govuk-heading-m" id="preco-pouzit">Prečo použiť tento vzor</h3>
+            <p class="govuk-body">Použitím tohto vzoru môžete pomôcť používateľom spoznať, či je vaša služba pre nich vhodná, potrebná alebo či majú potrebné oprávnenia na jej použitie. Vďaka tomu používatelia nebudú strácať čas tým, že sa budú snažiť použiť vašu službu pokiaľ na ňu nemajú oprávnenie alebo ju nepotrebujú.
+            </p>
+            <p class="govuk-body">
+                Použitie takéhoto overenia môže znížiť vaše prevádzkové náklady tým, že zredukuje čas a úsilie vášho tímu zákazníckej podpory pri objasňovaní základných otázok použitia služby.
+            </p>
+
+            <p class="govuk-body">Často kladenými otázkami používateľov sú napríklad
+            </p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Som vhodným žiadateľom?</li>
+                <li>Koľko zaplatím za použitie služby?</li>
+                <li>Koľko peňazí dostanem?</li>
+                <li>Ako dlho bude trvať, kým niečo dostanem?</li>
+            </ul>
+
+            <p class="govuk-body">
+                Som vhodným žiadateľom?
+                Koľko zaplatím za použitie služby?
+                Koľko peňazí dostanem?
+                Ako dlho bude trvať, kým niečo dostanem?
+            </p>
+
+            <h3 class="govuk-heading-m" id="ako-pouzit">Ako použiť tento vzor</h3>
+            <p class="govuk-body">Pri použití tohto vzoru potrebujete: </p>
+            <ul class="govuk-list govuk-list--number">
+                <li>Zistiť, čo používateľ potrebuje vedieť.</li>
+                <li>Opýtať sa sériu otázok.</li>
+                <li>Prezentovať používateľovi stránku s výsledkom.</li>
+            </ul>
+            <p class="govuk-body">Ak existujú všeobecné pravidlá o tom, či služba môže alebo nemôže byť použitá (napríklad má vekový limit alebo je presne stanovený hraničný termín), uveďte túto informáciu na úvodnej stránke.</p>
+
+
+            <h3 class="govuk-heading-m" id="pytajte-sa">Pýtajte sa jednoduché otázky</h3>
+
+            <p class="govuk-body">
+                Ak máte problém s formulovaním jednoduchých otázok, pretože pravidlá sú príliš komplikované, poraďte sa s obsahovým alebo komunikačným tímom vo vašej organizácii. Pomôžu vám otázky zjednodušiť.
+            </p>
+            <p class="govuk-body">
+                Jednoduché otázky budete schopní vytvoriť iba ak je jasný samotný proces.
+            </p>
+
+            <h3 class="govuk-heading-m" id="prezentovanie">Prezentovanie výsledkov</h3>
+            <p class="govuk-body">Vaša stránka s výsledkami musí používateľov informovať:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>či musia použiť vašu službu,</li>
+                <li>či sú pre službu vhodnými žiadateľmi,</li>
+                <li>koľko zaplatia za použitie služby,</li>
+                <li>koľko peňazí dostanú za použitie služby,</li>
+                <li>ako dlho bude celý proces trvať.</li>
+            </ul>
+
+            <p class="govuk-body">Ak používateľ nie je vhodným žiadateľom, vysvetlite mu prečo. </p>
+            <p class="govuk-body">Tu je príklad stránky s výsledkom:</p>
+
+            <img src="/public/assets/images/patterns/check2.png" alt="check">
+
+        </div>
+    </div>
+
+  </div>
+{% endblock %}

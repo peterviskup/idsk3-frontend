@@ -1,0 +1,360 @@
+{% from "../idsk-button/macro.njk" import idskButton -%}
+
+{# SLOVAK TRICOLOR  -#}
+{% set tricolor %}
+  <div class="idsk-header-web__tricolor"></div>
+{% endset -%}
+
+{# BRAND BAR -#}
+{% set brandBar %}
+{% set brand = params.brand %}
+{% set currentLanguage = "" %}
+{% for language in brand.languages %}
+  {% if language.selected %}
+    {% set currentLanguage = language %}
+  {% endif %}
+{% endfor -%}
+
+{# ARIA LABEL TEXTS -#}
+{% set infoAboutPage = "Zobraziť informácie o stránke" %}
+{% set hideInfoAboutPage = "Skryť informácie o stránke" %}
+{% set languageMenu = "Rozbaliť jazykové menu" %}
+{% set hideLanguageMenu = "Skryť jazykové menu" %}
+{% set showMenu = "Rozbaliť menu" %}
+{% set closeMenu = "Zavrieť menu" %}
+{% set showLogin = "Rozbaliť menu prihlásenia do Ministerstva investícií" %}
+{% set hideLogin = "Skryť menu prihlásenia do Ministerstva investícií" %}
+{% set innerNavigation = "Vnútorná navigácia" %}
+{% set closeBanner = "Zavrieť banner" %}
+
+
+<div class="idsk-header-web__brand {{ 'idsk-header-web__brand--light' if brand.lightBackground }}">
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        {% if brand.gestor %}
+          <div class="idsk-header-web__brand-gestor">
+            {% if brand.gestor.nationalEmblem %}
+              <div class="idsk-header-web__flag"></div>
+            {% endif %}
+            <span class="govuk-body-s idsk-header-web__brand-gestor-text">
+              Oficiálna stránka
+              {% if brand.gestor.gestorLink %}
+                <a class="govuk-link" href="{{ brand.gestor.gestorLink.hrefLink }}" title="{{ brand.gestor.gestorLink.text if brand.gestor.gestorLink.text else 'verejná správa SR' }}">
+                  {{ brand.gestor.gestorLink.text if brand.gestor.gestorLink.text else 'verejnej správy SR' }}
+                </a>
+              {% else %}
+                <button class="idsk-header-web__brand-gestor-button" aria-label="{{ infoAboutPage }}" aria-expanded="false" data-text-for-hide="{{ hideInfoAboutPage }}" data-text-for-show="{{ infoAboutPage }}">
+                  verejnej správy SR
+                  <span class="idsk-header-web__link-arrow"></span>
+                </button>
+              {% endif %}
+            </span>
+            {# MOBILE VERSION GESTOR LINK/BUTTON -#}
+            <span class="govuk-body-s idsk-header-web__brand-gestor-text--mobile">
+              SK
+              {% if brand.gestor.gestorLink %}
+                <a class="govuk-link" href="{{ brand.gestor.gestorLink.hrefLink }}" title="{{ brand.gestor.gestorLink.text if brand.gestor.gestorLink.mobileText else 'e-Gov' }}">
+                  {{ brand.gestor.gestorLink.mobileText if brand.gestor.gestorLink.mobileText else 'e-gov' }}
+                </a>
+              {% else %}
+                <button class="idsk-header-web__brand-gestor-button" aria-label="{{ infoAboutPage }}" aria-expanded="false" data-text-for-hide="{{ hideInfoAboutPage }}" data-text-for-show="{{ infoAboutPage }}">
+                  e-gov
+                  <span class="idsk-header-web__link-arrow"></span>
+                </button>
+              {% endif %}
+            </span>
+
+            <div class="idsk-header-web__brand-dropdown">
+              <div class="govuk-width-container">
+                <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-one-half">
+                    <h3 class="govuk-body-s">
+                      Doména gov.sk je oficálna
+                    </h3>
+                    <p class="govuk-body-s">
+                      Toto je oficiálna webová stránka orgánu verejnej moci Slovenskej republiky. Oficiálne stránky využívajú najmä doménu gov.sk. <a class="govuk-link" href="https://www.slovensko.sk/sk/agendy/agenda/_organy-verejnej-moci" target="_blank" title="odkazy na webové sídla orgánov verejnej moci">Odkazy na jednotlivé webové sídla orgánov verejnej moci nájdete na tomto odkaze</a>.
+                    </p>
+                  </div>
+                  <div class="govuk-grid-column-one-half">
+                    <h3 class="govuk-body-s">
+                      Táto stránka je zabezpečená
+                    </h3>
+                    <p class="govuk-body-s">
+                      Buďte pozorní a vždy sa uistite, že zdieľate informácie iba cez zabezpečenú webovú stránku verejnej správy SR. Zabezpečená stránka vždy začína https:// pred názvom domény webového sídla.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="idsk-header-web__brand-spacer"></div>
+        {% endif -%}
+        {% if brand.languages %}
+          <div class="idsk-header-web__brand-language">
+            <button class="idsk-header-web__brand-language-button" aria-label="{{ languageMenu }}" aria-expanded="false" data-text-for-hide="{{ hideLanguageMenu }}" data-text-for-show="{{ languageMenu }}">
+              {{ currentLanguage.text if currentLanguage else 'Slovenčina'}}
+              <span class="idsk-header-web__link-arrow"></span>
+            </button>
+            <ul class="idsk-header-web__brand-language-list">
+              {% for language in brand.languages | sort(attribute='text') %}
+                <li class="idsk-header-web__brand-language-list-item">
+                  <a class="govuk-link idsk-header-web__brand-language-list-item-link {{ 'idsk-header-web__brand-language-list-item-link--selected' if language.selected }}"
+                    title="{{ language.text }}"
+                    href="{{ language.link }}"
+                    lang="{{language.language}}"
+                    >
+                    {{ language.text }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endset -%}
+
+{# MAIN SECTION -#}
+{% set main = params.main %}
+{% set mainButtons %}
+<div class="idsk-header-web__main--buttons">
+  {% if main.loginButton %}
+    <div class="idsk-header-web__main--login {{ 'idsk-header-web__main--login--loggedin' if main.loginButton.loggedIn }}">
+      {{ idskButton({
+        "text": main.loginButton.text if main.loginButton.text else 'Prihlásiť sa',
+        "type": "button",
+        "classes": "idsk-header-web__main--login-loginbtn"
+      }) }}
+      <div class="idsk-header-web__main--login-action">
+        <img class="idsk-header-web__main--login-action-profile-img"
+          src="{{ params.assetsPath | default('/assets/images/header-web/') + (main.loginButton.loggedIn.profileImg if main.loginButton.loggedIn.profileImg else 'profile.svg') }}"
+          alt="Profile image">
+        <div class="idsk-header-web__main--login-action-text">
+          <span class="govuk-body-s idsk-header-web__main--login-action-text-user-name">
+            {{ main.loginButton.loggedIn.userName if main.loginButton.loggedIn.userName else 'Ing. Jožko Veľký M.A' }}
+          </span>
+          <div class="govuk-!-margin-bottom-1">
+            <a class="govuk-link idsk-header-web__main--login-action-text-logout idsk-header-web__main--login-logoutbtn" href="#" title="odhlásiť">
+              {{ main.loginButton.logoutText if main.loginButton.logoutText else 'Odhlásiť' }}
+            </a>
+            {% if main.profileButton %}
+              <span> | </span>
+              <a class="govuk-link idsk-header-web__main--login-action-text-profile idsk-header-web__main--login-profilebtn" href="#" title="profil">
+                {{ main.profileButton.text if main.profileButton.text  else 'Profil' }}
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% if main.profileButton %}
+        {{ idskButton({
+          "text": main.profileButton.text if main.profileButton.text else 'Profil',
+          "type": "button",
+          "classes": "idsk-header-web__main--login-profilebtn"
+        }) }}
+      {% endif %}
+      {{ idskButton({
+        "text": main.logoutButton.text if main.logoutButton.text else 'Odhlásiť sa',
+        "type": "button",
+        "classes": "idsk-header-web__main--login-logoutbtn"
+      }) }}
+    </div>
+  {% endif -%}
+
+  {% if main.secondaryButton and params.headerType !== 'electronicService' %}
+    {{ idskButton({
+      "text": main.secondaryButton.text if main.secondaryButton.text else 'Tlačidlo',
+      "type": "button",
+      "classes": main.secondaryButton.classes if main.secondaryButton.classes
+    }) }}
+  {% endif %}
+</div>
+{% endset -%}
+
+{% set searchInput %}
+{% if params.search and params.headerType !== "electronicService" %}
+  <form class="idsk-header-web__main-action-search">
+    <input class="govuk-input govuk-!-display-inline-block" id="idsk-header-web__main-action-search-input" name="search"
+      placeholder="{{ params.search.placeHolder if params.search.placeHolder else 'Zadajte hľadaný výraz' }}"
+      title="{{ params.search.placeHolder if params.search.placeHolder else 'Zadajte hľadaný výraz' }}" type="search" aria-label="{{ params.search.placeHolder if params.search.placeHolder else 'Zadajte hľadaný výraz' }}">
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      <span class="govuk-visually-hidden">{{ params.search.button if params.search.button else "Vyhľadať" }}</span>
+      <i aria-hidden="true" class="fas fa-search"></i>
+    </button>
+  </form>
+{% endif %}
+{% endset -%}
+
+{% set mainSection %}
+<div class="idsk-header-web__main">
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full govuk-grid-column-one-third-from-desktop">
+        <div class="idsk-header-web__main-headline">
+          <a href="/" title="Odkaz na úvodnú stránku">
+            {% if params.headerType == 'website' or params.headerType == 'projectWebsite' %}
+              {% if main.showLogo %}
+                <img src="{{ params.assetsPath | default('/assets/images/header-web/') + (main.logoSrc if main.logoSrc else 'logo-mirri-farebne.svg') }}"
+                alt="{{ main.logoAlt if main.logoAlt else 'Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky' }}"
+                class="idsk-header-web__main-headline-logo">
+              {% endif %}
+              {% if main.title %}
+                <h2 class="govuk-heading-m">{{ main.title }}</h2>
+              {% endif %}
+            {% endif -%}
+
+            {% if params.headerType == 'electronicService' %}
+              <h2 class="govuk-heading-m">{{ main.title if main.title else 'Title text' }}</h2>
+            {% endif %}
+          </a>
+
+          {% if params.navBar and params.headerType !== 'electronicService' %}
+            <button class="idsk-button idsk-header-web__main-headline-menu-button" aria-label="{{ showMenu }}" aria-expanded="false"
+            data-text-for-show="{{ showMenu }}" data-text-for-hide="{{ closeMenu }}">
+              {{ main.menuBtnText if main.menuBtnText else 'Menu' }}
+              <span class="idsk-header-web__menu-open"></span>
+              <span class="idsk-header-web__menu-close"></span>
+            </button>
+          {% elif  params.headerType !== 'electronicService' and params.search %}
+            <button class="idsk-button idsk-header-web__main-headline-menu-button" aria-label="{{ showMenu }}" aria-expanded="false"
+            data-text-for-show="{{ showMenu }}" data-text-for-hide="{{ closeMenu }}">
+              {{ main.menuBtnText if main.menuBtnText else 'Hľadaj' }}
+              <span class="idsk-header-web__menu-open"></span>
+              <span class="idsk-header-web__menu-close"></span>
+            </button>
+          {% elif main.loginButton %}
+            <button class="idsk-button idsk-header-web__main-headline-menu-button idsk-header-web__main-headline-menu-button-service"
+            aria-label="{{ showLogin }}" aria-expanded="false" data-text-for-show="{{ showLogin }}" data-text-for-hide="{{ hideLogin }}">
+              <img src="{{ params.assetsPath | default('/assets/images/header-web/') }}/profile.svg" alt="Ikona elektronického servisného menu">
+              <span class="idsk-header-web__menu-close"></span>
+            </button>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="govuk-grid-column-two-thirds">
+        <div class="idsk-header-web__main-action">
+          {{ searchInput | safe }}
+          {{ mainButtons | safe }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endset -%}
+
+{# NAV BAR -#}
+{% set navBar %}
+{% if params.navBar and params.headerType !== 'electronicService' %}
+  <div class="idsk-header-web__nav--divider"></div>
+{% endif %}
+<div class="idsk-header-web__nav idsk-header-web__nav--mobile {{ 'idsk-header-web__nav--dark' if params.navBar.darkBackground }}">
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        {{ searchInpu | safe }}
+      </div>
+      {% if params.navBar and params.headerType !== 'electronicService' %}
+        {% set navigation = params.navBar.navigation %}
+        <div class="govuk-grid-column-full">
+          <nav class="{{ 'idsk-header-web__nav-bar--buttons' if main.loginButton or main.secondaryButton }}" aria-label="Hlavná navigácia">
+            <ul class="idsk-header-web__nav-list {{ params.navBar.classes if params.navBar.classes }}">
+              {% for item in navigation.slice(0, 5) %}
+                <li class="idsk-header-web__nav-list-item">
+                  <a class="govuk-link idsk-header-web__nav-list-item-link" href="{{ item.link if not item.submenu else '#' + loop.index }}" {% for attribute, value
+                    in item.attributes %} {{attribute}}="{{value}}" {% endfor %} title="{{ item.text }}" {% if item.submenu %} aria-label="{{ showMenu }} {{" " + item.text }}" aria-expanded="false"
+                    data-text-for-hide="{{ hideMenu }} {{" " + item.text }}" data-text-for-show="{{ showMenu }} {{" " + item.text }}" {% endif %}>
+                    {{ item.text }}
+                    {% if item.submenu %}
+                      <div class="idsk-header-web__link-arrow"></div>
+                      <div class="idsk-header-web__link-arrow-mobile"></div>
+                    {% endif %}
+                  </a>
+                  {% if item.submenu and (item.submenu | length < 6) %}
+                    <nav class="idsk-header-web__nav-submenulite" aria-label="{{ innerNavigation }}">
+                      <ul class="idsk-header-web__nav-submenulite-list">
+                        {% for subItem in item.submenu %}
+                          <li class="idsk-header-web__nav-submenulite-list-item">
+                            <a class="govuk-link idsk-header-web__nav-submenulite-list-item-link" href="{{ subItem.link }}"
+                              title="{{ subItem.text }}">
+                              <span>{{ subItem.text }}</span>
+                            </a>
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    </nav>
+
+                  {% elif item.submenu %}
+                    <div class="idsk-header-web__nav-submenu">
+                      <div class="govuk-width-container">
+                        <nav class="govuk-grid-row" aria-label="{{ innerNavigation }}">
+                            <ul class="idsk-header-web__nav-submenu-list">
+                              {% for subItem in item.submenu.slice(0, 9) %}
+                                <li class="idsk-header-web__nav-submenu-list-item">
+                                  <a class="govuk-link idsk-header-web__nav-submenu-list-item-link" href="{{ subItem.link }}"
+                                    title="{{ subItem.text }}">
+                                    <span>{{ subItem.text }}</span>
+                                  </a>
+                                </li>
+                              {% endfor %}
+                            </ul>
+                        </nav>
+                      </div>
+                    </div>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+        </nav>
+      </div>
+    {% endif %}
+  </div>
+
+  {% if main.loginButton or main.secondaryButton %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        {{ mainButtons | safe }}
+      </div>
+    </div>
+  {% endif %}
+  </div>
+</div>
+{% endset -%}
+
+{# BANNER -#}
+{% set bannerSection %}
+{% if params.banner %}
+  {% set banner = params.banner %}
+  <div class="idsk-header-web__banner {{ 'idsk-header-web__banner--warning' if banner.warning }}">
+    <div class="govuk-width-container">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <div class="govuk-body-s idsk-header-web__banner-title">
+            {% if banner.warning %}
+              <div class="idsk-header-web__warning-icon"></div>
+            {% endif %}
+            {{ banner.text if banner.text else 'It was popularised in the 1960s with the release of Letraset' }}
+          </div>
+          {% if (banner.closeBtn | dump | length === 0) or banner.closeBtn == true %}
+            <button class="idsk-header-web__banner-close" aria-label="{{ closeBanner }}"><span class="idsk-header-web__menu-close"></span></button>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+{% endset -%}
+
+<header class="idsk-header-web {{ params.classes if params.classes }}" data-module="idsk-header-web" {%- for attribute,
+  value in params.attributes %} {{attribute}}="{{value}}" {% endfor %}>
+  <div class="idsk-header-web__scrolling-wrapper">
+    {{ bannerSection | safe }}
+    {{ tricolor | safe }}
+    {{ brandBar | safe }}
+    {{ mainSection | safe }}
+    {{ navBar | safe }}
+  </div>
+</header>

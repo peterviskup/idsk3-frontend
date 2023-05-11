@@ -1,0 +1,22 @@
+{% from "radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  "idPrefix": "example-1",
+  "classes": "govuk-radios--inline",
+  "name": "example1",
+  "fieldset": {
+    "legend": {
+      "text": "Máte už vytvorený osobný účet?"
+    }
+  },
+  "items": [
+    {
+      "value": "yes",
+      "text": "Áno"
+    },
+    {
+      "value": "no",
+      "text": "Nie"
+    }
+  ]
+}) }}

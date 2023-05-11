@@ -6,6 +6,26 @@ import Checkboxes from './components/checkboxes/checkboxes.mjs'
 import Details from './components/details/details.mjs'
 import ErrorSummary from './components/error-summary/error-summary.mjs'
 import Header from './components/header/header.mjs'
+import IdskAccordion from './components/idsk-accordion/idsk-accordion.mjs'
+import IdskButton from './components/idsk-button/idsk-button.mjs'
+import IdskCrossroad from './components/idsk-crossroad/idsk-crossroad.mjs'
+import IdskCustomerSurveys from './components/idsk-customer-surveys/idsk-customer-surveys.mjs'
+import IdskFeedback from './components/idsk-feedback/idsk-feedback.mjs'
+import IdskFooterExtended from './components/idsk-footer-extended/idsk-footer-extended.mjs'
+import IdskHeader from './components/idsk-header/idsk-header.mjs'
+import IdskHeaderExtended from './components/idsk-header-extended/idsk-header-extended.mjs'
+import IdskHeaderWeb from './components/idsk-header-web/idsk-header-web.mjs'
+import IdskInPageNavigation from './components/idsk-in-page-navigation/idsk-in-page-navigation.mjs'
+import IdskInteractiveMap from './components/idsk-interactive-map/idsk-interactive-map.mjs'
+import IdskRegistrationForEvent from './components/idsk-registration-for-event/idsk-registration-for-event.mjs'
+import IdskSearchComponent from './components/idsk-search-component/idsk-search-component.mjs'
+import IdskSearchResults from './components/idsk-search-results/idsk-search-results.mjs'
+import IdskSearchResultsFilter from './components/idsk-search-results-filter/idsk-search-results-filter.mjs'
+import IdskStepper from './components/idsk-stepper/idsk-stepper.mjs'
+import IdskSubscriptionForm from './components/idsk-subscription-form/idsk-subscription-form.mjs'
+import IdskTable from './components/idsk-table/idsk-table.mjs'
+import IdskTableFilter from './components/idsk-table-filter/idsk-table-filter.mjs'
+import IdskTabs from './components/idsk-tabs/idsk-tabs.mjs'
 import NotificationBanner from './components/notification-banner/notification-banner.mjs'
 import Radios from './components/radios/radios.mjs'
 import SkipLink from './components/skip-link/skip-link.mjs'
@@ -83,6 +103,109 @@ function initAll (config) {
   $tabs.forEach(function ($tabs) {
     new Tabs($tabs).init()
   })
+
+  var $idskAccordions = $scope.querySelectorAll('[data-module="idsk-accordion"]')
+  $idskAccordions.forEach(function ($idskAccordions) {
+    new IdskAccordion($idskAccordions).init()
+  })
+
+  var $idskButtons = $scope.querySelectorAll('[data-module="idsk-button"]')
+  $idskButtons.forEach(function ($idskButtons) {
+    new IdskButton($idskButtons).init()
+  })
+
+  var $idskCrossroad = $scope.querySelectorAll('[data-module="idsk-crossroad"]')
+  $idskCrossroad.forEach(function ($idskCrossroad) {
+    new IdskCrossroad($idskCrossroad).init()
+  })
+
+  var $idskCustomerSurveys = $scope.querySelectorAll('[data-module="idsk-customer-surveys"]')
+  $idskCustomerSurveys.forEach(function ($idskCustomerSurveys) {
+    new IdskCustomerSurveys($idskCustomerSurveys).init()
+  })
+
+  var $idskFeedback = $scope.querySelectorAll('[data-module="idsk-feedback"]')
+  $idskFeedback.forEach(function ($idskFeedback) {
+    new IdskFeedback($idskFeedback).init()
+  })
+
+  var $idskFooterExtended = $scope.querySelectorAll('[data-module="idsk-footer-extended"]')
+  $idskFooterExtended.forEach(function ($idskFooterExtended) {
+    new IdskFooterExtended($idskFooterExtended).init()
+  })
+
+  // Find first idsk header module to enhance.
+  var $idskHeader = $scope.querySelector('[data-module="idsk-header"]')
+  if ($idskHeader) {
+    new IdskHeader($idskHeader).init()
+  }
+
+  // Find first idsk-header-extended module to enhance.
+  var $idskHeaderExtended = $scope.querySelector('[data-module="idsk-header-extended"]')
+  if ($idskHeaderExtended) {
+    new IdskHeaderExtended($idskHeaderExtended).init()
+  }
+
+  // Find first idsk-header-web module to enhance.
+  var $idskHeaderWeb = $scope.querySelector('[data-module="idsk-header-web"]')
+  if ($idskHeaderWeb) {
+    new IdskHeaderWeb($idskHeaderWeb).init()
+  }
+
+  var $idskInPageNavigation = $scope.querySelectorAll('[data-module="idsk-in-page-navigation"]')
+  $idskInPageNavigation.forEach(function ($idskInPageNavigation) {
+    new IdskInPageNavigation($idskInPageNavigation).init()
+  })
+
+  var idskInteractiveMap = $scope.querySelectorAll('[data-module="idsk-interactive-map"]')
+  idskInteractiveMap.forEach(function (idskInteractiveMap) {
+    new IdskInteractiveMap(idskInteractiveMap).init()
+  })
+
+  var $idskRegistrationForEvent = $scope.querySelectorAll('[data-module="idsk-registration-for-event"]')
+  $idskRegistrationForEvent.forEach(function ($idskRegistrationForEvent) {
+    new IdskRegistrationForEvent($idskRegistrationForEvent).init()
+  })
+
+  var $idskSearchComponent = $scope.querySelectorAll('[data-module="idsk-search-component"]')
+  $idskSearchComponent.forEach(function ($idskSearchComponent) {
+    new IdskSearchComponent($idskSearchComponent).init()
+  })
+
+  var $idskSearchResults = $scope.querySelectorAll('[data-module="idsk-search-results"]')
+  $idskSearchResults.forEach(function ($idskSearchResults) {
+    new IdskSearchResults($idskSearchResults).init()
+  })
+
+  var $idskSearchResultsFilter = $scope.querySelectorAll('[data-module="idsk-search-results-filter"]')
+  $idskSearchResultsFilter.forEach(function ($idskSearchResultsFilter) {
+    new IdskSearchResultsFilter($idskSearchResultsFilter).init()
+  })
+
+  var $idskStepper = $scope.querySelectorAll('[data-module="idsk-stepper"]')
+  $idskStepper.forEach(function ($idskStepper) {
+    new IdskStepper($idskStepper).init()
+  })
+
+  var $idskSubscriptionForm = $scope.querySelectorAll('[data-module="idsk-stepper"]')
+  $idskSubscriptionForm.forEach(function ($idskSubscriptionForm) {
+    new IdskSubscriptionForm($idskSubscriptionForm).init()
+  })
+
+  var $idskTable = $scope.querySelectorAll('[data-module="idsk-table"]')
+  $idskTable.forEach(function ($idskTable) {
+    new IdskTable($idskTable).init()
+  })
+
+  var $idskTableFilter = $scope.querySelectorAll('[data-module="idsk-table-filter"]')
+  $idskTableFilter.forEach(function ($idskTableFilter) {
+    new IdskTableFilter($idskTableFilter).init()
+  })
+
+  var $idskTabs = $scope.querySelectorAll('[data-module="idsk-tabs"]')
+  $idskTabs.forEach(function ($idskTabs) {
+    new IdskTabs($idskTabs).init()
+  })
 }
 
 export {
@@ -100,7 +223,27 @@ export {
   NotificationBanner,
   Radios,
   SkipLink,
-  Tabs
+  Tabs,
+  IdskAccordion,
+  IdskButton,
+  IdskCrossroad,
+  IdskCustomerSurveys,
+  IdskFeedback,
+  IdskFooterExtended,
+  IdskHeader,
+  IdskHeaderExtended,
+  IdskHeaderWeb,
+  IdskInPageNavigation,
+  IdskInteractiveMap,
+  IdskRegistrationForEvent,
+  IdskSearchComponent,
+  IdskSearchResults,
+  IdskSearchResultsFilter,
+  IdskStepper,
+  IdskSubscriptionForm,
+  IdskTable,
+  IdskTableFilter,
+  IdskTabs
 }
 
 /**

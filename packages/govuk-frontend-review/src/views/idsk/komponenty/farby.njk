@@ -1,0 +1,232 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Farby" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Webové komponenty</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Vždy používajte farebnú paletu ID-SK.</p>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-s">Obsah:</h2>
+            <ul class="govuk-list">
+                <li><a class="govuk-link" href="#colour-contrast" title="Farebný kontrast">Farebný kontrast</a></li>
+                <li><a class="govuk-link" href="#colour-sass-variables" title="Sass premenné">Sass premenné</a></li>
+                <li><a class="govuk-link" href="#colours" title="Ukážka">Ukážka</a></li>
+            </ul>
+
+            <h3 class="govuk-heading-m" id="colour-contrast">Farebný kontrast</h3>
+            <p class="govuk-body">
+                Pomerová hodnota farebného kontrastu pre text a interaktívne prvky by mala byť aspoň 4,5:1
+                <a class="govuk-link" href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html" rel="external" title="ako odporúča W3C">
+                    ako odporúča W3C</a>. Na to, aby vaša služba spĺňala tento štandard, je potrebné vždy otestovať kontrast všetkých použitých prvkov.
+            </p>
+            <h3 class="govuk-heading-m" id="colour-sass-variables">Sass premenné</h3>
+            <p class="govuk-body">
+                Odporúčame používať nasledovné Sass premenné pre prípad, že farby bude nutné v budúcnosti aktualizovať.
+            </p>
+        </div>
+
+        <div class="govuk-grid-column-full">
+
+            <h3 class="govuk-heading-m" id="colours">Ukážka</h3>
+            <div class="example">
+
+                <div class="swatch-wrapper">
+                    <div class="swatch swatch-red"></div>
+                    <ul>
+                        <li><b>red</b></li>
+                        <li>#D0190F</li>
+                    </ul>
+                    <div class="swatch swatch-dark-red"></div>
+                    <ul>
+                        <li><b>dark-red</b></li>
+                        <li>#9E1912</li>
+                    </ul>
+
+                    <div class="swatch swatch-yellow"></div>
+                    <ul>
+                        <li><b>yellow</b></li>
+                        <li>#FFDF0F</li>
+                    </ul>
+
+                    <div class="swatch swatch-green"></div>
+                    <ul>
+                        <li><b>green</b></li>
+                        <li>#00703C</li>
+                    </ul>
+
+                    <div class="swatch swatch-dark-green"></div>
+                    <ul>
+                        <li><b>dark-green</b></li>
+                        <li>#204E2E</li>
+                    </ul>
+
+                </div>
+                <div class="swatch-wrapper">
+                    <div class="swatch swatch-blue"></div>
+                    <ul>
+                        <li><b>blue</b></li>
+                        <li>#0065B3</li>
+                    </ul>
+
+                    <div class="swatch swatch-dark-blue"></div>
+                    <ul>
+                        <li><b>dark-blue</b></li>
+                        <li>#003078</li>
+                    </ul>
+
+                    <div class="swatch swatch-light-blue"></div>
+                    <ul>
+                        <li><b>light-blue</b></li>
+                        <li>#2B8CC4</li>
+                    </ul>
+
+                    <div class="swatch swatch-purple"></div>
+                    <ul>
+                        <li><b>purple</b></li>
+                        <li>#4C2C92</li>
+                    </ul>
+
+                    <div class="swatch swatch-black"></div>
+                    <ul>
+                        <li><b>black</b></li>
+                        <li>#0B0C0C</li>
+                    </ul>
+                </div>
+
+                <div class="swatch-wrapper">
+                    <div class="swatch swatch-dark-grey"></div>
+                    <ul>
+                        <li><b>dark-grey</b></li>
+                        <li>#626A6E</li>
+                    </ul>
+
+                    <div class="swatch swatch-mid-grey"></div>
+                    <ul>
+                        <li><b>mid-grey</b></li>
+                        <li>#BFC1C3</li>
+                    </ul>
+
+                    <div class="swatch swatch-light-grey"></div>
+                    <ul>
+                        <li><b>light-grey</b></li>
+                        <li>#DEE0E2</li>
+                    </ul>
+
+                    <div class="swatch swatch-lighter-grey"></div>
+                    <ul>
+                        <li><b>lighter-grey</b></li>
+                        <li>#F3F2F1</li>
+                    </ul>
+
+                    <div class="swatch swatch-white" style="border: 1px solid lightgray"></div>
+                    <ul>
+                        <li><b>white</b></li>
+                        <li>#FFFFFF</li>
+                    </ul>
+
+                    <div class="swatch swatch-light-purple"></div>
+                    <ul>
+                        <li><b>light-purple</b></li>
+                        <li>#6F72AF</li>
+                    </ul>
+
+                    <div class="swatch swatch-bright-purple"></div>
+                    <ul>
+                        <li><b>bright-purple</b></li>
+                        <li>#912B88</li>
+                    </ul>
+                </div>
+
+                <div class="swatch-wrapper">
+                    <div class="swatch swatch-pink"></div>
+                    <ul>
+                        <li><b>pink</b></li>
+                        <li>#D53880</li>
+                    </ul>
+
+                    <div class="swatch swatch-light-pink"></div>
+                    <ul>
+                        <li><b>light-pink</b></li>
+                        <li>#F499BE</li>
+                    </ul>
+
+                    <div class="swatch swatch-orange"></div>
+                    <ul>
+                        <li><b>orange</b></li>
+                        <li>#F47738</li>
+                    </ul>
+
+                    <div class="swatch swatch-brown"></div>
+                    <ul>
+                        <li><b>brown</b></li>
+                        <li>#B58840</li>
+                    </ul>
+
+                    <div class="swatch swatch-light-green"></div>
+                    <ul>
+                        <li><b>light-green</b></li>
+                        <li>#85994B</li>
+                    </ul>
+
+                    <div class="swatch swatch-turquoise"></div>
+                    <ul>
+                        <li><b>turquoise</b></li>
+                        <li>#28A197</li>
+                    </ul>
+                </div>
+
+                <div class="swatch-wrapper">
+                    <div class="swatch swatch-grey-1"></div>
+                    <ul>
+                        <li><b>grey-1</b></li>
+                        <li>#626A6E</li>
+                    </ul>
+
+                    <div class="swatch swatch-grey-2"></div>
+                    <ul>
+                        <li><b>grey-2</b></li>
+                        <li>#BFC1C3</li>
+                    </ul>
+
+                    <div class="swatch swatch-grey-3"></div>
+                    <ul>
+                        <li><b>grey-3</b></li>
+                        <li>#DEE0E2</li>
+                    </ul>
+
+                    <div class="swatch swatch-grey-4"></div>
+                    <ul>
+                        <li><b>grey-4</b></li>
+                        <li>#F3F2F1</li>
+                    </ul>
+
+                    <div class="swatch swatch-grey-5"></div>
+                    <ul>
+                        <li><b>grey-5</b></li>
+                        <li>#949494</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+  </div>
+{% endblock %}

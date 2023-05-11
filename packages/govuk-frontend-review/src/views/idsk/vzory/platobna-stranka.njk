@@ -1,0 +1,75 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Platobná stránka" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Vzory</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Tento návod opisuje spôsob, ako správne formálne a obsahovo navrhnúť platobné stránky.</p>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-s">Obsah:</h2>
+            <ul class="govuk-list">
+                <li><a class="govuk-link" href="#informacie-ktore-potrebujete-zahrnut" title="Informácie, ktoré potrebujete zahrnúť">Informácie, ktoré potrebujete zahrnúť</a></li>
+                <li><a class="govuk-link" href="#ukazka-platobnej-stranky" title="Ukážka platobnej stránky">Ukážka platobnej stránky</a></li>
+                <li><a class="govuk-link" href="#neuspesna-platba" title="Neúspešná platba">Neúspešná platba</a></li>
+                <li><a class="govuk-link" href="#sposoby-platby" title="Spôsoby platby">Spôsoby platby</a></li>
+            </ul>
+
+            <h3 class="govuk-heading-m" id="informacie-ktore-potrebujete-zahrnut">Informácie, ktoré potrebujete zahrnúť</h3>
+            <p class="govuk-body">Používateľ musí byť pri platbe za službu na stránke dostatočne a prehľadne informovaný. K prehľadnosti platobnej stránky pomôže, ak bude obsahovať nasledovné informácie:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>informácie o službe, za ktorú má používateľ zaplatiť,</li>
+                <li>informáciu o poplatku, ktorý má používateľ uhradiť,</li>
+                <li>možnosť zvoliť si spôsob platby,</li>
+                <li>tlačidlá Zaplatiť a Zaplatiť neskôr,</li>
+                <li>možnosť platbu zrušiť.</li>
+            </ul>
+
+            <h3 class="govuk-heading-m" id="ukazka-platobnej-stranky">Ukážka platobnej stránky</h3>
+
+            <img src="/public/assets/images/patterns/platobna1.png" alt="platobna_stranka">
+
+            <h3 class="govuk-heading-m" id="neuspesna-platba">Neúspešná platba</h3>
+            <p class="govuk-body">Platba môže kedykoľvek zlyhať v dôsledku viacerých faktorov:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>môže byť zamietnutá alebo používateľ sa rozhodne ju zrušiť,</li>
+                <li>môže nastať technická chyba,</li>
+                <li>môže byť zrušená vašou službou.</li>
+            </ul>
+            <p class="govuk-body">Ak platba zlyhá, používateľovi sa musí zobraziť stránka s informáciou o chybe. Mala by zahŕňať odkaz na návrat k vašej službe, aby mal používateľ možnosť platbu opätovne vyskúšať. Keď sa používateľ po neúspešnej platbe vráti späť do vašej služby, zobrazte mu stránku, ktorá ponúka užitočné informácie ako v tomto prípade postupovať.</p>
+            <p class="govuk-body">Táto stránka musí:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>potvrdiť používateľovi, že platba zlyhala,</li>
+                <li>ponúknuť možnosť opakovania platby buď iniciovaním novej platby alebo pomocou inej platobnej metódy,</li>
+                <li>poradiť používateľovi, ako postupovať v danej situácií.</li>
+            </ul>
+            <h4 class="govuk-heading-s">Ukážka chyby pri platbe</h4>
+            <img src="/public/assets/images/patterns/platobna2.png" alt="platobna_stranka">
+            <h4 class="govuk-heading-s">Ukážka platobnej stránky po zobrazení chyby</h4>
+            <img src="/public/assets/images/patterns/platobna3.png" alt="platobna_stranka">
+
+            <h3 class="govuk-heading-m" id="sposoby-platby">Spôsoby platby</h3>
+            <p class="govuk-body">Používateľ musí mať na výber z viacerých možností platby, aby si mohol vybrať ním preferovaný spôsob. Elektronické platby vždy dopĺňajte o štandardné možnosti platby.</p>
+            <p class="govuk-body">Ak si používateľ vyberie možnosť “Zaplatiť neskôr”, bude mu na nasledujúcej obrazovke (potvrdenie o podaní) zobrazená informácia o odoslaní údajov k platbe do elektronickej schránky (viac informácií nájdete v sekcií
+                <a class="govuk-link" href="/vzory/stranky-dokoncenia-procesu" title="Stránky s potvrdením)">Stránky s potvrdením</a>).</p>
+
+        </div>
+    </div>
+
+  </div>
+{% endblock %}

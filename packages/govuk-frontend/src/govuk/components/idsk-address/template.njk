@@ -1,0 +1,32 @@
+
+<div data-module="govuk-address" class="idsk-address{{ ' ' + params.classes if params.classes }}{{ ' idsk-address--full-width' if params.fullWidth }}">
+    <hr class="idsk-address__separator-top">
+    <div class="idsk-address__content">
+        <div class="idsk-address__description">
+            {% if params.heading %}
+            <h2 class="govuk-heading-m">{{ params.heading }}</h2>
+            {% endif %}
+            {% if params.addressTitle %}
+              <h3 class="govuk-heading-s">{{ params.addressTitle }}</h3>
+            {% endif %}
+            {% for row in params.addressDescription %}
+            <p class="govuk-body">{{ row.text }}</p>
+            {% endfor %}
+            {% if params.additionalLink %}
+            <p class="govuk-body">
+                <a class="govuk-link" href="{{ params.additionalLink.link }}" title="{{ params.additionalLink.text }}">
+                    <span class="idsk-address__link-text">{{ params.additionalLink.text }}</span>
+                </a>
+            </p>
+            {% endif %}
+        </div>
+        <iframe
+            class="idsk-address__map"
+            title="{{params.title}}"
+            loading="lazy"
+            allowfullscreen
+            src="{{ params.googleMapsLink }}">
+        </iframe>
+        </div>
+    <hr class="idsk-address__separator-bottom">
+</div>

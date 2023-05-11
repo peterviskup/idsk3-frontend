@@ -11,6 +11,9 @@ coverage/
 # Build output
 dist/
 
+# Assets folder
+assets/
+
 # 3rd party vendor code
 vendor/
 

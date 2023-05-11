@@ -1,0 +1,38 @@
+{
+    "component": "idsk-feedback",
+    "fixtures": [
+        {
+            "name": "basic",
+            "options": {
+                "feedbackOptions": [
+                    {
+                        "name": "Veľmi nespokojný",
+                        "textArea": true,
+                        "value": 1
+                    },
+                    {
+                        "name": "Nespokojný",
+                        "textArea": true,
+                        "value": 2
+                    },
+                    {
+                        "name": "Ani spokojný ani nespokojný",
+                        "textArea": true,
+                        "value": 3
+                    },
+                    {
+                        "name": "Spokojný",
+                        "value": 4
+                    },
+                    {
+                        "name": "Veľmi spokojný",
+                        "value": 5
+                    }
+                ],
+                "characterLength": 200
+            },
+            "hidden": false,
+            "html": "<div data-module=\"idsk-feedback\">\n  <div class=\"govuk-width-container\">\n    <div class=\"idsk-feedback__content\">\n      <h2 class=\"govuk-heading-l\">\n        Spätná väzba na službu Podávanie žiadosti o nenávratný príspevok na opravu bicykla\n      </h2>\n      <fieldset class=\"govuk-fieldset\">\n        <legend class=\"govuk-fieldset__legend govuk-fieldset__legend--m\">\n          <h3 class=\"govuk-fieldset__heading idsk-customer-surveys--subtitle\">\n            Ako ste spokojný so službou, ktorú ste práve využili?\n          </h3>\n        </legend>\n        <div class=\"govuk-radios\">\n<div class=\"govuk-radios__item\">\n              <input\n                class=\"govuk-radios__input idsk-feedback__radio-button idsk-feedback-textarea--show\"\n                id=\"1\"\n                name=\"example\" type=\"radio\" value=\"1\">\n              <label class=\"govuk-label govuk-radios__label\" for=\"1\">\n                Veľmi nespokojný\n              </label>\n            </div><div class=\"govuk-radios__item\">\n              <input\n                class=\"govuk-radios__input idsk-feedback__radio-button idsk-feedback-textarea--show\"\n                id=\"2\"\n                name=\"example\" type=\"radio\" value=\"2\">\n              <label class=\"govuk-label govuk-radios__label\" for=\"2\">\n                Nespokojný\n              </label>\n            </div><div class=\"govuk-radios__item\">\n              <input\n                class=\"govuk-radios__input idsk-feedback__radio-button idsk-feedback-textarea--show\"\n                id=\"3\"\n                name=\"example\" type=\"radio\" value=\"3\">\n              <label class=\"govuk-label govuk-radios__label\" for=\"3\">\n                Ani spokojný ani nespokojný\n              </label>\n            </div><div class=\"govuk-radios__item\">\n              <input\n                class=\"govuk-radios__input idsk-feedback__radio-button \"\n                id=\"4\"\n                name=\"example\" type=\"radio\" value=\"4\">\n              <label class=\"govuk-label govuk-radios__label\" for=\"4\">\n                Spokojný\n              </label>\n            </div><div class=\"govuk-radios__item\">\n              <input\n                class=\"govuk-radios__input idsk-feedback__radio-button \"\n                id=\"5\"\n                name=\"example\" type=\"radio\" value=\"5\">\n              <label class=\"govuk-label govuk-radios__label\" for=\"5\">\n                Veľmi spokojný\n              </label>\n            </div>          <br>\n        </div>\n        <div id=\"idsk-feedback__question-bar\" class=\"idsk-feedback--animation idsk-feedback--invisible\">\n          <h3 class=\"govuk-heading-m\">\n             Ako by sme mohli túto službu zlepšiť?\n          </h3>\n          <div>\n            <br>\n            \n\n<div class=\"govuk-character-count\" data-module=\"govuk-character-count\" data-maxlength=\"200\">\n  <div class=\"govuk-form-group\">\n  \n  <div id=\"feedback-hint\" class=\"govuk-hint\">\n    \n  </div>\n  <textarea class=\"govuk-textarea govuk-js-character-count\" id=\"feedback\" name=\"feedback\" rows=\"5\" aria-describedby=\"feedback-info feedback-hint\"></textarea>\n</div>\n  \n  <div id=\"feedback-info\" class=\"govuk-hint govuk-character-count__message\">\n  You can enter up to 200 characters\n</div>\n\n</div>\n\n          </div>\n        </div>\n        <div class=\"idsk-feedback__buttons\">\n          <button id=\"idsk-feedback__send-button\" class=\"govuk-button\">\n            Odoslať\n            <svg width=\"15\" height=\"15\" viewbox=\"0 0 15 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n              <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M9.4016 10L0 0H5.59826L15 10H9.4016Z\" fill=\"white\"/>\n              <path opacity=\"0.5\" fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M5.5984 20L15 10H9.40174L0 20H5.5984Z\"\n                    fill=\"white\"/>\n            </svg>\n          </button>\n          <button class=\"govuk-button govuk-button--secondary\" onclick=\"location.href='/';\">\n            Odísť\n          </button>\n        </div>\n      </fieldset>\n    </div>\n    <div class=\"idsk-feedback__thanks idsk-feedback--hidden\">\n      <h2 class=\"govuk-heading-l\">\n        Ďakujeme za spätnú väzbu.\n      </h2>\n    </div>\n  </div>\n</div>"
+        }
+    ]
+}

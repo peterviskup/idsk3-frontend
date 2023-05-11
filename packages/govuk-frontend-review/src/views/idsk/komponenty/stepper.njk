@@ -1,0 +1,278 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "idsk-stepper/macro.njk" import idskStepper %}
+{% from "idsk-banner/macro.njk" import idskBanner %}
+{% set pageName = "Stepper" %}
+{% block styles %}
+  <style>
+    .idsk-stepper__heading {
+      margin-bottom: 30px;
+    }
+
+    .idsk-stepper__heading--top {
+      margin-top: 20px;
+    }
+
+    .idsk-stepper__img {
+      width: inherit;
+    }
+
+    .idsk-stepper__list {
+      margin-left: -15px;
+    }
+  </style>
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      { text: 'ID-SK frontend', href: '/' + legacyQuery },
+      { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-width-container">
+    <h1 class="govuk-heading-xl idsk-stepper__heading">{{ pageName }}</h1>
+    <p class="govuk-body-l">
+      Stepper je navrhnutý pre prehľadné a zrozumiteľné zobrazenie procesných krokov, ktoré musí občan alebo podnikateľ
+      vykonať, aby voči štátu vybavil, čo potrebuje v rámci svojej životnej situácie. Stepper však môže slúžiť na
+      intuitívne zobrazenie akéhokoľvek sledu udalostí či procesných úkonov. Členenie do krokov pomôže používateľovi
+      zorientovať sa v zdĺhavejších procesoch a jednoduchšie realizovať čiastkové úkony.
+    </p>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h3 class="govuk-heading-l">Z čoho sa skladá stepper ?</h3>
+        <p class="govuk-body-l">Stepper sa skladá zo:
+        </p>
+        <ol class="idsk-list idsk-list--letters">
+          <li>základného kroku,</li>
+          <li>koncového kroku,</li>
+          <li>kroku s “a” - spája dva rovnocenné kroky - napr.: vybavenie tabuliek EČV a vybavenie technického
+            preukazu,
+          </li>
+          <li>zvýrazneného kroku po kliknutí na odkaz,</li>
+          <li>nadpisu (pred začiatkom steppera alebo v stepperi),</li>
+          <li>a z baneru, ktorý bude po kliknutí umiestnený na začiatku stránky s obsahom.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h3 class="govuk-heading-l">Vzor steppera</h3>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <div class="example example-error">
+          {% set exampleComponentHtml %}
+            {{ idskStepper({
+              "id": "default-example",
+              "mainTitle": "Narodenie dieťaťa: krok po kroku",
+              "subtitle": "Pred narodením dieťaťa",
+              "caption": "Čo je potrebné vybaviť a zariadieť keď sa Vám má narodiť dieťa ?",
+              "attributes": {
+                "data-attribute": "value"
+              },
+              "items": [
+                {
+                  "heading": {
+                  "text": "Výber pediatra"
+                },
+                  "contents": [
+                  {
+                    "subtitle": "Pri narodení dieťaťa máte nárok na viacero",
+                    "href": "#"
+                  },
+                  {
+                    "subtitle": "Pri narodení dieťaťa máte nárok na viacero",
+                    "href": "#"
+                  },
+                  {
+                    "subtitle": "Pri narodení dieťaťa máte nárok na viacero",
+                    "href": "#"
+                  },
+                  {
+                    "subtitle": "Pri narodení dieťaťa máte nárok na viacero",
+                    "href": "#"
+                  }
+                ]
+                },
+                {
+                  "heading": {
+                  "text": "Žiadosť o materské v Sociálnej poisťovni"
+                },
+                  "contents": [
+                  {
+                    "subtitle": "Pri narodení dieťaťa máte nárok na viacero",
+                    "href": "#"
+                  },
+                  {
+                    "subtitle": "Pri narodení dieťaťa máte nárok na viacero",
+                    "href": "#"
+                  }
+                ]
+                },
+                {
+                  "heading": {
+                  "text": "Po narodení dieťaťa",
+                  "isTitle": true
+                }
+                },
+                {
+                  "heading": {
+                  "text": "Výber zdravotnej poistovne a prihlásenie dieťaťa"
+                },
+                  "contents": [
+                  {
+                    "subtitle": "Pri narodení dieťaťa máte nárok na viacero",
+                    "href": "#"
+                  },
+                  {
+                    "subtitle": "Pri narodení dieťaťa máte nárok na viacero alebo viac detí  alebo ktorým sa v priebehu dvoch rokov opakovane narodili dvojčatá,",
+                    "href": "#"
+                  },
+                  {
+                    "subtitle": "Príspevok pri narodení dieťaťa,Prídavok na dieťa,Rodičovský príspevok pre vlastné dieťa / pre zverené dieťa,",
+                    "href": "#"
+                  },
+                  {
+                    "subtitle": "Príspevok na starostlivosť o dieťa.",
+                    "href": "#"
+                  }
+                ]
+                },
+                {
+                  "heading": {
+                  "text": "Príspevky pri narodení dieťaťa z Úradu práce, sociálnych vecí a rodiny",
+                  "showAnd": true
+                },
+                  "contents": [
+                  {
+                    "subtitle": "Pri narodení dieťaťa máte nárok na viacero",
+                    "href": "#"
+                  },
+                  {
+                    "subtitle": "Pri narodení dieťaťa máte nárok na viacero alebo viac detí  alebo ktorým sa v priebehu dvoch rokov opakovane narodili dvojčatá,",
+                    "href": "#"
+                  }
+                ]
+                },
+                {
+                  "heading": {
+                  "text": "Výber zdravotnej poistovne a prihlásenie dieťaťa"
+                },
+                  "contents": [
+                  {
+                    "subtitle": "Pri narodení dieťaťa máte nárok na viacero",
+                    "href": "#"
+                  },
+                  {
+                    "subtitle": "Príspevok pre rodičov, ktorým sa narodili súčasne tri alebo viac detí  alebo ktorým sa v priebehu dvoch rokov opakovane narodili dvojčatá,",
+                    "href": "#"
+                  }
+                ]
+                },
+                {
+                  "heading": {
+                  "text": "Výber zdravotnej poistovne a prihlásenie dieťaťa"
+                },
+                  "contents": [
+                  {
+                    "subtitle": "Pri narodení dieťaťa máte nárok na viacero",
+                    "href": "#"
+                  },
+                  {
+                    "subtitle": "Príspevok pre rodičov, ktorým sa narodili súčasne tri alebo viac detí  alebo ktorým sa v priebehu dvoch rokov opakovane narodili dvojčatá,",
+                    "href": "#"
+                  }
+                ]
+                }
+              ]
+            }) }}
+          {% endset %}
+          {{ exampleComponentHtml | safe }}
+        </div>
+        <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h3 class="govuk-heading-l">Ako použiť stepper ?</h3>
+        <h4 class="govuk-heading-m">Nadpisy</h4>
+        <p class="govuk-body">
+          V nadpise jednotlivých krokov použite maximálne 100 znakov vrátane medzier (maximálne 2 riadky pre desktop a 3
+          riadky pre mobilné zariadenia).
+        </p>
+        <p class="govuk-body">
+          Nadpis pred začiatkom steppera a v stepperi môže mať maximálne 35 znakov.
+        </p>
+        <p class="govuk-body">
+          Nadpis pred začiatkom steppera a v stepperi použite iba vtedy, ak sú procesy, ktoré predchádzajú nejakému
+          míľniku nevyhnutné, bez ich realizácie nie je možné pokračovať v procesoch po tomto míľniku a nie je možné ich
+          vybaviť spätne alebo si vyžadujú veľa času.
+        </p>
+        <h4 class="govuk-heading-m">Obsah v krokoch</h4>
+        <p class="govuk-body">
+          Dbajte na to, aby obsah, ktorý sa zobrazí používateľovi po rozkliknutí kroku bol výstižný a stručný. Ak je v
+          danom kroku viacero možností, v krátkosti popíšte čo má robiť a pridajte linky na obsah, kde sa používateľ
+          dozvie podrobné a presné informácie.
+        </p>
+        <h4 class="govuk-heading-m">Banner</h4>
+        <p class="govuk-body">
+          Banner použite na začiatku stránky s konkrétnym obsahom (po kliknutí na odkaz v stepperi), aby používateľ
+          vedel, že tento obsah patrí pod danú životnú situáciu/návod.
+        </p>
+        <div class="example example-error">
+          {% set exampleComponentHtml %}
+            {{ idskBanner({
+              "classes": "app-pane-grey",
+              "pageName": "Súčasť životnej situácie",
+              "headline": "Narodenie dieťaťa: krok za krokom"
+            }) }}
+          {% endset %}
+          {{ exampleComponentHtml | safe }}
+        </div>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h4 class="govuk-heading-m">Zvýraznený krok po kliknutí na odkaz</h4>
+        <p class="govuk-body">
+          Tento prvok sa použije na konci obsahu ku konkrétnemu obsahu, aby používateľ vedel, na ktorý odkaz v stepperi
+          klikol. Slúži to ako dodatočná navigácia v rámci steppera.
+        </p>
+        <img src="/public/assets/images/patterns/stepperSelectedItem1.png" class="idsk-stepper__img" alt="selected-stepper-img">
+
+        <h3 class="govuk-heading-l idsk-stepper__heading--top">Ako použiť stepper pre životnú situáciu ?</h3>
+        <p class="govuk-body">
+          Keď používateľ počas riešenia svojej životnej situácie narazí na tzv. trecie plochy, t.j. časti procesu, v
+          ktorých sa neorientuje hladko, spôsobí to používateľovi frustráciu a nemusí danú časť procesu úspešne
+          dokončiť. Ak aj vaša služba nie je 100 % digitalizovaná alebo nemá dokonalý dizajn, dobrým návodom a popisom
+          výrazne uľahčíte používateľovi zvládnuť danú službu alebo časť životnej situácie. Kvalitný návod vám môže
+          znížiť administratívne náklady - ak budú používatelia vedieť, čo majú robiť, nebudú sa obracať na vaše call
+          centrum alebo písať emaily. Kvalitným návodom navyše získate spokojného občana - zákazníka.
+        </p>
+        <p class="govuk-body">
+          V ideálnom prípade by ste mali pomocou steppera zvizualizovať na vašom portáli celú životnú situáciu tak, ako
+          ju vníma používateľ (nie len vašu agendu, ktorá z pohľadu používateľa tvorí jeden z krokov). Používateľa pri
+          riešení životnej situácie totiž nezaujíma, že jeho potreby a práva napĺňa viacero inštitúcií. Veľakrát to ani
+          nevie a nemusí vedieť. Pre používateľa vystupuje štát ako jedna organizácia.
+        </p>
+        <p class="govuk-body">
+          Ak poskytujete aspoň jednu službu v danej životnej situácii a ostatné služby poskytujú iné orgány verejnej
+          moci, skontaktujte sa s kolegami z ostatných inštitúcií a skoordinujte sa pri tvorbe takéhoto návodu. Všetky
+          inštitúcie používajte jeden a ten istý stepper k životnej situácii.
+        </p>
+        <br>
+        <h2 class="govuk-heading-s">
+          <a class="govuk-link" href="/components/idsk-stepper" title="Rozšírený príklad podstránky stepper">Rozšírený
+            príklad podstránky stepper</a>
+        </h2>
+      </div>
+    </div>
+  </div>
+{% endblock %}

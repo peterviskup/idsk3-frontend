@@ -1,0 +1,75 @@
+{
+    "component": "idsk-address",
+    "fixtures": [
+        {
+            "name": "ukážka 1",
+            "options": {
+                "addressTitle": "Adresa podujatia",
+                "title": "Adresa podujatia",
+                "addressDescription": [
+                    {
+                        "text": "Štefánikova 15"
+                    },
+                    {
+                        "text": "811 05 Bratislava"
+                    },
+                    {
+                        "text": "Poschodie 2.B"
+                    },
+                    {
+                        "text": "Zasadačka LONDÝN"
+                    }
+                ],
+                "googleMapsLink": "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJbej9bFqJbEcR4nXu1en1cJM&key=AIzaSyC8V96sGgzrasorg2xPOlrlp-cpQFPLSxM"
+            },
+            "hidden": false,
+            "html": "<div data-module=\"govuk-address\" class=\"idsk-address\">\n    <hr class=\"idsk-address__separator-top\">\n    <div class=\"idsk-address__content\">\n        <div class=\"idsk-address__description\">\n              <h3 class=\"govuk-heading-s\">Adresa podujatia</h3>\n            <p class=\"govuk-body\">Štefánikova 15</p>\n            <p class=\"govuk-body\">811 05 Bratislava</p>\n            <p class=\"govuk-body\">Poschodie 2.B</p>\n            <p class=\"govuk-body\">Zasadačka LONDÝN</p>\n        </div>\n        <iframe\n            class=\"idsk-address__map\"\n            title=\"Adresa podujatia\"\n            loading=\"lazy\"\n            allowfullscreen\n            src=\"https://www.google.com/maps/embed/v1/place?q=place_id:ChIJbej9bFqJbEcR4nXu1en1cJM&amp;key=AIzaSyC8V96sGgzrasorg2xPOlrlp-cpQFPLSxM\">\n        </iframe>\n        </div>\n    <hr class=\"idsk-address__separator-bottom\">\n</div>"
+        },
+        {
+            "name": "ukážka 2",
+            "options": {
+                "heading": "Ministerstvo investícií, regionálneho rozvoja a informatizácie SR",
+                "fullWidth": true,
+                "title": "Adresa sídla",
+                "addressDescription": [
+                    {
+                        "text": "Štefánikova 15"
+                    },
+                    {
+                        "text": "811 05 Bratislava"
+                    }
+                ],
+                "googleMapsLink": "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJbej9bFqJbEcR4nXu1en1cJM&key=AIzaSyC8V96sGgzrasorg2xPOlrlp-cpQFPLSxM",
+                "additionalLink": {
+                    "link": "#",
+                    "text": "Zoznam sekcií, odborov a oddelení v tejto budove"
+                }
+            },
+            "hidden": false,
+            "html": "<div data-module=\"govuk-address\" class=\"idsk-address idsk-address--full-width\">\n    <hr class=\"idsk-address__separator-top\">\n    <div class=\"idsk-address__content\">\n        <div class=\"idsk-address__description\">\n            <h2 class=\"govuk-heading-m\">Ministerstvo investícií, regionálneho rozvoja a informatizácie SR</h2>\n            <p class=\"govuk-body\">Štefánikova 15</p>\n            <p class=\"govuk-body\">811 05 Bratislava</p>\n            <p class=\"govuk-body\">\n                <a class=\"govuk-link\" href=\"#\" title=\"Zoznam sekcií, odborov a oddelení v tejto budove\">\n                    <span class=\"idsk-address__link-text\">Zoznam sekcií, odborov a oddelení v tejto budove</span>\n                </a>\n            </p>\n        </div>\n        <iframe\n            class=\"idsk-address__map\"\n            title=\"Adresa sídla\"\n            loading=\"lazy\"\n            allowfullscreen\n            src=\"https://www.google.com/maps/embed/v1/place?q=place_id:ChIJbej9bFqJbEcR4nXu1en1cJM&amp;key=AIzaSyC8V96sGgzrasorg2xPOlrlp-cpQFPLSxM\">\n        </iframe>\n        </div>\n    <hr class=\"idsk-address__separator-bottom\">\n</div>"
+        },
+        {
+            "name": "ukážka 3",
+            "options": {
+                "heading": "Ministerstvo investícií, regionálneho rozvoja a informatizácie SR",
+                "addressTitle": "Oddelenie behaviorálnych inovácií",
+                "title": "Adresa sídla",
+                "fullWidth": true,
+                "addressDescription": [
+                    {
+                        "text": "Štefánikova 15"
+                    },
+                    {
+                        "text": "811 05 Bratislava"
+                    },
+                    {
+                        "text": "Zasadačka LONDÝN"
+                    }
+                ],
+                "googleMapsLink": "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJbej9bFqJbEcR4nXu1en1cJM&key=AIzaSyC8V96sGgzrasorg2xPOlrlp-cpQFPLSxM"
+            },
+            "hidden": false,
+            "html": "<div data-module=\"govuk-address\" class=\"idsk-address idsk-address--full-width\">\n    <hr class=\"idsk-address__separator-top\">\n    <div class=\"idsk-address__content\">\n        <div class=\"idsk-address__description\">\n            <h2 class=\"govuk-heading-m\">Ministerstvo investícií, regionálneho rozvoja a informatizácie SR</h2>\n              <h3 class=\"govuk-heading-s\">Oddelenie behaviorálnych inovácií</h3>\n            <p class=\"govuk-body\">Štefánikova 15</p>\n            <p class=\"govuk-body\">811 05 Bratislava</p>\n            <p class=\"govuk-body\">Zasadačka LONDÝN</p>\n        </div>\n        <iframe\n            class=\"idsk-address__map\"\n            title=\"Adresa sídla\"\n            loading=\"lazy\"\n            allowfullscreen\n            src=\"https://www.google.com/maps/embed/v1/place?q=place_id:ChIJbej9bFqJbEcR4nXu1en1cJM&amp;key=AIzaSyC8V96sGgzrasorg2xPOlrlp-cpQFPLSxM\">\n        </iframe>\n        </div>\n    <hr class=\"idsk-address__separator-bottom\">\n</div>"
+        }
+    ]
+}

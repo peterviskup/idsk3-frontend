@@ -1,0 +1,113 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Úvodný blok pre webové sídla" %}
+
+{% block beforeContent %}
+    {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+    <span class="govuk-caption-xl">Webové komponenty</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">
+        Pri tvorbe novej webovej stránky je okrem povinnej <a class="govuk-link" href="/komponenty/hlavicka-webove-sidla" target="_blank" title="hlavičky pre webové sídla">hlavičky pre webové sídla</a> a <a href="/komponenty/footer-extended" target="_blank" title="pätičky s feedback barom" class="govuk-link">pätičky s feedback barom</a> povinný aj tento úvodný blok.
+    </p>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-s">Obsah:</h2>
+            <ul class="govuk-list">
+                <li>
+                    <a class="govuk-link" href="#skladba" title="Z čoho sa skladá úvodný blok?">Z čoho sa skladá úvodný blok?
+                    </a>
+                </li>
+                <li>
+                    <a class="govuk-link" href="#ukazka-uvodny-block-homepage" title="Úvodný blok domovskej stránky">Úvodný blok domovskej stránky
+                    </a>
+                </li>
+                <li>
+                    <a class="govuk-link" href="#ukazka-uvodny-block-blue" title="Úvodný blok podstránky">Úvodný blok podstránky</a>
+                </li>
+                <li>
+                    <a class="govuk-link" href="#ukazka-uvodny-block-grey" title="Populárny obsah v úvodnom bloku">Populárny obsah v úvodnom bloku</a>
+                </li>
+                <li>
+                  <a class="govuk-link" href="#ukazka-uvodny-block-bez-navrhov" title="Úvodný blok bez návrhov vyhľadávania">Úvodný blok bez návrhov vyhľadávania</a>
+                </li>
+            </ul>
+            <h3 class="govuk-heading-m" id="skladba">Z čoho sa skladá úvodný blok?</h3>
+            <p class="govuk-body">Skladá sa z:</p>
+            <ol class="idsk-list idsk-list--letters">
+                <li>nadpisu,</li>
+                <li>krátkeho textu,</li>
+                <li>dominantného vyhľadávacieho poľa so šírkou ⅔ obrazovky v prípade desktopu a celou šírkou obrazovky v prípade mobilných zariadení,</li>
+                <li>skratky k často vyhľadávaným výrazom pod vyhľadávacím poľom,</li>
+                <li>populárneho obsahu.</li>
+            </ol>
+        </div>
+    </div>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <h3 class="govuk-heading-m" id="ukazka-uvodny-block-homepage">Úvodný blok domovskej stránky
+            </h3>
+            <p class="govuk-body">Úvodný blok domovskej stránky slúži ako jedna z foriem navigácie používateľa po webovom sídle. Nadpis a podnadpis slúžia na intuitívne uistenie používateľa, že sa naozaj nachádza na webovom sídle vašej inštitúcie. Podnadpis môžete využiť aj ako odkaz na podstránku s detailnejšími informáciami o vašej inštitúcii (v hlavnom menu je zbytočný). Dominantnou a nevyhnutnou súčasťou úvodného bloku domovskej stránky je vyhľadávacie pole. Doplnkom k vyhľadávaciemu poľu je pole s piatimi najčastejšie hľadanými výrazmi či frázami, ktoré by sa malo aktualizovať automaticky (toto nastavenie si však musíte zabezpečiť pri implementácii tohto vzoru).
+            </p>
+
+            <div class="example">
+                {% set exampleComponentHtml %}
+                {% include "../komponenty/examples/exampleIntroBlock.njk" %}
+                {% endset %}
+                {{exampleComponentHtml | safe}}
+            </div>
+        </div>
+        <div class="govuk-grid-column-full">
+            <h3 class="govuk-heading-m" id="ukazka-uvodny-block-blue">Úvodný blok podstránky</h3>
+            <p class="govuk-body">Webová stránka môže slúžiť na komunikáciu viacerých dôležitých tém, na základe čoho môže byť webová stránka aj štruktúrovaná. Niektorá z tém môže zahŕňať dostatok obsahu na to, aby "dostala" vlastnú podstránku. Úvodný blok podstránky by mal byť úvodom všetkých, tematicky ladených podstránok. Taktiež slúži ako jedna z foriem navigácie používateľa. Narozdiel od domovskej stránky, úvodný blok podstránky neobsahuje vyhľadávacie pole. Obsahuje však nadpis, podnadpis a komponent populárny obsah.
+            </p>
+            <div class="example">
+                {% set exampleComponentHtml %}
+                {% include "../komponenty/examples/exampleIntroBlock2.njk" %}
+                {% endset %}
+                {{exampleComponentHtml | safe}}
+            </div>
+        </div>
+        <div class="govuk-grid-column-full">
+            <h3 class="govuk-heading-m" id="ukazka-uvodny-block-grey">Populárny obsah v úvodnom bloku
+            </h3>
+            <p class="govuk-body">Súčasťou úvodného bloku je komponent zvýrazňujúci populárny obsah. Komponent populárny obsah sa skladá z nadpisu a piatich textových odkazov na najnavštevovanejšie podstránky vášho webu. Populárny obsah odporúčame taktiež nastaviť na automatickú aktualizáciu na základe webovej analytiky.
+            </p>
+            <p class="govuk-body">Komponent populárny obsah má tri základné variácie pozadia: bez pozadia, so šedým a s modrým pozadím.
+            </p>
+            <div class="example">
+                {% set exampleComponentHtml %}
+                {% include "../komponenty/examples/exampleIntroBlock1.njk" %}
+                {% endset %}
+                {{exampleComponentHtml | safe}}
+            </div>
+        </div>
+        <div class="govuk-grid-column-full">
+            <h3 class="govuk-heading-m" id="ukazka-uvodny-block-bez-navrhov">Úvodný blok bez návrhov vyhľadávania</h3>
+            <div class="example">
+              {% set exampleComponentHtml %}
+                {% include "../komponenty/examples/exampleIntroBlock3.njk" %}
+              {% endset %}
+              {{exampleComponentHtml | safe}}
+            </div>
+        </div>
+    </div>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <h2 class="govuk-heading-l" id="priklady">Rozšírené príklady pre úvodný blok</h2>
+            <ul class="govuk-list">
+                <li>
+                    <a class="govuk-link" href="/components/idsk-intro-block" title="Rozšírené príklady úvodného bloku">Rozšírené príklady úvodného bloku</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

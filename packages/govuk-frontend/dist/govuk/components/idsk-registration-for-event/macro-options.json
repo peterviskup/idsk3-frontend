@@ -1,0 +1,88 @@
+[
+    {
+        "name": "classes",
+        "type": "string",
+        "required": false,
+        "description": "Classes to add to the registration for event."
+    },
+    {
+        "name": "heading",
+        "type": "string",
+        "required": true,
+        "description": "The title of even or registration."
+    },
+    {
+        "name": "formItems",
+        "type": "array",
+        "required": true,
+        "description": "Form items array.",
+        "params": [
+            {
+                "name": "label",
+                "type": "string",
+                "required": true,
+                "description": "The title of field"
+            },
+            {
+                "name": "hint",
+                "type": "string",
+                "required": false,
+                "description": "additional description of specific field"
+            },
+            {
+                "name": "error",
+                "type": "string",
+                "required": false,
+                "description": "Error message - required if 'params.required' == true"
+            },
+            {
+                "name": "tag",
+                "type": "string",
+                "required": true,
+                "description": "type of field [input/select]"
+            },
+            {
+                "name": "name",
+                "type": "string",
+                "required": true,
+                "description": "the name attribute"
+            },
+            {
+                "name": "type",
+                "type": "string",
+                "required": false,
+                "description": "type of field e.g text/email/numbet/url etc.. required if 'params.tag' == input"
+            },
+            {
+                "name": "required",
+                "type": "string",
+                "required": false,
+                "description": "if field is required, set it to true"
+            },
+            {
+                "name": "options",
+                "type": "string",
+                "required": false,
+                "description": "these options will be in select dropdown list - required if 'params.tag' == select"
+            },
+            {
+                "name": "autocomplete",
+                "type": "boolean",
+                "required": false,
+                "description": "This option will set autocomplete parameter"
+            }
+        ]
+    },
+    {
+        "name": "buttonLabel",
+        "type": "string",
+        "required": true,
+        "description": "The title of submit button"
+    },
+    {
+        "name": "thankYouMsg",
+        "type": "string",
+        "required": true,
+        "description": "this message will be shown after form submission"
+    }
+]

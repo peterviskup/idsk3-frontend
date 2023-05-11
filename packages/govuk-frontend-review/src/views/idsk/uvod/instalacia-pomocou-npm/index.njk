@@ -1,0 +1,427 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Inštalácia ID-SK Frontend pomocou NPM" %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+"items": [
+{ text: 'ID-SK frontend', href: '/' + legacyQuery },
+{ text: pageName }
+]
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+
+  <span class="govuk-caption-xl">Úvod</span>
+  <h1 class="govuk-heading-xl">{{pageName}}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-body govuk-!-margin-bottom-0">
+
+      <h2 class="govuk-heading-s">Obsah:</h2>
+      <ul class="govuk-list">
+        <li><a class="govuk-link" href="#poziadavky" title="poziadavky">Požiadavky</a></li>
+        <li><a class="govuk-link" href="#instalacia" title="instalacia">Inštalácia</a></li>
+        <li><a class="govuk-link" href="#importovanie-stylov" title="importovanie stylov">Importovanie štýlov</a></li>
+        <li><a class="govuk-link" href="#javascript" title="javascript">JavaScript</a></li>
+        <li><a class="govuk-link" href="#importovanie-assetov" title="importovanie assetov">Importovanie assetov</a>
+        </li>
+        <li><a class="govuk-link" href="#zahrnutie-css-js" title="zahrnutie css a javascript">Zahrnutie CSS a
+            JavaScript</a></li>
+      </ul>
+
+      <h2 class="govuk-heading-l" id="poziadavky">Požiadavky</h2>
+
+      <p>Aby ste mohli používať ID-SK Frontend pomocou NPM:</p>
+      <ol class="govuk-list govuk-list--number">
+        <li>Nainštalujte si verziu <a class="govuk-link" href="https://nodejs.org/en/" target="_blank"
+            rel="noopener noreferrer" title="Node.js">Node.js</a> s dlhodobou podporou (LTS), ktorá obsahuje NPM.
+          Minimálna požadovaná verzia Node je 4.2.0. (Na správu verzií Node odporúčame použiť <a class="govuk-link"
+            href="https://github.com/nvm-sh/nvm" target="_blank" rel="noopener noreferrer" title="nvm">nvm</a>.)</li>
+        <li>Vytvorte <a class="govuk-link" href="https://docs.npmjs.com/cli/v7/configuring-npm/package-json"
+            target="_blank" rel="noopener noreferrer" title="package.json">package.json</a> súbor, ak ho ešte nemáte.
+          Môžete vytvoriť predvolený súbor spustením npm init z koreňovej zložky vašej aplikácie.</li>
+        <li>Ak chcete použiť ID-SK Frontend Nunjucks makrá, nainštalujte Nunjucks. Minimálna požadovaná verzia je 3.0.0.
+        </li>
+      </ol>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <pre
+        class=" language-markup"><code class="govuk-!-font-size-16  language-markup">npm install nunjucks --save</code></pre>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds govuk-body govuk-!-margin-bottom-0">
+      <h2 class="govuk-heading-l" id="instalacia">Inštalácia</h2>
+      <p>Pre inštaláciu spustite:</p>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <pre
+        class=" language-markup"><code class="govuk-!-font-size-16  language-markup">npm install --save govuk-frontend</code></pre>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds govuk-body govuk-!-margin-bottom-0">
+      <p>Po skončení inštalácie ID-SK Frontend, balík govuk-frontend sa objaví v súbore</p>
+    </div>
+    <div class="govuk-grid-column-full">
+      <pre class="language-markup"><code class="govuk-!-font-size-16  language-markup">node_modules</code></pre>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds govuk-body govuk-!-margin-bottom-0">
+      <h2 class="govuk-heading-l" id="importovanie-stylov">Importovanie štýlov</h2>
+      <p>Štýly ID-SK Frontend musíte importovať do hlavného súboru Sass vo vašom projekte. Ak chcete nahradiť ID-SK
+        Frontend vlastnými štýlmi, mali by ste umiestniť nasledujúci kód pred svoje vlastné Sass pravidlá (alebo Sass
+        importy).</p>
+      <ol class="govuk-list govuk-list--number">
+        <li>Pre import všetkých komponentov, do svojho Sass súboru pridajte:</li>
+      </ol>
+    </div>
+    <div class="govuk-grid-column-full">
+      <pre
+        class="language-markup"><code class="govuk-!-font-size-16  language-markup">@import  '@id-sk/frontend/idsk/all';</code></pre>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-0">
+      <ol start="2" class="govuk-list govuk-list--number">
+        <li>Pre import individuálneho GOVUK komponentu (napríklad tlačidla), do svojho Sass súboru pridajte:</li>
+      </ol>
+    </div>
+    <div class="govuk-grid-column-full">
+      <pre
+        class="language-markup"><code class="govuk-!-font-size-16  language-markup">@import  "node_modules/@id-sk/frontend/govuk/components/button/button";</code></pre>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-0">
+      <ol start="3" class="govuk-list govuk-list--number">
+        <li>Pre import individuálneho ID-SK komponentu (napríklad hlavičky), do svojho Sass súboru pridajte:</li>
+      </ol>
+    </div>
+    <div class="govuk-grid-column-full">
+      <pre
+        class="language-markup"><code class="govuk-!-font-size-16  language-markup">@import  "node_modules/@id-sk/frontend/idsk/components/header/header";</code></pre>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds govuk-body govuk-!-margin-bottom-0">
+      <h3 class="govuk-heading-m">Voliteľné: Ošetrenie SCSS importovacích ciest</h3>
+      <p>Ak chcete ošetriť vyššie uvedené <code class=" language-markup govuk-!-font-size-16">@import</code> cesty vo
+        vašej zostave (aby ste sa vyhli prefixovaniu ciest s <code
+          class="govuk-!-font-size-16 language-markup">node_modules</code>), pridajte <code
+          class="govuk-!-font-size-16 language-markup">node_modules</code> do <a class="govuk-link"
+          href="https://github.com/sass/node-sass#includepaths" target="_blank" rel="noopener noreferrer"
+          title="Sass include paths">Sass include paths</a> (v Ruby ich treba pridať do <a class="govuk-link"
+          href="https://guides.rubyonrails.org/asset_pipeline.html#search-paths" target="_blank"
+          rel="noopener noreferrer" title="assets paths">assets paths</a>).</p>
+      <p>Napríklad, ak váš projekt používa Gulp, pridali by ste <a class="govuk-link"
+          href="https://github.com/sass/node-sass#includepaths" target="_blank" rel="noopener noreferrer"
+          title="Sass include paths">Sass include paths</a> do Gulp konfiguračného súboru (napríklad <code
+          class="govuk-!-font-size-16 language-markup">gulpfile.js</code>) s <a class="govuk-link"
+          href="https://www.npmjs.com/package/gulp-sass" target="_blank" rel="noopener noreferrer"
+          title="gulp-sass">gulp-sass</a>.</p>
+    </div>
+    <div class="govuk-grid-column-full">
+      <pre class="language-markup"><code class="  language-markup govuk-!-font-size-16">gulp.task('sass', function () {
+  return  gulp.src('./sass/**/*.scss')
+    .pipe(sass({
+      includePaths:  'node_modules'
+    }))
+    .pipe(gulp.dest('./css'));
+});</code></pre>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds govuk-body govuk-!-margin-bottom-0">
+      <p>Ak už vo svojom projekte kompilujete Sass do CSS, pravdepodobne máte podobnú Gulp úlohu ako v príklade vyššie.
+        V takom prípade iba zahrňte cestu do <code class=" language-markup govuk-!-font-size-16">includePaths</code>.
+      </p>
+      <p>Po ošetrení importovacích ciest môžete importovať ID-SK Frontend použitím:</p>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <pre
+        class=" language-markup"><code class="  language-markup govuk-!-font-size-16">@import  "govuk-frontend/govuk/components/button/button";</code></pre>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds govuk-body govuk-!-margin-bottom-0">
+      <h3 class="govuk-heading-m">Global Styles</h3>
+      <p>ID-SK Frontend sa vyhýba globálnemu aplikovaniu štýlov na prvky HTML, ako napríklad <code
+          class=" language-markup govuk-!-font-size-16">body</code>; namiesto toho sú štýly aplikované používaním tried.
+      </p>
+      <p>Predíde sa tým riziku konfliktu globálnych štýlov s akýmikoľvek existujúcimi globálmi, napríklad v ID-SK
+        Elements alebo ID-SK Template alebo s akýmkoľvek CSS špecifickým pre aplikáciu.</p>
+      <p>Tieto <a class="govuk-link"
+          href="https://github.com/id-sk/id-sk-frontend/blob/master/src/govuk/core/_global-styles.scss" target="_blank"
+          rel="noopener noreferrer" title="globálne štýly">globálne štýly</a> nie sú predvolene zahrnuté v ID-SK
+        Frontend. Ak ich chcete zahrnúť do svojej aplikácie, pred importom štýlov ID-SK Frontend do aplikácie môžete
+        nastaviť premennú <code class=" language-markup govuk-!-font-size-16">$govuk-global-styles</code> na <code
+          class=" language-markup govuk-!-font-size-16">true</code>:</p>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <pre class="language-markup"><code class="  language-markup govuk-!-font-size-16">// application.scss
+
+$govuk-global-styles: true;
+@import  '@id-sk/frontend/idsk/all';</code></pre>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds govuk-body">
+      <h3 class="govuk-heading-m">Používanie ID-SK Frontend so starými frameworkami</h3>
+      <p>Ako nakonfigurovať <a class="govuk-link"
+          href="https://github.com/id-sk/id-sk-frontend/blob/master/docs/installation/compatibility.md" target="_blank"
+          rel="noopener noreferrer" title="ID-SK Frontend for compatibility">ID-SK Frontend for compatibility</a> s
+        ID-SK Frontend Toolkit, ID-SK Template alebo ID-SK Elements.</p>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds govuk-body govuk-!-margin-bottom-0">
+      <h2 class="govuk-heading-l" id="javascript">JavaScript</h2>
+      <p>JavaScript obsiahnutý v ID-SK frontend zlepšuje použiteľnosť a prístupnosť komponentov.</p>
+      <p>JavaScript napríklad:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>umožňuje linky, ktoré sú dizajnované ako tlačidlá, spúšťať medzerníkom pri focuse, čo zodpovedá správaniu
+          natívnych tlačidiel a spôsobu, akým sú tlačidlá opísané pri používaní asistenčných technológií.</li>
+        <li>rozširuje komponent Details, aby mohli používatelia asistenčných technológií pochopiť, či je zbalený alebo
+          rozbalený a zaistiť, aby sa komponent správal správne pre používateľov prehliadača Internet Explorer 8.</li>
+      </ul>
+      <p>Môžete zahrnúť alebo <a class="govuk-link"
+          href="https://github.com/id-sk/id-sk-frontend/blob/master/docs/installation/installing-with-npm.md#option-2-import-javascript"
+          target="_blank" rel="noopener noreferrer" title="importovať">importovať</a> ID-SK Frontend JavaScript a
+        následne script inicializovať vo svojej aplikácii aby ste sa uistili, že všetci používatelia ho dokážu použiť.
+      </p>
+      <p>Upozorňujeme, že ID-SK Frontend defaultne neinicializuje žiadne skripty; aby fungovali všetky skripty, musia
+        byť inicializované.</p>
+      <h3 class="govuk-heading-m">Možnosť 1: Zahrnúť JavaScript</h3>
+      <p>Zahrňte script <code
+          class=" language-markup govuk-!-font-size-16">node_modules/govuk-frontend/govuk/all.js</code> na vašu stránku.
+        Možno budete chcieť súbor skopírovať do svojho projektu alebo naň odkazovať cez <code
+          class=" language-markup govuk-!-font-size-16">node_modules</code>.</p>
+      <p>Pre inicializáciu všetkých komponentov použite funkciu <code
+          class=" language-markup govuk-!-font-size-16">initAll</code>.</p>
+      <p>JavaScript v ID-SK Frontend vyžaduje, aby bolo HTML predtým, ako sa inicializuje analyzované prehliadačom. Z
+        tohto dôvodu sa uistite, že ste script zahrnuli pred <code
+          class=" language-markup govuk-!-font-size-16">&lt;/body&gt;</code> tag. Zahrnutie skriptu na iné miesto
+        zabráni správnemu fungovaniu komponentov alebo ich zobrazeniu.</p>
+    </div>
+    <div class="govuk-grid-column-full">
+      <pre class="language-markup"><code class="  language-markup govuk-!-font-size-16">    &lt;script  src="path-to-assets/govuk-frontend/govuk/all.js"&gt;&lt;/script&gt;
+    &lt;script&gt;window.GOVUKFrontend.initAll()&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds govuk-body govuk-!-margin-bottom-0">
+      <h3 class="govuk-heading-m">Inicializácia ID-SK Frontend iba v určitých sekciách stránky</h3>
+      <p>Funkcia <code class=" language-markup govuk-!-font-size-16">initAll</code> z ID-SK Frontend predvolene
+        inicializuje všetky komponenty s rozsahom na celú stránku pomocou objektu <code
+          class=" language-markup govuk-!-font-size-16">document</code>.</p>
+      <p>Zmeniť to môžete presunutím parametra <code class=" language-markup govuk-!-font-size-16">scope</code> do
+        funkcie <code class=" language-markup govuk-!-font-size-16">initAll</code>.</p>
+      <p>Napríklad, ak máte modálne dialógové okno, ktoré sa otvára s novým markupom, môžete urobiť nasledovné:</p>
+    </div>
+    <div class="govuk-grid-column-full">
+      <pre class="language-markup"><code class="language-markup govuk-!-font-size-16">var  $modal = document.querySelector('.modal')
+window.GOVUKFrontend.initAll({
+  scope:  $modal
+})</code></pre>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds govuk-body govuk-!-margin-bottom-0">
+      <h3 class="govuk-heading-m">Inicializácia individuálnych zahrnutých komponentov</h3>
+      <p>ID-SK Frontend komponenty s JavaScript správaním majú vo svojom markupe nastavený atribút <code
+          class=" language-markup govuk-!-font-size-16">data-module</code>.</p>
+      <p>Tento atribút môžete použiť na manuálnu inicializáciu komponentu. Môže to byť užitočné, ak pridávate markup na
+        stránku po jej načítaní.</p>
+      <p>Na inicializáciu prvého radio-komponentu na stránke použite:</p>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <pre class="language-markup"><code class="language-markup govuk-!-font-size-16">var  Radios = window.GOVUKFrontend.Radios
+var  $radio = document.querySelector('[data-module="govuk-radios"]')
+if ($radio) {
+  new  Radios($radio).init()
+}</code></pre>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds govuk-body govuk-!-margin-bottom-0">
+      <h3 class="govuk-heading-m">Možnosť 2: Importovať JavaScript</h3>
+      <p>Ak používate balík ako napríklad Webpack, na import všetkých komponentov použite syntax <code
+          class=" language-markup govuk-!-font-size-16">import</code>. Pre ich inicializáciu použite funkciu <code
+          class=" language-markup govuk-!-font-size-16">initAll</code>:</p>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <pre class="language-markup"><code class="language-markup govuk-!-font-size-16">import { initAll } from  '@id-sk/frontend/idsk/all'
+initAll()</code></pre>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds govuk-body govuk-!-margin-bottom-0">
+      <p>Ak používate balík ako napríklad napríklad <a class="govuk-link" href="https://browserify.org/" target="_blank"
+          rel="noopener noreferrer" title="Browserify">Browserify</a>, možno budete musieť použiť požiadavku CommonJS
+        <code class=" language-markup govuk-!-font-size-16">require</code>:</p>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <pre class="language-markup"><code class="language-markup govuk-!-font-size-16">const  GOVUKFrontend = require('govuk-frontend')
+GOVUKFrontend.initAll()</code></pre>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds govuk-body govuk-!-margin-bottom-0">
+      <h4 class="govuk-heading-s">Import individual components</h4>
+      <p>Ak používate balík ako napríklad Webpack, pre importovanie komponentu použite syntax <code
+          class="  language-markup govuk-!-font-size-16">import</code>:</p>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <pre
+        class=" language-markup"><code class="  language-markup govuk-!-font-size-16">import { Radios } from  'govuk-frontend'</code></pre>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds govuk-body govuk-!-margin-bottom-0">
+      <p><strong>Ak používate balík ako napríklad napríklad <a class="govuk-link" href="https://browserify.org/"
+            target="_blank" rel="noopener noreferrer" title="">Browserify</a>, možno budete musieť použiť požiadavku
+          CommonJS require:</strong></p>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <pre class="language-markup"><code class="language-markup govuk-!-font-size-16">const  GOVUKFrontend = require('govuk-frontend')
+const  Radios = GOVUKFrontend.Radios</code></pre>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds govuk-body govuk-!-margin-bottom-0">
+      <p>ID-SK Frontend (GOV.UK) komponenty s JavaScript správaním majú vo svojom markupe nastavený atribút data-module.
+      </p>
+      <p>Tento atribút môžete použiť na manuálnu inicializáciu komponentu. Môže to byť užitočné, ak pridávate markup na
+        stránku po jej načítaní.</p>
+      <p>Na inicializáciu prvého rádiového komponentu na stránke použite:</p>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <pre class="language-markup"><code class="language-markup govuk-!-font-size-16">var  $radio = document.querySelector('[data-module="govuk-radios"]')
+if ($radio) {
+  new  Radios($radio).init()
+}</code></pre>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds govuk-body">
+      <h3 class="govuk-heading-m">Polyfills</h3>
+      <p>Polyfill JavaScript poskytuje funkčnosť v starších prehliadačoch alebo podporných technológiách, ktoré ju
+        natívne nepodporujú.</p>
+      <p>Účelom polyfillov poskytovaných s ID-SK Frontend je vyriešiť problémy s použiteľnosťou a prístupnosťou. Ak je v
+        adresári komponentov JavaScript, je dôležité ho importovať a inicializovať vo vašom projekte, aby ste zaistili,
+        že ho môžu všetci používatelia správne používať (pozri <a class="govuk-link"
+          href="https://github.com/id-sk/id-sk-frontend/blob/master/docs/contributing/polyfilling.md" target="_blank"
+          rel="noopener noreferrer" title="Polyfilling">Polyfilling</a>).</p>
+
+      <h3 class="govuk-heading-m">Ako je ID-SK Frontend zabalený</h3>
+      <p>JavaScript zahrnutý v ID-SK Frontend komponentoch je v <a class="govuk-link"
+          href="https://github.com/umdjs/umd" target="_blank" rel="noopener noreferrer"
+          title="UMD (Universal Module Definition)">UMD (Universal Module Definition)</a> formáte, čo zabezpečuje
+        kompatibilitu s AMD (Asynchronous module definition) a CommonJS.</p>
+      <p>Viac o tom, ako je JavaScript použitý v projekte: <a class="govuk-link"
+          href="https://github.com/id-sk/id-sk-frontend/blob/master/docs/contributing/coding-standards/js.md"
+          target="_blank" rel="noopener noreferrer" title="JavaScript Coding Standards">JavaScript Coding Standards</a>
+      </p>
+
+      <h4 class="govuk-heading-s">Použitie ID-SK Frontend s Webpack 4</h4>
+      <p>To je príklad, ako nastaviť <a class="govuk-link"
+          href="https://github.com/id-sk/id-sk-frontend/blob/master/docs/installation/examples/webpack/webpack.config.js"
+          target="_blank" rel="noopener noreferrer" title="webpack.config.js">webpack.config.js</a> do vášho projektu.
+      </p>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds govuk-body govuk-!-margin-bottom-0">
+      <h2 class="govuk-heading-l" id="importovanie-assetov">Importovanie assetov</h2>
+      <p>Ak chcete do svojho projektu importovať obrázky a písma z ID-SK Frontend, mali by ste nakonfigurovať svoju
+        aplikáciu tak, aby odkazovala alebo kopírovala príslušné ID-SK Frontend assety.</p>
+      <p>Držte sa bud’ <a class="govuk-link"
+          href="https://github.com/id-sk/id-sk-frontend/blob/master/docs/installation/installing-with-npm.md#recommended-solution"
+          target="_blank" rel="noopener noreferrer" title="Odporúčaného riešenia">Odporúčaného riešenia</a> alebo <a
+          class="govuk-link"
+          href="https://github.com/id-sk/id-sk-frontend/blob/master/docs/installation/installing-with-npm.md#alternative-solution"
+          target="_blank" rel="noopener noreferrer" title="Alternatívneho riešenia">Alternatívneho riešenia</a>.</p>
+
+      <h3 class="govuk-heading-m">Odporúčané riešenie</h3>
+      <p>Sprístupnite <code class="  language-markup govuk-!-font-size-16">/node_modules/govuk-frontend/assets</code>
+        pre váš projekt smerovaním požiadaviek na priečinok s assetmi.</p>
+      <p>Napríklad, ak váš projekt využíva <a class="govuk-link" href="https://expressjs.com/" target="_blank"
+          rel="noopener noreferrer" title="express.js">express.js</a>, nižšie je ukážka kódu, ktorú môžete pridať do
+        svojej konfigurácie:</p>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <pre
+        class=" language-markup"><code class="  language-markup govuk-!-font-size-16">app.use('/assets', express.static(path.join(__dirname, '/node_modules/govuk-frontend/assets')))</code></pre>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds govuk-body govuk-!-margin-bottom-0">
+      <h3 class="govuk-heading-m">Alternatívne riešenie</h3>
+      <p>Obrázky a fonty skopírujte manuálne z <code
+          class="  language-markup govuk-!-font-size-16">/node_modules/govuk-frontend/assets</code> do verejného
+        adresára vo vašom projekte. V ideálnom prípade by kopírovanie súborov do vášho projektu malo byť automatizovanou
+        úlohou alebo súčasťou pipeline, aby sa zaistilo, že ID-SK Frontend assety zostanú aktuálne.</p>
+      <p>Predvolené cesty pre assety sú <code class="  language-markup govuk-!-font-size-16">assets/images</code> a
+        <code class="  language-markup govuk-!-font-size-16">assets/fonts</code>. <strong>Ak majú vaše priečinky assetov
+          takúto štruktúru, nebudete musieť robiť nasledujúce kroky.</strong></p>
+      <p>Ak chcete použiť iné cesty assetov, vykonajte tiež nasledovné kroky:</p>
+      <ol class="govuk-list govuk-list--number">
+        <li>Nastavte <code class="  language-markup govuk-!-font-size-16">$idsk-assets-path, $idsk-images-path</code>
+          a <code class="  language-markup govuk-!-font-size-16">$idsk-fonts-path</code> do vášho projektového Sass
+          súboru tak, aby odkazoval na príslušné adresáre v projekte (prepíše sa tým predvolené nastavenie v
+          /node_modules/govuk-frontend/settings/_assets.scss). Uistite sa, že ste tak urobili pred importovaním
+          govuk-frontend do vášho projektu – pozri <a class="govuk-link"
+            href="https://github.com/id-sk/id-sk-frontend/blob/master/docs/installation/installing-with-npm.md#importing-styles"
+            target="_blank" rel="noopener noreferrer" title="Importing styles">Importing styles</a>.</li>
+      </ol>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <p class="govuk-body">Príklad 1:</p>
+      <pre class="language-markup"><code class="language-markup govuk-!-font-size-16">// Include images from /application/assets/images and fonts from /application/assets/fonts
+$idsk-assets-path: '/application/assets';
+@import  "govuk-frontend/govuk/all";</code></pre>
+
+      <p class="govuk-body">Príklad 2:</p>
+      <pre class="language-markup"><code class="language-markup govuk-!-font-size-16">// Include images from /images/govuk-frontend and fonts from /fonts
+$idsk-images-path: "/images/govuk-frontend/";
+$idsk-fonts-path: "/fonts/";
+@import  "govuk-frontend/govuk/all";</code></pre>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds govuk-body">
+      <ol start="2" class="govuk-list govuk-list--number">
+        <li>Nepovinné: Môžete tiež prepísať pomocníkov, ktorí sa používajú na generovanie url adries assetov, napríklad
+          ak používate sass-rails asset-pipeline. Môžete to urobiť nastavením <code
+            class="  language-markup govuk-!-font-size-16">$idsk-image-url-function</code> na názov funkcie (funkcií),
+          ktoré chcete použiť. Ďalšie informácie a príklady nájdete na stránke <code
+            class="  language-markup govuk-!-font-size-16">src/govuk/settings/_assets.scss</code>.</li>
+      </ol>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds govuk-body govuk-!-margin-bottom-0">
+      <h2 class="govuk-heading-l" id="zahrnutie-css-js">Zahrnutie CSS a JavaScript</h2>
+      <p>Pridajte CSS a JavaScript kód do vašej HTML šablóny:</p>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <pre class="language-markup"><code class="language-markup govuk-!-font-size-16">&lt;!DOCTYPE  html>
+  &lt;head>
+    &lt;title>Example&lt;/title>
+    &lt;link  rel="stylesheet"  href="assets/application.css">
+  &lt;/head>
+  &lt;body>
+    &lt;!-- Copy and paste component HTML-->
+    &lt;button  class="govuk-button">This is a button component&lt;/button>
+    &lt;script  src="assets/application.js">&lt;/script>
+  &lt;/body>
+&lt;/html></code></pre>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds govuk-body">
+      <p>Ak vaša služba podporuje Internet Explorer 8, budete musieť vygenerovať a zahrnúť aj osobitnú šablónu so
+        štýlmi.</p>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

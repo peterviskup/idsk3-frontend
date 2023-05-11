@@ -1,0 +1,235 @@
+params:
+  - name: id
+    type: string
+    required: false
+    description: Id of the table filter.
+  - name: formAction
+    type: string
+    required: false
+    description: Action called after submitting form
+  - name: openFilter
+    type: string
+    required: false
+    description: Change for another languages
+  - name: closeFilter
+    type: string
+    required: false
+    description: Change for another languages
+  - name: filterContentTitle
+    type: string
+    required: false
+    description: Change for another languages
+  - name: activeFiltersTitle
+    type: string
+    required: false
+    description: Change for another languages
+  - name: filterSelectedText
+    type: string
+    required: false
+    description: Change for another languages
+  - name: removeAllFilters
+    type: string
+    required: false
+    description: Change for another languages
+  - name: removeFilter
+    type: string
+    required: false
+    description: Change for another languages
+  - name: filters
+    type: array
+    required: false
+    description: Array of all filters
+    params:
+      - name: id
+        type: string
+        required: true
+        description: ID of the filter
+      - name: inputTitle
+        type: string
+        required: true
+        description: Text for filters label
+      - name: options
+        type: array
+        required: false
+        description: Options if input should be select
+        params:
+          - name: value
+            type: string
+            required: true
+            description: Value of the option
+          - name: inputTitle
+            type: string
+            required: true
+            description: Text for the option
+          - name: disabled
+            type: boolean
+            required: false
+            description: True if option should be disabled
+          - name: selected
+            type: boolean
+            required: false
+            description: True if option should be selected by default
+  - name: categories
+    type: array
+    required: false
+    description: Filter categories
+    params:
+      - name: title
+        type: string
+        required: true
+        description: Title of the category
+      - name: filters
+        type: array
+        required: false
+        description: Array of all filters
+        params:
+          - name: id
+            type: string
+            required: true
+            description: ID of the filter
+          - name: inputTitle
+            type: string
+            required: true
+            description: Text for filters label
+          - name: options
+            type: array
+            required: false
+            description: Options if input should be select
+            params:
+              - name: value
+                type: string
+                required: true
+                description: Value of the option
+              - name: inputTitle
+                type: string
+                required: true
+                description: Text for the option
+              - name: disabled
+                type: boolean
+                required: false
+                description: True if option should be disabled
+              - name: selected
+                type: boolean
+                required: false
+                description: True if option should be selected by default
+
+examples:
+  - name: simple
+    data:
+      id: 'simple-filter'
+      filters:
+        - id: 'filter1'
+          inputTitle: 'Filter 1'
+          options:
+            - value: ''
+              inputTitle: 'Text'
+            - value: 'filter1-1'
+              inputTitle: 'Filter1-1'
+            - value: 'filter1-2'
+              inputTitle: 'Filter1-2'
+            - value: 'filter1-3'
+              inputTitle: 'Filter1-3'
+        - id: 'filter2'
+          inputTitle: 'Filter 2'
+          options:
+            - value: ''
+              inputTitle: 'Text'
+            - value: 'filter2-1'
+              inputTitle: 'Filter2-1'
+            - value: 'filter2-2'
+              inputTitle: 'Filter2-2'
+            - value: 'filter2-3'
+              inputTitle: 'Filter2-3'
+        - id: 'filter3'
+          inputTitle: 'Filter 3'
+          options:
+            - value: ''
+              inputTitle: 'Text'
+            - value: 'filter3-1'
+              inputTitle: 'Filter2-1'
+            - value: 'filter3-2'
+              inputTitle: 'Filter2-2'
+            - value: 'filter3-3'
+              inputTitle: 'Filter2-3'
+  - name: advanced
+    data:
+      id: 'advanced-filter'
+      categories:
+        - title: 'Bydlisko'
+          filters:
+            - id: 'bydlisko-filter1'
+              inputTitle: 'Label'
+            - id: 'bydlisko-filter2'
+              inputTitle: 'Filter 2'
+            - id: 'bydlisko-filter3'
+              inputTitle: 'Filter 3'
+            - id: 'bydlisko-filter4'
+              inputTitle: 'Filter6'
+              options:
+                - value: ''
+                  inputTitle: 'Text'
+                - value: 'bydlisko-filter4-1'
+                  inputTitle: 'Bydlisko-filter4-1'
+                - value: 'bydlisko-filter4-2'
+                  inputTitle: 'Bydlisko-filter4-2'
+                - value: 'bydlisko-filter4-3'
+                  disabled: true
+                  inputTitle: 'Bydlisko-filter4-3'
+            - id: 'bydlisko-filter5'
+              inputTitle: 'Filter6'
+              options:
+                - value: ''
+                  inputTitle: 'Text'
+                - value: 'bydlisko-filter5-1'
+                  inputTitle: 'Bydlisko-filter6-1'
+                - value: 'bydlisko-filter5-2'
+                  inputTitle: 'Bydlisko-filter6-2'
+                - value: 'bydlisko-filter5-3'
+                  disabled: true
+                  inputTitle: 'Bydlisko-filter6-3'
+            - id: 'bydlisko-filter6'
+              inputTitle: 'Filter6'
+              options:
+                - value: ''
+                  inputTitle: 'Text'
+                - value: 'bydlisko-filter6-1'
+                  inputTitle: 'Bydlisko-filter6-1'
+                - value: 'bydlisko-filter6-2'
+                  inputTitle: 'Bydlisko-filter6-2'
+                - value: 'bydlisko-filter6-3'
+                  disabled: true
+                  inputTitle: 'Bydlisko-filter6-3'
+        - title: 'Názov inštitúcie'
+          filters:
+            - id: 'filter5'
+              inputTitle: 'Filter5'
+            - id: 'filter6'
+              inputTitle: 'Filter6'
+              options:
+                - value: ''
+                  inputTitle: 'Vyber filter'
+                - value: 'filter6-1'
+                  inputTitle: 'Filter6-1'
+                - value: 'filter6-2'
+                  inputTitle: 'Filter6-2'
+                - value: 'filter6-3'
+                  disabled: true
+                  inputTitle: 'Filter6-3'
+        - title: 'Parametre'
+          filters:
+            - id: 'filter7'
+              inputTitle: 'Filter 7'
+            - id: 'filter8'
+              inputTitle: 'Filter 8'
+              options:
+                - value: ''
+                  inputTitle: 'Vyber filter'
+                - value: 'filter8-1'
+                  inputTitle: 'Filter8-1'
+                  disabled: true
+                - value: 'filter8-2'
+                  inputTitle: 'Filter8-2'
+                  selected: true
+                - value: 'filter8-3'
+                  disabled: true
+                  inputTitle: 'Filter8-3'

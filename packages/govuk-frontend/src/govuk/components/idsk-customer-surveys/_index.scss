@@ -1,0 +1,89 @@
+// stylelint-disable selector-id-pattern
+// stylelint-disable selector-max-id
+
+@include govuk-exports("idsk/component/customer-surveys") {
+  .idsk-customer-surveys {
+    margin-top: govuk-spacing(5);
+
+    &--line {
+      border-top: 1px solid govuk-colour("black");
+      background-color: govuk-colour("black");
+    }
+
+    &--hidden {
+      display: none;
+    }
+
+    &--show {
+      display: block;
+    }
+  }
+
+  .idsk-customer-survey__caption {
+    margin-top: -10px;
+  }
+
+  #idsk-customer-surveys__previous-button.govuk-button--secondary {
+    @include govuk-font($size: 24);
+    width: auto;
+    margin-right: govuk-spacing(4);
+    line-height: 1;
+  }
+
+  #idsk-customer-surveys__send-button.idsk-button--start {
+    @include govuk-font($size: 24);
+    width: auto;
+    font-weight: normal;
+  }
+
+  #idsk-customer-surveys__send-button,
+  #idsk-customer-surveys__previous-button {
+    max-height: 37px;
+
+    @include mq($from: tablet) {
+      max-height: none;
+    }
+  }
+
+  .idsk-customer-surveys__buttons {
+    padding-top: govuk-spacing(2);
+  }
+
+  .idsk-customer-surveys__buttons .govuk-button {
+    width: auto;
+  }
+
+  .idsk-customer-surveys__step .govuk-body {
+    @include govuk-font($size: 19);
+  }
+
+  .idsk-customer-survey--line {
+    border-top: 1px solid govuk-colour("black");
+  }
+
+  .idsk-customer-surveys__logo {
+    margin-bottom: govuk-spacing(6);
+  }
+
+  .idsk-customer-surveys__text--bold {
+    font-weight: bold;
+  }
+
+  .idsk-customer-surveys__icon--hidden {
+    display: none;
+  }
+
+  .idsk-customer-surveys__step .govuk-fieldset__legend {
+    width: 100%;
+    margin-top: 16px;
+    margin-bottom: govuk-spacing(4);
+    padding-top: 16px;
+    border-top: 1px solid govuk-colour("black");
+  }
+
+  // labels only for readers
+  .idsk-character-count .govuk-label {
+    visibility: hidden;
+    height: 0;
+  }
+}

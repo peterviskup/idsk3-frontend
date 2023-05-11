@@ -1,0 +1,243 @@
+{
+    "component": "idsk-table-filter",
+    "fixtures": [
+        {
+            "name": "simple",
+            "options": {
+                "id": "simple-filter",
+                "filters": [
+                    {
+                        "id": "filter1",
+                        "inputTitle": "Filter 1",
+                        "options": [
+                            {
+                                "value": "",
+                                "inputTitle": "Text"
+                            },
+                            {
+                                "value": "filter1-1",
+                                "inputTitle": "Filter1-1"
+                            },
+                            {
+                                "value": "filter1-2",
+                                "inputTitle": "Filter1-2"
+                            },
+                            {
+                                "value": "filter1-3",
+                                "inputTitle": "Filter1-3"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "filter2",
+                        "inputTitle": "Filter 2",
+                        "options": [
+                            {
+                                "value": "",
+                                "inputTitle": "Text"
+                            },
+                            {
+                                "value": "filter2-1",
+                                "inputTitle": "Filter2-1"
+                            },
+                            {
+                                "value": "filter2-2",
+                                "inputTitle": "Filter2-2"
+                            },
+                            {
+                                "value": "filter2-3",
+                                "inputTitle": "Filter2-3"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "filter3",
+                        "inputTitle": "Filter 3",
+                        "options": [
+                            {
+                                "value": "",
+                                "inputTitle": "Text"
+                            },
+                            {
+                                "value": "filter3-1",
+                                "inputTitle": "Filter2-1"
+                            },
+                            {
+                                "value": "filter3-2",
+                                "inputTitle": "Filter2-2"
+                            },
+                            {
+                                "value": "filter3-3",
+                                "inputTitle": "Filter2-3"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "hidden": false,
+            "html": "<div data-module=\"idsk-table-filter\" id=\"simple-filter\" class=\"idsk-table-filter \">\n  <div class=\"idsk-table-filter__panel idsk-table-filter__inputs\">\n    <div class=\"idsk-table-filter__title govuk-heading-m\">Filtrovať obsah</div>\n      <button class=\"govuk-body govuk-link idsk-filter-menu__toggle\"\n    tabindex=\"0\"\n    data-open-text=\"Rozbaliť obsah filtra\"\n    data-close-text=\"Zbaliť obsah filtra\"\n    data-category-name=\"\"\n    aria-label=\"Rozbaliť obsah filtra\"\n    type=\"button\">\n    Rozbaliť obsah filtra\n  </button>\n\n    <form class=\"idsk-table-filter__content\" aria-hidden=\"true\" action=\"#\">\n        <div class=\"govuk-grid-row idsk-table-filter__filter-inputs\">\n              <div class=\"govuk-grid-column-one-third-from-desktop\">\n      <div class=\"govuk-form-group\">\n        <label class=\"govuk-label\" for=\"filter1\">\n          Filter 1\n        </label>\n          <select tabindex=\"-1\" class=\"govuk-select\" id=\"filter1\" name=\"filter1\">\n              <option  \n                value=\"\">Text</option>\n              <option  \n                value=\"filter1-1\">Filter1-1</option>\n              <option  \n                value=\"filter1-2\">Filter1-2</option>\n              <option  \n                value=\"filter1-3\">Filter1-3</option>\n          </select>\n      </div>\n    </div>\n    <div class=\"govuk-grid-column-one-third-from-desktop\">\n      <div class=\"govuk-form-group\">\n        <label class=\"govuk-label\" for=\"filter2\">\n          Filter 2\n        </label>\n          <select tabindex=\"-1\" class=\"govuk-select\" id=\"filter2\" name=\"filter2\">\n              <option  \n                value=\"\">Text</option>\n              <option  \n                value=\"filter2-1\">Filter2-1</option>\n              <option  \n                value=\"filter2-2\">Filter2-2</option>\n              <option  \n                value=\"filter2-3\">Filter2-3</option>\n          </select>\n      </div>\n    </div>\n    <div class=\"govuk-grid-column-one-third-from-desktop\">\n      <div class=\"govuk-form-group\">\n        <label class=\"govuk-label\" for=\"filter3\">\n          Filter 3\n        </label>\n          <select tabindex=\"-1\" class=\"govuk-select\" id=\"filter3\" name=\"filter3\">\n              <option  \n                value=\"\">Text</option>\n              <option  \n                value=\"filter3-1\">Filter2-1</option>\n              <option  \n                value=\"filter3-2\">Filter2-2</option>\n              <option  \n                value=\"filter3-3\">Filter2-3</option>\n          </select>\n      </div>\n    </div>\n\n        </div>\n      <button type=\"submit\" class=\"idsk-button submit-table-filter\" disabled>\n        Filtrovať (<span class=\"count\">0</span>)\n      </button>\n    </form>\n  </div>\n  <div class=\"idsk-table-filter__panel idsk-table-filter__active-filters idsk-table-filter__active-filters__hide idsk-table-filter--expanded\"\n    data-remove-filter=\"Zrušiť filter\"\n    data-remove-all-filters=\"Zrušiť všetko\">\n    <div class=\"govuk-body idsk-table-filter__title\">Aktívny filter</div>\n      <button class=\"govuk-body govuk-link idsk-filter-menu__toggle\"\n    tabindex=\"0\"\n    data-open-text=\"Rozbaliť aktívny filter\"\n    data-close-text=\"Zbaliť aktívny filter\"\n    data-category-name=\"\"\n    aria-label=\"Zbaliť aktívny filter\"\n    type=\"button\">\n    Zbaliť aktívny filter\n  </button>\n\n    <div class=\"govuk-clearfix idsk-table-filter__content\"></div>\n  </div>\n</div>"
+        },
+        {
+            "name": "advanced",
+            "options": {
+                "id": "advanced-filter",
+                "categories": [
+                    {
+                        "title": "Bydlisko",
+                        "filters": [
+                            {
+                                "id": "bydlisko-filter1",
+                                "inputTitle": "Label"
+                            },
+                            {
+                                "id": "bydlisko-filter2",
+                                "inputTitle": "Filter 2"
+                            },
+                            {
+                                "id": "bydlisko-filter3",
+                                "inputTitle": "Filter 3"
+                            },
+                            {
+                                "id": "bydlisko-filter4",
+                                "inputTitle": "Filter6",
+                                "options": [
+                                    {
+                                        "value": "",
+                                        "inputTitle": "Text"
+                                    },
+                                    {
+                                        "value": "bydlisko-filter4-1",
+                                        "inputTitle": "Bydlisko-filter4-1"
+                                    },
+                                    {
+                                        "value": "bydlisko-filter4-2",
+                                        "inputTitle": "Bydlisko-filter4-2"
+                                    },
+                                    {
+                                        "value": "bydlisko-filter4-3",
+                                        "disabled": true,
+                                        "inputTitle": "Bydlisko-filter4-3"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "bydlisko-filter5",
+                                "inputTitle": "Filter6",
+                                "options": [
+                                    {
+                                        "value": "",
+                                        "inputTitle": "Text"
+                                    },
+                                    {
+                                        "value": "bydlisko-filter5-1",
+                                        "inputTitle": "Bydlisko-filter6-1"
+                                    },
+                                    {
+                                        "value": "bydlisko-filter5-2",
+                                        "inputTitle": "Bydlisko-filter6-2"
+                                    },
+                                    {
+                                        "value": "bydlisko-filter5-3",
+                                        "disabled": true,
+                                        "inputTitle": "Bydlisko-filter6-3"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "bydlisko-filter6",
+                                "inputTitle": "Filter6",
+                                "options": [
+                                    {
+                                        "value": "",
+                                        "inputTitle": "Text"
+                                    },
+                                    {
+                                        "value": "bydlisko-filter6-1",
+                                        "inputTitle": "Bydlisko-filter6-1"
+                                    },
+                                    {
+                                        "value": "bydlisko-filter6-2",
+                                        "inputTitle": "Bydlisko-filter6-2"
+                                    },
+                                    {
+                                        "value": "bydlisko-filter6-3",
+                                        "disabled": true,
+                                        "inputTitle": "Bydlisko-filter6-3"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Názov inštitúcie",
+                        "filters": [
+                            {
+                                "id": "filter5",
+                                "inputTitle": "Filter5"
+                            },
+                            {
+                                "id": "filter6",
+                                "inputTitle": "Filter6",
+                                "options": [
+                                    {
+                                        "value": "",
+                                        "inputTitle": "Vyber filter"
+                                    },
+                                    {
+                                        "value": "filter6-1",
+                                        "inputTitle": "Filter6-1"
+                                    },
+                                    {
+                                        "value": "filter6-2",
+                                        "inputTitle": "Filter6-2"
+                                    },
+                                    {
+                                        "value": "filter6-3",
+                                        "disabled": true,
+                                        "inputTitle": "Filter6-3"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Parametre",
+                        "filters": [
+                            {
+                                "id": "filter7",
+                                "inputTitle": "Filter 7"
+                            },
+                            {
+                                "id": "filter8",
+                                "inputTitle": "Filter 8",
+                                "options": [
+                                    {
+                                        "value": "",
+                                        "inputTitle": "Vyber filter"
+                                    },
+                                    {
+                                        "value": "filter8-1",
+                                        "inputTitle": "Filter8-1",
+                                        "disabled": true
+                                    },
+                                    {
+                                        "value": "filter8-2",
+                                        "inputTitle": "Filter8-2",
+                                        "selected": true
+                                    },
+                                    {
+                                        "value": "filter8-3",
+                                        "disabled": true,
+                                        "inputTitle": "Filter8-3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "hidden": false,
+            "html": "<div data-module=\"idsk-table-filter\" id=\"advanced-filter\" class=\"idsk-table-filter \">\n  <div class=\"idsk-table-filter__panel idsk-table-filter__inputs\">\n    <div class=\"idsk-table-filter__title govuk-heading-m\">Filtrovať obsah</div>\n      <button class=\"govuk-body govuk-link idsk-filter-menu__toggle\"\n    tabindex=\"0\"\n    data-open-text=\"Rozbaliť obsah filtra\"\n    data-close-text=\"Zbaliť obsah filtra\"\n    data-category-name=\"\"\n    aria-label=\"Rozbaliť obsah filtra\"\n    type=\"button\">\n    Rozbaliť obsah filtra\n  </button>\n\n    <form class=\"idsk-table-filter__content\" aria-hidden=\"true\" action=\"#\">\n          <div class=\"idsk-table-filter__category\">\n            <div class=\"idsk-table-filter__title govuk-heading-s\">Bydlisko <span class=\"count\"></span></div>\n              <button class=\"govuk-body govuk-link idsk-filter-menu__toggle\"\n    tabindex=\"-1\"\n    data-open-text=\"Rozbaliť sekciu filtra\"\n    data-close-text=\"Zbaliť sekciu filtra\"\n    data-category-name=\"Bydlisko\"\n    aria-label=\"Rozbaliť sekciu filtra Bydlisko\"\n    type=\"button\">\n    Rozbaliť sekciu filtra\n  </button>\n\n            <div class=\"idsk-table-filter__content\">\n              <div class=\"govuk-grid-row idsk-table-filter__filter-inputs\">\n                    <div class=\"govuk-grid-column-one-third-from-desktop\">\n      <div class=\"govuk-form-group\">\n        <label class=\"govuk-label\" for=\"bydlisko-filter1\">\n          Label\n        </label>\n          <input tabindex=\"-1\" class=\"govuk-input\" type=\"text\" id=\"bydlisko-filter1\" name=\"bydlisko-filter1\"\n            placeholder=\"Label\"\n            aria-label=\"Label\">\n      </div>\n    </div>\n    <div class=\"govuk-grid-column-one-third-from-desktop\">\n      <div class=\"govuk-form-group\">\n        <label class=\"govuk-label\" for=\"bydlisko-filter2\">\n          Filter 2\n        </label>\n          <input tabindex=\"-1\" class=\"govuk-input\" type=\"text\" id=\"bydlisko-filter2\" name=\"bydlisko-filter2\"\n            placeholder=\"Filter 2\"\n            aria-label=\"Filter 2\">\n      </div>\n    </div>\n    <div class=\"govuk-grid-column-one-third-from-desktop\">\n      <div class=\"govuk-form-group\">\n        <label class=\"govuk-label\" for=\"bydlisko-filter3\">\n          Filter 3\n        </label>\n          <input tabindex=\"-1\" class=\"govuk-input\" type=\"text\" id=\"bydlisko-filter3\" name=\"bydlisko-filter3\"\n            placeholder=\"Filter 3\"\n            aria-label=\"Filter 3\">\n      </div>\n    </div>\n    <div class=\"govuk-grid-column-one-third-from-desktop\">\n      <div class=\"govuk-form-group\">\n        <label class=\"govuk-label\" for=\"bydlisko-filter4\">\n          Filter6\n        </label>\n          <select tabindex=\"-1\" class=\"govuk-select\" id=\"bydlisko-filter4\" name=\"bydlisko-filter4\">\n              <option  \n                value=\"\">Text</option>\n              <option  \n                value=\"bydlisko-filter4-1\">Bydlisko-filter4-1</option>\n              <option  \n                value=\"bydlisko-filter4-2\">Bydlisko-filter4-2</option>\n              <option  \n                value=\"bydlisko-filter4-3\">Bydlisko-filter4-3</option>\n          </select>\n      </div>\n    </div>\n    <div class=\"govuk-grid-column-one-third-from-desktop\">\n      <div class=\"govuk-form-group\">\n        <label class=\"govuk-label\" for=\"bydlisko-filter5\">\n          Filter6\n        </label>\n          <select tabindex=\"-1\" class=\"govuk-select\" id=\"bydlisko-filter5\" name=\"bydlisko-filter5\">\n              <option  \n                value=\"\">Text</option>\n              <option  \n                value=\"bydlisko-filter5-1\">Bydlisko-filter6-1</option>\n              <option  \n                value=\"bydlisko-filter5-2\">Bydlisko-filter6-2</option>\n              <option  \n                value=\"bydlisko-filter5-3\">Bydlisko-filter6-3</option>\n          </select>\n      </div>\n    </div>\n    <div class=\"govuk-grid-column-one-third-from-desktop\">\n      <div class=\"govuk-form-group\">\n        <label class=\"govuk-label\" for=\"bydlisko-filter6\">\n          Filter6\n        </label>\n          <select tabindex=\"-1\" class=\"govuk-select\" id=\"bydlisko-filter6\" name=\"bydlisko-filter6\">\n              <option  \n                value=\"\">Text</option>\n              <option  \n                value=\"bydlisko-filter6-1\">Bydlisko-filter6-1</option>\n              <option  \n                value=\"bydlisko-filter6-2\">Bydlisko-filter6-2</option>\n              <option  \n                value=\"bydlisko-filter6-3\">Bydlisko-filter6-3</option>\n          </select>\n      </div>\n    </div>\n\n              </div>\n            </div>\n          </div>\n          <div class=\"idsk-table-filter__category\">\n            <div class=\"idsk-table-filter__title govuk-heading-s\">Názov inštitúcie <span class=\"count\"></span></div>\n              <button class=\"govuk-body govuk-link idsk-filter-menu__toggle\"\n    tabindex=\"-1\"\n    data-open-text=\"Rozbaliť sekciu filtra\"\n    data-close-text=\"Zbaliť sekciu filtra\"\n    data-category-name=\"Názov inštitúcie\"\n    aria-label=\"Rozbaliť sekciu filtra Názov inštitúcie\"\n    type=\"button\">\n    Rozbaliť sekciu filtra\n  </button>\n\n            <div class=\"idsk-table-filter__content\">\n              <div class=\"govuk-grid-row idsk-table-filter__filter-inputs\">\n                    <div class=\"govuk-grid-column-one-third-from-desktop\">\n      <div class=\"govuk-form-group\">\n        <label class=\"govuk-label\" for=\"filter5\">\n          Filter5\n        </label>\n          <input tabindex=\"-1\" class=\"govuk-input\" type=\"text\" id=\"filter5\" name=\"filter5\"\n            placeholder=\"Filter5\"\n            aria-label=\"Filter5\">\n      </div>\n    </div>\n    <div class=\"govuk-grid-column-one-third-from-desktop\">\n      <div class=\"govuk-form-group\">\n        <label class=\"govuk-label\" for=\"filter6\">\n          Filter6\n        </label>\n          <select tabindex=\"-1\" class=\"govuk-select\" id=\"filter6\" name=\"filter6\">\n              <option  \n                value=\"\">Vyber filter</option>\n              <option  \n                value=\"filter6-1\">Filter6-1</option>\n              <option  \n                value=\"filter6-2\">Filter6-2</option>\n              <option  \n                value=\"filter6-3\">Filter6-3</option>\n          </select>\n      </div>\n    </div>\n\n              </div>\n            </div>\n          </div>\n          <div class=\"idsk-table-filter__category\">\n            <div class=\"idsk-table-filter__title govuk-heading-s\">Parametre <span class=\"count\"></span></div>\n              <button class=\"govuk-body govuk-link idsk-filter-menu__toggle\"\n    tabindex=\"-1\"\n    data-open-text=\"Rozbaliť sekciu filtra\"\n    data-close-text=\"Zbaliť sekciu filtra\"\n    data-category-name=\"Parametre\"\n    aria-label=\"Rozbaliť sekciu filtra Parametre\"\n    type=\"button\">\n    Rozbaliť sekciu filtra\n  </button>\n\n            <div class=\"idsk-table-filter__content\">\n              <div class=\"govuk-grid-row idsk-table-filter__filter-inputs\">\n                    <div class=\"govuk-grid-column-one-third-from-desktop\">\n      <div class=\"govuk-form-group\">\n        <label class=\"govuk-label\" for=\"filter7\">\n          Filter 7\n        </label>\n          <input tabindex=\"-1\" class=\"govuk-input\" type=\"text\" id=\"filter7\" name=\"filter7\"\n            placeholder=\"Filter 7\"\n            aria-label=\"Filter 7\">\n      </div>\n    </div>\n    <div class=\"govuk-grid-column-one-third-from-desktop\">\n      <div class=\"govuk-form-group\">\n        <label class=\"govuk-label\" for=\"filter8\">\n          Filter 8\n        </label>\n          <select tabindex=\"-1\" class=\"govuk-select\" id=\"filter8\" name=\"filter8\">\n              <option  \n                value=\"\">Vyber filter</option>\n              <option  \n                value=\"filter8-1\">Filter8-1</option>\n              <option  \n                value=\"filter8-2\">Filter8-2</option>\n              <option  \n                value=\"filter8-3\">Filter8-3</option>\n          </select>\n      </div>\n    </div>\n\n              </div>\n            </div>\n          </div>\n      <button type=\"submit\" class=\"idsk-button submit-table-filter\" disabled>\n        Filtrovať (<span class=\"count\">0</span>)\n      </button>\n    </form>\n  </div>\n  <div class=\"idsk-table-filter__panel idsk-table-filter__active-filters idsk-table-filter__active-filters__hide idsk-table-filter--expanded\"\n    data-remove-filter=\"Zrušiť filter\"\n    data-remove-all-filters=\"Zrušiť všetko\">\n    <div class=\"govuk-body idsk-table-filter__title\">Aktívny filter</div>\n      <button class=\"govuk-body govuk-link idsk-filter-menu__toggle\"\n    tabindex=\"0\"\n    data-open-text=\"Rozbaliť aktívny filter\"\n    data-close-text=\"Zbaliť aktívny filter\"\n    data-category-name=\"\"\n    aria-label=\"Zbaliť aktívny filter\"\n    type=\"button\">\n    Zbaliť aktívny filter\n  </button>\n\n    <div class=\"govuk-clearfix idsk-table-filter__content\"></div>\n  </div>\n</div>"
+        }
+    ]
+}

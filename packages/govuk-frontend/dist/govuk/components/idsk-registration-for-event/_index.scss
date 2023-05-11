@@ -1,0 +1,49 @@
+// stylelint-disable order/properties-order
+
+@include govuk-exports("idsk/component/registration-for-event") {
+  .idsk-registration-for-event {
+    @include govuk-font($size: 16);
+    @include govuk-text-colour;
+
+    margin-top: govuk-spacing(6);
+
+    &__thank-you-msg {
+      display: none;
+      margin-bottom: 0;
+    }
+
+    .govuk-select {
+      width: 100%;
+    }
+
+    .govuk-form-group {
+      @include mq($from: tablet) {
+        max-width: 465px;
+      }
+    }
+
+    .govuk-error-message {
+      display: none;
+    }
+
+    .govuk-form-group--error.govuk-form-group,
+    .govuk-form-group--error.govuk-select {
+      @include mq($from: tablet) {
+        max-width: 450px;
+      }
+    }
+
+    .govuk-checkboxes__label {
+      padding-top: 0;
+      padding-right: 0;
+      padding-bottom: 0;
+      margin-top: -5px;
+    }
+
+    .idsk-button {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*# sourceMappingURL=_index.scss.map */

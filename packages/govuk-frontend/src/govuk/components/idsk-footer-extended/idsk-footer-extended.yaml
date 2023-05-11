@@ -1,0 +1,389 @@
+params:
+  - name: designAddress
+    type: string
+    required: false
+    description: Url address for design page.
+  - name: feedbackHeading
+    type: string
+    required: false
+    description: Heading for feedback.
+  - name: feedbackEmail
+    type: string
+    required: false
+    description: Email for feedback.
+  - name: feedbackSubject
+    type: string
+    required: false
+    description: Subject for feedback.
+  - name: feedbackMessage
+    type: string
+    required: false
+    description: Message for feedback.
+  - name: showFeedback
+    type: string
+    required: false
+    description: Determines whether feedback bar should be displayed.
+  - name: showFeedbackMessage
+    type: string
+    required: false
+    description: Determines whether feedback message should be displayed.
+  - name: upButtonEnabled
+    type: string
+    required: false
+    description: Determines whether up button should be displayed.
+  - name: feedbackButtonAddress
+    type: string
+    required: false
+    description: Url address for feedback button.
+  - name: fillFeedbackLink
+    type: string
+    required: false
+    description: Url address for form to fill feedback.
+  - name: logo
+    type: string
+    required: false
+    description: Name of file for logo in footer.
+    params:
+      - name: alt
+        type: string
+        required: false
+        description: Alternative text for footer logo.
+  - name: assetsPath
+    type: string
+    required: false
+    description: Relative path for assets folder.
+  - name: firstColumn
+    type: object
+    required: false
+    description: Object containing options for the footer first column.
+    params:
+      - name: title
+        type: string
+        description: Title for a first column section.
+      - name: leftItems
+        type: array
+        required: false
+        description: Array of items for use in the first column section of the footer extended.
+        params:
+          - name: name
+            type: string
+            required: false
+            description: Name of links in first column of footer extended
+  - name: rightItems
+    type: array
+    required: false
+    description: Array of items for use in the first column section of the footer extended.
+    params:
+      - name: name
+        type: string
+        required: false
+        description: Name of links in first column of footer extended
+  - name: secondColumn
+    type: array
+    required: false
+    description: Array of items for use in the second column section of the footer extended.
+    params:
+      - name: name
+        type: string
+        required: false
+        description: Name of links in second column of footer extended
+  - name: thirdColumn
+    type: array
+    required: false
+    description: Array of items for use in the third column section of the footer extended.
+    params:
+      - name: name
+        type: string
+        required: false
+        description: Name of links in third column of footer extended
+  - name: fourthColumn
+    type: array
+    required: false
+    description: Array of items for use in the fourth column section of the footer extended.
+    params:
+      - name: name
+        type: string
+        required: false
+        description: Name of links in fourth column of footer extended
+  - name: subtitles
+    type: array
+    required: false
+    description: Array of navigation links for footer extended.
+    params:
+      - name: name
+        type: string
+        required: false
+        description: Name ofnavigation links
+      - name: href
+        type: string
+        required: false
+        description: Url address for navigation links
+  - name: dropdownItems
+    type: array
+    required: false
+    description: Array of errors which should be in dropdown as a part of error form
+    params:
+      - name: name
+        type: string
+        required: false
+        description: Name of errors
+      - name: value
+        type: string
+        required: false
+        description: Value of errors
+
+previewLayout: full-width
+accessibilityCriteria: |
+  Text and links in the Footer must:
+  - have a text contrast ratio higher than 4.5:1 against the background colour to meet [WCAG AA](https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast)
+
+  Links in the Footer must:
+  - accept focus
+  - be focusable with a keyboard
+  - be usable with a keyboard
+  - indicate when they have focus
+  - change in appearance when touched (in the touch-down state)
+  - change in appearance when hovered
+  - have visible text
+
+  Images in the Footer must:
+  - be presentational when linked to from accompanying text (Open Government Licence (OGL) icon).
+  - have a meaningful accessible name if also a linked element (crest icon).
+
+  Landmarks and Roles in the Footer should:
+  - avoid navigation landmarks or roles
+    "The footer element alone is sufficient for such cases; while a nav element can be used in such cases, it is usually unnecessary." - (https://www.w3.org/TR/html52/sections.html#the-nav-element)
+    Note: This decision has been made based on prior experience seeing removal of overuse of `<nav>` elements from www.GOV.UK, which made it confusing for users of assistive technologies to know what were the most important navigation aspects of GOV.UK.
+    Should be challenged if user research indicates this is an issue.
+
+  - have a role of `contentinfo` at the root of the component (<footer>) (https://www.w3.org/TR/wai-aria-1.1/#contentinfo)
+    Note: This decision has been made given that most uses of this role tend to be used directly on a `<footer>` element.
+    Assumption made is that is most predictable for users of assistive technologies.
+    The spec indicates that `contentinfo` is useful for "Examples of information included in this region of the page are copyrights and links to privacy statements.", which may indicate that it might be better placed around the 'meta' section of this component.
+    Should be challenged if user research indicates this is an issue.
+
+    See also: http://www.brucelawson.co.uk/2013/why-does-html-take-rolecontentinfo
+
+examples:
+  - name: basic
+    data:
+      characterLength: 350
+      logo: 'footer-extended-logo.svg'
+      subtitles:
+        - href: '#'
+          item: Pomoc
+        - href: '#'
+          item: Cookies
+        - href: '#'
+          item: Kontakty
+        - href: '#'
+          item: Mapa Stránky
+        - href: '#'
+          item: RSS
+        - href: '#'
+          item: Vyhlásenie o prístupnosti
+      dropdownItems:
+        - value: published
+          text: Validačná chyba
+        - value: updated
+          text: Gramatická chyba
+        - value: views
+          text: Chyba responzivity
+        - value: comments
+          text: Chyba iná
+
+  - name: basic + feedback
+    data:
+      characterLength: 350
+      showFeedback: 'true'
+      upButtonEnabled: 'true'
+      logo: 'footer-extended-logo.svg'
+      subtitles:
+        - href: '#'
+          item: Pomoc
+        - href: '#'
+          item: Cookies
+        - href: '#'
+          item: Kontakty
+        - href: '#'
+          item: Mapa Stránky
+        - href: '#'
+          item: RSS
+        - href: '#'
+          item: Vyhlásenie o prístupnosti
+      dropdownItems:
+        - value: published
+          text: Validačná chyba
+        - value: updated
+          text: Gramatická chyba
+        - value: views
+          text: Chyba responzivity
+        - value: comments
+          text: Chyba iná
+
+  - name: extended 1
+    description:
+    data:
+      characterLength: 500
+      showFeedback: 'true'
+      upButtonEnabled: 'true'
+      logo: 'footer-extended-logo.svg'
+      firstColumn:
+        title: Navigácia v 2 stĺpcoch (2/3)
+        leftItems:
+          - name: Link small Regular 12/20
+            href: '#'
+          - name: Link small Regular 13/20
+            href: '#'
+          - name: Link small Regular 14/20
+            href: '#'
+          - name: Link small Regular 15/20
+            href: '#'
+
+        rightItems:
+          - name: Link small Regular 16/20
+            href: '#'
+          - name: Link small Regular 17/20
+            href: '#'
+          - name: Link small Regular 18/20
+            href: '#'
+          - name: Link small Regular 19/20
+            href: '#'
+
+      secondColumn:
+        title: Navigácia v 1 stĺpci (1/3)
+        items:
+          - name: Link small Regular 20/20
+            href: '#'
+          - name: Link small Regular 21/20
+            href: '#'
+          - name: Link small Regular 22/20
+            href: '#'
+          - name: Link small Regular 23/20
+            href: '#'
+
+      subtitles:
+        - href: '#'
+          item: Pomoc
+        - href: '#'
+          item: Cookies
+        - href: '#'
+          item: Kontakty
+        - href: '#'
+          item: Mapa Stránky
+        - href: '#'
+          item: RSS
+        - href: '#'
+          item: Vyhlásenie o prístupnosti
+      dropdownItems:
+        - value: published
+          text: Validačná chyba
+        - value: updated
+          text: Gramatická chyba
+        - value: views
+          text: Chyba responzivity
+        - value: comments
+          text: Chyba iná
+
+  - name: extended 2
+    description:
+    data:
+      feedbackButtonAddress: https://www.idsk.gov.sk
+      characterLength: 200
+      showFeedback: 'true'
+      upButtonEnabled: 'true'
+      logo: 'footer-extended-logo.svg'
+      firstColumn:
+        title: Navigácia v 2 stĺpcoch (2/3)
+        leftItems:
+          - name: Link small Regular 12/20
+            href: '#'
+          - name: Link small Regular 13/20
+            href: '#'
+          - name: Link small Regular 14/20
+            href: '#'
+          - name: Link small Regular 15/20
+            href: '#'
+
+        rightItems:
+          - name: Link small Regular 16/20
+            href: '#'
+          - name: Link small Regular 17/20
+            href: '#'
+          - name: Link small Regular 18/20
+            href: '#'
+          - name: Link small Regular 19/20
+            href: '#'
+
+      secondColumn:
+        title: Navigácia v 1 stĺpci (1/3)
+        items:
+          - name: Link small Regular 20/20
+            href: '#'
+          - name: Link small Regular 21/20
+            href: '#'
+          - name: Link small Regular 22/20
+            href: '#'
+          - name: Link small Regular 23/20
+            href: '#'
+
+      thirdColumn:
+        title: Dodatočná hyperlinková navigácia (2/3)
+        leftItems:
+          - name: Link small Regular 12/20
+            href: '#'
+          - name: Link small Regular 13/20
+            href: '#'
+          - name: Link small Regular 14/20
+            href: '#'
+          - name: Link small Regular 15/20
+            href: '#'
+
+        rightItems:
+          - name: Link small Regular 16/20
+            href: '#'
+          - name: Link small Regular 17/20
+            href: '#'
+          - name: Link small Regular 18/20
+            href: '#'
+          - name: Link small Regular 19/20
+            href: '#'
+
+      fourthColumn:
+        title: Navigácia v 1 stĺpci (1/3)
+        items:
+          - name: Link small Regular 28/20
+            href: '#'
+          - name: Link small Regular 29/20
+            href: '#'
+          - name: Link small Regular 30/20
+            href: '#'
+          - name: Link small Regular 31/20
+            href: '#'
+
+      subtitles:
+        - href: '#'
+          item: Pomoc
+        - href: '#'
+          item: Cookies
+        - href: '#'
+          item: Kontakty
+        - href: '#'
+          item: Mapa Stránky
+        - href: '#'
+          item: RSS
+        - href: '#'
+          item: Vyhlásenie o prístupnosti
+      dropdownItems:
+        - value: published
+          text: Kompilačná chyba
+        - value: updated
+          text: Gramatická chyba
+        - value: views
+          text: Chyba responzivity
+        - value: comments
+          text: Chyba iná
+        - value: comments
+          text: Chyba piata
+        - value: comments
+          text: Chyba šiesta

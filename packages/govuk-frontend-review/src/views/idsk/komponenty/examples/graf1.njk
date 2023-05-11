@@ -1,0 +1,171 @@
+{% from "tabs/macro.njk" import govukTabs %}
+{% set params = {
+        uniqueId: "graph1",
+        title: "Pozitívne testovaní",
+        radioOptions: [
+            {
+                title: "PCR",
+                value: "pcr"
+            },
+            {
+                title: "Antigén",
+                value: "antigen"
+            },
+            {
+                title: "PCR + Antigén",
+                value: "pcr-antigen"
+            }
+        ],
+        activeTab: "0",
+        summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu tellus suscipit, condimentum arcu a, sollicitudin quam. Fusce tempor facilisis dui vitae iaculis. Sed ac sodales turpis.",
+        graphDailyIframeSrc: "/vzory/graph-sample",
+        graphDailyIframeTitle: "Lorem Ipsun title",
+        graphSumIframeSrc: "/vzory/graph-sample?time=sum",
+        graphSumframeTitle: "Lorem Ipsun 2 title",
+        tableIframeSrc: "/vzory/interactive-table-sample-2",
+        tableIframeTitle: "Lorem Ipsun 3 title",
+        methodicsHtml: "<p class='govuk-body'>Lorem ipsum ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu tellus suscipit, condimentum arcu a, sollicitudin quam. Fusce tempor facilisis dui vitae iaculis. Sed ac sodales turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu tellus suscipit, condimentum arcu a, sollicitudin quam. Fusce tempor facilisis dui vitae iaculis. Sed ac sodales turpis.</p><p class='govuk-body'>Loipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu tellus suscipit, condimentum arcu a, sollicitudin quam. Fusce tempor facilisis dui vitae iaculis. Sed ac sodales turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu tellus suscipit, condimentum arcu a, sollicitudin quam. Fusce tempor facilisis dui vitae iaculis. Sed ac sodales turpis.</p><p class='govuk-body'>Loipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu tellus suscipit, condimentum arcu a, sollicitudin quam. Fusce tempor facilisis dui vitae iaculis. Sed ac sodales turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu tellus suscipit, condimentum arcu a, sollicitudin quam. Fusce tempor facilisis dui vitae iaculis. Sed ac sodales turpis.</p>",
+        download: {
+            downloadTitle: "Stiahnuť údaje",
+            items: [
+                {
+                    title: "ako CSV",
+                    value: "https://raw.githubusercontent.com/Institut-Zdravotnych-Analyz/covid19-data/main/DailyStats/OpenData_Slovakia_Covid_DailyStats.csv"
+                },
+                {
+                    title: "ako XLSX",
+                    value: "https://github.com/Institut-Zdravotnych-Analyz/covid19-data/blob/main/DailyStats/OpenData_Slovakia_Covid_DailyStats.xlsx?raw=true"
+                }
+            ]
+        },
+        share: {
+            shareTitle: "Zdielať údaje",
+            items: [
+                {
+                    title: "Kopírovať link",
+                    class: "idsk-graph__copy-to-clickboard",
+                    value: "/komponenty/grafovy-komponent#graph2"
+                },
+                {
+                    title: "Emailom",
+                    class: "idsk-graph__send-link-by-email",
+                    value: "#graph2"
+                },
+                {
+                    title: "na Facebooku",
+                    class: "idsk-graph__share-on-facebook",
+                    value: "#graph2",
+                    target: "_blank"
+                }
+            ]
+        },
+        source: "Zdroj: NCZI"
+} %}
+
+
+<div data-module="idsk-graph" class="idsk-graph{{ ' ' + params.classes if params.classes }}" id="{{ params.uniqueId }}">
+    <div class="govuk-grid-row idsk-graph__heading">
+        <div class="idsk-graph__title">
+            <h2 class="govuk-heading-m" data-lines="Kliknite na odkaz vyššie alebo ho skopírujte a vložte do prehliadača: ">{{ params.title }}</h2>
+        </div>
+        <div class="idsk-graph__controls">
+            <div class="govuk-form-group">
+                <div class="govuk-radios govuk-radios--inline">
+                    {% for radio in params.radioOptions %}
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input idsk-graph__radio" name="radio-{{ params.uniqueId }}" id="radio-{{ params.uniqueId + '-' + loop.index }}" type="radio" value="{{ radio.value }}" {% if loop.index == 1 %}checked=""{% endif %}>
+                            <label class="govuk-label govuk-radios__label" for="radio-{{ params.uniqueId + '-' + loop.index }}">{{ radio.title }}</label>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+            <div class="govuk-body-s idsk-graph__summary">
+                {{ params.summary }}
+            </div>
+        </div>
+    </div>
+
+    {{ govukTabs({
+        "attributes": {
+            "data-activetab": params.activeTab
+        },
+        "items": [
+            {
+                "label": "Denné prírastky",
+                "id": params.uniqueId + "-1",
+                "panel": {
+                    "html": "<iframe class='idsk-graph__iframe' data-src='" + params.graphDailyIframeSrc + "' src='" + params.graphDailyIframeSrc + "' title='" + params.graphDailyIframeTitle + "'></iframe>"
+                }
+            },
+            {
+                "label": "Celkovo",
+                "id": params.uniqueId + "-2",
+                "panel": {
+                    "html": "<iframe class='idsk-graph__iframe' data-src='" + params.graphSumIframeSrc + "' src='" + params.graphSumIframeSrc + "' title='" + params.graphSumframeTitle + "'></iframe>"
+                }
+            },
+            {
+                "label": "Údaje",
+                "id": params.uniqueId + "-3",
+                "panel": {
+                    "html": "<iframe class='idsk-graph__iframe' data-src='" + params.tableIframeSrc + "' src='" + params.tableIframeSrc + "' title='" + params.tableIframeTitle + "'></iframe>"
+                }
+            },
+            {
+                "label": "Metodika",
+                "id": params.uniqueId + "-4",
+                "panel": {
+                    "html": params.methodicsHtml
+                }
+            }
+        ]
+    }) }}
+    <div class="idsk-graph__meta">
+        <div class="idsk-graph__meta-download-share">
+        {% if params.download %}
+            <div class="idsk-graph__meta-download">
+                <a class="govuk-link idsk-graph__meta-link-list" title="{{ params.download.downloadTitle }}" href="#">
+                    {{ params.download.downloadTitle }}
+                    <svg width="18" height="11" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.0725 1.07107L9.00146 8.14214L1.9304 1.07107" stroke="#0B0C0C" stroke-width="3"/>
+                    </svg>
+                </a>
+                <ul class="idsk-graph__meta-list">
+                    {% for item in params.download.items %}
+                    <li>
+                        <a title="{{ item.title }}" href="{{ item.value }}" class="govuk-link{{ ' ' + item.class if item.class}}" download>{{ item.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+            {% if params.share %}
+            <div class="idsk-graph__meta-share">
+                <a class="govuk-link idsk-graph__meta-link-list" title="{{ params.share.shareTitle }}" href="#">
+                    {{ params.share.shareTitle }}
+                    <svg width="18" height="11" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.0725 1.07107L9.00146 8.14214L1.9304 1.07107" stroke="#0B0C0C" stroke-width="3"/>
+                    </svg>
+                </a>
+                <ul class="idsk-graph__meta-list">
+                    {% for item in params.share.items %}
+                    <li>
+                        <a title="{{ item.title }}" href="{{ item.value }}" class="govuk-link{{ ' ' + item.class if item.class}}" {% if item.target %}target="{{ item.target }}"{% endif %}>{{ item.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        </div>
+        {% if params.source %}
+        <div class="idsk-graph__meta-source">
+            {{ params.source }}
+        </div>
+        {% endif %}
+    </div>
+</div>

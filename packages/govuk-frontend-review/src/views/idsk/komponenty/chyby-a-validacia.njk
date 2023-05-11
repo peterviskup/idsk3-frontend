@@ -1,0 +1,151 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Chyby a validácia" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Webové komponenty</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Minimalizujte počet chýb na stránke.</p>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-s">Obsah:</h2>
+            <ul class="govuk-list">
+                <li><a class="govuk-link" href="#one-question-per-page" title="Pýtajte sa jednu otázku na jednu stránku">Pýtajte sa jednu otázku na jednu stránku</a></li>
+                <li><a class="govuk-link" href="#summarise-errors" title="Prehľad chýb">Prehľad chýb</a></li>
+                <li><a class="govuk-link" href="#highlight-errors" title="Zvýraznenie chýb vo formulároch">Zvýraznenie chýb vo formulároch</a></li>
+                <li><a class="govuk-link" href="#examples" title="Príklady">Príklady</a></li>
+            </ul>
+
+            <h3 class="govuk-heading-m" id="one-question-per-page">Pýtajte sa jednu otázku na jednu stránku</h3>
+            <p class="govuk-body">
+                Pre používateľov môže byť ťažké zorientovať sa na stránke po zobrazení chyby, najmä ak sa na nej vyskytlo viacero chýb súčasne.
+                </p>
+            <p class="govuk-body">
+                Zjednodušte formuláre tak, že ich prepíšete, prípadne ak je to možné, rozdeľujte dlhé formuláre na niekoľko stránok -
+                pričom na každej z nich sa pýtajte jednu otázku.
+            </p>
+
+            <p class="govuk-body">
+                Pri štruktúrovaní formulára zvážte aj kontext. Ak spolu žiadané informácie súvisia, je možné ich umiestniť na
+                stránke viac. Napríklad meno, priezvisko a číslo občianskeho preukazu.
+            </p>
+
+            <h3 class="govuk-heading-m" id="summarise-errors">
+                Prehľad o chybách v hornej časti stránky
+            </h3>
+
+            <p class="govuk-body-l">
+                Je dôležité:
+            </p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>zobraziť prehľad o chybách v hornej časti stránky,</li>
+                <li>pridať nadpis, ktorý upozorní používateľa na chybu,</li>
+                <li>zobraziť odkaz na každú problematickú otázku.</li>
+            </ul>
+
+            <p class="govuk-body">Okrem toho je potrebné aj v nadpise stránky v prvku <code class="code">&lt;title&gt;</code> zobraziť, že došlo k chybe, a to umiestnením slova "Chyba: "
+                pred existujúci nadpis (ang. title). To zabezpečí upozornenie používateľov na chybu hneď ako to bude možné.</p>
+
+            <h4 class="govuk-heading-s">Chybová správa so zhrnutím chýb</h4>
+        </div>
+
+        <div class="govuk-grid-column-full">
+            <div class="example example-error">
+            {% set exampleComponentHtml %}
+                {% include "../komponenty/examples/example1.njk" %}
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+            </div>
+            <pre class="app-code">
+              <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                {{- exampleComponentHtml | highlight("html") | safe -}}
+              </code>
+            </pre>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <div class="govuk-inset-text">
+                <h3 class="govuk-heading-s">
+                Prehľad o chybách sa musí nachádzať v hornej časti stránky tak, aby bol viditeľný, keď sa stránka aktualizuje a ihneď ju vedela prečítať pomocná technológia.
+                </h3>
+            </div>
+
+            <h3 class="govuk-heading-m" id="highlight-errors">Zvýraznenie chýb vo formulároch</h3>
+
+            <p class="govuk-body-l">
+                Pre každú chybu:
+            </p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>napíšte správu, ktorá pomôže používateľovi pochopiť, prečo sa chyba vyskytla a ako ju má odstrániť, </li>
+                <li>správu vložte do prvku <code class="code">&lt;label&gt;</code> alebo <code class="code">&lt;legend&gt;</code>
+                k danej otázke a umiestnite ju pod textom otázky, pričom použite červenú farbu písma,</li>
+                <li>použite červený okraj na vizuálne prepojenie chybovej správy a otázky, ku ktorej sa chyba vzťahuje,</li>
+                <li>ak sa chyba vzťahuje na konkrétne textové polia v rámci otázky, zvýraznite ich aj červeným orámovaním.</li>
+            </ul>
+
+            <p class="govuk-body">
+                V prípade červenej farby použite Sass premennú <code class="code">$error-colour</code>, ktorú nájdete v súbore <a class="govuk-link" href="https://github.com/alphagov/govuk_frontend_toolkit/blob/master/stylesheets/_colours.scss" rel="external" title="colours.scss">colours.scss</a> frontend toolkitu.
+            </p>
+        </div>
+
+        <div class="govuk-grid-column-full">
+            <div class="example example-error">
+            {% set exampleComponentHtml %}
+                {% include "../komponenty/examples/example2.njk" %}
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+            </div>
+            <pre class="app-code">
+              <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                {{- exampleComponentHtml | highlight("html") | safe -}}
+              </code>
+            </pre>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            <h3 class="govuk-heading-m" id="examples">Príklady</h3>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>
+                <a class="govuk-link" href="/examples/error-messages" title="Chybové správy">
+                    Chybové správy
+                </a>
+                </li>
+                <li>
+                <a class="govuk-link" href="/examples/error-summary" title="Zhrnutie chýb">
+                    Zhrnutie chýb
+                </a>
+                </li>
+                <li>
+                <a class="govuk-link" href="/examples/error-summary-with-messages" title="Zhrnutie chýb s chybovými správami">
+                    Zhrnutie chýb s chybovými správami
+                </a>
+                </li>
+                <li>
+                <a class="govuk-link" href="/examples/error-summary-with-one-thing-per-page" title="Zhrnutie chýb s jednou otázkou na stránku">
+                    Zhrnutie chýb s jednou otázkou na stránku
+                </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+  </div>
+{% endblock %}

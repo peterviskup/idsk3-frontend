@@ -1,0 +1,37 @@
+{% from "../../components/input/macro.njk" import govukInput %}
+
+{% set title = params.title if params.title else 'Zostaňte informovaní' %}
+{% set description = params.description if params.description else 'Lorem Ipsum is simply dummy text of the printing and typesetting industry' %}
+{% set inputText = params.inputText if params.inputText else 'Vložte emailovú adresu' %}
+{% set buttonText = params.buttonText if params.buttonText else 'Odoslať email' %}
+{% set agreementText = params.agreementText if params.agreementText else 'Prihlásením dávam dobrovoľný súhlas SlovenskoIT a. s. na zasielanie bezplatného newslettera na mnou zadaný e-mail.
+Tento súhlas môžem kedykoľvek odvolať na <a href="mailto:info@slovenskoit.sk" class="govuk-link" title="info@slovenskoit.sk">info@slovenskoit.sk</a>. Oboznámil(a) som sa s informáciami v sekcii <a href="/ochrana-osobnych-udajov" class="govuk-link" title="Ochrana osobných údajov">Ochrana osobných údajov</a>.' %}
+{% set confirmTitle = params.confirmTitle if params.confirmTitle else 'Ďakujeme!' %}
+{% set confirmDescription = params.confirmDescription if params.confirmDescription else 'Budeme Vám zasielať vždy aktuálne informácie' %}
+
+<div data-module="idsk-subscription-form" id="{{ params.id }}" class="idsk-subscription-form {{ params.classes if params.classes }}">
+  <div class="govuk-heading-xl idsk-subscription-form__description-title">
+    <span class="idsk-subscription-form__default-text">{{ title }}</span>
+    <span class="idsk-subscription-form__confirm-text">{{ confirmTitle }}</span>
+  </div>
+
+  <p class="govuk-body idsk-subscription-form__description-text">
+    <span class="idsk-subscription-form__default-text">{{ description | safe }}</span>
+    <span class="idsk-subscription-form__confirm-text">{{ confirmDescription | safe }}</span>
+  </p>
+
+  <form novalidate action="{{ params.formAction if params.formAction else "#" }}"
+        class="govuk-form-group idsk-subscription-form__input {{ params.targetClass if params.targetClass else "idsk-subscription-form__submit-handler" }}">
+    {{ govukInput({
+      "label": {
+        "text": inputText
+      },
+      "type": "email",
+      "id": "subscription-email-value",
+      "name": "subscription-email"
+    }) }}
+    <input type="submit" class="idsk-button" value="{{ buttonText }}">
+  </form>
+
+  <p class="govuk-body idsk-subscription-form__agreement-text">{{ agreementText | safe }}</p>
+</div>

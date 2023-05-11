@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <title>Interaktívna mapa</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="title" content="Interaktívna mapa">
+    <meta name="description" content="Príkladová mapa na demonštráciu koponentu - interaktívna mapa">
+
+    <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/public/assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/assets/images/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="/public/assets/images/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/public/assets/images/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" href="/public/assets/images/apple-touch-icon.png">
+
+    <!--[if !IE 8]><!-->
+        <link rel="stylesheet" href="/public/app.css">
+    <!--<![endif]-->
+    <!--[if IE 8]>
+        <link rel="stylesheet" href="/public/app-ie8.css">
+    <![endif]-->
+    <!--[if lt IE 9]>
+        <script src="/vendor/html5-shiv/html5shiv.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="/public/assets/css/leaflet.css" />
+
+    <script src="/public/assets/js/leaflet.js"></script>
+    {# var $krajeGeoJSON #}
+    <script src="/public/assets/data/krajeGeoJSON.js"></script>
+    {# var $vaccinationsByRegion #}
+    <script src="/public/assets/data/vaccinationsByRegion.js"></script>
+
+    <style>
+        #map {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        .interactive-map__region {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script>
+
+        var $map = {}
+        var $geoJSON = {}
+        var $currentData = "";
+        var $regionsMapping = {
+            "SK042": 1,
+            "SK023": 2,
+            "SK010": 3,
+            "SK022": 4,
+            "SK031": 5,
+            "SK032": 6,
+            "SK021": 7,
+            "SK041": 8,
+        }
+
+        var $doseDesc = {
+            "dose1": "1. dávka",
+            "dose2": "2. dávka",
+        }
+
+        var $params = new URL(location.href).searchParams;
+        var $indicator = $params.get("indicator");
+        var $timePeriod = $params.get("time");
+
+        var renderMap = function() {
+
+            var $data = $vaccinationsByRegion.page;
+
+            // filter data by indicator and time period
+            if (Number($timePeriod)) {
+                var $cutoffDate = new Date();
+                $cutoffDate.setDate($cutoffDate.getDate() - Number($timePeriod));
+                $data = $data.filter(function(d) {
+                    var $date = new Date(d["published_on"])
+                    return $date > $cutoffDate;
+                })
+            }
+
+            var $groupedData = {
+                1: {"dose1_count": 0, "dose2_count": 0},
+                2: {"dose1_count": 0, "dose2_count": 0},
+                3: {"dose1_count": 0, "dose2_count": 0},
+                4: {"dose1_count": 0, "dose2_count": 0},
+                5: {"dose1_count": 0, "dose2_count": 0},
+                6: {"dose1_count": 0, "dose2_count": 0},
+                7: {"dose1_count": 0, "dose2_count": 0},
+                8: {"dose1_count": 0, "dose2_count": 0},
+            }
+
+            $data.map(function(d) {
+                $groupedData[d["region_id"]]["dose1_count"] += d["dose1_count"]
+                $groupedData[d["region_id"]]["dose2_count"] += d["dose2_count"]
+            })
+
+            $map = L.map("map");
+            L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+                attribution: "&copy; <a class='govuk-link' href='https://www.openstreetmap.org/copyright' title='OpenStreetMap'>OpenStreetMap</a> contributors"
+            }).addTo($map);
+
+            $geoJSON = L.geoJson($krajeGeoJSON, {
+                onEachFeature: function (feature, layer) {
+                    var $description = "<span class='interactive-map__region'>" + feature.properties.TXT + "</span><br>";
+                    if (["dose1", "dose2"].includes($indicator)){
+                        $description += "<strong>" + $doseDesc[$indicator] + ":</strong> " + $groupedData[$regionsMapping[feature.properties.REF]][$indicator+"_count"]
+                    } else {
+                        $description += "<strong>" + $doseDesc["dose1"] + ":</strong> " + $groupedData[$regionsMapping[feature.properties.REF]]["dose1_count"] +
+                        "<br>" +
+                        "<strong>" + $doseDesc["dose2"] + ":</strong> " + $groupedData[$regionsMapping[feature.properties.REF]]["dose2_count"]
+                    }
+
+                    layer.bindTooltip(
+                        $description,
+                        {
+                            permanent: true,
+                            interactive: true,
+                        }
+                    ).closeTooltip()
+
+                    layer.on('click', function () {
+                        $map.eachLayer(function(layer) {
+                            layer.closeTooltip();
+                        });
+                        layer.toggleTooltip()
+                    })
+
+                    layer.closeTooltip()
+
+                    setTimeout(function(){
+                        layer.closeTooltip()
+                    }, 0)
+                }
+            }).addTo($map);
+
+            $map.fitBounds($geoJSON.getBounds())
+        }
+
+        if (document.readyState === "complete" || document.readyState === "interactive") {
+            renderMap();
+        } else {
+            document.addEventListener("DOMContentLoaded", function() {
+                renderMap();
+            });
+        }
+
+        window.onresize = function() {
+            $map.fitBounds($geoJSON.getBounds())
+        };
+    </script>
+
+</body>
+</html>

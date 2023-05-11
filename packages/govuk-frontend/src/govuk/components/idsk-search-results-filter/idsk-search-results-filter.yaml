@@ -1,0 +1,185 @@
+params:
+  - name: classes
+    type: string
+    required: false
+    description: Classes to add to the breadcrumbs container.
+  - name: filters
+    type: array
+    required: false
+    description: Filters for search results
+    params:
+      - name: name
+        type: string
+        required: false
+        description: Name for filter
+      - name: group
+        type: string
+        required: false
+        description: Group for filter
+      - name: id
+        type: string
+        required: false
+        description: Id for filter
+      - name: isRadio
+        type: boolean
+        required: false
+        description: Determines wether is filter for radios or not
+      - name: searchInputId
+        type: string
+        required: false
+        description: Id for search input
+      - name: isSubtopic
+        type: boolean
+        required: false
+        description: Determines wether is filter subtopic
+      - name: filterClass
+        type: class
+        required: false
+        description: Class for filter
+      - name: isCheckBox
+        type: boolean
+        required: false
+        description: Determines wether is filter for checkboxes or not
+      - name: idFrom
+        type: string
+        required: false
+        description: Id for start date element
+      - name: idTo
+        type: string
+        required: false
+        description: Id for end date element
+      - name: isTextarea
+        type: boolean
+        required: false
+        description: Determines wether is filter using textArea/textInput
+      - name: radios
+        type: array
+        required: false
+        description: Array of radio items for filter
+        params:
+          - name: name
+            type: string
+            required: false
+            description: Name of radio item
+          - name: value
+            type: string
+            required: false
+            description: Value of radio item
+      - name: checkBoxItems
+        type: array
+        required: false
+        description: Array of checkbox items for filter
+        params:
+          - name: value
+            type: string
+            required: false
+            description: Value of checkbox item
+          - name: text
+            type: string
+            required: false
+            description: Text of checkbox item
+          - name: id
+            type: string
+            required: false
+            description: Id of checkbox item
+
+examples:
+  - name: default
+    data:
+      filters:
+        - name: Téma
+          group: 1
+          id: 'tema'
+          isRadio: true
+          searchInputId: idsk-search-input__topic
+          searchInputTitle: Filter podľa témy
+          radios:
+            - name: Eurofondy
+              value: Eurofondy
+            - name: Informatizácia
+              value: Informatizácia
+            - name: Regionálny rozvoj a komunity
+              value: Regionálny-rozvoj-a-komunity
+            - name: Investície
+              value: Investície
+            - name: Inovácie
+              value: Inovácie
+        - name: Podtéma
+          group: 2
+          id: 'podtema'
+          isRadio: true
+          isSubtopic: true
+          searchInputId: idsk-search-input__subtopic
+          searchInputTitle: Filter podľa podtémy
+          radios:
+            - name: Výzvy pre rozvoj regiónov
+              value: Výzvy-pre-rozvoj-regiónov
+            - name: WiFi 4u
+              value: WiFi-4u
+            - name: Dotácie na obecné školy
+              value: Dotácie-na-obecné-školy
+            - name: Agroturistika
+              value: Agroturistika
+            - name: Podpora miestnej komunity
+              value: Podpora-miestnej-komunity
+            - name: Výzvy pre rozvoj regiónov2
+              value: Výzvy-pre-rozvoj-regiónov2
+            - name: WiFi 4u2
+              value: WiFi-4u2
+            - name: Dotácie na obecné školy2
+              value: Dotácie-na-obecné-školy2
+            - name: Agroturistika2
+              value: Agroturistika2
+            - name: Dotácie na obecné školy3
+              value: Dotácie-na-obecné-školy3
+            - name: Agroturistika3
+              value: Agroturistika3
+        - name: Typ obsahu
+          group: 3
+          id: 'obsah'
+          isCheckBox: true
+          filterClass: idsk-search-results__content-type-filter
+          searchInputId: idsk-search-input__content-type
+          searchInputTitle: Filter podľa obsahu
+          checkBoxItems:
+            - value: Rozvoj regiónov
+              text: Rozvoj regiónov
+              id: rozvoj
+            - value: Novinky a komunikačné vyhlásenia
+              text: Novinky a komunikačné vyhlásenia
+              id: novinky
+            - value: Transparentnosť a sloboda prístupu k informáciám
+              text: Transparentnosť a sloboda prístupu k informáciám
+              id: transparentnost
+            - value: Legislatíva
+              text: Legislatíva
+              id: legislativa
+            - value: Štatistické údaje
+              text: Štatistické údaje
+              id: statistika
+            - value: Rodová rovnosť a postavenia žien v pracovom prostredí
+              text: Rodová rovnosť a postavenia žien v pracovom prostredí
+              id: rodova
+            - value: Rozvoj regiónov
+              text: Rozvoj regiónov
+              id: rozvoj2
+            - value: Novinky a komunikačné vyhlásenia
+              text: Novinky a komunikačné vyhlásenia
+              id: novinky2
+            - value: Transparentnosť a sloboda prístupu k informáciám
+              text: Transparentnosť a sloboda prístupu k informáciám
+              id: transparentnost2
+            - value: Legislatíva
+              text: Legislatíva
+              id: legislativa2
+            - value: Štatistické údaje
+              text: Štatistické údaje
+              id: statistika2
+            - value: Rodová ro2vnosť a postavenia žien v pracovom prostredí
+              text: Rodová rovnosť a postavenia žien v pracovom prostredí
+              id: rodova2
+        - name: Dátum aktualizácie
+          group: 3
+          idFrom: 'datum-od'
+          idTo: 'datum-do'
+          isTextarea: true

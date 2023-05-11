@@ -1,0 +1,93 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "idsk-feedback/macro.njk" import idskFeedback %}
+
+{% set pageName = "Stránky so spätnou väzbou" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Vzory</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Stránka so spätnou väzbou sa musí zobraziť používateľovi vždy po použití služby. Slúži na to, aby ste získali jednoduchú a rýchlu spätnú väzbu od používateľov vašej služby a zároveň, aby ste mohli vyhodnocovať spokojnosť používateľov s vašou službou.</p>
+
+    <h2 class="govuk-heading-s">Obsah:</h2>
+    <ul class="govuk-list">
+      <li>
+        <a class="govuk-link" href="#vyhodnocovanie" title="Ako vyhodnocovať spätnú väzbu">Ako vyhodnocovať spätnú väzbu</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#skladba" title="Z čoho sa skladá stránka so spätnou väzbou?">
+          Z čoho sa skladá stránka so spätnou väzbou?</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#priklad" title="Vzor stránky so spätnou väzbou">Vzor stránky so spätnou väzbou</a>
+      </li>
+    </ul>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m" id="vyhodnocovanie">Ako vyhodnocovať spätnú väzbu</h2>
+        <p class="govuk-body-m">Na kvantitatívne vyhodnocovanie využívajte metodiku miery spokojnosti zákazníkov (Customer Satisfaction Score, CSAT).</p>
+        <p class="govuk-body-m">Na kvalitatívne vyhodnocovanie využívajte otvorenú otázku, kde bude mať používateľ možnosť doplniť svoj názor. Táto otázka bude dostupná iba pre negatívne odpovede a neutrálnu odpoveď.</p>
+      </div>
+    </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m" id="skladba">Z čoho sa skladá stránka so spätnou väzbou?</h2>
+        <p class="govuk-body-l">Skladá sa z:</p>
+        <ol class="idsk-list idsk-list--letters">
+          <li>názvu použitej služby (aby používateľ vedel, ku ktorej službe zasiela spätnú väzbu),</li>
+          <li>otázky: “Ako ste spokojný/á so službou, ktorú ste práve využili?”,</li>
+          <li>prepínačov s možnosťami: Veľmi spokojný/á, Nespokojný/á, Ani spokojný/á ani nespokojný/á, Spokojný/á a Veľmi spokojný/á,</li>
+          <li>textového poľa s otázkou “Ako by sme mohli túto službu zlepšiť?”, ktoré sa zobrazí pri výbere jednej z nasledujúcich možností: Veľmi nespokojný/á, Nespokojný/á a Ani spokojný/á ani nespokojný/á.</li>
+        </ol>
+
+        <h3 class="govuk-heading-m" id="priklad">Vzor stránky so spätnou väzbou
+        </h3>
+        <div class="example">
+          {{ idskFeedback({
+              showMainTitle : true,
+              counter : 0,
+              characterLength : 200,
+              feedbackOptions: [
+              {
+                name:"Veľmi nespokojný",
+                textArea:true,
+                value: 1
+              },
+              {
+                name:"Nespokojný",
+                textArea:true,
+                value: 2
+              },
+              {
+                name:"Ani spokojný ani nespokojný",
+                textArea:true,
+                value: 3
+              },
+              {
+                name:"Spokojný",
+                value: 4
+              },
+              {
+                name:"Veľmi spokojný",
+                value: 5
+              }
+            ]}) }}
+        </div>
+      </div>
+    </div>
+
+  </div>
+{% endblock %}

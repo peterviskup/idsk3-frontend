@@ -1,0 +1,68 @@
+[
+    {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "description": "Id of the subscription form."
+    },
+    {
+        "name": "classes",
+        "type": "string",
+        "required": false,
+        "description": "Classes names for the subscription form."
+    },
+    {
+        "name": "targetClass",
+        "type": "string",
+        "required": false,
+        "description": "Class to target form for custom submit event handler."
+    },
+    {
+        "name": "formAction",
+        "type": "string",
+        "required": false,
+        "description": "Action for form element."
+    },
+    {
+        "name": "title",
+        "type": "string",
+        "required": false,
+        "description": "Title of the subscription form"
+    },
+    {
+        "name": "description",
+        "type": "string",
+        "required": false,
+        "description": "Text under title"
+    },
+    {
+        "name": "inputText",
+        "type": "string",
+        "required": false,
+        "description": "Placeholder text in input"
+    },
+    {
+        "name": "buttonText",
+        "type": "string",
+        "required": false,
+        "description": "Text for sending button"
+    },
+    {
+        "name": "agreementText",
+        "type": "string",
+        "required": false,
+        "description": "Text for agreement with sharing email"
+    },
+    {
+        "name": "sentTitle",
+        "type": "string",
+        "required": false,
+        "description": "Title after email was sent"
+    },
+    {
+        "name": "sentDescription",
+        "type": "string",
+        "required": false,
+        "description": "Description after email was sent"
+    }
+]

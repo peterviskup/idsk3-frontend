@@ -1,0 +1,112 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "idsk-card/macro.njk" import idskCard %}
+
+{% set pageName = "Aktuality" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            {% set exampleComponentHtml %}
+                {{ idskCard({
+                    "type": "hero",
+                    "imgSrc": "/public/assets/images/image-placeholder.jpg",
+                    "link": "#",
+                    "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed fo eiusmod tempor",
+                    "description": "Lorem ipsum dolor sit amet, consenctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "date": { "date": "1.7.2020", "link": "#" },
+                    "tags": [ { "tag": "Tag 1", "link": "#" }, { "tag": "Tag 2", "link": "#" } ]
+                }) }}
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+        </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+            {% set exampleComponentHtml %}
+                {{ idskCard({
+                    "type": "secondary",
+                    "imgSrc": "/public/assets/images/image-placeholder.jpg",
+                    "link": "#",
+                    "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut dolore magna aliqua.",
+                    "date": { "date": "1.7.2020", "link": "#" },
+                    "tags": [ { "tag": "Tag 1", "link": "#" }, { "tag": "Tag 2", "link": "#" } ]
+                }) }}
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+        </div>
+        <div class="govuk-grid-column-one-third">
+            {% set exampleComponentHtml %}
+                {{ idskCard({
+                    "type": "secondary",
+                    "imgSrc": "/public/assets/images/image-placeholder.jpg",
+                    "link": "#",
+                    "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut dolore magna aliqua",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut dolore magna aliqua. Ut enim ad minim veniam, quis nonstrud exercitation ullamc Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
+                    "date": { "date": "1.7.2020", "link": "#" },
+                    "tags": [ { "tag": "Tag 1", "link": "#" }, { "tag": "Tag 2", "link": "#" } ]
+                }) }}
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+        </div>
+        <div class="govuk-grid-column-one-third">
+            {% set exampleComponentHtml %}
+                {{ idskCard({
+                    "type": "secondary",
+                    "imgSrc": "/public/assets/images/image-placeholder.jpg",
+                    "link": "#",
+                    "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut dolore magna aliqua. Ut enim ad minim veniam, quis nonstrud exercitation ullamc Lorem ipsum dolor.",
+                    "date": { "date": "1.7.2020", "link": "#" },
+                    "tags": [ { "tag": "Tag 1", "link": "#" }, { "tag": "Tag 2", "link": "#" } ]
+                }) }}
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+        </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+            {% set exampleComponentHtml %}
+                {{ idskCard({
+                    "type": "secondary",
+                    "imgSrc": "/public/assets/images/image-placeholder.jpg",
+                    "link": "#",
+                    "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor magna aliqua. Ut enim ad minim veniam, quis nonstrud.",
+                    "date": { "date": "1.7.2020", "link": "#" },
+                    "tags": [ { "tag": "Tag 1", "link": "#" }, { "tag": "Tag 2", "link": "#" } ]
+                }) }}
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+        </div>
+        <div class="govuk-grid-column-one-third">
+            {% set exampleComponentHtml %}
+                {{ idskCard({
+                    "type": "secondary",
+                    "imgSrc": "/public/assets/images/image-placeholder.jpg",
+                    "link": "#",
+                    "heading": "Lorem ipsum dolor sit amet",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor magna aliqua. UUt enim ad minim veniam, quis nonstrud exercitation ullamc.",
+                    "date": { "date": "1.7.2020", "link": "#" },
+                    "tags": [ { "tag": "Tag 1", "link": "#" }, { "tag": "Tag 2", "link": "#" } ]
+                }) }}
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+        </div>
+    </div>
+{% endblock %}

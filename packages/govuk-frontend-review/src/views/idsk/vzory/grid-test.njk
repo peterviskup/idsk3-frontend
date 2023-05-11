@@ -1,0 +1,466 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "idsk-header-extended/macro.njk" import idskHeaderExtended %}
+{% from "idsk-intro-block/macro.njk" import idskIntroBlock %}
+{% from "idsk-card/macro.njk" import idskCard %}
+{% from "idsk-crossroad/macro.njk" import idskCrossroad %}
+{% from "idsk-footer-extended/macro.njk" import idskFooterExtended %}
+
+{% block styles %}
+<style>
+  body {
+    overflow-x: hidden;
+  }
+
+  .idsk-events-list {
+    font-family: "Source Sans Pro", "Arial", sans-serif;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .idsk-events-list > .govuk-grid-column-one-third {
+    display: flex;
+    flex-direction: column;
+  }
+  .idsk-events-list__block{
+    height: 100%;
+    position: relative;
+  }
+  .idsk-events-list__event-title{
+    margin-bottom: 40px;
+  }
+  .idsk-events-list__event-title .govuk-link {
+    text-decoration: none;
+  }
+  .idsk-events-list__event-desc {
+    position: absolute;
+    height: auto;
+    width: 100%;
+    bottom: 15px;
+  }
+
+</style>
+{% endblock %}
+
+{% block skipLink %}
+    {{ idskSkipLink({
+        href: '#main-content',
+        text: 'Preskočiť na hlavný obsah',
+        classes: 'idsk-skip-link--sticky'
+    }) }}
+{% endblock %}
+
+{% block header %}
+  {{ idskHeaderExtended({
+    logo: "logo-mirri-farebne.svg",
+    logoSmall: "logo-mirri-small-farebne.svg",
+    logoWhite: "logo-mirri-biele.svg",
+    logoSmallWhite: "logo-mirri-small-biele.svg",
+    logoGrid: "govuk-grid-column-one-half govuk-grid-column-one-third-from-desktop",
+    navigation: [
+      {
+          link: '#1',
+          text: 'Eurofondy'
+      },
+      {
+          link: '#2',
+          text: 'Regionálny rozvoj',
+          active: true
+      },
+      {
+          link: '#3',
+          text: 'Informatizácia'
+      },
+      {
+          link: '#4',
+          text: 'Investície'
+      },
+      {
+          link: '#5',
+          text: 'Inovácie'
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: ' ID-SK frontend', href: '/' + legacyQuery }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+    <h2 class="govuk-heading-l">Aktuality</h2>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+        <h3 class="govuk-heading-m govuk-!-margin-top-2">Ministerstvo ako prijímateľ EŠIF</h3>
+        {{ idskCrossroad({
+            "columns": 1,
+            "classes": "govuk-clearfix",
+            "items": [
+            { "title": 'OP Integrovaná infraštruktúra', "subtitle": 'Všetky informácie o eurofondoch na jednom mieste.', "link": '#' },
+            { "title": 'OP Technická pomoc', "subtitle": 'Všetky informácie o eurofondoch na jednom mieste.', "link": '#' },
+            { "title": 'Integrovaný regionálny operačný program', "subtitle": 'Všetky informácie o eurofondoch na jednom mieste.', "link": '#' }
+            ]
+        }) }}
+        </div>
+        <div class="govuk-grid-column-one-half">
+        <h3 class="govuk-heading-m govuk-!-margin-top-2">Ministerstvo ako poskytovateľ EŠIF</h3>
+        {{ idskCrossroad({
+            "columns": 1,
+            "classes": "govuk-clearfix",
+            "items": [
+            { "title": 'PO7 Informačná spoločnosť', "subtitle": 'Všetky informácie o eurofondoch na jednom mieste.', "link": '#' },
+            { "title": 'Nórske fondy', "subtitle": 'Všetky informácie o eurofondoch na jednom mieste.', "link": '#' },
+            { "title": 'IROP', "subtitle": 'Všetky informácie o eurofondoch na jednom mieste.', "link": '#' }
+            ]
+        }) }}
+        </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            {{ idskCard({
+            "type": "hero",
+            "imgSrc": "/public/assets/images/image-placeholder.jpg",
+            "link": "#",
+            "heading": "Podpora najmenej rozvinutých okresov: Nové výzvy po novom!",
+            "description": "Lorem ipsum dolor sit amet, consenctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
+            "date": { "date": "1.7.2020", "link": "#" },
+            "tags": [ { "tag": "Tag 1", "link": "#" }, { "tag": "Tag 2", "link": "#" } ]
+            }) }}
+        </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+            {{ idskCard({
+                "type": "secondary",
+                "imgSrc": "/public/assets/images/image-placeholder.jpg",
+                "link": "#",
+                "heading": "Podpora najmenej rozvinutých okresov: Nové výzvy po novom!",
+                "description": "Lorem ipsum dolor sit amet, consenctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "date": { "date": "1.7.2020", "link": "#" },
+                "tags": [ { "tag": "Tag 1", "link": "#" }, { "tag": "Tag 2", "link": "#" } ]
+            }) }}
+        </div>
+        <div class="govuk-grid-column-one-half">
+            {{ idskCard({
+                "type": "secondary",
+                "imgSrc": "/public/assets/images/image-placeholder.jpg",
+                "link": "#",
+                "heading": "Podpora najmenej rozvinutých okresov: Nové výzvy po novom!",
+                "description": "Lorem ipsum dolor sit amet, consenctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "date": { "date": "1.7.2020", "link": "#" },
+                "tags": [ { "tag": "Tag 1", "link": "#" }, { "tag": "Tag 2", "link": "#" } ]
+            }) }}
+        </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            {{ idskCard({
+                "type": "secondary-horizontal",
+                "imgSrc": "/public/assets/images/image-placeholder.jpg",
+                "link": "#",
+                "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+                "date": { "date": "1.7.2020", "link": "#" },
+                "tags": [ { "tag": "Tag 1", "link": "#" }, { "tag": "Tag 2", "link": "#" } ]
+            }) }}
+        </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            {{ idskCard({
+                "type": "profile-horizontal",
+                "link": "#",
+                "imgSrc": "/public/assets/images/image-placeholder.jpg",
+                "heading": "Meno Priezvisko",
+                "description": "Rola/funkcia",
+                "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            }) }}
+        </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+            {{ idskCard({
+                "type": "secondary",
+                "imgSrc": "/public/assets/images/image-placeholder.jpg",
+                "link": "#",
+                "heading": "Podpora najmenej rozvinutých okresov: Nové výzvy po novom!",
+                "description": "Lorem ipsum dolor sit amet, consenctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "date": { "date": "1.7.2020", "link": "#" },
+                "tags": [ { "tag": "Tag 1", "link": "#" }, { "tag": "Tag 2", "link": "#" } ]
+            }) }}
+        </div>
+        <div class="govuk-grid-column-one-third">
+            {{ idskCard({
+                "type": "secondary",
+                "imgSrc": "/public/assets/images/image-placeholder.jpg",
+                "link": "#",
+                "heading": "Podpora najmenej rozvinutých okresov: Nové výzvy po novom!",
+                "description": "Lorem ipsum dolor sit amet, consenctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "date": { "date": "1.7.2020", "link": "#" },
+                "tags": [ { "tag": "Tag 1", "link": "#" }, { "tag": "Tag 2", "link": "#" } ]
+            }) }}
+        </div>
+        <div class="govuk-grid-column-one-third">
+            {{ idskCard({
+                "type": "secondary",
+                "imgSrc": "/public/assets/images/image-placeholder.jpg",
+                "link": "#",
+                "heading": "Podpora najmenej rozvinutých okresov: Nové výzvy po novom!",
+                "description": "Lorem ipsum dolor sit amet, consenctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "date": { "date": "1.7.2020", "link": "#" },
+                "tags": [ { "tag": "Tag 1", "link": "#" }, { "tag": "Tag 2", "link": "#" } ]
+            }) }}
+        </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full govuk-!-margin-top-3">
+            <h2 class="govuk-heading-l">Podujatia</h2>
+        </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="idsk-events-list">
+            <div class="govuk-grid-column-one-third">
+                <div class="idsk-events-list__block">
+                    <div class="idsk-events-list__event-title">
+                        <a href="#" class="govuk-link govuk-heading-s" title="Pandémia COVID-19 ešte viac zvýraznila potrebu urýchliť digitálnu transformáciu v Európe">Pandémia COVID-19 ešte viac zvýraznila potrebu urýchliť digitálnu transformáciu v Európe</a>
+                    </div>
+                    <div class="idsk-events-list__event-desc">26.02.2021</div>
+                </div>
+            </div>
+            <div class="govuk-grid-column-one-third">
+                <div class="idsk-events-list__block">
+                    <div class="idsk-events-list__event-title">
+                        <a href="#" class="govuk-link govuk-heading-s" title="Hackaton - vytváranie šablóny webovej stránky">Hackaton - vytváranie šablóny webovej stránky</a>
+                    </div>
+                    <div class="idsk-events-list__event-desc">26.02.2021</div>
+                </div>
+            </div>
+            <div class="govuk-grid-column-one-third">
+                <div class="idsk-events-list__block">
+                    <div class="idsk-events-list__event-title">
+                        <a href="#" class="govuk-link govuk-heading-s" title="ID-SK workshop #6">ID-SK workshop #6</a>
+                    </div>
+                    <div class="idsk-events-list__event-desc">26.02.2021</div>
+                </div>
+            </div>
+            <div class="govuk-grid-column-one-third">
+                <div class="idsk-events-list__block">
+                    <div class="idsk-events-list__event-title">
+                        <a href="#" class="govuk-link govuk-heading-s" title="Pandémia COVID-19 ešte viac zvýraznila potrebu urýchliť digitálnu transformáciu v Európe">Pandémia COVID-19 ešte viac zvýraznila potrebu urýchliť digitálnu transformáciu v Európe</a>
+                    </div>
+                <div class="idsk-events-list__event-desc">26.02.2021</div>
+                </div>
+            </div>
+            <div class="govuk-grid-column-one-third">
+                <div class="idsk-events-list__block">
+                    <div class="idsk-events-list__event-title">
+                        <a href="#" class="govuk-link govuk-heading-s" title="Hackaton - vytváranie šablóny webovej stránky">Hackaton - vytváranie šablóny webovej stránky</a>
+                    </div>
+                    <div class="idsk-events-list__event-desc">26.02.2021</div>
+                </div>
+            </div>
+            <div class="govuk-grid-column-one-third">
+                <div class="idsk-events-list__block">
+                    <div class="idsk-events-list__event-title">
+                        <a href="#" class="govuk-link govuk-heading-s" title="ID-SK workshop #6">ID-SK workshop #6</a>
+                    </div>
+                <div class="idsk-events-list__event-desc">26.02.2021</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+            {{ idskCard({
+                "type": "profile-vertical",
+                "link": "#",
+                "imgSrc": "/public/assets/images/image-placeholder.jpg",
+                "heading": "Meno Priezvisko",
+                "description": "Rola/funkcia"
+            }) }}
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+  {{ idskFooterExtended({
+    characterLength : 500,
+    showFeedback : "true",
+    upButtonEnabled : "true",
+    designAddress : "#",
+    logo: "footer-extended-logo.svg",
+    feedbackButtonAddress : "idsk.gov.sk",
+    firstColumn: {
+      title: "Eurofondy",
+      leftItems: [
+        {
+          name:"O eurofondoch",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 13/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 14/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 15/20",
+          href:"#"
+        }
+      ],
+      rightItems: [
+        {
+          name:"Link small Regular 16/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 17/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 18/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 19/20",
+          href:"#"
+        }
+      ]
+    },
+
+    secondColumn: {
+      title: "Regionálny rozvoj",
+      items: [
+        {
+          name:"Link small Regular 20/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 21/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 22/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 23/20",
+          href:"#"
+        }
+      ]
+    },
+
+    thirdColumn: {
+      title: "Informatizácia",
+      leftItems: [
+        {
+          name:"Link small Regular 12/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 13/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 14/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 15/20",
+          href:"#"
+        }
+      ],
+      rightItems: [
+        {
+          name:"Link small Regular 16/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 17/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 18/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 19/20",
+          href:"#"
+        }
+      ]
+    },
+
+    fourthColumn: {
+      title: "Investície",
+      items: [
+        {
+          name:"Link small Regular 28/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 29/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 30/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 31/20",
+          href:"#"
+        }
+      ]
+    },
+
+    subtitles: [
+      {
+        item:"Pomoc",
+        href:"#"
+      },
+      {
+        item:"Cookies",
+        href:"#"
+      },
+      {
+        item:"Kontakty",
+        href:"#"
+      },
+      {
+        item:"Mapa Stránky",
+        href:"#"
+      }
+    ],
+    dropdownItems: [
+      {
+        text:"Gramatická chyba",
+        value:"#"
+      },
+      {
+        text:"chyba zobrazovania",
+        value:"#"
+      },
+      {
+        text:"chyba obsahu",
+        value:"#"
+      }
+    ]
+  }) }}
+{% endblock %}

@@ -1,0 +1,52 @@
+<div data-module="idsk-intro-block">
+    <div class="idsk-intro-block {{ params.classes if params.classes }}">
+        <div class="govuk-grid-row {{ params.classContainer }}">
+            <div class="govuk-grid-column-full govuk-grid-column-two-thirds-from-desktop">
+                <h2 class="govuk-heading-m {% if not params.bottomMenu %}heading-bigger-margin{% endif %}">
+                    {{ params.headline if params.headline else "Vitajte na MIRRI SR"}}
+                </h2>
+                <p class="govuk-body">{% if params.mainTitle %} {{ params.mainTitle | safe }} {% else %} Dozvedieť sa <a class='govuk-link' href='#' title='viac o ministerstve'>viac o ministerstve</a>. {% endif %}
+                    {% if params.mainTitleLinkLabel %}
+                    <a class="govuk-link" href="{{ params.moreInfoAboutMinistryLink if params.moreInfoAboutMinistryLink else '#'  }}" title="{{ params.mainTitleLinkLabel if params.mainTitleLinkLabel else 'viac o ministerstve.'}}">
+                        {{ params.mainTitleLinkLabel if params.mainTitleLinkLabel else "viac o ministerstve."}}</a>
+                    {% endif %}
+                </p>
+                {% if params.searchEnabled %}
+                    {% from "../idsk-search-component/macro.njk" import idskSearchComponent %}
+                    {{ idskSearchComponent({
+                        id : 'intro-block-search'
+                    }) }}
+                    {% if params.bottomMenu %}
+                      <div>
+                          <ul class="idsk-intro-block__list__ul">
+                              <li class="idsk-intro-block__bottom-menu__li govuk-caption-m">
+                                  <span>Hľadáte toto?</span>
+                              </li>
+                              {% for bottomMenu in params.bottomMenu %}
+                                  <li class="idsk-intro-block__list__li">
+                                      <a class="govuk-link idsk-intro-block__list__a" href="{{bottomMenu.href}}" title="{{bottomMenu.item}}">
+                                          {{ bottomMenu.item }}
+                                      </a>
+                                  </li>
+                              {% endfor %}
+                          </ul>
+                      </div>
+                    {% endif %}
+                {% endif %}
+            </div>
+
+            <div class="idsk-intro-block__side-menu govuk-grid-column-full govuk-grid-column-one-third-from-desktop {%- if params.classBackground %} {{ params.classBackground }}{% endif -%}">
+                <h2 class="govuk-heading-s">
+                    {{ params.sideMenuTitle if params.sideMenuTitle else "Populárny obsah"}}
+                </h2>
+                <ul class="idsk-intro-block__side-menu__ul">
+                {% for sideMenu in params.sideMenu %}
+                    <li class="idsk-intro-block__side-menu__li">
+                        <a class="govuk-link idsk-intro-block__side-menu__a" href="#" title="{{ sideMenu.item }}">{{ sideMenu.item }}</a>
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

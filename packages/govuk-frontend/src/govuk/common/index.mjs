@@ -148,3 +148,21 @@ export function extractConfigByNamespace (configObject, namespace) {
   }
   return newObject
 }
+
+/**
+ * Toggle class
+ *
+ * @param {object} node - element
+ * @param {string} className - to toggle
+ */
+export function toggleClass (node, className) {
+  if (node === null) {
+    return
+  }
+
+  if (node.className.indexOf(className) > 0) {
+    node.className = node.className.replace(' ' + className, '')
+  } else {
+    node.className += ' ' + className
+  }
+}

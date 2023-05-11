@@ -1,0 +1,76 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Stránky dokončenia procesu" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Vzory</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Tento návod opisuje spôsob, ako informovať používateľov, že dokončili proces.</p>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds example-images">
+
+            <h2 class="govuk-heading-s">Obsah:</h2>
+            <ul class="govuk-list">
+                <li><a class="govuk-link" href="#ukazka" title="Ukážka stránky s potvrdením">Ukážka stránky s potvrdením</a></li>
+                <li><a class="govuk-link" href="#informacie" title="Informácie, ktoré potrebujete zahrnúť">Informácie, ktoré potrebujete zahrnúť</a></li>
+                <li><a class="govuk-link" href="#pomoc" title="Pomoc používateľom, ktorí majú stránku v záložkách">Pomoc používateľom, ktorí majú stránku v záložkách</a></li>
+            </ul>
+
+            <h3 class="govuk-heading-m" id="ukazka">Ukážka stránok s potvrdením</h3>
+            <img src="/public/assets/images/patterns/validation1.png" alt="validation">
+            <img src="/public/assets/images/patterns/validation2.png" alt="validation">
+
+
+            <h3 class="govuk-heading-m" id="informacie">Informácie, ktoré má stránka obsahovať</h3>
+            <p class="govuk-body">Vaša stránka s potvrdením by mala obsahovať:</p>
+            <ul class="govuk-list govuk-list--bullet">
+
+                <li>referenčné číslo (ak existuje),</li>
+                <li>detaily toho, čo sa bude diať ďalej a kedy,</li>
+                <li>kontaktné údaje pre danú službu,</li>
+                <li>odkazy na informácie alebo služby, ktoré budú používatelia pravdepodobne potrebovať ako ďalšie,</li>
+                <li>odkaz na vašu stránku so spätnou väzbou, kde vám používatelia môžu povedať, čo si o službe myslia,</li>
+                <li>informáciu o uložení odoslaného podania v odoslaných správach v elektronickej schránke, ak je používateľ prihlásený,</li>
+                <li>informáciu o zaslaní potvrdenia alebo iných informácií k dokončeniu procesu do elektronickej schránky,</li>
+                <li>spôsob, akým si používatelia môžu uložiť záznam o procese (napríklad ako PDF).</li>
+
+            </ul>
+
+
+            <h3 class="govuk-heading-m" id="pomoc">Pomoc používateľom, ktorí majú stránku v záložkách</h3>
+            <p class="govuk-body">
+                Niektorí používatelia si budú stránku s potvrdením o dokončení procesu ukladať do záložiek ako formu potvrdenky. Ak je to možné, mali by ste im dovoliť vrátiť sa na stránku.
+            </p>
+
+            <p class="govuk-body">
+                Ak to nie je možné, uistite sa, že vaša služba reaguje užitočným spôsobom, keď sa používatelia vrátia pomocou odkazu v záložke. Napríklad, ak ľudia používajú vašu službu na podanie žiadosti, môžete im poskytnúť odkazy na informácie ako:
+            </p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>sledovanie žiadosti,</li>
+                <li>vytvorenie novej žiadosti,</li>
+                <li>čo robiť (alebo koho kontaktovať) ak máte problém s vašou žiadosťou.</li>
+
+            </ul>
+            <h3 class="govuk-heading-m" id="navody">Súvisiace návody</h3>
+
+            <p class="govuk-body">Tieto návody môžu byť pre vás užitočné:</p>
+
+        </div>
+    </div>
+
+  </div>
+{% endblock %}

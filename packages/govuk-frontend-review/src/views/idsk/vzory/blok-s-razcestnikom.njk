@@ -1,0 +1,117 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "idsk-crossroad/macro.njk" import idskCrossroad %}
+
+{% set pageName = "Blok s rázcestníkom" %}
+{% set headline = "Informatizácia" %}
+{% set secondHeadline = "Eurofondy" %}
+
+{% block beforeContent %}
+    {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-width-cotainer">
+        <h1 class="govuk-heading-xl">{{pageName}}</h1>
+        <p class="govuk-body">Blok s rázcestníkom je vzorovou ukážkou použitia rázcestníka v rámci tela webovej stránky. Blok obsahuje okrem rázcestníka nadpis (ktorý môže obsahovať hyperlink) a stručný a vecný podnadpis (max. 190 znakov vrátane medzier) k téme, ktorá dlaždice v rázcestníku združuje.
+        </p>
+        <div class="example example-error">
+            {% set exampleComponentHtml %}
+            <div class="govuk-grid-column-full govuk-!-margin-bottom-5">
+                <h1 class="govuk-heading-l">
+                    <a class="govuk-link" href="#">{{headline}}
+                    </a>
+                </h1>
+                <p class="govuk-body-l">Slovensko je neodlučnou súčasťou európskeho digitálneho priestoru, ktorý pomáha formovať strategické smerovanie digitalizácie u nás. Viac informácií nájdete
+                    <a class="govuk-link" href="#">na podstránke Informatizácia.
+                    </a>
+                </p>
+            </div>
+            <div class="govuk-grid-column-full">
+                {{ idskCrossroad({
+                    "columns": 1,
+                    "items": [
+                        { "title": 'Financovanie ITVS', "subtitle": 'Všetky informácie o eurofondoch na jednom mieste.', "link": '#' },
+                        { "title": 'Prevádzka a rozvoj ITVS', "subtitle": 'Inteligentné mesto, zdravá budúcnosť. Inšpirujte sa.', "link": '#' },
+                        { "title": 'Strategické dokumenty', "subtitle": 'Subtitle for 3rd element', "link": '#' },
+                        { "title": 'Prevádzka a rozvoj ITVS', "subtitle": 'Inteligentné mesto, zdravá budúcnosť. Inšpirujte sa.', "link": '#' },
+                        { "title": 'Prevádzka a rozvoj ITVS', "subtitle": 'Inteligentné mesto, zdravá budúcnosť. Inšpirujte sa.', "link": '#' },
+                        { "title": 'Prevádzka a rozvoj ITVS', "subtitle": 'Inteligentné mesto, zdravá budúcnosť. Inšpirujte sa.', "link": '#' },
+                        { "title": 'Aktuality z informatizácie', "subtitle": 'Subtitle for 4th element', "link": '#' }
+                    ]
+                }) }}
+                {% endset %}
+                {{exampleComponentHtml | safe}}
+            </div>
+        </div>
+        <div class="example example-error">
+            {% set exampleComponentHtml %}
+            <div class="govuk-grid-column-full govuk-!-margin-bottom-5">
+                <h1 class="govuk-heading-l">{{secondHeadline}}</h1>
+                <p class="govuk-body-l">Slovensko je neodlučnou súčasťou európskeho digitálneho priestoru, ktorý pomáha formovať strategické smerovanie digitalizácie u nás. Viac informácií nájdete
+                    <a class="govuk-link" href="#">na podstránke Informatizácia.
+                    </a>
+                </p>
+            </div>
+            <div class="govuk-grid-column-full">
+                {{ idskCrossroad({
+                    "columns": 2,
+                    "items": [
+                        { "title": 'Financovanie ITVS', "subtitle": 'Všetky informácie o eurofondoch na jednom mieste.', "link": '#' },
+                        { "title": 'Prevádzka a rozvoj ITVS', "subtitle": 'Inteligentné mesto, zdravá budúcnosť. Inšpirujte sa.', "link": '#' },
+                        { "title": 'Prevádzka a rozvoj ITVS', "subtitle": 'Inteligentné mesto, zdravá budúcnosť. Inšpirujte sa.', "link": '#' },
+                        { "title": 'Strategické dokumenty', "subtitle": 'Subtitle for 3rd element', "link": '#' },
+                        { "title": 'Aktuality z informatizácie', "subtitle": 'Subtitle for 4th element', "link": '#' },
+                        { "title": 'G2G služby', "subtitle": 'Subtitle for 5th element', "link": '#' },
+                        { "title": 'Manažment údajov', "subtitle": 'Zistite, ako Vám moderný štát môže ušetriť čas a peniaze.', "link": '#' },
+                        { "title": 'MIRRI digitálne projekty', "subtitle": 'Zistite, ako Vám moderný štát môže ušetriť čas a peniaze.', "link": '#' },
+                        { "title": 'Informatizácia v európskom kontexte ', "subtitle": 'Zistite, ako Vám moderný štát môže ušetriť čas a peniaze.', "link": '#' },
+                        { "title": 'Pracovné skupiny', "subtitle": 'Zistite, ako Vám moderný štát môže ušetriť čas a peniaze.', "link": '#' }
+                    ]
+                }) }}
+                {% endset %}
+                {{exampleComponentHtml | safe}}
+            </div>
+        </div>
+        <h2 class="govuk-heading-l">Blok s rázcestníkom, rozbaliteľný</h2>
+        <div class="example example-error">
+            {% set exampleComponentHtml %}
+            <div class="govuk-grid-column-full govuk-!-margin-bottom-5">
+                <h1 class="govuk-heading-l">{{secondHeadline}}</h1>
+                <p class="govuk-body-l">Slovensko je neodlučnou súčasťou európskeho digitálneho priestoru, ktorý pomáha formovať strategické smerovanie digitalizácie u nás. Viac informácií nájdete
+                    <a class="govuk-link" href="#">na podstránke Informatizácia.</a>
+                </p>
+            </div>
+            <div class="govuk-grid-column-full">
+                {{ idskCrossroad({
+                    "columns": 2,
+                    "hideTiles": true,
+                    "items": [
+                        { "title": 'Financovanie ITVS', "subtitle": 'Všetky informácie o eurofondoch na jednom mieste.', "link": '#' },
+                        { "title": 'Prevádzka a rozvoj ITVS', "subtitle": 'Inteligentné mesto, zdravá budúcnosť. Inšpirujte sa.', "link": '#' },
+                        { "title": 'Prevádzka a rozvoj ITVS', "subtitle": 'Inteligentné mesto, zdravá budúcnosť. Inšpirujte sa.', "link": '#' },
+                        { "title": 'Prevádzka a rozvoj ITVS', "subtitle": 'Inteligentné mesto, zdravá budúcnosť. Inšpirujte sa.', "link": '#' },
+                        { "title": 'Prevádzka a rozvoj ITVS', "subtitle": 'Inteligentné mesto, zdravá budúcnosť. Inšpirujte sa.', "link": '#' },
+                        { "title": 'Prevádzka a rozvoj ITVS', "subtitle": 'Inteligentné mesto, zdravá budúcnosť. Inšpirujte sa.', "link": '#' },
+                        { "title": 'Prevádzka a rozvoj ITVS', "subtitle": 'Inteligentné mesto, zdravá budúcnosť. Inšpirujte sa.', "link": '#' },
+                        { "title": 'Prevádzka a rozvoj ITVS', "subtitle": 'Inteligentné mesto, zdravá budúcnosť. Inšpirujte sa.', "link": '#' },
+                        { "title": 'Strategické dokumenty', "subtitle": 'Subtitle for 3rd element', "link": '#' },
+                        { "title": 'Aktuality z informatizácie', "subtitle": 'Subtitle for 4th element', "link": '#' },
+                        { "title": 'G2G služby', "subtitle": 'Subtitle for 5th element', "link": '#' },
+                        { "title": 'Manažment údajov', "subtitle": 'Zistite, ako Vám moderný štát môže ušetriť čas a peniaze.', "link": '#' },
+                        { "title": 'MIRRI digitálne projekty', "subtitle": 'Zistite, ako Vám moderný štát môže ušetriť čas a peniaze.', "link": '#' },
+                        { "title": 'Informatizácia v európskom kontexte ', "subtitle": 'Zistite, ako Vám moderný štát môže ušetriť čas a peniaze.', "link": '#' },
+                        { "title": 'Pracovné skupiny', "subtitle": 'Zistite, ako Vám moderný štát môže ušetriť čas a peniaze.', "link": '#' }
+                    ]
+                }) }}
+                {% endset %}
+                {{exampleComponentHtml | safe}}
+            </div>
+        </div>
+    </div>
+{% endblock %}

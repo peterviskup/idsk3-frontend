@@ -1,0 +1,189 @@
+
+{# language block #}
+{% set languageBlock %}
+  {% if params.language %}
+    <div class="idsk-header-extended__language">
+      <button type="button" class="idsk-header-extended__language-button">
+        <span class="idsk-header-extended__language--current-text">
+          <img src="{{ params.assetsPath | default('/assets/images/flags/') + params.language.current.flag }}"
+            alt="{{ params.language.current.text }}" aria-hidden="true">
+          <span>{{ params.language.current.text }}</span>
+        </span>
+      </button>
+      <ul class="idsk-header-extended__language-list">
+        {% for language in params.language.choices %}
+        <li class="idsk-header-extended__language-list-item">
+          <a class="idsk-header-extended__language-list-link" title="{{ language.text }}" href="{{ language.link }}">
+            <img src="{{ params.assetsPath | default('/assets/images/flags/') + language.flag }}"
+              alt="{{ language.text }}" aria-hidden="true">
+            {{ language.text }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+{% endset %}
+
+{# social links block #}
+{% set socialLinksBlock %}
+  {% if params.socials %}
+    <div class="idsk-header-extended__social">
+      <ul class="idsk-header-extended__social-list">
+        {% for social in params.socials %}
+        <li class="idsk-header-extended__social-item">
+          <a class="idsk-header-extended__social-link" href="{{ social.link }}" title="{{ social.text }}"
+            target="_blank">
+            <span class="govuk-visually-hidden">{{ social.text }}</span>
+            <i class="{{ social.icon }}" aria-hidden="true"></i>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+{% endset %}
+
+{# navigation block #}
+{% set navigationBlock %}
+  <div class="idsk-header-extended__content">
+    {% if params.navigation %}
+    <nav aria-label="Top Level Navigation">
+      <ul class="idsk-header-extended__navigation {{ params.navigationClasses if params.navigationClasses }}">
+        {% for item in params.navigation %}
+        <li class="idsk-header-extended__navigation-item
+                {{ ' idsk-header-extended__navigation-item--active' if item.active }}">
+          <a class="idsk-header-extended__link
+                    {{ ' idsk-js-header-extended-submenu-toggle idsk-header-extended__arrow' if item.submenu }}"
+            href="{{ item.link }}" {% for attribute, value in item.attributes %} {{attribute}}="{{value}}" {% endfor
+            %} title="{{ item.text }}">
+            {{ item.text }}
+          </a>
+          {% if item.submenu %}
+          <div class="idsk-header-extended__navigation-submenu">
+            <ul class="govuk-width-container">
+              {% for subItem in item.submenu%}
+              <li>
+                <a href="{{ subItem.link }}" title="{{ subItem.text }}">
+                  {% if subItem.icon %}
+                  <i class="{{ subItem.icon }}" aria-hidden="true"></i>
+                  {% endif %}
+                  {{ subItem.text }}
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+    {% endif %}
+  </div>
+{% endset %}
+
+<header class="idsk-header-extended {{ params.classes if params.classes }}" data-module="idsk-header-extended" {%- for
+  attribute, value in params.attributes %} {{attribute}}="{{value}}" {% endfor %}>
+  <div class="idsk-header-extended__container {{ params.containerClasses | default('govuk-width-container') }}">
+
+    <div
+      class="idsk-header-extended__logo {{ params.logoGrid if params.logoGrid else 'govuk-grid-column-three-quarters' }}">
+      <a href="{{ params.homepageUrl | default('/') }}" title="{{ params.headerTitle if params.headerTitle }}">
+        <div class="idsk-header-extended__logotype-crown">
+          <img src="{{ params.assetsPathLogo | default('/assets/images/header-extended/') + params.logo }}" alt="logo hlavička pre webové sídla">
+        </div>
+        <div class="idsk-header-extended__logotype-crown-mobile">
+          <img src="{{ params.assetsPathLogo | default('/assets/images/header-extended/') + params.logoSmall }}" alt="logo hlavička pre webové sídla">
+        </div>
+      </a>
+    </div>
+
+    <div class="idsk-header-extended__search">
+      <form class="idsk-header-extended__search-form">
+        <label class="idsk-header-extended__search-label" for="idsk-header-extended__search-input">
+          {{ params.search.label if params.search.label else "Zadajte hľadaný výraz" }}
+        </label>
+        <input class="govuk-input govuk-!-display-inline-block" id="idsk-header-extended__search-input" name="search"
+          type="text" aria-describedby="input-width-30-hint" aria-label="Zadajte hľadaný výraz">
+        <button type="submit" class="govuk-button govuk-!-display-inline-block" data-module="govuk-button">
+          <span class="govuk-visually-hidden">{{ params.search.button if params.search.button else "Vyhľadať" }}</span>
+          <i aria-hidden="true" class="fas fa-search"></i>
+        </button>
+      </form>
+    </div>
+
+    {{ languageBlock | safe}}
+
+    {{ socialLinksBlock | safe }}
+
+    <button type="button" class="idsk-header-extended__menu-button idsk-js-header-extended-side-menu"
+      aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="5" y1="19.8752" x2="35" y2="19.8752" stroke="#003078" stroke-width="3" />
+        <line x1="5" y1="29.2507" x2="30.5009" y2="29.2507" stroke="#003078" stroke-width="3" />
+        <line x1="5.00177" y1="10.5" x2="30.5027" y2="10.5" stroke="#003078" stroke-width="3" stroke-linejoin="round" />
+      </svg>
+    </button>
+
+    {{ navigationBlock | safe }}
+
+    <div class="idsk-header-extended__mobile">
+
+      <div
+        class="idsk-header-extended__logo {{ params.logoGrid if params.logoGrid else 'govuk-grid-column-three-quarters' }}">
+        <a href="{{ params.homepageUrl | default('/') }}" title="{{ params.headerTitle if params.headerTitle }}">
+          <div class="idsk-header-extended__logotype-crown-mobile-navigation">
+            <img src="{{ params.assetsPathLogo | default('/assets/images/header-extended/') + params.logoWhite }}" alt="logo hlavička pre webové sídla">
+          </div>
+          <div class="idsk-header-extended__logotype-crown-mobile-small-navigation">
+            <img src="{{ params.assetsPathLogo | default('/assets/images/header-extended/') + params.logoSmallWhite }}" alt="logo hlavička pre webové sídla">
+          </div>
+        </a>
+      </div>
+
+      <div class="idsk-header-extended__search">
+        <form class="idsk-header-extended__search-form">
+          <label class="idsk-header-extended__search-label" for="idsk-header-extended__search-input-mobile">
+            {{ params.search.label if params.search.label else "Zadajte hľadaný výraz" }}
+          </label>
+          <input class="govuk-input govuk-!-display-inline-block" id="idsk-header-extended__search-input-mobile"
+            name="search" type="text" aria-describedby="input-width-30-hint" aria-label="Zadajte hľadaný výraz">
+          <button type="submit" class="govuk-button govuk-!-display-inline-block" data-module="govuk-button">
+            <span class="govuk-visually-hidden">{{ params.search.button if params.search.button else "Vyhľadať"}}</span>
+            <i aria-hidden="true" class="fas fa-search"></i>
+          </button>
+        </form>
+      </div>
+
+      {{ navigationBlock | safe }}
+
+      <hr class="idsk-header-extended__hr">
+
+      {{ languageBlock | safe}}
+
+      {{ socialLinksBlock | safe }}
+
+      <button class="idsk-header-extended__mobile-close">
+        <span class="govuk-visually-hidden">
+          {{ params.closeMobileMenuTitle if params.closeMobileMenuTitle else 'Zavrieť menu' }}
+        </span>
+      </button>
+    </div>
+
+  </div>
+
+</header>
+
+<div class="idsk-header-extended-ie-fix"></div>
+
+<div class="idsk-header-extended-notification">
+  {% if params.notification %}
+  {% from "../idsk-warning-text/macro.njk" import idskWarningText %}
+  {{ idskWarningText({
+    "type": params.notification.type,
+    "html": params.notification.html,
+    "iconFallbackText": params.notification.iconFallbackText
+  }) }}
+  {% endif %}
+</div>

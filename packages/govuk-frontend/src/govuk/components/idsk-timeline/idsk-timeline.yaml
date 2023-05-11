@@ -1,0 +1,71 @@
+params:
+  - name: events
+    type: array
+    required: true
+    description: An array of events for timeline component.
+    params:
+      - name: date
+        type: string
+        required: true
+        description: Date of event.
+      - name: time
+        type: string
+        required: true
+        description: Time of event.
+      - name: caption
+        type: array
+        required: false
+        description: array of captions
+        params:
+          - name: name
+            type: string
+            required: false
+            description: Name of caption
+          - name: href
+            type: html
+            required: false
+            description: Url address for caption
+      - name: dateLine
+        type: string
+        required: false
+        description: Month and year for included events.
+      - name: title
+        type: string
+        required: true
+        description: Title for event.
+
+examples:
+  - name: default
+    data:
+      events:
+        - date: '14.03.2021'
+          time: '8:30 - 12:00'
+          caption:
+            - text: Lorem ipsum dolor sit amet, consectetur adipiscingLorem ipsum dolor sit amet, consectetur adid
+              href: '#'
+        - date: '15.03.2021'
+          caption:
+            - text: Lorem ipsum dolor sit amet, consectetur adipiscing
+        - date: '16.03.2021'
+          time: '10:30 - 12:00'
+          dateLine: 'marec 2021'
+          caption:
+            - text: Lorem ipsum dolor sit amet, consectetur adipiscingLorem ipsum dolor sit amet, consectetur adid
+              href: '#'
+        - date: '17.03.2021'
+          time: '8:30 - 12:00'
+          caption:
+            - text: Lorem ipsum dolor sit amet, consectetur adipiscingelit, sed do eiusmod tempor incididunt labor et labore. Lorem ipsum dolor sit amet, consectetur adipiscing
+              href: '#'
+        - date: '18.03.2021'
+          time: '8:30 - 12:00'
+          dateLine: 'máj 2021'
+          title: Vybavenie rodného listu dieťaťa
+          caption:
+            - text: Lorem ipsum dolor sit amet, consectetur adipiscingelit, sed do eiusmod tempor incididunt ut labore et labore. Lorem ipsum dolor sit
+              href: '#'
+        - date: '19.03.2021'
+          time: '8:30 - 12:00'
+          caption:
+            - text: Lorem ipsum dolor sit amet, consectetur adipiscing
+              href: '#'

@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../src/govuk/components/idsk-registration-for-event/_idsk-registration-for-event.scss"],"names":[],"mappings":"AAAA,oBAAoB;AACpB,iBAAiB","file":"_idsk-registration-for-event.scss","sourcesContent":["@import \"../../base\";\n@import \"./index\";\n"]}

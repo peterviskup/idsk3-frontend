@@ -1,0 +1,188 @@
+// stylelint-disable declaration-property-value-disallowed-list
+
+@include govuk-exports("idsk/component/crossroad") {
+  .idsk-crossroad-1 {
+    @include govuk-grid-column("full");
+    padding: 0;
+  }
+
+  .idsk-crossroad-2 {
+    @include mq(mobile) {
+      @include govuk-grid-column("full");
+      padding: 0;
+    }
+
+    @include mq($and: "(orientation: landscape)") {
+      @include govuk-grid-column("one-half");
+      padding: 0;
+    }
+
+    @include mq($from: desktop) {
+      @include govuk-grid-column("one-half");
+      padding: 0;
+
+      &:first-child {
+        padding-right: govuk-spacing(3);
+      }
+
+      &:nth-child(2) {
+        padding-left: govuk-spacing(3);
+      }
+    }
+  }
+
+  .idsk-crossroad {
+    &-title {
+      @include govuk-font($size: 19, $weight: bold);
+      color: govuk-colour("blue");
+      text-decoration: underline;
+      cursor: pointer;
+
+      &:hover {
+        color: govuk-colour("dark-blue");
+      }
+
+      &:focus {
+        @include govuk-focused-text;
+      }
+
+      &:visited {
+        color: govuk-colour("purple");
+      }
+    }
+
+    &-subtitle {
+      @include govuk-font($size: 16);
+      @include govuk-responsive-padding(2, "top");
+      @include govuk-responsive-padding(4, "bottom");
+      margin: 0;
+      color: govuk-colour("dark-grey");
+    }
+
+    &-line {
+      height: 1px;
+      margin-bottom: govuk-spacing(2);
+      border: 0;
+      border-top: 1px;
+      border-color: govuk-colour("mid-grey");
+      color: govuk-colour("mid-grey");
+      background-color: govuk-colour("mid-grey");
+    }
+  }
+
+  .idsk-crossroad__uncollapse-div {
+    text-align: center;
+  }
+
+  .idsk-crossroad__colapse--button {
+    @include govuk-font($size: 19);
+    display: inline-block;
+    width: auto;
+    height: 100%;
+    border: none;
+    color: govuk-colour("blue");
+    background: none;
+    text-align: center;
+    text-decoration-line: underline;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: "";
+      display: inline-block;
+      top: 15px;
+      right: 25px;
+      width: .45em;
+      height: .45em;
+      transform: rotate(135deg);
+      transition: all .2s ease-out;
+      border-width: .1em .1em 0 0;
+      border-style: solid;
+      color: govuk-colour("blue");
+      vertical-align: top;
+
+      @include mq(tablet) {
+        top: 20px;
+        right: 50px;
+      }
+    }
+
+    &::after {
+      margin: 5px 0 0 20px;
+    }
+
+    &::before {
+      margin: 5px 22px 0 0;
+    }
+
+    &:focus,
+    &:active {
+      @include govuk-focused-text;
+      width: auto;
+      padding: 0 12px;
+    }
+  }
+
+  .idsk-crossroad__colapse--button-show {
+    &:focus,
+    &:active {
+      padding: 0;
+    }
+  }
+
+  .idsk-crossroad__collapse--arrow .idsk-crossroad__colapse--button::before,
+  .idsk-crossroad__collapse--arrow .idsk-crossroad__colapse--button::after {
+    margin: 11px 12px 0;
+    transform: rotate(-45deg);
+    transition: all .2s ease-in;
+  }
+
+  .idsk-crossroad__collapse--shadow {
+    position: relative;
+    box-shadow: 5px -35px 30px 40px govuk-colour("white");
+
+    @include mq($from: desktop) {
+      box-shadow: 5px -10px 70px 40px govuk-colour("white");
+    }
+  }
+
+  .idsk-crossroad__uncollapse-hide--mobile,
+  .idsk-crossroad__item--one-column-hide {
+    display: none;
+  }
+
+  .idsk-crossroad__item--two-columns-hide-mobile.idsk-crossroad__item--two-columns-hide,
+  .idsk-crossroad__uncollapse-hide--desktop {
+    @include mq($and: "(orientation: landscape)") {
+      display: none;
+    }
+
+    @include mq($from: desktop) {
+      display: none;
+    }
+  }
+
+  .idsk-crossroad__item--two-columns-hide-mobile.idsk-crossroad__item--two-columns-show {
+    display: block;
+  }
+
+  .idsk-crossroad__item--two-columns-hide-mobile {
+    @include mq(mobile) {
+      display: none;
+    }
+
+    @include mq($and: "(orientation: landscape)") {
+      display: unset;
+    }
+
+    @include mq($from: desktop) {
+      display: unset;
+    }
+  }
+
+  .idsk-crossroad__item--two-columns-show {
+    @include mq($from: desktop) {
+      display: block;
+    }
+  }
+}

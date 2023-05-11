@@ -1,0 +1,250 @@
+<div data-module="idsk-customer-surveys" class="idsk-customer-surveys">
+  <div class="govuk-width-container">
+    <div class="idsk-customer-surveys__logo">
+      <img src="{{ params.assetsPathLogo | default('/assets/images/') + (params.logo if params.logo else 'logo-mirri-farebne-sk-2.svg') }}"
+        alt="Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej Republiky">
+    </div>
+    <div id="idsk-customer-surveys__content">
+      {# 1st #}
+      <div class="idsk-customer-surveys__step idsk-customer-surveys--show">
+        {% if (params.prologues) %}
+          {% for item in params.prologues %}
+            <p class="govuk-body-l">
+              {{ item.prolog | safe }}
+            </p>
+          {% endfor %}
+        {% else %}
+          <p class="govuk-body-l">
+            Cieľom tohto dotazníka je zistiť potreby a postrehy používateľov webu Ministerstva investícií, regionálneho rozvoja a informatizácie (Ďalej len
+            "MIRRI").
+          </p>
+          <p class="govuk-body-l">
+            Ďakujeme za súhlas s účasťou v tomto prieskume, pomáhate nám zlepšovať tento web. Vyplnenie tohto dotazníka Vám zaberie
+            <strong>len 3 minúty.</strong>
+          </p>
+          <p class="govuk-body-l">
+            Odpovede na všetky otázky sú dobrovoľné. Vaše odpovede na tento prieskum sú anonymné.
+          </p>
+        {% endif %}
+      </div>
+
+      {# 2nd #}
+      <div class="idsk-customer-surveys--hidden idsk-customer-surveys__step">
+        <fieldset class="govuk-fieldset" aria-labelledby="1-name">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h3 class="govuk-fieldset__heading idsk-customer-surveys--subtitle" id="1-name">
+              {{ params.questions[0].name }}
+            </h3>
+          </legend>
+          {% from "../idsk-customer-surveys-radios/macro.njk" import idskCustomerSurveysRadios %}
+          {{ idskCustomerSurveysRadios({
+            showMainTitle : true,
+            counter : 0,
+            characterLength : 200,
+            group: "1",
+            feedbackOptions: [
+              {
+                name:"z pracovných dôvodov",
+                value: 1,
+                class: "idsk-customer-survey__radio--work"
+              },
+              {
+                name:"zo súkromných dôvodov",
+                value: 2,
+                class: "idsk-customer-survey__radio--private"
+              }]
+          }) }}
+        </fieldset>
+        <div class="idsk-customer-survey__text-area--work idsk-customer-surveys--hidden">
+          <fieldset class="govuk-fieldset" aria-labelledby="2-name">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h3 class="govuk-fieldset__heading idsk-customer-survey__subtitle--work" id="2-name">
+                {{ params.questions[1].name }}
+              </h3>
+            </legend>
+            {% from "../idsk-customer-surveys-text-area/macro.njk" import idskCustomerSurveysTextArea %}
+            {{ idskCustomerSurveysTextArea ({
+              characterLength: 200,
+              id:'first',
+              label: params.questions[1].name
+            }) }}
+          </fieldset>
+        </div>
+      </div>
+
+      {# 3rd #}
+      <div class="idsk-customer-surveys--hidden idsk-customer-surveys__step">
+        <fieldset class="govuk-fieldset" aria-labelledby="3-name">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h3 class="govuk-fieldset__heading idsk-customer-surveys--subtitle" id="3-name">
+              {{ params.questions[2].name }}
+            </h3>
+          </legend>
+          <span id="3-hint" class="govuk-hint">
+            Prosím neuvádzajte osobné ani finančné informácie, ako napr. svoje rodné číslo alebo údaje o kreditnej karte.
+          </span>
+          {% from "../idsk-customer-surveys-text-area/macro.njk" import idskCustomerSurveysTextArea %}
+          {{ idskCustomerSurveysTextArea ({
+            characterLength: 200,
+            id:'second',
+            label: params.questions[2].name
+          }) }}
+        </fieldset>
+        <fieldset class="govuk-fieldset" aria-labelledby="4-name">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h3 class="govuk-fieldset__heading idsk-customer-surveys--subtitle" id="4-name">
+              {{ params.questions[3].name }}
+            </h3>
+          </legend>
+          {% from "../idsk-customer-surveys-radios/macro.njk" import idskCustomerSurveysRadios %}
+          {{ idskCustomerSurveysRadios ({
+            counter : 0,
+            characterLength : 200,
+            group: "2",
+            feedbackOptions: [
+              {
+                name:"Áno",
+                value: 3
+              },
+              {
+                name:"Nie",
+                value: 4
+              },
+              {
+                name:"Neviem / Zatiaľ nie",
+                value: 5
+              }]
+          }) }}
+        </fieldset>
+      </div>
+
+      {# 4th #}
+      <div class="idsk-customer-surveys--hidden idsk-customer-surveys__step">
+        <fieldset class="govuk-fieldset" aria-labelledby="5-name">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h3 class="govuk-fieldset__heading idsk-customer-surveys--subtitle" id="5-name">
+              {{ params.questions[4].name }}
+            </h3>
+          </legend>
+          {% from "../idsk-customer-surveys-radios/macro.njk" import idskCustomerSurveysRadios %}
+          {{ idskCustomerSurveysRadios({
+            counter : 0,
+            characterLength : 200,
+            group: "3",
+            feedbackOptions: [
+              {
+                name:"Veľmi nespokojný",
+                value: 6
+              },
+              {
+                name:"Nespokojný",
+                value: 7
+              },
+              {
+                name:"Ani spokojný ani nepsokojný",
+                value: 8
+              },
+              {
+                name:"Spokojný",
+                value: 9
+              },
+              {
+                name:"Veľmi spokojný",
+                value: 10
+              }]
+          }) }}
+        </fieldset>
+      </div>
+
+      {# 5th #}
+      <div class="idsk-customer-surveys--hidden idsk-customer-surveys__step">
+        <fieldset class="govuk-fieldset" aria-labelledby="6-name">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" id="6-name">
+            <h3 class="govuk-fieldset__heading idsk-customer-surveys--subtitle">
+              {{ params.questions[5].name }}
+            </h3>
+          </legend>
+
+          {% from "../idsk-customer-surveys-radios/macro.njk" import idskCustomerSurveysRadios %}
+          {{ idskCustomerSurveysRadios({
+            counter : 0,
+            characterLength : 200,
+            group: "4",
+            feedbackOptions: [
+              {
+                name:"Áno",
+                value: 11
+              },
+              {
+                name:"Nie",
+                value: 12
+              }]
+          }) }}
+          <div class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h3 class="govuk-fieldset__heading idsk-customer-surveys--subtitle">
+              {{ params.questions[6].name }}
+            </h3>
+          </div>
+
+          {% from "../idsk-customer-surveys-text-area/macro.njk" import idskCustomerSurveysTextArea %}
+          {{ idskCustomerSurveysTextArea ({
+            characterLength: 200,
+            id:'third',
+            label: params.questions[6].name
+          }) }}
+        </fieldset>
+      </div>
+
+      {# 6th #}
+      <div class="idsk-customer-surveys--hidden idsk-customer-surveys__step">
+        <fieldset class="govuk-fieldset" aria-describedby="7-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h3 class="govuk-fieldset__heading idsk-customer-surveys--subtitle">
+              {{ params.questions[7].name }}
+            </h3>
+          </legend>
+          <span id="7-hint" class="govuk-hint">
+            Prosím neuvádzajte osobné ani finančné informácie, ako napr. svoje rodné číslo alebo údaje o kreditnej karte.
+          </span>
+          {% from "../idsk-customer-surveys-text-area/macro.njk" import idskCustomerSurveysTextArea %}
+          {{ idskCustomerSurveysTextArea ({
+            characterLength: 200,
+            id:'fourth',
+            label: params.questions[7].name
+          }) }}
+        </fieldset>
+      </div>
+
+      {# 7th #}
+      <div class="idsk-feedback__thanks idsk-customer-surveys--hidden idsk-customer-surveys__step">
+        <h2 class="govuk-heading-l">
+          {{ params.feedbackThankNote if params.feedbackThankNote else 'Ďakujeme za spätnú väzbu.' }}
+        </h2>
+        <p class="govuk-body">Späť na stránku
+          <a class="govuk-link" href="https://www.mirri.gov.sk/" title="mirri.gov.sk">
+            mirri.gov.sk
+          </a>
+        </p>
+      </div>
+
+      <div class="idsk-customer-surveys__buttons">
+        <button id="idsk-customer-surveys__previous-button" class="govuk-button govuk-button--secondary" type="button" data-line1="Odísť" data-line2="Späť"
+                onclick="location.href='/';">Odísť
+        </button>
+        <button id="idsk-customer-surveys__send-button" class="govuk-button govuk-button--start" type="button">
+          <span class="idsk-customer-surveys__send-button" data-line1="Začať" data-line2="Ďalej" data-line3="Odoslať odpovede">Začať</span>
+          <span class="govuk-button__start-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation" focusable="false">
+              <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"/>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="idsk-feedback__thanks idsk-feedback--hidden">
+    <h2 class="govuk-heading-l">
+      {{ params.feedbackThankNote if params.feedbackThankNote else 'Ďakujeme za spätnú väzbu.' }}
+    </h2>
+  </div>
+</div>

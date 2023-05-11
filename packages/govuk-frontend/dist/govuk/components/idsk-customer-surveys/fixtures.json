@@ -1,0 +1,109 @@
+{
+    "component": "idsk-customer-surveys",
+    "fixtures": [
+        {
+            "name": "basic",
+            "options": {
+                "questions": [
+                    {
+                        "name": "Navštevujete web mirri.gov.sk z pracovných alebo súkromných dôvodov?",
+                        "textArea": true,
+                        "value": 1
+                    },
+                    {
+                        "name": "Čo je vašou pracovnou náplňou?",
+                        "textArea": true,
+                        "value": 2,
+                        "radioOptions": [
+                            {
+                                "name": "z pracovných dôvodov",
+                                "value": 1
+                            },
+                            {
+                                "name": "zo súkromných dôvodov",
+                                "value": 2
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Popíšte, prečo ste dnes prišli na stránku www.mirri.gov.sk",
+                        "caption": "Prosím neuvádzajte osobné ani finančné informácie, ako napr. svoje rodné číslo alebo údaje o kreditnej karte.",
+                        "textArea": true,
+                        "value": 3
+                    },
+                    {
+                        "name": "Našli ste, čo ste hľadali?",
+                        "value": 4,
+                        "radioOptions": [
+                            {
+                                "name": "Áno",
+                                "value": 1
+                            },
+                            {
+                                "name": "Nie",
+                                "value": 2
+                            },
+                            {
+                                "name": "Neviem / Zatiaľ nie",
+                                "value": 3
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Ako by ste zhodnotil/a Vášu skúsenosť s návštevou stránky www.mirri.gov.sk?",
+                        "value": 5,
+                        "radioOptions": [
+                            {
+                                "name": "Veľmi nespokojný",
+                                "value": 1
+                            },
+                            {
+                                "name": "Nespokojný",
+                                "value": 2
+                            },
+                            {
+                                "name": "Ani spokojný ani nepsokojný",
+                                "value": 3
+                            },
+                            {
+                                "name": "Spokojný",
+                                "value": 4
+                            },
+                            {
+                                "name": "Veľmi spokojný",
+                                "value": 5
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Hľadali ste už niekde inde to, čo potrebujete, ešte pred tým, ako ste sem prišli?",
+                        "value": 4,
+                        "radioOptions": [
+                            {
+                                "name": "Áno",
+                                "value": 1
+                            },
+                            {
+                                "name": "Nie",
+                                "value": 2
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Kde ste hľadali?",
+                        "textArea": true,
+                        "value": 3
+                    },
+                    {
+                        "name": "Ak by ste nám chceli niečo odkázať, prosím, napíšte nám to sem.",
+                        "caption": "Prosím neuvádzajte osobné ani finančné informácie, ako napr. svoje rodné číslo alebo údaje o kreditnej karte.",
+                        "textArea": true,
+                        "value": 3
+                    }
+                ]
+            },
+            "hidden": false,
+            "html": "<div data-module=\"idsk-customer-surveys\" class=\"idsk-customer-surveys\">\n  <div class=\"govuk-width-container\">\n    <div class=\"idsk-customer-surveys__logo\">\n      <img src=\"/assets/images/logo-mirri-farebne-sk-2.svg\"\n        alt=\"Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej Republiky\">\n    </div>\n    <div id=\"idsk-customer-surveys__content\">\n      \n      <div class=\"idsk-customer-surveys__step idsk-customer-surveys--show\">\n          <p class=\"govuk-body-l\">\n            Cieľom tohto dotazníka je zistiť potreby a postrehy používateľov webu Ministerstva investícií, regionálneho rozvoja a informatizácie (Ďalej len\n            \"MIRRI\").\n          </p>\n          <p class=\"govuk-body-l\">\n            Ďakujeme za súhlas s účasťou v tomto prieskume, pomáhate nám zlepšovať tento web. Vyplnenie tohto dotazníka Vám zaberie\n            <strong>len 3 minúty.</strong>\n          </p>\n          <p class=\"govuk-body-l\">\n            Odpovede na všetky otázky sú dobrovoľné. Vaše odpovede na tento prieskum sú anonymné.\n          </p>\n      </div>\n\n      \n      <div class=\"idsk-customer-surveys--hidden idsk-customer-surveys__step\">\n        <fieldset class=\"govuk-fieldset\" aria-labelledby=\"1-name\">\n          <legend class=\"govuk-fieldset__legend govuk-fieldset__legend--m\">\n            <h3 class=\"govuk-fieldset__heading idsk-customer-surveys--subtitle\" id=\"1-name\">\n              Navštevujete web mirri.gov.sk z pracovných alebo súkromných dôvodov?\n            </h3>\n          </legend>\n          <div data-module=\"idsk-customer-surveys-radios\" class=\"idsk-customer-surveys-radios \">\n  <div class=\"govuk-radios\" data-id=\"\">\n    <fieldset class=\"govuk-fieldset\">\n      <legend></legend>\n<div class=\"govuk-radios__item idsk-customer-survey__radio--work\">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"1\" name=\"1\" type=\"radio\" value=\"1\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"1\">\n            z pracovných dôvodov\n          </label>\n        </div><div class=\"govuk-radios__item idsk-customer-survey__radio--private\">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"2\" name=\"1\" type=\"radio\" value=\"2\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"2\">\n            zo súkromných dôvodov\n          </label>\n        </div>    </fieldset>\n    <br>\n  </div>\n</div>\n\n        </fieldset>\n        <div class=\"idsk-customer-survey__text-area--work idsk-customer-surveys--hidden\">\n          <fieldset class=\"govuk-fieldset\" aria-labelledby=\"2-name\">\n            <legend class=\"govuk-fieldset__legend govuk-fieldset__legend--m\">\n              <h3 class=\"govuk-fieldset__heading idsk-customer-survey__subtitle--work\" id=\"2-name\">\n                Čo je vašou pracovnou náplňou?\n              </h3>\n            </legend>\n            <div data-module=\"idsk-customer-surveys-text-area\">\n    <div class=\"idsk-feedback__content idsk-customer-surveys-text-area\" data-lines=\"Zostáva Vám 200 znakov\">\n        <div id=\"first\">\n            <br>\n            \n\n<div class=\"govuk-character-count\" data-module=\"govuk-character-count\" data-maxlength=\"200\">\n  <div class=\"govuk-form-group\">\n  <label class=\"govuk-label\" for=\"first-count\">\n    Čo je vašou pracovnou náplňou?\n  </label>\n  <div id=\"first-count-hint\" class=\"govuk-hint\">\n    \n  </div>\n  <textarea class=\"govuk-textarea govuk-js-character-count\" id=\"first-count\" name=\"first\" rows=\"5\" aria-describedby=\"first-count-info first-count-hint\"></textarea>\n</div>\n  \n  <div id=\"first-count-info\" class=\"govuk-hint govuk-character-count__message\">\n  You can enter up to 200 characters\n</div>\n\n</div>\n\n        </div>\n    </div>\n</div>\n\n          </fieldset>\n        </div>\n      </div>\n\n      \n      <div class=\"idsk-customer-surveys--hidden idsk-customer-surveys__step\">\n        <fieldset class=\"govuk-fieldset\" aria-labelledby=\"3-name\">\n          <legend class=\"govuk-fieldset__legend govuk-fieldset__legend--m\">\n            <h3 class=\"govuk-fieldset__heading idsk-customer-surveys--subtitle\" id=\"3-name\">\n              Popíšte, prečo ste dnes prišli na stránku www.mirri.gov.sk\n            </h3>\n          </legend>\n          <span id=\"3-hint\" class=\"govuk-hint\">\n            Prosím neuvádzajte osobné ani finančné informácie, ako napr. svoje rodné číslo alebo údaje o kreditnej karte.\n          </span>\n          <div data-module=\"idsk-customer-surveys-text-area\">\n    <div class=\"idsk-feedback__content idsk-customer-surveys-text-area\" data-lines=\"Zostáva Vám 200 znakov\">\n        <div id=\"second\">\n            <br>\n            \n\n<div class=\"govuk-character-count\" data-module=\"govuk-character-count\" data-maxlength=\"200\">\n  <div class=\"govuk-form-group\">\n  <label class=\"govuk-label\" for=\"second-count\">\n    Popíšte, prečo ste dnes prišli na stránku www.mirri.gov.sk\n  </label>\n  <div id=\"second-count-hint\" class=\"govuk-hint\">\n    \n  </div>\n  <textarea class=\"govuk-textarea govuk-js-character-count\" id=\"second-count\" name=\"second\" rows=\"5\" aria-describedby=\"second-count-info second-count-hint\"></textarea>\n</div>\n  \n  <div id=\"second-count-info\" class=\"govuk-hint govuk-character-count__message\">\n  You can enter up to 200 characters\n</div>\n\n</div>\n\n        </div>\n    </div>\n</div>\n\n        </fieldset>\n        <fieldset class=\"govuk-fieldset\" aria-labelledby=\"4-name\">\n          <legend class=\"govuk-fieldset__legend govuk-fieldset__legend--m\">\n            <h3 class=\"govuk-fieldset__heading idsk-customer-surveys--subtitle\" id=\"4-name\">\n              Našli ste, čo ste hľadali?\n            </h3>\n          </legend>\n          <div data-module=\"idsk-customer-surveys-radios\" class=\"idsk-customer-surveys-radios \">\n  <div class=\"govuk-radios\" data-id=\"\">\n    <fieldset class=\"govuk-fieldset\">\n      <legend></legend>\n<div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"3\" name=\"2\" type=\"radio\" value=\"3\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"3\">\n            Áno\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"4\" name=\"2\" type=\"radio\" value=\"4\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"4\">\n            Nie\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"5\" name=\"2\" type=\"radio\" value=\"5\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"5\">\n            Neviem / Zatiaľ nie\n          </label>\n        </div>    </fieldset>\n    <br>\n  </div>\n</div>\n\n        </fieldset>\n      </div>\n\n      \n      <div class=\"idsk-customer-surveys--hidden idsk-customer-surveys__step\">\n        <fieldset class=\"govuk-fieldset\" aria-labelledby=\"5-name\">\n          <legend class=\"govuk-fieldset__legend govuk-fieldset__legend--m\">\n            <h3 class=\"govuk-fieldset__heading idsk-customer-surveys--subtitle\" id=\"5-name\">\n              Ako by ste zhodnotil/a Vášu skúsenosť s návštevou stránky www.mirri.gov.sk?\n            </h3>\n          </legend>\n          <div data-module=\"idsk-customer-surveys-radios\" class=\"idsk-customer-surveys-radios \">\n  <div class=\"govuk-radios\" data-id=\"\">\n    <fieldset class=\"govuk-fieldset\">\n      <legend></legend>\n<div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"6\" name=\"3\" type=\"radio\" value=\"6\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"6\">\n            Veľmi nespokojný\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"7\" name=\"3\" type=\"radio\" value=\"7\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"7\">\n            Nespokojný\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"8\" name=\"3\" type=\"radio\" value=\"8\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"8\">\n            Ani spokojný ani nepsokojný\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"9\" name=\"3\" type=\"radio\" value=\"9\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"9\">\n            Spokojný\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"10\" name=\"3\" type=\"radio\" value=\"10\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"10\">\n            Veľmi spokojný\n          </label>\n        </div>    </fieldset>\n    <br>\n  </div>\n</div>\n\n        </fieldset>\n      </div>\n\n      \n      <div class=\"idsk-customer-surveys--hidden idsk-customer-surveys__step\">\n        <fieldset class=\"govuk-fieldset\" aria-labelledby=\"6-name\">\n          <legend class=\"govuk-fieldset__legend govuk-fieldset__legend--m\" id=\"6-name\">\n            <h3 class=\"govuk-fieldset__heading idsk-customer-surveys--subtitle\">\n              Hľadali ste už niekde inde to, čo potrebujete, ešte pred tým, ako ste sem prišli?\n            </h3>\n          </legend>\n\n          <div data-module=\"idsk-customer-surveys-radios\" class=\"idsk-customer-surveys-radios \">\n  <div class=\"govuk-radios\" data-id=\"\">\n    <fieldset class=\"govuk-fieldset\">\n      <legend></legend>\n<div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"11\" name=\"4\" type=\"radio\" value=\"11\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"11\">\n            Áno\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"12\" name=\"4\" type=\"radio\" value=\"12\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"12\">\n            Nie\n          </label>\n        </div>    </fieldset>\n    <br>\n  </div>\n</div>\n\n          <div class=\"govuk-fieldset__legend govuk-fieldset__legend--m\">\n            <h3 class=\"govuk-fieldset__heading idsk-customer-surveys--subtitle\">\n              Kde ste hľadali?\n            </h3>\n          </div>\n\n          <div data-module=\"idsk-customer-surveys-text-area\">\n    <div class=\"idsk-feedback__content idsk-customer-surveys-text-area\" data-lines=\"Zostáva Vám 200 znakov\">\n        <div id=\"third\">\n            <br>\n            \n\n<div class=\"govuk-character-count\" data-module=\"govuk-character-count\" data-maxlength=\"200\">\n  <div class=\"govuk-form-group\">\n  <label class=\"govuk-label\" for=\"third-count\">\n    Kde ste hľadali?\n  </label>\n  <div id=\"third-count-hint\" class=\"govuk-hint\">\n    \n  </div>\n  <textarea class=\"govuk-textarea govuk-js-character-count\" id=\"third-count\" name=\"third\" rows=\"5\" aria-describedby=\"third-count-info third-count-hint\"></textarea>\n</div>\n  \n  <div id=\"third-count-info\" class=\"govuk-hint govuk-character-count__message\">\n  You can enter up to 200 characters\n</div>\n\n</div>\n\n        </div>\n    </div>\n</div>\n\n        </fieldset>\n      </div>\n\n      \n      <div class=\"idsk-customer-surveys--hidden idsk-customer-surveys__step\">\n        <fieldset class=\"govuk-fieldset\" aria-describedby=\"7-hint\">\n          <legend class=\"govuk-fieldset__legend govuk-fieldset__legend--m\">\n            <h3 class=\"govuk-fieldset__heading idsk-customer-surveys--subtitle\">\n              Ak by ste nám chceli niečo odkázať, prosím, napíšte nám to sem.\n            </h3>\n          </legend>\n          <span id=\"7-hint\" class=\"govuk-hint\">\n            Prosím neuvádzajte osobné ani finančné informácie, ako napr. svoje rodné číslo alebo údaje o kreditnej karte.\n          </span>\n          <div data-module=\"idsk-customer-surveys-text-area\">\n    <div class=\"idsk-feedback__content idsk-customer-surveys-text-area\" data-lines=\"Zostáva Vám 200 znakov\">\n        <div id=\"fourth\">\n            <br>\n            \n\n<div class=\"govuk-character-count\" data-module=\"govuk-character-count\" data-maxlength=\"200\">\n  <div class=\"govuk-form-group\">\n  <label class=\"govuk-label\" for=\"fourth-count\">\n    Ak by ste nám chceli niečo odkázať, prosím, napíšte nám to sem.\n  </label>\n  <div id=\"fourth-count-hint\" class=\"govuk-hint\">\n    \n  </div>\n  <textarea class=\"govuk-textarea govuk-js-character-count\" id=\"fourth-count\" name=\"fourth\" rows=\"5\" aria-describedby=\"fourth-count-info fourth-count-hint\"></textarea>\n</div>\n  \n  <div id=\"fourth-count-info\" class=\"govuk-hint govuk-character-count__message\">\n  You can enter up to 200 characters\n</div>\n\n</div>\n\n        </div>\n    </div>\n</div>\n\n        </fieldset>\n      </div>\n\n      \n      <div class=\"idsk-feedback__thanks idsk-customer-surveys--hidden idsk-customer-surveys__step\">\n        <h2 class=\"govuk-heading-l\">\n          Ďakujeme za spätnú väzbu.\n        </h2>\n        <p class=\"govuk-body\">Späť na stránku\n          <a class=\"govuk-link\" href=\"https://www.mirri.gov.sk/\" title=\"mirri.gov.sk\">\n            mirri.gov.sk\n          </a>\n        </p>\n      </div>\n\n      <div class=\"idsk-customer-surveys__buttons\">\n        <button id=\"idsk-customer-surveys__previous-button\" class=\"govuk-button govuk-button--secondary\" type=\"button\" data-line1=\"Odísť\" data-line2=\"Späť\"\n                onclick=\"location.href='/';\">Odísť\n        </button>\n        <button id=\"idsk-customer-surveys__send-button\" class=\"govuk-button govuk-button--start\" type=\"button\">\n          <span class=\"idsk-customer-surveys__send-button\" data-line1=\"Začať\" data-line2=\"Ďalej\" data-line3=\"Odoslať odpovede\">Začať</span>\n          <span class=\"govuk-button__start-icon\">\n            <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17.5\" height=\"19\" viewbox=\"0 0 33 40\" role=\"presentation\" focusable=\"false\">\n              <path fill=\"currentColor\" d=\"M0 0h13l20 20-20 20H0l20-20z\"/>\n            </svg>\n          </span>\n        </button>\n      </div>\n    </div>\n  </div>\n  <div class=\"idsk-feedback__thanks idsk-feedback--hidden\">\n    <h2 class=\"govuk-heading-l\">\n      Ďakujeme za spätnú väzbu.\n    </h2>\n  </div>\n</div>"
+        }
+    ]
+}

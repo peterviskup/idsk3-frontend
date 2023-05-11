@@ -1,0 +1,74 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Zoznamy úloh" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Vzory</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Tento návod opisuje spôsob, ako postupovať pri tvorbe komplexných digitálnych služieb, ktoré sa skladajú z viacerých častí.</p>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-s">Obsah:</h2>
+            <ul class="govuk-list">
+                <li><a class="govuk-link" href="#priklad-stranky-so-zoznamom-uloh" title="Príklad stránky so zoznamom úloh">Príklad stránky so zoznamom úloh</a></li>
+                <li><a class="govuk-link" href="#pouzitie-zoznamov-uloh" title="Použitie zoznamov úloh">Použitie zoznamov úloh</a></li>
+                <li><a class="govuk-link" href="#zobrazenie-stavu-ulohy" title="Zobrazenie stavu úlohy">Zobrazenie stavu úlohy</a></li>
+                <li><a class="govuk-link" href="#zoskupenie-potrebnych-informacii-do-uloh" title="Zoskupenie potrebných informácií do úloh">Zoskupenie potrebných informácií do úloh</a></li>
+                <li><a class="govuk-link" href="#zoskupenie-uloh-do-sekcii" title="Zoskupenie úloh do sekcií">Zoskupenie úloh do sekcií</a></li>
+            </ul>
+
+            <p class="govuk-body">Stránky so zoznamom úloh umožňujú používateľom zobraziť:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>úlohy súvisiace s dokončením žiadosti,</li>
+                <li>poradie, v ktorom majú byť úlohy vykonané,</li>
+                <li>informáciu, či boli úlohy dokončené.</li>
+            </ul>
+
+            <h3 class="govuk-heading-m" id="priklad-stranky-so-zoznamom-uloh">Príklad stránky so zoznamom úloh</h3>
+            <img src="/public/assets/images/patterns/zoznam1.png" alt="zoznam">
+
+            <h3 class="govuk-heading-m" id="pouzitie-zoznamov-uloh">Použitie zoznamov úloh</h3>
+            <p class="govuk-body">Stránku so zoznamom úloh použite napríklad pri žiadosti, pred ktorej podaním je potrebné vykonať viaceré úlohy. To sa stáva najmä v situáciách, kedy poskytovanie jednotlivých služieb spadá prierezovo pod viaceré rezorty alebo viaceré úrady a zároveň takáto životná situácia nie je plne na portáli Slovensko.sk.</p>
+            <p class="govuk-body">Skôr než tento zoznam úloh použijete, pokúste sa podanie žiadosti čo možno najviac zjednodušiť. Dôležité je znížiť počet úloh alebo krokov, ktoré musí používateľ vykonať, na minimálny.</p>
+            <p class="govuk-body">Pri použití stránky so zoznamom úloh dbajte na to, aby:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>bola umiestnená na začiatku danej žiadosti,</li>
+                <li>sa zobrazila po dokončení každej úlohy,</li>
+                <li>sa zobrazila na začiatku každej návštevy profilu používateľa.</li>
+            </ul>
+
+            <h3 class="govuk-heading-m" id="zobrazenie-stavu-ulohy">Zobrazenie stavu úlohy</h3>
+            <p class="govuk-body">Kedykoľvek používateľovi zobrazíte stránku so zoznamom úloh, musí byť jasné, ktoré úlohy už dokončil pomocou označenia “Hotovo”.</p>
+            <img src="/public/assets/images/patterns/zoznam2.png" alt="zoznam">
+
+            <h3 class="govuk-heading-m" id="zoskupenie-potrebnych-informacii-do-uloh">Zoskupenie potrebných informácií do úloh</h3>
+            <p class="govuk-body">Potrebné informácie a otázky zoskupujte do jednotlivých konkrétnych úloh (napríklad "Poskytnite daňové priznanie" a "Uveďte lekárske záznamy"). Takéto úlohy pomôžu používateľom správne porozumieť akú informáciu majú poskytnúť, resp. aký doklad majú poskytovateľovi služby doručiť a efektívne si naplánovať s tým súvisiace aktivity.</p>
+            <p class="govuk-body">Názvy úloh by mali:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>špecifikovať konkrétnu úlohu alebo s ňou súvisiacu aktivitu</li>
+                <li>začínať slovesami (napríklad "skontrolovať", "deklarovať", "oznámiť")</li>
+            </ul>
+
+            <h3 class="govuk-heading-m" id="zoskupenie-uloh-do-sekcii">Zoskupenie úloh do sekcií</h3>
+            <p class="govuk-body">Ak žiadosť pozostáva z viacerých úloh, rozdeľte ju na sekcie, ktoré budú predstavovať etapy procesu.</p>
+            <p class="govuk-body">Napríklad môžete zoskupiť všetky úlohy, ktoré pomáhajú používateľom zistiť, či je pre nich daná služba vhodná v sekcii nazvanej "Skôr, než začnete".</p>
+            <p class="govuk-body">Umožnite používateľom vykonať úlohy v ľubovoľnom poradí. To im pomôže naplánovať si svoj čas a dokončiť jednotlivé časti sekcie, kedykoľvek budú môcť.</p>
+        </div>
+    </div>
+
+  </div>
+{% endblock %}

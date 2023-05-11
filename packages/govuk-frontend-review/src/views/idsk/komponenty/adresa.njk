@@ -1,0 +1,131 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "idsk-address/macro.njk" import idskAddress %}
+{% set pageName = "Adresa" %}
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      { text: 'ID-SK frontend', href: '/' + legacyQuery },
+      { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+{% block content %}
+    <span class="govuk-caption-xl">Webové komponenty</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">
+      Zobrazenie údajov v mape pomáha používateľom predstaviť si, kde sa dané miesto nachádza. Vždy poskytnite údaje tak, aby boli prístupné aj používateľom so zrakovým znevýhodnením.
+    </p>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m" id="vzor-suvisiaceho-obsahu-1">Adresa podujatia</h2>
+        <p class="govuk-body-m">
+          Ak budete potrebovať zobraziť používateľovi adresu konania vášho podujatia, použite na to Adresu na ⅓ obrazovky.
+        </p>
+        <p class="govuk-body-m">
+          Ako prvú informáciu zobrazte používateľovi adresu konania podujatia. Môžete pridať spresňujúce informácie (napr. poschodie, názov, či číslo zasadacej miestnosti), následne potom mapové okno s prednastavenou adresou miesta konania podujatia. Pomôžete tak používateľovi zorientovať sa ešte predtým ako príde realne miesto podujatia. Ocenia to najmä tí, ktorí sa miesto podujatia chystajú navštíviť prvýkrát.        </p>
+        <div class="example example-error">
+          {% set exampleComponentHtml %}
+            {{ idskAddress({
+              addressTitle: "Adresa podujatia",
+              title: 'Adresa podujatia',
+              addressDescription: [
+                {
+                  text: "Štefánikova 15"
+                },
+                {
+                  text: "811 05 Bratislava"
+                },
+                {
+                  text: "Poschodie 2.B"
+                },
+                {
+                  text: "Zasadačka LONDÝN"
+                }
+              ],
+              googleMapsLink: "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJbej9bFqJbEcR4nXu1en1cJM&key=AIzaSyC8V96sGgzrasorg2xPOlrlp-cpQFPLSxM"
+          }) }}
+          {% endset %}
+          {{exampleComponentHtml | safe}}
+        </div>
+        <pre class="app-code">
+          <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+            {{- exampleComponentHtml | highlight("html") | safe -}}
+          </code>
+        </pre>
+
+        <h2 class="govuk-heading-m" id="vzor-suvisiaceho-obsahu-2">Adresa sídla</h2>
+        <p class="govuk-body-m">
+          Ak potrebujete zobraziť používateľovi presné miesto vášho sídla, kancelárie či detašovaného pracoviska, použite adresu na celú šírku.
+        </p>
+        <p class="govuk-body-m">
+          Ako prvú informáciu zobrazte používateľovi adresu sídla, ktorú môžete rozšíriť o doplňujúce informácie (napr. poschodie, názov, číslo kancelárie alebo rokovacej miestnosti). Pomôžete tak zorientovať sa používateľom ešte predtým, než vás navštívia. Ocenia to najmä tí, ktorí sa miesto sídla chystajú navštíviť prvýkrát.
+        </p>
+        <p class="govuk-body-m">
+          Ak máte detašované pracoviská, využite skrytý zoznam. V ňom uveďte, ktoré časti vašej organizácie sídlia na ktorej adrese, aby používateľ presne vedel, kde nájde tých, ktorých hľadá.
+        </p>
+        <div class="example example-error">
+          {% set exampleComponentHtml %}
+            {{ idskAddress({
+              heading: "Ministerstvo investícií, regionálneho rozvoja a informatizácie SR",
+              title: 'Adresa sídla',
+              fullWidth: true,
+              addressDescription: [
+                {
+                  text: "Štefánikova 15"
+                },
+                {
+                  text: "811 05 Bratislava"
+                }
+              ],
+              googleMapsLink: "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJbej9bFqJbEcR4nXu1en1cJM&key=AIzaSyC8V96sGgzrasorg2xPOlrlp-cpQFPLSxM",
+              additionalLink: {
+                link: "#",
+                text: "Zoznam sekcií, odborov a oddelení v tejto budove"
+              }
+          }) }}
+          {% endset %}
+          {{exampleComponentHtml | safe}}
+        </div>
+        <pre class="app-code">
+          <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+            {{- exampleComponentHtml | highlight("html") | safe -}}
+          </code>
+        </pre>
+        <div class="example example-error">
+          {% set exampleComponentHtml %}
+            {{ idskAddress({
+              heading: "Ministerstvo investícií, regionálneho rozvoja a informatizácie SR",
+              addressTitle: "Oddelenie behaviorálnych inovácií",
+              title: "Adresa sídla",
+              fullWidth: true,
+              addressDescription: [
+                {
+                  text: "Štefánikova 15"
+                },
+                {
+                  text: "811 05 Bratislava"
+                },
+                {
+                  text: "Zasadačka LONDÝN"
+                }
+              ],
+              googleMapsLink: "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJbej9bFqJbEcR4nXu1en1cJM&key=AIzaSyC8V96sGgzrasorg2xPOlrlp-cpQFPLSxM"
+          }) }}
+          {% endset %}
+          {{exampleComponentHtml | safe}}
+        </div>
+        <pre class="app-code">
+          <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+            {{- exampleComponentHtml | highlight("html") | safe -}}
+          </code>
+        </pre>
+      </div>
+      <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-m" id="priklady">Rozšírené príklady pre adresu</h2>
+            <ul class="govuk-list">
+                <li><a class="govuk-link" href="/components/idsk-address" title="Rozšírené príklady adresy">Rozšírené príklady adresy</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

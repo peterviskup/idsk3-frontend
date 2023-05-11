@@ -1,0 +1,239 @@
+// stylelint-disable order/properties-order
+// stylelint-disable max-nesting-depth
+
+@include govuk-exports("idsk/component/tabs") {
+  .idsk-tabs {
+    @include govuk-responsive-margin(1, "top");
+    @include govuk-responsive-margin(6, "bottom");
+
+    &__tab-arrow-mobile {
+      background-color: govuk-colour("black");
+      -webkit-mask: govuk-image-url("header-web/navigation-arrow-mobile.svg") no-repeat center;
+      mask: govuk-image-url("header-web/navigation-arrow-mobile.svg") no-repeat center;
+      display: inline;
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      width: 11px;
+      height: 7px;
+      z-index: 1;
+    }
+  }
+
+  .idsk-tabs__title {
+    @include govuk-font($size: 19);
+    @include govuk-text-colour;
+    margin-bottom: govuk-spacing(2);
+
+    @include mq($until: tablet) {
+      display: none;
+    }
+  }
+
+  .idsk-tabs__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    @include govuk-responsive-margin(6, "bottom");
+
+    @include mq($until: tablet) {
+      display: none;
+    }
+  }
+
+  .idsk-tabs__list-item {
+    @include govuk-font($size: 19);
+    margin-left: govuk-spacing(5);
+
+    &::before {
+      @include govuk-text-colour;
+      content: "\2014 "; // "— "
+      margin-left: govuk-spacing(-5);
+      padding-right: govuk-spacing(1);
+    }
+  }
+
+  .idsk-tabs__tab {
+    @include govuk-link-style-default;
+
+    display: inline-block;
+    margin-bottom: govuk-spacing(2);
+
+    // Focus state for mobile and when JavaScript is disabled
+    // It is removed for JS-enabled desktop styles
+    &:focus {
+      @include govuk-focused-text;
+    }
+  }
+
+  .idsk-tabs__panel {
+    @include govuk-responsive-margin(8, "bottom");
+
+    @include mq($until: tablet) {
+      margin: 0;
+
+      &-content {
+        display: none;
+      }
+    }
+  }
+
+  .idsk-tabs__mobile-tab {
+    display: none;
+    @include mq($until: tablet) {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      border: none;
+      width: 100%;
+
+      color: govuk-colour("black");
+      padding: govuk-spacing(4);
+      margin: 0;
+      background-color: govuk-colour("grey-4");
+      box-shadow: 0 0 2px rgba(0, 0, 0, .25);
+      border-radius: 2px 2px 0 0;
+
+      &:focus,
+      &:active {
+        @include govuk-focused-text;
+        position: relative;
+      }
+
+      &--selected {
+        .idsk-tabs__tab-arrow-mobile {
+          -webkit-transition: -webkit-transform .2s;
+          transition: -webkit-transform .2s;
+          transition: transform .2s;
+          transition: transform .2s, -webkit-transform .2s;
+          -webkit-transform: rotate(180deg);
+          -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  .idsk-tabs__mobile-tab-content {
+    @include mq($from: tablet) {
+      display: none;
+    }
+    @include mq($until: tablet) {
+      padding: govuk-spacing(4);
+      overflow: auto;
+      box-shadow: 0 0 2px rgba(0, 0, 0, .25);
+      border-radius: 2px 2px 0 0;
+
+      &--hidden {
+        display: none;
+      }
+
+      & > *:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .idsk-tabs__panel--hidden {
+    display: none;
+
+    @include mq($until: tablet) {
+      .idsk-tabs__mobile-tab-content {
+        display: none;
+      }
+    }
+  }
+
+  .idsk-tabs__list--mobile {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  // JavaScript enabled
+  .js-enabled {
+    @include govuk-media-query($from: tablet) {
+      .idsk-tabs__list {
+        @include govuk-clearfix;
+        margin-bottom: 0;
+        border-bottom: 1px solid $govuk-border-colour;
+      }
+
+      .idsk-tabs__title {
+        display: none;
+      }
+
+      .idsk-tabs__list-item {
+        position: relative;
+        margin-right: govuk-spacing(1);
+        margin-bottom: govuk-spacing(1);
+        margin-left: 0;
+        padding: govuk-spacing(2) govuk-spacing(4);
+        background-color: govuk-colour("light-grey");
+        text-align: center;
+
+        &::before {
+          content: none;
+        }
+      }
+
+      .idsk-tabs__list-item--selected {
+        $border-width: 1px;
+
+        position: relative;
+
+        margin-top: govuk-spacing(-1);
+
+        // Compensation for border (otherwise we get a shift)
+        margin-bottom: -$border-width;
+        padding-top: govuk-spacing(3) - $border-width;
+        padding-right: govuk-spacing(4) - $border-width;
+        padding-bottom: govuk-spacing(3) + $border-width;
+        padding-left: govuk-spacing(4) - $border-width;
+
+        border: $border-width solid $govuk-border-colour;
+        border-bottom: 0;
+
+        background-color: $govuk-body-background-colour;
+
+        .idsk-tabs__tab {
+          text-decoration: none;
+        }
+      }
+
+      .idsk-tabs__tab {
+        @include govuk-link-style-text;
+
+        margin-bottom: 0;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+        }
+      }
+
+      .idsk-tabs__panel {
+        @include govuk-responsive-margin(0, "bottom");
+        padding: govuk-spacing(6) govuk-spacing(4);
+        border: 1px solid $govuk-border-colour;
+        border-top: 0;
+
+        & > :last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

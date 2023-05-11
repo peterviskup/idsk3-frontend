@@ -1,0 +1,63 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "idsk-customer-surveys/macro.njk" import idskCustomerSurveys %}
+{% set pageName = "Článok" %}
+{% block styles %}
+  <style>
+    .idsk-customer-surveys-pattern {
+      margin-top: -20px;
+      margin-bottom: -15px;
+    }
+    .idsk-article__heading {
+      margin-left: 15px;
+      margin-top: 20px;
+    }
+    .idsk-article-pattern .govuk-heading-xl {
+      margin-bottom: 40px;
+      margin-top: 0;
+    }
+  </style>
+{% endblock %}
+{% block beforeContent %}
+    {{ govukBreadcrumbs({
+    "items": [
+    { text: ' ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="idsk-article-pattern">
+    <h1 class="govuk-heading-xl">Článok (vzor)</h1>
+    <p class="govuk-body">Vzorová stránka “článok” je navrhnutá tak, aby primárne slúžila na podanie obsiahlejšej textovej informácie na konkrétnu tému (napr. na popis aktuality či novinky, ku ktorej sa používateľ dostane prostredníctvom kliknutia na kartičku). Ide o šablónu podstránky, na ktorej používateľ finálne nájde všetky podrobné informácie k téme, ktorú prišiel hľadať. Z hľadiska informačnej architektúry vášho webu sa bude článok vo väčšine prípadov nachádzať na poslednej, najhlbšej úrovni architektúry.</p>
+    <p class="govuk-body">S článkom použite aj navigáciu na stránke.</p>
+    <h2 class="govuk-heading-l">Z čoho sa skladá článok?</h2>
+    <p class="govuk-body">Skladá sa z:
+    </p>
+    <ol class="idsk-list idsk-list--letters">
+      <li>nadpisu,</li>
+      <li>termínu vypublikovania a poslednej aktualizácie,</li>
+      <li>navigácie na stránke,</li>
+      <li>úvodu článku - perex (voliteľné),</li>
+      <li>ilustračného obrázku (voliteľné),</li>
+      <li>článku (telo stránky),</li>
+      <li>obsahu aktualizácií - kedy a čo sa aktualizovalo,</li>
+      <li>ikonkových elementov na zdieľanie článku na sociálnych sieťach,</li>
+      <li>súvisiacich tém (voliteľné),</li>
+      <li>súvisiacich článkov (voliteľné).</li>
+    </ol>
+    <h2 class="govuk-heading-l">Ako použiť článok?</h2>
+    <p class="govuk-body">V rámci článku môžete použiť perex (úvod) a to isté platí aj pre obrázok. Ak publikujete článok prvý krát, pod nadpisom sa objaví “Vypublikované” spolu s dátumom publikácie. Ak však upravíte či pridáte niečo do už vypublikovaného článku, pod nadpisom sa zjaví aj “Aktualizované” s dátumom a prelinkom na koniec článku, kde používateľ po rozkliknutí môže vidieť všetky zmeny, ktoré v článku nastali. Zmeny v rámci “aktualizácie obsahu” popisujte s dátumom realizovanej aktualizácie a krátkym, výstižným popisom zmeny (napr. doplnené o stanovisko, úprava gramatických chýb, doplnenie videa a podobne).
+    </p>
+    <p class="govuk-body">Textový obsah v rámci článku štruktúrujte pomocou
+      <a class="govuk-link" href="/komponenty/typografia#typography-headings" title="sekundárnych nadpisov">sekundárnych nadpisov</a>
+      (h2, h3 ….). Nadpisy vo vašom článku budú nadpisy v navigácii na stránke.</p>
+    <p class="govuk-body">Pod článok odporúčame pridať komponent “<a class="govuk-link" href="/komponenty/related-content" title="súvisiace témy">súvisiace témy</a>” ak máte pocit, že by to používateľovi pomohlo. Pod článok môžete pridať taktiež súvisiace články - odporúčame využiť
+      <a class="govuk-link" href="/komponenty/karta#card-hero-secondary-horizontal" title="sekundárnu horizontálnu kartičku">sekundárnu horizontálnu kartičku</a>.
+    </p>
+    <h3 class="govuk-heading-s">
+      <a class="govuk-link" href="/komponenty/article" title="Rozšírený príklad podstránky článku">Rozšírený príklad podstránky článku</a>
+    </h3>
+  </div>
+{% endblock %}
+{% block footer %}{% endblock %}

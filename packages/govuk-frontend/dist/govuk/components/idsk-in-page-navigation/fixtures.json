@@ -1,0 +1,77 @@
+{
+    "component": "idsk-in-page-navigation",
+    "fixtures": [
+        {
+            "name": "default",
+            "options": {
+                "items": [
+                    {
+                        "text": "Úvod",
+                        "link": "#uvod",
+                        "active": true
+                    },
+                    {
+                        "text": "Počet subjektov aktuálne",
+                        "link": "#pocet-subjektov-aktualne"
+                    },
+                    {
+                        "text": "Odklad povinnej aktivácie",
+                        "link": "#odklad-povinnej-aktivacie"
+                    }
+                ]
+            },
+            "hidden": false,
+            "html": "<div\n  class=\"idsk-in-page-navigation govuk-grid-column-one-quarter\"\n  data-module=\"idsk-in-page-navigation\"\n>\n  <div class=\"idsk-in-page-navigation-wrapper\">\n    <div class=\"idsk-in-page-navigation__title\">Obsah</div>\n    <div class=\"idsk-in-page-navigation__link-panel\">\n      <button aria-expanded=\"false\" data-text-for-show=\"Akordeón Úvod je otvorený\" data-text-for-hide=\"Akordeón Úvod je zatvorený\" aria-label=\"Akordeón Úvod je zatvorený\" class=\"idsk-in-page-navigation__link-panel-button\">Úvod</button>\n    </div>\n    <ul class=\"idsk-in-page-navigation__list\">\n      <li class=\"idsk-in-page-navigation__list-item idsk-in-page-navigation__list-item--active\">\n        <a class=\"idsk-in-page-navigation__link\" href=\"#uvod\">\n          <span class=\"idsk-in-page-navigation__link-number\">1.</span> <span class=\"idsk-in-page-navigation__link-title\">Úvod</span>\n        </a>\n      </li>\n      <li class=\"idsk-in-page-navigation__list-item\">\n        <a class=\"idsk-in-page-navigation__link\" href=\"#pocet-subjektov-aktualne\">\n          <span class=\"idsk-in-page-navigation__link-number\">2.</span> <span class=\"idsk-in-page-navigation__link-title\">Počet subjektov aktuálne</span>\n        </a>\n      </li>\n      <li class=\"idsk-in-page-navigation__list-item\">\n        <a class=\"idsk-in-page-navigation__link\" href=\"#odklad-povinnej-aktivacie\">\n          <span class=\"idsk-in-page-navigation__link-number\">3.</span> <span class=\"idsk-in-page-navigation__link-title\">Odklad povinnej aktivácie</span>\n        </a>\n      </li>\n    </ul>\n  </div>\n</div>"
+        },
+        {
+            "name": "default-rozsireny",
+            "options": {
+                "items": [
+                    {
+                        "text": "Úvod",
+                        "link": "#uvod",
+                        "active": true
+                    },
+                    {
+                        "text": "Počet subjektov aktuálne",
+                        "link": "#pocet-subjektov-aktualne"
+                    },
+                    {
+                        "text": "Odklad povinnej aktivácie",
+                        "link": "#odklad-povinnej-aktivacie"
+                    },
+                    {
+                        "text": "Povinná elektronická komunikácia so štátom sa o necelý mesiac dotkne už aj poľovníkov a cirkví",
+                        "link": "#povinna-elektronicka-komunikacia-so-statom-sa-o-necely-mesiac-dotkne-uz-aj-polovnikov-a-cirkvi"
+                    },
+                    {
+                        "text": "Odklad povinnej aktivácie",
+                        "link": "#odklad-povinnej-aktivacie-1"
+                    },
+                    {
+                        "text": "Odklad povinnej aktivácie",
+                        "link": "#odklad-povinnej-aktivacie-2"
+                    },
+                    {
+                        "text": "Odklad povinnej aktivácie",
+                        "link": "#odklad-povinnej-aktivacie-3"
+                    },
+                    {
+                        "text": "Povinná elektronická komunikácia so štátom sa o necelý mesiac dotkne už aj poľovníkov a cirkví",
+                        "link": "#povinna-elektronicka-komunikacia-so-statom-sa-o-necely-mesiac-dotkne-uz-aj-polovnikov-a-cirkvi-1"
+                    },
+                    {
+                        "text": "Odklad povinnej aktivácie",
+                        "link": "#odklad-povinnej-aktivacie-4"
+                    },
+                    {
+                        "text": "Odklad povinnej aktivácie",
+                        "link": "#odklad-povinnej-aktivacie-5"
+                    }
+                ]
+            },
+            "hidden": false,
+            "html": "<div\n  class=\"idsk-in-page-navigation govuk-grid-column-one-quarter\"\n  data-module=\"idsk-in-page-navigation\"\n>\n  <div class=\"idsk-in-page-navigation-wrapper\">\n    <div class=\"idsk-in-page-navigation__title\">Obsah</div>\n    <div class=\"idsk-in-page-navigation__link-panel\">\n      <button aria-expanded=\"false\" data-text-for-show=\"Akordeón Úvod je otvorený\" data-text-for-hide=\"Akordeón Úvod je zatvorený\" aria-label=\"Akordeón Úvod je zatvorený\" class=\"idsk-in-page-navigation__link-panel-button\">Úvod</button>\n    </div>\n    <ul class=\"idsk-in-page-navigation__list\">\n      <li class=\"idsk-in-page-navigation__list-item idsk-in-page-navigation__list-item--active\">\n        <a class=\"idsk-in-page-navigation__link\" href=\"#uvod\">\n          <span class=\"idsk-in-page-navigation__link-number\">1.</span> <span class=\"idsk-in-page-navigation__link-title\">Úvod</span>\n        </a>\n      </li>\n      <li class=\"idsk-in-page-navigation__list-item\">\n        <a class=\"idsk-in-page-navigation__link\" href=\"#pocet-subjektov-aktualne\">\n          <span class=\"idsk-in-page-navigation__link-number\">2.</span> <span class=\"idsk-in-page-navigation__link-title\">Počet subjektov aktuálne</span>\n        </a>\n      </li>\n      <li class=\"idsk-in-page-navigation__list-item\">\n        <a class=\"idsk-in-page-navigation__link\" href=\"#odklad-povinnej-aktivacie\">\n          <span class=\"idsk-in-page-navigation__link-number\">3.</span> <span class=\"idsk-in-page-navigation__link-title\">Odklad povinnej aktivácie</span>\n        </a>\n      </li>\n      <li class=\"idsk-in-page-navigation__list-item\">\n        <a class=\"idsk-in-page-navigation__link\" href=\"#povinna-elektronicka-komunikacia-so-statom-sa-o-necely-mesiac-dotkne-uz-aj-polovnikov-a-cirkvi\">\n          <span class=\"idsk-in-page-navigation__link-number\">4.</span> <span class=\"idsk-in-page-navigation__link-title\">Povinná elektronická komunikácia so štátom sa o necelý mesiac dotkne už aj poľovníkov a cirkví</span>\n        </a>\n      </li>\n      <li class=\"idsk-in-page-navigation__list-item\">\n        <a class=\"idsk-in-page-navigation__link\" href=\"#odklad-povinnej-aktivacie-1\">\n          <span class=\"idsk-in-page-navigation__link-number\">5.</span> <span class=\"idsk-in-page-navigation__link-title\">Odklad povinnej aktivácie</span>\n        </a>\n      </li>\n      <li class=\"idsk-in-page-navigation__list-item\">\n        <a class=\"idsk-in-page-navigation__link\" href=\"#odklad-povinnej-aktivacie-2\">\n          <span class=\"idsk-in-page-navigation__link-number\">6.</span> <span class=\"idsk-in-page-navigation__link-title\">Odklad povinnej aktivácie</span>\n        </a>\n      </li>\n      <li class=\"idsk-in-page-navigation__list-item\">\n        <a class=\"idsk-in-page-navigation__link\" href=\"#odklad-povinnej-aktivacie-3\">\n          <span class=\"idsk-in-page-navigation__link-number\">7.</span> <span class=\"idsk-in-page-navigation__link-title\">Odklad povinnej aktivácie</span>\n        </a>\n      </li>\n      <li class=\"idsk-in-page-navigation__list-item\">\n        <a class=\"idsk-in-page-navigation__link\" href=\"#povinna-elektronicka-komunikacia-so-statom-sa-o-necely-mesiac-dotkne-uz-aj-polovnikov-a-cirkvi-1\">\n          <span class=\"idsk-in-page-navigation__link-number\">8.</span> <span class=\"idsk-in-page-navigation__link-title\">Povinná elektronická komunikácia so štátom sa o necelý mesiac dotkne už aj poľovníkov a cirkví</span>\n        </a>\n      </li>\n      <li class=\"idsk-in-page-navigation__list-item\">\n        <a class=\"idsk-in-page-navigation__link\" href=\"#odklad-povinnej-aktivacie-4\">\n          <span class=\"idsk-in-page-navigation__link-number\">9.</span> <span class=\"idsk-in-page-navigation__link-title\">Odklad povinnej aktivácie</span>\n        </a>\n      </li>\n      <li class=\"idsk-in-page-navigation__list-item\">\n        <a class=\"idsk-in-page-navigation__link\" href=\"#odklad-povinnej-aktivacie-5\">\n          <span class=\"idsk-in-page-navigation__link-number\">10.</span> <span class=\"idsk-in-page-navigation__link-title\">Odklad povinnej aktivácie</span>\n        </a>\n      </li>\n    </ul>\n  </div>\n</div>"
+        }
+    ]
+}

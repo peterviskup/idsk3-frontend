@@ -1,0 +1,802 @@
+// stylelint-disable max-nesting-depth
+
+@include govuk-exports("idsk/component/header-extended") {
+  $idsk-header-background: govuk-colour("white") !default;
+  $idsk-header-border-color: $govuk-brand-colour !default;
+  $idsk-header-dark-blue: govuk-colour("dark-blue") !default;
+  $idsk-header-light-blue: govuk-colour("blue") !default;
+  $idsk-header-link: govuk-colour("white") !default;
+
+  .idsk-header-extended {
+    @include govuk-font($size: 16);
+    padding-top: govuk-spacing(6);
+
+    color: $idsk-header-dark-blue;
+    background: $idsk-header-background;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: $idsk-header-dark-blue;
+    }
+
+    &__container {
+      @include govuk-clearfix;
+      display: flex;
+      flex-flow: wrap row;
+    }
+
+    // content menu navigation
+    &__content {
+      width: 100%;
+
+      @include mq($from: desktop) {
+        margin-right: -30px;
+        margin-left: -30px;
+        float: left;
+      }
+    }
+  }
+
+  .idsk-header__link {
+    text-decoration: none;
+
+    &:link,
+    &:visited {
+      color: $idsk-header-link;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:focus,
+    &:active {
+      @include govuk-focused-text;
+    }
+
+    // alphagov/govuk_template includes a specific a:link:focus selector
+    // designed to make unvisited links a slightly darker blue when focussed, so
+    // we need to override the text colour for that combination of selectors.
+    &:link:focus {
+      @include govuk-text-colour;
+    }
+  }
+
+  //  logo part
+  .idsk-header-extended__logo {
+    margin-right: auto;
+    padding-bottom: govuk-spacing(3);
+    padding-left: 0;
+
+    @include mq($until: mobile) {
+      width: 70%;
+    }
+
+    @include mq($until: tablet) {
+      max-width: 70%;
+      padding-bottom: govuk-spacing(3);
+    }
+
+    @include mq($from: desktop) {
+      padding: 0 0 govuk-spacing(6) 0;
+    }
+
+    & > a {
+      display: initial;
+
+      &:focus svg,
+      &:active svg,
+      &:focus img,
+      &:active img {
+        @include govuk-focused-text;
+      }
+    }
+
+    & img,
+    & svg {
+      max-width: 100%;
+      height: 100%;
+      max-height: 50px;
+
+      @include mq($from: desktop) {
+        max-height: 100px;
+      }
+    }
+  }
+
+  // logo svg image
+  .idsk-header-extended__logotype-crown {
+    position: relative;
+    max-width: 246px;
+    fill: currentcolor;
+
+    &-fallback-image {
+      width: 36px;
+      height: 32px;
+      border: 0;
+    }
+  }
+
+  // logo svg image - mobile view
+  .idsk-header-extended__logotype-crown-mobile,
+  .idsk-header-extended__logotype-crown-mobile-navigation,
+  .idsk-header-extended__logotype-crown-mobile-small-navigation {
+    display: none;
+  }
+
+  @include mq($until: desktop) {
+    .idsk-header-extended.idsk-header-extended--shrink {
+      .idsk-header-extended__logo {
+        padding-bottom: govuk-spacing(3);
+      }
+
+      .idsk-header-extended__logotype-crown,
+      .idsk-header-extended__logotype-crown-mobile-navigation {
+        display: none;
+      }
+
+      .idsk-header-extended__logotype-crown-mobile {
+        display: inline-block;
+      }
+    }
+  }
+
+  @include mq($until: desktop) {
+    .idsk-header-extended__mobile,
+    .idsk-header-extended__search,
+    .idsk-header-extended__language,
+    .idsk-header-extended__social,
+    .idsk-header-extended__content {
+      display: none;
+    }
+  }
+
+  // search bar
+  .idsk-header-extended__search {
+    @include govuk-font($size: 16);
+
+    padding-right: govuk-spacing(4);
+
+    &-label {
+      position: absolute;
+      padding: govuk-spacing(1);
+      color: govuk-colour("black");
+
+      &.idsk-header-extended__search-input--focus {
+        z-index: -1;
+      }
+    }
+
+    &-form:focus-within {
+      .idsk-header-extended__search-label {
+        z-index: -1;
+      }
+    }
+
+    .govuk-input {
+      width: 200px;
+      height: 30px;
+      border: 1px solid govuk-colour("black");
+
+      &:focus {
+        z-index: 2;
+      }
+    }
+
+    .govuk-button {
+      width: 28px;
+      height: 30px;
+      margin-left: -4px;
+      padding-top: 7px;
+      padding-left: govuk-spacing(1);
+      background-color: govuk-colour("blue");
+      box-shadow: none;
+      font-size: 12px;
+    }
+  }
+
+  // language selector
+  .idsk-header-extended__language {
+    @include govuk-font($size: 19);
+
+    padding: 0 govuk-spacing(3) govuk-spacing(1) 0;
+
+    &--active .idsk-header-extended__language-button::after {
+      transform: rotate(180deg);
+      transition: transform .2s;
+    }
+
+    &--active &-list {
+      display: block;
+      position: absolute;
+    }
+
+    &-button {
+      @include govuk-font($size: 19);
+      padding-right: govuk-spacing(6);
+      border: none;
+      background: none;
+
+      &:focus {
+        @include govuk-focused-text;
+
+        outline: none;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        margin-top: 8px;
+        margin-left: govuk-spacing(2);
+        transition: transform .2s;
+        border-width: 5px 5px 0;
+        border-style: solid;
+        border-color: $idsk-header-dark-blue transparent transparent;
+      }
+    }
+
+    &-list {
+      display: none;
+      margin: 0;
+      margin-top: govuk-spacing(2);
+      padding: 0;
+      background-color: govuk-colour("white");
+      list-style: none;
+      text-align: left;
+
+      &-item {
+        padding: govuk-spacing(1);
+      }
+
+      &-link {
+        display: block;
+        color: $idsk-header-dark-blue;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &:focus,
+        &:active {
+          @include govuk-focused-text;
+        }
+      }
+    }
+  }
+
+  // social icons
+  .idsk-header-extended__social {
+    &-list {
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    &-item {
+      display: inline-block;
+      padding: 0 4px;
+    }
+
+    &-link {
+      @include govuk-font($size: 19);
+
+      color: $idsk-header-dark-blue;
+
+      &:focus,
+      &:active {
+        @include govuk-focused-text;
+      }
+    }
+  }
+
+  .idsk-header-extended--left {
+    margin-left: auto;
+  }
+
+  // navigation
+  .idsk-header-extended__navigation {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &-item {
+      padding: govuk-spacing(3) 0;
+
+      @include mq($from: desktop) {
+        display: inline-block;
+        padding: govuk-spacing(3) govuk-spacing(6);
+        border: none;
+      }
+
+      & > a {
+        @include govuk-font($size: 19, $weight: bold);
+        text-decoration: none;
+        white-space: nowrap;
+
+        &:link,
+        &:hover,
+        &:visited {
+          color: $idsk-header-dark-blue;
+        }
+
+        &:focus,
+        &:active {
+          @include govuk-focused-text;
+        }
+      }
+
+      // arrow
+      .idsk-header-extended__arrow::after {
+        @include govuk-shape-arrow(
+          $direction: down,
+          $base: 10px,
+          $display: inline-block
+        );
+        content: "";
+        position: relative;
+        left: 10px;
+        transition: transform .2s;
+        border-color: $idsk-header-link transparent transparent;
+
+        @include mq($from: desktop) {
+          display: none;
+        }
+      }
+
+      &--active {
+        background-color: $idsk-header-dark-blue;
+
+        a {
+          &:link,
+          &:hover,
+          &:visited {
+            color: $idsk-header-link;
+          }
+
+          &:focus,
+          &:active {
+            @include govuk-focused-text;
+          }
+        }
+
+        .idsk-header-extended__arrow::after {
+          transform: rotate(180deg);
+          transition: transform .2s;
+        }
+
+        .idsk-header-extended__navigation-submenu {
+          display: block;
+        }
+      }
+    }
+  }
+
+  // navigation - submenu
+  .idsk-header-extended__navigation-submenu {
+    display: none;
+    z-index: 10;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    background-color: $idsk-header-dark-blue;
+
+    @include mq($from: desktop) {
+      position: absolute;
+      margin-top: govuk-spacing(3);
+      padding: govuk-spacing(4) 0;
+    }
+
+    a {
+      color: $idsk-header-link;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 20px;
+      text-decoration: none;
+
+      &:hover {
+        color: $idsk-header-link;
+        background: none;
+        text-decoration: underline;
+      }
+
+      &:focus,
+      &:active {
+        @include govuk-focused-text;
+      }
+    }
+
+    ul {
+      display: block;
+      padding-left: govuk-spacing(1);
+
+      li {
+        display: inline-block;
+        width: 20%;
+        padding: govuk-spacing(1) govuk-spacing(4);
+        color: $idsk-header-link;
+
+        @include mq($until: desktop) {
+          width: 100%;
+          padding: 0;
+          padding-bottom: govuk-spacing(2);
+        }
+
+        &::before {
+          content: "\2022"; // unicode for a bullet
+          display: inline-block;
+          width: 20px;
+          color: $idsk-header-link;
+          font-size: 20px;
+          font-weight: bolder;
+        }
+
+        i {
+          padding-right: 8px;
+          font-size: 10px;
+        }
+      }
+    }
+  }
+
+  // navigation - hmaburger button
+  .idsk-header-extended__menu-button {
+    @include govuk-font($size: 24);
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 0;
+    border: 0;
+    color: $idsk-header-dark-blue;
+    background: none;
+    font-weight: 700;
+    align-items: center;
+    cursor: pointer;
+
+    &:focus,
+    &:active {
+      @include govuk-focused-text;
+    }
+  }
+
+  @include govuk-media-query($media-type: print) {
+    .idsk-header-extended {
+      border-bottom-width: 0;
+      color: govuk-colour("black");
+      background: transparent;
+
+      // Hide the inverted crown when printing in browsers that don't support SVG.
+      &__logotype-crown-fallback-image {
+        display: none;
+      }
+
+      &__link {
+        &:link,
+        &:visited {
+          color: govuk-colour("black");
+        }
+      }
+
+      // Do not append link href to GOV.UK link when printing (e.g. '(/)')
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .js-enabled .idsk-header-extended {
+    @include mq($until: desktop) {
+      display: table;
+      position: fixed;
+      z-index: 11;
+      top: 0;
+      width: 100vw;
+      padding-top: govuk-spacing(3);
+      overflow-y: scroll;
+    }
+
+    &__mobile {
+      display: none;
+      position: fixed;
+      z-index: 11;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      padding: govuk-spacing(3);
+      overflow-x: hidden;
+      background: $idsk-header-dark-blue;
+
+      @include mq($from: tablet) {
+        padding: govuk-spacing(6);
+        padding-top: govuk-spacing(3);
+      }
+    }
+
+    &__mobile-close {
+      display: none;
+      position: absolute;
+      z-index: 5;
+      top: 25px;
+      right: 25px;
+      width: 25px;
+      height: 20px;
+      padding-left: 0;
+      border: none;
+      color: $idsk-header-link;
+      background: none;
+      font-size: 31px;
+      line-height: 16px;
+      cursor: pointer;
+
+      &::after {
+        content: "\2715";
+      }
+
+      &:focus,
+      &:active {
+        @include govuk-focused-text;
+      }
+
+      @include mq($from: tablet) {
+        right: 50px;
+      }
+    }
+
+    &__menu-button {
+      display: inline-flex;
+
+      @include mq($from: tablet) {
+        right: 40px;
+      }
+
+      @include mq($from: desktop) {
+        display: none;
+      }
+    }
+
+    @include mq($until: desktop) {
+      &-notification {
+        padding-top: 91px;
+      }
+    }
+
+    &.idsk-header-extended--show-mobile-menu {
+      @include mq($until: desktop) {
+        display: inline-block;
+        z-index: 11;
+        height: 100%;
+        overflow-y: scroll;
+
+        .idsk-header-extended__mobile {
+          display: block;
+          width: calc(100% - 30px);
+          height: calc(100% - 30px);
+
+          @include mq($from: tablet) {
+            width: calc(100% - 60px);
+            height: calc(100% - 45px);
+          }
+        }
+
+        .idsk-header-extended__mobile-close {
+          display: block;
+        }
+
+        .idsk-header-extended__mobile .idsk-header-extended__logo {
+          z-index: 12;
+
+          &type-crown,
+          &type-crown-mobile {
+            display: none;
+          }
+
+          &type-crown-mobile-navigation {
+            display: flex;
+            max-width: 246px;
+          }
+        }
+
+        .idsk-header-extended__mobile .idsk-header-extended__search {
+          display: block;
+          margin-top: govuk-spacing(2);
+          clear: both;
+
+          .idsk-header-extended__search-form:focus-within {
+            .idsk-header-extended__search-label {
+              z-index: -1;
+            }
+          }
+
+          .idsk-header-extended__search-label {
+            @include govuk-font($size: 24);
+
+            padding: govuk-spacing(3);
+
+            @include mq($from: tablet) {
+              width: calc(100% - 60px);
+              padding: govuk-spacing(2);
+            }
+
+            &.idsk-header-extended__search-input--focus {
+              z-index: -1;
+            }
+          }
+
+          .govuk-input {
+            width: 100%;
+            max-width: 240px;
+            height: 50px;
+            border: 1px solid govuk-colour("black");
+
+            &.idsk-header-extended__search-input--focus,
+            &:focus {
+              z-index: 2;
+            }
+          }
+
+          .govuk-button {
+            width: 48px;
+            height: 48px;
+            margin-top: 1px;
+            padding-left: 9px;
+            font-size: 19px;
+          }
+        }
+
+        .idsk-header-extended__mobile .idsk-header-extended__content {
+          display: block;
+          margin-bottom: govuk-spacing(6);
+
+          a {
+            @include govuk-font($size: 36);
+            padding-left: 0;
+            color: $idsk-header-link;
+          }
+
+          &-item--active .idsk-header-extended__link {
+            @include govuk-focused-text;
+          }
+
+          .idsk-js-header-extended-submenu-toggle {
+            padding-right: govuk-spacing(4); // space for arrow, should be focused too
+          }
+
+          .idsk-header-extended__navigation-submenu {
+            padding-top: govuk-spacing(4);
+
+            ul {
+              margin-left: 0;
+              padding-left: 0;
+            }
+
+            li a {
+              @include govuk-font($size: 27);
+
+              &:hover,
+              &:active {
+                color: $idsk-header-dark-blue;
+                background: govuk-colour("yellow");
+                font-weight: 600;
+                text-decoration: none;
+              }
+
+              // stylelint-disable-next-line selector-no-qualifying-type
+              &.active {
+                font-weight: 600;
+              }
+            }
+          }
+        }
+
+        .idsk-header-extended__hr {
+          border: none;
+          border-top: 2px solid govuk-colour("white");
+        }
+
+        .idsk-header-extended__mobile .idsk-header-extended__language {
+          @include govuk-font($size: 36);
+          display: block;
+          width: fit-content;
+          margin-top: govuk-spacing(3);
+          padding-left: 0;
+
+          &-button {
+            @include govuk-font($size: 36);
+            padding-right: govuk-spacing(6);
+            padding-left: 0;
+            color: govuk-colour("white");
+          }
+
+          &-button::after {
+            margin-top: govuk-spacing(2);
+            border-width: 8px 5px 0;
+            border-color: govuk-colour("white") transparent transparent;
+          }
+
+          &-list {
+            position: relative;
+            width: 100%;
+            background: none;
+          }
+
+          &-list-link {
+            color: govuk-colour("white");
+          }
+        }
+
+        .idsk-header-extended__social {
+          display: block;
+          margin-top: govuk-spacing(4);
+
+          &-link {
+            color: govuk-colour("white");
+          }
+
+          &-item:first-child {
+            padding-left: 0;
+          }
+        }
+      }
+
+      &.idsk-header-extended--shrink {
+        @include mq($until: desktop) {
+          .idsk-header-extended__logotype-crown-mobile,
+          .idsk-header-extended__logotype-crown-mobile-navigation {
+            display: none;
+          }
+
+          .idsk-header-extended__logotype-crown-mobile-small-navigation {
+            display: inline-block;
+          }
+        }
+      }
+    }
+
+    &.idsk-header-extended--cookie {
+      @include mq($until: desktop) {
+        position: absolute;
+      }
+    }
+  }
+
+  .idsk-header-extended__language--current-text img,
+  .idsk-header-extended__language-list-link img {
+    width: 15%;
+  }
+
+  // Handle focus event on skip link
+  .idsk-skip-link--sticky:focus + .idsk-header-extended {
+    @include mq($until: tablet) {
+      top: 2.2812rem;
+    }
+
+    @include mq($from: tablet) {
+      top: 2.5312rem;
+    }
+  }
+
+  .idsk-skip-link--sticky:focus ~ .idsk-header-extended-notification {
+    @include mq($until: desktop) {
+      padding-top: 7.938rem;
+    }
+  }
+
+  .idsk-header-extended-ie-fix {
+    // IE10+ CSS styles
+    // ie doesnt recognize position: sticky
+    // need to be there cause some part of top of contet will not be visible
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      height: 55px;
+      @include mq($from: desktop) {
+        height: 0;
+      }
+    }
+  }
+}

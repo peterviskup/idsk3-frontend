@@ -1,0 +1,132 @@
+{% from "idsk-header-extended/macro.njk" import idskHeaderExtended %}
+{{ idskHeaderExtended({
+    headerTitle: "Domov",
+    logo: "logo-mirri-farebne.svg",
+    logoSmall: "logo-mirri-small-farebne.svg",
+    logoWhite: "logo-mirri-biele.svg",
+    logoSmallWhite: "logo-mirri-small-biele.svg",
+    logoGrid: "govuk-grid-column-one-third",
+    navigation:[
+        {
+            link: "#1",
+            text: "Eurofondy"
+        },
+        {
+            link: "#2",
+            text: "Informatizácia"
+        },
+        {
+            text: "Regionálny rozvoj",
+            link: "#3",
+            submenu: [
+                {
+                    link: "#3.1",
+                    text: "O regionálnom rozvoji"
+                },
+                {
+                    link: "#3.2",
+                    text: "Zoznam úloh"
+                },
+                {
+                    link: "#3.3",
+                    text: "Zabezpečenie dát"
+                },
+                {
+                    link: "#3.4",
+                    text: "Ochrana práv"
+                },
+                {
+                    link: "#3.5",
+                    text: "Kvapka nádeje"
+                },
+                {
+                    link: "#3.6",
+                    text: "Programy 6"
+                },
+                {
+                    link: "#3.7",
+                    text: "Programy 7"
+                },
+                {
+                    link: "#3.8",
+                    text: "Programy 8"
+                },
+                {
+                    link: "#3.9",
+                    text: "Programy 9"
+                },
+                {
+                    link: "#3.10",
+                    text: "Programy 10"
+                }
+            ]
+        },
+        {
+            link: "#4",
+            text: "Inovácie",
+            submenu: [
+                {
+                    link: "#4.1",
+                    text: "Aktuality 1"
+                },
+                {
+                    link: "#4.2",
+                    text: "Aktuality 2"
+                },
+                {
+                    link: "#4.3",
+                    text: "Aktuality 3"
+                },
+                {
+                    link: "#4.4",
+                    text: "Aktuality 4"
+                }
+            ]
+        },
+        {
+            link: "#5",
+            text: "Investície"
+        }
+    ],
+    search: true,
+    language: {
+        current: {
+            text: "slovenčina",
+            flag: "slovakia-flag-icon-16.png"
+        },
+        choices: [
+            {
+                flag: "united-states-of-america-flag-icon-16.png",
+                text: "english",
+                link: "#"
+            },
+            {
+                flag: "germany-flag-icon-16.png",
+                text: "german",
+                link: "#"
+            }
+        ]
+    },
+    socials: [
+        {
+            icon: "fab fa-instagram",
+            link: "#",
+            text: "Instagram"
+        },
+        {
+            icon: "fab fa-linkedin-in",
+            link: "#",
+            text: "Linkedin"
+        },
+        {
+            icon: "fab fa-facebook-f",
+            link: "#",
+            text: "Facebook"
+        },
+        {
+            icon: "fab fa-twitter",
+            link: "#",
+            text: "Twitter"
+        }
+    ]
+}) }}

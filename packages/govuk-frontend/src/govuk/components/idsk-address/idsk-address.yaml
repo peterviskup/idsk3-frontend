@@ -1,0 +1,79 @@
+params:
+  - name: fullWidth
+    type: boolean
+    required: false
+    description: if true, width will be 100%, otherwise it will be 1/3
+  - name: heading
+    type: string
+    required: true
+    description: the heading of address
+  - name: addressTitle
+    type: string
+    required: false
+    description: the title of address
+  - name: addressDescription
+    type: array
+    required: true
+    description: information about adress e.g. street, post number, city, floor etc..
+    params:
+      - name: text
+        type: string
+        required: true
+        description: e.g. street, post number, city, floor etc..
+  - name: googleMapsLink
+    type: string
+    required: true
+    description: Google maps link with APIKEY
+  - name: additionalLink
+    type: object
+    required: false
+    description: additional link
+    params:
+      - name: text
+        type: string
+        required: false
+        description: text representing link address
+      - name: link
+        type: string
+        required: false
+        description: href link address
+  - name: title
+    type: string
+    required: true
+    description: text representing address
+examples:
+  - name: ukážka 1
+    data:
+      addressTitle: Adresa podujatia
+      title: Adresa podujatia
+      addressDescription:
+        - text: Štefánikova 15
+        - text: 811 05 Bratislava
+        - text: Poschodie 2.B
+        - text: Zasadačka LONDÝN
+      googleMapsLink: https://www.google.com/maps/embed/v1/place?q=place_id:ChIJbej9bFqJbEcR4nXu1en1cJM&key=AIzaSyC8V96sGgzrasorg2xPOlrlp-cpQFPLSxM
+
+  - name: ukážka 2
+    data:
+      heading: Ministerstvo investícií, regionálneho rozvoja a informatizácie SR
+      fullWidth: true
+      title: Adresa sídla
+      addressDescription:
+        - text: Štefánikova 15
+        - text: 811 05 Bratislava
+      googleMapsLink: https://www.google.com/maps/embed/v1/place?q=place_id:ChIJbej9bFqJbEcR4nXu1en1cJM&key=AIzaSyC8V96sGgzrasorg2xPOlrlp-cpQFPLSxM
+      additionalLink:
+        link: '#'
+        text: Zoznam sekcií, odborov a oddelení v tejto budove
+
+  - name: ukážka 3
+    data:
+      heading: Ministerstvo investícií, regionálneho rozvoja a informatizácie SR
+      addressTitle: Oddelenie behaviorálnych inovácií
+      title: Adresa sídla
+      fullWidth: true
+      addressDescription:
+        - text: Štefánikova 15
+        - text: 811 05 Bratislava
+        - text: Zasadačka LONDÝN
+      googleMapsLink: https://www.google.com/maps/embed/v1/place?q=place_id:ChIJbej9bFqJbEcR4nXu1en1cJM&key=AIzaSyC8V96sGgzrasorg2xPOlrlp-cpQFPLSxM

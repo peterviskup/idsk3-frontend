@@ -1,0 +1,58 @@
+[
+    {
+        "name": "mainTitle",
+        "type": "string",
+        "required": false,
+        "description": "Main title of page."
+    },
+    {
+        "name": "feedbackQuestion",
+        "type": "string",
+        "required": false,
+        "description": "Question for feedback."
+    },
+    {
+        "name": "feedbackQuestionForTextArea",
+        "type": "string",
+        "required": false,
+        "description": "Question for feedback textarea."
+    },
+    {
+        "name": "feedbackThankNote",
+        "type": "string",
+        "required": false,
+        "description": "Thank note after feedback was send."
+    },
+    {
+        "name": "characterLength",
+        "type": "integer",
+        "required": false,
+        "description": "Number of allowed characters in textarea."
+    },
+    {
+        "name": "feedbackOptions",
+        "type": "array",
+        "required": true,
+        "description": "Array of items for radio buttons in feedback form.",
+        "params": [
+            {
+                "name": "name",
+                "type": "string",
+                "required": false,
+                "description": "Name of radio button item"
+            },
+            {
+                "name": "textArea",
+                "type": "boolean",
+                "required": false,
+                "description": "Determines whether textarea should be showed up after click on radio button."
+            },
+            {
+                "name": "value",
+                "type": "string",
+                "required": false,
+                "description": "Value of radio button item"
+            }
+        ]
+    }
+]

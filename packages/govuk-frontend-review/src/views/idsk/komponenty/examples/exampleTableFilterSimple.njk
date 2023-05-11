@@ -1,0 +1,49 @@
+{% from "idsk-table-filter/macro.njk" import idskTableFilter %}
+{{ idskTableFilter({
+  "id": "simple-filter",
+  "filters": [
+    {
+      "id": "filter1",
+      "inputTitle": "Filter 1"
+    },
+    {
+      "id": "filter2",
+      "inputTitle": "Filter 2"
+    },
+    {
+      "id": "filter3",
+      "inputTitle": "Filter 3"
+    },
+    {
+      "id": "filter4",
+      "inputTitle": "Filter 4"
+    },
+    {
+      "id": "filter5",
+      "inputTitle": "Filter 5"
+    },
+    {
+      "id": "filter6",
+      "inputTitle": "Filter 6",
+      "options": [
+      {
+        "value": "",
+        "inputTitle": "Vybrať filter"
+      },
+      {
+        "value": "filter6-1",
+        "inputTitle": "Filter 6-1"
+      },
+      {
+        "value": "filter6-2",
+        "inputTitle": "Filter 6-2"
+      },
+      {
+        "value": "filter6-3",
+        "inputTitle": "Filter 6-3",
+        "disabled": "True"
+      }
+    ]
+    }
+  ]
+}) }}

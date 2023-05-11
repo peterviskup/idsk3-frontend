@@ -1,0 +1,73 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "10 princípov tvorby elektronických služieb podľa ID-SK" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Úvod</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-s">Obsah:</h2>
+            <ol class="govuk-list govuk-list--number">
+                <li><a class="govuk-link" href="#uzitocnost" title="Začnite potrebami používateľov (princíp užitočnosti)">Začnite potrebami používateľov (princíp užitočnosti)</a></li>
+                <li><a class="govuk-link" href="#otvorenost" title="Opätovne používajte a zdieľajte (princíp stability a otvorenosti)">Opätovne používajte a zdieľajte (princíp stability a otvorenosti)</a></li>
+                <li><a class="govuk-link" href="#realnost" title="Inšpirujte sa realitou (princíp reálnosti)">Inšpirujte sa realitou (princíp reálnosti)</a></li>
+                <li><a class="govuk-link" href="#jednoduchost" title="Náročná tvorba vedie k jednoduchým službám (princíp jednoduchosti)">Náročná tvorba vedie k jednoduchým službám (princíp jednoduchosti)</a></li>
+                <li><a class="govuk-link" href="#agilita" title="Začnite v malom (princíp agility)">Začnite v malom (princíp agility)</a></li>
+                <li><a class="govuk-link" href="#pristupnost" title="ID-SK je pre každého (princíp prístupnosti)">ID-SK je pre každého (princíp prístupnosti)</a></li>
+                <li><a class="govuk-link" href="#kontext" title="Rešpektovanie kontextu okolnosti použitia (princíp kontextu)">Rešpektovanie kontextu okolnosti použitia (princíp kontextu)</a></li>
+                <li><a class="govuk-link" href="#holistika" title="Vytvárajte elektronické služby, nie webové stránky (princíp holistického pohľadu)">Vytvárajte elektronické služby, nie webové stránky (princíp holistického pohľadu)</a></li>
+                <li><a class="govuk-link" href="#konzistentnost" title="Buďte konzistentní (princíp konzistentnosti)">Buďte konzistentní (princíp konzistentnosti)</a></li>
+                <li><a class="govuk-link" href="#otvorenost2" title="Tvorte otvorene, zvýšite tým kvalitu (princíp otvorenosti)">Tvorte otvorene, zvýšite tým kvalitu (princíp otvorenosti)</a></li>
+            </ol>
+
+            <h2 class="govuk-heading-m" id="uzitocnost">1. Začnite potrebami používateľov (princíp užitočnosti)</h2>
+            <p class="govuk-body">Dizajn služby začína identifikáciou potrieb používateľov. Ak neviete, aké sú potreby používateľov, nepodarí sa vám vytvoriť správnu službu.</p>
+            <p class="govuk-body">Nevychádzajte z&nbsp;domnienok. Používateľský prieskum, analýza dát a informácie priamo od&nbsp;používateľov vám pomôžu vybudovať zázemie, na&nbsp;ktorom môžete postaviť službu, ktorá bude spĺňať svoj účel a bude užitočná.</p>
+
+            <h2 class="govuk-heading-m" id="otvorenost">2. Opätovne používajte a zdieľajte (princíp stability a otvorenosti)</h2>
+            <p class="govuk-body">Platformy a registre je dôležité vytvárať tak, aby tvorili funkčný nemenný základ, ktorý je opätovne použiteľný. Poskytovanie a vzájomné zdieľanie zdrojov môže výrazne uľahčiť prácu ďalším tvorcom elektronických služieb.</p>
+
+            <h2 class="govuk-heading-m" id="realnost">3. Inšpirujte sa realitou (princíp reálnosti)</h2>
+            <p class="govuk-body">Pri vytváraní elektronických služieb môžete vychádzať zo&nbsp;spôsobov používania existujúcich služieb v&nbsp;reálnom svete. Aby bola služba kvalitná, pokračujte v&nbsp;jej dizajnovaní aj po&nbsp;jej dokončení, a to na&nbsp;základe informácii od&nbsp;používateľov. Ideálnym spôsobom je pred&nbsp;zavedením finálnej verzie služby spustenie jej testovacej verzie. Testuje s&nbsp;používateľmi až dovtedy kým bude služba pripravená na&nbsp;jej reálne používanie. Základným nástrojom každej elektronickej služby je dátová analytika, ktorá by mala byť jednoducho čitateľná a neustále zapnutá.</p>
+
+            <h2 class="govuk-heading-m" id="jednoduchost">4. Náročná tvorba vedie k jednoduchým službám (princíp jednoduchosti)</h2>
+            <p class="govuk-body">Elektronizácia je príležitosťou na&nbsp;zjednodušenie služieb používateľom. Pri&nbsp;dizajne služieb vnímajte širší kontext, nielen existujúci postup. Investujte čas do&nbsp;opätovného prepracovania procesov a neuspokojte sa s&nbsp;názorom, ktorý zachováva existujúci stav.</p>
+
+            <h2 class="govuk-heading-m" id="agilita">5. Začnite v malom (princíp agility)</h2>
+            <p class="govuk-body">Sprístupnite používateľom svoju službu čo najskôr a získajte spätnú väzbu od&nbsp;koncových používateľov. Je lepšie rozvíjať službu postupne a po&nbsp;malých častiach, ako spúšťať veľké celky. Znížite tým riziká a získate cenné informácie, ktoré môžu ovplyvniť vaše ďalšie investície do&nbsp;rozvoja.</p>
+
+            <h2 class="govuk-heading-m" id="pristupnost">6. ID-SK je pre každého (princíp prístupnosti)</h2>
+            <p class="govuk-body">Prístupný dizajn je dobrý dizajn. Elektronické služby vytvorené podľa ID-SK by mali byť inkluzívne, zrozumiteľné a jednoducho čitateľné. Je potrebné si pripomínať, že elektronické služby sa vytvárajú s&nbsp;konkrétnym účelom, ako odpoveď na&nbsp;konkrétne potreby spoločnosti a na&nbsp;používanie pre&nbsp;konkrétnych ľudí. Medzi používateľmi sú aj takí, ktorí nepoužívajú informačné technológie každý deň. Ľudia ktorí najviac potrebujú naše služby sú často ľudia, ktorým sa zdá ich používanie najťažšie. Práve tieto osoby by mali tvoriť časť testovacej skupiny.</p>
+
+            <h2 class="govuk-heading-m" id="kontext">7. Rešpektovanie kontextu okolnosti použitia (princíp kontextu)</h2>
+            <p class="govuk-body">Pri&nbsp;tvorbe elektronických služieb je potrebné zohľadňovať okolnosti a kontext, v&nbsp;ktorom ľudia služby budú používať. Dizajn musí adresovať rozdielne potreby podľa času, miesta a zariadenia, v&nbsp;rámci ktorých sa bude služba primárne vykonávať.</p>
+
+            <h2 class="govuk-heading-m" id="holistika">8. Vytvárajte elektronické služby, nie webové stránky (princíp holistického pohľadu)</h2>
+            <p class="govuk-body">Pri tvorbe služby vnímajte ich multikanálový kontext. Netvoríte len webovú stránku, ale navrhujete zážitok používateľa naprieč rôznymi digitálnymi aj nedigitálnymi kanálmi. Zohľadnite zistenia zo&nbsp;zákazníckeho prieskumu aj v&nbsp;iných kanáloch, aby ste vytvorili kvalitnejšiu službu.</p>
+
+            <h2 class="govuk-heading-m" id="konzistentnost">9. Buďte konzistentní (princíp konzistentnosti)</h2>
+            <p class="govuk-body">Princíp konzistentnosti spočíva v&nbsp;používaní rovnakého jazyka, výrazov uvedených v&nbsp;slovníku a rovnakých dizajnových vzorov. Uplatňovaním tohto princípu sa pri&nbsp;tvorbe služieb zabezpečí jednak vizuálna jednotnosť a tiež uistenie používateľa, že skutočne stále používa službu verejnej správy. Navyše, keď budú všetky služby tvorené jedným spôsobom, používateľ nadobudne zručnosť v&nbsp;ich používaní. V&nbsp;takom prípade ich bude používať opakovane a tieto služby budú pre neho skutočne efektívnym spôsobom využívania potrebných služieb.</p>
+
+            <h2 class="govuk-heading-m" id="otvorenost2">10. Tvorte otvorene, zvýšite tým kvalitu (princíp otvorenosti)</h2>
+            <p class="govuk-body">Zdieľajte vaše návrhy, nápady, zámery, neúspechy a zdrojové kódy s&nbsp;komunitou. Otvorenosť podporuje kreativitu a zlepšuje kvalitu výstupov cez&nbsp;skorú spätnú väzbu. Keďže tvorba elektronických služieb je spravidla financovaná z verejných zdrojov, nie je dôvod výstupy skrývať.</p>
+
+        </div>
+    </div>
+
+  </div>
+{% endblock %}

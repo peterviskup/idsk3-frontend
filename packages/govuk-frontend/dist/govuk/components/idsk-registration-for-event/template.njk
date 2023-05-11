@@ -1,0 +1,60 @@
+<div data-module="idsk-registration-for-event" class="idsk-registration-for-event{{ ' ' + params.classes if params.classes }}">
+  <form class="idsk-registration-for-event__form">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h3 class="govuk-fieldset__heading idsk-customer-surveys--subtitle">{{ params.heading }}</h3>
+      </legend>
+      {% for item in params.formItems %}
+        <div class="govuk-form-group">
+          {% if item.tag === "input" %}
+            {% if item.type === "text" or item.type === "email" %}
+              <label class="govuk-label" for="{{ item.name }}">{{ item.label }}</label>
+              <span class="govuk-hint">{{ item.hint }}</span>
+              {% if item.error %}
+                <span class="govuk-error-message">
+                <span class="govuk-visually-hidden">Chyba:</span>{{ item.error }}
+            </span>
+              {% endif %}
+              <input type="{{ item.type }}" class="govuk-input" id="{{ item.name }}" name="{{ item.name }}" autocomplete="{{item.autocomplete}}" {{ "required" if item.required }}>
+              {% elif item.type == "checkbox" %}
+              {% if item.error %}
+                <span class="govuk-error-message">
+                <span class="govuk-visually-hidden">Chyba:</span>{{ item.error }}
+            </span>
+              {% endif %}
+              <div class="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input type="checkbox" class="govuk-checkboxes__input" id="{{ item.name }}" name="{{ item.name }}" {{ "required" if item.required }}>
+                  <label class="govuk-label  govuk-checkboxes__label" for="{{ item.name }}">{{ item.label | safe }}</label>
+                </div>
+              </div>
+            {% endif %}
+            {% elif item.tag === "select" %}
+            <label class="govuk-label" for="{{ item.name }}">{{ item.label }}</label>
+            {% if item.error %}
+              <span class="govuk-error-message">
+                <span class="govuk-visually-hidden">Chyba:</span>{{ item.error }}
+            </span>
+            {% endif %}
+            <select class="govuk-select" id="{{ item.name }}" name="{{ item.name }}">
+              <option>Vyberte možnosť</option>
+              {% for option in item.options %}
+                <option value="{{ option.value }}">{{ option.name }}</option>
+              {% endfor %}
+            </select>
+          {% endif %}
+        </div>
+      {% endfor %}
+      <button type="submit" draggable="false" class="idsk-button idsk-button--start idsk-registration-for-event-js-submit" data-module="idsk-button">
+        {{ params.buttonLabel }}
+        <svg class="idsk-button__start-icon" width="17.5" height="19" viewBox="0 0 15 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.4016 10L0 0H5.59826L15 10H9.4016Z" fill="white"></path>
+          <path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M5.5984 20L15 10H9.40174L0 20H5.5984Z" fill="white"></path>
+        </svg>
+      </button>
+    </fieldset>
+  </form>
+  <h3 class="govuk-heading-m idsk-registration-for-event__thank-you-msg">
+    {{ params.thankYouMsg }}
+  </h3>
+</div>

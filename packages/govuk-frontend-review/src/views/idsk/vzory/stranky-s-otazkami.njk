@@ -1,0 +1,100 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Stránky s otázkami" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Vzory</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Tento návod opisuje správne použitie a štruktúrovanie stránky s otázkami.</p>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-s">Obsah:</h2>
+            <ul class="govuk-list">
+                <li><a class="govuk-link" href="#ukazka-stranky-s-otazkami" title="Ukážka stránky s otázkami">Ukážka stránky s otázkami</a></li>
+                <li><a class="govuk-link" href="#pouzitie-stranok-s-otazkami" title="Použitie stránok s otázkami">Použitie stránok s otázkami</a></li>
+                <li><a class="govuk-link" href="#nastavenie-stranky-s-otazkami" title="Nastavenie stránky s otázkami">Nastavenie stránky s otázkami</a></li>
+                <li><a class="govuk-link" href="#odkaz-na-predchadzajucu-stranku" title="Odkaz na predchádzajúcu stránku">Odkaz na predchádzajúcu stránku</a></li>
+                <li><a class="govuk-link" href="#hlavicky-stranok" title="Hlavičky stránok">Hlavičky stránok</a></li>
+                <li><a class="govuk-link" href="#nadpisy-sekcii" title="Nadpisy sekcií">Nadpisy sekcií</a></li>
+                <li><a class="govuk-link" href="#tlacidlo-pokracovat" title="Tlačidlo \“Pokračovať\”">Tlačidlo “Pokračovať”</a></li>
+                <li><a class="govuk-link" href="#ako-sa-pytat-pouzivatelov-otazky" title="Ako sa pýtať používateľov otázky">Ako sa pýtať používateľov otázky</a></li>
+            </ul>
+
+            <h3 class="govuk-heading-m" id="ukazka-stranky-s-otazkami">Ukážka stránky s otázkami</h3>
+            <img src="/public/assets/images/patterns/question1.png" alt="questions">
+
+            <h3 class="govuk-heading-m" id="pouzitie-stranok-s-otazkami">Použitie stránok s otázkami</h3>
+            <p class="govuk-body">Stránky s otázkami slúžia na získanie informácií od používateľov. V procese nahrádzajú komplexné formuláre a imitujú používateľovi osobnú komunikáciu s danou inštitúciou.</p>
+            <p class="govuk-body">Stránky s otázkami sa používajú pri:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>dotazníkoch,</li>
+                <li>formulároch,</li>
+                <li>kalkuláciach (napr. výpočet materskej dávky)</li>
+            </ul>
+
+            <h3 class="govuk-heading-m" id="nastavenie-stranky-s-otazkami">Nastavenie stránky s otázkami</h3>
+            <p class="govuk-body">Stránky s otázkami musia obsahovať:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>možnosť vrátiť sa na predchádzajúcu stránku (tlačidlo “Späť”),</li>
+                <li>nadpis stránky,</li>
+                <li>tlačidlo “Pokračovať”.</li>
+            </ul>
+
+            <h3 class="govuk-heading-m" id="odkaz-na-predchadzajucu-stranku">Odkaz na predchádzajúcu stránku</h3>
+            <p class="govuk-body">Stránka s otázkami musí vždy obsahovať spätný odkaz na predchádzajúcu stránku.</p>
+            <p class="govuk-body">Niektorí používatelia majú obavy z použitia tlačidla “Späť” vo vyhľadávači, najmä pri vypĺňaní dôležitých údajov. Pridanie odkazu na predchádzajúcu stránku (“Späť”) ich ubezpečí, že sa môžu vrátiť a zmeniť svoje predchádzajúce odpovede.</p>
+            <p class="govuk-body">Odkaz by sa mal nachádzať v hornej časti stránky, pretože používatelia sa najčastejšie vracajú späť hneď po vstupe na stránku. Uistite sa, že odkaz na predchádzajúcu stránku funguje, aj keď nie je JavaScript k dispozícií.</p>
+
+            <h3 class="govuk-heading-m" id="hlavicky-stranok">Názvy stránok</h3>
+            <p class="govuk-body">Ako názvy stránok môžete použiť buď otázku alebo sumarizáciu, čoho sa budú otázky na stránke týkať.</p>
+            <p class="govuk-body">Akonáhle si vyberiete jeden z formátov, používajte ho konzistentne na všetkých stránkach s otázkami.</p>
+            <h4 class="govuk-heading-s">Používanie otázky v titulke stránky</h4>
+            <p class="govuk-body">Ak požadujete iba jednu informáciu na stránke, použite otázku ako titulku stránky - napríklad "Aké je vaše poštové smerovacie číslo?".</p>
+            <img src="/public/assets/images/patterns/question2.png" alt="questions">
+            <h4 class="govuk-heading-s">Používanie sumarizačnej titulky</h4>
+            <p class="govuk-body">Ak potrebujete zoskupiť viac vzájomne súvisiacich otázok na jednej stránke, použite sumarizačnú titulku.</p>
+            <p class="govuk-body">V príklade znázornenom nižšie sa od používateľa požadujú detailné informácie ohľadom pasu a keďže sa jedná o viacero súvisiacich otázok, je vhodné ako hlavičku použiť všeobecnejší nadpis sumarizujúci požadované údaje.</p>
+            <img src="/public/assets/images/patterns/question3.png" alt="questions">
+
+            <h3 class="govuk-heading-m" id="nadpisy-sekcii">Nadpisy sekcií</h3>
+            <p class="govuk-body">Nepoužívajte rovnakú titulku na viacerých stránkach. Titulka stránky sa vždy vzťahuje len na požadované informácie na aktuálnej stránke, nie na vyššiu úroveň, ktorej je stránka súčasťou.</p>
+            <p class="govuk-body">Ak potrebujete zobraziť sekciu vyššej úrovne, použite štýl "sekundárnej hlavičky" - napríklad "Vaše údaje".</p>
+            <img src="/public/assets/images/patterns/question4.png" alt="questions">
+            <h3 class="govuk-heading-m" id="tlacidlo-pokracovat">Tlačidlo “Pokračovať”</h3>
+            <p class="govuk-body">Uistite sa, že tlačidlo "Pokračovať" je:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>označené ako "Pokračovať" alebo “Ďalej”, nie “Nasledujúci” príp. "Ďalší",</li>
+                <li>zarovnané doľava, aby ho užívatelia neprehliadli.</li>
+            </ul>
+
+            <h3 class="govuk-heading-m" id="ako-sa-pytat-pouzivatelov-otazky">Ako sa pýtať používateľov otázky</h3>
+            <p class="govuk-body">Pri kladení otázok by ste mali:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>vysvetliť, prečo používateľom budete klásť otázky,</li>
+                <li>uviesť počet otázok, ktoré bude nutné zodpovedať,</li>
+                <li>zoradiť otázky tak, aby väčšina používateľov dosiahla požadovaný zámer za čo najkratší čas,</li>
+                <li>položiť iba otázky, na ktoré by používatelia určite mali vedieť odpovedať,</li>
+                <li>umožniť používateľom odpovedať na otázku "Neviem" alebo "Nie som si istý", ak sú to pre vás relevantné odpovede,</li>
+                <li>pretransformovať zložité texty (dokumenty) na jednoduché a zrozumiteľné otázky tak, aby používateľ nemusel kvôli zisteniu informácie z dokumentov opustiť stránku.</li>
+            </ul>
+            <p class="govuk-body">Pri kladení otázok si dajte pozor, aby ste od používateľov nežiadali informácie, ktorými už disponujete.</p>
+
+        </div>
+    </div>
+
+  </div>
+{% endblock %}

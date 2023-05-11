@@ -1,0 +1,498 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% set pageName = "Formulárové prvky" %}
+{% block beforeContent %}
+    {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+{% block content %}
+    <div class="govuk-width-container">
+        <span class="govuk-caption-xl">Webové komponenty</span>
+        <h1 class="govuk-heading-xl">{{ pageName }}</h1>
+        <p class="govuk-body-l">Formuláre udržujte čo najjednoduchšie – vždy vyžadujte iba údaje nevyhnutné pre spustenie danej
+            služby.</p>
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h2 class="govuk-heading-s">Obsah:</h2>
+                <ul class="govuk-list">
+                    <li>
+                        <a class="govuk-link" href="#form-optional-fields" title="Povinné a nepovinné polia">Povinné a nepovinné polia</a>
+                    </li>
+                    <li>
+                        <a class="govuk-link" href="#form-labels" title="Názov dátového poľa">Názov dátového poľa</a>
+                    </li>
+                    <li>
+                        <a class="govuk-link" href="#form-fields" title="Formulárové polia">Formulárové polia</a>
+                    </li>
+                    <li>
+                        <a class="govuk-link" href="#form-textarea" title="Textové polia">Textové polia</a>
+                    </li>
+                    <li>
+                        <a class="govuk-link" href="#form-focus-states" title="Zvýraznenie aktívneho poľa">Zvýraznenie aktívneho poľa</a>
+                    </li>
+                    <li>
+                        <a class="govuk-link" href="#form-hint-text" title="Pomocný text">Pomocný text</a>
+                    </li>
+                    <li>
+                        <a class="govuk-link" href="#form-spacing" title="Odsadenie">Odsadenie</a>
+                    </li>
+                    <li>
+                        <a class="govuk-link" href="#form-file-upload" title="Nahratie súboru">Nahratie súboru</a>
+                    </li>
+                    <li>
+                        <a class="govuk-link" href="#form-fieldsets" title="Legendy">Legendy</a>
+                    </li>
+                    <li>
+                        <a class="govuk-link" href="#form-select-boxes" title="Rozbaľovacie zoznamy">Rozbaľovacie zoznamy</a>
+                    </li>
+                    <li>
+                        <a class="govuk-link" href="#form-radio-buttons" title="Prepínače">Prepínače</a>
+                    </li>
+                    <li>
+                        <a class="govuk-link" href="#form-checkboxes" title="Začiarkávacie políčka">Začiarkávacie políčka</a>
+                    </li>
+                    <li>
+                        <a class="govuk-link" href="#form-toggle-content" title="Podmienečne zobrazovaný obsah">Podmienečne zobrazovaný obsah</a>
+                    </li>
+                    <li>
+                        <a class="govuk-link" href="#examples" title="Príklady">Príklady</a>
+                    </li>
+                </ul>
+                <h3 class="govuk-heading-m" id="form-optional-fields">Povinné a nepovinné polia</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>Vyžadujú sa iba tie údaje, ktoré sú bezprostredne potrebné k spusteniu služby.</li>
+                    <li>Pri nepovinných údajoch je potrebné tieto polia označiť ako nepovinné “(nepovinný údaj)”.</li>
+                    <li>Povinné polia sa neoznačujú hviezdičkou.</li>
+                </ul>
+                <h3 class="govuk-heading-m" id="form-labels">Názov dátového poľa (ang. label)</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>Každý formulárový prvok má priradený výstižný názov dátového poľa.</li>
+                    <li>Názvy dátových polí sa skrývajú iba v prípade, že sú vďaka okolitému kontextu nepotrebné.</li>
+                    <li>Názvy dátových polí musia byť zarovnané nad polia, ktoré označujú.</li>
+                    <li>Názvy dátových polí by mali byť krátke, zrozumiteľné a výstižné.</li>
+                    <li>Je potrebné sa vyhýbať dvojbodkám za menovkami.</li>
+                    <li>Názvy dátových polí sa uvádzajú v súlade s účelom použitia dátových prvkov.</li>
+                    <li>Názvy dátových polí musia byť priradené k poliam pomocou atribútu
+                        <code class="code">for</code>
+                    </li>
+                </ul>
+            </div>
+            <div class="govuk-grid-column-full">
+                <div class="example example-error">
+                    {% set exampleComponentHtml %}
+                    {% include "../komponenty/examples/exampleInput1.njk" %}
+                    {% endset %}
+                    {{ exampleComponentHtml | safe }}
+                </div>
+                <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+                <h3 class="govuk-heading-m" id="form-fields">Formulárové polia</h3>
+                <p class="govuk-body">
+                    Veľkosť polí musí zohľadňovať prípustný počet znakov daného dátového poľa (proporčne prispôsobená údajom, ktoré do nich
+                    budú vpisované).
+                </p>
+                <p class="govuk-body">
+                    Je potrebné sa uistiť, že používatelia budú schopní zadať potrebné údaje aj na menších obrazovkách.
+                </p>
+                <p class="govuk-body">
+                    Pri menších veľkostiach obrazoviek je vhodné roztiahnuť polia na celú šírku obrazovky.
+                </p>
+                <p class="govuk-body">
+                    Formátovanie dátových polí je poskytované v súlade s formátom príslušných dátových prvkov.
+                </p>
+                <h3 class="govuk-heading-m" id="form-textarea">Textové polia</h3>
+                <p class="govuk-body">
+                    Výšku textového poľa nastavujeme úmerne k množstvu textu, ktorý sa doň bude vpisovať.
+                </p>
+            </div>
+            <div class="govuk-grid-column-full">
+                <div class="example example-error">
+                    {% set exampleComponentHtml %}
+                    {% include "../komponenty/examples/exampleTextarea1.njk" %}
+                    {% endset %}
+                    {{ exampleComponentHtml | safe }}
+                </div>
+                <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+                <h3 class="govuk-heading-m" id="form-focus-states">Zvýraznenie aktívneho poľa</h3>
+                <p class="govuk-body">
+                    Všetky elementy používajú žltú farbu na zvýraznenie aktívneho poľa. Žltou farbou sa vyplní celé vnútro poľa alebo sa
+                    použije žltý obrys veľkosti 3 pixelov.
+                </p>
+                <p class="govuk-body">
+                    Ukážka: Pre zobrazenie aktívneho stavu kliknite v nasledujúcom príklade na “Meno a priezvisko” alebo do textového poľa.
+                </p>
+            </div>
+            <div class="govuk-grid-column-full">
+                <div class="example example-error">
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds">
+                            {% set exampleComponentHtml %}
+                            {% include "../komponenty/examples/exampleInput2.njk" %}
+                            {% endset %}
+                            {{ exampleComponentHtml | safe }}
+                        </div>
+                        <div class="govuk-grid-column-one-third">
+                            <div class="swatch-wrapper">
+                                <h4 class="govuk-heading-s">Aktívny stav</h4>
+                                <div class="swatch swatch-yellow"></div>
+                                <ul>
+                                    <li>
+                                        <b>yellow</b>
+                                    </li>
+                                    <li>#FFDF0F</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+                <h3 class="govuk-heading-m" id="form-hint-text">Pomocný text</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>Nepoužívajte pomocný text vo vnútri textového poľa, keďže tento text sa stratí, akonáhle používateľ zadá akýkoľvek
+                        znak do textového poľa.</li>
+                    <li>Pomocný text alebo príklad, v akom formáte je potrebné zadať údaje, umiestnite nad konkrétnym elementom vo formulári
+                        tak, aby mohli byť zobrazené po celú dobu zadávania údajov.</li>
+                    <li>V pomocnom texte musí byť jednoznačne uvedené, čo má používateľ v danom prvku vyplniť alebo zvoliť a ako s ním má
+                        používateľ zaobchádzať.</li>
+                    <li>Overte si, že čítačky obrazoviek dokážu pomocný text správne prečítať.</li>
+                </ul>
+            </div>
+            <div class="govuk-grid-column-full">
+                <div class="example example-error">
+                    {% set exampleComponentHtml %}
+                    {% include "../komponenty/examples/exampleInput3.njk" %}
+                    {% endset %}
+                    {{ exampleComponentHtml | safe }}
+                </div>
+                <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+                <h3 class="govuk-heading-m" id="form-spacing">Odsadenie elementov</h3>
+                <p class="govuk-body">
+                    Uistite sa, že medzi jednotlivými elementami vo formulári je dostatok voľného miesta.
+                </p>
+            </div>
+            <div class="govuk-grid-column-full">
+                <div class="example example-error">
+                    {% set exampleComponentHtml %}
+                    {% include "../komponenty/examples/exampleInput4.njk" %}
+                    {% endset %}
+                    {{ exampleComponentHtml | safe }}
+                </div>
+                <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+                <h3 class="govuk-heading-m" id="form-file-upload">Nahratie súboru</h3>
+                <p class="govuk-body">Pre nahratie súboru použite ovládací prvok, ktorý umožňuje používateľovi vybrať súbor.</p>
+            </div>
+            <div class="govuk-grid-column-full">
+                <div class="example example-error">
+                    {% set exampleComponentHtml %}
+                    {% include "../komponenty/examples/exampleFileInput.njk" %}
+                    {% endset %}
+                    {{ exampleComponentHtml | safe }}
+                </div>
+                <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+                <p class="govuk-body">
+                    Používajte natívny input element (načrtnutý v ukážke kódu vyššie) pomocou
+                    <code class="code">type="file"</code>
+                    a to z nasledovných dôvodov:
+                </p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>na ovládací prvok sa dostaneme aj pri prechádzaní stránky len za pomoci tabulátora,</li>
+                    <li>funguje ovládanie pomocou klávesnice,</li>
+                    <li>funguje ovládanie pomocou asistenčných technológií,</li>
+                    <li>funguje aj pri vypnutom javascripte,</li>
+                    <li>môže byť rozšírený aj o pokročilú funkcionalitu cez javascript, pričom musí zostať zachovaná natívna funkcionalita a
+                        štandardy prístupnosti.</li>
+                </ul>
+                <p class="govuk-body">
+                    Vlastné riešenia na nahratie súboru musia spĺňať vyššie uvedené kritériá.
+                </p>
+                <h3 class="govuk-heading-m" id="form-fieldsets">Legendy a skupiny polí (ang. fieldset)</h3>
+                <p class="govuk-body">
+                    Skupiny polí (ang. fieldset) používame na zoskupenie súvisiacich prvkov. Prvým z elementov vo fieldsete musí byť
+                    legenda, ktorá popisuje celú skupinu prvkov.
+                </p>
+                <p class="govuk-body">
+                    Celý text, ktorý je dôležitý pri vypĺňaní formulára a nie je možné ho umiestniť ako pomocný text, by sa mal nachádzať v
+                    legende (viď
+                    <a class="govuk-link" href="#form-checkboxes" title="príklad">príklad</a>
+                    nižšie – začiarkavacie políčka). Legenda by taktiež nemala byť, kvôli asistenčným technológiam, príliš dlhá.
+                </p>
+                <h3 class="govuk-heading-m" id="form-select-boxes">Rozbaľovacie zoznamy (ang. drop-down lists)</h3>
+                <p class="govuk-body">
+                    Je potrebné sa vyhýbať používaniu rozbaľovacích zoznamov (drop-down lists). Namiesto nich je lepšie použiť prepínače
+                    (radio button) alebo začiarkavacie políčka (checkbox).
+                </p>
+                <p class="govuk-body">
+                    Pri rozbaľovacích zoznamoch používajte natívne prvky pretože:
+                </p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>na ovládací prvok sa dostaneme aj pri prechádzaní stránky len za pomoci tabulátora,</li>
+                    <li>funguje ovládanie pomocou klávesnice,</li>
+                    <li>funguje ovládanie pomocou asistenčných technológií,</li>
+                    <li>funguje aj pri vypnutom javascripte,</li>
+                    <li>môžu byť rozšírené aj o pokročilú funkcionalitu cez javascript, pričom musí zostať zachovaná natívna funkcionalita a
+                        štandardy prístupnosti.</li>
+                </ul>
+            </div>
+            <div class="govuk-grid-column-full">
+                <div class="example example-error">
+                    {% set exampleComponentHtml %}
+                    {% include "../komponenty/examples/exampleSelect.njk" %}
+                    {% endset %}
+                    {{ exampleComponentHtml | safe }}
+                </div>
+                <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+                <h3 class="govuk-heading-m" id="form-radio-buttons">Prepínače (ang. radio buttons)</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>Využívajú sa v prípade, ak si má používateľ vybrať jednu z možností.</li>
+                    <li>Pre viac ako dve možnosti sa prepínače zarovnávajú pod seba.</li>
+                    <li>Prepínače by mali byť dostatočne veľké, aby sa dali ľahko použiť na PC (myš) ale aj dotykových zariadeniach (mobil,
+                        tablet).</li>
+                </ul>
+                <p class="govuk-body">
+                    Pri prepínačoch používajte natívne prvky pretože:
+                </p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>na ovládací prvok sa dostaneme aj pri prechádzaní stránky len za pomoci tabulátora,</li>
+                    <li>funguje ovládanie pomocou klávesnice,</li>
+                    <li>funguje ovládanie pomocou asistenčných technológií,</li>
+                    <li>funguje aj pri vypnutom javascripte,</li>
+                    <li>môžu byť rozšírené aj o pokročilú funkcionalitu cez javascript, pričom musí zostať zachovaná natívna funkcionalita a
+                        štandardy prístupnosti.</li>
+                </ul>
+                <h4 class="govuk-heading-s">Prepínače umiestnené vedľa seba</h4>
+            </div>
+            <div class="govuk-grid-column-full">
+                <div class="example example-error">
+                    {% set exampleComponentHtml %}
+                    {% include "../komponenty/examples/exampleRadio.njk" %}
+                    {% endset %}
+                    {{ exampleComponentHtml | safe }}
+                </div>
+                <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+            </div>
+            <div class="govuk-grid-column-full">
+                <h4 class="govuk-heading-s">Prepínače umiestnené pod sebou</h4>
+                <div class="example example-error">
+                    {% set exampleComponentHtml %}
+                    {% include "../komponenty/examples/exampleRadio1.njk" %}
+                    {% endset %}
+                    {{ exampleComponentHtml | safe }}
+                </div>
+                <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+            </div>
+            <div class="govuk-grid-column-full">
+                <h4 class="govuk-heading-s" id="form-radio-buttons-disabled">Neaktívny prepínač</h4>
+                <div class="example example-error">
+                    {% set exampleComponentHtml %}
+                    {% include "../komponenty/examples/exampleRadio2.njk" %}
+                    {% endset %}
+                    {{ exampleComponentHtml | safe }}
+                </div>
+                <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+                <h3 class="govuk-heading-m" id="form-checkboxes">Začiarkavacie políčka (ang. checkboxes)</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>Používa sa na výber viacerých možností zo zoznamu, alebo na zapnutie/vypnutie.</li>
+                    <li>Vždy je potrebné používateľovi zdôrazniť, či si môže vybrať jednu alebo viacero možností.</li>
+                    <li>Ak sa jedná o súhlas alebo potvrdenie, je dôležité nechať začiarkávacie políčka v predvolenom stave prázdne.</li>
+                </ul>
+                <div class="text">
+                    <p class="govuk-body">
+                        Pri začiarkávacích políčkach používajte natívne prvky pretože:
+                    </p>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>na ovládací prvok sa dostaneme aj pri prechádzaní stránky len za pomoci tabulátora,</li>
+                        <li>funguje ovládanie pomocou klávesnice,</li>
+                        <li>funguje ovládanie pomocou asistenčných technológií,</li>
+                        <li>fungujú aj pri vypnutom javascripte,</li>
+                        <li>môžu byť rozšírené aj o pokročilú funkcionalitu cez javascript, pričom musí zostať zachovaná natívna funkcionalita a
+                            štandardy prístupnosti.</li>
+                    </ul>
+                </div>
+                <h4 class="govuk-heading-s">Začiarkavacie políčka umiestnené pod sebou</h4>
+            </div>
+            <div class="govuk-grid-column-full">
+                <div class="example example-error">
+                    {% set exampleComponentHtml %}
+                    {% include "../komponenty/examples/exampleCheckbox.njk" %}
+                    {% endset %}
+                    {{ exampleComponentHtml | safe }}
+                </div>
+                <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+            </div>
+            <div class="govuk-grid-column-full">
+                <h4 class="govuk-heading-s" id="form-checkboxes-disabled">Neaktívne začiarkavacie políčko</h4>
+                <div class="example example-error">
+                    {% set exampleComponentHtml %}
+                    {% include "../komponenty/examples/exampleCheckbox1.njk" %}
+                    {% endset %}
+                    {{ exampleComponentHtml | safe }}
+                </div>
+                <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+                <p class="govuk-body">Automaticky predvyplníme (začiarkneme) políčka iba vtedy, ak je to dôležité z hľadiska
+                    používateľa.</p>
+            </div>
+            <div class="govuk-grid-column-full">
+                <div class="example example-error">
+                    {% set exampleComponentHtml %}
+                    {% include "../komponenty/examples/exampleCheckbox2.njk" %}
+                    {% endset %}
+                    {{ exampleComponentHtml | safe }}
+                </div>
+                <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+                <h3 class="govuk-heading-m" id="form-toggle-content">Podmienečné odhaľovanie obsahu</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>Dodatočné otázky, ktoré zobrazujeme na základe predchádzajúceho kontextu.</li>
+                    <li>Na zvýraznenie dodatočnej otázky používame vodiacu linku zarovnanú naľavo.</li>
+                </ul>
+                <h4 class="govuk-heading-s" id="form-toggle-content-radios">Prepínače</h4>
+                <p class="govuk-body">Vyberte jednu z možností uvedených v nasledujúcom príklade:</p>
+            </div>
+            <div class="govuk-grid-column-full">
+                <div class="example example-error">
+                    {% set exampleComponentHtml %}
+                    {% include "../komponenty/examples/exampleRadio3.njk" %}
+                    {% endset %}
+                    {{ exampleComponentHtml | safe }}
+                </div>
+                <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+                <p class="govuk-body">
+                    Tak ako je uvedené v časti kódu vyššie, pri každom názve dátového poľa sa nachádza atribút
+                    <code class="code">data-target=""</code>
+                    (ang. label), keďže pri každej z možností sa zobrazí extra pole.
+                </p>
+                <p class="govuk-body">
+                    Šedá vodiaca linka na ľavej strane vizuálne spája obsah s otázkou umiestnenou vyššie.
+                </p>
+            </div>
+            <div class="govuk-grid-column-full">
+                <div class="example example-error">
+                    {% set exampleComponentHtml %}
+                    {% include "../komponenty/examples/exampleRadio4.njk" %}
+                    {% endset %}
+                    {{ exampleComponentHtml | safe }}
+                </div>
+                <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+                <h4 class="govuk-heading-s" id="form-toggle-content-checkboxes">Začiarkavacie políčka</h4>
+                <p class="govuk-body">Ukážka: Pre ukážku kliknite v nasledujúcom príklade na "Občan inej národnosti".</p>
+            </div>
+            <div class="govuk-grid-column-full">
+                <div class="example example-error">
+                    {% set exampleComponentHtml %}
+                    {% include "../komponenty/examples/exampleCheckbox3.njk" %}
+                    {% endset %}
+                    {{ exampleComponentHtml | safe }}
+                </div>
+                <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+                <h3 class="govuk-heading-m" id="examples">Príklady</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>
+                        <a class="govuk-link" href="/examples/form-elements/" title="Formulárové prvky">Formulárové prvky</a>
+                    </li>
+                    <li>
+                        <a class="govuk-link" href="/examples/form-controls-states" title="Prepínače a začiarkavacie políčka">Prepínače a
+                            začiarkavacie políčka</a>
+                    </li>
+                    <li>
+                        <a class="govuk-link" href="/examples/form-alignment" title="Zarovnanie formuláru">Zarovnanie formuláru</a>
+                    </li>
+                    <li>
+                        <a class="govuk-link" href="/examples/small-form-controls" title="Malé ovládacie prvky">Malé ovládacie prvky</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

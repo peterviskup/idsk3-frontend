@@ -1,0 +1,122 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Štruktúra formulárov" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Vzory</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Tento návod opisuje postup, ako správne usporiadať online formuláre.</p>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-s">Obsah:</h2>
+            <ul class="govuk-list">
+                <li><a class="govuk-link" href="#nadizajnujte" title="Nedizajnujte online formuláre rovnako ako papierové formuláre">Nedizajnujte online formuláre rovnako ako papierové formuláre</a></li>
+                <li><a class="govuk-link" href="#pytajte" title="Pri každej otázke musíte vedieť, prečo sa ju pýtate">Pri každej otázke musíte vedieť, prečo sa ju pýtate</a></li>
+                <li><a class="govuk-link" href="#navrhnite" title="Najprv navrhnite najčastejšie scenáre">Najprv navrhnite najčastejšie scenáre</a></li>
+                <li><a class="govuk-link" href="#zacnite" title="Začnite s jednou vecou na stránku">Začnite s jednou vecou na stránku</a></li>
+                <li><a class="govuk-link" href="#pomoc" title="Štruktúrovanie formulára pomáha používateľom">Štruktúrovanie formulára pomáha používateľom</a></li>
+                <li><a class="govuk-link" href="#automaticke" title="Automatické ukladanie">Automatické ukladanie</a></li>
+            </ul>
+
+            <h3 class="govuk-heading-m" id="pytajte"> Nedizajnujte online formuláre rovnako ako papierové formuláre</h3>
+            <p class="govuk-body">Skôr než začnete, vytvorte si zoznam všetkých informácií, ktoré od používateľov potrebujete.</p>
+
+            <p class="govuk-body">Otázky sa pýtajte iba vtedy, ak viete:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>že dané informácie sú nevyhnutné pre poskytnutie služby,</li>
+                <li>prečo potrebujete tieto informácie,</li>
+                <li>ako s nimi naložíte,</li>
+                <li>ktorí používatelia vám musia poskytnúť informácie,</li>
+                <li>ako skontrolujete, či sú získané informácie správne,</li>
+                <li>ako udržať získané informácie aktuálne a v bezpečí.</li>
+            </ul>
+
+            <p class="govuk-body">
+                Tento zoznam sa nazýva “kontrola otázok” a hovorí o tom, ako so získanými informáciami naložíte.
+            </p>
+            <p class="govuk-body">
+                Kontrola otázok vás núti, aby ste odpovedali na otázku, prečo od používateľov žiadate dané informácie. Jedná sa o spôsob, vďaka ktorému zistíte, ktoré z otázok nie sú potrebné pre poskytnutie vašej služby.
+            </p>
+
+            <h3 class="govuk-heading-m" id="navrhnite">Najprv navrhnite najčastejšie scenáre</h3>
+            <p class="govuk-body">Ak už máte kontrolu otázok dokončenú, môžete začať rozhodovať, v akom poradí sa budete používateľov otázky pýtať.</p>
+
+            <p class="govuk-body">Začnite s otázkami, na základe ktorých používatelia zistia, či sú oprávnení žiadať o danú službu, aby zbytočne nestrácali čas.</p>
+
+            <p class="govuk-body">Používajte vetviace otázky, aby používatelia odpovedali len na otázky, ktoré sú pre nich relevantné. Uistite sa, že poznáte jednotlivé skupiny používateľov vašej služby. Musíte sa rozhodnúť, ktorá skupina používateľov je majoritná a následne navrhnite formulár tak, aby ho táto skupina používateľov vedela čo najjednoduchšie vyplniť.</p>
+
+            <h3 class="govuk-heading-m" id="zacnite">Začnite s jednou témou na stránku</h3>
+            <p class="govuk-body">Ak sa vaša služba používa iba zriedkavo, je možné, že používatelia bez digitálnych zručností budú mať problém s vyplnením komplikovaných formulárov.</p>
+
+            <p class="govuk-body">Rozdeľte formulár na viacero stránok tak, aby sa každá stránka obsahovo týkala iba jednej témy, napríklad:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>jedna informácia, ktorú komunikujete používateľovi,</li>
+                <li>jedno rozhodnutie, ktoré musí používateľ spraviť,</li>
+                <li>jedna otázka, ktorú musí používateľ zodpovedať.</li>
+            </ul>
+
+            <p class="govuk-body">Pri používateľskom výskume zistíte, kedy a ktoré stránky môžete zlúčiť.
+            </p>
+            <p class="govuk-body">
+                Zobrazenie iba jednej informácie na stránke pomáha používateľom:
+            </p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>pochopiť, čo od nich žiadate,</li>
+                <li>zamerať sa na konkrétnu otázku a jej odpoveď,</li>
+                <li>zorientovať sa v zložitom procese,</li>
+                <li>používať službu aj na mobilnom zariadení,</li>
+                <li>ľahko sa zorientovať po zobrazení chyby pri vypĺňaní formulára.</li>
+            </ul>
+
+            <p class="govuk-body">Rovnako pomáha zobrazenie jednej informácie na stránke aj vám:
+            </p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>automaticky ukladať odpovede používateľa počas vypĺňania formulára,</li>
+                <li>analyzovať odpovede pomocou analytických nástrojov,</li>
+                <li>zvládnuť rozvetvené otázky a cykly.</li>
+            </ul>
+            <p class="govuk-body">V prípade väčšieho počtu nepodmienených otázok sa odporúča umožniť preskočiť konkrétnu časť otázok, napríklad jednej oblasti a vrátiť sa k nim neskôr.
+            </p>
+
+            <h3 class="govuk-heading-m" id="pomoc"> Štruktúrovanie formulára pomáha používateľom</h3>
+
+            <p class="govuk-body">Nie vždy je vhodné použiť len jedno textové pole formulára ako odpoveď na otázku. Napríklad pre vpísanie dátumu narodenia je najlepšie použiť tri textové polia.</p>
+
+            <p class="govuk-body">Pre názvy stránok môžete použiť buď otázku, alebo len nadpis. Napríklad: "Aký je dátum narodenia?" alebo len "Dátum narodenia".</p>
+
+            <p class="govuk-body">Nepoužívajte otázky a súčasne aj nadpisy. Je dôležité, aby ste používali konzistentne iba jednu formu. Pomôžete tak používateľom dostať sa do rytmu odpovedí. To im umožňuje zamerať sa na obsah otázok a nie na ich prezentáciu.</p>
+
+            <h3 class="govuk-heading-m" id="automaticke"> Automatické ukladanie</h3>
+
+            <p class="govuk-body">Odporúčame, aby všetky formuláre implementovali funkciu automatického ukladania. Používateľovi bude rozpracovaný formulár uložený do konceptov v elektronickej schránke.</p>
+
+            <p class="govuk-body">Používateľovi indikujeme ukladanie ako aj uloženie konceptu stavovým riadkom, ktorý je umiestnený pod hlavným nadpisom.</p>
+
+            <h4 class="govuk-heading-s">Ukážka 1</h4>
+            <img src="/public/assets/images/patterns/ukazka1.png" alt="Ukážka">
+            <h4 class="govuk-heading-s">Ukážka 2</h4>
+            <img src="/public/assets/images/patterns/ukazka2.png" alt="Ukážka">
+            <h4 class="govuk-heading-s">Ukážka 3</h4>
+            <img src="/public/assets/images/patterns/ukazka3.png" alt="Ukážka">
+
+        </div>
+    </div>
+
+  </div>
+{% endblock %}

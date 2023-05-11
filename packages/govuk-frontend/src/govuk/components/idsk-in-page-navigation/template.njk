@@ -1,0 +1,24 @@
+{% set accordionOpen = "Akordeón Úvod je otvorený" %}
+{% set accordionClose = "Akordeón Úvod je zatvorený" %}
+
+<div
+  class="idsk-in-page-navigation{%- if params.classes %} {{ params.classes }}{% endif %} govuk-grid-column-one-quarter"
+  {% for attribute, value in params.attributes %} {{attribute}}="{{value}}"{% endfor %}
+  data-module="idsk-in-page-navigation"
+>
+  <div class="idsk-in-page-navigation-wrapper">
+    <div class="idsk-in-page-navigation__title">Obsah</div>
+    <div class="idsk-in-page-navigation__link-panel">
+      <button aria-expanded="false" data-text-for-show="{{ accordionOpen }}" data-text-for-hide="{{ accordionClose }}" aria-label="{{ accordionClose }}" class="idsk-in-page-navigation__link-panel-button">{{ params.items[0].text }}</button>
+    </div>
+    <ul class="idsk-in-page-navigation__list">
+    {% for item in params.items %}
+      <li class="idsk-in-page-navigation__list-item{{' idsk-in-page-navigation__list-item--active' if item.active }}">
+        <a class="idsk-in-page-navigation__link" href="{{ item.link }}"{% for attribute, value in item.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+          <span class="idsk-in-page-navigation__link-number">{{ loop.index }}.</span> <span class="idsk-in-page-navigation__link-title">{{ item.text }}</span>
+        </a>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+</div>

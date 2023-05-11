@@ -1,0 +1,362 @@
+[
+    {
+        "name": "headerType",
+        "type": "string",
+        "required": true,
+        "description": "Type of header, options(website, projectWebsite, electronicService)"
+    },
+    {
+        "name": "classes",
+        "type": "string",
+        "required": false,
+        "description": "Classes to add to the header container."
+    },
+    {
+        "name": "attributes",
+        "type": "object",
+        "required": false,
+        "description": "HTML attributes (for example data attributes) to add to the header container."
+    },
+    {
+        "name": "assetsPath",
+        "type": "string",
+        "required": false,
+        "description": "The public path for the assets folder. If not provided it defaults to /public/assets/images/header-web"
+    },
+    {
+        "name": "brand",
+        "type": "object",
+        "required": false,
+        "description": "BrandBar object including language selector. It is voluntary for website, projectWebsite. For electronicService it is MANDATORY!!!",
+        "params": [
+            {
+                "name": "lightBackground",
+                "type": "bolean",
+                "required": false,
+                "description": "Bolean value for background color"
+            },
+            {
+                "name": "gestor",
+                "type": "object",
+                "required": false,
+                "description": null,
+                "params": [
+                    {
+                        "name": "nationalEmblem",
+                        "type": "bolean",
+                        "required": false,
+                        "description": "Allows you to use national Emblem"
+                    },
+                    {
+                        "name": "gestorLink",
+                        "type": "object",
+                        "required": false,
+                        "description": "Link to gestor page",
+                        "params": [
+                            {
+                                "name": "text",
+                                "type": "string",
+                                "required": false,
+                                "description": "Text of link"
+                            },
+                            {
+                                "name": "mobileText",
+                                "type": "string",
+                                "required": false,
+                                "description": "Text of link for mobile version"
+                            },
+                            {
+                                "name": "hrefLink",
+                                "type": "string",
+                                "required": true,
+                                "description": "Link for href element"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "languages",
+                "type": "array",
+                "required": true,
+                "description": "Other language options",
+                "params": [
+                    {
+                        "name": "text",
+                        "type": "string",
+                        "required": true,
+                        "description": "Name of language"
+                    },
+                    {
+                        "name": "selected",
+                        "type": "boolean",
+                        "required": true,
+                        "description": "If language is selected"
+                    },
+                    {
+                        "name": "link",
+                        "type": "string",
+                        "required": false,
+                        "description": "link to english mutation"
+                    },
+                    {
+                        "name": "language",
+                        "type": "string",
+                        "required": false,
+                        "description": "Set the language"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "main",
+        "type": "object",
+        "required": true,
+        "description": "MainSection object inlucing logo, title, search. It is MANDATORY for all types of pages.",
+        "params": [
+            {
+                "name": "showLogo",
+                "type": "boolean",
+                "required": false,
+                "description": "Allows you to use logo."
+            },
+            {
+                "name": "logoSrc",
+                "type": "string",
+                "required": false,
+                "description": "Allows you to overwrite the idsk.sk logo"
+            },
+            {
+                "name": "logoAlt",
+                "type": "string",
+                "required": false,
+                "description": "Allows you to use alt text for logo"
+            },
+            {
+                "name": "title",
+                "type": "string",
+                "required": false,
+                "description": "Header title text"
+            },
+            {
+                "name": "menuBtnText",
+                "type": "string",
+                "required": false,
+                "description": "Text for mobile menu button"
+            },
+            {
+                "name": "loginButton",
+                "type": "object",
+                "required": false,
+                "description": "Allows you to use login flow",
+                "params": [
+                    {
+                        "name": "text",
+                        "type": "string",
+                        "required": false,
+                        "description": "Login button text"
+                    },
+                    {
+                        "name": "classes",
+                        "type": "string",
+                        "required": false,
+                        "description": "Here you can add your own classes to login button"
+                    },
+                    {
+                        "name": "loggedIn",
+                        "type": "object",
+                        "required": false,
+                        "description": "User is loggedIn",
+                        "params": [
+                            {
+                                "name": "profileImg",
+                                "type": "string",
+                                "required": false,
+                                "description": "Src for profile image"
+                            },
+                            {
+                                "name": "userName",
+                                "type": "string",
+                                "required": true,
+                                "description": "User name"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "profileButton",
+                "type": "object",
+                "required": false,
+                "description": "Allows you to edit prifile button texts and classes",
+                "params": [
+                    {
+                        "name": "text",
+                        "type": "string",
+                        "required": false,
+                        "description": "Second button text"
+                    },
+                    {
+                        "name": "classes",
+                        "type": "string",
+                        "required": false,
+                        "description": "Classes of second button"
+                    }
+                ]
+            },
+            {
+                "name": "logoutButton",
+                "type": "object",
+                "required": false,
+                "description": "Allows you to edit logout button texts and classes",
+                "params": [
+                    {
+                        "name": "text",
+                        "type": "string",
+                        "required": false,
+                        "description": "Second button text"
+                    },
+                    {
+                        "name": "classes",
+                        "type": "string",
+                        "required": false,
+                        "description": "Classes of second button"
+                    }
+                ]
+            },
+            {
+                "name": "secondaryButton",
+                "type": "object",
+                "required": false,
+                "description": "Allows you to use second button",
+                "params": [
+                    {
+                        "name": "text",
+                        "type": "string",
+                        "required": false,
+                        "description": "Second button text"
+                    },
+                    {
+                        "name": "classes",
+                        "type": "string",
+                        "required": false,
+                        "description": "Classes of second button"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "search",
+        "type": "object",
+        "required": false,
+        "description": "Allows you to use search bar if is needed",
+        "params": [
+            {
+                "name": "placeHolder",
+                "type": "string",
+                "required": false,
+                "description": "Place holder text"
+            },
+            {
+                "name": "button",
+                "type": "string",
+                "required": true,
+                "description": "Search button text for screen readers"
+            }
+        ]
+    },
+    {
+        "name": "navBar",
+        "type": "object",
+        "required": false,
+        "description": "NavBar object inlucing menu items. Maximum main menu items are 5 items and each main item can contain 12 submenu items. It is volutary for website and projectWebsite. Can not be used with electronicService.",
+        "params": [
+            {
+                "name": "darkBackground",
+                "type": "bolean",
+                "required": false,
+                "description": "Bolean value for dark background"
+            },
+            {
+                "name": "classes",
+                "type": "string",
+                "required": false,
+                "description": "NavBar classes"
+            },
+            {
+                "name": "navigation",
+                "type": "array",
+                "required": false,
+                "description": "list of navigation items",
+                "params": [
+                    {
+                        "name": "text",
+                        "type": "string",
+                        "required": true,
+                        "description": "Text of the navigation item"
+                    },
+                    {
+                        "name": "link",
+                        "type": "string",
+                        "required": true,
+                        "description": "Url of the navigation item anchor. Both `href` and `text` attributes for navigation items need to be provided to create an item."
+                    },
+                    {
+                        "name": "attributes",
+                        "type": "object",
+                        "required": false,
+                        "description": "HTML attributes (for example data attributes) to add to the navigation item anchor."
+                    },
+                    {
+                        "name": "submenu",
+                        "type": "array",
+                        "required": false,
+                        "description": "array of submenu items",
+                        "params": [
+                            {
+                                "name": "text",
+                                "type": "string",
+                                "required": true,
+                                "description": "Text of the submenu item"
+                            },
+                            {
+                                "name": "link",
+                                "type": "string",
+                                "required": true,
+                                "description": "Url of the submenu item anchor"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "banner",
+        "type": "object",
+        "required": false,
+        "description": "Banner object which contain text and info if it is warning banner. It is voluntary for all types of pages.",
+        "params": [
+            {
+                "name": "text",
+                "type": "string",
+                "required": true,
+                "description": "Text of banner"
+            },
+            {
+                "name": "warning",
+                "type": "boolean",
+                "required": false,
+                "description": "Bolean value if its warning banner"
+            },
+            {
+                "name": "closeBtn",
+                "type": "boolean",
+                "required": false,
+                "description": "Boolean value for close banner button"
+            }
+        ]
+    }
+]

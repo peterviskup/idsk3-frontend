@@ -1,0 +1,417 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Typografia" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Webové komponenty</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Odporúčame používať pre všetky stránky jednotne len písmo uvedené v Jednotnom dizajn manuáli elektronických služieb. Zároveň odporúčame štruktúrovať textový obsah tak, aby bol ľahko a rýchlo čitateľný.</p>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-s">Obsah:</h2>
+            <ul class="govuk-list">
+                <li><a class="govuk-link" href="#pismo" title="Písmo">Písmo</a></li>
+                <li><a class="govuk-link" href="#nadpisy" title="Nadpisy">Nadpisy</a></li>
+                <li><a class="govuk-link" href="#uvodny-odsek" title="Úvodný odsek">Úvodný odsek</a></li>
+                <li><a class="govuk-link" href="#hlavny-text" title="Hlavný text">Hlavný text</a></li>
+                <li><a class="govuk-link" href="#textove-odkazy" title="Textové odkazy">Textové odkazy</a></li>
+                <li><a class="govuk-link" href="#zoznamy" title="Zoznamy">Zoznamy</a></li>
+                <li><a class="govuk-link" href="#vsadeny-text" title="Vsadený text">Vsadený text</a></li>
+                <li><a class="govuk-link" href="#pravny-text" title="Právny text">Právny text</a></li>
+                <li><a class="govuk-link" href="#skryty-text" title="Skrytý text (postupné zverejňovanie)">Skrytý text (postupné zverejňovanie)</a></li>
+            </ul>
+
+            <h3 class="govuk-heading-m" id="pismo">Písmo</h3>
+            <p class="govuk-body">Odporúčame používať písmo <strong>Source Sans Pro</strong>. Tento typ písma je voľne dostupný, môžete si ho stiahnuť napríklad v databáze <a class="govuk-link" href="https://fonts.google.com/specimen/Source+Sans+Pro" title="Google Fonts">Google Fonts</a>.</p>
+            <p class="govuk-body">Pre prípad nedostupnosti typu písma, ponúknite používateľovi typograficky podobnú alternatívu skupiny bezpätkového písma. Príklad: “font-family: Source Sans Pro, sans-serif;”.</p>
+            <p class="govuk-body">Pri tvorbe textov dodržujte pravidlá slovenského pravopisu a používania interpunkcie.</p>
+
+            <h3 class="govuk-heading-m" id="nadpisy">Nadpisy</h3>
+            <ul class="govuk-list govuk-list-bullet">
+                <li>V nadpisoch používajte veľké písmeno len na začiatku prvého slova a podľa pravidiel slovenského pravopisu. Nepoužívajte tzv. kapitálky na celé nadpisy.</li>
+                <li>Dôsledne používajte nadpisy pre vytvorenie správnej a zrozumiteľnej hierarchie.</li>
+            </ul>
+        </div>
+
+        <div class="govuk-grid-column-full">
+            <div class="example example-error">
+            {% set exampleComponentHtml %}
+<h1 class="govuk-heading-xl">48 px Tučný nadpis</h1>
+
+<h2 class="govuk-heading-l">36 px Tučný nadpis</h2>
+
+<h3 class="govuk-heading-m">24 px Tučný nadpis</h3>
+
+<h4 class="govuk-heading-s">19 px Tučný nadpis</h4>
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+            </div>
+            <pre class="app-code">
+              <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                {{- exampleComponentHtml | highlight("html") | safe -}}
+              </code>
+            </pre>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            <h3 class="govuk-heading-m" id="uvodny-odsek">Úvodný odsek</h3>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Na úvodný odsek odporúčame používať veľkosť 24 pixelov. Veľkosť písma uvádzajte v relatívnych jednotkách.</li>
+                <li>Na každej strane by mal byť maximálne jeden úvodný odsek.</li>
+            </ul>
+        </div>
+
+        <div class="govuk-grid-column-full">
+            <div class="example example-error">
+            {% set exampleComponentHtml %}
+<p class="govuk-body-l">
+  24 px úvodný odsek, ktorý by mal obsahovať podstatné informácie. Text by mal byť krátky a zrozumiteľný.
+</p>
+<p class="govuk-body">
+  19 px odsek s hlavným textom, v ktorom si používateľ nájde všetky potrebné informácie v zrozumiteľnej podobe.
+</p>
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+            </div>
+            <pre class="app-code">
+              <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                {{- exampleComponentHtml | highlight("html") | safe -}}
+              </code>
+            </pre>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            <h3 class="govuk-heading-m" id="hlavny-text">Hlavný text</h3>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Vyhnite sa nadmernému používaniu tučného písma a používaniu šikmého rezu písma (kurzíva).</li>
+                <li>Veľkosť hlavného textu je 19 pixelov, pre menšie obrazovky 16 pixelov.</li>
+                <li>Veľkosť písma sa povinne definuje v relatívnych jednotkách, pomocou hodnôt xx-small,
+                x-small, small, medium, large, x-large a xx-large alebo pomocou percent, hodnôt smaller, larger a jednotiek em a ex.
+                Veľkosť písma sa nedefinuje prostredníctvom jednotiek pt, pc, in, cm, mm a px. </li>
+                <li>Uistite sa, že riadky textu nepresahujú 75 znakov, keďže viac znakov spraví text menej čitateľným.</li>
+            </ul>
+        </div>
+
+        <div class="govuk-grid-column-full">
+            <div class="example example-error">
+            {% set exampleComponentHtml %}
+<p class="govuk-body">
+  19 px odsek hlavného textu. Napísaný text by mal byť zrozumiteľný, jednoznačný a krátky.
+</p>
+
+<p class="govuk-body-s">
+  16 px odsek s podporným textom. Použite vtedy, ak potrebujete niečo dodatočne vysvetliť. Nepoužívajte na hlavný text.
+</p>
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+            </div>
+            <pre class="app-code">
+              <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                {{- exampleComponentHtml | highlight("html") | safe -}}
+              </code>
+            </pre>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            <h3 class="govuk-heading-m" id="textove-odkazy">Textové odkazy</h3>
+            <p class="govuk-body">Odkazy v hlavnom texte by mali byť zvýraznené. Ideálne:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>modrou farbou textu,</li>
+              <li>podčiarknuté,</li>
+              <li>inak odlíšené (nielen farebne).</li>
+            </ul>
+            <p class="govuk-body">Farby pre odkazy nájdete vo <a class="govuk-link" href="/komponenty/farby" target="_blank" title="farebnej palete">farebnej palete</a>.</p>
+            <p class="govuk-body">Samostatne stojace odkazy (bez okolitého textu) by sa nemali končiť bodkou.</p>
+            <p class="govuk-body">Text každého odkazu by mal byť stručný a výstižný. Malo by byť z neho zrejmé, čo obsahuje, bez ohľadu na ostatný okolitý text. Pre jednoznačnú identifikáciu odkazu použite atribút <code class="govuk-!-font-size-16  language-markup">„title“</code> prvku <code class="govuk-!-font-size-16  language-markup">&lt;a></code>. Nepoužívajte odkazy v tvare „kliknite tu“, „sem“, „celý text článku“ bez toho, aby bol text odkazu doplnený atribútom <code class="govuk-!-font-size-16  language-markup">„title“</code> prvku <code class="govuk-!-font-size-16  language-markup">&lt;a></code> s doplňujúcou informáciou.</p>
+
+            <p class="govuk-body">Na stránke uvádzajte len tie telefónne čísla, o ktorých s istotou viete, že ich aktivovaním je možné priamo na dané číslo telefonovať (napr. prostredníctvom mobilného telefónu).</p>
+        </div>
+
+        <div class="govuk-grid-column-full">
+            <div class="example example-error govuk-body">
+            {% set exampleComponentHtml %}
+<p>
+  <a class="govuk-link" href="#" title="19 px odkaz bez obklopujúceho textu">19 px odkaz bez obklopujúceho textu</a>
+</p>
+
+<p>
+  <a class="govuk-link" href="#" title="19 px odkaz v hlavnom texte">19 px odkaz v hlavnom texte</a>. Za textovou linkou pokračuje textový odsek.
+</p>
+
+<a class="govuk-link link-back" href="#" title="Späť">Späť</a>
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+            </div>
+            <pre class="app-code">
+              <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                {{- exampleComponentHtml | highlight("html") | safe -}}
+              </code>
+            </pre>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+          <p class="govuk-body">
+            Použite triedu <code class="govuk-!-font-size-16  language-markup">govuk-link--no-visited-state</code>, kde nie je potrebné rozlišovať medzi navštívenými a nenavštívenými stavmi, napríklad pri odkazovaní na stránky s často meniacim sa obsahom, ako je napríklad panel administrátorského rozhrania.
+          </p>
+        </div>
+
+        <div class="govuk-grid-column-full">
+            <div class="example example-error govuk-body">
+            {% set exampleComponentHtml %}
+
+<a href="#" class="govuk-link govuk-link--no-visited-state" title="odkaz bez stavu navštívenia">odkaz bez stavu navštívenia</a>
+
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+            </div>
+            <pre class="app-code">
+              <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                {{- exampleComponentHtml | highlight("html") | safe -}}
+              </code>
+            </pre>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-s">Externé odkazy</h3>
+          <p class="govuk-body">
+            Ak ide o externý odkaz na mimovládny web, uveďte to jasne v texte odkazu. Napríklad „prečítajte si radu pri písaní textu odkazu od [názov organizácie]“. Nie je potrebné explicitne tvrdiť, že odkazujete na externý web. Nepoužívajte ikonu externého odkazu.
+          </p>
+          <h3 class="govuk-heading-s">Otváranie odkazov v novej karte</h3>
+          <p class="govuk-body">
+            Neotvárajte odkazy na novej karte alebo v novom okne. Môže to byť dezorientujúce - a môže to spôsobiť problémy s prístupnosťou pre ľudí, ktorí nemôžu vizuálne vnímať otvorenie novej karty.
+          </p>
+
+          <p class="govuk-body">
+            Ak potrebujete odkaz, ktorý sa má otvoriť na novej karte, napríklad ak chcete zabrániť používateľovi v strate informácií, ktoré zadal do formulára, zahrňte do odkazu slová „otvára sa na novej karte“. Na iných miestach nie je potrebné hovoriť „karta alebo okno“, pretože otvorenie na novej karte je predvoleným správaním väčšiny prehľadávačov.
+          </p>
+
+          <p class="govuk-body">
+            Zahrňte <code class="govuk-!-font-size-16  language-markup">rel="noreferrer noopener"</code> spolu s <code class="govuk-!-font-size-16  language-markup">target="_blank"</code>, aby ste znížili riziko <a class="govuk-link" href="https://owasp.org/www-community/attacks/Reverse_Tabnabbing" target="_blank" rel="noopener noreferrer" title="reverzného tabnabbingu">reverzného tabnabbingu</a>. Nasledujúci príklad ukazuje, ako to urobiť v jazyku HTML.
+          </p>
+        </div>
+
+        <div class="govuk-grid-column-full">
+            <div class="example example-error govuk-body">
+            {% set exampleComponentHtml %}
+
+<a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank" title="odkaz otvarajúci sa v novom okne">odkaz otvarajúci sa v novom okne</a>
+
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+            </div>
+            <pre class="app-code">
+              <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                {{- exampleComponentHtml | highlight("html") | safe -}}
+              </code>
+            </pre>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+          <p class="govuk-body">
+            Ak spolu zobrazujete veľa odkazov a chcete ušetriť miesto a vyhnúť sa opakovaniu, zvážte vykonanie oboch nasledujúcich krokov:
+          </p>
+          <ul class="govuk-list govuk-list--bullet">
+                <li>pridanie textu pred odkazy „Nasledujúce odkazy sa otvárajú na novej karte“,</li>
+                <li>vrátane <code class="govuk-!-font-size-16  language-markup">&lt;span class="govuk-visually-hidden"&gt;(opens in new tab)&lt;/span&gt;</code> ako súčasť textu odkazu, takže časť textu odkazu je vizuálne skrytá, ale stále prístupná pre screen readers.</li>
+            </ul>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-s">Odkazy na tmavom pozadí</h3>
+          <p class="govuk-body">
+            Použite triedu <code class="govuk-!-font-size-16  language-markup">govuk-link--inverse</code> na zobrazenie bielych odkazov na tmavom pozadí - napríklad v hlavičkách, vlastných komponentoch a vzorkách s tmavším pozadím.
+          </p>
+
+          <p class="govuk-body">
+            Zaistite, aby všetci používatelia videli odkazy - biele odkazy a farba pozadia musia mať kontrastný pomer minimálne 4.5:1.
+          </p>
+        </div>
+
+        <div class="govuk-grid-column-full">
+            <div class="example example-error example--inverse govuk-body">
+            {% set exampleComponentHtml %}
+
+<a href="#" class="govuk-link govuk-link--inverse" title="odkaz pre tmavé pozadie">odkaz pre tmavé pozadie</a>
+
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+            </div>
+            <pre class="app-code">
+              <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                {{- exampleComponentHtml | highlight("html") | safe -}}
+              </code>
+            </pre>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-s">Odkazy bez podčiarknutia</h3>
+          <p class="govuk-body">
+            Na odstránenie podčiarknutí z odkazov použite triedu <code class="govuk-!-font-size-16  language-markup">govuk-link--no-underline</code>.
+          </p>
+          <p class="govuk-body">
+            Urobte to iba v prípade ak z kontextu vyplýva, že text je odkazom, a to aj bez podčiarknutia.
+          </p>
+          <p class="govuk-body">
+            Napríklad odkazy v hlavičke alebo na bočnej navigácii nemusia vyžadovať podčiarknutie. Používatelia pochopia, že ide o odkazy podľa toho, kde sa nachádzajú.
+          </p>
+        </div>
+
+                <div class="govuk-grid-column-full">
+            <div class="example example-error govuk-body">
+            {% set exampleComponentHtml %}
+
+<a href="#" class="govuk-link govuk-link--no-underline" title="odkaz bez podčiarknutia">odkaz bez podčiarknutia</a>
+
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+            </div>
+            <pre class="app-code">
+              <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                {{- exampleComponentHtml | highlight("html") | safe -}}
+              </code>
+            </pre>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            <h3 class="govuk-heading-m" id="zoznamy">Zoznamy</h3>
+            <ul class="govuk-list govuk-list-bullet">
+                <li>Vymenúvacie zoznamy sú uvedené vetou zakončenou dvojbodkou, pričom každý riadok zoznamu začína malým písmenom a je ukončený čiarkou. Posledný bod zoznamu je ukončený bodkou.</li>
+                <li>Alternatívou k tomu môže byť taká verzia, že každý bod zoznamu bude začínať veľkým písmenom a ukončí sa bodkou.</li>
+            </ul>
+        </div>
+
+        <div class="govuk-grid-column-full">
+            <div class="example example-error govuk-body">
+            {% set exampleComponentHtml %}
+<ul class="govuk-list govuk-list--bullet">
+  <li>prvý bod vymenúvacieho zoznamu,</li>
+  <li>druhý bod vymenúvacieho zoznamu,</li>
+  <li>tretí bod v poradí,</li>
+  <li>štvrtý bod.</li>
+</ul>
+
+<ol class="govuk-list govuk-list--number">
+  <li>Prvý bod vymenúvacieho zoznamu</li>
+  <li>Druhý bod vymenúvacieho zoznamu</li>
+  <li>Tretí bod v poradí</li>
+  <li>Štvrtý bod.</li>
+</ol>
+
+<ul class="govuk-list">
+  <li><a class="govuk-link" href="#" title="Súvisiaci odkaz">Súvisiaci odkaz</a></li>
+  <li><a class="govuk-link" href="#" title="Súvisiaci odkaz">Súvisiaci odkaz</a></li>
+  <li><a class="govuk-link" href="#" title="Súvisiaci odkaz">Súvisiaci odkaz</a></li>
+</ul>
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+            </div>
+            <pre class="app-code">
+              <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                {{- exampleComponentHtml | highlight("html") | safe -}}
+              </code>
+            </pre>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            <h3 class="govuk-heading-m" id="vsadeny-text">Vsadený text</h3>
+            <p class="govuk-body">Pre upriamenie pozornosti na dôležitý obsah stránky je vhodné používať ohraničený vsadený text.</p>
+        </div>
+
+        <div class="govuk-grid-column-full">
+            <div class="example example-error govuk-body">
+            {% set exampleComponentHtml %}
+<div class="govuk-inset-text">
+  V prípade nedoplnenia žiadosti bude vaše konanie zastavené.
+</div>
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+            </div>
+            <pre class="app-code">
+              <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                {{- exampleComponentHtml | highlight("html") | safe -}}
+              </code>
+            </pre>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            <h3 class="govuk-heading-m" id="pravny-text">Dôležité oznamy a text s právnym dopadom</h3>
+            <p class="govuk-body">V prípade dôležitého textu s možným právnym následkom (napríklad pokuta alebo trest odňatia slobody) použite tučné písmo s ikonou výkričníka.</p>
+        </div>
+
+        <div class="govuk-grid-column-full">
+            <div class="example example-error govuk-body">
+            {% set exampleComponentHtml %}
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Upozornenie</span>
+    Ak sa nezaregistrujete, môžete dostať pokutu až do výšky 5 000 €.
+  </strong>
+</div>
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+            </div>
+            <pre class="app-code">
+              <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                {{- exampleComponentHtml | highlight("html") | safe -}}
+              </code>
+            </pre>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            <h3 class="govuk-heading-m" id="skryty-text">Skrytý text (zobrazenie na požiadanie)</h3>
+            <p class="govuk-body">Tento prvok sa používa na uľahčenie prezerania obsahu stránky tak, že v prípade potreby zobrazíte doplnkové kontextové informácie. Dbajte na to, aby minimálne rozmery klikateľnej plochy boli 30 x 30 pixelov.</p>
+            <p class="govuk-body">Kliknite na “Pomoc s národnosťou” pre ukážku.</p>
+        </div>
+
+        <div class="govuk-grid-column-full">
+            <div class="example example-error govuk-body">
+            {% set exampleComponentHtml %}
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Pomoc s národnosťou
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    Ak si nie ste istí, akú máte národnosť, skúste sa pozrieť na váš úradný dokument ako pas alebo občiansky preukaz.
+  </div>
+</details>
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+            </div>
+            <pre class="app-code">
+              <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                {{- exampleComponentHtml | highlight("html") | safe -}}
+              </code>
+            </pre>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-inset-text">
+                <p>
+                    Ak používate HTML5 elementy, budete potrebovať knižnicu pre  <a class="govuk-link" href="http://caniuse.com/#feat=details" rel="external" title="staršie prehliadače">staršie prehliadače</a>.
+                </p>
+                <p>
+                    Uistite sa, že váš zdrojový kód zodpovedá príkladu vyššie.
+                </p>
+            </div>
+        </div>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,269 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "idsk-tabs/macro.njk" import idskTabs %}
+
+
+{% set pageName = "Záložky" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      { text: 'ID-SK frontend', href: '/' + legacyQuery },
+      { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Webové komponenty</span>
+    <h1 class="govuk-heading-xl">{{ pageName }}</h1>
+    <p class="govuk-body-l">Komponent záložky umožňuje používateľom prechádzať medzi súvisiacimi časťami obsahu, pričom
+      sa zobrazuje vždy jedna časť.</p>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+        <h2 class="govuk-heading-l">Kedy použiť tento komponet</h2>
+        <p class="govuk-body">Záložky môžu byť užitočným spôsobom, ako používateľom umožniť rýchle prepínanie medzi
+          súvisiacimi informáciami, ak:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>môže byť Váš obsah užitočne rozdelený do jasne označených sekcií,</li>
+          <li>je prvá časť pre väčšinu používateľov dôležitejšia ako ostatné,</li>
+          <li>používatelia nebudú potrebovať zobraziť všetky sekcie naraz.</li>
+        </ul>
+        <p class="govuk-body">Záložky môžu dobre slúžiť pre používateľov, ktorí používajú dané informácie pravidelne,
+          napríklad aktuálny covid automat.</p>
+
+        <h2 class="govuk-heading-l">Kedy nepoužívať tento komponent</h2>
+        <p class="govuk-body">
+          Nepoužívajte záložky ako formu navigácie na stránke. Príliš veľa obsahu v záložkách môže spôsobiť pomalé
+          načítavanie stránky,
+          v takomto prípade zvážte vytvorenie samostatných podstránok pre obsah alebo inú formu zobrazenia na stránke,
+          napríklad cez štrukturované nadpisy.
+        </p>
+        <p class="govuk-body">Záložky skrývajú obsah pred používateľmi a nie každý si ich všimne alebo pochopí, ako
+          fungujú.</p>
+        <p class="govuk-body">Nepoužívajte záložky, ak by používatelia mohli potrebovať:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>prečítať si celý obsah, aby napríklad pochopili postup krok za krokom,</li>
+          <li>porovnať informácie na rôznych kartách - nutnosť zapamätať si informácie a prepínať medzi nimi dozadu a
+            dopredu môže byť frustrujúca a náročná.
+          </li>
+        </ul>
+        <p class="govuk-body">Najprv otestujte obsah bez záložiek. Zvážte, či je lepšie:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>zjednodušiť a zredukovať množstvo obsahu,</li>
+          <li>rozdeliť obsah na viacero stránok,</li>
+          <li>ponechať obsah na jednej stránke, oddelený nadpismi.</li>
+        </ul>
+
+        <h2 class="govuk-heading-l">Záložky, akordeóny a skrytý text</h2>
+        <p class="govuk-body">Záložky, akordeóny a skrytý text - tieto komponenty skrývajú časti obsahu a používateľ si
+          ich môže zobraziť podľa potreby.</p>
+        <p class="govuk-body">Ak používatelia nepotrebujú naraz zobraziť viac ako jednu sekciu, zvážte použitie záložiek
+          namiesto akordeónu.</p>
+        <p class="govuk-body">
+          Mali by ste zohľadniť aj počet sekcií obsahu. Záložky sú usporiadané horizontálne (na desktope),
+          takže sa do nich nezmestí toľko sekcií ako do akordeónov, ktoré sa zobrazujú vertikálne.
+        </p>
+        <p class="govuk-body">Karty môžu lepšie fungovať pre používateľov, ktorí potrebujú rýchlo prepínať medzi 2
+          sekciami.</p>
+        <p class="govuk-body">
+          Ak existuje viacero súvisiacich častí obsahu, zvážte použitie záložiek namiesto komponentu skrytý obsah.
+          Komponent skrytý obsah môže byť lepší, ak máte len 1 alebo 2 časti obsahu, zároveň je menej vizuálne nápadný
+          ako záložky,
+          takže má tendenciu fungovať lepšie pre obsah, ktorý nie je pre používateľov taký dôležitý.
+        </p>
+
+        <h2 class="govuk-heading-l">Použitie záložiek</h2>
+        <p class="govuk-body">
+          Na desktope sa záložky zobrazujú v riadku.
+          Pri mobilnom zobrazení sa záložky zobrazia pod sebou a fungujú podobne ako komponent akordeón.
+        </p>
+        <div class="example example-error">
+          {% set exampleComponentHtml -%}
+            {{ idskTabs({
+              items: [
+                {
+                  label: "Uplynulý deň",
+                  id: "uplynuly-den",
+                  panel: {
+                  html: "
+                <h2 class='govuk-heading-l'>Uplynulý deň</h2>
+                <table class='govuk-table'>
+                <thead class='govuk-table__head'>
+                    <tr class='govuk-table__row'>
+                    <th class='govuk-table__header' scope='col'>Manažér prípadu</th>
+                    <th class='govuk-table__header' scope='col'>Otvorené prípady</th>
+                    <th class='govuk-table__header' scope='col'>Uzavreté prípady</th>
+                    </tr>
+                </thead>
+                <tbody class='govuk-table__body'>
+                    <tr class='govuk-table__row'>
+                    <td class='govuk-table__cell'>David Francis</td>
+                    <td class='govuk-table__cell'>3</td>
+                    <td class='govuk-table__cell'>0</td>
+                    </tr>
+                    <tr class='govuk-table__row'>
+                    <td class='govuk-table__cell'>Paul Farmer</td>
+                    <td class='govuk-table__cell'>1</td>
+                    <td class='govuk-table__cell'>0</td>
+                    </tr>
+                    <tr class='govuk-table__row'>
+                    <td class='govuk-table__cell'>Rita Patel</td>
+                    <td class='govuk-table__cell'>2</td>
+                    <td class='govuk-table__cell'>0</td>
+                    </tr>
+                </tbody>
+                </table>
+            "
+                }
+                },
+                {
+                  label: "Uplynulý týždeň",
+                  id: "uplynuly-tyzden",
+                  panel: {
+                  html: "
+                <h2 class='govuk-heading-l'>Uplynulý týždeň</h2>
+                <table class='govuk-table'>
+                <thead class='govuk-table__head'>
+                    <tr class='govuk-table__row'>
+                    <th class='govuk-table__header' scope='col'>Manažér prípadu</th>
+                    <th class='govuk-table__header' scope='col'>Otvorené prípady</th>
+                    <th class='govuk-table__header' scope='col'>Uzavreté prípady</th>
+                    </tr>
+                </thead>
+                <tbody class='govuk-table__body'>
+                    <tr class='govuk-table__row'>
+                    <td class='govuk-table__cell'>David Francis</td>
+                    <td class='govuk-table__cell'>24</td>
+                    <td class='govuk-table__cell'>18</td>
+                    </tr>
+                    <tr class='govuk-table__row'>
+                    <td class='govuk-table__cell'>Paul Farmer</td>
+                    <td class='govuk-table__cell'>16</td>
+                    <td class='govuk-table__cell'>20</td>
+                    </tr>
+                    <tr class='govuk-table__row'>
+                    <td class='govuk-table__cell'>Rita Patel</td>
+                    <td class='govuk-table__cell'>24</td>
+                    <td class='govuk-table__cell'>27</td>
+                    </tr>
+                </tbody>
+                </table>
+            "
+                }
+                },
+                {
+                  label: "Uplynulý mesiac",
+                  id: "uplynuly-mesiac",
+                  panel: {
+                  html: "
+                <h2 class='govuk-heading-l'>Uplynulý mesiac</h2>
+                <table class='govuk-table'>
+                <thead class='govuk-table__head'>
+                    <tr class='govuk-table__row'>
+                    <th class='govuk-table__header' scope='col'>Manažér prípadu</th>
+                    <th class='govuk-table__header' scope='col'>Otvorené prípady</th>
+                    <th class='govuk-table__header' scope='col'>Uzavreté prípady</th>
+                    </tr>
+                </thead>
+                <tbody class='govuk-table__body'>
+                    <tr class='govuk-table__row'>
+                    <td class='govuk-table__cell'>David Francis</td>
+                    <td class='govuk-table__cell'>98</td>
+                    <td class='govuk-table__cell'>95</td>
+                    </tr>
+                    <tr class='govuk-table__row'>
+                    <td class='govuk-table__cell'>Paul Farmer</td>
+                    <td class='govuk-table__cell'>122</td>
+                    <td class='govuk-table__cell'>131</td>
+                    </tr>
+                    <tr class='govuk-table__row'>
+                    <td class='govuk-table__cell'>Rita Patel</td>
+                    <td class='govuk-table__cell'>126</td>
+                    <td class='govuk-table__cell'>142</td>
+                    </tr>
+                </tbody>
+                </table>
+            "
+                }
+                },
+                {
+                  label: "Uplynulý rok",
+                  id: "uplynuly-rok",
+                  panel: {
+                  html: "
+                <h2 class='govuk-heading-l'>Uplynulý rok</h2>
+                <table class='govuk-table'>
+                <thead class='govuk-table__head'>
+                    <tr class='govuk-table__row'>
+                    <th class='govuk-table__header' scope='col'>Manažér prípadu</th>
+                    <th class='govuk-table__header' scope='col'>Otvorené prípady</th>
+                    <th class='govuk-table__header' scope='col'>Uzavreté prípady</th>
+                    </tr>
+                </thead>
+                <tbody class='govuk-table__body'>
+                    <tr class='govuk-table__row'>
+                    <td class='govuk-table__cell'>David Francis</td>
+                    <td class='govuk-table__cell'>1380</td>
+                    <td class='govuk-table__cell'>1472</td>
+                    </tr>
+                    <tr class='govuk-table__row'>
+                    <td class='govuk-table__cell'>Paul Farmer</td>
+                    <td class='govuk-table__cell'>1129</td>
+                    <td class='govuk-table__cell'>1083</td>
+                    </tr>
+                    <tr class='govuk-table__row'>
+                    <td class='govuk-table__cell'>Rita Patel</td>
+                    <td class='govuk-table__cell'>1539</td>
+                    <td class='govuk-table__cell'>1265</td>
+                    </tr>
+                </tbody>
+                </table>
+            "
+                }
+                }
+              ]
+            }) }}
+          {% endset %}
+          {{ exampleComponentHtml | safe }}
+        </div>
+        <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+
+        <h3 class="govuk-heading-m">Použite jednoznačné názvy záložiek</h3>
+        <p class="govuk-body">
+          Záložky skrývajú obsah, preto musia popisy na záložkách jasne popisovať,
+          na čo odkazujú, inak používatelia nebudú vedieť, či na ne majú kliknúť.
+        </p>
+        <p class="govuk-body">
+          Ak máte problém vymyslieť jasné názvy záložiek, môže to byť spôsobené tým, že spôsob, akým ste oddelili obsah,
+          nie je jasný.
+        </p>
+        <h3 class="govuk-heading-m">Usporiadajte karty podľa potrieb používateľov</h3>
+        <p class="govuk-body">
+          Prvá karta by mala byť najčastejšie potrebnou časťou. Ostatné karty usporiadajte v poradí, ktoré dáva
+          používateľom najväčší zmysel.
+        </p>
+        <h3 class="govuk-heading-m">Nevypínajte karty</h3>
+        <p class="govuk-body">
+          Zakázanie prvkov je pre používateľov zvyčajne mätúce. Ak sa na karte nenachádza žiadny obsah, buď kartu
+          odstráňte, alebo,
+          ak by to bolo pre používateľov mätúce, vysvetlite, prečo sa na karte nenachádza žiadny obsah, keď je vybratá.
+        </p>
+        <h3 class="govuk-heading-m">Vyhnite sa záložkám, ktoré sa prekrývajú cez viac ako jeden riadok</h3>
+        <p class="govuk-body">
+          Ak používate príliš veľa kariet alebo majú dlhé označenia, môžu sa obaliť cez viac ako jeden riadok.
+          Používatelia tak ťažšie vidia spojenie medzi vybranou kartou a jej obsahom.
+        </p>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

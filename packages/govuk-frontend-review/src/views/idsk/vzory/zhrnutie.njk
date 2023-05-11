@@ -1,0 +1,93 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Zhrnutie" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Vzory</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Tento návod opisuje postup, ako umožniť používateľom skontrolovať svoje odpovede pred odoslaním žiadosti.</p>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-s">Obsah:</h2>
+            <ul class="govuk-list">
+                <li><a class="govuk-link" href="#ukazka" title="Ukážka">Ukážka</a></li>
+                <li><a class="govuk-link" href="#vyhody-zhrnutia" title="Výhody zhrnutia">Výhody zhrnutia</a></li>
+                <li><a class="govuk-link" href="#co-ma-obsahovat" title="Čo má zhrnutie obsahovať">Čo má zhrnutie obsahovať</a></li>
+                <li><a class="govuk-link" href="#vytvorenie-stranky" title="Vytvorte stránku jednoduchú na porozumenie">Vytvorte stránku jednoduchú na porozumenie</a></li>
+                <li><a class="govuk-link" href="#umoznite" title="Umožnite používateľom vrátiť sa a upraviť svoje odpovede">Umožnite používateľom vrátiť sa a upraviť svoje odpovede</a></li>
+                <li><a class="govuk-link" href="#pristupnu" title="Vytvorte prístupnú stránku">Vytvorte prístupnú stránku</a></li>
+            </ul>
+
+            <h3 class="govuk-heading-m" id="ukazka">Ukážka</h3>
+            <img src="/public/assets/images/patterns/example1.png" alt="example">
+
+
+            <h3 class="govuk-heading-m" id="vyhody-zhrnutia">Výhody zhrnutia</h3>
+            <p class="govuk-body">Hlavné výhody stránky so zhrnutím sú:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>zvýšené miery dokončenia - používatelia sú si istí, že boli zaznamenané správne dáta, a tak sú menej náchylní k zrušeniu procesu pred jeho dokončením,</li>
+                <li>zníženie chybovosti - používateľom poskytnete druhú príležitosť všimnúť si a opraviť chybu pred tým, ako odošlú údaje.</li>
+
+            </ul>
+
+
+            <h3 class="govuk-heading-m" id="co-ma-obsahovat">Čo má zhrnutie obsahovať</h3>
+            <p class="govuk-body">Zhrnutie sa používa vždy na konci procesu, kedy používateľ musí potvrdiť správnosť svojich údajov.</p>
+            <p class="govuk-body">
+                Zhrnutie má obsahovať:
+            </p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>jasnú informáciu, že na stránke je potrebné tlačidlom potvrdiť správnosť zadaných údajov a že proces nebude dokončený, kým používatelia svoje údaje nepotvrdia,</li>
+                <li>zoznam všetkých predošlých odpovedí, ktoré používateľ v procese vyplnil,</li>
+                <li>informáciu o poplatku, ktorý bude používateľ platiť, spolu s vysvetlením, ako bola stanovená výška poplatku za službu,</li>
+                <li>potvrdzovacie tlačidlo, ktoré upozorní používateľa, čo sa bude diať v ďalšom kroku.</li>
+            </ul>
+
+            <p class="govuk-body">Stránka zhrnutia by mala používateľovi poskytnúť možnosť vytlačiť vyplnené údaje vo formáte .pdf, možnosť exportu údajov prostredníctvom alternatívnych odkazov a možnosť uložiť svoju žiadosť do konceptov v elektronickej schránke.</p>
+
+            <h3 class="govuk-heading-m" id="vytvorenie-stranky">Vytvorte stránku jednoduchú na porozumenie</h3>
+            <p class="govuk-body">Informácie v zhrnutí štrukturujte prehľadne:
+            </p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Ak je to možné, rozdeľte obsah do viacerých častí.</li>
+                <li>Zobrazte iba časti, ktoré sú relevantné pre používateľa - napríklad, ak už raz používateľ uviedol, že je zo Slovenska, uvádzajte iba časti týkajúce sa jeho odpovede a nie tie, ktoré s jeho odpoveďou nesúvisia.</li>
+                <li>Formulujte vaše otázky tak, aby odpovede používateľa vhodne dotvárali stránku “Zhrnutie” - napríklad, nepotrebujete označovať jednotlivé položky adresy, a rovnako môžete prepísať dlhé otázky na kratšie tvrdenia.</li>
+            </ul>
+            <h3 class="govuk-heading-m" id="umoznite">Umožnite používateľom vrátiť sa a zmeniť svoje odpovede</h3>
+            <p class="govuk-body">
+                Pri každej časti na stránke “Zhrnutie” poskytnite odkaz “Zmeniť”, aby sa používateľ mohol vrátiť a doplniť alebo zmeniť informácie, ktoré žiadate.
+            </p>
+            <p class="govuk-body">
+                Stránky s odpoveďami majú vyzerať rovnako, ako keď ich používateľ použil naposledy, t.j. aj so všetkými odpoveďami, ktoré predbežne vyplnil.
+            </p>
+            <p class="govuk-body">
+                Keď používateľ dokončí úpravu, tlačidlo “Pokračovať” ho vráti na stránku “Zhrnutie”. Používateľ by nemal znovu prechádzať celým procesom vypĺňania údajov.
+            </p>
+            <p class="govuk-body">
+                Ak používateľ počas úpravy zmení svoje odpovede a k novým odpovediam sa budú viazať ďalšie doplňujúce otázky, položte ich používateľovi ešte pred tým, než sa opäť vráti na stránku “Zhrnutie”.
+            </p>
+            <h3 class="govuk-heading-m" id="pristupnu">Vytvorte prístupnú stránku</h3>
+            <p class="govuk-body">K odkazu “Zmeniť” pridajte skrytý text, aby tlačidlo malo zmysel aj keď ho čítače obrazoviek čítajú mimo kontext.</p>
+            <p class="govuk-body">Napríklad:</p>
+
+            <pre class="language-markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/renew/name/edit<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Zmeniť<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>visually-hidden<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> meno<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+        </div>
+    </div>
+
+  </div>
+{% endblock %}

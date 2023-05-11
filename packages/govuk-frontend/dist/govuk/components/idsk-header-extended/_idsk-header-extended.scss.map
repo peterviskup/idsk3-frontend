@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../src/govuk/components/idsk-header-extended/_idsk-header-extended.scss"],"names":[],"mappings":"AAAA,oBAAoB;AACpB,iBAAiB","file":"_idsk-header-extended.scss","sourcesContent":["@import \"../../base\";\n@import \"./index\";\n"]}

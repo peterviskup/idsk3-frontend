@@ -1,0 +1,164 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "idsk-crossroad/macro.njk" import idskCrossroad %}
+{% set pageName = "Rázcestník" %}
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      { text: 'ID-SK frontend', href: '/' + legacyQuery },
+      { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-width-container">
+    <span class="govuk-caption-xl">Webové komponenty</span>
+    <h1 class="govuk-heading-xl">{{ pageName }}</h1>
+    <p class="govuk-body-l">
+      Rázcestník má formu jednoduchej dlaždice, zloženej z nadpisu, popisku a oddeľovacej čiary. Jeho účelom je
+      prehľadne a jednoducho zoskupiť resp. usporiadať pre používateľa odkazy na súvisiaci obsah, ktorý je rozmiestnený
+      na rôznych, samostatných podstránkach.
+    </p>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-s">Obsah:</h2>
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link" href="#vlastnosti-razcestnika-desktop" title="Vlastnosti rázcestníka (desktop)">Vlastnosti
+              rázcestníka (desktop)</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="#pouzitie-razcestnika" title="Použitie rázcestníka">Použitie rázcestníka</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h3 class="govuk-heading-m" id="vlastnosti-razcestnika-desktop">Vlastnosti rázcestníka (desktop)</h3>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Hyperlinkový text - použite max. 50 znakov (vrátane medzier)</li>
+          <li>Popiska hyperlinku - použite max. 120 znakov (vrátane medzier)</li>
+        </ul>
+      </div>
+      <div class="govuk-grid-column-full">
+        <div class="example example-error">
+          {% set exampleComponentHtml %}
+            {{ idskCrossroad({
+              "columns": 1,
+              "items": [
+                { "title": 'Názov pre prvý prvok', "subtitle": 'Podnadpis pre prvý prvok', "link": '#' },
+                { "title": 'Názov pre druhý prvok', "subtitle": 'Podnadpis pre druhý prvok', "link": '#' },
+                { "title": 'Názov pre tretí prvok', "subtitle": 'Podnadpis pre tretí prvok', "link": '#' },
+                { "title": 'Názov pre štvrtý prvok', "subtitle": 'Podnadpis pre štvrtý prvok', "link": '#' },
+                { "title": 'Názov pre piaty prvok', "subtitle": 'Podnadpis pre piaty prvok', "link": '#' },
+                { "title": 'Názov pre šiesty prvok', "subtitle": 'Podnadpis pre šiesty prvok', "link": '#' },
+                { "title": 'Názov pre siedmy prvok', "subtitle": 'Podnadpis pre siedmy prvok', "link": '#' }
+              ]
+            }) }}
+          {% endset %}
+          {{ exampleComponentHtml | safe }}
+        </div>
+        <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+      </div>
+      <div class="govuk-grid-column-full">
+        <h3 class="govuk-heading-m" id="pouzitie-razcestnika">Použitie rázcestníka</h3>
+        <p class="govuk-body">
+          <strong>S nadpisom a podnadpisom:</strong>
+          Rázcestník je jedným z komponentov, ktoré navigujú používateľa k obsahu vašej stránky. Použitím rázcestníka
+          spolu s nadpisom a podnadpisom dáte používateľovi najavo, ktorý obsah (a ako) spolu na stránke súvisí.
+        </p>
+        <p class="govuk-body">
+          V prípade použitia nadpisu a podnadpisu buďte struční a vecní. Ak rázcestník zoskupuje obsah, ktorý má vlastnú
+          domovskú podstránku, v podnadpise na ňu odkážte s použitím hyperlinku (napr. všetok obsah k téme
+          Informatizácia je zoskupený na hlavnej, domovskej stránke ale má aj k téme delegovanú podstránku). Ten istý
+          hyperlink (ak to dáva zmysel), môže byť vložený aj do nadpisu rázcestníka.
+        </p>
+        <p class="govuk-body">
+          <strong>V jednom alebo viacerých stĺpcoch:</strong>
+          Rázcestník môžete štrukturovať do jedného alebo viacerých stĺpcov, musíte však dodržať IDSK pravidlá
+          rozloženia stránky (grid).
+        </p>
+        <div class="example example-error">
+          {% set exampleComponentHtml %}
+            {{ idskCrossroad({
+              "columns": 2,
+              "items": [
+                { "title": 'Nadpis pre prvý prvok', "subtitle": 'Podnadpis pre prvý prvok', "link": '#' },
+                { "title": 'Nadpis pre druhý prvok', "subtitle": 'Podnadpis pre druhý prvok', "link": '#' },
+                { "title": 'Nadpis pre tretí prvok', "subtitle": 'Podnadpis pre tretí prvok', "link": '#' },
+                { "title": 'Nadpis pre štvrtý prvok', "subtitle": 'Podnadpis pre štvrtý prvok', "link": '#' },
+                { "title": 'Nadpis pre piaty prvok', "subtitle": 'Podnadpis pre piaty prvok', "link": '#' },
+                { "title": 'Nadpis pre šiesty prvok', "subtitle": 'Podnadpis pre šiesty prvok', "link": '#' },
+                { "title": 'Nadpis pre siedmy prvok', "subtitle": 'Podnadpis pre siedmy prvok', "link": '#' },
+                { "title": 'Nadpis pre ôsmy prvok', "subtitle": 'Podnadpis pre ôsmy prvok', "link": '#' }
+              ]
+            }) }}
+          {% endset %}
+          {{ exampleComponentHtml | safe }}
+        </div>
+        <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+        <p class="govuk-body">
+          <strong>Rázcestník len s 5 dlaždicami v jednom stĺpci:</strong>
+          Rázcestník nepoužívajte s viac ako 5 dlaždicami v jednom stĺpci. Ak potrebujete použiť viac dlaždíc, použite
+          komponent "rozbalovací rázcestník".
+        </p>
+        <h2 class="govuk-heading-l">Základný blok 2, rozbaliteľný
+        </h2>
+        <p class="govuk-body">Tento rozbaliteľný blok použite ak potrebujete alebo chcete v rázcestníku použiť viac ako
+          5 odkazov v jednom stĺpci, respektíve 10 odkazov v dvoch stĺpcoch.
+        </p>
+
+        <p class="govuk-body">Aby používateľ nebol zahltený veľkým množstvom informácií, časť obsahu bude skrytá.
+          Používateľ ich môže odkryť stlačením textového tlačidla na konci rázcestníku.</p>
+        <h3 class="govuk-heading-m" id="skladba">Z čoho sa skladá rozbaliteľný blok?</h3>
+        <p class="govuk-body">Skladá sa z:</p>
+        <ol class="idsk-list idsk-list--letters">
+          <li>rázcestník,</li>
+          <li>čiastočne transparentné prekrytie piateho riadku,</li>
+          <li>tlačidlo “zobraziť viac” pre zobrazenie ďaľších odkazov v rázcestníku.</li>
+        </ol>
+        <div class="example example-error">
+          {% set exampleComponentHtml %}
+            {{ idskCrossroad({
+              "columns": 2,
+              "hideTiles": true,
+              "items": [
+                { "title": 'Nadpis pre prvý prvok', "subtitle": 'Podnadpis pre prvý prvok', "link": '#' },
+                { "title": 'Nadpis pre druhý prvok', "subtitle": 'Podnadpis pre druhý prvok', "link": '#' },
+                { "title": 'Nadpis pre tretí prvok', "subtitle": 'Podnadpis pre tretí prvok', "link": '#' },
+                { "title": 'Nadpis pre štvrtý prvok', "subtitle": 'Podnadpis pre štvrtý prvok', "link": '#' },
+                { "title": 'Nadpis pre piaty prvok', "subtitle": 'Podnadpis pre piaty prvok', "link": '#' },
+                { "title": 'Nadpis pre šiesty prvok', "subtitle": 'Podnadpis pre šiesty prvok', "link": '#' },
+                { "title": 'Nadpis pre siedmy prvok', "subtitle": 'Podnadpis pre siedmy prvok', "link": '#' },
+                { "title": 'Nadpis pre ôsmy prvok', "subtitle": 'Podnadpis pre ôsmy prvok', "link": '#' },
+                { "title": 'Nadpis pre deviaty prvok', "subtitle": 'Podnadpis pre deviaty prvok', "link": '#' },
+                { "title": 'Nadpis pre desiaty prvok', "subtitle": 'Podnadpis pre desiaty prvok', "link": '#' },
+                { "title": 'Nadpis pre jedenásty prvok', "subtitle": 'Podnadpis pre jedenásty prvok', "link": '#' },
+                { "title": 'Nadpis pre dvanásty prvok', "subtitle": 'Podnadpis pre dvanásty prvok', "link": '#' },
+                { "title": 'Nadpis pre trinásty prvok', "subtitle": 'Podnadpis pre trinásty prvok', "link": '#' },
+                { "title": 'Nadpis pre štrnásty prvok', "subtitle": 'Podnadpis pre štrnásty prvok', "link": '#' },
+                { "title": 'Nadpis pre pätnásty prvok', "subtitle": 'Podnadpis pre pätnásty prvok', "link": '#' },
+                { "title": 'Nadpis pre šestnásty prvok', "subtitle": 'Podnadpis pre šestnásty prvok', "link": '#' }
+              ]
+            }) }}
+          {% endset %}
+          {{ exampleComponentHtml | safe }}
+        </div>
+        <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+      </div>
+    </div>
+  </div>
+{% endblock %}

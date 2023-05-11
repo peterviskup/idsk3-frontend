@@ -1,0 +1,20 @@
+params:
+  - name: classes
+    type: string
+    required: false
+    description: Class name for component banner.
+  - name: pageName
+    type: string
+    required: false
+    description: Name of page.
+  - name: headline
+    type: string
+    required: false
+    description: Name of headline.
+
+examples:
+  - name: basic
+    data:
+      classes: 'app-pane-grey'
+      pageName: 'Súčasť životnej situácie'
+      headline: 'Narodenie dieťaťa: krok za krokom'

@@ -1,0 +1,58 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Wordpress téma" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      { text: 'ID-SK frontend', href: '/' + legacyQuery },
+      { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Úvod</span>
+    <h1 class="govuk-heading-xl">{{ pageName }}</h1>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <p class="govuk-body">Wordpress téma, ktorá implementuje ID-SK. Cieľom ID-SK je zjednotiť používateľské rozhrania a spôsob komunikácie s používateľom pri poskytovaní informácií aj prostredníctvom webových sídiel štátnej správy na Slovensku. Aby bol ID-SK dostupnejší, vytvorili sme používateľsky prívetivejšie prostredie na tvorbu webových sídiel.</p>
+        <p class="govuk-body">
+          <a class="govuk-link" href="https://wordpress.org/themes/idsk-template/" title="Wordpress téma ID-SK">Wordpress téma ID-SK</a>
+        </p>
+        <h2 class="govuk-heading-l">Pluginy k wordpress téme ID-SK</h2>
+        <p class="govuk-body">Pre správne fungovanie témy odporúčame použiť tieto pluginy:</p>
+
+        <h3 class="govuk-heading-m">ID-SK Toolkit od Slovensko IT, a.s.</h3>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Gutenberg ID-SK komponenty a vzory</li>
+          <li>rozširujúce funkcionality k téme</li>
+        </ul>
+        <p class="govuk-body">
+          <a class="govuk-link" href="https://wordpress.org/plugins/idsk-toolkit/" title="plugin ID-SK Toolkit">plugin ID-SK Toolkit</a>
+        </p>
+
+        <h3 class="govuk-heading-m">ID-SK Demo data od Slovensko IT, a.s.</h3>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>balík s demo dátami k ID-SK téme</li>
+        </ul>
+        <p class="govuk-body">
+          <a class="govuk-link" href="https://wordpress.org/plugins/idsk-demodata/" title="plugin ID-SK Demo">plugin ID-SK Demo</a>
+        </p>
+
+        <h3 class="govuk-heading-m">Contact Form 7 od Takayuki Miyoshi</h3>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>odporúčame použiť pre feedback formulár v téme</li>
+        </ul>
+        <p class="govuk-body">
+          <a class="govuk-link" href="https://wordpress.org/plugins/contact-form-7/" title="plugin Contact Form 7">plugin Contact Form 7</a>
+        </p>
+      </div>
+    </div>
+  </div>
+{% endblock %}

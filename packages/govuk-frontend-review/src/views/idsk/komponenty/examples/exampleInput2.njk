@@ -1,0 +1,11 @@
+{% from "input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  "label": {
+    "text": "Meno a priezvisko"
+  },
+  "id": "input-example-2",
+  "name": "fullName",
+  "classes": " :focus",
+  "autocomplete": "on"
+}) }}

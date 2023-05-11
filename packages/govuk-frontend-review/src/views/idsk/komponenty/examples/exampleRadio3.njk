@@ -1,0 +1,35 @@
+{% from "radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  "classes": "govuk-radios--inline",
+  "idPrefix": "how-contacted",
+  "name": "how-contacted",
+  "fieldset": {
+    "legend": {
+      "text": "Ako chcete byť kontaktovaný?"
+    }
+  },
+  "items": [
+    {
+      "value": "email",
+      "text": "Email",
+      "conditional": {
+        "html": "<label class=\"govuk-label\" for=\"context-email\">E-mailová adresa</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"context-email\" type=\"email\" id=\"context-email\">\n"
+      }
+    },
+    {
+      "value": "phone",
+      "text": "Mobil",
+      "conditional": {
+        "html": "<label class=\"govuk-label\" for=\"contact-phone\">Telefónne číslo</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"contact-phone\" type=\"tel\" id=\"contact-phone\">\n"
+      }
+    },
+    {
+      "value": "text",
+      "text": "SMS",
+      "conditional": {
+        "html": "<label class=\"govuk-label\" for=\"contact-text-message\">Telefónne číslo</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"contact-text-message\" type=\"text\" id=\"contact-text-message\">\n"
+      }
+    }
+  ]
+}) }}

@@ -1,0 +1,637 @@
+{% extends "layout.njk" %}
+{% from "idsk-intro-block/macro.njk" import idskIntroBlock %}
+{% from "idsk-card/macro.njk" import idskCard %}
+{% from "idsk-crossroad/macro.njk" import idskCrossroad %}
+
+{% block header %}
+    {% from "idsk-header-web/macro.njk" import idskHeaderWeb %}
+  {{ idskHeaderWeb({
+    headerType: "website",
+    brand: {
+      gestor: true,
+      languages: [
+        {
+          text: "Slovenčina",
+          selected: true,
+          link: "#",
+          language: "sk"
+        },
+        {
+          text: "Deutsch",
+          link: "#",
+          language: "de"
+        },
+        {
+          text: "English",
+          link: "#",
+          language: "en"
+        },
+        {
+          text: "Español",
+          link: "#",
+          language: "es"
+        }
+      ]
+    },
+
+    main: {
+      showLogo: true,
+      loginButton: {
+        loggedIn: true
+      },
+      profileButton: true,
+      secondaryButton: false
+    },
+
+    search: true,
+
+    navBar: {
+      navigation: [
+        {
+          text: 'Občan',
+          submenu: [
+          {
+            link: '#1',
+            text: 'Eurofondy'
+          },
+          {
+            link: '#2',
+            text: 'Regionálny rozvoj'
+          },
+          {
+            link: '#3',
+            text: 'Informatizácia'
+          },
+          {
+            link: '#4',
+            text: 'Investície'
+          }
+        ]
+        },
+        {
+          text: 'Podnikateľ',
+          submenu: [
+          {
+            link: '#1',
+            text: 'Eurofondy'
+          },
+          {
+            link: '#2',
+            text: 'Regionálny rozvoj'
+          },
+          {
+            link: '#3',
+            text: 'Informatizácia'
+          },
+          {
+            link: '#4',
+            text: 'Investície'
+          },
+          {
+            link: '#3',
+            text: 'Informatizácia'
+          },
+          {
+            link: '#4',
+            text: 'Investície'
+          }
+        ]
+        },
+        {
+          link: '#3',
+          text: 'Dôchodca'
+        },
+        {
+          link: '#4',
+          text: 'Elektronické služby'
+        },
+        {
+          text: 'Inovácie',
+          submenu: [
+          {
+            link: '#1',
+            text: 'Eurofondy'
+          },
+          {
+            link: '#2',
+            text: 'Regionálny rozvoj'
+          },
+          {
+            link: '#3',
+            text: 'Informatizácia'
+          },
+          {
+            link: '#4',
+            text: 'Investície'
+          },
+          {
+            link: '#3',
+            text: 'Informatizácia'
+          },
+          {
+            link: '#4',
+            text: 'Investície'
+          },
+          {
+            link: '#2',
+            text: 'Regionálny rozvoj'
+          },
+          {
+            link: '#3',
+            text: 'Informatizácia'
+          },
+          {
+            link: '#4',
+            text: 'Investície'
+          },
+          {
+            link: '#3',
+            text: 'Informatizácia'
+          },
+          {
+            link: '#4',
+            text: 'Investície'
+          }
+        ]
+        },
+        {
+          text: 'Inovácie',
+          submenu: [
+          {
+            link: '#1',
+            text: 'Eurofondy'
+          },
+          {
+            link: '#2',
+            text: 'Regionálny rozvoj'
+          },
+          {
+            link: '#3',
+            text: 'Informatizácia'
+          },
+          {
+            link: '#4',
+            text: 'Investície'
+          },
+          {
+            link: '#3',
+            text: 'Informatizácia'
+          },
+          {
+            link: '#4',
+            text: 'Investície'
+          },
+          {
+            link: '#2',
+            text: 'Regionálny rozvoj'
+          },
+          {
+            link: '#3',
+            text: 'Informatizácia'
+          },
+          {
+            link: '#4',
+            text: 'Investície'
+          },
+          {
+            link: '#3',
+            text: 'Informatizácia'
+          },
+          {
+            link: '#4',
+            text: 'Investície'
+          }
+        ]
+        },
+        {
+          text: 'Inovácie',
+          submenu: [
+          {
+            link: '#1',
+            text: 'Eurofondy'
+          },
+          {
+            link: '#2',
+            text: 'Regionálny rozvoj'
+          },
+          {
+            link: '#3',
+            text: 'Informatizácia'
+          },
+          {
+            link: '#4',
+            text: 'Investície'
+          },
+          {
+            link: '#3',
+            text: 'Informatizácia'
+          },
+          {
+            link: '#4',
+            text: 'Investície'
+          },
+          {
+            link: '#2',
+            text: 'Regionálny rozvoj'
+          },
+          {
+            link: '#3',
+            text: 'Informatizácia'
+          },
+          {
+            link: '#4',
+            text: 'Investície'
+          },
+          {
+            link: '#3',
+            text: 'Informatizácia'
+          },
+          {
+            link: '#4',
+            text: 'Investície'
+          }
+        ]
+        }
+      ]
+    },
+
+    banner: {
+      text: "Nová verzia ID-SK Frontend nahradzuje pôvodnú verziu.",
+      warning: true
+    }
+  }) }}
+{% endblock %}
+
+{% block content %}
+  {{ idskIntroBlock({
+    mainTitleLinkLabel: "viac o ministerstve",
+    bottomMenu: [
+      {
+        item:"Eurofondy",
+        href:"#"
+      },
+      {
+        item:"Kontakty",
+        href:"#"
+      },
+      {
+        item:"Informatizácia",
+        href:"#"
+      },
+      {
+        item:"Investície",
+        href:"#"
+      },
+      {
+        item:"O ministerstve",
+        href:"#"
+      }
+    ],
+    searchEnabled:"true",
+    sideMenu: [
+      {
+        item:"O Eurofondoch",
+        href:"#"
+      },
+      {
+        item:"Aktuality",
+        href:"#"
+      },
+      {
+        item:"O Ministerstve",
+        href:"#"
+      },
+      {
+        item:"Aktuálne výzvy",
+        href:"#"
+      },
+      {
+        item:"Dokumenty",
+        href:"#"
+      }]
+  }) }}
+
+  <hr class="idsk-hr-separator govuk-!-margin-bottom-6">
+
+  <h2 class="govuk-heading-l">Aktuality</h2>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      {{ idskCard({
+        "type": "hero",
+        "imgSrc": "/public/assets/images/image-placeholder.jpg",
+        "link": "#",
+        "heading": "Podpora najmenej rozvinutých okresov: Nové výzvy po novom!",
+        "description": "Lorem ipsum dolor sit amet, consenctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "date": { "date": "1.7.2020", "link": "#" },
+        "tags": [ { "tag": "Tag 1", "link": "#" }, { "tag": "Tag 2", "link": "#" } ]
+      }) }}
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      {{ idskCard({
+        "type": "secondary",
+        "imgSrc": "/public/assets/images/image-placeholder.jpg",
+        "link": "#",
+        "heading": "Podpora najmenej rozvinutých okresov: Nové výzvy po novom!",
+        "description": "Lorem ipsum dolor sit amet, consenctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "date": { "date": "1.7.2020", "link": "#" },
+        "tags": [ { "tag": "Tag 1", "link": "#" }, { "tag": "Tag 2", "link": "#" } ]
+      }) }}
+    </div>
+    <div class="govuk-grid-column-one-third">
+      {{ idskCard({
+        "type": "secondary",
+        "imgSrc": "/public/assets/images/image-placeholder.jpg",
+        "link": "#",
+        "heading": "Podpora najmenej rozvinutých okresov: Nové výzvy po novom!",
+        "description": "Lorem ipsum dolor sit amet, consenctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "date": { "date": "1.7.2020", "link": "#" },
+        "tags": [ { "tag": "Tag 1", "link": "#" }, { "tag": "Tag 2", "link": "#" } ]
+      }) }}
+    </div>
+    <div class="govuk-grid-column-one-third">
+      {{ idskCard({
+        "type": "secondary",
+        "imgSrc": "/public/assets/images/image-placeholder.jpg",
+        "link": "#",
+        "heading": "Podpora najmenej rozvinutých okresov: Nové výzvy po novom!",
+        "description": "Lorem ipsum dolor sit amet, consenctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "date": { "date": "1.7.2020", "link": "#" },
+        "tags": [ { "tag": "Tag 1", "link": "#" }, { "tag": "Tag 2", "link": "#" } ]
+      }) }}
+    </div>
+  </div>
+
+  <hr class="idsk-hr-separator govuk-!-margin-bottom-6">
+
+  <h2 class="govuk-heading-l">Eurofondy</h2>
+  <p class="govuk-body-m">
+    Všetky informácie o príprave, revízii a realizácii Európskych štrukturálnych fondov (EŠIF) v podmienkach SR na
+    jednom mieste. Viac informácií nájdete na <a class="govuk-link" href="#" title="podstránke Eurofondy">podstránke Eurofondy</a>.
+  </p>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      {{ idskCrossroad({
+        "columns": 2,
+        "classes": "govuk-clearfix",
+        "items": [
+          { "title": 'Implementácia EŠIF', "subtitle": 'Všetky informácie o eurofondoch na jednom mieste.', "link": '#' },
+          { "title": 'Hodnotenie EŠIF', "subtitle": 'Všetky informácie o eurofondoch na jednom mieste.', "link": '#' },
+          { "title": 'Monitorovanie EŠIF', "subtitle": 'Všetky informácie o eurofondoch na jednom mieste.', "link": '#' },
+          { "title": 'IT monitorovací systém pre EŠIF', "subtitle": 'Všetky informácie o eurofondoch na jednom mieste.', "link": '#' }
+        ]
+      }) }}
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half govuk-!-margin-top-4">
+      <h3 class="govuk-heading-m govuk-!-margin-top-2">Ministerstvo ako prijímateľ EŠIF</h3>
+      {{ idskCrossroad({
+        "columns": 1,
+        "classes": "govuk-clearfix",
+        "items": [
+          { "title": 'OP Integrovaná infraštruktúra', "subtitle": 'Všetky informácie o eurofondoch na jednom mieste.', "link": '#' },
+          { "title": 'OP Technická pomoc', "subtitle": 'Všetky informácie o eurofondoch na jednom mieste.', "link": '#' },
+          { "title": 'Integrovaný regionálny operačný program', "subtitle": 'Všetky informácie o eurofondoch na jednom mieste.', "link": '#' }
+        ]
+      }) }}
+    </div>
+    <div class="govuk-grid-column-one-half govuk-!-margin-top-4">
+      <h3 class="govuk-heading-m govuk-!-margin-top-2">Ministerstvo ako poskytovateľ EŠIF</h3>
+      {{ idskCrossroad({
+        "columns": 1,
+        "classes": "govuk-clearfix",
+        "items": [
+          { "title": 'PO7 Informačná spoločnosť', "subtitle": 'Všetky informácie o eurofondoch na jednom mieste.', "link": '#' },
+          { "title": 'Nórske fondy', "subtitle": 'Všetky informácie o eurofondoch na jednom mieste.', "link": '#' },
+          { "title": 'IROP', "subtitle": 'Všetky informácie o eurofondoch na jednom mieste.', "link": '#' }
+        ]
+      }) }}
+    </div>
+  </div>
+
+  <hr class="idsk-hr-separator govuk-!-margin-bottom-6">
+
+  <div class="govuk-grid-row">
+    <h2 class="govuk-heading-l govuk-!-margin-left-3">Vedenie ministerstva</h2>
+    <div class="govuk-grid-column-full">
+      {{ idskCard({
+        "type": "profile-horizontal",
+        "link": "#",
+        "imgSrc": "/public/assets/images/examples/the-pooh-bear.jpg",
+        "heading": "Macko Pú",
+        "description": "Štátny tajomník medu a radosti",
+        "quote": "“Aký je deň?” spýtal sa Pú. “Je dnes,” odpovedalo prasiatko. “Môj najobľúbenejší deň,” povedal Pú."
+      }) }}
+    </div>
+  </div>
+
+  <hr class="idsk-hr-separator govuk-!-margin-bottom-6">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-margin-bottom-5">
+      <h2 class="govuk-heading-l">Informatizácia</h2>
+      <p class="govuk-body-m">Všetky informácie o príprave, revízii a realizácii Európskych štrukturálnych fondov (EŠIF)
+        v podmienkach SR na jendom mieste. Viac informácií nájdete na <a class="govuk-link" href="#" title="podstránke Informatizácia">podstránke Informatizácia</a>.</p>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+      {{ idskCrossroad({
+        "columns": 1,
+        "items": [
+          { "title": 'Stratégie a strategické dokumenty', "subtitle": 'Všetky informácie o eurofondoch na jednom mieste.', "link": '#' },
+          { "title": 'Digitálne Slovensko v Európskom kontexte', "subtitle": 'Všetky informácie o eurofondoch na jednom mieste.', "link": '#' },
+          { "title": 'eGovernment na Slovensku', "subtitle": 'Všetky informácie o eurofondoch na jednom mieste.', "link": '#' },
+          { "title": 'Jednotný digitálny trh ', "subtitle": 'Všetky informácie o eurofondoch na jednom mieste.', "link": '#' }
+        ]
+      }) }}
+    </div>
+    <div class="govuk-grid-column-one-half idsk-intro-block">
+      <div class="app-pane-blue">
+        <h4 class="govuk-heading-l govuk-!-margin-bottom-2">G2G služby</h4>
+        <ul class="idsk-intro-block__side-menu__ul">
+          <li class="idsk-intro-block__side-menu__li">
+            <a class="idsk-intro-block__side-menu__a" href="#" title="Centrálny metainformačný systém verejnej správy (MetaIS)">Centrálny metainformačný systém verejnej správy (MetaIS)</a>
+          </li>
+          <li class="idsk-intro-block__side-menu__li">
+            <a class="idsk-intro-block__side-menu__a" href="#" title="Zaručená konverzia">Zaručená konverzia</a>
+          </li>
+          <li class="idsk-intro-block__side-menu__li">
+            <a class="idsk-intro-block__side-menu__a" href="#" title="Alfi.digital">Alfi.digital</a>
+          </li>
+          <li class="idsk-intro-block__side-menu__li">
+            <a class="idsk-intro-block__side-menu__a" href="#" title="Oversi.gov.sk">Oversi.gov.sk</a>
+          </li>
+          <li class="idsk-intro-block__side-menu__li">
+            <a class="idsk-intro-block__side-menu__a" href="#" title="Vládny cloud">Vládny cloud</a>
+          </li>
+          <li class="idsk-intro-block__side-menu__li">
+            <a class="idsk-intro-block__side-menu__a" href="#" title="IOMO">IOMO</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <hr class="idsk-hr-separator-until-tablet govuk-!-margin-bottom-6">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-margin-bottom-5">
+      <h2 class="govuk-heading-l">Investície</h2>
+      <p class="govuk-body-m">
+        Všetky informácie o príprave, revízii a realizácii Európskych štrukturálnych fondov (EŠIF) v podmienkach SR na
+        jendom mieste. Viac informácií nájdete na <a class="govuk-link" href="#" title="podstránke Informatizácia">podstránke Informatizácia</a>.
+      </p>
+    </div>
+    <div class="govuk-grid-column-full">
+      {{ idskCrossroad({
+        "columns": 2,
+        "items": [
+          { "title": 'Národný investičný plán', "subtitle": 'Všetky informácie o eurofondoch na jednom mieste.', "link": '#' },
+          { "title": 'Agenda 2030', "subtitle": 'Inteligentné mesto, zdravá budúcnosť. Inšpirujte sa.', "link": '#' },
+          { "title": 'Podpora inovácií', "subtitle": 'Zistite, ako Vám moderný štát môže ušetriť čas a peniaze.', "link": '#' },
+          { "title": 'Inovačná diplomacia', "subtitle": 'Zistite, ako Vám moderný štát môže ušetriť čas a peniaze.', "link": '#' }
+        ]
+      }) }}
+    </div>
+  </div>
+
+  <hr class="idsk-hr-separator govuk-!-margin-bottom-6">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-margin-bottom-5">
+      <h2 class="govuk-heading-l">Regionálny rozvoj</h2>
+      <p class="govuk-body-m">
+        Všetky informácie o príprave, revízii a realizácii Európskych štrukturálnych fondov (EŠIF) v podmienkach SR na jendom mieste. Viac informácií nájdete na <a class="govuk-link" href="#" title="podstránke Regionálny rozvoj">podstránke Regionálny rozvoj</a>.
+      </p>
+    </div>
+    <div class="govuk-grid-column-full">
+      {{ idskCrossroad({
+        "columns": 2,
+        "items": [
+          { "title": 'Zdroje financovania', "subtitle": 'Všetky informácie o eurofondoch na jednom mieste.', "link": '#' },
+          { "title": 'Strategické dokumenty', "subtitle": 'Inteligentné mesto, zdravá budúcnosť. Inšpirujte sa.', "link": '#' },
+          { "title": 'Metodické usmernenia a vzorové dokumenty', "subtitle": 'Zistite, ako Vám moderný štát môže ušetriť čas a peniaze.', "link": '#' },
+          { "title": 'Najmenej rozvinuté okresy', "subtitle": 'Zistite, ako Vám moderný štát môže ušetriť čas a peniaze.', "link": '#' },
+          { "title": 'Legislatíva a uznesenia', "subtitle": 'Zistite, ako Vám moderný štát môže ušetriť čas a peniaze.', "link": '#' },
+          { "title": 'Kontakty', "subtitle": 'Zistite, ako Vám moderný štát môže ušetriť čas a peniaze.', "link": '#' }
+        ]
+      }) }}
+    </div>
+  </div>
+
+  <div class="idsk-blue-banner">
+    <div class="idsk-blue-banner__wrapper">
+      <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6 idsk-blue-banner_description">
+        <h2 class="govuk-heading-l">Inštitút digitálnych a rozvojových politík</h2>
+        <div class="govuk-caption-l">
+          Všetky informácie o príprave, revízii a realizácii Európskych štrukturálnych fondov (EŠIF) v podmienkach SR na jendom mieste.
+        </div>
+        <br>
+        <a href="#" class="govuk-link" title="Zistiť viac o IDRP">Zistiť viac o IDRP</a>
+        <br>
+      </div>
+      <div class="govuk-grid-column-one-third idsk-blue-banner__image">
+        <img src="/public/assets/images/examples/eurofound.png" alt="eurofound">
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-margin-bottom-5">
+      <h2 class="govuk-heading-l">Podujatia</h2>
+      <p class="govuk-body-m">
+        Najbližšie podujatia organizované ministerstvom a s podporou ministerstva. Informácií o všetkých udalostiach nájdete na <a class="govuk-link" href="#" title="podstránke Podujatia">podstránke Podujatia</a>.
+      </p>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+      <div class="idsk-events-list">
+        <div class="govuk-grid-column-one-third">
+          <div class="idsk-events-list__block">
+            <div class="idsk-events-list__event-title">
+              <a href="#" class="govuk-link govuk-heading-s" title="Pandémia COVID-19 ešte viac zvýraznila potrebu urýchliť digitálnu transformáciu v Európe">Pandémia COVID-19 ešte viac zvýraznila potrebu urýchliť digitálnu transformáciu v Európe</a>
+            </div>
+            <div class="idsk-events-list__event-desc">26.02.2021</div>
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <div class="idsk-events-list__block">
+            <div class="idsk-events-list__event-title">
+              <a href="#" class="govuk-link govuk-heading-s" title="Hackaton - vytváranie šablóny webovej stránky">Hackaton - vytváranie šablóny webovej stránky</a>
+            </div>
+            <div class="idsk-events-list__event-desc">26.02.2021</div>
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <div class="idsk-events-list__block">
+            <div class="idsk-events-list__event-title">
+              <a href="#" class="govuk-link govuk-heading-s" title="ID-SK workshop #6">ID-SK workshop #6</a>
+            </div>
+            <div class="idsk-events-list__event-desc">26.02.2021</div>
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <div class="idsk-events-list__block">
+            <div class="idsk-events-list__event-title">
+              <a href="#" class="govuk-link govuk-heading-s" title="Pandémia COVID-19 ešte viac zvýraznila potrebu urýchliť digitálnu transformáciu v Európe">Pandémia COVID-19 ešte viac zvýraznila potrebu urýchliť digitálnu transformáciu v Európe</a>
+            </div>
+            <div class="idsk-events-list__event-desc">26.02.2021</div>
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <div class="idsk-events-list__block">
+            <div class="idsk-events-list__event-title">
+              <a href="#" class="govuk-link govuk-heading-s" title="Hackaton - vytváranie šablóny webovej stránky">Hackaton - vytváranie šablóny webovej stránky</a>
+            </div>
+            <div class="idsk-events-list__event-desc">26.02.2021</div>
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <div class="idsk-events-list__block">
+            <div class="idsk-events-list__event-title">
+              <a href="#" class="govuk-link govuk-heading-s" title="ID-SK workshop #6">ID-SK workshop #6</a>
+            </div>
+            <div class="idsk-events-list__event-desc">26.02.2021</div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <hr class="idsk-hr-separator govuk-!-margin-bottom-6">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-margin-bottom-5">
+    <h2 class="govuk-heading-l">Projekty a spolupráce MIRRI</h2>
+      <p class="govuk-body-m">
+        Slovensko je neodlučnou súčasťou európskeho digitálneho priestoru, ktorý pomáha formovať strategické smerovanie digitalizácie u nás. Viac informácií nájdete na <a class="govuk-link" href="#" title="podstránke Informatizácia">na podstránke Informatizácia</a>.
+      </p>
+    </div>
+    <div class="govuk-grid-column-full">
+      {{ idskCrossroad({
+        "columns": 2,
+        "hideTiles": true,
+        "items": [
+          { "title": 'Financovanie ITVS', "subtitle": 'Všetky informácie o eurofondoch na jednom mieste.', "link": '#' },
+          { "title": 'Prevádzka a rozvoj ITVS', "subtitle": 'Inteligentné mesto, zdravá budúcnosť. Inšpirujte sa.', "link": '#' },
+          { "title": 'Prevádzka a rozvoj ITVS', "subtitle": 'Inteligentné mesto, zdravá budúcnosť. Inšpirujte sa.', "link": '#' },
+          { "title": 'Prevádzka a rozvoj ITVS', "subtitle": 'Inteligentné mesto, zdravá budúcnosť. Inšpirujte sa.', "link": '#' },
+          { "title": 'Prevádzka a rozvoj ITVS', "subtitle": 'Inteligentné mesto, zdravá budúcnosť. Inšpirujte sa.', "link": '#' },
+          { "title": 'Prevádzka a rozvoj ITVS', "subtitle": 'Inteligentné mesto, zdravá budúcnosť. Inšpirujte sa.', "link": '#' },
+          { "title": 'Prevádzka a rozvoj ITVS', "subtitle": 'Inteligentné mesto, zdravá budúcnosť. Inšpirujte sa.', "link": '#' },
+          { "title": 'Prevádzka a rozvoj ITVS', "subtitle": 'Inteligentné mesto, zdravá budúcnosť. Inšpirujte sa.', "link": '#' },
+          { "title": 'Strategické dokumenty', "subtitle": 'Subtitle for 3rd element', "link": '#' },
+          { "title": 'Aktuality z informatizácie', "subtitle": 'Subtitle for 4th element', "link": '#' },
+          { "title": 'G2G služby', "subtitle": 'Subtitle for 5th element', "link": '#' },
+          { "title": 'Manažment údajov', "subtitle": 'Zistite, ako Vám moderný štát môže ušetriť čas a peniaze.', "link": '#' },
+          { "title": 'MIRRI digitálne projekty', "subtitle": 'Zistite, ako Vám moderný štát môže ušetriť čas a peniaze.', "link": '#' },
+          { "title": 'Informatizácia v európskom kontexte ', "subtitle": 'Zistite, ako Vám moderný štát môže ušetriť čas a peniaze.', "link": '#' },
+          { "title": 'Pracovné skupiny', "subtitle": 'Zistite, ako Vám moderný štát môže ušetriť čas a peniaze.', "link": '#' }
+        ]
+      }) }}
+    </div>
+  </div>
+{% endblock %}

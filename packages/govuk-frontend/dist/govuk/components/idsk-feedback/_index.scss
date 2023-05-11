@@ -1,0 +1,108 @@
+@import "../../objects/grid";
+
+// stylelint-disable selector-id-pattern
+// stylelint-disable selector-max-id
+
+@include govuk-exports("idsk/component/feedback") {
+  .idsk-feedback__content {
+    @include govuk-font($size: 19);
+  }
+
+  .idsk-feedback__content .govuk-radios {
+    line-height: 0;
+  }
+
+  .idsk-feedback__content .govuk-heading-l {
+    margin-bottom: 0;
+    padding-bottom: govuk-spacing(8);
+  }
+
+  .idsk-feedback__buttons {
+    padding-top: govuk-spacing(2);
+  }
+
+  @include mq($from: desktop) {
+    .idsk-feedback__content .govuk-radios .govuk-radios__input:hover + .govuk-radios__label:before {
+      box-shadow: 0 0 0 10px govuk-colour("mid-grey");
+    }
+
+    .idsk-feedback__content .govuk-radios .govuk-radios__item:hover .govuk-radios__input:focus + .govuk-radios__label:before {
+      box-shadow: 0 0 0 4px govuk-colour("yellow"), 0 0 0 10px govuk-colour("mid-grey");
+    }
+
+    .idsk-feedback__content .govuk-radios__label {
+      padding-left: 0;
+    }
+
+    .idsk-feedback__content .govuk-radios__label:before {
+      top: 8px;
+      width: 24px;
+      height: 24px;
+    }
+
+    .idsk-feedback__content .govuk-radios__label:after {
+      top: 15px;
+      left: 7px;
+      border-width: 5px;
+    }
+  }
+
+  .idsk-feedback__buttons .govuk-button {
+    width: auto;
+  }
+
+  #idsk-feedback__question-bar {
+    padding-top: govuk-spacing(6);
+  }
+
+  #idsk-feedback__question-bar .govuk-heading-m {
+    margin-bottom: -10px;
+  }
+
+  .idsk-feedback__subtitle {
+    margin-bottom: govuk-spacing(6);
+  }
+
+  #idsk-feedback__send-button {
+    margin-right: govuk-spacing(4);
+  }
+
+  .idsk-feedback--hidden {
+    display: none;
+  }
+
+  .idsk-feedback--invisible {
+    visibility: hidden;
+  }
+
+  .idsk-feedback--animation {
+    max-height: 0;
+    transition: max-height .7s ease-out;
+  }
+
+  #idsk-feedback__question-bar .govuk-textarea {
+    height: 150px;
+
+    @include mq($from: desktop) {
+      height: 115px;
+    }
+  }
+
+  #idsk-feedback__question-bar .govuk-textarea:focus {
+    width: 97%;
+    margin-left: 3px;
+
+    @include mq($from: desktop) {
+      width: 99%;
+    }
+  }
+
+  .idsk-feedback--open {
+    height: auto;
+    max-height: 619px;
+    overflow: hidden;
+    transition: max-height .7s ease-in;
+  }
+}
+
+/*# sourceMappingURL=_index.scss.map */

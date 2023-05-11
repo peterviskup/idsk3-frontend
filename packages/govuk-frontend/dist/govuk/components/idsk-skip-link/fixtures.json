@@ -1,0 +1,24 @@
+{
+    "component": "idsk-skip-link",
+    "fixtures": [
+        {
+            "name": "default",
+            "options": {
+                "text": "Skip to main content",
+                "href": "#content"
+            },
+            "hidden": false,
+            "html": "<a href=\"#content\" class=\"govuk-skip-link\">Skip to main content</a>"
+        },
+        {
+            "name": "with focus",
+            "options": {
+                "classes": ":focus",
+                "text": "Skip to main content",
+                "href": "#content"
+            },
+            "hidden": false,
+            "html": "<a href=\"#content\" class=\"govuk-skip-link :focus\">Skip to main content</a>"
+        }
+    ]
+}

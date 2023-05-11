@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <title>Grafový komponent</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="title" content="Grafový komponent">
+    <meta name="description" content="Príkladový graf koponentu - Grafový komponent">
+
+    <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/public/assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/assets/images/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="/public/assets/images/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/public/assets/images/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" href="/public/assets/images/apple-touch-icon.png">
+
+    <!--[if !IE 8]><!-->
+        <link rel="stylesheet" href="/public/app.css">
+    <!--<![endif]-->
+    <!--[if IE 8]>
+        <link rel="stylesheet" href="/public/app-ie8.css">
+    <![endif]-->
+    <!--[if lt IE 9]>
+        <script src="/vendor/html5-shiv/html5shiv.js"></script>
+    <![endif]-->
+
+    <script src="/public/assets/js/plotly-locale-sk.min.js"></script>
+    <script src="/public/assets/js/plotly-latest.min.js"></script>
+    {# var $krajeGeoJSON #}
+    <script src="/public/assets/data/krajeGeoJSON.js"></script>
+    {# var $vaccinationsByRegion #}
+    <script src="/public/assets/data/vaccinationsByRegion.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+        }
+        [id^=legend] rect{
+            width: 200px;
+        }
+        .infolayer .legend .traces:nth-child(2) {
+            transform: translate(100px, 14px);
+        }
+
+    </style>
+</head>
+<body>
+    <div id="graph"></div>
+    <script>
+        var $params = new URL(location.href).searchParams
+        var $time = $params.get("time")
+        var $types = $params.get("type")
+        var $typesArr = $types === null || $types === ""  ? ["pcr"] : $types.split("-")
+
+        var renderGraph = function() {
+            var urlToDownload = "https://raw.githubusercontent.com/Institut-Zdravotnych-Analyz/covid19-data/main/DailyStats/OpenData_Slovakia_Covid_DailyStats.csv"
+            var $d3 = Plotly.d3;
+            var $gd3 = $d3.select("#graph")
+
+            var $gd = $gd3.node();
+            var $xAxisDate = []
+            var $pcr = []
+            var $ag = []
+            var $agValue = 0
+            var $agKey = "AgPosit"
+            var $pcrKey = $time === "sum" ? "Pocet.potvrdenych.PCR.testami" : "Dennych.PCR.prirastkov"
+
+            $.ajax({
+                url: urlToDownload,
+                success: function(csvFile) {
+                    const output = Papa.parse(csvFile, {
+                      header: true,
+                    });
+                    if (output.data) {
+                      output.data.forEach(function($item) {
+                        var $date = new Date($item['Datum'])
+
+                        $xAxisDate.push($date)
+                        $pcr.push($item[$pcrKey])
+
+                        // calculating sum for ag tests if needed
+                        $ag.push($agValue + parseInt($item[$agKey]))
+
+                        if ($time === "sum" && $item[$agKey]!= 'NA')
+                          $agValue += parseInt($item[$agKey])
+                      })
+
+                      var $bar = []
+                      $bar["antigen"] = {
+                        x: $xAxisDate,
+                        y: $ag,
+                        name: "Antigén",
+                        type: "bar",
+                        marker: {
+                          color: "#5694ca"
+                        },
+                      }
+                      $bar["pcr"] = {
+                        x: $xAxisDate,
+                        y: $pcr,
+                        name: "PCR",
+                        type: "bar",
+                        marker: {
+                          color: "#003078"
+                        },
+                      }
+                      var $data = []
+                      $data = $typesArr.map(function($type) {
+                        return $bar[$type]
+                      })
+                      var $layout = {
+                        height: 276,
+                        hovermode: "x unified",
+                        barmode: 'stack',
+                        xaxis: {
+                          type: "date",
+                          ticks: "outside",
+                        },
+                        yaxis: {
+                          gridcolor: "#DEE0E2",
+                        },
+                        paper_bgcolor: "rgba(0,0,0,0)",
+                        plot_bgcolor: "rgba(0,0,0,0)",
+                        showlegend: true,
+                        legend: {
+                          orientation: "h",
+                          y: -0.2,
+                        },
+                        margin: {
+                          l: 35,
+                          r: 20,
+                          b: 50,
+                          t: 0,
+                          pad: 0
+                        },
+                        modebar: {
+                          bgcolor: "transparent",
+                          color: "rgba(0,0,0,1)",
+                          activecolor: "#003078",
+                        },
+                      }
+                      var $config = {
+                        locale: "sk",
+                        displaylogo: false,
+                        responsive: true,
+                        modeBarButtonsToRemove: ["autoScale2d", "lasso2d", "pan2d", "select2d", "toggleSpikelines", "hoverCompareCartesian", "zoom2d", "hoverClosestCartesian"],
+                      }
+                      Plotly.newPlot($gd, $data, $layout, $config)
+                    } else {
+                      console.log("Data was not loaded successfully");
+                    }
+                },
+                error: function(jqXHR, textStatus, errorThrow){
+                    console.log("Data was not loaded successfully");
+                }
+            });
+        }
+
+        if (document.readyState === "complete" || document.readyState === "interactive") {
+            renderGraph()
+        } else {
+            document.addEventListener("DOMContentLoaded", function() {
+                renderGraph()
+            })
+        }
+    </script>
+
+</body>
+</html>

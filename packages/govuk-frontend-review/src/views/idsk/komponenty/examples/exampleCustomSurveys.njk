@@ -1,0 +1,25 @@
+{% from "idsk-customer-surveys/macro.njk" import idskCustomerSurveys %}
+{{ idskCustomerSurveys({
+    characterLength : 350,
+    upButtonEnabled : "true",
+    dropdownItems: [
+    {
+      value: "published",
+      text: "Validačná chyba"
+    },
+    {
+      value: "updated",
+      text: "Gramatická chyba",
+      selected: true
+    },
+    {
+      value: "views",
+      text: "Chyba responzivity"
+    },
+    {
+      value: "comments",
+      text: "Chyba iná"
+    }
+    ]
+  })
+}}

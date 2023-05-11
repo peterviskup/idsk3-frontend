@@ -1,0 +1,69 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Používateľské mená" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Vzory</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Tento návod opisuje spôsob, ako požiadať používateľov o vytvorenie používateľského mena.</p>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-s">Obsah:</h2>
+            <ul class="govuk-list">
+                <li><a class="govuk-link" href="#eid-elektronicka-identifikacia-ako-prihlasovaci-sposob" title="eID elektronická identifikácia ako prihlasovací spôsob">eID elektronická identifikácia ako prihlasovací spôsob</a>
+                </li>
+                <li><a class="govuk-link" href="#e-mailove-adresy-ako-pouzivatelske-mena" title="E-mailové adresy ako používateľské mená">E-mailové adresy ako používateľské mená</a></li>
+                <li><a class="govuk-link" href="#pouzivatelmi-vytvorene-pouzivatelske-mena" title="Používateľmi vytvorené používateľské mená">Používateľmi vytvorené používateľské mená</a></li>
+                <li><a class="govuk-link" href="#umoznite-pouzivatelom-robit-zmeny" title="Umožnite používateľom robiť zmeny">Umožnite používateľom robiť zmeny</a></li>
+                <li><a class="govuk-link" href="#sluzbou-vytvorene-pristupy" title="Službou vytvorené prístupy">Službou vytvorené prístupy</a></li>
+            </ul>
+
+            <h3 class="govuk-heading-m" id="eid-elektronicka-identifikacia-ako-prihlasovaci-sposob">eID elektronická identifikácia ako prihlasovací spôsob</h3>
+            <p class="govuk-body">V prostredí elektronických služieb preferujeme prihlasovanie prostredníctvom centrálneho autentifikačného modulu použitím eID elektronickej identifikácie, t.j. prostredníctvom eID karty, elektronického dokladu o pobyte, alternatívneho autentifikátora či autentifikačného certifikátu. Tento návod je určený len pre tie služby, ktoré neposkytujú prihlásenie týmto spôsobom a používatelia si musia vytvoriť vlastné používateľské mená.</p>
+
+            <h3 class="govuk-heading-m" id="e-mailove-adresy-ako-pouzivatelske-mena">E-mailové adresy ako používateľské mená</h3>
+            <p class="govuk-body">Ako používateľské mená používajte e-mailové adresy, pretože:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>ľahko sa dajú zapamätať,</li>
+                <li>zvyčajne sú jedinečné,</li>
+                <li>je jednoduchšie ich použiť, než vytvoriť unikátne používateľské mená,</li>
+                <li>sú súčasťou skoro každého formulára.</li>
+            </ul>
+            <p class="govuk-body">Pamätajte, že nie každý disponuje e-mailovou adresou, prípadne ju nie každý chce použiť ako používateľské meno. Počet používateľov bez prístupu k e-mailom sa líši od služby k službe.</p>
+            <p class="govuk-body">Preto je dôležité pred spustením služby urobiť výskum, aby ste pochopili túto cieľovú skupinu a pomohli im s používaním vašej služby.</p>
+
+            <h3 class="govuk-heading-m" id="pouzivatelmi-vytvorene-pouzivatelske-mena">Používateľmi vytvorené používateľské mená</h3>
+            <p class="govuk-body">Požadovať, aby si používatelia vytvárali unikátne používateľské mená, by ste mali iba v prípade, ak vaša služba obsahuje používateľmi generovaný obsah. Napríklad blog so sekciou komentárov pod ním.</p>
+            <p class="govuk-body">Unikátne požívateľské mená vytvárané používateľmi sa v porovnaní s e-mailovými adresami ťažšie vytvárajú a jednoduchšie zabúdajú.</p>
+            <p class="govuk-body">V takom prípade je nevyhnutné:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>oznámiť používateľovi, či ním vytvorené používateľské meno je unikátne alebo nie,</li>
+                <li>ponúknuť používateľovi alternatívu používateľského mena (v niektorých prípadoch),</li>
+                <li>sa uistiť, že si používateľ dokáže obnoviť alebo môže požiadať o obnovu svojho používateľského mena.</li>
+            </ul>
+
+            <h3 class="govuk-heading-m" id="umoznite-pouzivatelom-robit-zmeny">Umožnite používateľom robiť zmeny</h3>
+            <p class="govuk-body">Bez ohľadu na to, aké používateľské mená vo vašej službe využívate, umožnite používateľom vždy zmeniť ich e-mailovú adresu alebo používateľské meno.</p>
+
+            <h3 class="govuk-heading-m" id="sluzbou-vytvorene-pristupy">Službou vytvorené prístupy</h3>
+            <p class="govuk-body">Ak je nepravdepodobné, že by používatelia pristupovali k vašej službe opakovane, odporúča sa im prideliť unikátna referencia namiesto toho, aby ste ich nútili vytvoriť používateľské meno.</p>
+
+        </div>
+    </div>
+
+  </div>
+{% endblock %}

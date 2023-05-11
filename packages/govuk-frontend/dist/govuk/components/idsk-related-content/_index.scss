@@ -1,0 +1,27 @@
+@include govuk-exports("idsk/component/related-content") {
+  .idsk-related-content {
+    &__line {
+      height: 2px;
+      margin-bottom: 10px;
+      border: 0;
+      background-color: govuk-colour("dark-blue");
+    }
+
+    &__heading {
+      margin-bottom: 10px;
+    }
+
+    &__list > .idsk-related-content__list-item {
+      margin-bottom: 10px;
+    }
+
+    &__link {
+      @include govuk-link-common;
+      @include govuk-link-style-default;
+
+      color: govuk-colour("blue");
+    }
+  }
+}
+
+/*# sourceMappingURL=_index.scss.map */

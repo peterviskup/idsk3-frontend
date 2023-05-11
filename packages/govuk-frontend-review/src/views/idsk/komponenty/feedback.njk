@@ -1,0 +1,49 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Spätná väzba" %}
+
+{% block beforeContent %}
+    {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+        <span class="govuk-caption-xl">Webové komponenty</span>
+        <h1 class="govuk-heading-xl">{{pageName}}</h1>
+        <p class="govuk-body-l">Spätná väzba
+        </p>
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h2 class="govuk-heading-s">Obsah:</h2>
+                <ul class="govuk-list">
+                    <li>
+                        <a class="govuk-link" href="#ukazka-spatna-vazba" title="Príklad spätnej väzby">Príklad spätnej väzby</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="govuk-grid-column-full">
+                <h3 class="govuk-heading-m" id="ukazka-spatna-vazba">Príklad spätnej väzby</h3>
+                <div class="example">
+                    {% set exampleComponentHtml %}
+                    {% include "../komponenty/examples/exampleFeedback.njk" %}
+                    {% endset %}
+                    {{exampleComponentHtml | safe}}
+                </div>
+            </div>
+
+            <div class="govuk-grid-column-two-thirds">
+                <h2 class="govuk-heading-l" id="priklady">Rozšírené príklady pre spätnú väzbu</h2>
+                <ul class="govuk-list">
+                    <li>
+                        <a class="govuk-link" href="/components/idsk-feedback" title="Rozšírené príklady spätnej väzby">Rozšírené príklady spätnej väzby</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+{% endblock %}

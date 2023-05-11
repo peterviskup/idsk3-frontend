@@ -1,0 +1,515 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "idsk-header-web/macro.njk" import idskHeaderWeb %}
+{% from "idsk-crossroad/macro.njk" import idskCrossroad %}
+{% from "idsk-accordion/macro.njk" import idskAccordion %}
+{% from "idsk-footer-extended/macro.njk" import idskFooterExtended %}
+
+{% block styles %}
+<style>
+    body {
+        overflow-x: hidden;
+    }
+
+    .govuk-accordion__open-all {
+        display: none;
+    }
+</style>
+{% endblock %}
+
+{% block skipLink %}
+    {{ idskSkipLink({
+        href: '#main-content',
+        text: 'Preskočiť na hlavný obsah',
+        classes: 'idsk-skip-link--sticky'
+    }) }}
+{% endblock %}
+
+{% block header %}
+  {{ idskHeaderWeb({
+    headerType: "website",
+    assetsPath: "/public/assets/images/header-web/",
+    search: true,
+    brand: {
+      gestor: true,
+      languages: [
+        {
+          text: "Slovenčina",
+          selected: true,
+          link: "#1"
+        },
+        {
+          text: "English",
+          link: "#2"
+        },
+        {
+          text: "German",
+          link: "#3"
+        }
+      ]
+    },
+    main: {
+      showLogo: true,
+      logoSrc: "logo-mirri-farebne.svg",
+      logoAlt: "ID-SK Frontend"
+    },
+    navBar: {
+      navigation: [
+        {
+          text: "Eurofondy",
+          link: "#1"
+        },
+        {
+          text: "Regionálny rozvoj",
+          link: "#2"
+        },
+        {
+          text: "Informatizácia",
+          link: "#3"
+        },
+        {
+          text: "Investície",
+          link: "#4"
+        },
+        {
+          text: "Inovácie",
+          link: "#5"
+        }
+      ]
+    }
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+        { text: ' ID-SK frontend', href: '/' + legacyQuery },
+        { text: 'Investície' }
+        ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+    <h2 class="govuk-heading-l">Stratégie a strategické dokumenty</h2>
+    <p class="govuk-body-l">
+        Slovensko je neodlučnou súčasťou európskeho digitálneho priestoru, ktorý pomáha formovať strategické smerovanie digitalizácie u nás.
+    </p>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        {{ idskCrossroad({
+            "columns": 2,
+            "classes": "govuk-clearfix",
+            "items": [
+                { "title": 'Stratégia digitálnej transformácie Slovenska 2030', "subtitle": 'Ciele NKIVS, OPII 2014-2020, 0EK programu pre IT výdavky zo štátneho IT a ciele pre PO 2021-2027', "link": '#' },
+                { "title": 'Akčný plán digitálnej transformácie Slovenska ', "subtitle": 'Štandardizované postupy a dokumenty pre začatie prvej fázy projektového riadenia a založenie riadiaceho výboru', "link": '#' },
+                { "title": 'Jednotný digitálny trh', "subtitle": 'Pomôcka pre výpočet biznis case - prínosov pre financovanie IT projektu', "link": '#' },
+                { "title": 'Jednotná digitálna brána', "subtitle": 'Pomôcka pre výpočet biznis case - prínosov pre financovanie IT projektu', "link": '#' },
+                { "title": 'Tallinská deklarácia', "subtitle": 'Databáza cien za jednotku človodeň podľa rolí a princípy k vypracovaniu rozpočtu IT systému', "link": '#' },
+                { "title": 'Interoperabilita EÚ', "subtitle": 'Štandardizované postupy a dokumenty pre začatie druhej fázy projektového riadenia a postup pre získanie hodnotenia projektu', "link": '#' },
+                { "title": 'Tallinská deklarácia', "subtitle": 'Databáza cien za jednotku človodeň podľa rolí a princípy k vypracovaniu rozpočtu IT systému', "link": '#' },
+                { "title": 'Legislatíva EÚ', "subtitle": 'Štandardizované postupy a dokumenty pre začatie druhej fázy projektového riadenia a postup pre získanie hodnotenia projektu', "link": '#' }
+            ]
+        }) }}
+      </div>
+    </div>
+    <p class="govuk-body-l govuk-!-margin-top-4 govuk-!-margin-bottom-8">
+        Slovensko je neodlučnou súčasťou európskeho digitálneho priestoru, ktorý pomáha formovať strategické smerovanie digitalizácie u nás.
+    </p>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        {{ idskCrossroad({
+            "columns": 2,
+            "classes": "govuk-clearfix",
+            "items": [
+                { "title": 'Národna koncepcia informatizácie verejnej správy (NKIVS)', "subtitle": 'Ciele NKIVS, OPII 2014-2020, 0EK programu pre IT výdavky zo štátneho IT a ciele pre PO 2021-2027', "link": '#' },
+                { "title": 'Strategické priority NKIVS', "subtitle": 'Štandardizované postupy a dokumenty pre začatie prvej fázy projektového riadenia a založenie riadiaceho výboru', "link": '#' },
+                { "title": 'Manažment údajov a licensií', "subtitle": 'Pomôcka pre výpočet biznis case - prínosov pre financovanie IT projektu', "link": '#' },
+                { "title": 'Návrh centralizácie a rozvoja dátových centier v štátnej správe', "subtitle": 'Pomôcka pre výpočet biznis case - prínosov pre financovanie IT projektu', "link": '#' },
+                { "title": 'Koncepcie rozvoja informačných technológií verejnej správy orgánov riadenia', "subtitle": 'Databáza cien za jednotku človodeň podľa rolí a princípy k vypracovaniu rozpočtu IT systému', "link": '#' },
+                { "title": 'Správa architektúry podľa NKVIS', "subtitle": 'Štandardizované postupy a dokumenty pre začatie druhej fázy projektového riadenia a postup pre získanie hodnotenia projektu', "link": '#' },
+                { "title": 'Vládny cloud', "subtitle": 'Databáza cien za jednotku človodeň podľa rolí a princípy k vypracovaniu rozpočtu IT systému', "link": '#' }
+            ]
+        }) }}
+      </div>
+    </div>
+
+    <hr class="idsk-hr-separator govuk-!-margin-bottom-6">
+
+    <h2 class="govuk-heading-l">eGovernment na Slovensku</h2>
+    <p class="govuk-body-l">
+        Pomoc pri riadení nákladov na prevádzku systémov a merania ukazovateľov pre vyhodnocovanie systémov.
+    </p>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        {{ idskCrossroad({
+            "columns": 2,
+            "classes": "govuk-clearfix idsk-pattern-strategie",
+            "items": [
+                { "title": 'Zákon o eGovernmente', "subtitle": 'Ciele NKIVS, OPII 2014-2020, 0EK programu pre IT výdavky zo štátneho IT a ciele pre PO 2021-2027', "link": '#' },
+                { "title": 'Zákon o informačných technológiách vo verejnej správe', "subtitle": 'Štandardizované postupy a dokumenty pre začatie prvej fázy projektového riadenia a založenie riadiaceho výboru', "link": '#' },
+                { "title": 'Štandardy informačných technológiách vo verejnej správe ', "subtitle": 'Pomôcka pre výpočet biznis case - prínosov pre financovanie IT projektu', "link": '#' },
+                { "title": 'Prístupnosť webových sídiel', "subtitle": 'Pomôcka pre výpočet biznis case - prínosov pre financovanie IT projektu', "link": '#' },
+                { "title": 'ID-SK', "subtitle": 'Databáza cien za jednotku človodeň podľa rolí a princípy k vypracovaniu rozpočtu IT systému', "link": '#' }
+            ]
+        }) }}
+      </div>
+    </div>
+
+    {{ idskAccordion({
+      "id": "default-example1",
+      "classes": "govuk-!-margin-bottom-4",
+      "attributes": {
+        "data-attribute": "value"
+      },
+      "items": [
+        {
+          "heading": {
+            "text": "Strategické dokumenty eGovernmentu"
+          },
+          "summary": {
+          },
+          "content": {
+            "html": "
+                <p class='govuk-body'>Krátky, popisný text.</p>
+                <p class='govuk-body'><a class='govuk-link' href='#' title='Národna koncepcia informatizácie verejnej správy (NKIVS)'>Národna koncepcia informatizácie verejnej správy (NKIVS)</a></p>
+                <p class='govuk-body'><a class='govuk-link' href='#' title='Strategické priority NKIVS'>Strategické priority NKIVS</a></p>
+                <p class='govuk-body'><a class='govuk-link' href='#' title='Koncepcie rozvoja informačných technológií verejnej správy orgánov riadenia'>Koncepcie rozvoja informačných technológií verejnej správy orgánov riadenia</a></p>
+                <p class='govuk-body'><a class='govuk-link' href='#' title='Manažment údajov a licensií'>Manažment údajov a licensií</a></p>
+                <p class='govuk-body'><a class='govuk-link' href='#' title='Návrh centralizácie a rozvoja dátových centier v štátnej správe'>Návrh centralizácie a rozvoja dátových centier v štátnej správe</a></p>
+                "
+          }
+        },
+        {
+          "heading": {
+            "text": "Správa architektúry podľa NKVIS"
+          },
+          "summary": {
+          },
+          "content": {
+            "html": "<p class='govuk-body'>Správa architektúry podľa NKVIS</p>"
+          }
+        },
+        {
+          "heading": {
+            "text": "Manažment údajov a licensií"
+          },
+          "summary": {
+          },
+          "content": {
+            "html": "<p class='govuk-body'>Manažment údajov a licensií</p>"
+          }
+        },
+        {
+          "heading": {
+            "text": "Zaručená konverzia"
+          },
+          "summary": {
+          },
+          "content": {
+            "html": "<p class='govuk-body'>Zaručená konverzia</p>"
+          }
+        },
+        {
+          "heading": {
+            "text": "Riadenie kvality (Q&A)"
+          },
+          "summary": {
+          },
+          "content": {
+            "html": "<p class='govuk-body'>Riadenie kvality (Q&A)</p>"
+          }
+        },
+        {
+          "heading": {
+            "text": "Rozpočtovanie ITVS"
+          },
+          "summary": {
+          },
+          "content": {
+            "html": "<p class='govuk-body'>Rozpočtovanie ITVS</p>"
+          }
+        },
+        {
+          "heading": {
+            "text": "Lepšie digitálne služby & behaviorálne inovácie"
+          },
+          "summary": {
+          },
+          "content": {
+            "html": "<p class='govuk-body'>Lepšie digitálne služby & behaviorálne inovácie</p>"
+          }
+        },
+        {
+          "heading": {
+            "text": "Pracovné skupiny a poradný orgín vlády"
+          },
+          "summary": {
+          },
+          "content": {
+            "html": "<p class='govuk-body'>Pracovné skupiny a poradný orgín vlády</p>"
+          }
+        }
+      ]
+    }) }}
+
+    <h2 class="govuk-heading-l govuk-!-margin-top-6">Digitálne Slovensko v Európskom kontexte</h2>
+    <p class="govuk-body-l">
+        Pomoc pri riadení nákladov na prevádzku systémov a merania ukazovateľov pre vyhodnocovanie systémov.
+    </p>
+
+    {{ idskAccordion({
+      "id": "default-example2",
+      "classes": "govuk-!-margin-bottom-4",
+      "attributes": {
+        "data-attribute": "value"
+      },
+      "items": [
+        {
+          "heading": {
+            "text": "Digitálne Slovensko a EÚ"
+          },
+          "summary": {
+          },
+          "content": {
+            "html": "
+                <p class='govuk-body'>Krátky, popisný text.</p>
+                <p class='govuk-body'><a class='govuk-link' href='#' title='Index digitálnej ekonomiky a spoločnosti (DESI)'>Index digitálnej ekonomiky a spoločnosti (DESI)</a></p>
+                <p class='govuk-body'><a class='govuk-link' href='#' title='eGovernment Benchmark'>eGovernment Benchmark</a></p>
+                <p class='govuk-body'><a class='govuk-link' href='#' title='Jednotný digitálny trh – základné informácie'>Jednotný digitálny trh – základné informácie</a></p>
+                <p class='govuk-body'><a class='govuk-link' href='#' title='Ministerstvá členských štátov EÚ s gesciou digitálnej agendy'>Ministerstvá členských štátov EÚ s gesciou digitálnej agendy</a></p>
+                <p class='govuk-body'><a class='govuk-link' href='#' title='Európsky parlament - relevantné výbory'>Európsky parlament - relevantné výbory</a></p>
+                <p class='govuk-body'><a class='govuk-link' href='#' title='Relevantné formáty Rady EÚ'>Relevantné formáty Rady EÚ</a></p>
+                "
+          }
+        },
+        {
+          "heading": {
+            "text": "Stratégie a strategické dokumenty"
+          },
+          "summary": {
+          },
+          "content": {
+            "html": "<p class='govuk-body'> Stratégie a strategické dokumenty</p>"
+          }
+        },
+        {
+          "heading": {
+            "text": "Priamo riadené programy a možnosti financovania"
+          },
+          "summary": {
+          },
+          "content": {
+            "html": "<p class='govuk-body'>Priamo riadené programy a možnosti financovania</p>"
+          }
+        },
+        {
+          "heading": {
+            "text": "Digitálne inovácie"
+          },
+          "summary": {
+          },
+          "content": {
+            "html": "<p class='govuk-body'>Digitálne inovácie</p>"
+          }
+        },
+        {
+          "heading": {
+            "text": "Národné iniciatívy"
+          },
+          "summary": {
+          },
+          "content": {
+            "html": "<p class='govuk-body'>Národné iniciatívy</p>"
+          }
+        },
+        {
+          "heading": {
+            "text": "Medzinárodná agenda"
+          },
+          "summary": {
+          },
+          "content": {
+            "html": "<p class='govuk-body'>Medzinárodná agenda</p>"
+          }
+        },
+        {
+          "heading": {
+            "text": "Kancelária pre širokpásmové pripojenie - Broadband Competence Office"
+          },
+          "summary": {
+          },
+          "content": {
+            "html": "<p class='govuk-body'>Kancelária pre širokpásmové pripojenie - Broadband Competence Office</p>"
+          }
+        }
+      ]
+    }) }}
+{% endblock %}
+
+{% block footer %}
+  {{ idskFooterExtended({
+    characterLength : 500,
+    showFeedback : "true",
+    upButtonEnabled : "true",
+    designAddress : "#",
+    logo: "footer-extended-logo.svg",
+    feedbackButtonAddress : "idsk.gov.sk",
+    firstColumn: {
+      title: "Eurofondy",
+      leftItems: [
+        {
+          name:"O eurofondoch",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 13/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 14/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 15/20",
+          href:"#"
+        }
+      ],
+      rightItems: [
+        {
+          name:"Link small Regular 16/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 17/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 18/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 19/20",
+          href:"#"
+        }
+      ]
+    },
+
+    secondColumn: {
+      title: "Regionálny rozvoj",
+      items: [
+        {
+          name:"Link small Regular 20/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 21/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 22/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 23/20",
+          href:"#"
+        }
+      ]
+    },
+
+    thirdColumn: {
+      title: "Informatizácia",
+      leftItems: [
+        {
+          name:"Link small Regular 12/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 13/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 14/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 15/20",
+          href:"#"
+        }
+      ],
+      rightItems: [
+        {
+          name:"Link small Regular 16/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 17/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 18/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 19/20",
+          href:"#"
+        }
+      ]
+    },
+
+    fourthColumn: {
+      title: "Investície",
+      items: [
+        {
+          name:"Link small Regular 28/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 29/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 30/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 31/20",
+          href:"#"
+        }
+      ]
+    },
+
+    subtitles: [
+      {
+        item:"Pomoc",
+        href:"#"
+      },
+      {
+        item:"Cookies",
+        href:"#"
+      },
+      {
+        item:"Kontakty",
+        href:"#"
+      },
+      {
+        item:"Mapa Stránky",
+        href:"#"
+      }
+    ],
+    dropdownItems: [
+      {
+        text:"Gramatická chyba",
+        value:"#"
+      },
+      {
+        text:"chyba zobrazovania",
+        value:"#"
+      },
+      {
+        text:"chyba obsahu",
+        value:"#"
+      }
+    ]
+  }) }}
+{% endblock %}

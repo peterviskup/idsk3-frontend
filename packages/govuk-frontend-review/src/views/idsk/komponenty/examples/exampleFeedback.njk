@@ -1,0 +1,30 @@
+{% from "idsk-feedback/macro.njk" import idskFeedback %}
+{{ idskFeedback({
+counter : 0,
+characterLength : 200,
+feedbackOptions: [
+        {
+          name:"Veľmi nespokojný",
+          textArea:true,
+          value: 1
+        },
+        {
+          name:"Nespokojný",
+          textArea:true,
+          value: 2
+        },
+        {
+          name:"Ani spokojný ani nespokojný",
+          textArea:true,
+          value: 3
+        },
+        {
+          name:"Spokojný",
+          value: 4
+        },
+        {
+          name:"Veľmi spokojný",
+          value: 5
+        }
+      ]})
+}}

@@ -1,0 +1,177 @@
+{
+    "component": "idsk-search-results-filter",
+    "fixtures": [
+        {
+            "name": "default",
+            "options": {
+                "filters": [
+                    {
+                        "name": "Téma",
+                        "group": 1,
+                        "id": "tema",
+                        "isRadio": true,
+                        "searchInputId": "idsk-search-input__topic",
+                        "searchInputTitle": "Filter podľa témy",
+                        "radios": [
+                            {
+                                "name": "Eurofondy",
+                                "value": "Eurofondy"
+                            },
+                            {
+                                "name": "Informatizácia",
+                                "value": "Informatizácia"
+                            },
+                            {
+                                "name": "Regionálny rozvoj a komunity",
+                                "value": "Regionálny-rozvoj-a-komunity"
+                            },
+                            {
+                                "name": "Investície",
+                                "value": "Investície"
+                            },
+                            {
+                                "name": "Inovácie",
+                                "value": "Inovácie"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Podtéma",
+                        "group": 2,
+                        "id": "podtema",
+                        "isRadio": true,
+                        "isSubtopic": true,
+                        "searchInputId": "idsk-search-input__subtopic",
+                        "searchInputTitle": "Filter podľa podtémy",
+                        "radios": [
+                            {
+                                "name": "Výzvy pre rozvoj regiónov",
+                                "value": "Výzvy-pre-rozvoj-regiónov"
+                            },
+                            {
+                                "name": "WiFi 4u",
+                                "value": "WiFi-4u"
+                            },
+                            {
+                                "name": "Dotácie na obecné školy",
+                                "value": "Dotácie-na-obecné-školy"
+                            },
+                            {
+                                "name": "Agroturistika",
+                                "value": "Agroturistika"
+                            },
+                            {
+                                "name": "Podpora miestnej komunity",
+                                "value": "Podpora-miestnej-komunity"
+                            },
+                            {
+                                "name": "Výzvy pre rozvoj regiónov2",
+                                "value": "Výzvy-pre-rozvoj-regiónov2"
+                            },
+                            {
+                                "name": "WiFi 4u2",
+                                "value": "WiFi-4u2"
+                            },
+                            {
+                                "name": "Dotácie na obecné školy2",
+                                "value": "Dotácie-na-obecné-školy2"
+                            },
+                            {
+                                "name": "Agroturistika2",
+                                "value": "Agroturistika2"
+                            },
+                            {
+                                "name": "Dotácie na obecné školy3",
+                                "value": "Dotácie-na-obecné-školy3"
+                            },
+                            {
+                                "name": "Agroturistika3",
+                                "value": "Agroturistika3"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Typ obsahu",
+                        "group": 3,
+                        "id": "obsah",
+                        "isCheckBox": true,
+                        "filterClass": "idsk-search-results__content-type-filter",
+                        "searchInputId": "idsk-search-input__content-type",
+                        "searchInputTitle": "Filter podľa obsahu",
+                        "checkBoxItems": [
+                            {
+                                "value": "Rozvoj regiónov",
+                                "text": "Rozvoj regiónov",
+                                "id": "rozvoj"
+                            },
+                            {
+                                "value": "Novinky a komunikačné vyhlásenia",
+                                "text": "Novinky a komunikačné vyhlásenia",
+                                "id": "novinky"
+                            },
+                            {
+                                "value": "Transparentnosť a sloboda prístupu k informáciám",
+                                "text": "Transparentnosť a sloboda prístupu k informáciám",
+                                "id": "transparentnost"
+                            },
+                            {
+                                "value": "Legislatíva",
+                                "text": "Legislatíva",
+                                "id": "legislativa"
+                            },
+                            {
+                                "value": "Štatistické údaje",
+                                "text": "Štatistické údaje",
+                                "id": "statistika"
+                            },
+                            {
+                                "value": "Rodová rovnosť a postavenia žien v pracovom prostredí",
+                                "text": "Rodová rovnosť a postavenia žien v pracovom prostredí",
+                                "id": "rodova"
+                            },
+                            {
+                                "value": "Rozvoj regiónov",
+                                "text": "Rozvoj regiónov",
+                                "id": "rozvoj2"
+                            },
+                            {
+                                "value": "Novinky a komunikačné vyhlásenia",
+                                "text": "Novinky a komunikačné vyhlásenia",
+                                "id": "novinky2"
+                            },
+                            {
+                                "value": "Transparentnosť a sloboda prístupu k informáciám",
+                                "text": "Transparentnosť a sloboda prístupu k informáciám",
+                                "id": "transparentnost2"
+                            },
+                            {
+                                "value": "Legislatíva",
+                                "text": "Legislatíva",
+                                "id": "legislativa2"
+                            },
+                            {
+                                "value": "Štatistické údaje",
+                                "text": "Štatistické údaje",
+                                "id": "statistika2"
+                            },
+                            {
+                                "value": "Rodová ro2vnosť a postavenia žien v pracovom prostredí",
+                                "text": "Rodová rovnosť a postavenia žien v pracovom prostredí",
+                                "id": "rodova2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Dátum aktualizácie",
+                        "group": 3,
+                        "idFrom": "datum-od",
+                        "idTo": "datum-do",
+                        "isTextarea": true
+                    }
+                ]
+            },
+            "hidden": false,
+            "html": "<div data-module=\"idsk-search-results-filter\" class=\"govuk-grid-column-one-third \">\n    <div class=\"idsk-search-results__filter idsk-search-results-filter__filter-panel\">\n    <div class=\"idsk-search-results__link-panel idsk-search-results--expand \" >\n        <button class=\"idsk-search-results__link-panel-button \" aria-expanded=\"false\" data-text-for-show=\"Rozbaliť akordeón  Téma\" data-text-for-hide=\"Zatvoriť akordeón  Téma\" aria-label=\"Rozbaliť akordeón  Téma\">\n          <span class=\"idsk-search-results__link-panel__title\">\n            Téma\n          </span>\n          <span class=\"idsk-search-results__link-panel--span\"></span>\n        </button>\n        <div class=\"idsk-search-results__list\">\n                <div data-module=\"idsk-customer-surveys-radios\" class=\"idsk-customer-surveys-radios \">\n  <div class=\"govuk-radios\" data-id=\"tema\">\n    <fieldset class=\"govuk-fieldset\">\n      <legend></legend>\n<div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"Eurofondy\" name=\"1\" type=\"radio\" value=\"Eurofondy\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"Eurofondy\">\n            Eurofondy\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"Informatizácia\" name=\"1\" type=\"radio\" value=\"Informatizácia\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"Informatizácia\">\n            Informatizácia\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"Regionálny-rozvoj-a-komunity\" name=\"1\" type=\"radio\" value=\"Regionálny-rozvoj-a-komunity\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"Regionálny-rozvoj-a-komunity\">\n            Regionálny rozvoj a komunity\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"Investície\" name=\"1\" type=\"radio\" value=\"Investície\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"Investície\">\n            Investície\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"Inovácie\" name=\"1\" type=\"radio\" value=\"Inovácie\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"Inovácie\">\n            Inovácie\n          </label>\n        </div>    </fieldset>\n    <br>\n  </div>\n</div>\n\n        </div>\n    </div>\n    <div class=\"idsk-search-results__link-panel idsk-search-results--expand \" >\n        <button class=\"idsk-search-results__link-panel-button idsk-search-results__subtopic\" aria-expanded=\"false\" data-text-for-show=\"Rozbaliť akordeón  Podtéma\" data-text-for-hide=\"Zatvoriť akordeón  Podtéma\" aria-label=\"Rozbaliť akordeón  Podtéma\">\n          <span class=\"idsk-search-results__link-panel__title\">\n            Podtéma\n          </span>\n          <span class=\"idsk-search-results__link-panel--span\"></span>\n        </button>\n        <div class=\"idsk-search-results__list\">\n              <input class=\"govuk-input idsk-search-results__search__input\" type=\"text\" title=\"Filter podľa podtémy\" name=\"idsk-search-input__subtopic\" id=\"idsk-search-input__subtopic\" aria-label=\"Vstupné pole pre Filter podľa podtémy\">\n                <div data-module=\"idsk-customer-surveys-radios\" class=\"idsk-customer-surveys-radios \">\n  <div class=\"govuk-radios\" data-id=\"podtema\">\n    <fieldset class=\"govuk-fieldset\">\n      <legend></legend>\n<div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"Výzvy-pre-rozvoj-regiónov\" name=\"2\" type=\"radio\" value=\"Výzvy-pre-rozvoj-regiónov\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"Výzvy-pre-rozvoj-regiónov\">\n            Výzvy pre rozvoj regiónov\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"WiFi-4u\" name=\"2\" type=\"radio\" value=\"WiFi-4u\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"WiFi-4u\">\n            WiFi 4u\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"Dotácie-na-obecné-školy\" name=\"2\" type=\"radio\" value=\"Dotácie-na-obecné-školy\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"Dotácie-na-obecné-školy\">\n            Dotácie na obecné školy\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"Agroturistika\" name=\"2\" type=\"radio\" value=\"Agroturistika\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"Agroturistika\">\n            Agroturistika\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"Podpora-miestnej-komunity\" name=\"2\" type=\"radio\" value=\"Podpora-miestnej-komunity\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"Podpora-miestnej-komunity\">\n            Podpora miestnej komunity\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"Výzvy-pre-rozvoj-regiónov2\" name=\"2\" type=\"radio\" value=\"Výzvy-pre-rozvoj-regiónov2\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"Výzvy-pre-rozvoj-regiónov2\">\n            Výzvy pre rozvoj regiónov2\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"WiFi-4u2\" name=\"2\" type=\"radio\" value=\"WiFi-4u2\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"WiFi-4u2\">\n            WiFi 4u2\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"Dotácie-na-obecné-školy2\" name=\"2\" type=\"radio\" value=\"Dotácie-na-obecné-školy2\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"Dotácie-na-obecné-školy2\">\n            Dotácie na obecné školy2\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"Agroturistika2\" name=\"2\" type=\"radio\" value=\"Agroturistika2\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"Agroturistika2\">\n            Agroturistika2\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"Dotácie-na-obecné-školy3\" name=\"2\" type=\"radio\" value=\"Dotácie-na-obecné-školy3\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"Dotácie-na-obecné-školy3\">\n            Dotácie na obecné školy3\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"Agroturistika3\" name=\"2\" type=\"radio\" value=\"Agroturistika3\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"Agroturistika3\">\n            Agroturistika3\n          </label>\n        </div>    </fieldset>\n    <br>\n  </div>\n</div>\n\n        </div>\n    </div>\n    <div class=\"idsk-search-results__link-panel idsk-search-results--expand idsk-search-results__content-type-filter\" >\n        <button class=\"idsk-search-results__link-panel-button \" aria-expanded=\"false\" data-text-for-show=\"Rozbaliť akordeón  Typ obsahu\" data-text-for-hide=\"Zatvoriť akordeón  Typ obsahu\" aria-label=\"Rozbaliť akordeón  Typ obsahu\">\n          <span class=\"idsk-search-results__link-panel__title\">\n            Typ obsahu\n          </span>\n          <span class=\"idsk-search-results__link-panel--span\"></span>\n        </button>\n        <div class=\"idsk-search-results__list\">\n              <input class=\"govuk-input idsk-search-results__search__input\" type=\"text\" title=\"Filter podľa obsahu\" name=\"idsk-search-input__content-type\" id=\"idsk-search-input__content-type\" aria-label=\"Vstupné pole pre  Filter podľa obsahu\">\n            <div class=\"idsk-option-select-filter \">\n              <div class=\"govuk-form-group\">\n  <div class=\"govuk-checkboxes govuk-checkboxes--small\"    data-module=\"govuk-checkboxes\">\n          <div class=\"govuk-checkboxes__item\">\n            <input class=\"govuk-checkboxes__input\" id=\"rozvoj\" name=\"colours\" type=\"checkbox\" value=\"Rozvoj regiónov\">\n            <label class=\"govuk-label govuk-checkboxes__label\" for=\"rozvoj\">\n        Rozvoj regiónov\n      </label>\n          </div>\n          <div class=\"govuk-checkboxes__item\">\n            <input class=\"govuk-checkboxes__input\" id=\"novinky\" name=\"colours\" type=\"checkbox\" value=\"Novinky a komunikačné vyhlásenia\">\n            <label class=\"govuk-label govuk-checkboxes__label\" for=\"novinky\">\n        Novinky a komunikačné vyhlásenia\n      </label>\n          </div>\n          <div class=\"govuk-checkboxes__item\">\n            <input class=\"govuk-checkboxes__input\" id=\"transparentnost\" name=\"colours\" type=\"checkbox\" value=\"Transparentnosť a sloboda prístupu k informáciám\">\n            <label class=\"govuk-label govuk-checkboxes__label\" for=\"transparentnost\">\n        Transparentnosť a sloboda prístupu k informáciám\n      </label>\n          </div>\n          <div class=\"govuk-checkboxes__item\">\n            <input class=\"govuk-checkboxes__input\" id=\"legislativa\" name=\"colours\" type=\"checkbox\" value=\"Legislatíva\">\n            <label class=\"govuk-label govuk-checkboxes__label\" for=\"legislativa\">\n        Legislatíva\n      </label>\n          </div>\n          <div class=\"govuk-checkboxes__item\">\n            <input class=\"govuk-checkboxes__input\" id=\"statistika\" name=\"colours\" type=\"checkbox\" value=\"Štatistické údaje\">\n            <label class=\"govuk-label govuk-checkboxes__label\" for=\"statistika\">\n        Štatistické údaje\n      </label>\n          </div>\n          <div class=\"govuk-checkboxes__item\">\n            <input class=\"govuk-checkboxes__input\" id=\"rodova\" name=\"colours\" type=\"checkbox\" value=\"Rodová rovnosť a postavenia žien v pracovom prostredí\">\n            <label class=\"govuk-label govuk-checkboxes__label\" for=\"rodova\">\n        Rodová rovnosť a postavenia žien v pracovom prostredí\n      </label>\n          </div>\n          <div class=\"govuk-checkboxes__item\">\n            <input class=\"govuk-checkboxes__input\" id=\"rozvoj2\" name=\"colours\" type=\"checkbox\" value=\"Rozvoj regiónov\">\n            <label class=\"govuk-label govuk-checkboxes__label\" for=\"rozvoj2\">\n        Rozvoj regiónov\n      </label>\n          </div>\n          <div class=\"govuk-checkboxes__item\">\n            <input class=\"govuk-checkboxes__input\" id=\"novinky2\" name=\"colours\" type=\"checkbox\" value=\"Novinky a komunikačné vyhlásenia\">\n            <label class=\"govuk-label govuk-checkboxes__label\" for=\"novinky2\">\n        Novinky a komunikačné vyhlásenia\n      </label>\n          </div>\n          <div class=\"govuk-checkboxes__item\">\n            <input class=\"govuk-checkboxes__input\" id=\"transparentnost2\" name=\"colours\" type=\"checkbox\" value=\"Transparentnosť a sloboda prístupu k informáciám\">\n            <label class=\"govuk-label govuk-checkboxes__label\" for=\"transparentnost2\">\n        Transparentnosť a sloboda prístupu k informáciám\n      </label>\n          </div>\n          <div class=\"govuk-checkboxes__item\">\n            <input class=\"govuk-checkboxes__input\" id=\"legislativa2\" name=\"colours\" type=\"checkbox\" value=\"Legislatíva\">\n            <label class=\"govuk-label govuk-checkboxes__label\" for=\"legislativa2\">\n        Legislatíva\n      </label>\n          </div>\n          <div class=\"govuk-checkboxes__item\">\n            <input class=\"govuk-checkboxes__input\" id=\"statistika2\" name=\"colours\" type=\"checkbox\" value=\"Štatistické údaje\">\n            <label class=\"govuk-label govuk-checkboxes__label\" for=\"statistika2\">\n        Štatistické údaje\n      </label>\n          </div>\n          <div class=\"govuk-checkboxes__item\">\n            <input class=\"govuk-checkboxes__input\" id=\"rodova2\" name=\"colours\" type=\"checkbox\" value=\"Rodová ro2vnosť a postavenia žien v pracovom prostredí\">\n            <label class=\"govuk-label govuk-checkboxes__label\" for=\"rodova2\">\n        Rodová rovnosť a postavenia žien v pracovom prostredí\n      </label>\n          </div>\n  </div>\n</div>\n\n            </div>\n        </div>\n    </div>\n    <div class=\"idsk-search-results__link-panel idsk-search-results--expand \" >\n        <button class=\"idsk-search-results__link-panel-button \" aria-expanded=\"false\" data-text-for-show=\"Rozbaliť akordeón  Dátum aktualizácie\" data-text-for-hide=\"Zatvoriť akordeón  Dátum aktualizácie\" aria-label=\"Rozbaliť akordeón  Dátum aktualizácie\">\n          <span class=\"idsk-search-results__link-panel__title\">\n            Dátum aktualizácie\n          </span>\n          <span class=\"idsk-search-results__link-panel--span\"></span>\n        </button>\n        <div class=\"idsk-search-results__list\">\n            <span class=\"idsk-search-results__date__span\">Zobraziť len výsledky aktualizované po\n            </span>\n            <span class=\"idsk-search-results__date__span__example\">Napr. 2005, alebo 8.3.2021\n            </span>\n            <input class=\"govuk-input\" type=\"text\" name=\"datum-od\" id=\"datum-od\" aria-label=\"Vstupné pole pre zadanie počiatočného dátumu aktualizácie\">\n              <span class=\"idsk-search-results__date__span\">Zobraziť len výsledky aktualizovaný pred\n              </span>\n              <span class=\"idsk-search-results__date__span__example\">Napr. 2005, alebo 8.3.2021\n              </span>\n            <input class=\"govuk-input\" type=\"text\" name=\"datum-do\" id=\"datum-do\" aria-label=\"Vstupné pole pre zadanie konečného dátumu aktualizácie\">\n        </div>\n    </div>\n    </div>\n</div>"
+        }
+    ]
+}

@@ -1,0 +1,160 @@
+params:
+  - name: bottomMenu
+    type: array
+    required: false
+    description: Array of navigation links for intro block.
+    params:
+      - name: item
+        type: string
+        required: false
+        description: Name of navigation links
+      - name: href
+        type: html
+        required: false
+        description: Url address for navigation links
+  - name: sideMenu
+    type: array
+    required: false
+    description: Array of navigation links called Popular content for intro block.
+    params:
+      - name: item
+        type: string
+        required: false
+        description: Name of navigation links
+      - name: href
+        type: html
+        required: false
+        description: Url address for navigation links
+  - name: moreInfoAboutMinistryLink
+    type: string
+    required: false
+    description: link name for page of ministry.
+  - name: mainTitleLinkLabel
+    type: string
+    required: false
+    description: label for link on page of ministry.
+  - name: classContainer
+    type: string
+    required: false
+    description: class name for having govuk-width-container on page.
+  - name: classBackground
+    type: string
+    required: false
+    description: class name for changing background of side menu.
+  - name: searchEnabled
+    type: string
+    required: false
+    description: Determines whether search should be part of intro block.
+  - name: headline
+    type: string
+    required: false
+    description: headline of page.
+  - name: mainTitle
+    type: string
+    required: false
+    description: title of page.
+  - name: sideMenuTitle
+    type: string
+    required: false
+    description: title of side menu.
+
+examples:
+  - name: basic
+    data:
+      mainTitle: Dozvedieť sa <a class="govuk-link" href="#" title="viac o ministerstve">viac o ministerstve</a>.
+      bottomMenu:
+        - href: '#'
+          item: Eurofondy
+        - href: '#'
+          item: Kontakty
+        - href: '#'
+          item: Informatizácia
+        - href: '#'
+          item: Investície
+        - href: '#'
+          item: O ministerstve
+      sideMenu:
+        - href: '#'
+          item: O eurofondoch
+        - href: '#'
+          item: Aktuality
+        - href: '#'
+          item: O ministerstve
+        - href: '#'
+          item: Aktuálne výzvy
+        - href: '#'
+          item: Dokumenty
+      searchEnabled: true
+
+  - name: extended
+    data:
+      mainTitle: Dozvedieť sa <a class="govuk-link" href="#" title="viac o ministerstve">viac o ministerstve</a>.
+      bottomMenu:
+        - href: '#'
+          item: Eurofondy
+        - href: '#'
+          item: Kontakty
+        - href: '#'
+          item: Informatizácia
+        - href: '#'
+          item: Investície
+        - href: '#'
+          item: O ministerstve
+      sideMenu:
+        - href: '#'
+          item: O eurofondoch
+        - href: '#'
+          item: Aktuality
+        - href: '#'
+          item: O ministerstve
+        - href: '#'
+          item: Aktuálne výzvy
+        - href: '#'
+          item: Dokumenty
+      classBackground: 'app-pane-transparent'
+      searchEnabled: true
+
+  - name: without search
+    data:
+      mainTitle: Dozvedieť sa <a class="govuk-link" href="#" title="viac o ministerstve">viac o ministerstve</a>.
+      bottomMenu:
+        - href: '#'
+          item: Eurofondy
+        - href: '#'
+          item: Kontakty
+        - href: '#'
+          item: Informatizácia
+        - href: '#'
+          item: Investície
+        - href: '#'
+          item: O ministerstve
+      sideMenu:
+        - href: '#'
+          item: Financovanie zo štátneho rozpočtu
+        - href: '#'
+          item: Riadenie kvality (QA) ITVS projektov
+        - href: '#'
+          item: Číselník životných situácií
+        - href: '#'
+          item: MetaIS
+        - href: '#'
+          item: Pracovná skupina Lepšie služby
+      searchEnabled: false
+      classBackground: 'app-pane-blue'
+      headline: 'Informatizácia'
+
+  - name: without bottom menu
+    data:
+      mainTitle: Dozvedieť sa <a class="govuk-link" href="#" title="viac o ministerstve">viac o ministerstve</a>.
+      sideMenu:
+        - href: '#'
+          item: O eurofondoch
+        - href: '#'
+          item: Aktuality
+        - href: '#'
+          item: O ministerstve
+        - href: '#'
+          item: Aktuálne výzvy
+        - href: '#'
+          item: Dokumenty
+      searchEnabled: true

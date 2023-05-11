@@ -1,0 +1,134 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Proces overenia e-mailovej adresy" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Vzory</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Tento návod opisuje spôsob použitia, procesu overenia e-mailovej adresy na zistenie, či má používateľ prístup k špecifickému e-mailovému účtu.</p>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-s">Obsah:</h2>
+            <ul class="govuk-list">
+                <li><a class="govuk-link" href="#kedy" title="Kedy použiť proces overenia e-mailovej adresy">Kedy použiť proces overenia e-mailovej adresy</a></li>
+                <li><a class="govuk-link" href="#ako" title="Ak použijete proces overenia e-mailovej adresy">Ak použijete proces overenia e-mailovej adresy</a></li>
+            </ul>
+
+            <h3 class="govuk-heading-m" id="kedy">Kedy použiť proces overenia e-mailovej adresy</h3>
+            <p class="govuk-body">Vyhnite sa použitiu procesu overenia e-mailových adries, okrem situácií kedy:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>je kritická funkcionalita v službe prístupná iba prostredníctvom e-mailu (napríklad resetovanie hesla),</li>
+                <li>náhodné použitie nesprávnej e-mailovej adresy by spôsobilo, že niekto iný by sa dostal k citlivým údajom iného používateľa.</li>
+            </ul>
+            <p class="govuk-body">Proces overenia e-mailových adries môže byť rušivý, pretože núti používateľa prepínať z vašej služby na jeho e-mailovú adresu a späť.
+            </p>
+            <p class="govuk-body">Môže sa preto stať, že používateľ nedokončí proces, pretože:
+            </p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>bude zmätený,</li>
+                <li>nemá prístup k svojmu e-mailovému účtu alebo nemá e-mailový účet,</li>
+                <li>nedostane svoj potvrdzovací e-mail rýchlo,</li>
+                <li>neuvidí potvrdzovací e-mail (napríklad, pretože je doručený do Spam priečinku).</li>
+            </ul>
+            <p class="govuk-body">Vašu službu musíte navrhnúť tak, aby predchádzala týmto problémom.
+            </p>
+            <p class="govuk-body">Pamätajte si, že potvrdzujúce e-maily nepotvrdzujú totožnosť danej osoby, ale iba to, že osoba má prístup k danej e-mailovej adrese v čase potvrdenia.
+            </p>
+
+            <h3 class="govuk-heading-m" id="ako">Ak použijete proces overenia e-mailovej adresy</h3>
+            <p class="govuk-body">Ak použijete proces overenia e-mailovej adresy, mali by ste zvážiť:
+            </p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>dobu vypršania platnosti odkazu, ktorú nastavíte pre odkaz zaslaný v potvrdzovacom e-maili,</li>
+                <li>umožniť používateľovi znova si poslať aktivačný e-mail,</li>
+                <li>použitie vynúteného alebo nevynúteného spôsobu overenia e-mailovej adresy,</li>
+                <li>vytvoriť dizajn stránky na aktiváciu účtu.</li>
+            </ul>
+            <h4 class="govuk-heading-s">Nastavenie doby vypršania platnosti</h4>
+            <p class="govuk-body">Aby odkaz nemohol byť použitý po určitom časovom období, nastavte mu dátum vypršania platnosti.
+            </p>
+            <p class="govuk-body">Zneaktívniť odkaz by ste mali tiež v prípade, ak:
+            </p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>už odkaz bol raz použitý,</li>
+                <li>bol nahradený novým odkazom,</li>
+                <li>si používateľ na svojom účte zmenil e-mailovú adresu.</li>
+            </ul>
+            <p class="govuk-body">Ak sa používateľ pokúsi použiť už neplatný odkaz alebo odkaz, ktorý už bol použitý, je potrebné ho o tom upovedomiť.
+            </p>
+            <h4 class="govuk-heading-s">Umožniť používateľovi preposlať si e-mail</h4>
+            <p class="govuk-body">Umožnite používateľom znova si poslať potvrdzovací e-mail v prípade, že vložili nesprávnu e-mailovú adresu alebo im z nejakého dôvodu e-mail nebol doručený.
+            </p>
+            <h3 class="govuk-heading-m">Použitie vynúteného a nevynúteného overenia
+            </h3>
+
+            <p class="govuk-body">Existujú dva spôsoby procesu overenia e-mailovej adresy, vynútený a nevynútený.</p>
+            <p class="govuk-body">
+                Vynútený spôsob overenia zabraňuje používateľovi v použití služby, pokiaľ nepotvrdí svoju e-mailovú adresu.
+            </p>
+            <p class="govuk-body">
+                Pri nevynútenom spôsobe overenia používateľ môže pokračovať vo využívaní služby, ale bude pravidelne upozorňovaný, že potrebuje potvrdiť svoju e-mailovú adresu. Niektoré funkcionality nemusia byť pre používateľa dostupné pokiaľ nepotvrdí e-mail.
+            </p>
+            <p class="govuk-body">
+                Vynútené overenie je jednoduchšie, no ak používateľ nemôže potvrdiť svoj e-mail, nie je vôbec schopný službu použiť. Je veľmi dôležité, aby ste používateľovi v takomto prípade poslali e-mail ihneď.
+            </p>
+            <p class="govuk-body">
+                Nevynútený spôsob overenia si vyžaduje citlivejší dizajn. Neviete totiž garantovať, že si všetci používatelia potvrdia e-mailovú adresu. To môže zabrániť používateľovi v prístupe k vaše službe.
+            </p>
+            <p class="govuk-body">
+                Niektoré služby zo začiatku podporujú nevynútené overenie a následne sa zmenia na vynútené.
+            </p>
+
+            <h3 class="govuk-heading-m">Dizajnovanie stránky na aktiváciu účtu
+            </h3>
+            <p class="govuk-body">
+                Táto stránka má informovať, čo potrebuje používateľ na aktiváciu svojho účtu.
+            </p>
+            <p class="govuk-body">
+                Obvykle by mala vaša služba zobraziť túto stránku okamžite po tom, ako používateľ zadá svoju e-mailovú adresu alebo ak sa pokúsi prihlásiť pred tým, ako potvrdí svoj e-mail.
+            </p>
+            <p class="govuk-body">
+                Stránka by mala:
+            </p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>zobraziť používateľovi e-mailovú adresu, na ktorú ste mu poslali aktivačný e-mail,</li>
+                <li>vysvetliť používateľovi, že pre pokračovanie musí kliknúť na odkaz v e-maili,</li>
+                <li>umožniť používateľovi preposlať si aktivačný email (na inú e-mailovú adresu, ak je to potrebné).</li>
+            </ul>
+
+            <p class="govuk-body">V prípade vynúteného overenia by táto stránka mala byť jedinou, ktorú používateľ uvidí pri snahe prihlásiť sa ešte pred aktiváciou svojho účtu.
+            </p>
+            <p class="govuk-body">Ak používate nevynútené overenie a používateľ sa prihlasuje pred aktiváciou účtu, potom by ste mu mali:
+            </p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>umožniť službu používať,</li>
+                <li>pripomenúť, že si potrebuje aktivovať svoj účet,</li>
+                <li>povedať, kam bol odoslaný aktivačný e-mail,</li>
+                <li>umožniť znovu si odoslať aktivačný e-mail,</li>
+                <li>umožniť zmeniť e-mailovú adresu a potvrdiť namiesto starej novú.</li>
+            </ul>
+
+            <p class="govuk-body">Ak používateľ klikne na odkaz v aktivačnom e-maili, presmerujte ho na stránku, ktorá potvrdzuje, že si svoj účet aktivoval. V tomto bode môžete alebo aj nemusíte vyžadovať, aby sa používateľ prihlásil. Závisí to od toho, kde v procese sa nachádza aktivačná stránka.
+            </p>
+
+        </div>
+    </div>
+
+  </div>
+{% endblock %}

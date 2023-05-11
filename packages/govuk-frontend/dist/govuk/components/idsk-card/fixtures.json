@@ -1,0 +1,15 @@
+{
+    "component": "idsk-card",
+    "fixtures": [
+        {
+            "name": "basic",
+            "options": {
+                "link": "https://www.slovensko.sk",
+                "heading": "UPVS",
+                "description": "Ústredný portál verejnej správy"
+            },
+            "hidden": false,
+            "html": "<div class=\"idsk-card idsk-card-basic\">\n\n\n    <div class=\"idsk-card-content idsk-card-content-basic\">\n        \n\n        <h1 class=\"idsk-heading idsk-heading-basic\">\n            <a href=\"https://www.slovensko.sk\" class=\"idsk-card-title govuk-link\" title=\"UPVS\">UPVS</a>\n        </h1>\n\n        <p class=\"idsk-body idsk-body-basic\">\n            Ústredný portál verejnej správy\n        </p>\n\n\n\n    </div>\n</div>"
+        }
+    ]
+}

@@ -1,0 +1,253 @@
+[
+    {
+        "name": "uniqueId",
+        "type": "string",
+        "required": true,
+        "description": "Unique id of table"
+    },
+    {
+        "name": "title",
+        "type": "string",
+        "required": false,
+        "description": "Title of table"
+    },
+    {
+        "name": "caption",
+        "type": "string",
+        "required": false,
+        "description": "Caption text"
+    },
+    {
+        "name": "captionClasses",
+        "type": "string",
+        "required": false,
+        "description": "Classes for caption text."
+    },
+    {
+        "name": "filter",
+        "type": "object",
+        "required": false,
+        "description": "Filter component inside table."
+    },
+    {
+        "name": "radioOptions",
+        "type": "array",
+        "required": false,
+        "description": "The array of radio inputs for more table options. Maximum allowed radio inputs are 2.",
+        "params": [
+            {
+                "name": "title",
+                "type": "string",
+                "required": true,
+                "description": "Title of the first option."
+            },
+            {
+                "name": "value",
+                "type": "string",
+                "required": true,
+                "description": "The value of the first option"
+            }
+        ]
+    },
+    {
+        "name": "sortBtn",
+        "type": "string",
+        "required": false,
+        "description": "Initial text for sorting button"
+    },
+    {
+        "name": "disableSort",
+        "type": "boolean",
+        "required": false,
+        "description": "True for disable sorting for every column"
+    },
+    {
+        "name": "maxRowsView",
+        "type": "integer",
+        "required": false,
+        "description": "Limit maximum count of showed rows. More rows will be visible with scrolling"
+    },
+    {
+        "name": "downloadButton",
+        "type": "object",
+        "required": false,
+        "description": "Link for download table",
+        "params": [
+            {
+                "name": "text",
+                "type": "string",
+                "required": true,
+                "description": "Text for download button"
+            },
+            {
+                "name": "href",
+                "type": "string",
+                "description": "Link for download button"
+            }
+        ]
+    },
+    {
+        "name": "printTable",
+        "type": "object",
+        "required": false,
+        "description": "Add print button to table.",
+        "params": [
+            {
+                "name": "text",
+                "type": "string",
+                "required": false,
+                "description": "Text for print table button"
+            }
+        ]
+    },
+    {
+        "name": "source",
+        "type": "object",
+        "required": false,
+        "description": "Source of table content",
+        "params": [
+            {
+                "name": "text",
+                "type": "string",
+                "required": false,
+                "description": "Text for source"
+            },
+            {
+                "name": "name",
+                "type": "string",
+                "required": true,
+                "description": "Name of source"
+            },
+            {
+                "name": "href",
+                "type": "string",
+                "required": false,
+                "description": "Link for source of table content if exists"
+            }
+        ]
+    },
+    {
+        "name": "firstCellIsHeader",
+        "type": "boolean",
+        "required": false,
+        "description": "If set to true, first cell in table row will be a TH instead of a TD."
+    },
+    {
+        "name": "classes",
+        "type": "string",
+        "required": false,
+        "description": "Classes to add to the table container."
+    },
+    {
+        "name": "attributes",
+        "type": "object",
+        "required": false,
+        "description": "HTML attributes (for example data attributes) to add to the table container."
+    },
+    {
+        "name": "head",
+        "type": "array",
+        "required": true,
+        "description": "Array of table head cells.",
+        "params": [
+            {
+                "name": "text",
+                "type": "string",
+                "required": false,
+                "description": "If `html` is set, this is not required. Text for table head cells. If `html` is provided, the `text` argument will be ignored."
+            },
+            {
+                "name": "html",
+                "type": "string",
+                "required": false,
+                "description": "If `text` is set, this is not required. HTML for table head cells. If `html` is provided, the `text` argument will be ignore"
+            },
+            {
+                "name": "format",
+                "type": "string",
+                "required": false,
+                "description": "Specify format of a cell. Currently we only use \"numeric\"."
+            },
+            {
+                "name": "classes",
+                "type": "string",
+                "required": false,
+                "description": "Classes to add to the table head cell."
+            },
+            {
+                "name": "colspan",
+                "type": "integer",
+                "required": false,
+                "description": "Specify how many columns a cell extends."
+            },
+            {
+                "name": "rowspan",
+                "type": "integer",
+                "required": false,
+                "description": "Specify how many rows a cell extends."
+            },
+            {
+                "name": "attributes",
+                "type": "object",
+                "required": false,
+                "description": "HTML attributes (for example data attributes) to add to the table cell."
+            },
+            {
+                "name": "disableSort",
+                "type": "boolean",
+                "required": false,
+                "description": "True if sorting is not allowed for this column"
+            }
+        ]
+    },
+    {
+        "name": "rows",
+        "type": "array",
+        "required": false,
+        "description": "Array of table rows and cells.",
+        "params": [
+            {
+                "name": "text",
+                "type": "string",
+                "required": true,
+                "description": "If `html` is set, this is not required. Text for cells in table rows. If `html` is provided, the `text` argument will be ignored."
+            },
+            {
+                "name": "html",
+                "type": "string",
+                "required": true,
+                "description": "If `text` is set, this is not required. HTML for cells in table rows. If `html` is provided, the `text` argument will be ignore"
+            },
+            {
+                "name": "format",
+                "type": "string",
+                "required": false,
+                "description": "Specify format of a cell. Currently we only use \"numeric\"."
+            },
+            {
+                "name": "classes",
+                "type": "string",
+                "required": false,
+                "description": "Classes to add to the table row cell."
+            },
+            {
+                "name": "colspan",
+                "type": "integer",
+                "required": false,
+                "description": "Specify how many columns a cell extends."
+            },
+            {
+                "name": "rowspan",
+                "type": "integer",
+                "required": false,
+                "description": "Specify how many rows a cell extends."
+            },
+            {
+                "name": "attributes",
+                "type": "object",
+                "required": false,
+                "description": "HTML attributes (for example data attributes) to add to the table cell."
+            }
+        ]
+    }
+]

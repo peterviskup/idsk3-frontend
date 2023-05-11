@@ -1,0 +1,138 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% set pageName = "Hlavička pre webové sídla" %}
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-width-container">
+    <span class="govuk-caption-xl">Webové komponenty</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Komponent hlavička je jedným zo základných komponentov pre webové sídla, ktorý je používateľom prístupný takmer na celej webovej stránke. Jednou z najdôležitejších úloh hlavičky je navigovanie používateľa k obsahu, ktorý hľadá. Položky v menu a podmenu vytvárajte za pomoci používateľských prieskumov. Znížite tým riziko, že do hlavičky zakomponujete niečo, čo používateľov nezaujíma.</p>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <h2 class="govuk-heading-s">Obsah:</h2>
+          <ul class="govuk-list">
+              <li><a href="#vlastnosti-hlavicky" class="govuk-link" title="Vlastnosti hlavičky">Vlastnosti hlavičky</a></li>
+              <li><a href="#hlavicka-pre-mobily-sa-od-desktopovej-verzie-lisi" class="govuk-link" title="Hlavčika pre mobily sa od desktopovej verzie líši">Hlavčika pre mobily sa od desktopovej verzie líši</a></li>
+              <li><a href="#specificke-pouzitie-hlavicky" class="govuk-link" title="Špecifické použitie hlavičky">Špecifické použitie hlavičky</a></li>
+              <li><a href="#polozky-menu" class="govuk-link" title="Položky menu">Položky menu</a></li>
+              <li><a href="#polozky-v-podmenu" class="govuk-link" title="Položky v podmenu">Položky v podmenu</a></li>
+              <li><a href="#priklady" class="govuk-link" title="Rozšírené príklady pre hlavičku a pätičku">Rozšírené príklady pre hlavičku a pätičku</a></li>
+          </ul>
+          <h3 class="govuk-heading-m" id="vlastnosti-hlavicky">Vlastnosti hlavičky</h3>
+          <p class="govuk-body">
+            Hlavička sa skladá z:
+            <ul class="govuk-list govuk-list--bullet">
+              <li>loga inštitúcie (podľa logotypu a vo vektorom formáte, optimálne SVG)</li>
+              <li>vyhľadávacieho poľa </li>
+              <li>komponentu na výber jazykovej mutácie (min. možnosti: slovenčina + angličtina)</li>
+              <li>ikonkových odkazov na sociálne siete (voliteľné)</li>
+              <li>menu položiek (pre zachovanie intuitívnosti navigácie odporúčame použiť max. 5 položiek v menu, po kliknutí na jednotlivé položky sa zobrazí podúroveň menu pre danú položku)</li>
+              <li>oddeľovacej čiary</li>
+            </ul>
+          </p>
+          <div class="example example-overflowed">
+            <h2 class="govuk-heading-s">Hlavička s navigáciou, výberom jazykovej mutácie a sociálnymi sieťami pre domovskú stránku</h2>
+            {% set exampleComponentHtml %}
+                {% include "../komponenty/examples/hlavickaWeboveSidla2.njk" %}
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+          </div>
+          <h3 class="govuk-heading-m" id="hlavicka-pre-mobily-sa-od-desktopovej-verzie-lisi">Hlavčika pre mobily sa od desktopovej verzie líši</h3>
+          <p class="govuk-body">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>hlavička sa po scrollnutí webom zmenší, čomu sa prispôsobí aj logo, ktoré bude obsahovať už len štátny znak a názov domény inštitúcie</li>
+              <li>inverzným použitím farieb (biely text + biele logo + biely oddeľovač na farebnom pozadí)</li>
+              <li>vyhľadávacie pole, komponent na výber jazykovej mutácie a ikonkové odkazy na soc. siete sa zobrazia až po otvorení menu</li>
+            </ul>
+          </p>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half">
+              <div class="example example-mobile example-mobile-scroll">
+                <iframe src="/components/idsk-header-extended/s-v%C3%BDberom-jazyka-a-soci%C3%A1lnymi-sie%C5%A5ami-a-navig%C3%A1ciou/preview"></iframe>
+              </div>
+            </div>
+            <div class="govuk-grid-column-one-half">
+              <div class="example example-mobile example-mobile-scroll">
+                {% set exampleComponentHtml %}
+                    {% include "../komponenty/examples/hlavickaWeboveSidla1.njk" %}
+                {% endset %}
+                <iframe srcdoc="{{ exampleComponentHtml }}">
+                </iframe>
+              </div>
+            </div>
+          </div>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half">
+              <div class="example example-mobile example-mobile-scroll">
+                {% set exampleComponentHtml %}
+                    {% include "../komponenty/examples/hlavickaWeboveSidlaUrad1.njk" %}
+                {% endset %}
+                <iframe srcdoc="{{ exampleComponentHtml }}">
+                </iframe>
+              </div>
+            </div>
+            <div class="govuk-grid-column-one-half">
+              <div class="example example-mobile example-mobile-scroll">
+                {% set exampleComponentHtml %}
+                    {% include "../komponenty/examples/hlavickaWeboveSidlaUrad2.njk" %}
+                {% endset %}
+                <iframe srcdoc="{{ exampleComponentHtml }}">
+                </iframe>
+              </div>
+            </div>
+          </div>
+          <h3 class="govuk-heading-m" id="specificke-pouzitie-hlavicky">Špecifické použitie hlavičky</h3>
+          <p class="govuk-body">
+            Hlavička na domovskej stránke (Desktop) nemusí obsahovať vyhľadávacie pole, pokiaľ je vyhľadávacie pole dominatnou súčasťou úvodného bloku domovskej stránky. Vyhľadávacie pole by malo byť v hlavičke použité vždy, keď na stránke nie je alternatívne vyhľadávacie pole. Je však v poriadku použiť v hlavičke toto pole aj v prípade, kedy sa na stránke už iné vyhľadávanie nachádza. Používateľom spravidla pomôže mať viacero možností, ak sa pokúsia nájsť to, čo hľadajú.
+          </p>
+          <div class="example example-overflowed">
+            <h2 class="govuk-heading-s">Hlavička s navigáciou, vyhľadávaním, výberom jazykovej mutácie a sociálnymi sieťami pre ostatné podstránky</h2>
+            {% set exampleComponentHtml %}
+                {% include "../komponenty/examples/hlavickaWeboveSidla3.njk" %}
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+          </div>
+          <h3 class="govuk-heading-m" id="polozky-menu">Položky menu</h3>
+          <p class="govuk-body">
+            Menu v hlavičke je jednou z hlavných foriem navigácie, ktoré používatelia pri návšteve vášho webu využívajú. Odporúčame nepoužívať viac ako 5 položiek v prvej úrovni menu. Čím viac položiek použijete, tým väčšia pravdepodobnosť, že sa používateľ pri hľadaní informácie prostredníctvom menu pomýli. Menu položky vytvárajte za pomoci používateľských prieskumov.
+          </p>
+          <p class="govuk-body">
+            Do prvej úrovne menu navigácie nepoužívajte napríklad "Aktuality", "o ministerstve/úrade" alebo "Kontakty" - sú to témy, ktoré viete zakomponovať na domovskej stránke alebo v pätičke. Namiesto toho menu využitie na nasmerovanie ku vecným oblastiam / témam, na ktoré sa vaša inštitúcia špecializuje.
+          </p>
+          <h3 class="govuk-heading-m" id="polozky-v-podmenu">Položky v podmenu</h3>
+          <p class="govuk-body">
+            Nepoužívajte viac ako 12 položiek. V položkách v podmenu môžete použiť namiesto odrážky ikonu. Ak jednotlivé témy, ktoré ste rozhodli zaradiť do prvej úrovne menu majú vlastnú podstránku, ako prvú položku podmenu odporúčame použiť odkaz práve na túto podstránku (napr. v tvare "O téme").
+          </p>
+          <div class="example example-overflowed" id="xxx">
+            <h2 class="govuk-heading-s">Hlavička s navigáciou, vyhľadávaním, výberom jazykovej mutácie a sociálnymi sieťami pre ostatné podstránky</h2>
+            {% set exampleComponentHtml %}
+                {% include "../komponenty/examples/hlavickaWeboveSidla4.njk" %}
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+            <div class="">
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+            </div>
+          </div>
+        </div>
+        <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-m" id="priklady">Rozšírené príklady pre hlavičku a pätičku</h2>
+            <ul class="govuk-list">
+                <li><a href="/components/idsk-header-extended" class="govuk-link" title="Rozšírené príklady hlavičky pre webové sídla">Rozšírené príklady hlavičky pre webové sídla</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+{% endblock %}

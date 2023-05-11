@@ -1,0 +1,30 @@
+params:
+  - name: feedbackOptions
+    type: array
+    required: true
+    description: Array of items for radio buttons in feedback form.
+    params:
+      - name: name
+        type: string
+        required: false
+        description: Name of radio button item
+      - name: textArea
+        type: boolean
+        required: false
+        description: Determines whether textarea should be showed up after click on radio button.
+      - name: value
+        type: string
+        required: false
+        description: Value of radio button item
+      - name: class
+        type: string
+        required: false
+        description: Value of radio button class
+examples:
+  - name: basic
+    data:
+      feedbackOptions:
+        - name: Radio 1
+          value: radio-1
+        - name: Radio 2
+          value: radio-2

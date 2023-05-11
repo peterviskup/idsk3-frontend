@@ -1,0 +1,40 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Ako začať s vývojom" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Úvod</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds govuk-body">
+
+            <p>Ak budete chcieť vytvoriť elektronickú službu pomocou ID-SK, môžete využiť <a class="govuk-link" href="https://github.com/id-sk/id-sk-frontend" target="_blank" title="repozitár dostupný na GitHub-e">repozitár dostupný na GitHub-e</a>.
+            V repozitári nájdete hlavičku, pätičku a webové komponenty používateľského rozhrania pre elektronickú službu.</p>
+
+            <p>Sú dva najčastejšie spôsoby, ako začať používať ID-SK Frontend vo vašej aplikácii.</p>
+
+            <h2 class="govuk-heading-m">1. Inštaláciou npm (odporúčame)</h2>
+            <p>Odporúčame nainštalovať si ID-SK Frontend zo správcu balíčkov platformy <a class="govuk-link" href="https://www.npmjs.com/package/@id-sk/frontend" target="_blank" title="Node (NPM)">Node (NPM)</a>.</p>
+            <p>Návod ako postupovať pri inštalácií nájdete na stránke <a class="govuk-link" href="/instalacia-pomocou-npm" target="_blank" title="Inštalácia ID-SK Frontend pomocou NPM">Inštalácia ID-SK Frontend pomocou NPM</a>.</p>
+
+            <h2 class="govuk-heading-m">2. Inštaláciou kompilovaných súborov</h2>
+            <p>Môžete si tiež stiahnuť skompilované a minifikované prvky (CSS, Javascript) z <a class="govuk-link" href="https://github.com/id-sk/id-sk-frontend/tree/master/dist" target="_blank" title="GitHub">GitHub</a>. Po inštalácii budete môcť vo vašej službe používať kód z dizajn systému ID-SK.</p>
+            <p>Návod ako postupovať pri inštalácií nájdete na stránke <a class="govuk-link" href="instalacia-pomocou-dist" target="_blank" title="Inštalácia ID-SK Frontend z dist">Inštalácia ID-SK Frontend z dist</a>.</p>
+        </div>
+    </div>
+
+  </div>
+{% endblock %}

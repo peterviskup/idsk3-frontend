@@ -1,0 +1,23 @@
+{
+    "component": "idsk-crossroad",
+    "fixtures": [
+        {
+            "name": "basic",
+            "options": {
+                "columns": 1,
+                "items": [
+                    {
+                        "title": "Ústredný portál verejnej správy",
+                        "link": "https://www.slovensko.sk"
+                    },
+                    {
+                        "title": "Finančná správa",
+                        "link": "https://www.financnasprava.sk"
+                    }
+                ]
+            },
+            "hidden": false,
+            "html": "<div data-module=\"idsk-crossroad\" class=\"\">\n    <div class=\"idsk-crossroad idsk-crossroad-1\">\n            <div class=\"idsk-crossroad__item \">\n                <a href=\"https://www.slovensko.sk\" class=\"govuk-link idsk-crossroad-title\" title=\"Ústredný portál verejnej správy\" aria-hidden=\"false\">Ústredný portál verejnej správy\n                </a>\n                <p class=\"idsk-crossroad-subtitle\" aria-hidden=\"false\"></p>\n                <hr class=\"idsk-crossroad-line\" aria-hidden=\"true\">\n            </div>\n            <div class=\"idsk-crossroad__item \">\n                <a href=\"https://www.financnasprava.sk\" class=\"govuk-link idsk-crossroad-title\" title=\"Finančná správa\" aria-hidden=\"false\">Finančná správa\n                </a>\n                <p class=\"idsk-crossroad-subtitle\" aria-hidden=\"false\"></p>\n                <hr class=\"idsk-crossroad-line\" aria-hidden=\"true\">\n            </div>\n    </div>\n</div>"
+        }
+    ]
+}

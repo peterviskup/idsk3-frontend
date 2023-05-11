@@ -34,6 +34,26 @@
           govuk-font-url("bold-affa96571d-v2.woff") format("woff");
         font-display: fallback;
       }
+
+      @font-face {
+        font-family: "Source Sans Pro";
+        font-style: normal;
+        font-weight: normal;
+        src:
+          govuk-font-url("SourceSansPro-Regular.woff2") format("woff2"),
+          govuk-font-url("SourceSansPro-Regular.woff") format("woff");
+        font-display: fallback;
+      }
+
+      @font-face {
+        font-family: "Source Sans Pro";
+        font-style: normal;
+        font-weight: bold;
+        src:
+          govuk-font-url("SourceSansPro-Bold.woff2") format("woff2"),
+          govuk-font-url("SourceSansPro-Bold.woff") format("woff");
+        font-display: fallback;
+      }
     }
   }
 }

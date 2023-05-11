@@ -1,0 +1,108 @@
+params:
+  - name: prologues
+    type: array
+    required: true
+    description: Array of prologues in customer surveys form.
+    params:
+      - name: prolog
+        type: string
+        required: false
+        description: Name of prolog
+  - name: questions
+    type: array
+    required: true
+    description: Array of questions in customer surveys form.
+    params:
+      - name: name
+        type: string
+        required: false
+        description: Name of question
+      - name: textArea
+        type: boolean
+        required: false
+        description: Determines whether textarea should be showed up.
+      - name: value
+        type: string
+        required: false
+        description: Value of radio buttons item
+      - name: caption
+        type: string
+        required: false
+        description: Name of caption
+      - name: assetsPathLogo
+        type: string
+        required: false
+        description: Name of path for logo
+      - name: logo
+        type: string
+        required: false
+        description: Name of logo file
+      - name: radioOptions
+        type: array
+        required: true
+        description: Array of radio options in customer surveys form.
+        params:
+          - name: name
+            type: string
+            required: false
+            description: Name of radio button
+          - name: value
+            type: string
+            required: true
+            description: Value of radio button.
+
+examples:
+  - name: basic
+    data:
+      questions:
+        - name: Navštevujete web mirri.gov.sk z pracovných alebo súkromných dôvodov?
+          textArea: true
+          value: 1
+        - name: Čo je vašou pracovnou náplňou?
+          textArea: true
+          value: 2
+          radioOptions:
+            - name: z pracovných dôvodov
+              value: 1
+            - name: zo súkromných dôvodov
+              value: 2
+        - name: Popíšte, prečo ste dnes prišli na stránku www.mirri.gov.sk
+          caption: Prosím neuvádzajte osobné ani finančné informácie, ako napr. svoje rodné číslo alebo údaje o kreditnej karte.
+          textArea: true
+          value: 3
+        - name: Našli ste, čo ste hľadali?
+          value: 4
+          radioOptions:
+            - name: Áno
+              value: 1
+            - name: Nie
+              value: 2
+            - name: Neviem / Zatiaľ nie
+              value: 3
+        - name: Ako by ste zhodnotil/a Vášu skúsenosť s návštevou stránky www.mirri.gov.sk?
+          value: 5
+          radioOptions:
+            - name: Veľmi nespokojný
+              value: 1
+            - name: Nespokojný
+              value: 2
+            - name: Ani spokojný ani nepsokojný
+              value: 3
+            - name: Spokojný
+              value: 4
+            - name: Veľmi spokojný
+              value: 5
+        - name: Hľadali ste už niekde inde to, čo potrebujete, ešte pred tým, ako ste sem prišli?
+          value: 4
+          radioOptions:
+            - name: Áno
+              value: 1
+            - name: Nie
+              value: 2
+        - name: Kde ste hľadali?
+          textArea: true
+          value: 3
+        - name: Ak by ste nám chceli niečo odkázať, prosím, napíšte nám to sem.
+          caption: Prosím neuvádzajte osobné ani finančné informácie, ako napr. svoje rodné číslo alebo údaje o kreditnej karte.
+          textArea: true
+          value: 3

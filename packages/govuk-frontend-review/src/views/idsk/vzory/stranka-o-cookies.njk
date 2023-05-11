@@ -1,0 +1,201 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Stránka o cookies" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      { text: 'ID-SK frontend', href: '/' + legacyQuery },
+      { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <span class="govuk-caption-xl">Vzory</span>
+  <h1 class="govuk-heading-xl">{{pageName}}</h1>
+  <p class="govuk-body-l">Tento vzor je momentálne len experimentálny / skúšobný, stále prebieha proces výskumu a schválenia.</p>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-s">Obsah:</h2>
+      <ul class="govuk-list">
+        <li><a class="govuk-link" href="#kedy-pouzit-tento-vzor" title="Kedy je možné použiť tento vzor?">Kedy je možné použiť tento vzor?</a></li>
+        <li><a class="govuk-link" href="#ako-to-funguje" title="Ako to funguje?">Ako to funguje?</a></li>
+        <li><a class="govuk-link" href="#pripava-stranky" title="Príprava vašej stránky o cookies.">Príprava vašej stránky o cookies</a></li>
+        <li><a class="govuk-link" href="#kontrola-a-kategorizacia" title="Kontrola a kategorizácia vašich cookies">Kontrola a kategorizácia vašich cookies</a></li>
+        <li><a class="govuk-link" href="#napisanie-obsahu" title="Napísanie obsahu vašej cookies stránky">Napísanie obsahu vašej cookies stránky</a></li>
+        <li><a class="govuk-link" href="#udelenie-suhlasu-pri-pouzivani" title="Pre ktoré cookies potrebujete vyžadovať súhlas?">Pre ktoré cookies potrebujete vyžadovať súhlas?</a></li>
+        <li><a class="govuk-link" href="#publikovanie-cookies-stranky" title="Publikovanie vašej cookies stránky">Publikovanie vašej cookies stránky</a></li>
+        <li><a class="govuk-link" href="#nastavenie-cookies-pouzivatelom" title="Povolenie alebo zakázanie nastavovania cookies samotným používateľom">Povolenie alebo zakázanie nastavovania cookies samotným používateľom</a></li>
+        <li><a class="govuk-link" href="#pouzitie-js-pri-udeleni-suhlasu" title="Závislosť použitia JavaScriptu pri udelení súhlasu">Závislosť použitia JavaScriptu pri udelení súhlasu</a></li>
+        <li><a class="govuk-link" href="#cookies-priklad" title="Príklad: Zmeňte si svoje nastavenia cookies">Príklad: Zmeňte si svoje nastavenia cookies</a></li>
+        <li><a class="govuk-link" href="#aktualizacia-cookie-stranky" title="Aktualizácia cookies stránky">Aktualizácia cookies stránky</a></li>
+      </ul>
+
+      <p class="govuk-body">Povedzte používateľom o cookies, ktoré im nastavíte na zariadení a nechajte ich potvrdiť alebo zamietnuť rôzne typy menej podstatných cookies.</p>
+      <img src="/public/assets/images/cookies-page-pattern/cookies-page.png" alt="Cookies stránka">
+
+      <h2 class="govuk-heading-m" id="kedy-pouzit-tento-vzor">Kedy je možné použiť tento vzor?</h2>
+        <p class="govuk-body">Používajte stránku cookies, keď chcete používateľa informovať o cookies alebo iných podobných technológiách, ktoré vaša služba / stránka používa a ukladá na zariadenie používateľa. Napríklad HTML5 lokálne úložisko.</p>
+
+        <h2 class="govuk-heading-m" id="ako-to-funguje">Ako to funguje?</h2>
+        <p class="govuk-body">Stránka vám pomôže byť transparentný smerom k používateľovi.</p>
+
+        <h2 class="govuk-heading-m" id="pripava-stranky">Príprava vašej stránky o cookies</h2>
+        <p class="govuk-body">Stránku s cookies musíte vypublikovať v čase aktivácie alebo publikovania vašej služby / stránky v beta verzii. Cookie stránka musí byť jedinečná.</p>
+        <p class="govuk-body">Aplikujte nasledujúce kroky pri vytváraní vašej cookie stránky:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>Skontrolujte si cookies, ktoré používate</li>
+            <li>Kategorizujte si ich</li>
+            <li>Pripravte si stránku</li>
+        </ul>
+
+        <h2 class="govuk-heading-m" id="kontrola-a-kategorizacia">Kontrola a kategorizácia vašich cookies</h2>
+        <p class="govuk-body">Spravte si zoznam všetkých cookies, ktoré vaša služba / stránka používa a rozdeľte ich na:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Základné cookies – bez nich by služba / stránka nebola funkčná</li>
+          <li>Funkčné cookies – služba / stránka by bez nich fungovala, ale používateľ by nebol schopný využiť naplno funkcionalitu vašej stránky / služby (napríklad automatické zapamätanie posledných nastavení)</li>
+          <li>Analytické cookies – dovolia vám používať a zbierať analytické dáta</li>
+          <li>Iné typy cookies, ktoré používate</li>
+        </ul>
+        <p class="govuk-body">Pri každej cookie by ste mali vedieť identifikovať, či je nastavená na strane serveru alebo používateľa.</p>
+        <p class="govuk-body">Výsledok vašej kontroly vám napovie stratégiu ako by mala služba / stránka používať cookie banner a cookie stránku.</p>
+        <p class="govuk-body">Komponent cookie banner má viacero možností použitia:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>zobrazenie nastavenia iba základných cookies</li>
+          <li>nastavenie ostatných cookies na serveri – zahrňuje služby, ktoré tiež nastavujú ostatné cookies u používateľa</li>
+          <li>nastavanie ostatných cookies – iba na strane používateľa</li>
+        </ul>
+
+        <h2 class="govuk-heading-m" id="napisanie-obsahu">Napísanie obsahu vašej cookies stránky</h2>
+        <p class="govuk-body">Spolupracujte s vašim právnikom pri písaní cookies stránky.</p>
+        <p class="govuk-body">Stránka s pravidlami musí byť napísaná v spisovnej slovenčine.</p>
+        <p class="govuk-body">Zoraďte cookies jednotlivo na stránke pod relevantnými kategóriami.</p>
+        <p class="govuk-body">Každá cookie priraďte:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>meno</li>
+          <li>krátky popis funkcie danej cookie</li>
+          <li>pravidlá pre cookies tretej strany, ktorá nastavuje cookies na vašu stránku (napr. stránky sociálnych sietí môžu požadovať súhlas s ich cookies pri poskytovaní služby na vašej stránke)</li>
+          <li>kedy sa cookie odstráni</li>
+        </ul>
+        <p class="govuk-body">Príklady cookies stránky možete nájsť <a href="/ochrana-osobnych-udajov" target="_blank">tu</a>.</p>
+        <p class="govuk-body">Nevkladajte vaše pravidlá pre cookies do stránky „súhlas s podmienkami“.</p>
+        <p class="govuk-body">Nastavte si pravidlá updatu cookies, aby každý člen tímu vedel ako ich pridávať alebo odstraňovať.</p>
+
+        <h2 class="govuk-heading-m" id="udelenie-suhlasu-pri-pouzivani">Pre ktoré cookies potrebujete vyžadovať súhlas?</h2>
+        <p class="govuk-body">Pre základné alebo kľúčové cookies nepotrebujete súhlas od používateľa. Kľúčové cookies su také, bez ktorých by vaša služba nefungovala.</p>
+        <p class="govuk-body-s">Pre cookies, ktoré zbierajú analytické dáta a ktoré nie sú základné alebo kľúčové by ste mali pre nastavenie u používateľa požadovať súhlas.</p>
+        <p class="govuk-body-s">Súhlas od používateľa môžete získať:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>pomocou <a href="/vzory/cookie-banner" target="_blank">cookie bannera</a></li>
+          <li>nastavením a zmenou cookies samotným používateľom na cookies stránke</li>
+        </ul>
+
+        <h2 class="govuk-heading-m" id="publikovanie-cookies-stranky">Publikovanie vašej cookies stránky</h2>
+        <p class="govuk-body">Používateľ by sa mal na stránku s pravidlami cookies dostať z cookies banneru alebo z pätičky stránky.</p>
+
+        <h2 class="govuk-heading-m" id="nastavenie-cookies-pouzivatelom">Povolenie alebo zakázanie nastavovania cookies samotným používateľom na cookies stránke</h2>
+        <p class="govuk-body">Dajte na výber používateľovi (výberovníkom – checkbox) akceptovať alebo odmietnuť nastavenie analytických a ostatných cookies.</p>
+        <p class="govuk-body">Pri prvej návšteve stránky by mal mať prednastavené povolenie cookies ako „zakázané“. Ak navštevuje stránku opakovane tak ponechajte jeho posledné nastavenie.</p>
+      </div>
+      <div class="govuk-grid-column-full">
+        <div class="example example-error">
+          {% set exampleComponentHtml %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full govuk-body">
+    <div class="govuk-form-group">
+      <div class="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="necessary-cookies" name="necessary-cookies" type="checkbox" checked="" disabled="">
+          <label class="govuk-label govuk-checkboxes__label" for="necessary-cookies">
+            Nevyhnutne nutné súbory cookie
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="govuk-inset-text">
+      Sú to základné súbory cookie, ktoré umožňujú pohybovať sa po webovej stránke a používať jej funkcie. Tieto súbory cookie neukladajú žiadne informácie o vás, ktoré by sa dali použiť na marketing alebo na zapamätaniesi, čo ste si na internete pozerali.
+    </div>
+
+    <div class="govuk-form-group">
+      <div class="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" name="ga-cookies" id="ga-cookies" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="ga-cookies">
+            Analytické súbory cookie
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="govuk-inset-text">
+      Tieto súbory zbierajú informácie o tom, ako sa používala webová stránka, napríklad ktoré stránky najčastejšie navštevujete a či sa vám zobrazili chybové hlásenia. Nezbierajú informácie, na základe ktorých by bolo možné zistiť vašu totožnosť. Všetky informácie sú anonymné. Používajú sa na zlepšenie funkčnosti webových stránok.
+    </div>
+
+    <div class="govuk-form-group">
+      <div class="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" name="preferences-cookies" id="preferences-cookies" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="preferences-cookies">
+            Preferenčné súbory cookie
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="govuk-inset-text">
+      V týchto súboroch sa ukladajú vaše voľby (napr. jazykové preferencie) a osobné charakteristiky. Môžu sa v nich uložiť zmeny, ktoré ste na webovej stránke urobili. Dá sa zabezpečiť, aby sa informácie zbierali anonymne. Na ich základe nie je možné zistiť, ktoré iné webové stránky ste navštívili.
+    </div>
+
+    <button type="submit" class="idsk-button" data-module="idsk-button">
+      Uložiť nastavenia
+    </button>
+
+  </div>
+</div>
+          {% endset %}
+          {{exampleComponentHtml | safe}}
+        </div>
+        <pre class="app-code">
+          <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+            {{- exampleComponentHtml | highlight("html") | safe -}}
+          </code>
+        </pre>
+      </div>
+
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m" id="pouzitie-js-pri-udeleni-suhlasu">
+          Čo ak ste závislý od používania JavaScriptu pri možnosti udelenia súhlasu alebo odmietnutia na vašej stránke?
+        </h2>
+        <p class="govuk-body">Pokiaľ používateľove zariadenie nepodporuje JavaScript, ponúknite mu alternatívnu stránku cookies.</p>
+        <p class="govuk-body">Nahraďte výberovníky na súhlas s textom ako si používateľ povolí použitie JavaSript na svojom zariadení.</p>
+
+        <h2 class="govuk-heading-m" id="cookies-priklad">Príklad: Zmeňte si svoje nastavenia cookies</h2>
+        <p class="govuk-body">Momentálne nemôžme zmeniť nastavenia cookies na vašom zariadení, pretože váš webový prehliadač nepodporuje JavaScript. Aby ste to zmenili, pokúste sa:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>zapnúť JavaScript v nastaveniach vášho prehliadača</li>
+          <li>obnovte si túto stránku v prehliadači</li>
+        </ul>
+
+        <h2 class="govuk-heading-m" id="aktualizacia-cookie-stranky">
+          Udržujte vašu stránku cookies aktuálnu a po zmenách vždy žiadajte súhlas nanovo
+        </h2>
+        <p class="govuk-body">Aktualizujte vašu stránku cookies aktuálnu po každej zmene v cookies.</p>
+        <p class="govuk-body">Vždy si ozrejmite:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>ako by ste mali označiť novú cookie</li>
+          <li>či potrebujete súhlas pre novú cookie od všetkých používateľov</li>
+        </ul>
+        <p class="govuk-body">Nový súhlas by ste mali žiadať ak:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>ak začínate používať nie základnú alebo kľúčovú cookie (napríklad ak začínate používať funkčné cookies)</li>
+          <li>ak začínate používať cookies, ktoré môžu zbierať citlivé dáta (napríklad informácie, ktoré sú pre používateľa špecifické (zdravotné informácie atď.)</li>
+          <li>ak idete už povolené cookies a dáta, ktoré s nimi zbierate, používať iným spôsobom aký mali pôvodný zámer</li>
+        </ul>
+        <p class="govuk-body">U používateľa nenastavujte žiadne cookies, ktoré nie sú základné alebo kľúčové, ak vám na to nedal súhlas.</p>
+      </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,248 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "idsk-header-web/macro.njk" import idskHeaderWeb %}
+{% from "idsk-footer-extended/macro.njk" import idskFooterExtended %}
+{% from "idsk-in-page-navigation/macro.njk" import idskInPageNavigation %}
+{% from "idsk-footer-extended/macro.njk" import idskFooterExtended %}
+
+{% set pageName = "Ukážka webových komponentov" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block skipLink %}
+    {{ idskSkipLink({
+        href: '#main-content',
+        text: 'Preskočiť na hlavný obsah',
+        classes: 'idsk-skip-link--sticky'
+    }) }}
+{% endblock %}
+
+{% block header %}
+  {{ idskHeaderWeb({
+    headerType: "website",
+    assetsPath: "/public/assets/images/header-web/",
+    search: true,
+    brand: {
+      gestor: true,
+      languages: [
+        {
+          text: "Slovenčina",
+          selected: true,
+          link: "#1"
+        },
+        {
+          text: "English",
+          link: "#2"
+        },
+        {
+          text: "German",
+          link: "#3"
+        }
+      ]
+    },
+    main: {
+      showLogo: true,
+      logoSrc: "logo-mirri-farebne.svg",
+      logoAlt: "ID-SK Frontend"
+    },
+    navBar: {
+      navigation: [
+        {
+          text: "Eurofondy",
+          link: "#1"
+        },
+        {
+          text: "Regionálny rozvoj",
+          link: "#2"
+        },
+        {
+          text: "Informatizácia",
+          link: "#3"
+        },
+        {
+          text: "Investície",
+          link: "#4"
+        },
+        {
+          text: "Inovácie",
+          link: "#5"
+        }
+      ]
+    }
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    {{ idskInPageNavigation({
+      items: [
+        {
+          text: "Úvod",
+          link: "#uvod",
+          active: true
+        },
+        {
+          text: "Počet subjektov aktuálne",
+          link: "#pocet-subjektov-aktualne"
+        },
+        {
+          text: "Odklad povinnej aktivácie",
+          link: "#odklad-povinnej-aktivacie"
+        },
+        {
+          text: "Povinná elektronická komunikácia so štátom sa o necelý mesiac dotkne už aj poľovníkov a cirkví",
+          link: "#povinna-elektronicka-komunikacia-so-statom-sa-o-necely-mesiac-dotkne-uz-aj-polovnikov-a-cirkvi"
+        },
+        {
+          text: "Odklad povinnej aktivácie 1",
+          link: "#odklad-povinnej-aktivacie-1"
+        },
+        {
+          text: "Odklad povinnej aktivácie 2",
+          link: "#odklad-povinnej-aktivacie-2"
+        },
+        {
+          text: "Odklad povinnej aktivácie 3",
+          link: "#odklad-povinnej-aktivacie-3"
+        },
+        {
+          text: "Povinná elektronická komunikácia so štátom sa o necelý mesiac dotkne už aj poľovníkov a cirkví 1",
+          link: "#povinna-elektronicka-komunikacia-so-statom-sa-o-necely-mesiac-dotkne-uz-aj-polovnikov-a-cirkvi-1"
+        },
+        {
+          text: "Odklad povinnej aktivácie 4",
+          link: "#odklad-povinnej-aktivacie-4"
+        },
+        {
+          text: "Odklad povinnej aktivácie 5",
+          link: "#odklad-povinnej-aktivacie-5"
+        }
+      ]
+    }) }}
+    <div class="govuk-grid-column-three-quarters-from-desktop " id="uvod">
+      <p class="govuk-body">Zostáva už iba necelý mesiac do spustenia ďalšej vlny aktivácie elektronických schránok právnických osôb zapísaných v inom ako v Obchodnom registri SR. Od 1. augusta budú mať aktivované schránky aj subjekty zapísané v Registri poľovníckych organizácií a v Registri cirkví a náboženských spoločností.  Zostáva už iba necelý mesiac do spustenia ďalšej vlny aktivácie elektronických schránok právnických osôb zapísaných v inom ako v Obchodnom registri SR. Od 1. augusta budú mať aktivované schránky aj subjekty zapísané v Registri poľovníckych organizácií a v Registri cirkví a náboženských spoločností.</p>
+      <p class="govuk-body">„Na prístup do elektronickej schránky je potrebné mať občiansky preukaz s čipom a bezpečnostný osobný kód – BOK,“ pripomína Peter Kucer, poverený riadením sekcie ITVS Ministerstva investícií, regionálneho rozvoja a informatizácie SR (MIRRI SR) a dodáva, že do elektronickej schránky zriadenej na slovensko.sk sa dostane iba ten štatutár, ktorý má v príslušnom zdrojovom registri správne uvedené údaje v podobe IČO organizácie a meno, priezvisko a rodné číslo štatutára.</p>
+
+      <h3 class="govuk-heading-m" id="pocet-subjektov-aktualne">Počet subjektov aktuálne</h3>
+      <p class="govuk-body">Štát v súčasnosti eviduje približne 3 200 subjektov zapísaných v Registri poľovníckych organizácií vedenom na Ministerstve pôdohospodárstva a rozvoja vidieka SR. V Registri cirkví a náboženských spoločností štát eviduje do 20 právnických osôb. Štatutári by si mali skontrolovať údaje, ktoré štátu odovzdali pri zápise ich organizácie do registra a overiť, že v nich majú uvedené svoje rodné číslo. V prípade poľovníkov vedie register Národné lesnícke centrum, v prípade cirkví je to Ministerstvo kultúry SR.</p>
+      <p class="govuk-body">Počet elektronických schránok subjektov neziskového mimovládneho sektora aktivovaných na doručovanie úradných rozhodnutí sa tak od 1. augusta zvýši približne zo 63-tisíc na skoro 67-tisíc. Aktiváciu elektronickej schránky na doručovanie NASES zrealizuje automaticky bez toho, aby sa štatutár do svojej e-schránky prihlásil.</p>
+      <p class="govuk-body">„Znamená to, že do takto aktivovaných elektronických schránok sú zo strany úradov doručované úradné rozhodnutia. Štatutári alebo nimi poverené osoby už nechodia so žltým lístkom na poštu, ale rozhodnutia im štát doručuje do úradných e-schránok zriadených na slovensko.sk. Rovnako platí, že tieto organizácie nemusia úradné podania realizovať listinne na pošte, ale majú možnosť tak robiť prostredníctvom svojej elektronickej schránky,“ vysvetľuje Peter Kucer z MIRRI SR.</p>
+
+      <h3 class="govuk-heading-m" id="odklad-povinnej-aktivacie">Odklad povinnej aktivácie</h3>
+      <p class="govuk-body">Povinnú aktiváciu elektronických schránok právnických osôb, ktoré odvodzujú právnu subjektivitu od právnej subjektivity cirkví a náboženských spoločností, štát nateraz odkladá. Možná je však dobrovoľná aktivácia elektronických schránok pre tieto tipy právnických osôb, a to formou listinnej žiadosti zaslanej zo strany štatutára do NASES.</p>
+      <p class="govuk-body">Peter Kucer hovorí, že štatutári sú si vedomí zodpovednosti a ich záujem postupne rastie: „Ku koncu júna prišlo do elektronických schránok neziskových organizácií, nadácií, fondov, záujmových či občianskych združení 5 420 úradných rozhodnutí. Chcel by som preto vyzvať aj poľovníkov a cirkvi, keďže oni so štátom komunikujú pomerne často, aby situáciu nepodcenili a počítali s tým, že do schránky im budú doručované úradné rozhodnutia.“</p>
+      <p class="govuk-body">Národná agentúra pre sieťové a elektronické služby (NASES) aktivuje na doručovanie úradných rozhodnutí e-schránky ďalších organizácií mimovládneho neziskového sektora postupne v jednotlivých fázach podľa indikatívneho harmonogramu.</p>
+      <p class="govuk-body">Štatutári nájdu potrebné informácie o elektronických schránkach a prístupe k nim na statutar.sk. Komplexné informácie aj na slovensko.sk.</p>
+
+      <h3 class="govuk-heading-m" id="povinna-elektronicka-komunikacia-so-statom-sa-o-necely-mesiac-dotkne-uz-aj-polovnikov-a-cirkvi">Povinná elektronická komunikácia so štátom sa o necelý mesiac dotkne už aj poľovníkov a cirkví</h3>
+      <p class="govuk-body">„Na prístup do elektronickej schránky je potrebné mať občiansky preukaz s čipom a bezpečnostný osobný kód – BOK“, pripomína Peter Kucer, poverený riadením sekcie ITVS Ministerstva investícií, regionálneho rozvoja a informatizácie SR (MIRRI) a dodáva, že do elektronickej schránky zriadenej na slovensko.sk sa dostane iba ten štatutár, ktorý má v príslušnom zdrojovom registri správne uvedené údaje v podobe IČO organizácie a meno, priezvisko a rodné číslo štatutára.</p>
+      <p class="govuk-body">Štát v súčasnosti eviduje približne 3 200 subjektov zapísaných v Registri poľovníckych organizácií vedenom na Ministerstve pôdohospodárstva a rozvoja vidieka SR. V Registri cirkví a náboženských spoločností štát eviduje do 20 právnických osôb. Štatutári by si mali skontrolovať údaje, ktoré štátu odovzdali pri zápise ich organizácie do registra a overiť, že v nich majú uvedené svoje rodné číslo. V prípade poľovníkov vedie register Národné lesnícke centrum, v prípade cirkví je to Ministerstvo kultúry SR.</p>
+      <p class="govuk-body">Počet elektronických schránok subjektov neziskového mimovládneho sektora aktivovaných na doručovanie úradných rozhodnutí sa tak od 1. augusta zvýši približne zo 63-tisíc na skoro 67-tisíc. Aktiváciu elektronickej schránky na doručovanie NASES zrealizuje automaticky, bez toho, aby sa štatutár do svojej e-schránky prihlásil.</p>
+      <p class="govuk-body">„Znamená to, že do takto aktivovaných elektronických schránok sú zo strany úradov doručované úradné rozhodnutia. Štatutári alebo nimi poverené osoby už nechodia so žltým lístkom na poštu, ale rozhodnutia im štát doručuje do úradných e-schránok zriadených na slovensko.sk. Rovnako platí, že tieto organizácie nemusia úradné podania realizovať listinne na pošte, ale majú možnosť tak robiť prostredníctvom svojej elektronickej schránky“, vysvetľuje Peter Kucer z MIRRI.</p>
+      <p class="govuk-body">Povinnú aktiváciu elektronických schránok právnických osôb, ktoré odvodzujú právnu subjektivitu od právnej subjektivity cirkví a náboženských spoločností štát nateraz odkladá. Možná je však dobrovoľná aktivácia elektronických schránok pre tieto tipy právnických osôb, a to formou listinnej žiadosti zaslanej zo strany štatutára do NASES.</p>
+      <p class="govuk-body">Peter Kucer hovorí, že štatutári sú si vedomí zodpovednosti a ich záujem postupne rastie: „Ku koncu júna prišlo do elektronických schránok neziskových organizácií, nadácií, fondov, záujmových či občianskych združení 5 420 úradných rozhodnutí. Chcel by som preto vyzvať aj poľovníkov a cirkvi, keďže oni so štátom komunikujú pomerne často, aby situáciu nepodcenili a počítali s tým, že do schránky im budú doručované úradné rozhodnutia“.</p>
+      <p class="govuk-body">Národná agentúra pre sieťové a elektronické služby (NASES) aktivuje na doručovanie úradných rozhodnutí e-schránky ďalších organizácií mimovládneho neziskového sektora postupne v jednotlivých fázach podľa indikatívneho harmonogramu.</p>
+      <p class="govuk-body">Štatutári nájdu potrebné informácie o elektronických schránkach a prístupe k nim na statutar.sk. Komplexné informácie aj na slovensko.sk.</p>
+
+      <h3 class="govuk-heading-m" id="odklad-povinnej-aktivacie-1">Odklad povinnej aktivácie 1</h3>
+      <p class="govuk-body">Povinnú aktiváciu elektronických schránok právnických osôb, ktoré odvodzujú právnu subjektivitu od právnej subjektivity cirkví a náboženských spoločností, štát nateraz odkladá. Možná je však dobrovoľná aktivácia elektronických schránok pre tieto tipy právnických osôb, a to formou listinnej žiadosti zaslanej zo strany štatutára do NASES.</p>
+      <p class="govuk-body">Peter Kucer hovorí, že štatutári sú si vedomí zodpovednosti a ich záujem postupne rastie: „Ku koncu júna prišlo do elektronických schránok neziskových organizácií, nadácií, fondov, záujmových či občianskych združení 5 420 úradných rozhodnutí. Chcel by som preto vyzvať aj poľovníkov a cirkvi, keďže oni so štátom komunikujú pomerne často, aby situáciu nepodcenili a počítali s tým, že do schránky im budú doručované úradné rozhodnutia.“</p>
+      <p class="govuk-body">Národná agentúra pre sieťové a elektronické služby (NASES) aktivuje na doručovanie úradných rozhodnutí e-schránky ďalších organizácií mimovládneho neziskového sektora postupne v jednotlivých fázach podľa indikatívneho harmonogramu.</p>
+      <p class="govuk-body">Štatutári nájdu potrebné informácie o elektronických schránkach a prístupe k nim na statutar.sk. Komplexné informácie aj na slovensko.sk.</p>
+
+      <h3 class="govuk-heading-m" id="odklad-povinnej-aktivacie-2">Odklad povinnej aktivácie 2</h3>
+      <p class="govuk-body">Povinnú aktiváciu elektronických schránok právnických osôb, ktoré odvodzujú právnu subjektivitu od právnej subjektivity cirkví a náboženských spoločností, štát nateraz odkladá. Možná je však dobrovoľná aktivácia elektronických schránok pre tieto tipy právnických osôb, a to formou listinnej žiadosti zaslanej zo strany štatutára do NASES.</p>
+      <p class="govuk-body">Peter Kucer hovorí, že štatutári sú si vedomí zodpovednosti a ich záujem postupne rastie: „Ku koncu júna prišlo do elektronických schránok neziskových organizácií, nadácií, fondov, záujmových či občianskych združení 5 420 úradných rozhodnutí. Chcel by som preto vyzvať aj poľovníkov a cirkvi, keďže oni so štátom komunikujú pomerne často, aby situáciu nepodcenili a počítali s tým, že do schránky im budú doručované úradné rozhodnutia.“</p>
+      <p class="govuk-body">Národná agentúra pre sieťové a elektronické služby (NASES) aktivuje na doručovanie úradných rozhodnutí e-schránky ďalších organizácií mimovládneho neziskového sektora postupne v jednotlivých fázach podľa indikatívneho harmonogramu.</p>
+      <p class="govuk-body">Štatutári nájdu potrebné informácie o elektronických schránkach a prístupe k nim na statutar.sk. Komplexné informácie aj na slovensko.sk.</p>
+
+      <h3 class="govuk-heading-m" id="odklad-povinnej-aktivacie-3">Odklad povinnej aktivácie 3</h3>
+      <p class="govuk-body">Povinnú aktiváciu elektronických schránok právnických osôb, ktoré odvodzujú právnu subjektivitu od právnej subjektivity cirkví a náboženských spoločností, štát nateraz odkladá. Možná je však dobrovoľná aktivácia elektronických schránok pre tieto tipy právnických osôb, a to formou listinnej žiadosti zaslanej zo strany štatutára do NASES.</p>
+      <p class="govuk-body">Peter Kucer hovorí, že štatutári sú si vedomí zodpovednosti a ich záujem postupne rastie: „Ku koncu júna prišlo do elektronických schránok neziskových organizácií, nadácií, fondov, záujmových či občianskych združení 5 420 úradných rozhodnutí. Chcel by som preto vyzvať aj poľovníkov a cirkvi, keďže oni so štátom komunikujú pomerne často, aby situáciu nepodcenili a počítali s tým, že do schránky im budú doručované úradné rozhodnutia.“</p>
+      <p class="govuk-body">Národná agentúra pre sieťové a elektronické služby (NASES) aktivuje na doručovanie úradných rozhodnutí e-schránky ďalších organizácií mimovládneho neziskového sektora postupne v jednotlivých fázach podľa indikatívneho harmonogramu.</p>
+      <p class="govuk-body">Štatutári nájdu potrebné informácie o elektronických schránkach a prístupe k nim na statutar.sk. Komplexné informácie aj na slovensko.sk.</p>
+
+      <h3 class="govuk-heading-m" id="povinna-elektronicka-komunikacia-so-statom-sa-o-necely-mesiac-dotkne-uz-aj-polovnikov-a-cirkvi-1">Povinná elektronická komunikácia so štátom sa o necelý mesiac dotkne už aj poľovníkov a cirkví 1</h3>
+      <p class="govuk-body">„Na prístup do elektronickej schránky je potrebné mať občiansky preukaz s čipom a bezpečnostný osobný kód – BOK“, pripomína Peter Kucer, poverený riadením sekcie ITVS Ministerstva investícií, regionálneho rozvoja a informatizácie SR (MIRRI) a dodáva, že do elektronickej schránky zriadenej na slovensko.sk sa dostane iba ten štatutár, ktorý má v príslušnom zdrojovom registri správne uvedené údaje v podobe IČO organizácie a meno, priezvisko a rodné číslo štatutára.</p>
+      <p class="govuk-body">Štát v súčasnosti eviduje približne 3 200 subjektov zapísaných v Registri poľovníckych organizácií vedenom na Ministerstve pôdohospodárstva a rozvoja vidieka SR. V Registri cirkví a náboženských spoločností štát eviduje do 20 právnických osôb. Štatutári by si mali skontrolovať údaje, ktoré štátu odovzdali pri zápise ich organizácie do registra a overiť, že v nich majú uvedené svoje rodné číslo. V prípade poľovníkov vedie register Národné lesnícke centrum, v prípade cirkví je to Ministerstvo kultúry SR.</p>
+      <p class="govuk-body">Počet elektronických schránok subjektov neziskového mimovládneho sektora aktivovaných na doručovanie úradných rozhodnutí sa tak od 1. augusta zvýši približne zo 63-tisíc na skoro 67-tisíc. Aktiváciu elektronickej schránky na doručovanie NASES zrealizuje automaticky, bez toho, aby sa štatutár do svojej e-schránky prihlásil.</p>
+      <p class="govuk-body">„Znamená to, že do takto aktivovaných elektronických schránok sú zo strany úradov doručované úradné rozhodnutia. Štatutári alebo nimi poverené osoby už nechodia so žltým lístkom na poštu, ale rozhodnutia im štát doručuje do úradných e-schránok zriadených na slovensko.sk. Rovnako platí, že tieto organizácie nemusia úradné podania realizovať listinne na pošte, ale majú možnosť tak robiť prostredníctvom svojej elektronickej schránky“, vysvetľuje Peter Kucer z MIRRI.</p>
+      <p class="govuk-body">Povinnú aktiváciu elektronických schránok právnických osôb, ktoré odvodzujú právnu subjektivitu od právnej subjektivity cirkví a náboženských spoločností štát nateraz odkladá. Možná je však dobrovoľná aktivácia elektronických schránok pre tieto tipy právnických osôb, a to formou listinnej žiadosti zaslanej zo strany štatutára do NASES.</p>
+      <p class="govuk-body">Peter Kucer hovorí, že štatutári sú si vedomí zodpovednosti a ich záujem postupne rastie: „Ku koncu júna prišlo do elektronických schránok neziskových organizácií, nadácií, fondov, záujmových či občianskych združení 5 420 úradných rozhodnutí. Chcel by som preto vyzvať aj poľovníkov a cirkvi, keďže oni so štátom komunikujú pomerne často, aby situáciu nepodcenili a počítali s tým, že do schránky im budú doručované úradné rozhodnutia“.</p>
+      <p class="govuk-body">Národná agentúra pre sieťové a elektronické služby (NASES) aktivuje na doručovanie úradných rozhodnutí e-schránky ďalších organizácií mimovládneho neziskového sektora postupne v jednotlivých fázach podľa indikatívneho harmonogramu.</p>
+      <p class="govuk-body">Štatutári nájdu potrebné informácie o elektronických schránkach a prístupe k nim na statutar.sk. Komplexné informácie aj na slovensko.sk.</p>
+
+      <h3 class="govuk-heading-m" id="odklad-povinnej-aktivacie-4">Odklad povinnej aktivácie 4</h3>
+      <p class="govuk-body">Povinnú aktiváciu elektronických schránok právnických osôb, ktoré odvodzujú právnu subjektivitu od právnej subjektivity cirkví a náboženských spoločností, štát nateraz odkladá. Možná je však dobrovoľná aktivácia elektronických schránok pre tieto tipy právnických osôb, a to formou listinnej žiadosti zaslanej zo strany štatutára do NASES.</p>
+      <p class="govuk-body">Peter Kucer hovorí, že štatutári sú si vedomí zodpovednosti a ich záujem postupne rastie: „Ku koncu júna prišlo do elektronických schránok neziskových organizácií, nadácií, fondov, záujmových či občianskych združení 5 420 úradných rozhodnutí. Chcel by som preto vyzvať aj poľovníkov a cirkvi, keďže oni so štátom komunikujú pomerne často, aby situáciu nepodcenili a počítali s tým, že do schránky im budú doručované úradné rozhodnutia.“</p>
+      <p class="govuk-body">Národná agentúra pre sieťové a elektronické služby (NASES) aktivuje na doručovanie úradných rozhodnutí e-schránky ďalších organizácií mimovládneho neziskového sektora postupne v jednotlivých fázach podľa indikatívneho harmonogramu.</p>
+      <p class="govuk-body">Štatutári nájdu potrebné informácie o elektronických schránkach a prístupe k nim na statutar.sk. Komplexné informácie aj na slovensko.sk.</p>
+
+      <h3 class="govuk-heading-m" id="odklad-povinnej-aktivacie-5">Odklad povinnej aktivácie 5</h3>
+      <p class="govuk-body">Povinnú aktiváciu elektronických schránok právnických osôb, ktoré odvodzujú právnu subjektivitu od právnej subjektivity cirkví a náboženských spoločností, štát nateraz odkladá. Možná je však dobrovoľná aktivácia elektronických schránok pre tieto tipy právnických osôb, a to formou listinnej žiadosti zaslanej zo strany štatutára do NASES.</p>
+      <p class="govuk-body">Peter Kucer hovorí, že štatutári sú si vedomí zodpovednosti a ich záujem postupne rastie: „Ku koncu júna prišlo do elektronických schránok neziskových organizácií, nadácií, fondov, záujmových či občianskych združení 5 420 úradných rozhodnutí. Chcel by som preto vyzvať aj poľovníkov a cirkvi, keďže oni so štátom komunikujú pomerne často, aby situáciu nepodcenili a počítali s tým, že do schránky im budú doručované úradné rozhodnutia.“</p>
+      <p class="govuk-body">Národná agentúra pre sieťové a elektronické služby (NASES) aktivuje na doručovanie úradných rozhodnutí e-schránky ďalších organizácií mimovládneho neziskového sektora postupne v jednotlivých fázach podľa indikatívneho harmonogramu.</p>
+      <p class="govuk-body">Štatutári nájdu potrebné informácie o elektronických schránkach a prístupe k nim na statutar.sk. Komplexné informácie aj na slovensko.sk.</p>
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+  {{ idskFooterExtended({
+      characterLength : 350,
+      upButtonEnabled : "true",
+      logo: "footer-extended-logo.svg",
+      subtitles: [
+      {
+        item:"Pomoc",
+        href:"#"},
+      {
+        item:"Cookies",
+        href:"#"
+      },
+      {
+        item:"Kontakty",
+        href:"#"
+      },
+      {
+        item:"Mapa Stránky",
+        href:"#"
+      },
+      {
+        item:"RSS",
+        href:"#"
+      },
+      {
+        item:"Vyhlásenie o prístupnosti",
+        href:"#"
+      }
+    ],
+      dropdownItems: [
+      {
+        value: "published",
+        text: "Validačná chyba"
+      },
+      {
+        value: "updated",
+        text: "Gramatická chyba",
+        selected: true
+      },
+      {
+        value: "views",
+        text: "Chyba responzivity"
+      },
+      {
+        value: "comments",
+        text: "Chyba iná"
+      }
+      ]
+    })
+  }}
+{% endblock %}

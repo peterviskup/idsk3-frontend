@@ -1,0 +1,210 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% set pageName = "Hlavička" %}
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Webové komponenty</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Hlavička je základný komponent webovej stránky alebo služby. Je podstatný pre to, aby elektronické služby verejnej správy vyzerali pre používateľa rovnako a využívali jednotné interakčné princípy. Jednou z najdôležitejších úloh hlavičky je navigovanie používateľa k obsahu, ktorý hľadá. Položky v menu a podmenu vytvárajte za pomoci používateľských prieskumov. Znížite tým riziko, že do hlavičky zakomponujete niečo, čo používateľov nezaujíma.</p>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <h3 class="govuk-heading-m">Aktuálna hlavička ponúka 2 varianty:</h3>
+            <ul class="govuk-list govuk-list--bullet">
+                <li><a class="govuk-link" href="#webove-sidla" title="Hlavička pre Webové sídla">Hlavička pre Webové sídla</a></li>
+                <li><a class="govuk-link" href="#elektronicke-sluzby" title="Hlavička pre Elektronické služby">Hlavička pre Elektronické služby</a></li>
+            </ul>
+
+            <h3 class="govuk-heading-m">Správanie hlavičky:</h3>
+            <p class="govuk-body">
+                Počas posúvania obsahu sa hlavička roluje spolu s telom stránky. Komponent obsahuje tieň, ktorý ho vizuálne oddeľuje od zvyšku obsahu.
+            </p>
+
+            <h3 class="govuk-heading-m">Anatómia hlavičky:</h3>
+            <p class="govuk-body">Hlavička sa skladá z nasledujúcich horizontálnych sekcií.</p>
+
+            <img class="govuk-!-margin-bottom-4" src="/public/assets/images/header-web/anatomia-hlavicky.png" alt="anatomia-hlavicky-img">
+
+            <p class="govuk-body"><b>Trikolora</b> - Slúži ako výrazný element slovenskej identity a taktiež plní funkciu vizuálneho oddeľovača od hlavičky
+                webového prehliadača. Je to povinný prvok pre každý variant hlavičky.
+            </p>
+
+            <img class="govuk-!-margin-bottom-4" src="/public/assets/images/header-web/trikolora.png" alt="trikolora-img">
+
+            <p class="govuk-body">
+                <b>Záhlavie</b> - Skladá sa z dvoch častí, na ľavej strane Pečiatka, ktorá dodáva webovej stránke oficiálnu príslušnosť
+                k slovenskému e-govermentu alebo gestorovi elektronickej služby. Text v pečiatke obsahuje hypertextový odkaz, ktorým sa používateľ preklikne
+                na stránku príslušného gestora služby. Pokiaľ občan navštívi elektronickú službu preklikom z portálu Slovensko.sk pečiatka by mala obsahovať
+                hypertextový odkaz späť na portál Slovensko.sk. Označenie “Oficiálna stránka verejnej správy SR” sa používa v pri webových sídlach, ktorých
+                doména končí .gov.sk. Na pravej strane sa nachádza výber jazyka. Informačná lišta má predefinovanú modru farbu.
+            </p>
+
+            <img class="govuk-!-margin-bottom-4" src="/public/assets/images/header-web/zahlavie.png" alt="zahlavie-img">
+
+            <p class="govuk-body">
+                <b>Hlavná sekcia</b> - Slúži ako základný komponent hlavičky, je povinný pre každú variantu a poskytuje priestor pre zobrazenie
+                identity orgánu verejnej moci (tzv. OVM). Sekcia obsahuje nasledujúce dve časti:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Logo na ľavej strane</li>
+                <li>Akčný panel na pravej strane</li>
+            </ul>
+
+            <h3 class="govuk-heading-s">Logo</h3>
+            <p class="govuk-body">
+                Obrázok - Odporúčaný formát loga je SVG. Maximálna povolená výška loga je 50px na výšku, šírka je variabilná.
+                Odporúčame použiť logo podľa pravidiel logo manuálu verejne správy.<br>
+                Text - Text môže obsahovať maximálne 90 znakov a podľa potreby môže byť zalomené do dvoch riadkov.<br>
+                Obrázok + Text - Táto varianata môže obsahovať logo s maximálnou výškou 50px a text s maximálnym počtom 80 znakov.
+                Medzera medzi obrázkom a textom je 15px. Zalamovanie textu voči logu je horizontálne na stred.
+            </p>
+
+            <h3 class="govuk-heading-s">Akčný panel</h3>
+            <p class="govuk-body">
+                Nachádza sa v pravej časti Hlavnej sekcie. Používateľom ponúka 3 komponenty, ktoré je možné si nakonfigurovať podľa potreby,
+                komponent Vyhľadávanie alebo 2x Tlačidlo. Využívanie komponentu vyhľadávania vychádza z vyhlášky o štandardoch.
+                Odporúčame využiť kombináciu vymenovaných komponentov.
+            </p>
+
+            <h3 class="govuk-heading-s">Prihlásenie používateľa</h3>
+            <p class="govuk-body">
+                Akčný panel ponúka aj variant po prihlásení používateľa - tento komponent obsahuje meno prihláseného používateľa,
+                tlačidlo odhlásiť a variabilnú časť s tlačidlom na profil používateľa.
+            </p>
+
+            <img class="govuk-!-margin-bottom-4" src="/public/assets/images/header-web/akcny-panel.png" alt="akcny-panel-img">
+
+            <p class="govuk-body">
+                <b>Navigácia (Menu)</b> - Menu v hlavičke je jednou z hlavných foriem navigácie, ktoré používatelia pri návšteve vášho webu využívajú.
+                Nepoužívať viac ako 5 položiek v prvej úrovni menu pokiaľ používateľský prieskum nepreukáže inak. Čím viac položiek použijete, tým väčšia
+                pravdepodobnosť, že sa používateľ pri hľadaní informácie prostredníctvom menu pomýli.
+            </p>
+            <p class="govuk-body">
+                Do prvej úrovne menu navigácie nepoužívajte napríklad "Aktuality", "o ministerstve/úrade" alebo "Kontakty" - sú to témy,
+                ktoré je lepšie umiestniť do tela hlavnej stránky, prípadne do pätičky.
+                Namiesto toho menu využitie na nasmerovanie ku vecným oblastiam / témam, na ktoré sa vaša inštitúcia špecializuje.
+            </p>
+
+            <img class="govuk-!-margin-bottom-4" src="/public/assets/images/header-web/navigacia.png" alt="navigacia-img">
+
+            <h3 class="govuk-heading-s">Rozbaľovacie menu</h3>
+            <p class="govuk-body">Sekcia poskytuje 2 varianty rozbaľovacieho menu:</p>
+            <p class="govuk-body">
+                Jednoduché rozbaľovacie menu - používa sa vo väčšine prípadov, keď počet položiek na zobrazenie je maximálne 5.
+                Maximálny počet znakov pre jednu položku je 50, pri vyššom počte znakov sa položky zalomia do dvoch riadkov.
+                Zalomenie do troch riadkov nie je povolené a v prípade dlhšieho textu (viac ako 50 znakov) použite 3 bodky “...”
+            </p>
+            <p class="govuk-body">
+                Zložité rozbaľovacie menu - Používa sa pokiaľ počet položiek presahuje počet 5.
+                Pričom v komponente je povolené použitie maximálne 9 položiek v 3 radoch vedľa seba. Maximálny počet znakov pre jednu položku je 50,
+                pri vyššom počte znakov sa položky zalomia do dvoch riadkov. Zalomenie do troch riadkov nieje povolené a
+                v prípade dlhšieho textu (viac ako 50 znakov) použite 3 bodky “...”
+            </p>
+
+            <img class="govuk-!-margin-bottom-4" src="/public/assets/images/header-web/rozbalovacie-menu.png" alt="rozbalovacie-menu-img">
+
+            <h3 class="govuk-heading-s">Lišta</h3>
+            <p class="govuk-body">
+                Táto sekcia obsahuje dva varianty. Lišta je umiestnená vždy v hornej časti hlavičky. Komponent slúži na dočasnú alebo permanentnú
+                informáciu pre používateľov a môže mať maximálne 2 riadky.
+            </p>
+            <p class="govuk-body">
+                Upozorňovacia lišta - Používa sa v prípade potreby zobraziť informáciu s vyššou prioritou. Pre zvýraznenie využíva žltú farbu.
+            </p>
+
+            <img class="govuk-!-margin-bottom-4" src="/public/assets/images/header-web/lista-upozorneni.png" alt="lista-upozorneni-img">
+
+            <p class="govuk-body">Informačná lišta - Využíva sa v prípade zobrazenia obsahu, ktorý ma informatívny charakter  - nemá až takú vysokú vizuálnu prioritu.</p>
+
+            <img class="govuk-!-margin-bottom-4" src="/public/assets/images/header-web/informacna-lista.png" alt="informacna-lista-img">
+
+            <h2 class="govuk-heading-m">Responzívna verzia hlavičky</h2>
+
+            <h3 class="govuk-heading-s">Správanie mobilnej hlavičky</h3>
+            <p class="govuk-body">
+                Počas posúvania obsahu ostáva hlavička staticky pripnutá v hornej časti obrazovky - obsah sa roluje pod hlavičkou.
+                Komponet obsahuje tieň, ktorý vyzdvihuje hlavičku ponad obsah. Počas posúvania smerom na dol sa v hlavičke schová
+                informačná lišta následne po rolovaní na hor sa lišta opäť odkryje.
+            </p>
+
+            <h3 class="govuk-heading-s">Anatómia hlavičky</h3>
+            <p class="govuk-body">
+                Zásadná zmena oproti desktopovej verzií hlavičky je v Hlavnej sekcii, Navigácií a Rozbaľovacom menu.
+                Sekcie ako Trikolora, Záhlavie a Lišta zostávaju rozložením nezmenené.
+            </p>
+
+            <h3 class="govuk-heading-s">Hlavná sekcia</h3>
+            <p class="govuk-body">Slúži ako základný komponent hlavičky, je povinný pre každý variant a poskytuje priestor pre zobrazenie identity OVM.
+                Sekcia obsahuje nasledujúce časti:
+            </p>
+
+            <p class="govuk-body"><b>Logo</b> - v tejto časti odporúčame využívať varinat Obrázok + Text a využiť pre názov inštitúcie doménove meno.</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Obrázok - Odporúčaný formát loga je SVG. - Maximálna povolená výška loga je 40px na výšku, šírka je variabilná.
+                    Odporúčame použiť logo podľa pravidiel logo manuálu verejnej správy.</li>
+                <li>Text - Text môže obsahovať maximálne 90 znakov a podľa potreby môže byť zalomené do dvoch riadkov. </li>
+                <li>Obrázok + Text - Táto varinata môže obsahovať logo s maximálnou výškou 40px a text s maximálnym počtom 80 znakov.
+                    Medzera medzi obrázkom a textom je 10px. Zalamovanie textu voči logu je horizontálne na stred.</li>
+            </ul>
+
+            <p class="govuk-body">V pravej časti sa nachádza tlačidlo “Menu”, ktoré rozbaľuje skryté časti hlavičky.</p>
+
+            <h3 class="govuk-heading-s">Navigácia (Menu) + Rozbaľovacie menu</h3>
+            <p class="govuk-body">
+                V tejto sekcii sa nachádzajú zlúčené komponenty z dvoch desktopových sekcií.
+                Rozbalenie sekcie sa iniciuje slačením tlačidla “Menu” na hlavičke. Sekcia sa rozbaľuje ponad existujúci obsah a v prípade vyššieho počtu komponentov je posúvateľná.
+                Sekcia sa zabalí po kliku na tlačidlo zavrieť. Obsahuje nasledovné komponenty:
+            </p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Vyhľadávanie</li>
+                <li>Navigáciu a rozbaľovacie menu</li>
+                <li>User management - Prihlásenie a odhlásenie používateľa</li>
+                <li>Tlačidá CTA</li>
+            </ul>
+
+            <img class="govuk-!-margin-bottom-4" src="/public/assets/images/header-web/responzivna-verzia.png" alt="responzivna-verzia-img">
+
+            <h2 class="govuk-heading-l" id="webove-sidla">Hlavička pre webové sídla</h2>
+            <p class="govuk-body">
+                Jednou z najdôležitejších úloh hlavičky je navigovanie používateľa k obsahu, ktorý hľadá. Položky v menu a podmenu vytvárajte za pomoci
+                používateľských prieskumov. Znížite tým riziko, že do hlavičky zakomponujete niečo, čo používateľov nezaujíma.
+            </p>
+
+            <h3 class="govuk-heading-s">Desktopové varianty</h3>
+
+            <img class="govuk-!-margin-bottom-4" src="/public/assets/images/header-web/webove-sidla-desktop.png" alt="webove-sidla-desktop-img">
+
+            <h3 class="govuk-heading-s">Responzívne varianty</h3>
+
+            <img class="govuk-!-margin-bottom-4" src="/public/assets/images/header-web/webove-sidla-mobil.png" alt="webove-sidla-mobil-img">
+
+            <h2 class="govuk-heading-l" id="elektronicke-sluzby">Hlavička pre Elektronické služby</h2>
+            <p class="govuk-body">Dôležitou súčasťou varianty hlavičky pre elektronické služby je názov služby a zobrazenie prekliku
+                na domovskú stránku gestora elektronickej služby.</p>
+
+            <img class="govuk-!-margin-bottom-4" src="/public/assets/images/header-web/elektronicke-sluzby-desktop.png" alt="elektronicke-sluzby-desktop-img">
+
+            <h3 class="govuk-heading-s">Responzívne varianty</h3>
+
+            <img class="govuk-!-margin-bottom-4" src="/public/assets/images/header-web/elektronicke-sluzby-mobil.png" alt="elektronicke-sluzby-mobil-img">
+
+            <h2 class="govuk-heading-m">Rozšírené príklady pre hlavičku:</h2>
+            <p class="govuk-body"> <a class="govuk-link" href="/components/idsk-header-web" title="Rozšírené príklady pre hlavičku">Rozšírené príklady pre hlavičku</a></p>
+
+            <h2 class="govuk-heading-m">Odkazy na staré verzie hlavičiek:</h2>
+            <p class="govuk-body"><a class="govuk-link" href="/komponenty/hlavicka-paticka" title="Hlavička a pätička">Hlavička a pätička</a></p>
+            <p class="govuk-body"><a class="govuk-link" href="/komponenty/hlavicka-webove-sidla" title="Hlavička pre webové sídla">Hlavička pre webové sídla</a></p>
+        </div>
+    </div>
+
+  </div>
+{% endblock %}

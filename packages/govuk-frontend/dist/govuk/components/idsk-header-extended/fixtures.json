@@ -1,0 +1,274 @@
+{
+    "component": "idsk-header-extended",
+    "fixtures": [
+        {
+            "name": "s výberom jazyka a sociálnymi sieťami a navigáciou",
+            "options": {
+                "logo": "logo-mirri-farebne.svg",
+                "logoSmall": "logo-mirri-small-farebne.svg",
+                "logoWhite": "logo-mirri-biele.svg",
+                "logoSmallWhite": "logo-mirri-small-biele.svg",
+                "logoGrid": "govuk-grid-column-one-half govuk-grid-column-one-third-from-desktop",
+                "navigation": [
+                    {
+                        "link": "#1",
+                        "text": "Eurofondy"
+                    },
+                    {
+                        "link": "#2",
+                        "text": "Informatizácia"
+                    },
+                    {
+                        "link": "#3",
+                        "text": "Regionálny rozvoj"
+                    },
+                    {
+                        "link": "#4",
+                        "text": "Inovácie"
+                    },
+                    {
+                        "link": "#5",
+                        "text": "Investície"
+                    }
+                ],
+                "language": {
+                    "current": {
+                        "text": "slovenčina",
+                        "flag": "slovakia-flag-icon-16.png"
+                    },
+                    "choices": [
+                        {
+                            "flag": "united-states-of-america-flag-icon-16.png",
+                            "text": "english",
+                            "link": "#"
+                        },
+                        {
+                            "flag": "germany-flag-icon-16.png",
+                            "text": "german",
+                            "link": "#"
+                        }
+                    ]
+                },
+                "socials": [
+                    {
+                        "icon": "fab fa-instagram",
+                        "link": "#",
+                        "text": "Instagram"
+                    },
+                    {
+                        "icon": "fab fa-linkedin-in",
+                        "link": "#",
+                        "text": "Linkedin"
+                    },
+                    {
+                        "icon": "fab fa-facebook-f",
+                        "link": "#",
+                        "text": "Facebook"
+                    },
+                    {
+                        "icon": "fab fa-twitter",
+                        "link": "#",
+                        "text": "Twitter"
+                    }
+                ]
+            },
+            "hidden": false,
+            "html": "<header class=\"idsk-header-extended \" data-module=\"idsk-header-extended\">\n  <div class=\"idsk-header-extended__container govuk-width-container\">\n\n    <div\n      class=\"idsk-header-extended__logo govuk-grid-column-one-half govuk-grid-column-one-third-from-desktop\">\n      <a href=\"/\" title=\"\">\n        <div class=\"idsk-header-extended__logotype-crown\">\n          <img src=\"/assets/images/header-extended/logo-mirri-farebne.svg\" alt=\"logo hlavička pre webové sídla\">\n        </div>\n        <div class=\"idsk-header-extended__logotype-crown-mobile\">\n          <img src=\"/assets/images/header-extended/logo-mirri-small-farebne.svg\" alt=\"logo hlavička pre webové sídla\">\n        </div>\n      </a>\n    </div>\n\n    <div class=\"idsk-header-extended__search\">\n      <form class=\"idsk-header-extended__search-form\">\n        <label class=\"idsk-header-extended__search-label\" for=\"idsk-header-extended__search-input\">\n          Zadajte hľadaný výraz\n        </label>\n        <input class=\"govuk-input govuk-!-display-inline-block\" id=\"idsk-header-extended__search-input\" name=\"search\"\n          type=\"text\" aria-describedby=\"input-width-30-hint\" aria-label=\"Zadajte hľadaný výraz\">\n        <button type=\"submit\" class=\"govuk-button govuk-!-display-inline-block\" data-module=\"govuk-button\">\n          <span class=\"govuk-visually-hidden\">Vyhľadať</span>\n          <i aria-hidden=\"true\" class=\"fas fa-search\"></i>\n        </button>\n      </form>\n    </div>\n\n        <div class=\"idsk-header-extended__language\">\n      <button type=\"button\" class=\"idsk-header-extended__language-button\">\n        <span class=\"idsk-header-extended__language--current-text\">\n          <img src=\"/assets/images/flags/slovakia-flag-icon-16.png\"\n            alt=\"slovenčina\" aria-hidden=\"true\">\n          <span>slovenčina</span>\n        </span>\n      </button>\n      <ul class=\"idsk-header-extended__language-list\">\n        <li class=\"idsk-header-extended__language-list-item\">\n          <a class=\"idsk-header-extended__language-list-link\" title=\"english\" href=\"#\">\n            <img src=\"/assets/images/flags/united-states-of-america-flag-icon-16.png\"\n              alt=\"english\" aria-hidden=\"true\">\n            english\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__language-list-item\">\n          <a class=\"idsk-header-extended__language-list-link\" title=\"german\" href=\"#\">\n            <img src=\"/assets/images/flags/germany-flag-icon-16.png\"\n              alt=\"german\" aria-hidden=\"true\">\n            german\n          </a>\n        </li>\n      </ul>\n    </div>\n\n\n        <div class=\"idsk-header-extended__social\">\n      <ul class=\"idsk-header-extended__social-list\">\n        <li class=\"idsk-header-extended__social-item\">\n          <a class=\"idsk-header-extended__social-link\" href=\"#\" title=\"Instagram\"\n            target=\"_blank\">\n            <span class=\"govuk-visually-hidden\">Instagram</span>\n            <i class=\"fab fa-instagram\" aria-hidden=\"true\"></i>\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__social-item\">\n          <a class=\"idsk-header-extended__social-link\" href=\"#\" title=\"Linkedin\"\n            target=\"_blank\">\n            <span class=\"govuk-visually-hidden\">Linkedin</span>\n            <i class=\"fab fa-linkedin-in\" aria-hidden=\"true\"></i>\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__social-item\">\n          <a class=\"idsk-header-extended__social-link\" href=\"#\" title=\"Facebook\"\n            target=\"_blank\">\n            <span class=\"govuk-visually-hidden\">Facebook</span>\n            <i class=\"fab fa-facebook-f\" aria-hidden=\"true\"></i>\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__social-item\">\n          <a class=\"idsk-header-extended__social-link\" href=\"#\" title=\"Twitter\"\n            target=\"_blank\">\n            <span class=\"govuk-visually-hidden\">Twitter</span>\n            <i class=\"fab fa-twitter\" aria-hidden=\"true\"></i>\n          </a>\n        </li>\n      </ul>\n    </div>\n\n\n    <button type=\"button\" class=\"idsk-header-extended__menu-button idsk-js-header-extended-side-menu\"\n      aria-controls=\"navigation\" aria-label=\"Show or hide Top Level Navigation\">Menu\n      <svg width=\"40\" height=\"40\" viewBox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n        <line x1=\"5\" y1=\"19.8752\" x2=\"35\" y2=\"19.8752\" stroke=\"#003078\" stroke-width=\"3\" />\n        <line x1=\"5\" y1=\"29.2507\" x2=\"30.5009\" y2=\"29.2507\" stroke=\"#003078\" stroke-width=\"3\" />\n        <line x1=\"5.00177\" y1=\"10.5\" x2=\"30.5027\" y2=\"10.5\" stroke=\"#003078\" stroke-width=\"3\" stroke-linejoin=\"round\" />\n      </svg>\n    </button>\n\n      <div class=\"idsk-header-extended__content\">\n    <nav aria-label=\"Top Level Navigation\">\n      <ul class=\"idsk-header-extended__navigation \">\n        <li class=\"idsk-header-extended__navigation-item\n                \">\n          <a class=\"idsk-header-extended__link\n                    \"\n            href=\"#1\"  title=\"Eurofondy\">\n            Eurofondy\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__navigation-item\n                \">\n          <a class=\"idsk-header-extended__link\n                    \"\n            href=\"#2\"  title=\"Informatizácia\">\n            Informatizácia\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__navigation-item\n                \">\n          <a class=\"idsk-header-extended__link\n                    \"\n            href=\"#3\"  title=\"Regionálny rozvoj\">\n            Regionálny rozvoj\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__navigation-item\n                \">\n          <a class=\"idsk-header-extended__link\n                    \"\n            href=\"#4\"  title=\"Inovácie\">\n            Inovácie\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__navigation-item\n                \">\n          <a class=\"idsk-header-extended__link\n                    \"\n            href=\"#5\"  title=\"Investície\">\n            Investície\n          </a>\n        </li>\n      </ul>\n    </nav>\n  </div>\n\n\n    <div class=\"idsk-header-extended__mobile\">\n\n      <div\n        class=\"idsk-header-extended__logo govuk-grid-column-one-half govuk-grid-column-one-third-from-desktop\">\n        <a href=\"/\" title=\"\">\n          <div class=\"idsk-header-extended__logotype-crown-mobile-navigation\">\n            <img src=\"/assets/images/header-extended/logo-mirri-biele.svg\" alt=\"logo hlavička pre webové sídla\">\n          </div>\n          <div class=\"idsk-header-extended__logotype-crown-mobile-small-navigation\">\n            <img src=\"/assets/images/header-extended/logo-mirri-small-biele.svg\" alt=\"logo hlavička pre webové sídla\">\n          </div>\n        </a>\n      </div>\n\n      <div class=\"idsk-header-extended__search\">\n        <form class=\"idsk-header-extended__search-form\">\n          <label class=\"idsk-header-extended__search-label\" for=\"idsk-header-extended__search-input-mobile\">\n            Zadajte hľadaný výraz\n          </label>\n          <input class=\"govuk-input govuk-!-display-inline-block\" id=\"idsk-header-extended__search-input-mobile\"\n            name=\"search\" type=\"text\" aria-describedby=\"input-width-30-hint\" aria-label=\"Zadajte hľadaný výraz\">\n          <button type=\"submit\" class=\"govuk-button govuk-!-display-inline-block\" data-module=\"govuk-button\">\n            <span class=\"govuk-visually-hidden\">Vyhľadať</span>\n            <i aria-hidden=\"true\" class=\"fas fa-search\"></i>\n          </button>\n        </form>\n      </div>\n\n        <div class=\"idsk-header-extended__content\">\n    <nav aria-label=\"Top Level Navigation\">\n      <ul class=\"idsk-header-extended__navigation \">\n        <li class=\"idsk-header-extended__navigation-item\n                \">\n          <a class=\"idsk-header-extended__link\n                    \"\n            href=\"#1\"  title=\"Eurofondy\">\n            Eurofondy\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__navigation-item\n                \">\n          <a class=\"idsk-header-extended__link\n                    \"\n            href=\"#2\"  title=\"Informatizácia\">\n            Informatizácia\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__navigation-item\n                \">\n          <a class=\"idsk-header-extended__link\n                    \"\n            href=\"#3\"  title=\"Regionálny rozvoj\">\n            Regionálny rozvoj\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__navigation-item\n                \">\n          <a class=\"idsk-header-extended__link\n                    \"\n            href=\"#4\"  title=\"Inovácie\">\n            Inovácie\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__navigation-item\n                \">\n          <a class=\"idsk-header-extended__link\n                    \"\n            href=\"#5\"  title=\"Investície\">\n            Investície\n          </a>\n        </li>\n      </ul>\n    </nav>\n  </div>\n\n\n      <hr class=\"idsk-header-extended__hr\">\n\n          <div class=\"idsk-header-extended__language\">\n      <button type=\"button\" class=\"idsk-header-extended__language-button\">\n        <span class=\"idsk-header-extended__language--current-text\">\n          <img src=\"/assets/images/flags/slovakia-flag-icon-16.png\"\n            alt=\"slovenčina\" aria-hidden=\"true\">\n          <span>slovenčina</span>\n        </span>\n      </button>\n      <ul class=\"idsk-header-extended__language-list\">\n        <li class=\"idsk-header-extended__language-list-item\">\n          <a class=\"idsk-header-extended__language-list-link\" title=\"english\" href=\"#\">\n            <img src=\"/assets/images/flags/united-states-of-america-flag-icon-16.png\"\n              alt=\"english\" aria-hidden=\"true\">\n            english\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__language-list-item\">\n          <a class=\"idsk-header-extended__language-list-link\" title=\"german\" href=\"#\">\n            <img src=\"/assets/images/flags/germany-flag-icon-16.png\"\n              alt=\"german\" aria-hidden=\"true\">\n            german\n          </a>\n        </li>\n      </ul>\n    </div>\n\n\n          <div class=\"idsk-header-extended__social\">\n      <ul class=\"idsk-header-extended__social-list\">\n        <li class=\"idsk-header-extended__social-item\">\n          <a class=\"idsk-header-extended__social-link\" href=\"#\" title=\"Instagram\"\n            target=\"_blank\">\n            <span class=\"govuk-visually-hidden\">Instagram</span>\n            <i class=\"fab fa-instagram\" aria-hidden=\"true\"></i>\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__social-item\">\n          <a class=\"idsk-header-extended__social-link\" href=\"#\" title=\"Linkedin\"\n            target=\"_blank\">\n            <span class=\"govuk-visually-hidden\">Linkedin</span>\n            <i class=\"fab fa-linkedin-in\" aria-hidden=\"true\"></i>\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__social-item\">\n          <a class=\"idsk-header-extended__social-link\" href=\"#\" title=\"Facebook\"\n            target=\"_blank\">\n            <span class=\"govuk-visually-hidden\">Facebook</span>\n            <i class=\"fab fa-facebook-f\" aria-hidden=\"true\"></i>\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__social-item\">\n          <a class=\"idsk-header-extended__social-link\" href=\"#\" title=\"Twitter\"\n            target=\"_blank\">\n            <span class=\"govuk-visually-hidden\">Twitter</span>\n            <i class=\"fab fa-twitter\" aria-hidden=\"true\"></i>\n          </a>\n        </li>\n      </ul>\n    </div>\n\n\n      <button class=\"idsk-header-extended__mobile-close\">\n        <span class=\"govuk-visually-hidden\">\n          Zavrieť menu\n        </span>\n      </button>\n    </div>\n\n  </div>\n\n</header>\n\n<div class=\"idsk-header-extended-ie-fix\"></div>\n\n<div class=\"idsk-header-extended-notification\">\n</div>"
+        },
+        {
+            "name": "s navigáciou a výstražnou hláškou",
+            "options": {
+                "logo": "logo-mirri-farebne.svg",
+                "logoSmall": "logo-mirri-small-farebne.svg",
+                "logoWhite": "logo-mirri-biele.svg",
+                "logoSmallWhite": "logo-mirri-small-biele.svg",
+                "logoGrid": "govuk-grid-column-one-half govuk-grid-column-one-third-from-desktop",
+                "navigation": [
+                    {
+                        "link": "#1",
+                        "text": "Eurofondy"
+                    },
+                    {
+                        "link": "#2",
+                        "text": "Informatizácia"
+                    },
+                    {
+                        "link": "#3",
+                        "text": "Regionálny rozvoj"
+                    },
+                    {
+                        "link": "#4",
+                        "text": "Inovácie"
+                    },
+                    {
+                        "link": "#5",
+                        "text": "Investície"
+                    }
+                ],
+                "language": {
+                    "current": {
+                        "text": "slovenčina",
+                        "flag": "slovakia-flag-icon-16.png"
+                    },
+                    "choices": [
+                        {
+                            "flag": "united-states-of-america-flag-icon-16.png",
+                            "text": "english",
+                            "link": "#"
+                        },
+                        {
+                            "flag": "germany-flag-icon-16.png",
+                            "text": "german",
+                            "link": "#"
+                        }
+                    ]
+                },
+                "socials": [
+                    {
+                        "icon": "fab fa-instagram",
+                        "link": "#",
+                        "text": "Instagram"
+                    },
+                    {
+                        "icon": "fab fa-linkedin-in",
+                        "link": "#",
+                        "text": "Linkedin"
+                    },
+                    {
+                        "icon": "fab fa-facebook-f",
+                        "link": "#",
+                        "text": "Facebook"
+                    },
+                    {
+                        "icon": "fab fa-twitter",
+                        "link": "#",
+                        "text": "Twitter"
+                    }
+                ],
+                "notification": {
+                    "iconFallbackText": "warning",
+                    "html": "Ak prichádzate z rizikovej krajiny, musíte vyplniť <a href=\"#\" title=\"formulár\">formulár</a>."
+                }
+            },
+            "hidden": false,
+            "html": "<header class=\"idsk-header-extended \" data-module=\"idsk-header-extended\">\n  <div class=\"idsk-header-extended__container govuk-width-container\">\n\n    <div\n      class=\"idsk-header-extended__logo govuk-grid-column-one-half govuk-grid-column-one-third-from-desktop\">\n      <a href=\"/\" title=\"\">\n        <div class=\"idsk-header-extended__logotype-crown\">\n          <img src=\"/assets/images/header-extended/logo-mirri-farebne.svg\" alt=\"logo hlavička pre webové sídla\">\n        </div>\n        <div class=\"idsk-header-extended__logotype-crown-mobile\">\n          <img src=\"/assets/images/header-extended/logo-mirri-small-farebne.svg\" alt=\"logo hlavička pre webové sídla\">\n        </div>\n      </a>\n    </div>\n\n    <div class=\"idsk-header-extended__search\">\n      <form class=\"idsk-header-extended__search-form\">\n        <label class=\"idsk-header-extended__search-label\" for=\"idsk-header-extended__search-input\">\n          Zadajte hľadaný výraz\n        </label>\n        <input class=\"govuk-input govuk-!-display-inline-block\" id=\"idsk-header-extended__search-input\" name=\"search\"\n          type=\"text\" aria-describedby=\"input-width-30-hint\" aria-label=\"Zadajte hľadaný výraz\">\n        <button type=\"submit\" class=\"govuk-button govuk-!-display-inline-block\" data-module=\"govuk-button\">\n          <span class=\"govuk-visually-hidden\">Vyhľadať</span>\n          <i aria-hidden=\"true\" class=\"fas fa-search\"></i>\n        </button>\n      </form>\n    </div>\n\n        <div class=\"idsk-header-extended__language\">\n      <button type=\"button\" class=\"idsk-header-extended__language-button\">\n        <span class=\"idsk-header-extended__language--current-text\">\n          <img src=\"/assets/images/flags/slovakia-flag-icon-16.png\"\n            alt=\"slovenčina\" aria-hidden=\"true\">\n          <span>slovenčina</span>\n        </span>\n      </button>\n      <ul class=\"idsk-header-extended__language-list\">\n        <li class=\"idsk-header-extended__language-list-item\">\n          <a class=\"idsk-header-extended__language-list-link\" title=\"english\" href=\"#\">\n            <img src=\"/assets/images/flags/united-states-of-america-flag-icon-16.png\"\n              alt=\"english\" aria-hidden=\"true\">\n            english\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__language-list-item\">\n          <a class=\"idsk-header-extended__language-list-link\" title=\"german\" href=\"#\">\n            <img src=\"/assets/images/flags/germany-flag-icon-16.png\"\n              alt=\"german\" aria-hidden=\"true\">\n            german\n          </a>\n        </li>\n      </ul>\n    </div>\n\n\n        <div class=\"idsk-header-extended__social\">\n      <ul class=\"idsk-header-extended__social-list\">\n        <li class=\"idsk-header-extended__social-item\">\n          <a class=\"idsk-header-extended__social-link\" href=\"#\" title=\"Instagram\"\n            target=\"_blank\">\n            <span class=\"govuk-visually-hidden\">Instagram</span>\n            <i class=\"fab fa-instagram\" aria-hidden=\"true\"></i>\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__social-item\">\n          <a class=\"idsk-header-extended__social-link\" href=\"#\" title=\"Linkedin\"\n            target=\"_blank\">\n            <span class=\"govuk-visually-hidden\">Linkedin</span>\n            <i class=\"fab fa-linkedin-in\" aria-hidden=\"true\"></i>\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__social-item\">\n          <a class=\"idsk-header-extended__social-link\" href=\"#\" title=\"Facebook\"\n            target=\"_blank\">\n            <span class=\"govuk-visually-hidden\">Facebook</span>\n            <i class=\"fab fa-facebook-f\" aria-hidden=\"true\"></i>\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__social-item\">\n          <a class=\"idsk-header-extended__social-link\" href=\"#\" title=\"Twitter\"\n            target=\"_blank\">\n            <span class=\"govuk-visually-hidden\">Twitter</span>\n            <i class=\"fab fa-twitter\" aria-hidden=\"true\"></i>\n          </a>\n        </li>\n      </ul>\n    </div>\n\n\n    <button type=\"button\" class=\"idsk-header-extended__menu-button idsk-js-header-extended-side-menu\"\n      aria-controls=\"navigation\" aria-label=\"Show or hide Top Level Navigation\">Menu\n      <svg width=\"40\" height=\"40\" viewBox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n        <line x1=\"5\" y1=\"19.8752\" x2=\"35\" y2=\"19.8752\" stroke=\"#003078\" stroke-width=\"3\" />\n        <line x1=\"5\" y1=\"29.2507\" x2=\"30.5009\" y2=\"29.2507\" stroke=\"#003078\" stroke-width=\"3\" />\n        <line x1=\"5.00177\" y1=\"10.5\" x2=\"30.5027\" y2=\"10.5\" stroke=\"#003078\" stroke-width=\"3\" stroke-linejoin=\"round\" />\n      </svg>\n    </button>\n\n      <div class=\"idsk-header-extended__content\">\n    <nav aria-label=\"Top Level Navigation\">\n      <ul class=\"idsk-header-extended__navigation \">\n        <li class=\"idsk-header-extended__navigation-item\n                \">\n          <a class=\"idsk-header-extended__link\n                    \"\n            href=\"#1\"  title=\"Eurofondy\">\n            Eurofondy\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__navigation-item\n                \">\n          <a class=\"idsk-header-extended__link\n                    \"\n            href=\"#2\"  title=\"Informatizácia\">\n            Informatizácia\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__navigation-item\n                \">\n          <a class=\"idsk-header-extended__link\n                    \"\n            href=\"#3\"  title=\"Regionálny rozvoj\">\n            Regionálny rozvoj\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__navigation-item\n                \">\n          <a class=\"idsk-header-extended__link\n                    \"\n            href=\"#4\"  title=\"Inovácie\">\n            Inovácie\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__navigation-item\n                \">\n          <a class=\"idsk-header-extended__link\n                    \"\n            href=\"#5\"  title=\"Investície\">\n            Investície\n          </a>\n        </li>\n      </ul>\n    </nav>\n  </div>\n\n\n    <div class=\"idsk-header-extended__mobile\">\n\n      <div\n        class=\"idsk-header-extended__logo govuk-grid-column-one-half govuk-grid-column-one-third-from-desktop\">\n        <a href=\"/\" title=\"\">\n          <div class=\"idsk-header-extended__logotype-crown-mobile-navigation\">\n            <img src=\"/assets/images/header-extended/logo-mirri-biele.svg\" alt=\"logo hlavička pre webové sídla\">\n          </div>\n          <div class=\"idsk-header-extended__logotype-crown-mobile-small-navigation\">\n            <img src=\"/assets/images/header-extended/logo-mirri-small-biele.svg\" alt=\"logo hlavička pre webové sídla\">\n          </div>\n        </a>\n      </div>\n\n      <div class=\"idsk-header-extended__search\">\n        <form class=\"idsk-header-extended__search-form\">\n          <label class=\"idsk-header-extended__search-label\" for=\"idsk-header-extended__search-input-mobile\">\n            Zadajte hľadaný výraz\n          </label>\n          <input class=\"govuk-input govuk-!-display-inline-block\" id=\"idsk-header-extended__search-input-mobile\"\n            name=\"search\" type=\"text\" aria-describedby=\"input-width-30-hint\" aria-label=\"Zadajte hľadaný výraz\">\n          <button type=\"submit\" class=\"govuk-button govuk-!-display-inline-block\" data-module=\"govuk-button\">\n            <span class=\"govuk-visually-hidden\">Vyhľadať</span>\n            <i aria-hidden=\"true\" class=\"fas fa-search\"></i>\n          </button>\n        </form>\n      </div>\n\n        <div class=\"idsk-header-extended__content\">\n    <nav aria-label=\"Top Level Navigation\">\n      <ul class=\"idsk-header-extended__navigation \">\n        <li class=\"idsk-header-extended__navigation-item\n                \">\n          <a class=\"idsk-header-extended__link\n                    \"\n            href=\"#1\"  title=\"Eurofondy\">\n            Eurofondy\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__navigation-item\n                \">\n          <a class=\"idsk-header-extended__link\n                    \"\n            href=\"#2\"  title=\"Informatizácia\">\n            Informatizácia\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__navigation-item\n                \">\n          <a class=\"idsk-header-extended__link\n                    \"\n            href=\"#3\"  title=\"Regionálny rozvoj\">\n            Regionálny rozvoj\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__navigation-item\n                \">\n          <a class=\"idsk-header-extended__link\n                    \"\n            href=\"#4\"  title=\"Inovácie\">\n            Inovácie\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__navigation-item\n                \">\n          <a class=\"idsk-header-extended__link\n                    \"\n            href=\"#5\"  title=\"Investície\">\n            Investície\n          </a>\n        </li>\n      </ul>\n    </nav>\n  </div>\n\n\n      <hr class=\"idsk-header-extended__hr\">\n\n          <div class=\"idsk-header-extended__language\">\n      <button type=\"button\" class=\"idsk-header-extended__language-button\">\n        <span class=\"idsk-header-extended__language--current-text\">\n          <img src=\"/assets/images/flags/slovakia-flag-icon-16.png\"\n            alt=\"slovenčina\" aria-hidden=\"true\">\n          <span>slovenčina</span>\n        </span>\n      </button>\n      <ul class=\"idsk-header-extended__language-list\">\n        <li class=\"idsk-header-extended__language-list-item\">\n          <a class=\"idsk-header-extended__language-list-link\" title=\"english\" href=\"#\">\n            <img src=\"/assets/images/flags/united-states-of-america-flag-icon-16.png\"\n              alt=\"english\" aria-hidden=\"true\">\n            english\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__language-list-item\">\n          <a class=\"idsk-header-extended__language-list-link\" title=\"german\" href=\"#\">\n            <img src=\"/assets/images/flags/germany-flag-icon-16.png\"\n              alt=\"german\" aria-hidden=\"true\">\n            german\n          </a>\n        </li>\n      </ul>\n    </div>\n\n\n          <div class=\"idsk-header-extended__social\">\n      <ul class=\"idsk-header-extended__social-list\">\n        <li class=\"idsk-header-extended__social-item\">\n          <a class=\"idsk-header-extended__social-link\" href=\"#\" title=\"Instagram\"\n            target=\"_blank\">\n            <span class=\"govuk-visually-hidden\">Instagram</span>\n            <i class=\"fab fa-instagram\" aria-hidden=\"true\"></i>\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__social-item\">\n          <a class=\"idsk-header-extended__social-link\" href=\"#\" title=\"Linkedin\"\n            target=\"_blank\">\n            <span class=\"govuk-visually-hidden\">Linkedin</span>\n            <i class=\"fab fa-linkedin-in\" aria-hidden=\"true\"></i>\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__social-item\">\n          <a class=\"idsk-header-extended__social-link\" href=\"#\" title=\"Facebook\"\n            target=\"_blank\">\n            <span class=\"govuk-visually-hidden\">Facebook</span>\n            <i class=\"fab fa-facebook-f\" aria-hidden=\"true\"></i>\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__social-item\">\n          <a class=\"idsk-header-extended__social-link\" href=\"#\" title=\"Twitter\"\n            target=\"_blank\">\n            <span class=\"govuk-visually-hidden\">Twitter</span>\n            <i class=\"fab fa-twitter\" aria-hidden=\"true\"></i>\n          </a>\n        </li>\n      </ul>\n    </div>\n\n\n      <button class=\"idsk-header-extended__mobile-close\">\n        <span class=\"govuk-visually-hidden\">\n          Zavrieť menu\n        </span>\n      </button>\n    </div>\n\n  </div>\n\n</header>\n\n<div class=\"idsk-header-extended-ie-fix\"></div>\n\n<div class=\"idsk-header-extended-notification\">\n  <div class=\"idsk-warning-text\">\n  <div class=\"govuk-width-container\">\n    <div class=\"idsk-warning-text__text\">\n      Ak prichádzate z rizikovej krajiny, musíte vyplniť <a href=\"#\" title=\"formulár\">formulár</a>.\n    </div>\n  </div>\n</div>\n\n</div>"
+        },
+        {
+            "name": "Ukážka podsekcií po kliknutí na \"Programy EŠIF\", vyhľadávanie",
+            "options": {
+                "logo": "logo-mirri-farebne.svg",
+                "logoSmall": "logo-mirri-small-farebne.svg",
+                "logoWhite": "logo-mirri-biele.svg",
+                "logoSmallWhite": "logo-mirri-small-biele.svg",
+                "logoGrid": "govuk-grid-column-one-half govuk-grid-column-one-third-from-desktop",
+                "navigation": [
+                    {
+                        "link": "#1",
+                        "text": "Eurofondy"
+                    },
+                    {
+                        "link": "#2",
+                        "text": "Informatizácia"
+                    },
+                    {
+                        "link": "#3",
+                        "text": "Regionálny rozvoj",
+                        "submenu": [
+                            {
+                                "link": "#3.1",
+                                "text": "O regionálnom rozvoji"
+                            },
+                            {
+                                "link": "#3.2",
+                                "text": "Zoznam úloh"
+                            },
+                            {
+                                "link": "#3.3",
+                                "text": "Zabezpečenie dát"
+                            },
+                            {
+                                "link": "#3.4",
+                                "text": "Ochrana práv"
+                            },
+                            {
+                                "link": "#3.5",
+                                "text": "Kvapka nádeje"
+                            },
+                            {
+                                "link": "#3.6",
+                                "text": "Programy 6"
+                            },
+                            {
+                                "link": "#3.7",
+                                "text": "Programy 7"
+                            },
+                            {
+                                "link": "#3.8",
+                                "text": "Programy 8"
+                            },
+                            {
+                                "link": "#3.9",
+                                "text": "Programy 9"
+                            },
+                            {
+                                "link": "#3.10",
+                                "text": "Programy 10"
+                            }
+                        ]
+                    },
+                    {
+                        "link": "#4",
+                        "text": "Inovácie"
+                    },
+                    {
+                        "link": "#5",
+                        "text": "Investície"
+                    }
+                ],
+                "search": true,
+                "language": {
+                    "current": {
+                        "text": "slovenčina",
+                        "flag": "slovakia-flag-icon-16.png"
+                    },
+                    "choices": [
+                        {
+                            "flag": "united-states-of-america-flag-icon-16.png",
+                            "text": "english",
+                            "link": "#"
+                        },
+                        {
+                            "flag": "germany-flag-icon-16.png",
+                            "text": "german",
+                            "link": "#"
+                        }
+                    ]
+                },
+                "socials": [
+                    {
+                        "icon": "fab fa-instagram",
+                        "link": "#",
+                        "text": "Instagram"
+                    },
+                    {
+                        "icon": "fab fa-linkedin-in",
+                        "link": "#",
+                        "text": "Linkedin"
+                    },
+                    {
+                        "icon": "fab fa-facebook-f",
+                        "link": "#",
+                        "text": "Facebook"
+                    },
+                    {
+                        "icon": "fab fa-twitter",
+                        "link": "#",
+                        "text": "Twitter"
+                    }
+                ]
+            },
+            "hidden": false,
+            "html": "<header class=\"idsk-header-extended \" data-module=\"idsk-header-extended\">\n  <div class=\"idsk-header-extended__container govuk-width-container\">\n\n    <div\n      class=\"idsk-header-extended__logo govuk-grid-column-one-half govuk-grid-column-one-third-from-desktop\">\n      <a href=\"/\" title=\"\">\n        <div class=\"idsk-header-extended__logotype-crown\">\n          <img src=\"/assets/images/header-extended/logo-mirri-farebne.svg\" alt=\"logo hlavička pre webové sídla\">\n        </div>\n        <div class=\"idsk-header-extended__logotype-crown-mobile\">\n          <img src=\"/assets/images/header-extended/logo-mirri-small-farebne.svg\" alt=\"logo hlavička pre webové sídla\">\n        </div>\n      </a>\n    </div>\n\n    <div class=\"idsk-header-extended__search\">\n      <form class=\"idsk-header-extended__search-form\">\n        <label class=\"idsk-header-extended__search-label\" for=\"idsk-header-extended__search-input\">\n          Zadajte hľadaný výraz\n        </label>\n        <input class=\"govuk-input govuk-!-display-inline-block\" id=\"idsk-header-extended__search-input\" name=\"search\"\n          type=\"text\" aria-describedby=\"input-width-30-hint\" aria-label=\"Zadajte hľadaný výraz\">\n        <button type=\"submit\" class=\"govuk-button govuk-!-display-inline-block\" data-module=\"govuk-button\">\n          <span class=\"govuk-visually-hidden\">Vyhľadať</span>\n          <i aria-hidden=\"true\" class=\"fas fa-search\"></i>\n        </button>\n      </form>\n    </div>\n\n        <div class=\"idsk-header-extended__language\">\n      <button type=\"button\" class=\"idsk-header-extended__language-button\">\n        <span class=\"idsk-header-extended__language--current-text\">\n          <img src=\"/assets/images/flags/slovakia-flag-icon-16.png\"\n            alt=\"slovenčina\" aria-hidden=\"true\">\n          <span>slovenčina</span>\n        </span>\n      </button>\n      <ul class=\"idsk-header-extended__language-list\">\n        <li class=\"idsk-header-extended__language-list-item\">\n          <a class=\"idsk-header-extended__language-list-link\" title=\"english\" href=\"#\">\n            <img src=\"/assets/images/flags/united-states-of-america-flag-icon-16.png\"\n              alt=\"english\" aria-hidden=\"true\">\n            english\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__language-list-item\">\n          <a class=\"idsk-header-extended__language-list-link\" title=\"german\" href=\"#\">\n            <img src=\"/assets/images/flags/germany-flag-icon-16.png\"\n              alt=\"german\" aria-hidden=\"true\">\n            german\n          </a>\n        </li>\n      </ul>\n    </div>\n\n\n        <div class=\"idsk-header-extended__social\">\n      <ul class=\"idsk-header-extended__social-list\">\n        <li class=\"idsk-header-extended__social-item\">\n          <a class=\"idsk-header-extended__social-link\" href=\"#\" title=\"Instagram\"\n            target=\"_blank\">\n            <span class=\"govuk-visually-hidden\">Instagram</span>\n            <i class=\"fab fa-instagram\" aria-hidden=\"true\"></i>\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__social-item\">\n          <a class=\"idsk-header-extended__social-link\" href=\"#\" title=\"Linkedin\"\n            target=\"_blank\">\n            <span class=\"govuk-visually-hidden\">Linkedin</span>\n            <i class=\"fab fa-linkedin-in\" aria-hidden=\"true\"></i>\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__social-item\">\n          <a class=\"idsk-header-extended__social-link\" href=\"#\" title=\"Facebook\"\n            target=\"_blank\">\n            <span class=\"govuk-visually-hidden\">Facebook</span>\n            <i class=\"fab fa-facebook-f\" aria-hidden=\"true\"></i>\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__social-item\">\n          <a class=\"idsk-header-extended__social-link\" href=\"#\" title=\"Twitter\"\n            target=\"_blank\">\n            <span class=\"govuk-visually-hidden\">Twitter</span>\n            <i class=\"fab fa-twitter\" aria-hidden=\"true\"></i>\n          </a>\n        </li>\n      </ul>\n    </div>\n\n\n    <button type=\"button\" class=\"idsk-header-extended__menu-button idsk-js-header-extended-side-menu\"\n      aria-controls=\"navigation\" aria-label=\"Show or hide Top Level Navigation\">Menu\n      <svg width=\"40\" height=\"40\" viewBox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n        <line x1=\"5\" y1=\"19.8752\" x2=\"35\" y2=\"19.8752\" stroke=\"#003078\" stroke-width=\"3\" />\n        <line x1=\"5\" y1=\"29.2507\" x2=\"30.5009\" y2=\"29.2507\" stroke=\"#003078\" stroke-width=\"3\" />\n        <line x1=\"5.00177\" y1=\"10.5\" x2=\"30.5027\" y2=\"10.5\" stroke=\"#003078\" stroke-width=\"3\" stroke-linejoin=\"round\" />\n      </svg>\n    </button>\n\n      <div class=\"idsk-header-extended__content\">\n    <nav aria-label=\"Top Level Navigation\">\n      <ul class=\"idsk-header-extended__navigation \">\n        <li class=\"idsk-header-extended__navigation-item\n                \">\n          <a class=\"idsk-header-extended__link\n                    \"\n            href=\"#1\"  title=\"Eurofondy\">\n            Eurofondy\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__navigation-item\n                \">\n          <a class=\"idsk-header-extended__link\n                    \"\n            href=\"#2\"  title=\"Informatizácia\">\n            Informatizácia\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__navigation-item\n                \">\n          <a class=\"idsk-header-extended__link\n                     idsk-js-header-extended-submenu-toggle idsk-header-extended__arrow\"\n            href=\"#3\"  title=\"Regionálny rozvoj\">\n            Regionálny rozvoj\n          </a>\n          <div class=\"idsk-header-extended__navigation-submenu\">\n            <ul class=\"govuk-width-container\">\n              <li>\n                <a href=\"#3.1\" title=\"O regionálnom rozvoji\">\n                  O regionálnom rozvoji\n                </a>\n              </li>\n              <li>\n                <a href=\"#3.2\" title=\"Zoznam úloh\">\n                  Zoznam úloh\n                </a>\n              </li>\n              <li>\n                <a href=\"#3.3\" title=\"Zabezpečenie dát\">\n                  Zabezpečenie dát\n                </a>\n              </li>\n              <li>\n                <a href=\"#3.4\" title=\"Ochrana práv\">\n                  Ochrana práv\n                </a>\n              </li>\n              <li>\n                <a href=\"#3.5\" title=\"Kvapka nádeje\">\n                  Kvapka nádeje\n                </a>\n              </li>\n              <li>\n                <a href=\"#3.6\" title=\"Programy 6\">\n                  Programy 6\n                </a>\n              </li>\n              <li>\n                <a href=\"#3.7\" title=\"Programy 7\">\n                  Programy 7\n                </a>\n              </li>\n              <li>\n                <a href=\"#3.8\" title=\"Programy 8\">\n                  Programy 8\n                </a>\n              </li>\n              <li>\n                <a href=\"#3.9\" title=\"Programy 9\">\n                  Programy 9\n                </a>\n              </li>\n              <li>\n                <a href=\"#3.10\" title=\"Programy 10\">\n                  Programy 10\n                </a>\n              </li>\n            </ul>\n          </div>\n        </li>\n        <li class=\"idsk-header-extended__navigation-item\n                \">\n          <a class=\"idsk-header-extended__link\n                    \"\n            href=\"#4\"  title=\"Inovácie\">\n            Inovácie\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__navigation-item\n                \">\n          <a class=\"idsk-header-extended__link\n                    \"\n            href=\"#5\"  title=\"Investície\">\n            Investície\n          </a>\n        </li>\n      </ul>\n    </nav>\n  </div>\n\n\n    <div class=\"idsk-header-extended__mobile\">\n\n      <div\n        class=\"idsk-header-extended__logo govuk-grid-column-one-half govuk-grid-column-one-third-from-desktop\">\n        <a href=\"/\" title=\"\">\n          <div class=\"idsk-header-extended__logotype-crown-mobile-navigation\">\n            <img src=\"/assets/images/header-extended/logo-mirri-biele.svg\" alt=\"logo hlavička pre webové sídla\">\n          </div>\n          <div class=\"idsk-header-extended__logotype-crown-mobile-small-navigation\">\n            <img src=\"/assets/images/header-extended/logo-mirri-small-biele.svg\" alt=\"logo hlavička pre webové sídla\">\n          </div>\n        </a>\n      </div>\n\n      <div class=\"idsk-header-extended__search\">\n        <form class=\"idsk-header-extended__search-form\">\n          <label class=\"idsk-header-extended__search-label\" for=\"idsk-header-extended__search-input-mobile\">\n            Zadajte hľadaný výraz\n          </label>\n          <input class=\"govuk-input govuk-!-display-inline-block\" id=\"idsk-header-extended__search-input-mobile\"\n            name=\"search\" type=\"text\" aria-describedby=\"input-width-30-hint\" aria-label=\"Zadajte hľadaný výraz\">\n          <button type=\"submit\" class=\"govuk-button govuk-!-display-inline-block\" data-module=\"govuk-button\">\n            <span class=\"govuk-visually-hidden\">Vyhľadať</span>\n            <i aria-hidden=\"true\" class=\"fas fa-search\"></i>\n          </button>\n        </form>\n      </div>\n\n        <div class=\"idsk-header-extended__content\">\n    <nav aria-label=\"Top Level Navigation\">\n      <ul class=\"idsk-header-extended__navigation \">\n        <li class=\"idsk-header-extended__navigation-item\n                \">\n          <a class=\"idsk-header-extended__link\n                    \"\n            href=\"#1\"  title=\"Eurofondy\">\n            Eurofondy\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__navigation-item\n                \">\n          <a class=\"idsk-header-extended__link\n                    \"\n            href=\"#2\"  title=\"Informatizácia\">\n            Informatizácia\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__navigation-item\n                \">\n          <a class=\"idsk-header-extended__link\n                     idsk-js-header-extended-submenu-toggle idsk-header-extended__arrow\"\n            href=\"#3\"  title=\"Regionálny rozvoj\">\n            Regionálny rozvoj\n          </a>\n          <div class=\"idsk-header-extended__navigation-submenu\">\n            <ul class=\"govuk-width-container\">\n              <li>\n                <a href=\"#3.1\" title=\"O regionálnom rozvoji\">\n                  O regionálnom rozvoji\n                </a>\n              </li>\n              <li>\n                <a href=\"#3.2\" title=\"Zoznam úloh\">\n                  Zoznam úloh\n                </a>\n              </li>\n              <li>\n                <a href=\"#3.3\" title=\"Zabezpečenie dát\">\n                  Zabezpečenie dát\n                </a>\n              </li>\n              <li>\n                <a href=\"#3.4\" title=\"Ochrana práv\">\n                  Ochrana práv\n                </a>\n              </li>\n              <li>\n                <a href=\"#3.5\" title=\"Kvapka nádeje\">\n                  Kvapka nádeje\n                </a>\n              </li>\n              <li>\n                <a href=\"#3.6\" title=\"Programy 6\">\n                  Programy 6\n                </a>\n              </li>\n              <li>\n                <a href=\"#3.7\" title=\"Programy 7\">\n                  Programy 7\n                </a>\n              </li>\n              <li>\n                <a href=\"#3.8\" title=\"Programy 8\">\n                  Programy 8\n                </a>\n              </li>\n              <li>\n                <a href=\"#3.9\" title=\"Programy 9\">\n                  Programy 9\n                </a>\n              </li>\n              <li>\n                <a href=\"#3.10\" title=\"Programy 10\">\n                  Programy 10\n                </a>\n              </li>\n            </ul>\n          </div>\n        </li>\n        <li class=\"idsk-header-extended__navigation-item\n                \">\n          <a class=\"idsk-header-extended__link\n                    \"\n            href=\"#4\"  title=\"Inovácie\">\n            Inovácie\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__navigation-item\n                \">\n          <a class=\"idsk-header-extended__link\n                    \"\n            href=\"#5\"  title=\"Investície\">\n            Investície\n          </a>\n        </li>\n      </ul>\n    </nav>\n  </div>\n\n\n      <hr class=\"idsk-header-extended__hr\">\n\n          <div class=\"idsk-header-extended__language\">\n      <button type=\"button\" class=\"idsk-header-extended__language-button\">\n        <span class=\"idsk-header-extended__language--current-text\">\n          <img src=\"/assets/images/flags/slovakia-flag-icon-16.png\"\n            alt=\"slovenčina\" aria-hidden=\"true\">\n          <span>slovenčina</span>\n        </span>\n      </button>\n      <ul class=\"idsk-header-extended__language-list\">\n        <li class=\"idsk-header-extended__language-list-item\">\n          <a class=\"idsk-header-extended__language-list-link\" title=\"english\" href=\"#\">\n            <img src=\"/assets/images/flags/united-states-of-america-flag-icon-16.png\"\n              alt=\"english\" aria-hidden=\"true\">\n            english\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__language-list-item\">\n          <a class=\"idsk-header-extended__language-list-link\" title=\"german\" href=\"#\">\n            <img src=\"/assets/images/flags/germany-flag-icon-16.png\"\n              alt=\"german\" aria-hidden=\"true\">\n            german\n          </a>\n        </li>\n      </ul>\n    </div>\n\n\n          <div class=\"idsk-header-extended__social\">\n      <ul class=\"idsk-header-extended__social-list\">\n        <li class=\"idsk-header-extended__social-item\">\n          <a class=\"idsk-header-extended__social-link\" href=\"#\" title=\"Instagram\"\n            target=\"_blank\">\n            <span class=\"govuk-visually-hidden\">Instagram</span>\n            <i class=\"fab fa-instagram\" aria-hidden=\"true\"></i>\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__social-item\">\n          <a class=\"idsk-header-extended__social-link\" href=\"#\" title=\"Linkedin\"\n            target=\"_blank\">\n            <span class=\"govuk-visually-hidden\">Linkedin</span>\n            <i class=\"fab fa-linkedin-in\" aria-hidden=\"true\"></i>\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__social-item\">\n          <a class=\"idsk-header-extended__social-link\" href=\"#\" title=\"Facebook\"\n            target=\"_blank\">\n            <span class=\"govuk-visually-hidden\">Facebook</span>\n            <i class=\"fab fa-facebook-f\" aria-hidden=\"true\"></i>\n          </a>\n        </li>\n        <li class=\"idsk-header-extended__social-item\">\n          <a class=\"idsk-header-extended__social-link\" href=\"#\" title=\"Twitter\"\n            target=\"_blank\">\n            <span class=\"govuk-visually-hidden\">Twitter</span>\n            <i class=\"fab fa-twitter\" aria-hidden=\"true\"></i>\n          </a>\n        </li>\n      </ul>\n    </div>\n\n\n      <button class=\"idsk-header-extended__mobile-close\">\n        <span class=\"govuk-visually-hidden\">\n          Zavrieť menu\n        </span>\n      </button>\n    </div>\n\n  </div>\n\n</header>\n\n<div class=\"idsk-header-extended-ie-fix\"></div>\n\n<div class=\"idsk-header-extended-notification\">\n</div>"
+        }
+    ]
+}

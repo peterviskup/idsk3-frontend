@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../src/govuk/components/idsk-tabs/_idsk-tabs.scss"],"names":[],"mappings":"AAAA,oBAAoB;AACpB,iBAAiB","file":"_idsk-tabs.scss","sourcesContent":["@import \"../../base\";\n@import \"./index\";\n"]}

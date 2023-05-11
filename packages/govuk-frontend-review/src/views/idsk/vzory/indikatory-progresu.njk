@@ -1,0 +1,56 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Indikátory progresu" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Vzory</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Tento návod opisuje vizualizáciu časti dokončeného procesu.</p>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-s">Obsah:</h2>
+            <ul class="govuk-list">
+                <li><a class="govuk-link" href="#kedy-pouzit-indikator-progresu" title="Kedy použiť indikátor progresu">Kedy použiť indikátor progresu</a></li>
+                <li><a class="govuk-link" href="#priklady-ktorym-sa-vyhnut" title="Príklady, ktorým sa vyhnúť">Príklady, ktorým sa vyhnúť</a></li>
+            </ul>
+
+            <h3 class="govuk-heading-m" id="kedy-pouzit-indikator-progresu">Kedy použiť indikátor progresu</h3>
+            <p class="govuk-body">Najprv by ste mali otestovať svoj systém bez akýchkoľvek indikátorov progresu. Veľa služieb je natoľko jednoduchých, že používatelia indikáciu nepotrebujú.</p>
+            <p class="govuk-body">Pred pridaním indikátora progresu sa pokúste zlepšiť systém zmenou poradia, typu alebo počtu otázok.</p>
+            <p class="govuk-body">Ak služba nutne vyžaduje väčší počet krokov alebo by na základe výsledkov testovania mali používatelia stále problém, použite jednoduchý indikátor krokov alebo otázok, ako je napríklad tento:</p>
+            <img src="/public/assets/images/patterns/indikator1.png" alt="indicator">
+            <p class="govuk-body">Tento prístup zabezpečuje kompaktnú vizualizáciu procesu a obvykle postačuje na to, aby používatelia získali istotu v tom, ako bude celý proces pokračovať.</p>
+            <p class="govuk-body">Celkový počet krokov uveďte iba v prípade, že ho viete presne určiť. Ak používateľ pokračuje v procese a celkový počet krokov sa mení v závislosti od odpovedí používateľa, nezabudnite aktualizovať indikátor.</p>
+
+            <h3 class="govuk-heading-m" id="priklady-ktorym-sa-vyhnut">Príklad, ktorým sa vyhnúť</h3>
+            <p class="govuk-body">Nepoužívajte tento typ indikátora: </p>
+            <img src="/public/assets/images/patterns/indikator2.png" alt="indicator">
+            <p class="govuk-body">Tento typ indikátora môže byť problematický, pretože: </p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>si ho často používatelia nevšimnú,</li>
+                <li>zaberá veľa miesta,</li>
+                <li>zle sa zobrazuje na malých obrazovkách,</li>
+                <li>niektorých používateľov môže rozptýliť a zmiasť,</li>
+                <li>komplikuje vytvorenie dobrých pomenovaní krokov,</li>
+                <li>komplikuje zapracovanie podmienečných sekcií.</li>
+            </ul>
+
+        </div>
+    </div>
+
+  </div>
+{% endblock %}

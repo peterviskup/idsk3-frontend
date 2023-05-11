@@ -1,0 +1,102 @@
+[
+    {
+        "name": "classes",
+        "type": "string",
+        "required": false,
+        "description": "Classes to add to the interactive map."
+    },
+    {
+        "name": "uniqueId",
+        "type": "string",
+        "required": true,
+        "description": "unique id for komponent"
+    },
+    {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "description": "title of map component"
+    },
+    {
+        "name": "radioControlsName",
+        "type": "string",
+        "required": true,
+        "description": "unique name of radio group"
+    },
+    {
+        "name": "checkedTable",
+        "type": "boolean",
+        "required": false,
+        "description": "if true, radio for table will be checked"
+    },
+    {
+        "name": "indicatorOptions",
+        "type": "object",
+        "required": false,
+        "description": "indicator options",
+        "params": [
+            {
+                "name": "value",
+                "type": "string",
+                "required": true,
+                "description": "value for indicator radio"
+            },
+            {
+                "name": "title",
+                "type": "string",
+                "required": true,
+                "description": "title for indicator radio"
+            }
+        ]
+    },
+    {
+        "name": "mapIframeSrc",
+        "type": "string",
+        "required": true,
+        "description": "map iframe source"
+    },
+    {
+        "name": "mapIframeTitle",
+        "type": "string",
+        "required": true,
+        "description": "title for map iframe"
+    },
+    {
+        "name": "tableIframeSrc",
+        "type": "string",
+        "required": true,
+        "description": "table iframe source"
+    },
+    {
+        "name": "tableIframeTitle",
+        "type": "string",
+        "required": true,
+        "description": "title for table iframe"
+    },
+    {
+        "name": "dataDownload",
+        "type": "string",
+        "required": false,
+        "description": "data download",
+        "params": [
+            {
+                "name": "text",
+                "type": "string",
+                "required": true,
+                "description": "title for data to download"
+            },
+            {
+                "name": "link",
+                "type": "string",
+                "required": true,
+                "description": "link to data for download"
+            }
+        ]
+    },
+    {
+        "name": "dataSource",
+        "type": "string",
+        "required": false,
+        "description": "data source"
+    }
+]

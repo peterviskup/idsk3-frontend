@@ -1,0 +1,15 @@
+{
+    "component": "idsk-customer-surveys-text-area",
+    "fixtures": [
+        {
+            "name": "basic",
+            "options": {
+                "id": "basic-textarea",
+                "label": "Survey text",
+                "characterLength": 100
+            },
+            "hidden": false,
+            "html": "<div data-module=\"idsk-customer-surveys-text-area\">\n    <div class=\"idsk-feedback__content idsk-customer-surveys-text-area\" data-lines=\"Zostáva Vám 100 znakov\">\n        <div id=\"basic-textarea\">\n            <br>\n            \n\n<div class=\"govuk-character-count\" data-module=\"govuk-character-count\" data-maxlength=\"100\">\n  <div class=\"govuk-form-group\">\n  <label class=\"govuk-label\" for=\"basic-textarea-count\">\n    Survey text\n  </label>\n  <div id=\"basic-textarea-count-hint\" class=\"govuk-hint\">\n    \n  </div>\n  <textarea class=\"govuk-textarea govuk-js-character-count\" id=\"basic-textarea-count\" name=\"basic-textarea\" rows=\"5\" aria-describedby=\"basic-textarea-count-info basic-textarea-count-hint\"></textarea>\n</div>\n  \n  <div id=\"basic-textarea-count-info\" class=\"govuk-hint govuk-character-count__message\">\n  You can enter up to 100 characters\n</div>\n\n</div>\n\n        </div>\n    </div>\n</div>"
+        }
+    ]
+}

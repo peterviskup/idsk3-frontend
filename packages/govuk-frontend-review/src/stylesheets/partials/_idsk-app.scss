@@ -1,0 +1,333 @@
+// stylelint-disable order/properties-order
+// stylelint-disable declaration-no-important
+// stylelint-disable selector-max-id
+
+video,
+img {
+  max-width: 100%;
+}
+
+.embed-responsive {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+
+  margin-top: govuk-spacing(3);
+  margin-bottom: govuk-spacing(3);
+
+  @include govuk-media-query(tablet) {
+    margin-top: govuk-spacing(3);
+    margin-bottom: govuk-spacing(3);
+  }
+
+  &::before {
+    display: block;
+    content: "";
+    padding-top: 56.25%;
+  }
+
+  .embed-responsive-item,
+  iframe,
+  embed,
+  object,
+  video {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+
+.example::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.site-wrapper {
+  max-width: 960px;
+  margin: 0 15px;
+}
+@media (min-width: 641px) {
+  .site-wrapper {
+    margin: 0 30px;
+  }
+}
+@media (min-width: 1020px) {
+  .site-wrapper {
+    margin: 0 auto;
+  }
+}
+
+.visually-hidden,
+.visuallyhidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.site-wrapper #content {
+  margin: 0;
+}
+
+.elements-index .heading-medium {
+  margin: 1em 0 0;
+}
+
+.elements-index .divider {
+  margin-top: 4em;
+}
+
+@media (min-width: 641px) {
+  main > .heading-xlarge {
+    margin-top: 1.25em;
+    margin-bottom: .625em;
+  }
+}
+
+.heading-contents {
+  margin-top: 3em;
+}
+
+.list-contents li {
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 14px;
+  line-height: 1.1429;
+}
+@media (min-width: 641px) {
+  .list-contents li {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+.lead-in {
+  margin-bottom: 0;
+}
+
+.list-bullet {
+  margin-bottom: 45px;
+}
+
+.list-underline {
+  border-top: 1px solid #bfc1c3;
+}
+
+.list-underline li {
+  border-bottom: 1px solid #bfc1c3;
+  padding: 2px 0 3px;
+}
+
+.list-underline a {
+  text-decoration: none;
+}
+
+.no-top-margin {
+  margin-top: 0;
+}
+
+.example {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #bfc1c3;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-top: 30px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+}
+@media (min-width: 641px) {
+  .example {
+    padding-top: 45px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+  }
+}
+
+.example::before {
+  content: "PRÍKLAD";
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: .2105em .7895em;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 12px;
+  line-height: 1.25;
+  background: govuk-colour("black");
+  color: govuk-colour("white");
+}
+@media (min-width: 641px) {
+  .example::before {
+    font-size: 14px;
+    line-height: 1.4286;
+  }
+}
+
+.example .highlight {
+  font-style: normal;
+  color: #0076c0;
+}
+
+.example .list-bullet {
+  margin-bottom: 20px;
+}
+
+.example-grid p {
+  width: 100%;
+  background-color: #7dadd3;
+  background-image:
+    repeating-linear-gradient(
+      180deg,
+      #7dadd3,
+      #7dadd3 15px,
+      #b7cfe1 15px,
+      #b7cfe1 30px
+    );
+  margin-bottom: 0;
+  height: 30px;
+  overflow: hidden;
+  text-indent: -999em;
+}
+@media (min-width: 641px) {
+  .example-grid p {
+    height: 60px;
+  }
+}
+
+.example-images img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+.example-mobile {
+  padding-right: 0;
+  padding-left: 0;
+
+  iframe {
+    border: none;
+    width: 100%;
+  }
+}
+
+.example--inverse {
+  background: govuk-colour("blue");
+}
+
+// 3. Colour
+// ==========================================================================
+
+// Colour swatches
+.swatch {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  @include govuk-media-query(mobile) {
+    clear: both;
+    float: left;
+    margin-right: govuk-spacing(3);
+    margin-bottom: govuk-spacing(3);
+  }
+  @include govuk-media-query(tablet) {
+    margin: 0 auto govuk-spacing(3) auto;
+    float: none;
+  }
+}
+
+// Colour swatch layout
+.swatch-wrapper {
+  @include govuk-media-query(tablet) {
+    float: left;
+    width: 20%;
+    text-align: center;
+  }
+
+  .heading-small {
+    margin-bottom: govuk-spacing(3);
+  }
+
+  ul {
+    list-style-type: none;
+    padding-bottom: govuk-spacing(3);
+    @include govuk-media-query(mobile) {
+      min-height: 50px;
+      padding-top: 10px;
+    }
+    @include govuk-media-query(tablet) {
+      padding-left: 0;
+    }
+  }
+
+  li {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  b {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+@mixin color-swatches {
+  @each $color in $govuk-colours {
+    $color-name: nth($color, 1);
+    $color-var: nth($color, 2);
+    .swatch-#{$color-name} {
+      background-color: $color-var;
+    }
+  }
+}
+
+// Generate swatch classes for each colour in palette list
+@include color-swatches;
+
+// Overide prism.js code colours
+.token.punctuation {
+  color: govuk-colour("dark-blue") !important;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: govuk-colour("dark-blue") !important;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: govuk-colour("green") !important;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: govuk-colour("red") !important;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: govuk-colour("grey-4") !important;
+}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../src/govuk/components/idsk-customer-surveys-text-area/_idsk-customer-surveys-text-area.scss"],"names":[],"mappings":"AAAA,oBAAoB;AACpB,iBAAiB","file":"_idsk-customer-surveys-text-area.scss","sourcesContent":["@import \"../../base\";\n@import \"./index\";\n"]}

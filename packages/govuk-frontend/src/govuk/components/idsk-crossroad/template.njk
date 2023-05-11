@@ -1,0 +1,41 @@
+{% set ariaLabel = "Rozbaliteľný rázcestník je zabalený" %}
+{% set dataTextHide = "Rozbaliteľný rázcestník je zabalený" %}
+{% set dataTextShow = "Rozbaliteľný rázcestník je rozbalený" %}
+
+{% set numberOfCols = params.columns %}
+{% set classes = '' %}
+{% set aria = false %}
+{% set numberOfShowedTiles %}
+{{ 5 if (params.items.length % 2 == 0) else 6 }}{% endset %}
+<div data-module="idsk-crossroad" class="{{params.classes if params.classes }}">
+{% for colIndex in range(0, numberOfCols) %}
+    <div class="idsk-crossroad idsk-crossroad-{{ numberOfCols }}">
+    {% for item in params.items %}
+        {% if (loop.index0 // (loop.length / numberOfCols)) == colIndex %}
+            {% if (params.hideTiles) %}
+                {% set classes = 'idsk-crossroad__item--two-columns-hide-mobile' if loop.index > 5 %}
+                {% set classes %}
+                {{classes}}
+                {{' idsk-crossroad__item--two-columns-hide' if (loop.index > 5 and numberOfCols == 2 and colIndex == 0)
+                or (loop.index > ((loop.length / numberOfCols)) ++ numberOfShowedTiles and numberOfCols == 2 and colIndex == 1) or (loop.index > 5 and numberOfCols == 1) }}{% endset %}
+            {% endif %}
+            {% if (params.hideTiles) %}
+                {% set aria %}{{ true if (loop.index > 4 and numberOfCols == 2 and colIndex == 0)
+                or (loop.index > ((loop.length / numberOfCols)) ++ (numberOfShowedTiles-1) and numberOfCols == 2 and colIndex == 1) or (loop.index > 4 and numberOfCols == 1) else false }}{% endset %}
+            {% endif %}
+            <div class="idsk-crossroad__item {{ classes }}">
+                <a href="{{item.link}}" class="govuk-link idsk-crossroad-title" title="{{ item.title }}" aria-hidden="{{aria}}">{{ item.title }}
+                </a>
+                <p class="idsk-crossroad-subtitle" aria-hidden="{{aria}}">{{ item.subtitle }}</p>
+                <hr class="idsk-crossroad-line" aria-hidden="true">
+            </div>
+        {% endif %}
+    {% endfor %}
+    </div>
+{% endfor %}
+{% if (params.hideTiles) %}
+    <div class="govuk-grid-column-full idsk-crossroad__collapse--shadow idsk-crossroad__uncollapse-div {{' idsk-crossroad__uncollapse-hide--desktop' if (params.items.length < 6 and numberOfCols==1) or (params.items.length < 11 and numberOfCols==2)}} {{' idsk-crossroad__uncollapse-hide--mobile' if params.items.length < 6}}">
+        <button id="idsk-crossroad__uncollapse-button" class="idsk-crossroad__colapse--button" type="button" aria-expanded="false" aria-label="{{ ariaLabel }}" data-text-for-show="{{ dataTextShow }}" data-text-for-hide="{{ dataTextHide }}" data-line1="Zobraziť viac" data-line2="Zobraziť menej">Zobraziť viac</button>
+    </div>
+{% endif %}
+</div>

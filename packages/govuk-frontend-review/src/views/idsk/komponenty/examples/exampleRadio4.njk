@@ -1,0 +1,15 @@
+{% from "input/macro.njk" import govukInput %}
+{% from "inset-text/macro.njk" import govukInsetText %}
+
+{% set input%}{{ govukInput({
+"label": {
+    "text": "Zadajte vaše telefónne číslo"
+},
+"id": "input-tel-2",
+"name": "tel"
+}) }}
+{% endset %}
+
+{{ govukInsetText({
+  "text": input | safe
+}) }}

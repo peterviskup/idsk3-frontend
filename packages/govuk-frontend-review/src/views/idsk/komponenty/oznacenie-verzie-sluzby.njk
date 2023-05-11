@@ -1,0 +1,100 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Označenie verzie služby" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Vzory</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Tento návod opisuje postup, ako označiť testovaciu verziu služby a novo spustenú službu.</p>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-s">Obsah:</h2>
+            <ul class="govuk-list">
+                <li><a class="govuk-link" href="#pouzitie" title="Kedy použiť označenie služby">Kedy použiť označenie služby</a></li>
+                <li><a class="govuk-link" href="#priklad" title="Príklad">Príklad</a></li>
+                <li><a class="govuk-link" href="#ziskanie" title="Získajte kód">Získajte kód</a></li>
+                <li><a class="govuk-link" href="#pridanie" title="Pridanie kontaktu na spätnú väzbu">Pridanie kontaktu na spätnú väzbu</a></li>
+            </ul>
+
+            <h3 class="govuk-heading-m" id="pouzitie">Kedy použiť označenie služby</h3>
+            <p class="govuk-body">
+                Pred tým, ako vytvoríte novú službu, odporúčame, aby ste si overili, či už taká služba neexistuje, resp. či ju používatelia reálne potrebujú. Ideálnym nástrojom je používateľský prieskum. Ak na základe prieskumu dospejete k záveru, že vaša služba je potrebná, spustite jej testovaciu verziu. Aj tu bude potrebné získať pripomienky používateľov k danej verzii. Až po ich zapracovaní odporúčame spustiť ostrú verziu vašej služby.
+            </p>
+
+            <h4 class="heading-small">Testovacia verzia</h4>
+
+            <p class="govuk-body">
+                Všetky služby by mali byť najskôr spúšťané v testovacej verzii. Pre označenie tejto verzie služby použite štítok “Testovacia verzia”.
+                Odporúčame použiť toto označenie pre službu, ktorú ste spustili do prevádzky len so zámerom testovania. Môže ísť napríklad o klikateľný prototyp, ktorý nie je plne funkčný, čiže dáta vpísané do formulárových polí nie sú nikde zaznamenávané. Cieľom tejto verzie služby by malo byť získanie spätnej väzby od používateľov.
+            </p>
+        </div>
+
+        <div class="govuk-grid-column-full">
+            <div class="example example-error">
+            {% set exampleComponentHtml %}
+                {% include "../komponenty/examples/phase1.njk" %}
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+            </div>
+            <pre class="app-code">
+              <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                {{- exampleComponentHtml | highlight("html") | safe -}}
+              </code>
+            </pre>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            <h4 class="heading-small">Nová verzia</h4>
+            <p class="govuk-body">Pre novú verziu služby použite štítok “Nová verzia”. Ako “Nová verzia” by mala byť označená každá nová služba, ktorá bola spustená do ostrej prevádzky, je teda plne funkčná. Odporúčame použiť toto označenie maximálne po dobu 6 mesiacov. Po uplynutí tejto doby označenie odstráňte.</p>
+        </div>
+
+        <div class="govuk-grid-column-full">
+            <div class="example example-error">
+            {% set exampleComponentHtml %}
+                {% include "../komponenty/examples/phase2.njk" %}
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+            </div>
+            <pre class="app-code">
+              <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                {{- exampleComponentHtml | highlight("html") | safe -}}
+              </code>
+            </pre>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            <h3 class="govuk-heading-m" id="priklad">Príklad označenia verzie služby so štítkom</h3>
+            <p class="govuk-body">Označenie so štítkom musí byť priamo pod hlavičkou ID-SK a lištou s trikolórou. </p>
+            <img src="/public/assets/images/patterns/banner1.png" alt="banner">
+
+            <h3 class="govuk-heading-m" id="ziskanie">Získajte kód</h3>
+            <p class="govuk-body">Kód na označenie testovacej a novej verzie získate na <a class="govuk-link" href="https://github.com/id-sk/idsk_frontend_toolkit/blob/master/docs/mixins.md#-phase-banner" title="ID-SK frontend toolkit.">ID-SK frontend toolkit.</a>
+            </p>
+
+            <h2 class="govuk-heading-m" id="pridanie">
+                Pridanie odkazu na spätnú väzbu
+            </h2>
+
+            <p class="govuk-body">Použitie odkazu na spätnú väzbu na stránke vám pomôže zozbierať spätnú väzbu od používateľov. Tento odkaz môže otvoriť email alebo presunúť používateľa na príslušnú stránku, či formulár. Akýkoľvek spôsob použijete, uistite sa, že sa používatelia v službe nestratia a môžu sa jednoducho vrátiť na stránku, na ktorej sa nachádzali. </p>
+        </div>
+
+
+
+    </div>
+
+  </div>
+{% endblock %}

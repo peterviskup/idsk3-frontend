@@ -1,0 +1,115 @@
+{% from "idsk-footer-extended/macro.njk" import idskFooterExtended %}
+{{ idskFooterExtended({
+    characterLength : 200,
+    showFeedback : "true",
+    upButtonEnabled : "true",
+    logo: "footer-extended-logo.svg",
+    designAddress : "#",
+    firstColumn: {
+      title: "Navigácia v 2 stĺpcoch (2/3)",
+      leftItems: [
+        {
+          name:"Link small Regular 12/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 13/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 14/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 15/20",
+          href:"#"
+        }
+      ],
+      rightItems: [
+        {
+          name:"Link small Regular 16/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 17/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 18/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 19/20",
+          href:"#"
+        }
+      ]
+    },
+
+    secondColumn: {
+      title: "Navigácia v 1 stĺpci (1/3)",
+      items: [
+        {
+          name:"Link small Regular 20/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 21/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 22/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 23/20",
+          href:"#"
+        }
+      ]
+    },
+
+    subtitles: [
+    {
+      item:"Pomoc",
+      href:"#"
+    },
+    {
+      item:"Cookies",
+      href:"#"
+    },
+    {
+      item:"Kontakty",
+      href:"#"
+    },
+    {
+      item:"Mapa Stránky",
+      href:"#"
+    },
+    {
+      item:"RSS",
+      href:"#"
+    },
+    {
+      item:"Vyhlásenie o prístupnosti",
+      href:"#"
+    }],
+    dropdownItems: [
+    {
+      value: "published",
+      text: "Recently published"
+    },
+    {
+      value: "updated",
+      text: "Recently updated",
+      selected: true
+    },
+    {
+      value: "views",
+      text: "Most views"
+    },
+    {
+      value: "comments",
+      text: "Most comments"
+    }
+  ]
+    })
+}}

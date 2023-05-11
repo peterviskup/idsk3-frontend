@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="sk">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ukážka - Hlavička pre webové sídla</title>
+    <link rel="stylesheet" href="/public/app.css" />
+  </head>
+  <body class="js-enabled govuk-!-margin-0">
+
+    {% block skipLink %}
+        {{ idskSkipLink({
+            href: '#main-content',
+            text: 'Preskočiť na hlavný obsah',
+            classes: 'idsk-skip-link--sticky'
+        }) }}
+    {% endblock %}
+
+    {% from "idsk-header-extended/macro.njk" import idskHeaderExtended %}
+    {{ idskHeaderExtended({
+        classes: "idsk-header-extended--shrink",
+        logo: "logo-mirri-farebne.svg",
+        logoSmall: "logo-mirri-small-farebne.svg",
+        logoWhite: "logo-mirri-biele.svg",
+        logoSmallWhite: "logo-mirri-small-biele.svg"
+    }) }}
+
+    <script src="/public/all.js"></script>
+    <script>window.GOVUKFrontend.initAll()</script>
+
+  </body>
+</html>

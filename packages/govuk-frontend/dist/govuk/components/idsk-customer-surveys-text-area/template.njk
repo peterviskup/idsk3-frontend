@@ -1,0 +1,20 @@
+<div data-module="idsk-customer-surveys-text-area">
+    <div class="idsk-feedback__content idsk-customer-surveys-text-area" data-lines="Zostáva Vám {{params.characterLength}} znakov">
+        <div id="{{params.id}}">
+            <br>
+            {% from "../../components/character-count/macro.njk" import govukCharacterCount %}
+            {{ govukCharacterCount({
+                        name: params.id,
+                        id: params.id + "-count",
+                        maxlength: params.characterLength,
+                        label: {
+                            text: params.label
+                        },
+                        hint: {
+                            text: ""
+                        }
+                    })
+                }}
+        </div>
+    </div>
+</div>

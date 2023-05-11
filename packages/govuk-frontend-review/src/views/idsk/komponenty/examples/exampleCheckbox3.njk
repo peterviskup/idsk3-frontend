@@ -1,0 +1,31 @@
+{% from "checkboxes/macro.njk" import govukCheckboxes %}
+
+{{ govukCheckboxes({
+  "name": "with-conditional-items",
+  "idPrefix": "national-conditional",
+  "fieldset": {
+    "legend": {
+      "text": "Aká je vaša národnosť?"
+    }
+  },
+  "hint": {
+    "text": "Označte všetky možnosti, ktoré sú pre vás relevantné."
+  },
+  "items": [
+    {
+      "value": "sk",
+      "text": "slovenská"
+    },
+    {
+      "value": "cz",
+      "text": "česká"
+    },
+    {
+      "value": "text",
+      "text": "občan inej národnosti",
+      "conditional": {
+        "html": "<label class=\"govuk-label\" for=\"contact-text-message-2\">Názov krajiny</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"contact-text-message-2\" type=\"text\" id=\"contact-text-message-2\">\n"
+      }
+    }
+  ]
+}) }}

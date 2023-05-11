@@ -1,0 +1,220 @@
+{% extends "layout.njk" %}
+{% from "components/idsk-accordion/macro.njk" import idskAccordion %}
+
+{% block content %}
+
+  <h1 class="govuk-heading-xl">
+    ID-SK Frontend – Jednotný dizajn manuál elektronických služieb a webových sídiel
+  </h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-body-l">Manuál, ktorý má za cieľ zjednotiť používateľské rozhrania a spôsob komunikácie s používateľom pri poskytovaní elektronických služieb na Slovensku.</p>
+    </div>
+    {% for ingredient, amount in food %}
+      Use {{ amount }} of {{ ingredient }}
+    {% endfor %}
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    {% set idskComponents %}
+      <ul class="govuk-list">
+        {% for componentName in idskComponentsDirectory | sort %}
+          <li><a href="/components/{{ componentName }}" class="govuk-link">{{ componentName | replace("-", " ") | capitalize }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endset %}
+
+    {% set idskItroductionContentBlock %}
+      <ul class="govuk-list">
+        {% for pageName, pageTitle in idskItroductionContent %}
+          <li><a href="/uvod/{{ pageName }}" class="govuk-link">{{ pageTitle }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endset %}
+
+    {% set idskPatternsContent %}
+      <ul class="govuk-list">
+        {% for pageName, pageTitle in idskPatternsContent %}
+          <li><a href="/vzory/{{ pageName }}" class="govuk-link">{{ pageTitle | replace("-", " ") | capitalize | safe }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endset %}
+
+    {% set idskUsageExamples %}
+      <ul class="govuk-list">
+        {% for pageName, pageTitle in idskUsageExamples %}
+          <li><a href="/priklady-pouzitia/{{ pageName }}" class="govuk-link" title="{{ pageTitle | replace('-', ' ') }}">{{ pageTitle | replace("-", " ") | capitalize | safe }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endset %}
+
+    {% set idskComponentsUsageContent %}
+      <ul class="govuk-list">
+        {% for pageName, pageTitle in idskComponentsUsageContent %}
+          <li><a href="/komponenty/{{ pageName }}" class="govuk-link">{{ pageTitle | replace("-", " ") | capitalize }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endset %}
+
+    {% set govukComponents %}
+      <ul class="govuk-list" lang="sk">
+        {% for componentName in govukComponentNames | sort %}
+          {% if componentName | truncate(4, true, "") != 'idsk' %}
+            <li><a href="/components/{{ componentName }}" class="govuk-link">{{ componentName | replace("-", " ") | capitalize }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    {% endset %}
+
+    {% set govukExamples %}
+      <ul class="govuk-list" lang="sk">
+        {% for exampleName in govukExampleNames | sort %}
+          <li><a href="/examples/{{ exampleName }}{{ legacyQuery }}" class="govuk-link">{{ exampleName | replace("-", " ") | capitalize }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endset %}
+
+    {% set govukPageExamples %}
+      <ul class="govuk-list" lang="sk">
+        {% for example in govukFullPageExamples %}
+          <li><a href="/full-page-examples/{{ example.path }}{{ legacyQuery }}" class="govuk-link">{{ example.name | replace("-", " ") | capitalize }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endset %}
+
+    {{ idskAccordion({
+      "id": "default-example",
+      "classes": "govuk-!-margin-bottom-9",
+      "attributes": {
+        "data-attribute": "value"
+      },
+      "items": [
+        {
+          "heading": {
+            "text": "Úvod"
+          },
+          "summary": {
+            "text": "Prečo dodržiavať tento manuál, ako pristupovať k novej online službe a ako vylepšovať existujúce online služby."
+          },
+          "content": {
+            "html": idskItroductionContentBlock
+          }
+        },
+        {
+          "heading": {
+            "text": "Webové komponenty"
+          },
+          "summary": {
+            "text": "Prehľad webových komponentov, ktoré sa používajú na tvorbu elektronických služieb."
+          },
+          "content": {
+            "html": idskComponentsUsageContent
+          }
+        },
+        {
+          "heading": {
+            "text": "Vzory"
+          },
+          "summary": {
+            "text": "Používanie a adaptácia návrhových vzorov"
+          },
+          "content": {
+            "html": idskPatternsContent
+          }
+        },
+        {
+          "heading": {
+            "text": "Príklady použitia ID-SK"
+          },
+          "summary": {
+            "text": "Príklady webových stránok, portálov a služieb, ktoré sú vytvorené na základe ID-SK"
+          },
+          "content": {
+            "html": idskUsageExamples
+          }
+        },
+        {
+          "heading": {
+            "text": "Slovník"
+          },
+          "summary": {
+            "text": "Najčastejšie používané výrazy"
+          },
+          "content": {
+            "html": "<p class=\"govuk-body\"><a class=\"govuk-link\" href=\"/slovnik\" title=\"Slovník\">Slovník</a></p>\n"
+          }
+        },
+        {
+          "heading": {
+            "text": "Benchmark životných situácií"
+          },
+          "summary": {
+            "text": "Metodika pre benchmark životných situácií z pohľadu behaviorálnych intervencií"
+          },
+          "content": {
+            "html": "<p class=\"govuk-body\"><a class=\"govuk-link\" href=\"/benchmark-zivotnych-situacii\" title=\"Benchmark životných situácií\">Benchmark životných situácií</a></p>\n"
+          }
+        }
+      ]
+    }) }}
+
+    <h2 class="govuk-heading-m">GOV.UK Frontend</h2>
+    <p class="govuk-body">Prevzaté komponenty, vzory a ukážky z GOV.UK Frontend a ich dokumentácia (obsah je v&nbsp;anglickom jazyku)</p>
+    {{ idskAccordion({
+      "id": "default-example2",
+      "classes": "govuk-!-margin-bottom-9",
+      "attributes": {
+        "data-attribute": "value"
+      },
+      "items": [
+        {
+          "heading": {
+            "text": "GOV.UK – Komponenty"
+          },
+          "summary": {
+            "text": ""
+          },
+          "content": {
+            "html": govukComponents
+          }
+        },
+        {
+          "heading": {
+            "text": "GOV.UK – Vzory"
+          },
+          "summary": {
+          },
+          "content": {
+            "html": govukExamples
+          }
+        },
+        {
+          "heading": {
+            "text": "GOV.UK – Ukážky stránok"
+          },
+          "summary": {
+          },
+          "content": {
+            "html": govukPageExamples
+          }
+        },
+        {
+          "heading": {
+            "text": "Dokumentácia Sass"
+          },
+          "summary": {
+            "text": "Developerská dokumentácia Sass (obsah je v anglickom jazyku)"
+          },
+          "content": {
+            "html": "<ul class=\"govuk-list\"><li><a href=\"/docs\" class=\"govuk-link\" title=\"Sass Documentation\">Sass Documentation</a></li></ul>\n"
+          }
+        }
+      ]
+    }) }}
+
+    </div>
+  </div>
+{% endblock %}

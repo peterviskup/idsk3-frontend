@@ -1,0 +1,13 @@
+{
+    "component": "idsk-subscription-form",
+    "fixtures": [
+        {
+            "name": "simple",
+            "options": {
+                "id": "subscription-form"
+            },
+            "hidden": false,
+            "html": "<div data-module=\"idsk-subscription-form\" id=\"subscription-form\" class=\"idsk-subscription-form \">\n  <div class=\"govuk-heading-xl idsk-subscription-form__description-title\">\n    <span class=\"idsk-subscription-form__default-text\">Zostaňte informovaní</span>\n    <span class=\"idsk-subscription-form__confirm-text\">Ďakujeme!</span>\n  </div>\n\n  <p class=\"govuk-body idsk-subscription-form__description-text\">\n    <span class=\"idsk-subscription-form__default-text\">Lorem Ipsum is simply dummy text of the printing and typesetting industry</span>\n    <span class=\"idsk-subscription-form__confirm-text\">Budeme Vám zasielať vždy aktuálne informácie</span>\n  </p>\n\n  <form novalidate action=\"#\"\n        class=\"govuk-form-group idsk-subscription-form__input idsk-subscription-form__submit-handler\">\n    <div class=\"govuk-form-group\">\n  <label class=\"govuk-label\" for=\"subscription-email-value\">\n    Vložte emailovú adresu\n  </label>\n<input class=\"govuk-input\" id=\"subscription-email-value\" name=\"subscription-email\" type=\"email\">\n</div>\n\n    <input type=\"submit\" class=\"idsk-button\" value=\"Odoslať email\">\n  </form>\n\n  <p class=\"govuk-body idsk-subscription-form__agreement-text\">Prihlásením dávam dobrovoľný súhlas SlovenskoIT a. s. na zasielanie bezplatného newslettera na mnou zadaný e-mail.\nTento súhlas môžem kedykoľvek odvolať na <a href=\"mailto:info@slovenskoit.sk\" class=\"govuk-link\" title=\"info@slovenskoit.sk\">info@slovenskoit.sk</a>. Oboznámil(a) som sa s informáciami v sekcii <a href=\"/ochrana-osobnych-udajov\" class=\"govuk-link\" title=\"Ochrana osobných údajov\">Ochrana osobných údajov</a>.</p>\n</div>"
+        }
+    ]
+}

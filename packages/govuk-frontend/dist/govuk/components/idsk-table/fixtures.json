@@ -1,0 +1,177 @@
+{
+    "component": "idsk-table",
+    "fixtures": [
+        {
+            "name": "Jednoduchá tabuľka",
+            "options": {
+                "uniqueId": "rozsireny-priklad-1",
+                "title": "Štátne sviatky",
+                "caption": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                "head": [
+                    {
+                        "text": "Dátum"
+                    },
+                    {
+                        "text": "Deň"
+                    },
+                    {
+                        "text": "Názov"
+                    }
+                ],
+                "rows": [
+                    [
+                        {
+                            "text": "1.Január"
+                        },
+                        {
+                            "text": "piatok"
+                        },
+                        {
+                            "text": "Deň vzniku Slovenskej republiky"
+                        }
+                    ],
+                    [
+                        {
+                            "text": "5.Júl"
+                        },
+                        {
+                            "text": "pondelok"
+                        },
+                        {
+                            "text": "Sviatok svätého Cyrila a Metoda"
+                        }
+                    ],
+                    [
+                        {
+                            "text": "29.August"
+                        },
+                        {
+                            "text": "nedeľa"
+                        },
+                        {
+                            "text": "Výročie SNP"
+                        }
+                    ],
+                    [
+                        {
+                            "text": "1.September"
+                        },
+                        {
+                            "text": "streda"
+                        },
+                        {
+                            "text": "Deň Ústavy Slovenskej republiky"
+                        }
+                    ],
+                    [
+                        {
+                            "text": "17.November"
+                        },
+                        {
+                            "text": "streda"
+                        },
+                        {
+                            "text": "Deň boja za slobodu a demokraciu"
+                        }
+                    ]
+                ],
+                "printTable": true
+            },
+            "hidden": false,
+            "html": "<div data-module=\"idsk-table\" id=\"rozsireny-priklad-1\">\n    <div class=\"idsk-table__heading\">\n        <div class=\"idsk-table__heading-container\">\n            <h2 class=\"govuk-heading-l govuk-!-margin-bottom-4\">Štátne sviatky</h2>\n            <p class=\"govuk-body\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s.</p>\n        </div>\n    </div>\n\n  \n\n  <table class=\"idsk-table\" >\n\n<thead class=\"idsk-table__head\">\n      <tr class=\"idsk-table__row\">\n        <th scope=\"col\" class=\"idsk-table__header\">\n          <span class=\"th-span\">\n            Dátum\n              <button class=\"arrowBtn\"><span class=\"sr-only\">Nezoradený stĺpec - použije vzostupné zoradenie.</span></button>\n          </span>\n        </th>\n        <th scope=\"col\" class=\"idsk-table__header\">\n          <span class=\"th-span\">\n            Deň\n              <button class=\"arrowBtn\"><span class=\"sr-only\">Nezoradený stĺpec - použije vzostupné zoradenie.</span></button>\n          </span>\n        </th>\n        <th scope=\"col\" class=\"idsk-table__header\">\n          <span class=\"th-span\">\n            Názov\n              <button class=\"arrowBtn\"><span class=\"sr-only\">Nezoradený stĺpec - použije vzostupné zoradenie.</span></button>\n          </span>\n        </th>\n      </tr>\n    </thead>\n    <tbody class=\"idsk-table__body\" style=\"\">\n          <tr class=\"idsk-table__row\">\n            <td class=\"idsk-table__cell\">1.Január</td>\n            <td class=\"idsk-table__cell\">piatok</td>\n            <td class=\"idsk-table__cell\">Deň vzniku Slovenskej republiky</td>\n          </tr>\n          <tr class=\"idsk-table__row\">\n            <td class=\"idsk-table__cell\">5.Júl</td>\n            <td class=\"idsk-table__cell\">pondelok</td>\n            <td class=\"idsk-table__cell\">Sviatok svätého Cyrila a Metoda</td>\n          </tr>\n          <tr class=\"idsk-table__row\">\n            <td class=\"idsk-table__cell\">29.August</td>\n            <td class=\"idsk-table__cell\">nedeľa</td>\n            <td class=\"idsk-table__cell\">Výročie SNP</td>\n          </tr>\n          <tr class=\"idsk-table__row\">\n            <td class=\"idsk-table__cell\">1.September</td>\n            <td class=\"idsk-table__cell\">streda</td>\n            <td class=\"idsk-table__cell\">Deň Ústavy Slovenskej republiky</td>\n          </tr>\n          <tr class=\"idsk-table__row\">\n            <td class=\"idsk-table__cell\">17.November</td>\n            <td class=\"idsk-table__cell\">streda</td>\n            <td class=\"idsk-table__cell\">Deň boja za slobodu a demokraciu</td>\n          </tr>\n    </tbody>\n  </table>\n\n    <div class=\"idsk-table__meta\">\n      <div class=\"idsk-button-group idsk-table__meta-buttons\">\n\n          <button type=\"button\" class=\"idsk-button idsk-table__meta-print-button\" data-module=\"idsk-button\">\n  Vytlačiť\n</button>\n      </div>\n\n    </div>\n</div>"
+        },
+        {
+            "name": "Zložitá tabuľka",
+            "options": {
+                "uniqueId": "rozsireny-priklad-1",
+                "title": "Štátne sviatky",
+                "caption": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+                "radioOptions": [
+                    {
+                        "title": "Možnosť 1",
+                        "value": "moznost-1"
+                    },
+                    {
+                        "title": "Možnosť 2",
+                        "value": "moznost-2"
+                    }
+                ],
+                "head": [
+                    {
+                        "text": "Dátum"
+                    },
+                    {
+                        "text": "Deň"
+                    },
+                    {
+                        "text": "Názov"
+                    }
+                ],
+                "rows": [
+                    [
+                        {
+                            "text": "1.Január"
+                        },
+                        {
+                            "text": "piatok"
+                        },
+                        {
+                            "text": "Deň vzniku Slovenskej republiky"
+                        }
+                    ],
+                    [
+                        {
+                            "text": "5.Júl"
+                        },
+                        {
+                            "text": "pondelok"
+                        },
+                        {
+                            "text": "Sviatok svätého Cyrila a Metoda"
+                        }
+                    ],
+                    [
+                        {
+                            "text": "29.August"
+                        },
+                        {
+                            "text": "nedeľa"
+                        },
+                        {
+                            "text": "Výročie SNP"
+                        }
+                    ],
+                    [
+                        {
+                            "text": "1.September"
+                        },
+                        {
+                            "text": "streda"
+                        },
+                        {
+                            "text": "Deň Ústavy Slovenskej republiky"
+                        }
+                    ],
+                    [
+                        {
+                            "text": "17.November"
+                        },
+                        {
+                            "text": "streda"
+                        },
+                        {
+                            "text": "Deň boja za slobodu a demokraciu"
+                        }
+                    ]
+                ],
+                "printTable": true,
+                "source": {
+                    "name": "vlada.gov.sk",
+                    "href": "https://www.vlada.gov.sk/statne-sviatky/"
+                }
+            },
+            "hidden": false,
+            "html": "<div data-module=\"idsk-table\" id=\"rozsireny-priklad-1\">\n    <div class=\"idsk-table__heading\">\n        <div class=\"idsk-table__heading-container\">\n            <h2 class=\"govuk-heading-l govuk-!-margin-bottom-4\">Štátne sviatky</h2>\n            <p class=\"govuk-body\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s.</p>\n        </div>\n        <div class=\"idsk-table__heading-extended\">\n          <div class=\"govuk-form-group\">\n            <div class=\"govuk-radios govuk-radios--inline\">\n              <fieldset class=\"govuk-fieldset\">\n                <legend></legend>\n                    <div class=\"govuk-radios__item\">\n                        <input class=\"govuk-radios__input\" type=\"radio\" name=\"radio-rozsireny-priklad-1\" id=\"radio-rozsireny-priklad-1-1\" value=\"moznost-1\" checked>\n                        <label class=\"govuk-label govuk-radios__label\" for=\"radio-rozsireny-priklad-1-1\">Možnosť 1</label>\n                    </div>\n                    <div class=\"govuk-radios__item\">\n                        <input class=\"govuk-radios__input\" type=\"radio\" name=\"radio-rozsireny-priklad-1\" id=\"radio-rozsireny-priklad-1-2\" value=\"moznost-2\" >\n                        <label class=\"govuk-label govuk-radios__label\" for=\"radio-rozsireny-priklad-1-2\">Možnosť 2</label>\n                    </div>\n              </fieldset>\n            </div>\n          </div>\n        </div>\n    </div>\n\n  \n\n  <table class=\"idsk-table\" >\n\n<thead class=\"idsk-table__head\">\n      <tr class=\"idsk-table__row\">\n        <th scope=\"col\" class=\"idsk-table__header\">\n          <span class=\"th-span\">\n            Dátum\n              <button class=\"arrowBtn\"><span class=\"sr-only\">Nezoradený stĺpec - použije vzostupné zoradenie.</span></button>\n          </span>\n        </th>\n        <th scope=\"col\" class=\"idsk-table__header\">\n          <span class=\"th-span\">\n            Deň\n              <button class=\"arrowBtn\"><span class=\"sr-only\">Nezoradený stĺpec - použije vzostupné zoradenie.</span></button>\n          </span>\n        </th>\n        <th scope=\"col\" class=\"idsk-table__header\">\n          <span class=\"th-span\">\n            Názov\n              <button class=\"arrowBtn\"><span class=\"sr-only\">Nezoradený stĺpec - použije vzostupné zoradenie.</span></button>\n          </span>\n        </th>\n      </tr>\n    </thead>\n    <tbody class=\"idsk-table__body\" style=\"\">\n          <tr class=\"idsk-table__row\">\n            <td class=\"idsk-table__cell\">1.Január</td>\n            <td class=\"idsk-table__cell\">piatok</td>\n            <td class=\"idsk-table__cell\">Deň vzniku Slovenskej republiky</td>\n          </tr>\n          <tr class=\"idsk-table__row\">\n            <td class=\"idsk-table__cell\">5.Júl</td>\n            <td class=\"idsk-table__cell\">pondelok</td>\n            <td class=\"idsk-table__cell\">Sviatok svätého Cyrila a Metoda</td>\n          </tr>\n          <tr class=\"idsk-table__row\">\n            <td class=\"idsk-table__cell\">29.August</td>\n            <td class=\"idsk-table__cell\">nedeľa</td>\n            <td class=\"idsk-table__cell\">Výročie SNP</td>\n          </tr>\n          <tr class=\"idsk-table__row\">\n            <td class=\"idsk-table__cell\">1.September</td>\n            <td class=\"idsk-table__cell\">streda</td>\n            <td class=\"idsk-table__cell\">Deň Ústavy Slovenskej republiky</td>\n          </tr>\n          <tr class=\"idsk-table__row\">\n            <td class=\"idsk-table__cell\">17.November</td>\n            <td class=\"idsk-table__cell\">streda</td>\n            <td class=\"idsk-table__cell\">Deň boja za slobodu a demokraciu</td>\n          </tr>\n    </tbody>\n  </table>\n\n    <div class=\"idsk-table__meta\">\n      <div class=\"idsk-button-group idsk-table__meta-buttons\">\n\n          <button type=\"button\" class=\"idsk-button idsk-table__meta-print-button\" data-module=\"idsk-button\">\n  Vytlačiť\n</button>\n      </div>\n\n        <div class=\"govuk-body idsk-table__meta-source\">\n          Zdroj: \n            <a class=\"govuk-link\" href=\"https://www.vlada.gov.sk/statne-sviatky/\" target=\"_blank\" title=\"vlada.gov.sk\">vlada.gov.sk</a>\n        </div>\n    </div>\n</div>"
+        }
+    ]
+}

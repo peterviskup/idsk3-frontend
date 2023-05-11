@@ -1,0 +1,31 @@
+@import "../../objects/grid";
+
+@include govuk-exports("idsk/component/customer-surveys-radios") {
+  @include mq($from: desktop) {
+    .idsk-customer-surveys-radios .govuk-radios .govuk-radios__input:hover + .govuk-radios__label:before {
+      box-shadow: 0 0 0 10px govuk-colour("mid-grey");
+    }
+
+    .idsk-customer-surveys-radios .govuk-radios .govuk-radios__item:hover .govuk-radios__input:focus + .govuk-radios__label:before {
+      box-shadow: 0 0 0 4px govuk-colour("yellow"), 0 0 0 10px govuk-colour("mid-grey");
+    }
+
+    .idsk-customer-surveys-radios .govuk-radios__label {
+      padding-left: 0;
+    }
+
+    .idsk-customer-surveys-radios .govuk-radios__label:before {
+      top: 8px;
+      width: 24px;
+      height: 24px;
+    }
+
+    .idsk-customer-surveys-radios .govuk-radios__label:after {
+      top: 15px;
+      left: 7px;
+      border-width: 5px;
+    }
+  }
+}
+
+/*# sourceMappingURL=_index.scss.map */

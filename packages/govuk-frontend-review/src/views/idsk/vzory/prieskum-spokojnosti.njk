@@ -1,0 +1,115 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "idsk-customer-surveys/macro.njk" import idskCustomerSurveys %}
+
+{% set pageName = "Prieskum Spokojnosti" %}
+
+{% block styles %}
+  <style>
+    .idsk-customer-surveys-pattern {
+      margin-top: -20px;
+      margin-bottom: -30px;
+    }
+  </style>
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      { text: ' ID-SK frontend', href: '/' + legacyQuery },
+      { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-width-container">
+    <div class="idsk-customer-surveys-pattern">
+      <h1 class="govuk-heading-xl">Podstránka prieskum spokojnosti</h1>
+      <p class="govuk-body">Používateľovi by ste mali ponúknuť možnosť vyplniť krátky dotazník pre prípad, že nie je spokojný s obsahom stránky.
+        Prostredníctvom
+        dotazníka vám môže dať užitočnú spätnú väzbu.
+      </p>
+      <p class="govuk-body">Prieskum spokojnosti je prepojený na komponent <a class="govuk-link" href="../komponenty/footer-extended" title="spätná väzba">spätná
+          väzba</a>. Používateľ by sa k nemu mal dostať po kliknutí na “NIE” v modrej lište pre spätnú väzbu, ktorá je umiestnená nad pätičkou. K prieskumu
+        spokojnosti môžete samozrejme vytvoriť aj viacero ciest, minimálne však túto.</p>
+      <h2 class="govuk-heading-l">Z čoho sa skladá prieskum spokojnosti</h2>
+      <p class="govuk-body">Skladá sa z:
+      </p>
+      <ol class="idsk-list idsk-list--letters">
+        <li>úvodnej stránky,</li>
+        <li>7-8 krátkych otázok v závislosti od odpovedí.</li>
+      </ol>
+      <p class="govuk-body">Otázky sú koncipované tak, aby vám pomohli zistiť z akej sféry prichádza používateľ, čo prišiel hľadať na vašu stránku a či to
+        našiel,
+        či už hľadal aj niekde inde predtým ako prišiel na vašu stránku, či je spokojný alebo nespokojný so stránkou a má možnosť zanechať vám krátky
+        odkaz.</p>
+      <h2 class="govuk-heading-l">Vzor prieskumu spokojnosti</h2>
+    </div>
+    <div class="example">
+      {% set exampleComponentHtml %}
+        {{ idskCustomerSurveys({
+          prologues: [
+            {
+              prolog: 'Cieľom tohto dotazníka je zistiť potreby a postrehy používateľov webu Ministerstva investícií, regionálneho rozvoja a informatizácie (Ďalej len "MIRRI").'
+            },
+            {
+              prolog: "Ďakujeme za súhlas s účasťou v tomto prieskume, pomáhate nám zlepšovať tento web. Vyplnenie tohto dotazníka Vám zaberie <strong>len 3 minúty.</strong> "
+            },
+            {
+              prolog: "Odpovede na všetky otázky sú dobrovoľné. Vaše odpovede na tento prieskum sú anonymné."
+            }],
+          questions: [
+            {
+              name: "Navštevujete web mirri.gov.sk z pracovných alebo súkromných dôvodov?",
+              textArea: true,
+              value: 1
+            },
+            {
+              name: "Čo je vašou pracovnou náplňou?",
+              textArea: true,
+              value: 1
+            },
+            {
+              name: "Popíšte, prečo ste dnes prišli na stránku www.mirri.gov.sk",
+              caption: "Prosím neuvádzajte osobné ani finančné informácie, ako napr. svoje rodné číslo alebo údaje o kreditnej karte.",
+              textArea: true,
+              value: 1
+            },
+            {
+              name: "Našli ste, čo ste hľadali?",
+              textArea: true,
+              value: 1
+            },
+            {
+              name: "Ako by ste zhodnotil/a Vášu skúsenosť s návštevou stránky www.mirri.gov.sk?",
+              textArea: true,
+              value: 1
+            },
+            {
+              name: "Hľadali ste už niekde inde to, čo potrebujete, ešte pred tým, ako ste sem prišli?",
+              textArea: true,
+              value: 1
+            },
+            {
+              name: "Kde ste hľadali?",
+              textArea: true,
+              value: 1
+            },
+            {
+              name: "Ak by ste nám chceli niečo odkázať, prosím, napíšte nám to sem.",
+              caption: "Prosím neuvádzajte osobné ani finančné informácie, ako napr. svoje rodné číslo alebo údaje o kreditnej karte. ",
+              textArea: true,
+              value: 1
+            }]
+        }) }}
+      {% endset %}
+      {{ exampleComponentHtml | safe }}
+    </div>
+    <h2 class="govuk-heading-s">
+      <a class="govuk-link" href="/components/idsk-customer-surveys/basic/preview" title="Rozšírený príklad podstránky prieskumu spokojnosti">Rozšírený
+        príklad podstránky prieskumu spokojnosti
+      </a>
+    </h2>
+  </div>
+{% endblock %}
+{% block footer %}{% endblock %}

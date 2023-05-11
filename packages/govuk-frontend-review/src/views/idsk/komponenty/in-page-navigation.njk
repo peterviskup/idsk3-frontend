@@ -1,0 +1,90 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "In-page navigation" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Navigácia na stránke</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">
+      Navigácia na stránke (angl. In-page Navigation) použite pri dlhších stránkach s konkrétnym obsahom. Napríklad pri článkoch, stránkach so životopisom, stránkach s obsahom k životným situáciám alebo pre dlhšie štruktúrované dokumenty akými sú príručky, vyhlášky, zákony a pod.
+    </p>
+    <p class="govuk-body-l">
+      Navigácia na stránke zobrazuje používateľovi prehľad obsahu danej stránky (na základe použitých nadpisov v rámci stránky). Vďaka tomu sa používateľ lepšie a rýchlejšie zorientuje v obsahu, ktorý mu ponúkate.
+    </p>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-s">Obsah:</h2>
+          <ul class="govuk-list">
+              <li><a class="govuk-link" href="#ake-vlastnosti-ma-navigacia-na-stranke" title="Aké vlastnosti má navigácia na stránke?">Aké vlastnosti má navigácia na stránke?</a></li>
+              <li><a class="govuk-link" href="#vzor-navigacie-na-stranke" title="Vzor navigácie na stránke">Vzor navigácie na stránke</a></li>
+          </ul>
+        </div>
+
+        <div class="govuk-grid-column-full">
+          <h3 class="govuk-heading-m" id="ake-vlastnosti-ma-navigacia-na-stranke">Aké vlastnosti má navigácia na stránke?</h3>
+          <p class="govuk-body">
+            Navigácia na stránke by sa mala generovať automaticky na základe nadpisov, ktoré na stránke používate, aby ste používateľom pomohli intuitívne štruktúrovať jej obsah.
+          </p>
+          <h3 class="govuk-heading-m">Desktop:</h3>
+          <p class="govuk-body">
+            Navigácia na stránke je vždy vľavo a v rozložení ¼ obrazovky a ¾ obrazovky obsah stránky. Pri verzii pre desktop navigácia “pláva” - to znamená, že navigácia zostane pri scrollovaní nadol v hornej časti obrazovky tak, aby mal používateľ prístup a prehľad k obsahu na stránke.
+          </p>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+              <div class="example example-mobile example-mobile-scroll">
+                <iframe
+                  src="/components/idsk-in-page-navigation/default/preview"
+                  height="310"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="govuk-heading-m">Mobilná verzia:</h3>
+          <p class="govuk-body">
+            Pri verzii pre mobilné telefóny je navigácia na stránke zobrazená ako lišta na začiatku stránky. Pri skrolovaní nadol sa lišta pripne pod hlavičku tak, aby mal používateľ po celý čas prezerania obsahu prístup k navigácii. Pri kliknutí na odkaz v lište sa rozbalí obsah navigácie na stránke.
+          </p>
+          <p class="govuk-body">
+            V prípade, že je obsahu veľa (t.j. okno s navigáciou by presahovalo viac ako polovicu obrazovky zariadenia), sa obsah v rámci navigácie bude dať posúvať ako zoznam.
+          </p>
+          <p class="govuk-body">
+            Ak je niektorý z názvov obsahu dlhší ako je šírka obrazovky zariadenia, zobrazí začiatok názvu a pokračovanie názvu bude znázornené tromi bodkami.
+          </p>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half">
+              <div class="example example-mobile example-mobile-scroll">
+                <iframe
+                  src="/components/idsk-in-page-navigation/default/preview"
+                  height="300"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" id="vzor-navigacie-na-stranke">Vzor navigácie na stránke</h3>
+              <ul class="govuk-list">
+                  <li><a class="govuk-link" href="/vzory/vzor-navigacie-na-stranke" title="Rozšírený vzor navigácia na stránke">Rozšírený vzor navigácia na stránke</a></li>
+              </ul>
+          </div>
+
+        </div>
+
+    </div>
+
+  </div>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% from '../radios/macro.njk' import govukRadios %}
+
+<div data-module="idsk-interactive-map" class="idsk-interactive-map{{ ' ' + params.classes if params.classes }}" id="{{ params.uniqueId }}">
+    <h2 class="govuk-heading-l">{{ params.title }}</h2>
+    <div class="idsk-interactive-map__header">
+        <div class="idsk-interactive-map__header-controls">
+            <div class="idsk-interactive-map__header-radios">
+                <div class="govuk-form-group">
+                    <div class="govuk-radios govuk-radios--inline">
+                        <fieldset class="govuk-fieldset">
+                            <legend>Prepínač</legend>
+                        <div class="govuk-radios__item idsk-intereactive-map__radio-map">
+                            <input class="govuk-radios__input" name="{{ params.radioControlsName }}" id="{{ params.radioControlsName }}-1" type="radio" value="map" {{ "" if params.checkedTable else "checked"}}>
+                            <label class="govuk-label govuk-radios__label" for="{{ params.radioControlsName }}-1">Mapa</label>
+                        </div>
+                        <div class="govuk-radios__item idsk-intereactive-map__radio-table">
+                            <input class="govuk-radios__input" name="{{ params.radioControlsName }}" id="{{ params.radioControlsName }}-2" type="radio" value="table" {{ "checked" if params.checkedTable }}>
+                            <label class="govuk-label govuk-radios__label" for="{{ params.radioControlsName }}-2">Tabuľka</label>
+                        </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            <div class="idsk-interactive-map__header-selects">
+                <div class="govuk-form-group">
+                    <div class="govuk-label-wrapper">
+                        <label class="govuk-label" for="time-period-{{ params.uniqueId}}"><strong>Obdobie</strong></label>
+                    </div>
+                    <select class="idsk-interactive-map__select-time-period govuk-select" id="time-period-{{ params.uniqueId}}" name="time-period-{{ params.uniqueId}}">
+                        <option value="30">Posledný mesiac</option>
+                        <option value="90">Posledné 3 mesiace</option>
+                        <option value="180">Posledných 6 mesiacov</option>
+                        <option value="" selected>Celé obdobie</option>
+                    </select>
+                </div>
+                {% if params.indicatorOptions %}
+                <div class="govuk-form-group">
+                    <div class="govuk-label-wrapper">
+                        <label class="govuk-label" for="indicator-{{ params.uniqueId}}"><strong>Ukazovateľ</strong></label>
+                    </div>
+                    <select class="idsk-interactive-map__select-indicator govuk-select" id="indicator-{{ params.uniqueId}}" name="indicator-{{ params.uniqueId}}">
+                        {% for option in params.indicatorOptions %}
+                        <option value="{{ option.value }}">{{ option.title }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        {% if params.indicatorOptions %}
+        <h3 class="govuk-heading-m">
+            <span class="idsk-interactive-map__current-indicator">{{ params.indicatorOptions[0].text }}</span> za <span class="idsk-interactive-map__current-time-period">celé obdobie</span>
+        </h3>
+        {% endif %}
+    </div>
+    <div class="idsk-interactive-map__body">
+        <div class="idsk-interactive-map__map">
+            <iframe class="idsk-interactive-map__map-iframe" data-src="{{ params.mapIframeSrc }}" src="{{ params.mapIframeSrc }}" title="{{ params.mapIframeTitle }}"></iframe>
+        </div>
+        <div class="idsk-interactive-map__table">
+            <iframe class="idsk-interactive-map__table-iframe" data-src="{{ params.tableIframeSrc }}" title="{{ params.tableIframeTitle }}"></iframe>
+        </div>
+    </div>
+    {% if params.dataSource or params.dataDownload %}
+    <div class="idsk-interactive-map__meta">
+        {% if params.dataDownload %}
+        <a class="govuk-link idsk-interactive-map__meta-data" title="{{ params.dataDownload.text }}" href="{{ params.dataDownload.link }}" download>{{ params.dataDownload.text }}</a>
+        {% endif %}
+        {% if params.dataSource %}
+        <span class="idsk-interactive-map__meta-source">Zdroj: {{ params.dataSource }}</span>
+        {% endif %}
+    </div>
+    {% endif %}
+</div>

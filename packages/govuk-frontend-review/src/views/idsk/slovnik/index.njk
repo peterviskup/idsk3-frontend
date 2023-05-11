@@ -1,0 +1,129 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Slovník pojmov v Jednotnom dizajn manuáli elektronických služieb" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <h2 class="govuk-heading-s">Obsah:</h2>
+          <ul class="govuk-list">
+            <li><a class="govuk-link" href="#oznacenie1" title="Označenie webových komponentov">Označenie webových komponentov</a></li>
+            <li><a class="govuk-link" href="#oznacenie2" title="Označenie tlačidiel">Označenie tlačidiel</a></li>
+            <li><a class="govuk-link" href="#pouzivane" title="Používané výrazy">Používané výrazy</a></li>
+          </ul>
+
+          <h3 class="govuk-heading-m" id="oznacenie1">Označenie webových komponentov</h3>
+          <p class="govuk-body">
+            Pre zlepšenie zrozumiteľnosti uvádzame pre programátorov najčastejšie používané výrazy v Jednotnom dizajn manuáli elektronických služieb.
+          </p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Breakpoints – Hraničné body pre rôzne veľkosti obrazoviek</li>
+            <li>Button – Tlačidlo</li>
+            <li>Default settings – Predvolené nastavenia</li>
+            <li>Drop-down lists – Rozbaľovací zoznam</li>
+            <li>Focus – Aktívny stav</li>
+            <li>Fieldset – Skupiny polí</li>
+            <li>Grid – Stĺpcový dizajn/preddefinovaný stĺpcový dizajn</li>
+            <li>Hint text – Pomocný text</li>
+            <li>Check box – Začiarkavacie políčko</li>
+            <li>Input field – Editovateľné políčko</li>
+            <li>Label – Názov dátového poľa</li>
+            <li>Layout – Rozloženie stránky</li>
+            <li>Legend – Legenda</li>
+            <li>Caption – Popisok</li>
+            <li>Radio button – Prepínač</li>
+            <li>Text field/free-text field – Textové pole</li>
+            <li>Link – Odkaz</li>
+          </ul>
+
+          <h3 class="govuk-heading-m" id="oznacenie2">Označenie tlačidiel</h3>
+          <p class="govuk-body">V záujme jednotného označovania odporúčame používať nasledovné názvy tlačidiel.
+          </p>
+          <h4 class="govuk-heading-s">Prihlásiť sa</h4>
+          <p class="govuk-body">Pri prihlásení používajte na tlačidlách jednotné označenie “Prihlásiť sa”. Odporúčame nepoužívať alternatívne označenia ako napríklad Prihlásiť, Prihlásenie, Vstúpiť do služby, a pod.</p>
+
+          <h4 class="govuk-heading-s">Odhlásiť sa</h4>
+          <p class="govuk-body">Pre odhlásenie používajte na tlačidlách jednotné označenie “Odhlásiť sa”. Odporúčame nepoužívať alternatívne označenia ako napríklad Odhlásiť, Odhlásenie, Opustiť službu, a pod.</p>
+
+          <h4 class="govuk-heading-s">Začať</h4>
+          <p class="govuk-body">Tlačidlo “Začať” prípadne “Chcem začať” používame na spustenie služby, procesu, alebo registrácie.</p>
+
+          <h4 class="govuk-heading-s">Pokračovať</h4>
+          <p class="govuk-body">Tlačidlo “Pokračovať” používame na prechod medzi stránkami / krokmi v rámci formulára. Odporúčame nepoužívať alternatívne označenia ako napríklad Ďalej, Nasledujúca stránka, a pod.</p>
+
+          <h4 class="govuk-heading-s">Podpísať žiadosť / podanie</h4>
+          <p class="govuk-body">Používateľ môže podpísať žiadosť viacerými spôsobmi, napríklad občianskym preukazom s čipom, klikom, a pod. O spôsobe, akým bude žiadosť podpísaná, je nutné používateľa informovať na začiatku procesu. Odporúčame nepoužívať termín Autorizácia v názve tlačidla, ale priamo popísať akciu. Týmto spôsobom bude používateľ ihneď informovaný, čo bude nasledovať, napríklad “Podpísať žiadosť občianskym preukazom s čipom”.</p>
+
+          <h4 class="govuk-heading-s">eID - elektronická identita</h4>
+          <p class="govuk-body">Jedná sa o elektronickú identitu občana. Výraz odporúčame doprevádzať dodatočnou informáciou “elektronická identita” a nepoužívať ho iba samostatne ako eID.</p>
+
+          <h4 class="govuk-heading-s">eID karta (občiansky preukaz s čipom)</h4>
+          <p class="govuk-body">Výraz eID karta vždy doprevádzame informáciou v zátvorkách “občiansky preukaz s čipom”. Pre zjednotenie názvoslovia odporúčame nepoužívať alternatívne názvy ako elektronický občiansky preukaz, elektronický preukaz, občiansky preukaz s elektronickým kontaktným čipom, elektronický doklad, autentifikátor alebo iba názov eID karta.</p>
+
+          <h3 class="govuk-heading-m" id="pouzivane">Používané výrazy</h3>
+          <h4 class="govuk-heading-s">Autentifikácia</h4>
+          <p class="govuk-body">Ide o overenie identity používateľa. Vo fyzickom svete by išlo napríklad o predloženie občianskeho preukazu. Preto odporúčame vyhnúť sa označeniu Autentifikácia a namiesto neho sa držať jednoduchšieho popisu procesu, napríklad “vloženie občianskeho preukazu s čipom do čítača”.</p>
+
+          <h4 class="govuk-heading-s">Autorizácia</h4>
+          <p class="govuk-body">Úkon sa deje prostredníctvom elektronického podpisu používateľa, pečaťou, prípadne iným spôsobom uznaným legislatívou. Odporúčame nepoužívať termín Autorizácia, ale priamo popísať akciu, a tak používateľa ihneď informovať, čo bude nasledovať, napríklad “prejdite k podpisovaniu”.</p>
+
+          <h4 class="govuk-heading-s">Elektronické podanie</h4>
+          <p class="govuk-body">Je to každý úkon (napr. návrh, žiadosť, a pod.), ktoré osoba podáva na orgán (štátny orgán, orgány samosprávy) prostredníctvom elektronického formulára.</p>
+
+          <h4 class="govuk-heading-s">Elektronická služba</h4>
+          <p class="govuk-body">Pre rovnaké pomenovanie služieb poskytovaných v elektronickej podobe odporúčame používať názov “Elektronická služba”. Vyhnite sa alternatívnym označeniam ako e-služba, el. služba, a pod.</p>
+
+          <h4 class="govuk-heading-s">Elektronická schránka</h4>
+          <p class="govuk-body">Na označenie elektronickej schránky používajte zaužívané spojenie “elektronická schránka”. Odporúčame vyhnúť sa skratkám a alternatívam, ako napríklad iba schránka alebo eDesk.</p>
+
+          <h4 class="govuk-heading-s">Používateľský účet / Profil (z angl. user account)</h4>
+          <p class="govuk-body">Používateľské účty sa používajú iba v prípade, ak je pravdepodobné, že vaši používatelia budú musieť svoje údaje využívať v budúcnosti, prípadne aktualizovať vo viacerých častiach vašej služby. Nepoužívajte alternatívne názvy ako napríklad konto.</p>
+
+          <h4 class="govuk-heading-s">Používateľ (z angl. people alebo users)</h4>
+          <p class="govuk-body">Osoba, ktorá akýmkoľvek spôsobom používa alebo požaduje poskytovanie vašej služby. Odporúčame vždy používať označenie “používateľ” a vyhnúť sa jeho alternatívam ako napríklad užívateľ, návštevník.</p>
+
+          <h4 class="govuk-heading-s">Kvalifikovaný elektronický podpis</h4>
+          <p class="govuk-body">Prostriedok na podpísanie elektronického podania. Pri tvorbe konkrétnej elektronickej služby je potrebné dbať na to, aký prostriedok autorizácie sa vyžaduje podľa § 23 ods. 3 zákona o e-Governmente.</p>
+
+          <h4 class="govuk-heading-s">Kvalifikovaná elektronická pečať</h4>
+          <p class="govuk-body">Prostriedok na podpísanie elektronického podania. Pri tvorbe konkrétnej elektronickej služby je potrebné dbať na to, aký prostriedok autorizácie sa vyžaduje podľa § 23 ods. 3 zákona o e-Governmente.</p>
+
+          <h4 class="govuk-heading-s">BOK (bezpečnostný osobný kód)</h4>
+          <p class="govuk-body">Väčšina používateľov nevie, čo sa od nich žiada pri použití skratky “BOK”. Odporúčame vždy vysvetliť, že sa jedná o 6 miestny kód, ktorý si používatelia nastavovali pri preberaní občianskeho preukazu s čipom a skratku vždy doplniť o informáciu v zátvorkách “bezpečnostný osobný kód”.</p>
+
+          <h4 class="govuk-heading-s">Toolkit</h4>
+          <p class="govuk-body">Sada softvérových nástrojov.</p>
+
+          <h4 class="govuk-heading-s">Backend</h4>
+          <p class="govuk-body">Je základom väčšiny systémov alebo aplikácií. Jedná sa o skrytú časť systému (používateľ ju nevidí), ktorá úzko spolupracuje so serverom a databázou.</p>
+
+          <h4 class="govuk-heading-s">Frontend</h4>
+          <p class="govuk-body">Front-end je označenie časti webových aplikácií, ktorá zabezpečuje interakciu s používateľom.</p>
+
+          <h4 class="govuk-heading-s">Frontend toolkit</h4>
+          <p class="govuk-body">Ide o sadu nástrojov pre programátorov, ktorá zjednodušuje prácu a zabezpečuje konzistentnosť.</p>
+
+          <h4 class="govuk-heading-s">SUS skóre (angl. System​ ​Usability​ ​Scale)</h4>
+          <p class="govuk-body">SUS​ ​skóre​ ​je​ ​spoľahlivý​ ​nástroj​ ​na​ ​meranie​ ​použiteľnosti.​ ​Najčastejším​ ​spôsobom​ ​jeho interpretácie​ ​je​ ​konverzia​ ​na​ ​percentil.​ ​Všeobecné​ ​priemerné​ ​SUS​ ​skóre​ ​systémov​ ​sa​ ​pohybuje okolo​ ​68.
+            Táto​ ​hodnota​ ​predikuje​ ​používateľskú​ ​lojalitu.​ ​Celé​ ​spektrum percentilu​ ​je​ ​oznámkované​ ​písmenami​ ​A-F.​ ​Vrchných​ ​10%​ ​(hodnotenie​ ​A)​ ​znamená,​ ​že​ ​by používatelia​ ​produkt​ ​odporučili​ ​svojim​ ​priateľom​ ​a​ ​známym,​ ​pri​ ​hodnotení​ ​F​ ​by​ ​produkt používatelia​ ​svojim​ ​priateľom​ ​a​ ​známym​ ​pravdepodobne​ ​neodporučili.</p>
+
+        </div>
+    </div>
+
+  </div>
+{% endblock %}

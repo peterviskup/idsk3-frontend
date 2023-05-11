@@ -1,0 +1,737 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Aktualizácia z ID-SK Elements na ID-SK Frontend" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Úvod</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <p class="govuk-body">ID-SK Frontend je databáza frontendov, ktorá nahrádza prvky ID-SK Elements. V tabuľkách nižšie sú uvedené staré a nové názvy komponentov, tried a kombinácií, ktoré vám pomôžu nájsť, čo potrebujete.</p>
+            <p class="govuk-body">Prvky ID-SK Elements boli nahradené aktuálnym dizajnovým systémom ID-SK Frontend. ID-SK Elements zostane k dispozícii pre prípad, že ich v súčasnosti používate, avšak už sa neudržujú. Vykonávať sa budú iba významné opravy chýb a bezpečnostné opravy. Dizajnový systém ID-SK Frontend bude aktualizovaný, aby sa zabezpečilo, že veci, ktoré obsahuje, spĺňajú úroveň AA WCAG 2.1. O prístupnosti dizajnového systému ID-SK Frontends si prečítajte viac tu.</p>
+
+            <h2 class="govuk-heading-m">Šablóna stránky</h2>
+
+            <p class="govuk-body">Doteraz bolo pre konzistenciu stránok potrebné používať GOV.UK Template.<br />Tento obsah bol prenesený do ID-SK Frontend. Môžete z neho čerpať pomocou Nunjucks alebo HTML.</p>
+
+            <h3 class="govuk-heading-m">Šablóna Nunjucks</h3>
+            <p class="govuk-body">Kde to bolo možné, ponechali sme novú šablónu stránky rovnakú ako v pôvodnej verzii.<br />Najzásadnejšou je zmena elementov zo snake_case na camelCase.</p>
+
+            <table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">ID-SK Elements</th>
+                    <th scope="col" class="govuk-table__header">ID-SK Frontend</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">:top_of_page</td>
+                    <td class="govuk-table__cell">Zastarané: umiestnenie obsahu nad <pre><code>&#60;!DOCTYPE html&#62;</code></pre> bude mať za následok nefunkčné stránky pre používateľov starších verzií programu Internet Explorer.</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">:html_lang</td>
+                    <td class="govuk-table__cell">htmlLang</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">:page_title</td>
+                    <td class="govuk-table__cell">pageTitle</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">:asset_path</td>
+                    <td class="govuk-table__cell">assetPath</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">:head</td>
+                    <td class="govuk-table__cell">head</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">:body_classes</td>
+                    <td class="govuk-table__cell">bodyClasses</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">:body_start</td>
+                    <td class="govuk-table__cell">bodyStart</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">:skip_link_message</td>
+                    <td class="govuk-table__cell">Link na preskočenie môžete nahradiť poskytnutím iného, ktorý obsahuje vlastný text
+                    <pre><code>&#123;% block skipLink %&#125;
+    &#123;{ idskSkipLink({ text: "custom text" }) }&#125;
+&#123;% endblock %&#125;</code></pre>
+                    Pozrite si skip link component pre viac detailov.</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">:cookie_message</td>
+                    <td class="govuk-table__cell">Zatiaľ žiadna náhrada, hľadáme vylepšenie tejto zložky na základe požiadaviek GDPR.</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">header_class</td>
+                    <td class="govuk-table__cell">Komponent nadpisu môžete nahradiť vytvorením vlastného, ktorý môže zahŕňať vlastné triedy (classes).
+<pre><code>&#123;% block header %}
+    &#123;{ govukHeader({ classes: "app-custom-classes" }) }}
+&#123;% endblock %}</code></pre>
+Pozrite si komponent hlavičky pre viac detailov.</td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">homepage_url</td>
+                    <td class="govuk-table__cell">
+                    Komponent hlavičky môžete nahradiť vytvorením komponentu s vlastnou url (homepageUrl)
+<pre><code>&#123;% block header %}
+    &#123;{ govukHeader({ homepageUrl: "/custom-url" }) }}
+&#123;% endblock %}</code></pre>
+Pozrite si komponent hlavičky pre viac detailov.</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">global_header_text</td>
+                    <td class="govuk-table__cell">
+                    Žiaden ekvivalent. V prípade potreby nás upozornite na problém.
+                    inside_header
+                    Komponent hlavičky môžete nahradiť novým komponentom s vlastným názvom služby (serviceName).
+<pre><code>&#123;% block header %}
+    &#123;{ govukHeader({ serviceName: "Custom service name" }) }}
+&#123;% endblock %}</code></pre>
+Pozrite si komponent hlavičky pre viac detailov.</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">proposition_header</td>
+                    <td class="govuk-table__cell">
+                    Komponent hlavičky môžete nahradiť novým komponentom s vlastnou navigáciou (navigation)
+<pre><code>&#123;% block header %}
+    &#123;{ govukHeader({ navigation: [] }) }}
+&#123;% endblock %}</code></pre>
+Pozrite si komponent hlavičky pre viac detailov.</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">:after_header</td>
+                    <td class="govuk-table__cell">beforeContent</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">:content</td>
+                    <td class="govuk-table__cell"><code>main</code><br/>
+                    Pridanie obsahu do premennej content vloží daný obsah do elementu <code>&#60;main&#62;</code>.<br />
+                    V starej šablóne GOV.UK Template nebol žiadny predvolený prvok <code>&#60;main&#62;</code>.<br />
+                    Svoj obsah môžete reštrukturalizovať tak, aby neobsahoval prvok <code>&#60;main&#62;</code>, alebo ho nahradiť.</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">:footer_top</td>
+                    <td class="govuk-table__cell">
+                    Komponent pätičky môžete nahradiť novým komponentom s vlastnou navigáciou (navigation)
+<pre><code>&#123;% block header %}
+    &#123;{ govukFooter({ navigation: [] }) }}
+&#123;% endblock %}</code></pre>
+Pozrite si komponent pätičky pre viac detailov.</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">:footer_support_links</td>
+                    <td class="govuk-table__cell">
+                    Komponent pätičky môžete nahradiť novým komponentom s vlastnými meta linkami
+<pre><code>&#123;% block header %}
+    &#123;{ govukFooter({ meta: [] }) }}
+&#123;% endblock %}</code></pre>
+Pozrite si komponent pätičky pre viac detailov.</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">:licence_message</td>
+                    <td class="govuk-table__cell">Žiaden ekvivalent. V prípade potreby nás upozornite na problém.</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">:body_end</td>
+                    <td class="govuk-table__cell">bodyEnd</td>
+                </tr>
+
+            </tbody>
+            </table>
+
+            <h3 class="govuk-heading-m">Názvy komponentov</h3>
+            <table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">ID-SK Elements</th>
+                    <th scope="col" class="govuk-table__header">ID-SK Frontend</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">link-back</td>
+                    <td class="govuk-table__cell"><a class="govuk-link" href="/components/back-link" title="Back link component">Back link component</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Button</td>
+                    <td class="govuk-table__cell"><a class="govuk-link" href="/components/button" title="Button component">Button component</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Checkboxes</td>
+                    <td class="govuk-table__cell"><a class="govuk-link" href="/components/checkboxes" title="Checkboxes component">Checkboxes component</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Date pattern</td>
+                    <td class="govuk-table__cell"><a class="govuk-link" href="/components/date-input" title="Date input component">Date input component</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Hidden text (Progressive disclosure)</td>
+                    <td class="govuk-table__cell"><a class="govuk-link" href="/components/details" title="Details component">Details component</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Errors and validation</td>
+                    <td class="govuk-table__cell"><a class="govuk-link" href="/components/error-message" title="Error message component">Error message component</a><br /><a class="govuk-link" href="/components/error-summary" title="Error summary component">Error summary component</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><code>&#60;fieldset></code></td>
+                    <td class="govuk-table__cell"><a class="govuk-link" href="/components/fieldset" title="Fieldset component">Fieldset component</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">File upload</td>
+                    <td class="govuk-table__cell"><a class="govuk-link" href="/components/file-upload" title="File upload component">File upload component</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Alpha and beta banners</td>
+                    <td class="govuk-table__cell"><a class="govuk-link" href="/components/phase-banner" title="Phase banner component">Phase banner component</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Radio buttons</td>
+                    <td class="govuk-table__cell"><a class="govuk-link" href="/components/radios" title="Radios component">Radios component</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Select boxes</td>
+                    <td class="govuk-table__cell"><a class="govuk-link" href="/components/select" title="Select component">Select component</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Phase tag</td>
+                    <td class="govuk-table__cell"><a class="govuk-link" href="/components/tag" title="Tag component">Tag component</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Form fields</td>
+                    <td class="govuk-table__cell"><a class="govuk-link" href="/components/input" title="Text input component">Text input component</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><code>&#60;textarea></code></td>
+                    <td class="govuk-table__cell"><a class="govuk-link" href="/components/textarea" title="Textarea component">Textarea component</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Warning text (previously Legal text)</td>
+                    <td class="govuk-table__cell"><a class="govuk-link" href="/components/warning-text" title="Warning text component">Warning text component</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">govuk-box-highlight</td>
+                    <td class="govuk-table__cell"><a class="govuk-link" href="/components/panel" title="Panel component">Panel component</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Inset text</td>
+                    <td class="govuk-table__cell"><a class="govuk-link" href="/components/inset-text" title="Inset text component">Inset text component</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">panel (object)<br />
+                    panel-border-wide<br />
+                    panel-border-narrow</td>
+                    <td class="govuk-table__cell">Zastarané: tento štýl je teraz obsiahnutý v každej súčasti, ktorá ho potrebuje.</td>
+                </tr>
+
+            </tbody>
+            </table>
+
+            <h3 class="govuk-heading-m">Názvy tried</h3>
+            <p class="govuk-body">ID-SK Frontend používa “Block, Element, Modifier” (BEM) a Inverted Triangle CSS (ITCSS) na štruktúrovanie CSS a definovanie názvov tried. To znamená, že všetky existujúce názvy tried sa zmenili.</p>
+
+            <h4 class="govuk-heading-s">Typografia názvov tried</h4>
+
+            <table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">ID-SK Elements</th>
+                    <th scope="col" class="govuk-table__header">ID-SK Frontend</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">heading-xlarge</td>
+                    <td class="govuk-table__cell">govuk-heading-xl</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">heading-large</td>
+                    <td class="govuk-table__cell">govuk-heading-l</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">heading-medium</td>
+                    <td class="govuk-table__cell">govuk-heading-m</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">heading-small</td>
+                    <td class="govuk-table__cell">govuk-heading-s</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">lede</td>
+                    <td class="govuk-table__cell">govuk-body-l</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">&#60;p></td>
+                    <td class="govuk-table__cell">body-text<br />govuk-body</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">font-xsmall</td>
+                    <td class="govuk-table__cell">govuk-body-s</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">&#60;a></td>
+                    <td class="govuk-table__cell">govuk-link</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">&#60;hr></td>
+                    <td class="govuk-table__cell">govuk-section-break<br />govuk-section-break--visible<br />govuk-section-break--xl<br />govuk-section-break--l<br />govuk-section-break--m</td>
+                </tr>
+
+            </tbody>
+            </table>
+
+            <h4 class="govuk-heading-s">Zoznamy</h4>
+            <table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">ID-SK Elements</th>
+                    <th scope="col" class="govuk-table__header">ID-SK Frontend</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">list</td>
+                    <td class="govuk-table__cell">govuk-list</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">list<br />list-bullet</td>
+                    <td class="govuk-table__cell">govuk-list<br />govuk-list--bullet</td>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">list<br />list-number</td>
+                    <td class="govuk-table__cell">govuk-list<br />govuk-list--number</td>
+                </tr>
+
+            </tbody>
+            </table>
+
+            <h4 class="govuk-heading-s">Názvy tried usporiadania a mriežky</h4>
+            <table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">ID-SK Elements</th>
+                    <th scope="col" class="govuk-table__header">ID-SK Frontend</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">grid-row</td>
+                    <td class="govuk-table__cell">govuk-grid-row</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">column-full</td>
+                    <td class="govuk-table__cell">govuk-grid-column-full</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">column-one-half</td>
+                    <td class="govuk-table__cell">govuk-grid-column-one-half</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">column-one-third</td>
+                    <td class="govuk-table__cell">govuk-grid-column-one-third</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">column-two-thirds</td>
+                    <td class="govuk-table__cell">govuk-grid-column-two-thirds</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">column-one-quarter</td>
+                    <td class="govuk-table__cell">govuk-grid-column-one-quarter</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">#content</td>
+                    <td class="govuk-table__cell">Page wrappers</td>
+                </tr>
+
+            </tbody>
+            </table>
+
+            <h4 class="govuk-heading-s">Názvy tried súvisiacich s formulármi </h4>
+            <table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">ID-SK Elements</th>
+                    <th scope="col" class="govuk-table__header">ID-SK Frontend</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">grid-row</td>
+                    <td class="govuk-table__cell">govuk-grid-row</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">form-group</td>
+                    <td class="govuk-table__cell">govuk-form-group</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">form-hint</td>
+                    <td class="govuk-table__cell">Špecifické pre komponent, napríklad:<br />govuk-label__hint</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">form-label</td>
+                    <td class="govuk-table__cell">Špecifické pre komponent, napríklad:<br />govuk-label<br />govuk-radios__label</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">form-label-bold</td>
+                    <td class="govuk-table__cell">govuk-label--s</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">form-control<br />form-control-3-4<br />form-control-2-3<br />form-control-1-2<br />form-control-1-3<br />form-control-1-4<br />form-control-1-8</td>
+                    <td class="govuk-table__cell">Width override classes</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">form-section</td>
+                    <td class="govuk-table__cell">Zastarané: pri novej implementácii medzier sa nevyžaduje</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">form-group-related</td>
+                    <td class="govuk-table__cell">Zastarané: pri novej implementácii medzier sa nevyžaduje</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">form-group-compound</td>
+                    <td class="govuk-table__cell">Zastarané: pri novej implementácii medzier sa nevyžaduje</td>
+                </tr>
+
+            </tbody>
+            </table>
+
+
+            <h4 class="govuk-heading-s">Názvy tried pomocníka</h4>
+            <table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">ID-SK Elements</th>
+                    <th scope="col" class="govuk-table__header">ID-SK Frontend</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">visually-hidden, visuallyhidden</td>
+                    <td class="govuk-table__cell">govuk-visually-hidden<br />govuk-visually-hidden-focusable</td>
+                </tr>
+
+            </tbody>
+            </table>
+
+            <h4 class="govuk-heading-s">Override class names</h4>
+            <table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">ID-SK Elements</th>
+                    <th scope="col" class="govuk-table__header">ID-SK Frontend</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">font-xxlarge</td>
+                    <td class="govuk-table__cell">govuk-!-font-size-80</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">font-xlarge</td>
+                    <td class="govuk-table__cell">govuk-!-font-size-48</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">font-large</td>
+                    <td class="govuk-table__cell">govuk-!-font-size-36</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">font-medium</td>
+                    <td class="govuk-table__cell">govuk-!-font-size-24</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">font-small</td>
+                    <td class="govuk-table__cell">govuk-!-font-size-19</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">font-xsmall</td>
+                    <td class="govuk-table__cell">govuk-!-font-size-16</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">bold-xxlarge</td>
+                    <td class="govuk-table__cell">govuk-!-font-size-80<br />govuk-!-font-weight-bold</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">bold-xlarge</td>
+                    <td class="govuk-table__cell">govuk-!-font-size-48<br />govuk-!-font-weight-bold</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">bold-large</td>
+                    <td class="govuk-table__cell">govuk-!-font-size-36<br />govuk-!-font-weight-bold</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">bold-medium</td>
+                    <td class="govuk-table__cell">govuk-!-font-size-24<br />govuk-!-font-weight-bold</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">bold-small</td>
+                    <td class="govuk-table__cell">govuk-!-font-size-19<br />govuk-!-font-weight-bold</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">bold-xsmall</td>
+                    <td class="govuk-table__cell">govuk-!-font-size-16<br />govuk-!-font-weight-bold</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">bold</td>
+                    <td class="govuk-table__cell">govuk-!-font-weight-bold</td>
+                </tr>
+            </tbody>
+            </table>
+
+            <h3 class="govuk-heading-s">Mixins and variables</h3>
+
+            <h4 class="govuk-heading-s">Typografia</h4>
+            <table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">GOV.UK Frontend Toolkit</th>
+                    <th scope="col" class="govuk-table__header">ID-SK Frontend</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include core-80</td>
+                    <td class="govuk-table__cell">@include govuk-font(80)</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include core-48</td>
+                    <td class="govuk-table__cell">@include govuk-font(48)</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include core-36</td>
+                    <td class="govuk-table__cell">@include govuk-font(36)</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include core-27</td>
+                    <td class="govuk-table__cell">@include govuk-font(27)</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include core-24</td>
+                    <td class="govuk-table__cell">@include govuk-font(24)</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include core-19</td>
+                    <td class="govuk-table__cell">@include govuk-font(19)</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include core-16</td>
+                    <td class="govuk-table__cell">@include govuk-font(16)</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include core-14</td>
+                    <td class="govuk-table__cell">@include govuk-font(14)</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include bold-80</td>
+                    <td class="govuk-table__cell">@include govuk-font(80, $weight: bold)</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include bold-48</td>
+                    <td class="govuk-table__cell">@include govuk-font(48, $weight: bold)</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include bold-36</td>
+                    <td class="govuk-table__cell">@include govuk-font(36, $weight: bold)</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include bold-27</td>
+                    <td class="govuk-table__cell">@include govuk-font(27, $weight: bold)</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include bold-24</td>
+                    <td class="govuk-table__cell">@include govuk-font(24, $weight: bold)</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include bold-19</td>
+                    <td class="govuk-table__cell">@include govuk-font(19, $weight: bold)</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include bold-16</td>
+                    <td class="govuk-table__cell">@include govuk-font(16, $weight: bold)</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include bold-14</td>
+                    <td class="govuk-table__cell">@include govuk-font(14, $weight: bold)</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include heading-80</td>
+                    <td class="govuk-table__cell">Zastarané: 80px nadpisy sa nepoužívajú, @include govuk-font(80, $weight: bold) should be used instead</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include heading-48</td>
+                    <td class="govuk-table__cell">@extend %govuk-heading-xl</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include heading-36</td>
+                    <td class="govuk-table__cell">@extend %govuk-heading-l</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include heading-27</td>
+                    <td class="govuk-table__cell">Deprecated: 27px headings are not used, @include govuk-font(27, $weight: bold) should be used instead</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include heading-24</td>
+                    <td class="govuk-table__cell">@extend %govuk-heading-m</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include copy-19</td>
+                    <td class="govuk-table__cell">@extend %govuk-body</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include copy-14</td>
+                    <td class="govuk-table__cell">@extend %govuk-body-xs</td>
+                </tr>
+            </tbody>
+            </table>
+
+            <h4 class="govuk-heading-s">Typografia</h4>
+            <table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">GOV.UK Frontend Toolkit</th>
+                    <th scope="col" class="govuk-table__header">ID-SK Frontend</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@extend site-width-container</td>
+                    <td class="govuk-table__cell">@include govuk-width-container</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include grid-column( 1/4 )</td>
+                    <td class="govuk-table__cell">Zastarané: vlastnosti mriežky nemôžete použiť na iné prvky pomocou ID-SK Frontend</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include grid-column( 1/2 )</td>
+                    <td class="govuk-table__cell">Zastarané: vlastnosti mriežky nemôžete použiť na iné prvky pomocou ID-SK Frontend</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include grid-column( 1/3 )</td>
+                    <td class="govuk-table__cell">Zastarané: vlastnosti mriežky nemôžete použiť na iné prvky pomocou ID-SK Frontend</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include grid-column( 2/3 )</td>
+                    <td class="govuk-table__cell">Zastarané: vlastnosti mriežky nemôžete použiť na iné prvky pomocou ID-SK Frontend</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include grid-column( 1/3, $full-width: desktop );</td>
+                    <td class="govuk-table__cell">Zastarané: vlastnosti mriežky nemôžete použiť na iné prvky pomocou ID-SK Frontend</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">$gutter</td>
+                    <td class="govuk-table__cell">$govuk-gutter, použite iba pre medzery medzi stĺpcami mriežky, inak použite mierku rozstupov.</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">$gutter-half</td>
+                    <td class="govuk-table__cell">$govuk-gutter, použite iba pre medzery medzi stĺpcami mriežky, inak použite mierku rozstupov.</td>
+                </tr>
+            </tbody>
+            </table>
+
+            <h4 class="govuk-heading-s">Média queries</h4>
+            <table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">GOV.UK Frontend Toolkit</th>
+                    <th scope="col" class="govuk-table__header">ID-SK Frontend</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include media(desktop)</td>
+                    <td class="govuk-table__cell">@include govuk-media-query($from: desktop)<br />@include govuk-media-query($until: desktop)</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include media(tablet)</td>
+                    <td class="govuk-table__cell">@include govuk-media-query($from: tablet)<br />@include govuk-media-query($until: tablet)</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include media(mobile)</td>
+                    <td class="govuk-table__cell">@include govuk-media-query($from: mobile)<br />@include govuk-media-query($until: mobile)</td>
+                </tr>
+            </tbody>
+            </table>
+
+            <h4 class="govuk-heading-s">Obrázky</h4>
+            <table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">GOV.UK Frontend Toolkit</th>
+                    <th scope="col" class="govuk-table__header">ID-SK Frontend</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include device-pixel-ratio($ratio: 2)</td>
+                    <td class="govuk-table__cell">@include govuk-device-pixel-ratio($ratio: 2)</td>
+                </tr>
+            </tbody>
+            </table>
+
+            <h4 class="govuk-heading-s">Shims</h4>
+            <table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">GOV.UK Frontend Toolkit</th>
+                    <th scope="col" class="govuk-table__header">ID-SK Frontend</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include inline-block</td>
+                    <td class="govuk-table__cell">Zastarané: inline-block je teraz predvolený pre všetky komponenty</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@extend %contain-floats</td>
+                    <td class="govuk-table__cell">@include govuk-clearfix</td>
+                </tr>
+            </tbody>
+            </table>
+
+            <h4 class="govuk-heading-s">Internet Explorer</h4>
+            <table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">GOV.UK Frontend Toolkit</th>
+                    <th scope="col" class="govuk-table__header">ID-SK Frontend</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">@include ie(8)</td>
+                    <td class="govuk-table__cell">@include govuk-if-ie8</td>
+                </tr>
+            </tbody>
+            </table>
+
+            <h2 class="govuk-heding-m">Potrebujete pomoc?</h2>
+            <p class="govuk-body">Ak máte otázky ohľadom dizajn systému ID-SK Frontend, kontaktujte náš tím na idsk@vicepremier.gov.sk</p>
+
+        </div>
+    </div>
+
+  </div>
+{% endblock %}

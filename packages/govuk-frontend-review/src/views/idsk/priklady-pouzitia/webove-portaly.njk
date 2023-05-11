@@ -1,0 +1,140 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Webové portály" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      { text: 'ID-SK frontend', href: '/' + legacyQuery },
+      { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <span class="govuk-caption-xl">Príklady použitia ID-SK</span>
+  <h1 class="govuk-heading-xl">{{ pageName }}</h1>
+
+  {# Content of the page #}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-s">Obsah:</h2>
+      <ul class="govuk-list">
+        <li><a href="#korona-gov-sk" class="govuk-link" title="korona.gov.sk">Korona.gov.sk</a></li>
+        <li><a href="#isoh-system" class="govuk-link" title="Portál ISOH">Portál ISOH</a></li>
+        <li><a href="#unms" class="govuk-link" title="Portál UNMS">Úrad pre normalizáciu, metrológiu a skúšobníctvo SR</a></li>
+        <li><a href="#is-velke-selmy" class="govuk-link" title="IS Veľké Šelmy">IS Veľké Šelmy</a></li>
+      </ul>
+    </div>
+  </div>
+
+  {# Korona.gov.sk #}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h3 class="govuk-heading-m" id="korona-gov-sk">Korona.gov.sk</h3>
+      <p class="govuk-body">
+        Webové sídlo zhromaždujúce všetky informácie o epidémii koronavírusu. Stránka sa stala hlavným informačným portálom vlády o
+        prebiehajúcej epidémii, sústreďuje informácie o opatreniach, štatistiky a služby ako registrácia na očkovanie, testovanie alebo registrácia pri príchode
+        zo zahraničia.
+      </p>
+
+      <h4 class="govuk-heading-s">Odkaz</h4>
+      <p class="govuk-body">
+        <a href="https://korona.gov.sk" class="govuk-link" title="https://korona.gov.sk/" target="_blank">https://korona.gov.sk/</a>
+      </p>
+
+      <h4 class="govuk-heading-s">Správca</h4>
+      <p class="govuk-body">Ministerstvo investícií, reginálneho rozvoja a informatizácie SR</p>
+
+      <h4 class="govuk-heading-s">Dodávateľ</h4>
+      <p class="govuk-body">dobrovoľníci,<br>
+        slovensko.help,<br>
+        bot.media,<br>
+        Luigis Box,<br>
+        LB,<br>
+        SKIT<br>
+      </p>
+    </div>
+  </div>
+  <div class="govuk-grid-row govuk-!-margin-bottom-7">
+    <div class="govuk-grid-column-full">
+      <img src="/public/assets/images/webove-portaly/korona-gov-sk.png" style="width: 100%;" alt="korona-gov-sk">
+    </div>
+  </div>
+
+  {# ISOH - Informačný systém odpadového hospodárstva #}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h3 class="govuk-heading-m" id="isoh-system">ISOH - Informačný systém odpadového hospodárstva</h3>
+      <p class="govuk-body">
+        Portál ISOH pomáha sprehľadniť, zefektívniť a zjednotiť tok informácií o odpade, a tak racionálnejšie rozhodovať v oblasti procesov
+        odpadového hospodárstva.
+      </p>
+
+      <h4 class="govuk-heading-s">Odkaz</h4>
+      <p class="govuk-body">
+        <a href="https://www.isoh.gov.sk/uvod.html" class="govuk-link" title="https://www.isoh.gov.sk/uvod.html" target="_blank">https://www.isoh.gov.sk/uvod.html</a>
+      </p>
+
+      <h4 class="govuk-heading-s">Správca</h4>
+      <p class="govuk-body">Ministerstvo životného prostredia SR</p>
+    </div>
+  </div>
+  <div class="govuk-grid-row govuk-!-margin-bottom-7">
+    <div class="govuk-grid-column-full">
+      <img src="/public/assets/images/webove-portaly/isoh.png" style="width: 100%;" alt="isoh">
+    </div>
+  </div>
+
+  {# UNMS - Webová stránka Úradu pre normalizáciu, metrológiu a skúšobníctvo SR #}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h3 class="govuk-heading-m" id="unms">Webová stránka Úradu pre normalizáciu, metrológiu a skúšobníctvo SR</h3>
+      <p class="govuk-body">
+        Poslaním ÚNMS SR je tvorba a rozvoj nástrojov infraštruktúry kvality. Primárnym cieľom je vytvorenie konkurencieschopného a
+        efektívneho prostredia a realizácia úloh v oblasti normalizácie, metrológie, kvality, posudzovania zhody a akreditácie.
+      </p>
+
+      <h4 class="govuk-heading-s">Odkaz</h4>
+      <p class="govuk-body"><a href="https://www.unms.sk/" class="govuk-link" title="https://www.unms.sk/" target="_blank">https://www.unms.sk/</a>
+      </p>
+
+      <h4 class="govuk-heading-s">Správca</h4>
+      <p class="govuk-body">Úrad pre normalizáciu, metrológiu a skúšobníctvo SR.</p>
+    </div>
+  </div>
+  <div class="govuk-grid-row govuk-!-margin-bottom-7">
+    <div class="govuk-grid-column-full">
+      <img src="/public/assets/images/webove-portaly/unms.jpg" style="width: 100%;" alt="unms">
+    </div>
+  </div>
+
+  {# ISVS - Informačný systém Veľké Šelmy #}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h3 class="govuk-heading-m" id="is-velke-selmy">IS Veľké Šelmy</h3>
+      <p class="govuk-body">
+        Táto stránka slúži na nahlásenie škôd spôsobených veľkými šelmami na hospodárskych zvieratách, plodinách, majetku a zdraví.
+        Nahlásením škody sa spúšťa proces, ktorý vedie k náhrade škody spôsobenej chránenými živočíchmi.
+      </p>
+
+      <h4 class="govuk-heading-s">Odkaz</h4>
+      <p class="govuk-body"><a href="https://www.hlasenieskody.sk/" class="govuk-link" title="https://www.hlasenieskody.sk/" target="_blank">https://www.hlasenieskody.sk/</a>
+      </p>
+
+      <h4 class="govuk-heading-s">Správca</h4>
+      <p class="govuk-body">Štátna ochrana prírody SR</p>
+
+      <h4 class="govuk-heading-s">Dodávateľ</h4>
+      <p class="govuk-body">essential data, s.r.o.</p>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <img src="/public/assets/images/webove-portaly/is-velke-selmy.png" style="width: 100%;" alt="is-velke-selmy">
+    </div>
+  </div>
+
+{% endblock %}

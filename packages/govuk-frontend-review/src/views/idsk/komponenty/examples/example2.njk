@@ -1,0 +1,61 @@
+{% from "idsk-button/macro.njk" import idskButton %}
+{% from "input/macro.njk" import govukInput %}
+{% from "error-summary/macro.njk" import govukErrorSummary %}
+
+
+<form action="/" method="post">
+
+{{ govukErrorSummary({
+    "titleText": "Miesto pre správu, ktorá upozorňuje, že nastal problém",
+    "descriptionText": "Priestor pre popis, k akým chybám došlo a ako ich opraviť.",
+    "classes": "optional-extra-class",
+    "errorList": [
+    {
+        "text": "Popis s odkazom na otázku, v ktorej nastala chyba",
+        "href": "#example-full-name"
+    },
+    {
+        "text": "Popis s odkazom na otázku, v ktorej nastala chyba",
+        "href": "#example-ni-number"
+    }
+    ]
+}) }}
+
+<h1 class="govuk-heading-xl">Skontrolujte si svoje osobné údaje</h1>
+
+
+{{ govukInput({
+  "label": {
+    "text": "Meno a priezvisko"
+  },
+  "hint": {
+    "text": "Tak ako ho máte uvedené v rodnom liste alebo pase"
+  },
+  "id": "example-full-name",
+  "name": "fullName",
+  "classes": "govuk-input--width-30",
+  "errorMessage": {
+    "text": "Priestor na chybovú hlášku"
+  }
+}) }}
+
+{{ govukInput({
+  "label": {
+    "text": "Číslo preukazu poistenca"
+  },
+  "hint": {
+    "text": "Nájdete ho na prednej strane vášho preukazu poistenca. Napríklad, ‘QQ 12 34 56 C’."
+  },
+  "id": "example-ni-number",
+  "name": "niNo",
+  "classes": "govuk-input--width-30",
+  "errorMessage": {
+    "text": "Priestor na chybovú hlášku"
+  }
+}) }}
+
+{{ idskButton({
+    "text": "Pokračovať"
+}) }}
+
+</form>

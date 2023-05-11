@@ -27,7 +27,11 @@ function kebabCaseToPascalCase (value) {
  * @returns {string} The name of its corresponding Nunjucks macro
  */
 function componentNameToMacroName (componentName) {
-  return `govuk${kebabCaseToPascalCase(componentName)}`
+  if (componentName.startsWith('idsk-')) {
+    return `idsk${kebabCaseToPascalCase(componentName.slice(5))}`
+  } else {
+    return `govuk${kebabCaseToPascalCase(componentName)}`
+  }
 }
 
 /**

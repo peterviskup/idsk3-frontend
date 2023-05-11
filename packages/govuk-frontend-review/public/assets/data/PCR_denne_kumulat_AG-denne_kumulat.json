@@ -1,0 +1,2620 @@
+[
+  {
+    "Datum": "6.3.2020",
+    "PCR.Posit": 1,
+    "Kumulative.PCR.testami": 1,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "7.3.2020",
+    "PCR.Posit": 2,
+    "Kumulative.PCR.testami": 3,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "8.3.2020",
+    "PCR.Posit": 2,
+    "Kumulative.PCR.testami": 5,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "9.3.2020",
+    "PCR.Posit": 2,
+    "Kumulative.PCR.testami": 7,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "10.3.2020",
+    "PCR.Posit": 0,
+    "Kumulative.PCR.testami": 7,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "11.3.2020",
+    "PCR.Posit": 3,
+    "Kumulative.PCR.testami": 10,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "12.3.2020",
+    "PCR.Posit": 11,
+    "Kumulative.PCR.testami": 21,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "13.3.2020",
+    "PCR.Posit": 11,
+    "Kumulative.PCR.testami": 32,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "14.3.2020",
+    "PCR.Posit": 12,
+    "Kumulative.PCR.testami": 44,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "15.3.2020",
+    "PCR.Posit": 17,
+    "Kumulative.PCR.testami": 61,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "16.3.2020",
+    "PCR.Posit": 11,
+    "Kumulative.PCR.testami": 72,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "17.3.2020",
+    "PCR.Posit": 24,
+    "Kumulative.PCR.testami": 96,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "18.3.2020",
+    "PCR.Posit": 8,
+    "Kumulative.PCR.testami": 104,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "19.3.2020",
+    "PCR.Posit": 19,
+    "Kumulative.PCR.testami": 123,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "20.3.2020",
+    "PCR.Posit": 14,
+    "Kumulative.PCR.testami": 137,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "21.3.2020",
+    "PCR.Posit": 41,
+    "Kumulative.PCR.testami": 178,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "22.3.2020",
+    "PCR.Posit": 7,
+    "Kumulative.PCR.testami": 185,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "23.3.2020",
+    "PCR.Posit": 19,
+    "Kumulative.PCR.testami": 204,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "24.3.2020",
+    "PCR.Posit": 12,
+    "Kumulative.PCR.testami": 216,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "25.3.2020",
+    "PCR.Posit": 10,
+    "Kumulative.PCR.testami": 226,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "26.3.2020",
+    "PCR.Posit": 43,
+    "Kumulative.PCR.testami": 269,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "27.3.2020",
+    "PCR.Posit": 23,
+    "Kumulative.PCR.testami": 292,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "28.3.2020",
+    "PCR.Posit": 22,
+    "Kumulative.PCR.testami": 314,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "29.3.2020",
+    "PCR.Posit": 22,
+    "Kumulative.PCR.testami": 336,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "30.3.2020",
+    "PCR.Posit": 27,
+    "Kumulative.PCR.testami": 363,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "31.3.2020",
+    "PCR.Posit": 37,
+    "Kumulative.PCR.testami": 400,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "1.4.2020",
+    "PCR.Posit": 26,
+    "Kumulative.PCR.testami": 426,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "2.4.2020",
+    "PCR.Posit": 24,
+    "Kumulative.PCR.testami": 450,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "3.4.2020",
+    "PCR.Posit": 21,
+    "Kumulative.PCR.testami": 471,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "4.4.2020",
+    "PCR.Posit": 14,
+    "Kumulative.PCR.testami": 485,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "5.4.2020",
+    "PCR.Posit": 49,
+    "Kumulative.PCR.testami": 534,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "6.4.2020",
+    "PCR.Posit": 47,
+    "Kumulative.PCR.testami": 581,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "7.4.2020",
+    "PCR.Posit": 101,
+    "Kumulative.PCR.testami": 682,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "8.4.2020",
+    "PCR.Posit": 19,
+    "Kumulative.PCR.testami": 701,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "9.4.2020",
+    "PCR.Posit": 14,
+    "Kumulative.PCR.testami": 715,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "10.4.2020",
+    "PCR.Posit": 13,
+    "Kumulative.PCR.testami": 728,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "11.4.2020",
+    "PCR.Posit": 14,
+    "Kumulative.PCR.testami": 742,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "12.4.2020",
+    "PCR.Posit": 27,
+    "Kumulative.PCR.testami": 769,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "13.4.2020",
+    "PCR.Posit": 66,
+    "Kumulative.PCR.testami": 835,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "14.4.2020",
+    "PCR.Posit": 28,
+    "Kumulative.PCR.testami": 863,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "15.4.2020",
+    "PCR.Posit": 114,
+    "Kumulative.PCR.testami": 977,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "16.4.2020",
+    "PCR.Posit": 72,
+    "Kumulative.PCR.testami": 1049,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "17.4.2020",
+    "PCR.Posit": 40,
+    "Kumulative.PCR.testami": 1089,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "18.4.2020",
+    "PCR.Posit": 72,
+    "Kumulative.PCR.testami": 1161,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "19.4.2020",
+    "PCR.Posit": 12,
+    "Kumulative.PCR.testami": 1173,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "20.4.2020",
+    "PCR.Posit": 26,
+    "Kumulative.PCR.testami": 1199,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "21.4.2020",
+    "PCR.Posit": 45,
+    "Kumulative.PCR.testami": 1244,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "22.4.2020",
+    "PCR.Posit": 81,
+    "Kumulative.PCR.testami": 1325,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "23.4.2020",
+    "PCR.Posit": 35,
+    "Kumulative.PCR.testami": 1360,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "24.4.2020",
+    "PCR.Posit": 13,
+    "Kumulative.PCR.testami": 1373,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "25.4.2020",
+    "PCR.Posit": 6,
+    "Kumulative.PCR.testami": 1379,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "26.4.2020",
+    "PCR.Posit": 2,
+    "Kumulative.PCR.testami": 1381,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "27.4.2020",
+    "PCR.Posit": 3,
+    "Kumulative.PCR.testami": 1384,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "28.4.2020",
+    "PCR.Posit": 7,
+    "Kumulative.PCR.testami": 1391,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "29.4.2020",
+    "PCR.Posit": 5,
+    "Kumulative.PCR.testami": 1396,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "30.4.2020",
+    "PCR.Posit": 7,
+    "Kumulative.PCR.testami": 1403,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "1.5.2020",
+    "PCR.Posit": 4,
+    "Kumulative.PCR.testami": 1407,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "2.5.2020",
+    "PCR.Posit": 1,
+    "Kumulative.PCR.testami": 1408,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "3.5.2020",
+    "PCR.Posit": 5,
+    "Kumulative.PCR.testami": 1413,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "4.5.2020",
+    "PCR.Posit": 8,
+    "Kumulative.PCR.testami": 1421,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "5.5.2020",
+    "PCR.Posit": 8,
+    "Kumulative.PCR.testami": 1429,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "6.5.2020",
+    "PCR.Posit": 16,
+    "Kumulative.PCR.testami": 1445,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "7.5.2020",
+    "PCR.Posit": 10,
+    "Kumulative.PCR.testami": 1455,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "8.5.2020",
+    "PCR.Posit": 0,
+    "Kumulative.PCR.testami": 1455,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "9.5.2020",
+    "PCR.Posit": 2,
+    "Kumulative.PCR.testami": 1457,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "10.5.2020",
+    "PCR.Posit": 0,
+    "Kumulative.PCR.testami": 1457,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "11.5.2020",
+    "PCR.Posit": 8,
+    "Kumulative.PCR.testami": 1465,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "12.5.2020",
+    "PCR.Posit": 4,
+    "Kumulative.PCR.testami": 1469,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "13.5.2020",
+    "PCR.Posit": 8,
+    "Kumulative.PCR.testami": 1477,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "14.5.2020",
+    "PCR.Posit": 3,
+    "Kumulative.PCR.testami": 1480,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "15.5.2020",
+    "PCR.Posit": 13,
+    "Kumulative.PCR.testami": 1493,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "16.5.2020",
+    "PCR.Posit": 1,
+    "Kumulative.PCR.testami": 1494,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "17.5.2020",
+    "PCR.Posit": 1,
+    "Kumulative.PCR.testami": 1495,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "18.5.2020",
+    "PCR.Posit": 0,
+    "Kumulative.PCR.testami": 1495,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "19.5.2020",
+    "PCR.Posit": 1,
+    "Kumulative.PCR.testami": 1496,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "20.5.2020",
+    "PCR.Posit": 6,
+    "Kumulative.PCR.testami": 1502,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "21.5.2020",
+    "PCR.Posit": 1,
+    "Kumulative.PCR.testami": 1503,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "22.5.2020",
+    "PCR.Posit": 1,
+    "Kumulative.PCR.testami": 1504,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "23.5.2020",
+    "PCR.Posit": 5,
+    "Kumulative.PCR.testami": 1509,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "24.5.2020",
+    "PCR.Posit": 2,
+    "Kumulative.PCR.testami": 1511,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "25.5.2020",
+    "PCR.Posit": 2,
+    "Kumulative.PCR.testami": 1513,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "26.5.2020",
+    "PCR.Posit": 2,
+    "Kumulative.PCR.testami": 1515,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "27.5.2020",
+    "PCR.Posit": 5,
+    "Kumulative.PCR.testami": 1520,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "28.5.2020",
+    "PCR.Posit": 0,
+    "Kumulative.PCR.testami": 1520,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "29.5.2020",
+    "PCR.Posit": 1,
+    "Kumulative.PCR.testami": 1521,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "30.5.2020",
+    "PCR.Posit": 0,
+    "Kumulative.PCR.testami": 1521,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "31.5.2020",
+    "PCR.Posit": 1,
+    "Kumulative.PCR.testami": 1522,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "1.6.2020",
+    "PCR.Posit": 0,
+    "Kumulative.PCR.testami": 1522,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "2.6.2020",
+    "PCR.Posit": 3,
+    "Kumulative.PCR.testami": 1525,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "3.6.2020",
+    "PCR.Posit": 1,
+    "Kumulative.PCR.testami": 1526,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "4.6.2020",
+    "PCR.Posit": 0,
+    "Kumulative.PCR.testami": 1526,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "5.6.2020",
+    "PCR.Posit": 2,
+    "Kumulative.PCR.testami": 1528,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "6.6.2020",
+    "PCR.Posit": 0,
+    "Kumulative.PCR.testami": 1528,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "7.6.2020",
+    "PCR.Posit": 2,
+    "Kumulative.PCR.testami": 1530,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "8.6.2020",
+    "PCR.Posit": 1,
+    "Kumulative.PCR.testami": 1531,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "9.6.2020",
+    "PCR.Posit": 2,
+    "Kumulative.PCR.testami": 1533,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "10.6.2020",
+    "PCR.Posit": 8,
+    "Kumulative.PCR.testami": 1541,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "11.6.2020",
+    "PCR.Posit": 1,
+    "Kumulative.PCR.testami": 1542,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "12.6.2020",
+    "PCR.Posit": 3,
+    "Kumulative.PCR.testami": 1545,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "13.6.2020",
+    "PCR.Posit": 3,
+    "Kumulative.PCR.testami": 1548,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "14.6.2020",
+    "PCR.Posit": 4,
+    "Kumulative.PCR.testami": 1552,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "15.6.2020",
+    "PCR.Posit": 0,
+    "Kumulative.PCR.testami": 1552,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "16.6.2020",
+    "PCR.Posit": 9,
+    "Kumulative.PCR.testami": 1561,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "17.6.2020",
+    "PCR.Posit": 1,
+    "Kumulative.PCR.testami": 1562,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "18.6.2020",
+    "PCR.Posit": 14,
+    "Kumulative.PCR.testami": 1576,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "19.6.2020",
+    "PCR.Posit": 10,
+    "Kumulative.PCR.testami": 1586,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "20.6.2020",
+    "PCR.Posit": 1,
+    "Kumulative.PCR.testami": 1587,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "21.6.2020",
+    "PCR.Posit": 1,
+    "Kumulative.PCR.testami": 1588,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "22.6.2020",
+    "PCR.Posit": 1,
+    "Kumulative.PCR.testami": 1589,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "23.6.2020",
+    "PCR.Posit": 18,
+    "Kumulative.PCR.testami": 1607,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "24.6.2020",
+    "PCR.Posit": 23,
+    "Kumulative.PCR.testami": 1630,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "25.6.2020",
+    "PCR.Posit": 13,
+    "Kumulative.PCR.testami": 1643,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "26.6.2020",
+    "PCR.Posit": 14,
+    "Kumulative.PCR.testami": 1657,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "27.6.2020",
+    "PCR.Posit": 7,
+    "Kumulative.PCR.testami": 1664,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "28.6.2020",
+    "PCR.Posit": 1,
+    "Kumulative.PCR.testami": 1665,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "29.6.2020",
+    "PCR.Posit": 2,
+    "Kumulative.PCR.testami": 1667,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "30.6.2020",
+    "PCR.Posit": 20,
+    "Kumulative.PCR.testami": 1687,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "1.7.2020",
+    "PCR.Posit": 13,
+    "Kumulative.PCR.testami": 1700,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "2.7.2020",
+    "PCR.Posit": 20,
+    "Kumulative.PCR.testami": 1720,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "3.7.2020",
+    "PCR.Posit": 29,
+    "Kumulative.PCR.testami": 1749,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "4.7.2020",
+    "PCR.Posit": 15,
+    "Kumulative.PCR.testami": 1764,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "5.7.2020",
+    "PCR.Posit": 1,
+    "Kumulative.PCR.testami": 1765,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "6.7.2020",
+    "PCR.Posit": 2,
+    "Kumulative.PCR.testami": 1767,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "7.7.2020",
+    "PCR.Posit": 31,
+    "Kumulative.PCR.testami": 1798,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "8.7.2020",
+    "PCR.Posit": 53,
+    "Kumulative.PCR.testami": 1851,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "9.7.2020",
+    "PCR.Posit": 19,
+    "Kumulative.PCR.testami": 1870,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "10.7.2020",
+    "PCR.Posit": 23,
+    "Kumulative.PCR.testami": 1893,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "11.7.2020",
+    "PCR.Posit": 8,
+    "Kumulative.PCR.testami": 1901,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "12.7.2020",
+    "PCR.Posit": 1,
+    "Kumulative.PCR.testami": 1902,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "13.7.2020",
+    "PCR.Posit": 6,
+    "Kumulative.PCR.testami": 1908,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "14.7.2020",
+    "PCR.Posit": 19,
+    "Kumulative.PCR.testami": 1927,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "15.7.2020",
+    "PCR.Posit": 24,
+    "Kumulative.PCR.testami": 1951,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "16.7.2020",
+    "PCR.Posit": 14,
+    "Kumulative.PCR.testami": 1965,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "17.7.2020",
+    "PCR.Posit": 11,
+    "Kumulative.PCR.testami": 1976,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "18.7.2020",
+    "PCR.Posit": 3,
+    "Kumulative.PCR.testami": 1979,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "19.7.2020",
+    "PCR.Posit": 1,
+    "Kumulative.PCR.testami": 1980,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "20.7.2020",
+    "PCR.Posit": 41,
+    "Kumulative.PCR.testami": 2021,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "21.7.2020",
+    "PCR.Posit": 37,
+    "Kumulative.PCR.testami": 2058,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "22.7.2020",
+    "PCR.Posit": 31,
+    "Kumulative.PCR.testami": 2089,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "23.7.2020",
+    "PCR.Posit": 29,
+    "Kumulative.PCR.testami": 2118,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "24.7.2020",
+    "PCR.Posit": 23,
+    "Kumulative.PCR.testami": 2141,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "25.7.2020",
+    "PCR.Posit": 38,
+    "Kumulative.PCR.testami": 2179,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "26.7.2020",
+    "PCR.Posit": 2,
+    "Kumulative.PCR.testami": 2181,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "27.7.2020",
+    "PCR.Posit": 23,
+    "Kumulative.PCR.testami": 2204,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "28.7.2020",
+    "PCR.Posit": 41,
+    "Kumulative.PCR.testami": 2245,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "29.7.2020",
+    "PCR.Posit": 20,
+    "Kumulative.PCR.testami": 2265,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "30.7.2020",
+    "PCR.Posit": 27,
+    "Kumulative.PCR.testami": 2292,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "31.7.2020",
+    "PCR.Posit": 45,
+    "Kumulative.PCR.testami": 2337,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "1.8.2020",
+    "PCR.Posit": 7,
+    "Kumulative.PCR.testami": 2344,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "2.8.2020",
+    "PCR.Posit": 10,
+    "Kumulative.PCR.testami": 2354,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "3.8.2020",
+    "PCR.Posit": 14,
+    "Kumulative.PCR.testami": 2368,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "4.8.2020",
+    "PCR.Posit": 49,
+    "Kumulative.PCR.testami": 2417,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "5.8.2020",
+    "PCR.Posit": 63,
+    "Kumulative.PCR.testami": 2480,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "6.8.2020",
+    "PCR.Posit": 43,
+    "Kumulative.PCR.testami": 2523,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "7.8.2020",
+    "PCR.Posit": 43,
+    "Kumulative.PCR.testami": 2566,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "8.8.2020",
+    "PCR.Posit": 30,
+    "Kumulative.PCR.testami": 2596,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "9.8.2020",
+    "PCR.Posit": 3,
+    "Kumulative.PCR.testami": 2599,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "10.8.2020",
+    "PCR.Posit": 16,
+    "Kumulative.PCR.testami": 2615,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "11.8.2020",
+    "PCR.Posit": 75,
+    "Kumulative.PCR.testami": 2690,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "12.8.2020",
+    "PCR.Posit": 49,
+    "Kumulative.PCR.testami": 2739,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "13.8.2020",
+    "PCR.Posit": 62,
+    "Kumulative.PCR.testami": 2801,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "14.8.2020",
+    "PCR.Posit": 54,
+    "Kumulative.PCR.testami": 2855,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "15.8.2020",
+    "PCR.Posit": 47,
+    "Kumulative.PCR.testami": 2902,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "16.8.2020",
+    "PCR.Posit": 5,
+    "Kumulative.PCR.testami": 2907,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "17.8.2020",
+    "PCR.Posit": 15,
+    "Kumulative.PCR.testami": 2922,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "18.8.2020",
+    "PCR.Posit": 100,
+    "Kumulative.PCR.testami": 3022,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "19.8.2020",
+    "PCR.Posit": 80,
+    "Kumulative.PCR.testami": 3102,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "20.8.2020",
+    "PCR.Posit": 123,
+    "Kumulative.PCR.testami": 3225,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "21.8.2020",
+    "PCR.Posit": 91,
+    "Kumulative.PCR.testami": 3316,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "22.8.2020",
+    "PCR.Posit": 40,
+    "Kumulative.PCR.testami": 3356,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "23.8.2020",
+    "PCR.Posit": 68,
+    "Kumulative.PCR.testami": 3424,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "24.8.2020",
+    "PCR.Posit": 28,
+    "Kumulative.PCR.testami": 3452,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "25.8.2020",
+    "PCR.Posit": 84,
+    "Kumulative.PCR.testami": 3536,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "26.8.2020",
+    "PCR.Posit": 90,
+    "Kumulative.PCR.testami": 3626,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "27.8.2020",
+    "PCR.Posit": 102,
+    "Kumulative.PCR.testami": 3728,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "28.8.2020",
+    "PCR.Posit": 114,
+    "Kumulative.PCR.testami": 3842,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "29.8.2020",
+    "PCR.Posit": 34,
+    "Kumulative.PCR.testami": 3876,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "30.8.2020",
+    "PCR.Posit": 41,
+    "Kumulative.PCR.testami": 3917,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "31.8.2020",
+    "PCR.Posit": 72,
+    "Kumulative.PCR.testami": 3989,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "1.9.2020",
+    "PCR.Posit": 53,
+    "Kumulative.PCR.testami": 4042,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "2.9.2020",
+    "PCR.Posit": 121,
+    "Kumulative.PCR.testami": 4163,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "3.9.2020",
+    "PCR.Posit": 137,
+    "Kumulative.PCR.testami": 4300,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "4.9.2020",
+    "PCR.Posit": 226,
+    "Kumulative.PCR.testami": 4526,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "5.9.2020",
+    "PCR.Posit": 88,
+    "Kumulative.PCR.testami": 4614,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "6.9.2020",
+    "PCR.Posit": 22,
+    "Kumulative.PCR.testami": 4636,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "7.9.2020",
+    "PCR.Posit": 91,
+    "Kumulative.PCR.testami": 4727,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "8.9.2020",
+    "PCR.Posit": 161,
+    "Kumulative.PCR.testami": 4888,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "9.9.2020",
+    "PCR.Posit": 178,
+    "Kumulative.PCR.testami": 5066,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "10.9.2020",
+    "PCR.Posit": 186,
+    "Kumulative.PCR.testami": 5252,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "11.9.2020",
+    "PCR.Posit": 201,
+    "Kumulative.PCR.testami": 5453,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "12.9.2020",
+    "PCR.Posit": 79,
+    "Kumulative.PCR.testami": 5532,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "13.9.2020",
+    "PCR.Posit": 48,
+    "Kumulative.PCR.testami": 5580,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "14.9.2020",
+    "PCR.Posit": 188,
+    "Kumulative.PCR.testami": 5768,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "15.9.2020",
+    "PCR.Posit": 92,
+    "Kumulative.PCR.testami": 5860,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "16.9.2020",
+    "PCR.Posit": 161,
+    "Kumulative.PCR.testami": 6021,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "17.9.2020",
+    "PCR.Posit": 235,
+    "Kumulative.PCR.testami": 6256,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "18.9.2020",
+    "PCR.Posit": 290,
+    "Kumulative.PCR.testami": 6546,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "19.9.2020",
+    "PCR.Posit": 131,
+    "Kumulative.PCR.testami": 6677,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "20.9.2020",
+    "PCR.Posit": 79,
+    "Kumulative.PCR.testami": 6756,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "21.9.2020",
+    "PCR.Posit": 175,
+    "Kumulative.PCR.testami": 6931,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "22.9.2020",
+    "PCR.Posit": 338,
+    "Kumulative.PCR.testami": 7269,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "23.9.2020",
+    "PCR.Posit": 360,
+    "Kumulative.PCR.testami": 7629,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "24.9.2020",
+    "PCR.Posit": 419,
+    "Kumulative.PCR.testami": 8048,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "25.9.2020",
+    "PCR.Posit": 552,
+    "Kumulative.PCR.testami": 8600,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "26.9.2020",
+    "PCR.Posit": 478,
+    "Kumulative.PCR.testami": 9078,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "27.9.2020",
+    "PCR.Posit": 265,
+    "Kumulative.PCR.testami": 9343,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "28.9.2020",
+    "PCR.Posit": 231,
+    "Kumulative.PCR.testami": 9574,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "29.9.2020",
+    "PCR.Posit": 567,
+    "Kumulative.PCR.testami": 10141,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "30.9.2020",
+    "PCR.Posit": 797,
+    "Kumulative.PCR.testami": 10938,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "1.10.2020",
+    "PCR.Posit": 679,
+    "Kumulative.PCR.testami": 11617,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "2.10.2020",
+    "PCR.Posit": 704,
+    "Kumulative.PCR.testami": 12321,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "3.10.2020",
+    "PCR.Posit": 818,
+    "Kumulative.PCR.testami": 13139,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "4.10.2020",
+    "PCR.Posit": 353,
+    "Kumulative.PCR.testami": 13492,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "5.10.2020",
+    "PCR.Posit": 320,
+    "Kumulative.PCR.testami": 13812,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "6.10.2020",
+    "PCR.Posit": 877,
+    "Kumulative.PCR.testami": 14689,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "7.10.2020",
+    "PCR.Posit": 1037,
+    "Kumulative.PCR.testami": 15726,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "8.10.2020",
+    "PCR.Posit": 1184,
+    "Kumulative.PCR.testami": 16910,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "9.10.2020",
+    "PCR.Posit": 1887,
+    "Kumulative.PCR.testami": 18797,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "10.10.2020",
+    "PCR.Posit": 1054,
+    "Kumulative.PCR.testami": 19851,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "11.10.2020",
+    "PCR.Posit": 504,
+    "Kumulative.PCR.testami": 20355,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 0
+  },
+  {
+    "Datum": "12.10.2020",
+    "PCR.Posit": 531,
+    "Kumulative.PCR.testami": 20886,
+    "AgPosit": 40,
+    "Kumulativne - AgPosit": 40
+  },
+  {
+    "Datum": "13.10.2020",
+    "PCR.Posit": 1410,
+    "Kumulative.PCR.testami": 22296,
+    "AgPosit": 84,
+    "Kumulativne - AgPosit": 124
+  },
+  {
+    "Datum": "14.10.2020",
+    "PCR.Posit": 1929,
+    "Kumulative.PCR.testami": 24225,
+    "AgPosit": 31,
+    "Kumulativne - AgPosit": 155
+  },
+  {
+    "Datum": "15.10.2020",
+    "PCR.Posit": 2075,
+    "Kumulative.PCR.testami": 26300,
+    "AgPosit": 36,
+    "Kumulativne - AgPosit": 191
+  },
+  {
+    "Datum": "16.10.2020",
+    "PCR.Posit": 1968,
+    "Kumulative.PCR.testami": 28268,
+    "AgPosit": 27,
+    "Kumulativne - AgPosit": 218
+  },
+  {
+    "Datum": "17.10.2020",
+    "PCR.Posit": 1567,
+    "Kumulative.PCR.testami": 29835,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 218
+  },
+  {
+    "Datum": "18.10.2020",
+    "PCR.Posit": 860,
+    "Kumulative.PCR.testami": 30695,
+    "AgPosit": 0,
+    "Kumulativne - AgPosit": 218
+  },
+  {
+    "Datum": "19.10.2020",
+    "PCR.Posit": 705,
+    "Kumulative.PCR.testami": 31400,
+    "AgPosit": 69,
+    "Kumulativne - AgPosit": 287
+  },
+  {
+    "Datum": "20.10.2020",
+    "PCR.Posit": 2202,
+    "Kumulative.PCR.testami": 33602,
+    "AgPosit": 38,
+    "Kumulativne - AgPosit": 325
+  },
+  {
+    "Datum": "21.10.2020",
+    "PCR.Posit": 1728,
+    "Kumulative.PCR.testami": 35330,
+    "AgPosit": 48,
+    "Kumulativne - AgPosit": 373
+  },
+  {
+    "Datum": "22.10.2020",
+    "PCR.Posit": 2581,
+    "Kumulative.PCR.testami": 37911,
+    "AgPosit": 141,
+    "Kumulativne - AgPosit": 514
+  },
+  {
+    "Datum": "23.10.2020",
+    "PCR.Posit": 2890,
+    "Kumulative.PCR.testami": 40801,
+    "AgPosit": 119,
+    "Kumulativne - AgPosit": 633
+  },
+  {
+    "Datum": "24.10.2020",
+    "PCR.Posit": 3042,
+    "Kumulative.PCR.testami": 43843,
+    "AgPosit": 65,
+    "Kumulativne - AgPosit": 698
+  },
+  {
+    "Datum": "25.10.2020",
+    "PCR.Posit": 1312,
+    "Kumulative.PCR.testami": 45155,
+    "AgPosit": 40,
+    "Kumulativne - AgPosit": 738
+  },
+  {
+    "Datum": "26.10.2020",
+    "PCR.Posit": 901,
+    "Kumulative.PCR.testami": 46056,
+    "AgPosit": 231,
+    "Kumulativne - AgPosit": 969
+  },
+  {
+    "Datum": "27.10.2020",
+    "PCR.Posit": 2887,
+    "Kumulative.PCR.testami": 48943,
+    "AgPosit": 234,
+    "Kumulativne - AgPosit": 1203
+  },
+  {
+    "Datum": "28.10.2020",
+    "PCR.Posit": 2785,
+    "Kumulative.PCR.testami": 51728,
+    "AgPosit": 225,
+    "Kumulativne - AgPosit": 1428
+  },
+  {
+    "Datum": "29.10.2020",
+    "PCR.Posit": 3363,
+    "Kumulative.PCR.testami": 55091,
+    "AgPosit": 239,
+    "Kumulativne - AgPosit": 1667
+  },
+  {
+    "Datum": "30.10.2020",
+    "PCR.Posit": 2573,
+    "Kumulative.PCR.testami": 57664,
+    "AgPosit": 471,
+    "Kumulativne - AgPosit": 2138
+  },
+  {
+    "Datum": "31.10.2020",
+    "PCR.Posit": 2282,
+    "Kumulative.PCR.testami": 59946,
+    "AgPosit": 975,
+    "Kumulativne - AgPosit": 3113
+  },
+  {
+    "Datum": "1.11.2020",
+    "PCR.Posit": 1883,
+    "Kumulative.PCR.testami": 61829,
+    "AgPosit": 376,
+    "Kumulativne - AgPosit": 3489
+  },
+  {
+    "Datum": "2.11.2020",
+    "PCR.Posit": 1727,
+    "Kumulative.PCR.testami": 63556,
+    "AgPosit": 1331,
+    "Kumulativne - AgPosit": 4820
+  },
+  {
+    "Datum": "3.11.2020",
+    "PCR.Posit": 3216,
+    "Kumulative.PCR.testami": 66772,
+    "AgPosit": 91,
+    "Kumulativne - AgPosit": 4911
+  },
+  {
+    "Datum": "4.11.2020",
+    "PCR.Posit": 1962,
+    "Kumulative.PCR.testami": 68734,
+    "AgPosit": 79,
+    "Kumulativne - AgPosit": 4990
+  },
+  {
+    "Datum": "5.11.2020",
+    "PCR.Posit": 2354,
+    "Kumulative.PCR.testami": 71088,
+    "AgPosit": 138,
+    "Kumulativne - AgPosit": 5128
+  },
+  {
+    "Datum": "6.11.2020",
+    "PCR.Posit": 2579,
+    "Kumulative.PCR.testami": 73667,
+    "AgPosit": 327,
+    "Kumulativne - AgPosit": 5455
+  },
+  {
+    "Datum": "7.11.2020",
+    "PCR.Posit": 1828,
+    "Kumulative.PCR.testami": 75495,
+    "AgPosit": 439,
+    "Kumulativne - AgPosit": 5894
+  },
+  {
+    "Datum": "8.11.2020",
+    "PCR.Posit": 577,
+    "Kumulative.PCR.testami": 76072,
+    "AgPosit": 143,
+    "Kumulativne - AgPosit": 6037
+  },
+  {
+    "Datum": "9.11.2020",
+    "PCR.Posit": 1051,
+    "Kumulative.PCR.testami": 77123,
+    "AgPosit": 1147,
+    "Kumulativne - AgPosit": 7184
+  },
+  {
+    "Datum": "10.11.2020",
+    "PCR.Posit": 2058,
+    "Kumulative.PCR.testami": 79181,
+    "AgPosit": 140,
+    "Kumulativne - AgPosit": 7324
+  },
+  {
+    "Datum": "11.11.2020",
+    "PCR.Posit": 2591,
+    "Kumulative.PCR.testami": 81772,
+    "AgPosit": 101,
+    "Kumulativne - AgPosit": 7425
+  },
+  {
+    "Datum": "12.11.2020",
+    "PCR.Posit": 2024,
+    "Kumulative.PCR.testami": 83796,
+    "AgPosit": 173,
+    "Kumulativne - AgPosit": 7598
+  },
+  {
+    "Datum": "13.11.2020",
+    "PCR.Posit": 1771,
+    "Kumulative.PCR.testami": 85567,
+    "AgPosit": 158,
+    "Kumulativne - AgPosit": 7756
+  },
+  {
+    "Datum": "14.11.2020",
+    "PCR.Posit": 1200,
+    "Kumulative.PCR.testami": 86767,
+    "AgPosit": 99,
+    "Kumulativne - AgPosit": 7855
+  },
+  {
+    "Datum": "15.11.2020",
+    "PCR.Posit": 509,
+    "Kumulative.PCR.testami": 87276,
+    "AgPosit": 33,
+    "Kumulativne - AgPosit": 7888
+  },
+  {
+    "Datum": "16.11.2020",
+    "PCR.Posit": 1326,
+    "Kumulative.PCR.testami": 88602,
+    "AgPosit": 273,
+    "Kumulativne - AgPosit": 8161
+  },
+  {
+    "Datum": "17.11.2020",
+    "PCR.Posit": 1311,
+    "Kumulative.PCR.testami": 89913,
+    "AgPosit": 218,
+    "Kumulativne - AgPosit": 8379
+  },
+  {
+    "Datum": "18.11.2020",
+    "PCR.Posit": 1665,
+    "Kumulative.PCR.testami": 91578,
+    "AgPosit": 419,
+    "Kumulativne - AgPosit": 8798
+  },
+  {
+    "Datum": "19.11.2020",
+    "PCR.Posit": 1818,
+    "Kumulative.PCR.testami": 93396,
+    "AgPosit": 746,
+    "Kumulativne - AgPosit": 9544
+  },
+  {
+    "Datum": "20.11.2020",
+    "PCR.Posit": 1861,
+    "Kumulative.PCR.testami": 95257,
+    "AgPosit": 596,
+    "Kumulativne - AgPosit": 10140
+  },
+  {
+    "Datum": "21.11.2020",
+    "PCR.Posit": 984,
+    "Kumulative.PCR.testami": 96241,
+    "AgPosit": 317,
+    "Kumulativne - AgPosit": 10457
+  },
+  {
+    "Datum": "22.11.2020",
+    "PCR.Posit": 231,
+    "Kumulative.PCR.testami": 96472,
+    "AgPosit": 57,
+    "Kumulativne - AgPosit": 10514
+  },
+  {
+    "Datum": "23.11.2020",
+    "PCR.Posit": 1021,
+    "Kumulative.PCR.testami": 97493,
+    "AgPosit": 800,
+    "Kumulativne - AgPosit": 11314
+  },
+  {
+    "Datum": "24.11.2020",
+    "PCR.Posit": 1811,
+    "Kumulative.PCR.testami": 99304,
+    "AgPosit": 854,
+    "Kumulativne - AgPosit": 12168
+  },
+  {
+    "Datum": "25.11.2020",
+    "PCR.Posit": 1953,
+    "Kumulative.PCR.testami": 101257,
+    "AgPosit": 662,
+    "Kumulativne - AgPosit": 12830
+  },
+  {
+    "Datum": "26.11.2020",
+    "PCR.Posit": 1849,
+    "Kumulative.PCR.testami": 103106,
+    "AgPosit": 779,
+    "Kumulativne - AgPosit": 13609
+  },
+  {
+    "Datum": "27.11.2020",
+    "PCR.Posit": 1527,
+    "Kumulative.PCR.testami": 104633,
+    "AgPosit": 666,
+    "Kumulativne - AgPosit": 14275
+  },
+  {
+    "Datum": "28.11.2020",
+    "PCR.Posit": 1100,
+    "Kumulative.PCR.testami": 105733,
+    "AgPosit": 399,
+    "Kumulativne - AgPosit": 14674
+  },
+  {
+    "Datum": "29.11.2020",
+    "PCR.Posit": 196,
+    "Kumulative.PCR.testami": 105929,
+    "AgPosit": 174,
+    "Kumulativne - AgPosit": 14848
+  },
+  {
+    "Datum": "30.11.2020",
+    "PCR.Posit": 1254,
+    "Kumulative.PCR.testami": 107183,
+    "AgPosit": 1739,
+    "Kumulativne - AgPosit": 16587
+  },
+  {
+    "Datum": "1.12.2020",
+    "PCR.Posit": 2043,
+    "Kumulative.PCR.testami": 109226,
+    "AgPosit": 1671,
+    "Kumulativne - AgPosit": 18258
+  },
+  {
+    "Datum": "2.12.2020",
+    "PCR.Posit": 1982,
+    "Kumulative.PCR.testami": 111208,
+    "AgPosit": 1674,
+    "Kumulativne - AgPosit": 19932
+  },
+  {
+    "Datum": "3.12.2020",
+    "PCR.Posit": 2184,
+    "Kumulative.PCR.testami": 113392,
+    "AgPosit": 1325,
+    "Kumulativne - AgPosit": 21257
+  },
+  {
+    "Datum": "4.12.2020",
+    "PCR.Posit": 2070,
+    "Kumulative.PCR.testami": 115462,
+    "AgPosit": 1251,
+    "Kumulativne - AgPosit": 22508
+  },
+  {
+    "Datum": "5.12.2020",
+    "PCR.Posit": 1269,
+    "Kumulative.PCR.testami": 116731,
+    "AgPosit": 417,
+    "Kumulativne - AgPosit": 22925
+  },
+  {
+    "Datum": "6.12.2020",
+    "PCR.Posit": 552,
+    "Kumulative.PCR.testami": 117283,
+    "AgPosit": 125,
+    "Kumulativne - AgPosit": 23050
+  },
+  {
+    "Datum": "7.12.2020",
+    "PCR.Posit": 1949,
+    "Kumulative.PCR.testami": 119232,
+    "AgPosit": 2076,
+    "Kumulativne - AgPosit": 25126
+  },
+  {
+    "Datum": "8.12.2020",
+    "PCR.Posit": 2564,
+    "Kumulative.PCR.testami": 121796,
+    "AgPosit": 3059,
+    "Kumulativne - AgPosit": 28185
+  },
+  {
+    "Datum": "9.12.2020",
+    "PCR.Posit": 3125,
+    "Kumulative.PCR.testami": 124921,
+    "AgPosit": 2298,
+    "Kumulativne - AgPosit": 30483
+  },
+  {
+    "Datum": "10.12.2020",
+    "PCR.Posit": 2166,
+    "Kumulative.PCR.testami": 127087,
+    "AgPosit": 3151,
+    "Kumulativne - AgPosit": 33634
+  },
+  {
+    "Datum": "11.12.2020",
+    "PCR.Posit": 3707,
+    "Kumulative.PCR.testami": 130794,
+    "AgPosit": 2830,
+    "Kumulativne - AgPosit": 36464
+  },
+  {
+    "Datum": "12.12.2020",
+    "PCR.Posit": 2190,
+    "Kumulative.PCR.testami": 132984,
+    "AgPosit": 1003,
+    "Kumulativne - AgPosit": 37467
+  },
+  {
+    "Datum": "13.12.2020",
+    "PCR.Posit": 505,
+    "Kumulative.PCR.testami": 133489,
+    "AgPosit": 95,
+    "Kumulativne - AgPosit": 37562
+  },
+  {
+    "Datum": "14.12.2020",
+    "PCR.Posit": 2034,
+    "Kumulative.PCR.testami": 135523,
+    "AgPosit": 3423,
+    "Kumulativne - AgPosit": 40985
+  },
+  {
+    "Datum": "15.12.2020",
+    "PCR.Posit": 3565,
+    "Kumulative.PCR.testami": 139088,
+    "AgPosit": 4288,
+    "Kumulativne - AgPosit": 45273
+  },
+  {
+    "Datum": "16.12.2020",
+    "PCR.Posit": 3045,
+    "Kumulative.PCR.testami": 142133,
+    "AgPosit": 3733,
+    "Kumulativne - AgPosit": 49006
+  },
+  {
+    "Datum": "17.12.2020",
+    "PCR.Posit": 3991,
+    "Kumulative.PCR.testami": 146124,
+    "AgPosit": 3932,
+    "Kumulativne - AgPosit": 52938
+  },
+  {
+    "Datum": "18.12.2020",
+    "PCR.Posit": 3151,
+    "Kumulative.PCR.testami": 149275,
+    "AgPosit": 3654,
+    "Kumulativne - AgPosit": 56592
+  },
+  {
+    "Datum": "19.12.2020",
+    "PCR.Posit": 2061,
+    "Kumulative.PCR.testami": 151336,
+    "AgPosit": 1034,
+    "Kumulativne - AgPosit": 57626
+  },
+  {
+    "Datum": "20.12.2020",
+    "PCR.Posit": 1219,
+    "Kumulative.PCR.testami": 152555,
+    "AgPosit": 486,
+    "Kumulativne - AgPosit": 58112
+  },
+  {
+    "Datum": "21.12.2020",
+    "PCR.Posit": 2663,
+    "Kumulative.PCR.testami": 155218,
+    "AgPosit": 7305,
+    "Kumulativne - AgPosit": 65417
+  },
+  {
+    "Datum": "22.12.2020",
+    "PCR.Posit": 3687,
+    "Kumulative.PCR.testami": 158905,
+    "AgPosit": 5769,
+    "Kumulativne - AgPosit": 71186
+  },
+  {
+    "Datum": "23.12.2020",
+    "PCR.Posit": 2657,
+    "Kumulative.PCR.testami": 161562,
+    "AgPosit": 4946,
+    "Kumulativne - AgPosit": 76132
+  },
+  {
+    "Datum": "24.12.2020",
+    "PCR.Posit": 4046,
+    "Kumulative.PCR.testami": 165608,
+    "AgPosit": 1036,
+    "Kumulativne - AgPosit": 77168
+  },
+  {
+    "Datum": "25.12.2020",
+    "PCR.Posit": 1041,
+    "Kumulative.PCR.testami": 166649,
+    "AgPosit": 145,
+    "Kumulativne - AgPosit": 77313
+  },
+  {
+    "Datum": "26.12.2020",
+    "PCR.Posit": 874,
+    "Kumulative.PCR.testami": 167523,
+    "AgPosit": 208,
+    "Kumulativne - AgPosit": 77521
+  },
+  {
+    "Datum": "27.12.2020",
+    "PCR.Posit": 569,
+    "Kumulative.PCR.testami": 168092,
+    "AgPosit": 290,
+    "Kumulativne - AgPosit": 77811
+  },
+  {
+    "Datum": "28.12.2020",
+    "PCR.Posit": 2095,
+    "Kumulative.PCR.testami": 170187,
+    "AgPosit": 6877,
+    "Kumulativne - AgPosit": 84688
+  },
+  {
+    "Datum": "29.12.2020",
+    "PCR.Posit": 3041,
+    "Kumulative.PCR.testami": 173228,
+    "AgPosit": 6968,
+    "Kumulativne - AgPosit": 91656
+  },
+  {
+    "Datum": "30.12.2020",
+    "PCR.Posit": 6315,
+    "Kumulative.PCR.testami": 179543,
+    "AgPosit": 5667,
+    "Kumulativne - AgPosit": 97323
+  },
+  {
+    "Datum": "31.12.2020",
+    "PCR.Posit": 4965,
+    "Kumulative.PCR.testami": 184508,
+    "AgPosit": 5657,
+    "Kumulativne - AgPosit": 102980
+  },
+  {
+    "Datum": "1.1.2021",
+    "PCR.Posit": 1736,
+    "Kumulative.PCR.testami": 186244,
+    "AgPosit": 612,
+    "Kumulativne - AgPosit": 103592
+  },
+  {
+    "Datum": "2.1.2021",
+    "PCR.Posit": 1219,
+    "Kumulative.PCR.testami": 187463,
+    "AgPosit": 517,
+    "Kumulativne - AgPosit": 104109
+  },
+  {
+    "Datum": "3.1.2021",
+    "PCR.Posit": 636,
+    "Kumulative.PCR.testami": 188099,
+    "AgPosit": 263,
+    "Kumulativne - AgPosit": 104372
+  },
+  {
+    "Datum": "4.1.2021",
+    "PCR.Posit": 2989,
+    "Kumulative.PCR.testami": 191088,
+    "AgPosit": 7598,
+    "Kumulativne - AgPosit": 111970
+  },
+  {
+    "Datum": "5.1.2021",
+    "PCR.Posit": 4959,
+    "Kumulative.PCR.testami": 196047,
+    "AgPosit": 6358,
+    "Kumulativne - AgPosit": 118328
+  },
+  {
+    "Datum": "6.1.2021",
+    "PCR.Posit": 2137,
+    "Kumulative.PCR.testami": 198184,
+    "AgPosit": 1050,
+    "Kumulativne - AgPosit": 119378
+  },
+  {
+    "Datum": "7.1.2021",
+    "PCR.Posit": 2980,
+    "Kumulative.PCR.testami": 201164,
+    "AgPosit": 5532,
+    "Kumulativne - AgPosit": 124910
+  },
+  {
+    "Datum": "8.1.2021",
+    "PCR.Posit": 4072,
+    "Kumulative.PCR.testami": 205236,
+    "AgPosit": 4058,
+    "Kumulativne - AgPosit": 128968
+  },
+  {
+    "Datum": "9.1.2021",
+    "PCR.Posit": 2973,
+    "Kumulative.PCR.testami": 208209,
+    "AgPosit": 1928,
+    "Kumulativne - AgPosit": 130896
+  },
+  {
+    "Datum": "10.1.2021",
+    "PCR.Posit": 860,
+    "Kumulative.PCR.testami": 209069,
+    "AgPosit": 926,
+    "Kumulativne - AgPosit": 131822
+  },
+  {
+    "Datum": "11.1.2021",
+    "PCR.Posit": 2410,
+    "Kumulative.PCR.testami": 211479,
+    "AgPosit": 3452,
+    "Kumulativne - AgPosit": 135274
+  },
+  {
+    "Datum": "12.1.2021",
+    "PCR.Posit": 3576,
+    "Kumulative.PCR.testami": 215055,
+    "AgPosit": 3146,
+    "Kumulativne - AgPosit": 138420
+  },
+  {
+    "Datum": "13.1.2021",
+    "PCR.Posit": 2923,
+    "Kumulative.PCR.testami": 217978,
+    "AgPosit": 2656,
+    "Kumulativne - AgPosit": 141076
+  },
+  {
+    "Datum": "14.1.2021",
+    "PCR.Posit": 2729,
+    "Kumulative.PCR.testami": 220707,
+    "AgPosit": 2299,
+    "Kumulativne - AgPosit": 143375
+  },
+  {
+    "Datum": "15.1.2021",
+    "PCR.Posit": 2045,
+    "Kumulative.PCR.testami": 222752,
+    "AgPosit": 2186,
+    "Kumulativne - AgPosit": 145561
+  },
+  {
+    "Datum": "16.1.2021",
+    "PCR.Posit": 573,
+    "Kumulative.PCR.testami": 223325,
+    "AgPosit": 1135,
+    "Kumulativne - AgPosit": 146696
+  },
+  {
+    "Datum": "17.1.2021",
+    "PCR.Posit": 1060,
+    "Kumulative.PCR.testami": 224385,
+    "AgPosit": 1628,
+    "Kumulativne - AgPosit": 148324
+  },
+  {
+    "Datum": "18.1.2021",
+    "PCR.Posit": 1909,
+    "Kumulative.PCR.testami": 226294,
+    "AgPosit": 3300,
+    "Kumulativne - AgPosit": 151624
+  },
+  {
+    "Datum": "19.1.2021",
+    "PCR.Posit": 2484,
+    "Kumulative.PCR.testami": 228778,
+    "AgPosit": 2812,
+    "Kumulativne - AgPosit": 154436
+  },
+  {
+    "Datum": "20.1.2021",
+    "PCR.Posit": 2464,
+    "Kumulative.PCR.testami": 231242,
+    "AgPosit": 2347,
+    "Kumulativne - AgPosit": 156783
+  },
+  {
+    "Datum": "21.1.2021",
+    "PCR.Posit": 1785,
+    "Kumulative.PCR.testami": 233027,
+    "AgPosit": 3100,
+    "Kumulativne - AgPosit": 159883
+  },
+  {
+    "Datum": "22.1.2021",
+    "PCR.Posit": 1544,
+    "Kumulative.PCR.testami": 234571,
+    "AgPosit": 2790,
+    "Kumulativne - AgPosit": 162673
+  },
+  {
+    "Datum": "23.1.2021",
+    "PCR.Posit": 1905,
+    "Kumulative.PCR.testami": 236476,
+    "AgPosit": 6417,
+    "Kumulativne - AgPosit": 169090
+  },
+  {
+    "Datum": "24.1.2021",
+    "PCR.Posit": 551,
+    "Kumulative.PCR.testami": 237027,
+    "AgPosit": 3945,
+    "Kumulativne - AgPosit": 173035
+  },
+  {
+    "Datum": "25.1.2021",
+    "PCR.Posit": 1590,
+    "Kumulative.PCR.testami": 238617,
+    "AgPosit": 2707,
+    "Kumulativne - AgPosit": 175742
+  },
+  {
+    "Datum": "26.1.2021",
+    "PCR.Posit": 2775,
+    "Kumulative.PCR.testami": 241392,
+    "AgPosit": 2642,
+    "Kumulativne - AgPosit": 178384
+  },
+  {
+    "Datum": "27.1.2021",
+    "PCR.Posit": 2035,
+    "Kumulative.PCR.testami": 243427,
+    "AgPosit": 1759,
+    "Kumulativne - AgPosit": 180143
+  },
+  {
+    "Datum": "28.1.2021",
+    "PCR.Posit": 2581,
+    "Kumulative.PCR.testami": 246008,
+    "AgPosit": 2084,
+    "Kumulativne - AgPosit": 182227
+  },
+  {
+    "Datum": "29.1.2021",
+    "PCR.Posit": 2182,
+    "Kumulative.PCR.testami": 248190,
+    "AgPosit": 2665,
+    "Kumulativne - AgPosit": 184892
+  },
+  {
+    "Datum": "30.1.2021",
+    "PCR.Posit": 1723,
+    "Kumulative.PCR.testami": 249913,
+    "AgPosit": 4472,
+    "Kumulativne - AgPosit": 189364
+  },
+  {
+    "Datum": "31.1.2021",
+    "PCR.Posit": 444,
+    "Kumulative.PCR.testami": 250357,
+    "AgPosit": 2889,
+    "Kumulativne - AgPosit": 192253
+  },
+  {
+    "Datum": "1.2.2021",
+    "PCR.Posit": 1737,
+    "Kumulative.PCR.testami": 252094,
+    "AgPosit": 3456,
+    "Kumulativne - AgPosit": 195709
+  },
+  {
+    "Datum": "2.2.2021",
+    "PCR.Posit": 2732,
+    "Kumulative.PCR.testami": 254826,
+    "AgPosit": 2998,
+    "Kumulativne - AgPosit": 198707
+  },
+  {
+    "Datum": "3.2.2021",
+    "PCR.Posit": 2077,
+    "Kumulative.PCR.testami": 256903,
+    "AgPosit": 3359,
+    "Kumulativne - AgPosit": 202066
+  },
+  {
+    "Datum": "4.2.2021",
+    "PCR.Posit": 2630,
+    "Kumulative.PCR.testami": 259533,
+    "AgPosit": 2982,
+    "Kumulativne - AgPosit": 205048
+  },
+  {
+    "Datum": "5.2.2021",
+    "PCR.Posit": 2241,
+    "Kumulative.PCR.testami": 261774,
+    "AgPosit": 3181,
+    "Kumulativne - AgPosit": 208229
+  },
+  {
+    "Datum": "6.2.2021",
+    "PCR.Posit": 1552,
+    "Kumulative.PCR.testami": 263326,
+    "AgPosit": 5465,
+    "Kumulativne - AgPosit": 213694
+  },
+  {
+    "Datum": "7.2.2021",
+    "PCR.Posit": 757,
+    "Kumulative.PCR.testami": 264083,
+    "AgPosit": 3290,
+    "Kumulativne - AgPosit": 216984
+  },
+  {
+    "Datum": "8.2.2021",
+    "PCR.Posit": 1724,
+    "Kumulative.PCR.testami": 265807,
+    "AgPosit": 3661,
+    "Kumulativne - AgPosit": 220645
+  },
+  {
+    "Datum": "9.2.2021",
+    "PCR.Posit": 3179,
+    "Kumulative.PCR.testami": 268986,
+    "AgPosit": 3065,
+    "Kumulativne - AgPosit": 223710
+  },
+  {
+    "Datum": "10.2.2021",
+    "PCR.Posit": 2487,
+    "Kumulative.PCR.testami": 271473,
+    "AgPosit": 2964,
+    "Kumulativne - AgPosit": 226674
+  },
+  {
+    "Datum": "11.2.2021",
+    "PCR.Posit": 2431,
+    "Kumulative.PCR.testami": 273904,
+    "AgPosit": 2487,
+    "Kumulativne - AgPosit": 229161
+  },
+  {
+    "Datum": "12.2.2021",
+    "PCR.Posit": 2330,
+    "Kumulative.PCR.testami": 276234,
+    "AgPosit": 3303,
+    "Kumulativne - AgPosit": 232464
+  },
+  {
+    "Datum": "13.2.2021",
+    "PCR.Posit": 1448,
+    "Kumulative.PCR.testami": 277682,
+    "AgPosit": 4765,
+    "Kumulativne - AgPosit": 237229
+  },
+  {
+    "Datum": "14.2.2021",
+    "PCR.Posit": 572,
+    "Kumulative.PCR.testami": 278254,
+    "AgPosit": 2885,
+    "Kumulativne - AgPosit": 240114
+  },
+  {
+    "Datum": "15.2.2021",
+    "PCR.Posit": 1442,
+    "Kumulative.PCR.testami": 279696,
+    "AgPosit": 3241,
+    "Kumulativne - AgPosit": 243355
+  },
+  {
+    "Datum": "16.2.2021",
+    "PCR.Posit": 3168,
+    "Kumulative.PCR.testami": 282864,
+    "AgPosit": 2750,
+    "Kumulativne - AgPosit": 246105
+  },
+  {
+    "Datum": "17.2.2021",
+    "PCR.Posit": 2555,
+    "Kumulative.PCR.testami": 285419,
+    "AgPosit": 2794,
+    "Kumulativne - AgPosit": 248899
+  },
+  {
+    "Datum": "18.2.2021",
+    "PCR.Posit": 2333,
+    "Kumulative.PCR.testami": 287752,
+    "AgPosit": 2823,
+    "Kumulativne - AgPosit": 251722
+  },
+  {
+    "Datum": "19.2.2021",
+    "PCR.Posit": 2705,
+    "Kumulative.PCR.testami": 290457,
+    "AgPosit": 3543,
+    "Kumulativne - AgPosit": 255265
+  },
+  {
+    "Datum": "20.2.2021",
+    "PCR.Posit": 1686,
+    "Kumulative.PCR.testami": 292143,
+    "AgPosit": 5237,
+    "Kumulativne - AgPosit": 260502
+  },
+  {
+    "Datum": "21.2.2021",
+    "PCR.Posit": 649,
+    "Kumulative.PCR.testami": 292792,
+    "AgPosit": 2805,
+    "Kumulativne - AgPosit": 263307
+  },
+  {
+    "Datum": "22.2.2021",
+    "PCR.Posit": 1998,
+    "Kumulative.PCR.testami": 294790,
+    "AgPosit": 3452,
+    "Kumulativne - AgPosit": 266759
+  },
+  {
+    "Datum": "23.2.2021",
+    "PCR.Posit": 3547,
+    "Kumulative.PCR.testami": 298337,
+    "AgPosit": 2889,
+    "Kumulativne - AgPosit": 269648
+  },
+  {
+    "Datum": "24.2.2021",
+    "PCR.Posit": 2438,
+    "Kumulative.PCR.testami": 300775,
+    "AgPosit": 3025,
+    "Kumulativne - AgPosit": 272673
+  },
+  {
+    "Datum": "25.2.2021",
+    "PCR.Posit": 2645,
+    "Kumulative.PCR.testami": 303420,
+    "AgPosit": 2602,
+    "Kumulativne - AgPosit": 275275
+  },
+  {
+    "Datum": "26.2.2021",
+    "PCR.Posit": 2848,
+    "Kumulative.PCR.testami": 306268,
+    "AgPosit": 3339,
+    "Kumulativne - AgPosit": 278614
+  },
+  {
+    "Datum": "27.2.2021",
+    "PCR.Posit": 1815,
+    "Kumulative.PCR.testami": 308083,
+    "AgPosit": 5076,
+    "Kumulativne - AgPosit": 283690
+  },
+  {
+    "Datum": "28.2.2021",
+    "PCR.Posit": 842,
+    "Kumulative.PCR.testami": 308925,
+    "AgPosit": 2590,
+    "Kumulativne - AgPosit": 286280
+  },
+  {
+    "Datum": "1.3.2021",
+    "PCR.Posit": 2077,
+    "Kumulative.PCR.testami": 311002,
+    "AgPosit": 3124,
+    "Kumulativne - AgPosit": 289404
+  },
+  {
+    "Datum": "2.3.2021",
+    "PCR.Posit": 3357,
+    "Kumulative.PCR.testami": 314359,
+    "AgPosit": 2744,
+    "Kumulativne - AgPosit": 292148
+  },
+  {
+    "Datum": "3.3.2021",
+    "PCR.Posit": 2800,
+    "Kumulative.PCR.testami": 317159,
+    "AgPosit": 2433,
+    "Kumulativne - AgPosit": 294581
+  },
+  {
+    "Datum": "4.3.2021",
+    "PCR.Posit": 2423,
+    "Kumulative.PCR.testami": 319582,
+    "AgPosit": 2319,
+    "Kumulativne - AgPosit": 296900
+  },
+  {
+    "Datum": "5.3.2021",
+    "PCR.Posit": 2522,
+    "Kumulative.PCR.testami": 322104,
+    "AgPosit": 2808,
+    "Kumulativne - AgPosit": 299708
+  },
+  {
+    "Datum": "6.3.2021",
+    "PCR.Posit": 1286,
+    "Kumulative.PCR.testami": 323390,
+    "AgPosit": 3798,
+    "Kumulativne - AgPosit": 303506
+  },
+  {
+    "Datum": "7.3.2021",
+    "PCR.Posit": 396,
+    "Kumulative.PCR.testami": 323786,
+    "AgPosit": 2250,
+    "Kumulativne - AgPosit": 305756
+  },
+  {
+    "Datum": "8.3.2021",
+    "PCR.Posit": 2207,
+    "Kumulative.PCR.testami": 325993,
+    "AgPosit": 2530,
+    "Kumulativne - AgPosit": 308286
+  },
+  {
+    "Datum": "9.3.2021",
+    "PCR.Posit": 3600,
+    "Kumulative.PCR.testami": 329593,
+    "AgPosit": 2000,
+    "Kumulativne - AgPosit": 310286
+  },
+  {
+    "Datum": "10.3.2021",
+    "PCR.Posit": 1978,
+    "Kumulative.PCR.testami": 331571,
+    "AgPosit": 1891,
+    "Kumulativne - AgPosit": 312177
+  },
+  {
+    "Datum": "11.3.2021",
+    "PCR.Posit": 2301,
+    "Kumulative.PCR.testami": 333872,
+    "AgPosit": 1763,
+    "Kumulativne - AgPosit": 313940
+  },
+  {
+    "Datum": "12.3.2021",
+    "PCR.Posit": 2363,
+    "Kumulative.PCR.testami": 336235,
+    "AgPosit": 2137,
+    "Kumulativne - AgPosit": 316077
+  },
+  {
+    "Datum": "13.3.2021",
+    "PCR.Posit": 1268,
+    "Kumulative.PCR.testami": 337503,
+    "AgPosit": 2890,
+    "Kumulativne - AgPosit": 318967
+  },
+  {
+    "Datum": "14.3.2021",
+    "PCR.Posit": 457,
+    "Kumulative.PCR.testami": 337960,
+    "AgPosit": 1829,
+    "Kumulativne - AgPosit": 320796
+  }
+]

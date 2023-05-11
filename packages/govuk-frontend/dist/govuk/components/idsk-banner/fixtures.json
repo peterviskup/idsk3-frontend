@@ -1,0 +1,15 @@
+{
+    "component": "idsk-banner",
+    "fixtures": [
+        {
+            "name": "basic",
+            "options": {
+                "classes": "app-pane-grey",
+                "pageName": "Súčasť životnej situácie",
+                "headline": "Narodenie dieťaťa: krok za krokom"
+            },
+            "hidden": false,
+            "html": "<div data-module=\"idsk-banner\">\n    <div class=\"idsk-banner\">\n        <div class=\"govuk-container-width\">\n            <div class=\"idsk-banner__content app-pane-grey\">\n                <h2 class=\"govuk-heading-s\">Súčasť životnej situácie</h2>\n                <h3 class=\"govuk-heading-m\">\n                    <a class=\"govuk-link\" href=\"#\" title=\"Narodenie dieťaťa: krok za krokom\">Narodenie dieťaťa: krok za krokom</a>\n                </h3>\n            </div>\n        </div>\n    </div>\n</div>"
+        }
+    ]
+}

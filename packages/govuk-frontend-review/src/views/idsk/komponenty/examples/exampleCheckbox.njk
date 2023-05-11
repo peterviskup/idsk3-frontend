@@ -1,0 +1,30 @@
+{% from "checkboxes/macro.njk" import govukCheckboxes %}
+
+{{ govukCheckboxes({
+  "idPrefix": "nationality-1",
+  "name": "nationality",
+  "fieldset": {
+    "legend": {
+      "text": "Aké druhy odpadu pravidelne prepravujete?",
+      "classes": "govuk-fieldset__legend--l",
+      "isPageHeading": true
+    }
+  },
+  "hint": {
+    "text": "Aké druhy odpadu pravidelne prepravujete? Označte možnosti, ktoré sa vás týkajú"
+  },
+  "items": [
+    {
+      "value": "odpad1",
+      "text": "Odpad živočíšneho charakteru"
+    },
+    {
+      "value": "odpad2",
+      "text": "Odpad z baní a lomov"
+    },
+    {
+      "value": "odpad3",
+      "text": "Odpad z fariem a poľnohospodárstva"
+    }
+  ]
+}) }}

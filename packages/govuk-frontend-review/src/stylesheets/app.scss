@@ -1,4 +1,4 @@
-$govuk-show-breakpoints: true;
+$govuk-show-breakpoints: false;
 $govuk-new-link-styles: true;
 
 @import "govuk/all";
@@ -6,3 +6,6 @@ $govuk-new-link-styles: true;
 @import "partials/code";
 @import "partials/banner";
 @import "partials/prose";
+@import "partials/idsk-graph";
+@import "partials/idsk-cookie-banner";
+@import "partials/idsk-app";

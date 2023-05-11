@@ -1,0 +1,138 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "idsk-timeline/macro.njk" import idskTimeline %}
+{% set pageName = "Časová os - timeline" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      { text: 'ID-SK frontend', href: '/' + legacyQuery },
+      { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-width-container">
+    <h1 class="govuk-heading-xl idsk-stepper__heading govuk-!-margin-bottom-6">{{ pageName }}</h1>
+    <p class="govuk-body">
+      Časovú os použite vtedy, keď chcete používateľom zobraziť chronologicky usporiadaný obsah. Používateľ sa rýchlo
+      zorientuje vo vašom obsahu.
+    </p>
+    <p class="govuk-body">
+      Zobrazujte 10 položiek časovej osi. Ak je ich viac, či do minulosti alebo do budúcnosti, umožnite ich zobraziť
+      pomocou tlačidiel “Zobraziť staršie udalosti” a/alebo “Zobraziť budúce udalosti”.
+    </p>
+    <h2 class="govuk-heading-l">Z čoho sa skladá časová os?</h2>
+    <p class="govuk-body-l">Časová os sa skladá z:
+    </p>
+    <ol class="idsk-list idsk-list--letters">
+      <li>popisu v ľavej časti - môže obsahovať dátum, čas, mesiac,</li>
+      <li>vizuálnej časovej osi s guličkou,</li>
+      <li>popisu v pravej časti - link alebo popis s udalosťou alebo časťou procesu, ktorý reprezentuje,</li>
+      <li>vertikálneho oddeľovača s popisom - voliteľná časť - zoskupuje udalosti nachádzajúce sa pod ním,</li>
+      <li>nadpisu - voliteľná časť,</li>
+      <li>tlačidiel “Zobraziť staršie udalosti” a/alebo “Zobraziť budúce udalosti”.</li>
+    </ol>
+    <h2 class="govuk-heading-l">Ako použiť časovú os?</h2>
+    <p class="govuk-body">
+      Komponent časová os môžete použiť pre zobrazenie jedinečného obsahu, ktorý je možné chronologicky usporiadať do
+      časového radu v jednej časovej osi (napr. zobrazenie podujatí, workshopov, tlačových konferencií, pracovných
+      skupín a pod.). V prípade podujatí zobrazujte používateľom podujatia k aktuálnemu dňu a novšie. Staršie podujatia
+      sú pre používateľa z hľadiska participácie na nich irelevantné, môže si ich však zobraziť.
+    </p>
+    <p class="govuk-body">
+      Môžete ho taktiež použiť pri obsahu, ktorý vzájomne súvisí a je možné ho usporiadať do časového radu. Dobrý
+      príkladom sú procesy. Niekde začínajú, majú trvanie a niekde končia. Napríklad legislatívny proces.
+    </p>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <div class="example example-error">
+          {% set exampleComponentHtml %}
+            {{ idskTimeline({
+              "events": [
+                {
+                  "date": "14.03.2021",
+                  "time": "8:30 - 12:00",
+                  "caption": [
+                  {
+                    "text": "Lorem ipsum dolor sit amet, consectetur adipiscingLorem ipsum dolor sit amet, consectetur adid",
+                    "href": "#"
+                  }
+                ]
+                },
+                {
+                  "date": "15.03.2021",
+                  "time": "9:30 - 12:00",
+                  "caption": [
+                  {
+                    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+                    "href": "#"
+                  }
+                ]
+                },
+                {
+                  "date": "16.03.2021",
+                  "time": "10:30 - 12:00",
+                  "dateLine": "marec 2021",
+                  "caption": [
+                  {
+                    "text": "Lorem ipsum dolor sit amet, consectetur adipiscingLorem ipsum dolor sit amet, consectetur adid",
+                    "href": "#"
+                  }
+                ]
+                },
+                {
+                  "date": "17.03.2021",
+                  "time": "8:30 - 12:00",
+                  "caption": [
+                  {
+                    "text": "Lorem ipsum dolor sit amet, consectetur adipiscingelit, sed do eiusmod tempor incididunt labor et labore. Lorem ipsum dolor sit amet, consectetur adipiscing",
+                    "href": "#"
+                  }
+                ]
+                },
+                {
+                  "date": "18.03.2021",
+                  "time": "8:30 - 12:00",
+                  "dateLine": "máj 2021",
+                  "title": "Vybavenie rodného listu dieťaťa",
+                  "caption": [
+                  {
+                    "text": "Lorem ipsum dolor sit amet, consectetur adipiscingelit, sed do eiusmod tempor incididunt ut labore et labore. Lorem ipsum dolor sit",
+                    "href": "#"
+                  }
+                ]
+                },
+                {
+                  "date": "19.03.2021",
+                  "time": "8:30 - 12:00",
+                  "caption": [
+                  {
+                    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+                    "href": "#"
+                  }
+                ]
+                }
+              ]
+            }) }}
+          {% endset %}
+          {{ exampleComponentHtml | safe }}
+        </div>
+      </div>
+      <pre class="app-code">
+              <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                {{- exampleComponentHtml | highlight("html") | safe -}}
+              </code>
+            </pre>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <br>
+        <h2 class="govuk-heading-s">
+          <a class="govuk-link" href="/components/idsk-timeline" title="Rozšírený príklad podstránky timeline">Rozšírený
+            príklad podstránky timeline</a>
+        </h2>
+      </div>
+    </div>
+  </div>
+{% endblock %}

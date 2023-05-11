@@ -1,0 +1,17 @@
+@include govuk-exports("idsk/component/banner") {
+  .idsk-banner .app-pane-grey {
+    border-bottom: 1px solid govuk-colour("dark-blue");
+    background-color: govuk-colour("light-grey");
+  }
+
+  .idsk-banner__content {
+    padding-left: govuk-spacing(3);
+  }
+
+  .idsk-banner .govuk-heading-s {
+    margin-bottom: 0;
+    padding-top: govuk-spacing(3);
+  }
+}
+
+/*# sourceMappingURL=_index.scss.map */

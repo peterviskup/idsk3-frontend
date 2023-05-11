@@ -1,0 +1,96 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "idsk-related-content/macro.njk" import idskRelatedContent %}
+{% set pageName = "Súvisiaci obsah" %}
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      { text: 'ID-SK frontend', href: '/' + legacyQuery },
+      { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-width-container">
+    <span class="govuk-caption-xl">Webové komponenty</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">
+      Súvisiaci obsah slúži na to, aby ste používateľovi zobrazili odkazy na podobné, súvisiace témy.
+    </p>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-s">Obsah:</h2>
+        <ul class="govuk-list">
+          <li><a class="govuk-link" href="#vzor-suvisiaceho-obsahu-1" title="Vzor súvisiaceho obsahu">Vzor súvisiaceho obsahu</a></li>
+        </ul>
+        <p class="govuk-body-m">
+          Pri článkoch ho použite na konci, pod článkom. Môžu sa tam nachádzať odkazy na články, ktoré tému rozvíjajú, ďalej vysvetľujú alebo sú príbuzného charakteru.
+        </p>
+        <p class="govuk-body-m">
+          Ak to rozloženie obsahu dovoľuje, môžete ho použiť na pravej strane obrazovky v rozložení ⅔ obsah a ⅓ súvisiaci obsah. Nepoužívajte viac ako 5 odkazov v tomto komponente.
+        </p>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h3 class="govuk-heading-m" id="vzor-suvisiaceho-obsahu-1">Vzor súvisiaceho obsahu</h3>
+        <div class="example example-error">
+          {% set exampleComponentHtml %}
+            {{ idskRelatedContent({
+              heading: "Súvisiace témy (⅔)",
+              items: [
+                {
+                  title: "Súvisiaca téma č. 1",
+                  link: "#"
+                },
+                {
+                  title: "Súvisiaca téma č. 2",
+                  link: "#"
+                },
+                {
+                  title: "Súvisiaca téma č. 3",
+                  link: "#"
+                }
+              ]
+            }) }}
+          {% endset %}
+          {{exampleComponentHtml | safe}}
+        </div>
+        <pre class="app-code">
+          <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+            {{- exampleComponentHtml | highlight("html") | safe -}}
+          </code>
+        </pre>
+
+        <div class="example example-error">
+          {% set exampleComponentHtml %}
+            {{ idskRelatedContent({
+              heading: "Súvisiace témy (⅓)",
+              customWidthClass : "one-third",
+              items: [
+                {
+                  title: "Súvisiaca téma č. 1",
+                  link: "#"
+                },
+                {
+                  title: "Súvisiaca téma č. 2",
+                  link: "#"
+                },
+                {
+                  title: "Súvisiaca téma č. 3",
+                  link: "#"
+                }
+              ]
+            }) }}
+          {% endset %}
+          {{exampleComponentHtml | safe}}
+        </div>
+        <pre class="app-code">
+          <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+            {{- exampleComponentHtml | highlight("html") | safe -}}
+          </code>
+        </pre>
+      </div>
+    </div>
+  </div>
+{% endblock %}

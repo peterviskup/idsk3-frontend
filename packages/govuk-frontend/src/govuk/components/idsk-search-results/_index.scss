@@ -1,0 +1,900 @@
+// stylelint-disable order/properties-order
+// stylelint-disable declaration-block-no-duplicate-properties
+// stylelint-disable declaration-property-value-disallowed-list
+// stylelint-disable no-duplicate-selectors
+// stylelint-disable selector-max-id
+// stylelint-disable max-nesting-depth
+
+@include govuk-exports("idsk/component/search-results") {
+  .idsk-search-results {
+    @include govuk-font($size: 19);
+    margin: 0 -15px;
+
+    @include mq($from: desktop) {
+      margin: 0;
+
+      .govuk-grid-column-one-quarter {
+        width: 32%;
+      }
+
+      .govuk-grid-column-three-quarters {
+        width: 68%;
+      }
+    }
+
+    .govuk-heading-xl {
+      margin-bottom: govuk-spacing(6);
+    }
+  }
+
+  .idsk-search-results .govuk-select {
+    max-width: 150px;
+    width: -webkit-fill-available;
+    background-color: govuk-colour("white");
+    width: -moz-available;
+
+    @include mq(377px) {
+      max-width: 190px;
+    }
+
+    @include mq($and: "(orientation: landscape)") {
+      max-width: 100%;
+    }
+  }
+
+  .idsk-search-results__filter.govuk-grid-column-one-quarter {
+    @include mq(tablet) {
+      width: 37%;
+    }
+    @include mq($from: desktop) {
+      width: 32%;
+    }
+  }
+
+  .idsk-search-results__content.govuk-grid-column-three-quarters {
+    @include mq(tablet) {
+      width: 63%;
+    }
+    @include mq($from: desktop) {
+      width: 68%;
+    }
+  }
+
+  .idsk-search-results__filter {
+    display: none;
+
+    @include mq($from: tablet) {
+      display: block;
+      padding-top: govuk-spacing(3);
+    }
+  }
+
+  .idsk-search-results__filter.idsk-search-results-filter__filter-panel {
+    display: block;
+  }
+
+  .idsk-search-results__filter .govuk-form-group {
+    margin-bottom: 0;
+  }
+
+  .idsk-search-results__content .govuk-grid-column-two-quarters {
+    @include govuk-font($size: 19);
+
+    padding: govuk-spacing(2) 0;
+    margin: 0 govuk-spacing(3);
+    width: auto;
+    border-bottom: 2px solid govuk-colour("black");
+
+    @include mq($from: tablet) {
+      padding: 0;
+      margin: 0;
+      border-bottom: none;
+      display: inline-flex;
+      float: right;
+    }
+  }
+
+  .idsk-search-results--order {
+    @include govuk-grid-column("full");
+    @include govuk-font($size: 19);
+
+    display: inline-flex;
+    padding: govuk-spacing(3);
+
+    @include mq($from: tablet) {
+      display: none;
+    }
+
+    .govuk-label {
+      padding-right: govuk-spacing(2);
+      margin-top: govuk-spacing(2);
+    }
+
+    .govuk-form-group {
+      display: inline-flex;
+      width: -webkit-fill-available;
+      margin-bottom: -15px;
+      border-bottom: 1px solid govuk-colour("black");
+      padding-bottom: govuk-spacing(3);
+    }
+  }
+
+  .idsk-search-results__content .govuk-grid-column-two-quarters span {
+    padding-top: 9px;
+    padding-right: govuk-spacing(1);
+
+    @include mq($from: tablet) {
+      padding-top: 7px;
+    }
+  }
+
+  .idsk-search-results__per-page {
+    display: inline-flex;
+    float: right;
+  }
+
+  .idsk-search-results__filter-panel--mobile {
+    width: 100%;
+
+    @include mq($from: tablet) {
+      width: 45%;
+    }
+  }
+
+  .idsk-search-results__filters__button {
+    color: govuk-colour("blue");
+    @include govuk-font($size: 36, $weight: bold);
+    text-decoration: none;
+    position: relative;
+    border-width: 0;
+    color: govuk-colour("blue");
+    background: none;
+    cursor: pointer;
+    padding-left: 0;
+    padding-right: govuk-spacing(4);
+    padding-top: govuk-spacing(1);
+
+    &:focus {
+      @include govuk-focused-text;
+    }
+
+    @include mq($from: tablet) {
+      display: none;
+    }
+
+    &::after {
+      border-style: solid;
+      border-width: 3px 3px 0 0;
+      color: govuk-colour("blue");
+      content: "";
+      display: inline-block;
+      height: 8px;
+      width: 8px;
+      position: relative;
+      top: 8px;
+      right: -13px;
+      transform: rotate(135deg);
+      transition: all .2s ease-out;
+      vertical-align: top;
+    }
+  }
+
+  .idsk-search-results__content .govuk-grid-column-two-quarters .govuk-form-group {
+    margin-bottom: govuk-spacing(1);
+  }
+
+  .idsk-search-results__content__picked-filters {
+    @include govuk-font($size: 19, $weight: bold);
+
+    margin-left: govuk-spacing(3);
+    padding-left: 0;
+    padding-right: 0;
+
+    @include mq($from: tablet) {
+      border-top: 2px solid govuk-colour("black");
+    }
+  }
+
+  .idsk-search-results--border {
+    @include mq($from: tablet) {
+      border-bottom: 2px solid govuk-colour("black");
+    }
+  }
+
+  .idsk-search-results__picked-topic,
+  .idsk-search-results__picked-content-type,
+  .idsk-search-results__picked-date {
+    font-weight: normal;
+    border: 1px solid govuk-colour("black");
+    border-radius: 5px;
+    padding: govuk-spacing(2);
+    margin: govuk-spacing(2) govuk-spacing(2) govuk-spacing(2) 0;
+    display: inline-block;
+    cursor: pointer;
+
+    &:focus {
+      box-shadow: inset 0 0 0 2px;
+      border: solid 1px govuk-colour("black");
+      outline: 3px solid govuk-colour("yellow");
+    }
+
+    @include mq($from: tablet) {
+      margin: govuk-spacing(1);
+      padding: govuk-spacing(1);
+    }
+  }
+
+  .idsk-search-results__list .idsk-search-results__search__input {
+    margin-bottom: govuk-spacing(2);
+  }
+
+  .idsk-search-results__content__page-changer {
+    border-top: 1px solid govuk-colour("grey-1");
+    padding-top: govuk-spacing(3);
+    margin-left: govuk-spacing(3);
+    width: 95%;
+    display: inline-block;
+    position: relative;
+
+    @include mq(tablet) {
+      width: 96.5%;
+      border-top: 2px solid govuk-colour("black");
+    }
+
+    @include mq($from: desktop) {
+      width: 97.6%;
+    }
+  }
+
+  .idsk-search-results--half-width {
+    width: 50%;
+  }
+
+  .idsk-search-results__button--back,
+  .idsk-search-results__button--forward,
+  .idsk-search-results__button--forward__mobile,
+  .idsk-search-results__button--back__mobile,
+  .idsk-search-results__button--back-to-results,
+  .idsk-search-results__button--turn-filters-off {
+    @include govuk-font($size: 19);
+    position: relative;
+    z-index: 1;
+    border-width: 0;
+    color: govuk-colour("blue");
+    background: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    text-decoration: underline;
+    text-align: right;
+
+    @include govuk-link-common;
+    @include govuk-link-style-default;
+  }
+
+  .idsk-search-results__list::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  .idsk-search-results__list::-webkit-scrollbar-thumb {
+    background-color: govuk-colour("dark-grey");
+    border-radius: 4px;
+    border: 1px solid govuk-colour("dark-grey");
+    width: 8px;
+  }
+
+  .idsk-search-results__list::-webkit-scrollbar-track {
+    background: govuk-colour("white"); /* color of the tracking area */
+  }
+
+  .idsk-search-results__button--turn-filters-off {
+    text-align: left;
+    margin: govuk-spacing(3) 0;
+    padding: 0;
+    width: auto;
+
+    @include mq($from: tablet) {
+      display: none;
+    }
+  }
+
+  .idsk-search-results__subcards.govuk-grid-column-one-half {
+    @include mq(tablet) {
+      width: 100%;
+    }
+
+    @include mq($from: desktop) {
+      width: 50%;
+    }
+  }
+
+  .idsk-search-results__subcards .idsk-heading-basic-variant {
+    @include govuk-font($size: 16);
+
+    padding-bottom: govuk-spacing(3);
+    padding-top: 0;
+
+    &::before {
+      content: "";
+      border-bottom: 1px solid govuk-colour("black");
+      position: absolute;
+      width: 20px;
+      margin-left: -15px;
+      margin-top: 8px;
+    }
+
+    @include mq($from: tablet) {
+      font-weight: bold;
+
+      &::before {
+        content: none;
+      }
+    }
+  }
+
+  .idsk-search-results__subcards .idsk-card-title {
+    padding-left: govuk-spacing(2);
+
+    @include mq($from: tablet) {
+      padding-left: 0;
+    }
+  }
+
+  .idsk-search-results__subcards .idsk-body-basic-variant {
+    @include govuk-font($size: 16);
+
+    display: none;
+
+    @include mq($from: tablet) {
+      display: block;
+    }
+  }
+
+  .idsk-search-results__content__picked-filters.govuk-grid-column-full {
+    width: 96%;
+    padding-bottom: govuk-spacing(8);
+
+    @include mq(tablet) {
+      width: 96.5%;
+      padding-bottom: 0;
+    }
+
+    @include mq($from: desktop) {
+      width: 97.6%;
+    }
+  }
+
+  .idsk-search-results__show-results__button {
+    padding-top: govuk-spacing(3);
+    margin-top: govuk-spacing(3);
+    box-shadow: 0 -4px 3px -3px govuk-colour("grey-1");
+    position: fixed;
+    bottom: 0;
+    z-index: 20;
+    background: govuk-colour("white");
+    width: calc(100% + 4px);
+    margin-left: -3px;
+    padding-left: govuk-spacing(3);
+    padding-right: govuk-spacing(4);
+
+    @include mq($from: tablet) {
+      display: none;
+    }
+  }
+
+  .idsk-search-results__button--back-to-results {
+    padding-top: govuk-spacing(1);
+    float: right;
+  }
+
+  .idsk-search-results__button--back {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 0;
+    margin-left: -15px;
+  }
+
+  .idsk-search-results__button--forward {
+    right: 0;
+    padding-right: 0;
+    position: absolute;
+    margin-bottom: 0;
+  }
+
+  .idsk-search-results__button__svg--previous {
+    padding-right: govuk-spacing(2);
+  }
+
+  .idsk-search-results__button__svg--next {
+    padding-left: govuk-spacing(2);
+  }
+
+  .idsk-search-results__page-number,
+  .idsk-search-results__page-number--mobile {
+    text-align: center;
+    overflow: auto;
+    padding-top: govuk-spacing(3);
+  }
+
+  .idsk-intro-block__search span {
+    display: block;
+  }
+
+  .idsk-search-results__filter .idsk-intro-block__search {
+    height: 40px;
+    padding-bottom: govuk-spacing(2);
+    padding-top: govuk-spacing(1);
+    display: none;
+
+    @include mq($from: tablet) {
+      display: inline-flex;
+      width: -webkit-fill-available;
+      width: -moz-available;
+    }
+
+    .idsk-intro-block__search__button {
+      height: 40px;
+      width: 40px;
+      z-index: 1;
+    }
+
+    .idsk-intro-block__input {
+      height: 40px;
+
+      @include mq($and: "(orientation: landscape)") {
+        @include govuk-font($size: 16);
+      }
+
+      @include mq($from: tablet) {
+        @include govuk-font($size: 19);
+      }
+    }
+
+    .idsk-intro-block__input::placeholder {
+      color: govuk-colour("black");
+    }
+  }
+
+  .idsk-search-results__page-number--mobile {
+    padding-top: govuk-spacing(3);
+    padding-bottom: govuk-spacing(2);
+
+    & span {
+      padding: 0 govuk-spacing(4);
+    }
+
+    @include mq($from: tablet) {
+      display: none;
+    }
+  }
+
+  .idsk-search-results--grey {
+    @include mq($from: tablet) {
+      background-color: govuk-colour("grey-4");
+    }
+  }
+
+  .idsk-search-results__content__picked-filters__topics,
+  .idsk-search-results__content__picked-filters__content-type,
+  .idsk-search-results__content__picked-filters__date {
+    min-height: 40px;
+    margin-top: govuk-spacing(6);
+
+    @include mq($from: tablet) {
+      margin-top: -.5px; // cause of border space
+    }
+  }
+
+  .idsk-search-results__before-date,
+  .idsk-search-results__after-date {
+    @include mq($from: tablet) {
+      padding-left: govuk-spacing(1);
+    }
+  }
+
+  .idsk-search-results__after-date {
+    padding-right: govuk-spacing(1);
+
+    @include mq($from: tablet) {
+      padding-right: 0;
+    }
+  }
+
+  .idsk-search-results__content__picked-filters__date span:first-child {
+    display: block;
+
+    @include mq($from: tablet) {
+      display: contents;
+    }
+  }
+
+  .idsk-search-results__content__picked-filters__content-type .idsk-search-results__text,
+  .idsk-search-results__content__picked-filters__topics .idsk-search-results__text,
+  .idsk-search-results__content__picked-filters__date .idsk-search-results__before-date,
+  .idsk-search-results__content__picked-filters__date .idsk-search-results__after-date {
+    font-weight: bold;
+  }
+
+  .idsk-search-results__text {
+    display: block;
+
+    @include mq($from: tablet) {
+      display: unset;
+      padding-left: govuk-spacing(1);
+    }
+  }
+
+  .idsk-search-results__content__picked-filters__topics span,
+  .idsk-search-results__content__picked-filters__content-type span,
+  .idsk-search-results__content__picked-filters__date span,
+  .idsk-search-results__content__picked-filters__topics button,
+  .idsk-search-results__content__picked-filters__content-type button,
+  .idsk-search-results__content__picked-filters__date button {
+    @include govuk-font($size: 19);
+
+    background: none;
+  }
+
+  .idsk-search-results--hidden {
+    visibility: hidden;
+  }
+
+  .idsk-search-results__content__number-of-results {
+    display: none;
+
+    @include mq($from: desktop) {
+      @include govuk-font($size: 24, $weight: bold);
+      display: block;
+      padding-top: govuk-spacing(1);
+    }
+  }
+
+  .idsk-search-results__link-panel--span {
+    @include govuk-font($size: 14);
+
+    font-size: 14px;
+    line-height: 25px;
+    padding-right: govuk-spacing(6);
+    color: govuk-colour("black");
+    float: right;
+    padding-top: 0;
+
+    @include mq($from: tablet) {
+      padding-right: 0;
+      padding-top: govuk-spacing(1);
+      margin-bottom: -10px;
+    }
+  }
+
+  .idsk-search-results__date__span {
+    @include govuk-font($size: 16);
+  }
+
+  .idsk-search-results__date__span__example {
+    @include govuk-font($size: 16);
+
+    white-space: nowrap;
+    color: govuk-colour("grey-1");
+  }
+
+  .idsk-search-results__filter-header-panel {
+    display: inline-flex;
+    border-bottom: 2px solid govuk-colour("black");
+    margin-left: govuk-spacing(3);
+    margin-right: govuk-spacing(3);
+    width: -webkit-fill-available;
+    padding: 0 0 govuk-spacing(3) 0;
+
+    .govuk-heading-xl {
+      margin-bottom: 0;
+      padding-left: 0;
+    }
+
+    @include mq($from: tablet) {
+      display: none;
+    }
+  }
+
+  .idsk-search-results__content.govuk-grid-column-three-quarters {
+    padding: 0;
+
+    @include mq($from: tablet) {
+      padding: 0 govuk-spacing(3);
+    }
+  }
+
+  .idsk-search-results__link-panel__title {
+    text-decoration: none;
+    color: govuk-colour("blue");
+    overflow: overlay;
+    width: fit-content;
+
+    &:focus {
+      @include govuk-focused-text;
+    }
+  }
+
+  .idsk-search-results--invisible {
+    display: none;
+  }
+
+  .idsk-search-results--invisible__mobile,
+  .idsk-header-extended.idsk-search-results--invisible__mobile {
+    display: none;
+
+    @include mq($from: tablet) {
+      display: block;
+    }
+  }
+
+  .idsk-search-results--visible__mobile {
+    display: block;
+
+    @include mq($from: tablet) {
+      display: none;
+    }
+  }
+
+  .idsk-search-results--visible__mobile--inline {
+    display: inline-flex;
+
+    @include mq($from: tablet) {
+      display: none;
+    }
+  }
+
+  .idsk-intro-block__search.idsk-search-results--visible__mobile--inline.idsk-search-results--invisible__mobile {
+    display: none;
+  }
+
+  .idsk-search-results--visible {
+    display: block;
+  }
+
+  .idsk-search-results__link-panel-button {
+    @include govuk-font($size: 24, $weight: bold);
+
+    cursor: pointer;
+    color: govuk-colour("blue");
+    height: inherit;
+
+    @include mq(tablet) {
+      display: grid;
+    }
+
+    @include mq($from: desktop) {
+      display: unset;
+    }
+  }
+
+  #datum-od {
+    margin-bottom: govuk-spacing(2);
+  }
+
+  .idsk-search-results--expand {
+    .idsk-search-results__list {
+      max-height: 300px;
+      overflow-y: auto;
+      position: relative;
+      overflow-x: hidden;
+      transition: all .2s ease-in;
+      margin-bottom: -5px;
+      padding-top: govuk-spacing(1);
+      padding-bottom: govuk-spacing(2);
+      border-bottom: 1px solid govuk-colour("mid-grey");
+
+      @include mq($from: desktop) {
+        padding-left: govuk-spacing(2);
+      }
+
+      #datum-od.govuk-input,
+      #datum-do.govuk-input {
+        width: 90%;
+        display: block;
+
+        @include mq($from: tablet) {
+          width: 98%;
+        }
+      }
+    }
+
+    .idsk-search-results__link-panel-button {
+      border-bottom: none;
+
+      &:focus {
+        .idsk-search-results__link-panel__title {
+          @include govuk-focused-text;
+        }
+      }
+    }
+
+    .idsk-search-results__link-panel-button::before {
+      top: 20px;
+      transform: rotate(-45deg);
+      transition: all .2s ease-in;
+
+      @include mq(tablet) {
+        top: 25px;
+      }
+    }
+  }
+
+  .idsk-search-results__list {
+    cursor: text;
+  }
+
+  .idsk-search-results__list .idsk-search-results__search__input {
+    width: 97%;
+    background-image: govuk-image-url("loupe.svg");
+    background-repeat: no-repeat;
+    background-position: 7px 10px;
+    background-size: 17px;
+    padding-left: govuk-spacing(6);
+
+    @include mq(tablet) {
+      width: 96%;
+    }
+
+    @include mq($from: desktop) {
+      width: 240px;
+      max-width: 96%;
+    }
+  }
+
+  .idsk-search-results--order__dropdown .govuk-select:focus {
+    margin-bottom: 3px;
+  }
+
+  .idsk-search-results__link-panel {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 60px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+
+    &-button {
+      @include govuk-font($size: 19, $weight: bold);
+
+      outline: none;
+      background-color: govuk-colour("white");
+      border: none;
+      text-align: left;
+      width: 100%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      border-bottom: 1px solid govuk-colour("mid-grey");
+
+      @include mq(tablet) {
+        padding: govuk-spacing(3) 35px govuk-spacing(3) govuk-spacing(1);
+      }
+
+      &:disabled {
+        cursor: text;
+
+        .idsk-search-results__link-panel__title {
+          color: govuk-colour("grey-2");
+          cursor: text;
+        }
+
+        &::before {
+          color: govuk-colour("grey-2");
+        }
+      }
+    }
+
+    &-button::before {
+      border-style: solid;
+      border-width: 3px 3px 0 0;
+      color: govuk-colour("black");
+      content: "";
+      display: inline-block;
+      height: .45em;
+      right: 10px;
+      position: absolute;
+      top: 23px;
+      transform: rotate(135deg);
+      transition: all .2s ease-out;
+      vertical-align: top;
+      width: .45em;
+
+      @include mq(tablet) {
+        top: 24px;
+      }
+    }
+
+    &-button:focus::before {
+      color: govuk-colour("black");
+    }
+
+    @include mq($from: tablet) {
+      height: 65px;
+    }
+  }
+
+  .idsk-search-results__link {
+    text-decoration: underline;
+
+    &-number {
+      display: inline-block;
+      text-decoration: underline;
+    }
+
+    &-number:focus {
+      text-decoration: none;
+    }
+  }
+
+  .idsk-search-results__link-panel-button:focus {
+    outline: none;
+
+    .idsk-search-results__link-panel__title {
+      @include govuk-focused-text;
+    }
+  }
+
+  .idsk-search-results__link-panel:focus {
+    outline: none;
+  }
+
+  .idsk-search-results__list {
+    background-color: govuk-colour("white");
+    padding-top: 0;
+    padding-left: govuk-spacing(1);
+    max-height: 0;
+    transition: all .2s ease-out;
+    overflow-y: hidden;
+  }
+
+  .idsk-search-results__list-item--active::before {
+    top: 5px;
+  }
+
+  .idsk-option-select-filter {
+    display: flex;
+  }
+
+  .idsk-option-select-filter .govuk-checkboxes__label::before {
+    width: 44px;
+    height: 44px;
+    top: 2px;
+
+    @include mq($from: tablet) {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .idsk-option-select-filter .govuk-checkboxes__label::after {
+    top: 15px;
+    left: 12px;
+    width: 21px;
+    box-sizing: border-box;
+    height: 11px;
+    border-width: 0 0 3px 3px;
+
+    @include mq($from: tablet) {
+      top: 11px;
+      left: 8px;
+      width: 15px;
+      box-sizing: border-box;
+      height: 9px;
+      border-width: 0 0 3px 3px;
+    }
+  }
+
+  .idsk-option-select-filter .govuk-checkboxes__label {
+    padding: govuk-spacing(3) govuk-spacing(4) govuk-spacing(1);
+    margin-bottom: govuk-spacing(3);
+
+    @include mq($from: tablet) {
+      padding: govuk-spacing(1) govuk-spacing(2) govuk-spacing(1);
+      margin-bottom: 0;
+    }
+  }
+
+  .idsk-option-select-filter .govuk-checkboxes--small .govuk-checkboxes__item {
+    margin-bottom: govuk-spacing(2);
+  }
+}

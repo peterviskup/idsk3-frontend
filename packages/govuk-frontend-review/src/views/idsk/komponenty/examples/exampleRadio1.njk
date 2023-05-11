@@ -1,0 +1,32 @@
+{% from "radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  "idPrefix": "example-2",
+  "name": "example2",
+  "fieldset": {
+    "legend": {
+      "text": "V ktorej časti Slovenska žijete?"
+    }
+  },
+  "items": [
+    {
+      "value": "zs",
+      "text": "Západné Slovensko"
+    },
+    {
+      "value": "ss",
+      "text": "Stredné Slovensko"
+    },
+    {
+      "value": "vs",
+      "text": "Východné Slovensko"
+    },
+    {
+      "divider": "alebo"
+    },
+    {
+      "value": "ms",
+      "text": "Žijem mimo Slovenska"
+    }
+  ]
+}) }}

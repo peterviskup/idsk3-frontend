@@ -1,0 +1,149 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "idsk-registration-for-event/macro.njk" import idskRegistrationForEvent %}
+{% set pageName = "Registrácia na podujatie" %}
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      { text: 'ID-SK frontend', href: '/' + legacyQuery },
+      { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-width-container">
+    <span class="govuk-caption-xl">Webové komponenty</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">
+      Registračný formulár použite na webovej stránke, keď chcete aby sa používatelia vopred registrovali na podujatie, ktoré organizujete.
+    </p>
+    <p class="govuk-body-l">
+      V registračnom formulári zbierajte iba tie najnutnejšie informácie ako napríklad meno, organizáciu, kde účastník pracuje alebo email, aby ste ho mohli spätne kontaktovať.
+    </p>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-s">Obsah:</h2>
+        <ul class="govuk-list">
+            <li>
+                <a class="govuk-link" href="#z-coho-sa-sklada-registracny-formular" title="Z čoho sa skladá registračný formulár?">Z čoho sa skladá registračný formulár?</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="#ako-pouzit-registraciu-na-podujatie" title="Ako použiť registráciu na podujatie?">Ako použiť registráciu na podujatie?</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="#stranka-s-registraciou" title="Stránka s registráciou">Stránka s registráciou</a>
+            </li>
+        </ul>
+
+        <h2 class="govuk-heading-m" id="z-coho-sa-sklada-registracny-formular">Z čoho sa skladá registračný formulár?</h2>
+        <p class="govuk-body">Skladá sa z:</p>
+        <ol class="idsk-list idsk-list--letters">
+          <li>nadpisu,</li>
+          <li>údajových polí,</li>
+          <li>súhlasu o spracovaní údajov,</li>
+          <li>tlačidla odoslať.</li>
+        </ol>
+
+        <h2 class="govuk-heading-m" id="ako-pouzit-registraciu-na-podujatie">Ako použiť registráciu na podujatie?</h2>
+        <p class="govuk-body">
+          Pri desktope tento komponent použite na ⅔ šírky obrazovky, pri mobilných zariadeniach na celú šírku obrazovky.
+        </p>
+        <p class="govuk-body">
+          Pri desktope na zvyšnú voľnú ⅓ obrazovky môžete umiestniť napríklad adresu konania udalosti alebo súvisiace témy.
+        </p>
+      </div>
+
+      <div class="govuk-grid-column-full">
+        <h3 class="govuk-heading-m" id="stranka-s-registraciou">Stránka s registráciou</h3>
+        <div class="example example-error">
+          {% set exampleComponentHtml %}
+            {{ idskRegistrationForEvent({
+            heading: "Registrácia na podujatie",
+            formItems: [
+              {
+                label: "Meno (povinné)",
+                error: "Zadajte meno.",
+                tag: "input",
+                name: "name",
+                type: "text",
+                autocomplete: true,
+                required: true
+              },
+              {
+                label: "Priezvisko (povinné)",
+                error: "Zadajte priezvisko.",
+                tag: "input",
+                name: "surname",
+                type: "text",
+                autocomplete: true,
+                required: true
+              },
+              {
+                label: "Emailová adresa (povinná)",
+                hint: "Sem zadajte emailovú adresu v tvare email@email.sk",
+                error: "Zadajte správnu emailovú adresu.",
+                tag: "input",
+                name: "email",
+                type: "email",
+                autocomplete: true,
+                required: true
+              },
+              {
+                label: "Organizácia",
+                tag: "input",
+                name: "organization",
+                type: "text",
+                autocomplete: true
+              },
+              {
+                label: "Miesto konania podujatia",
+                tag: "select",
+                name: "city",
+                options: [
+                  {
+                    value: "Bardejov",
+                    name: "Bardejov"
+                  },
+                  {
+                    value: "Kosice",
+                    name: "Košice"
+                  },
+                  {
+                    value: "Bratislava",
+                    name: "Bratislava"
+                  }
+                ]
+              },
+              {
+                label: "Súhlasím so spracovaním osobných údajov za účelom účasti na&nbsp;podujatí. (povinné)",
+                error: "Prosím, akceptujte súhlas so spracovaním osobných údajov.",
+                tag: "input",
+                name: "terms",
+                type: "checkbox",
+                required: true
+              }
+            ],
+            buttonLabel: "Registrovať na podujatie",
+            thankYouMsg: "Ďakujeme za registráciu na podujatie."
+          }) }}
+          {% endset %}
+          {{exampleComponentHtml | safe}}
+        </div>
+        <pre class="app-code">
+          <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+            {{- exampleComponentHtml | highlight("html") | safe -}}
+          </code>
+        </pre>
+      </div>
+
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m" id="priklady">Rozšírené príklady pre registráciu na podujatie</h2>
+        <ul class="govuk-list">
+          <li><a class="govuk-link" href="/components/idsk-registration-for-event" title="Rozšírené príklady registrácie na podujatie">Rozšírené príklady registrácie na podujatie</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+{% endblock %}

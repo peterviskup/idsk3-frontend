@@ -1,0 +1,586 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "idsk-header-web/macro.njk" import idskHeaderWeb %}
+{% from "idsk-footer-extended/macro.njk" import idskFooterExtended %}
+{% from "idsk-search-results/macro.njk" import idskSearchResults %}
+{% set pageName = "Vyhľadávanie" %}
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block skipLink %}
+    {{ idskSkipLink({
+        href: '#main-content',
+        text: 'Preskočiť na hlavný obsah',
+        classes: 'idsk-skip-link--sticky'
+    }) }}
+{% endblock %}
+
+{% block header %}
+  {{ idskHeaderWeb({
+    headerType: "website",
+    assetsPath: "/public/assets/images/header-web/",
+    search: true,
+    brand: {
+      gestor: true,
+      languages: [
+        {
+          text: "Slovenčina",
+          selected: true,
+          link: "#1"
+        },
+        {
+          text: "English",
+          link: "#2"
+        },
+        {
+          text: "German",
+          link: "#3"
+        }
+      ]
+    },
+    main: {
+      showLogo: true,
+      logoSrc: "logo-mirri-farebne.svg",
+      logoAlt: "ID-SK Frontend"
+    },
+    navBar: {
+      navigation: [
+        {
+          text: "Eurofondy",
+          link: "#1"
+        },
+        {
+          text: "Regionálny rozvoj",
+          link: "#2"
+        },
+        {
+          text: "Informatizácia",
+          link: "#3"
+        },
+        {
+          text: "Investície",
+          link: "#4"
+        },
+        {
+          text: "Inovácie",
+          link: "#5"
+        }
+      ]
+    }
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      {{ idskSearchResults({
+          "headline": "Kontakty",
+          "firstFilterLabel": "Len v sekcii",
+          "secondFilterLabel": "Typ kontaktu",
+          "searchResultsCard": [
+            {
+              "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+            },
+            {
+              "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...",
+              "subcards": [
+                  {
+                    "heading": "Lorem ipsum dolor sitr adipisc",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisc Lorem ipsum dolor sit amet, consectetur adipisc"
+                  },
+                  {
+                    "heading": "Lorem ipsum sectetur adipisc",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisc Lorem ipsum dolor sit amet, consectetur adipisc"
+                  },
+                  {
+                    "heading": "Lorem ipsum dor adipisc",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisc Lorem ipsum dolor sit amet, consectetur adipisc"
+                  },
+                  {
+                    "heading": "Lorem ipsum dor adipisc",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisc Lorem ipsum dolor sit amet, consectetur adipisc"
+                  }
+                ]
+            },
+            {
+              "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+            },
+            {
+              "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+            },
+            {
+              "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+            },
+            {
+              "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+            },
+            {
+              "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+            },
+            {
+              "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+            },
+            {
+              "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+            },
+            {
+              "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+            },
+            {
+              "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+            },
+            {
+              "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+            },
+            {
+              "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+            },
+            {
+              "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+            },
+            {
+              "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+            },
+            {
+              "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+            },
+            {
+              "heading": "Lorem ipsum dolor sit amet, consectetur pes",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+            },
+            {
+              "heading": "Lorem ipsum dolor sit amet, consectetur des",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+            },
+            {
+              "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+            },
+            {
+              "heading": "Lorem ipsum dolor sit amet, consectetur pes",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+            },
+            {
+              "heading": "Lorem ipsum dolor sit amet, consectetur des",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+            }
+          ],
+          "dropdownResults": [
+            {
+              "value": 5,
+              "text": 5
+            },
+            {
+              "value": 10,
+              "text": 10
+            },
+            {
+              "value": 20,
+              "text": 20
+            },
+            {
+              "value": 30,
+              "text": 30
+            },
+            {
+              "value": 50,
+              "text": 50
+            },
+            {
+              "value": 100,
+              "text": 100
+            },
+            {
+              "value": 200,
+              "text": 200
+            },
+            {
+              "value": 300,
+              "text": 300
+            },
+            {
+              "value": 400,
+              "text": 400
+            },
+            {
+              "value": 500,
+              "text": 500
+            }
+          ],
+          "dropdownItems": [
+            {
+              "value": "relevant",
+              "text": "Relevantnosti"
+            },
+            {
+              "value": "favourites",
+              "text": "Obľúbenosti"
+            },
+            {
+              "value": "zostupne",
+              "text": "Zostupne"
+            },
+            {
+              "value": "vzostupne",
+              "text": "Vzostupne"
+            }
+          ],
+          "filters": [
+            {
+              "name": "Sekcia",
+              "group": 1,
+              "id": "tema",
+              "isRadio": true,
+              "searchInputId": "idsk-search-input__topic",
+              "searchInputTitle": "Filter sekcia",
+              "radios": [
+                {
+                  "name": "Eurofondy",
+                  "value": "Eurofondy"
+                },
+                {
+                  "name": "Informatizácia",
+                  "value": "Informatizácia"
+                },
+                {
+                  "name": "Regionálny rozvoj",
+                  "value": "Regionálny rozvoj"
+                },
+                {
+                  "name": "Investície",
+                  "value": "Investície"
+                },
+                {
+                  "name": "Inovácie",
+                  "value": "Inovácie"
+                }
+              ]
+            },
+            {
+              "name": "Odbor",
+              "group": 2,
+              "id": "podtema",
+              "isRadio": true,
+              "isSubtopic": true,
+              "searchInputId": "idsk-search-input__subtopic",
+              "searchInputTitle": "Filter odbor",
+              "radios": [
+                {
+                  "name": "Výzvy pre rozvoj regiónov",
+                  "value": "Výzvy pre rozvoj regiónov"
+                },
+                {
+                  "name": "WiFi 4u",
+                  "value": "WiFi 4u"
+                },
+                {
+                  "name": "Dotácie na obecné školy",
+                  "value": "Dotácie na obecné školy"
+                },
+                {
+                  "name": "Agroturistika",
+                  "value": "Agroturistika"
+                },
+                {
+                  "name": "Podpora miestnej komunity",
+                  "value": "Podpora miestnej komunity"
+                },
+                {
+                  "name": "Výzvy pre rozvoj regiónov2",
+                  "value": "Výzvy pre rozvoj regiónov2"
+                },
+                {
+                  "name": "WiFi 4u2",
+                  "value": "WiFi 4u2"
+                },
+                {
+                  "name": "Dotácie na obecné školy2",
+                  "value": "Dotácie na obecné školy2"
+                },
+                {
+                  "name": "Agroturistika2",
+                  "value": "Agroturistika2"
+                },
+                {
+                  "name": "Dotácie na obecné školy3",
+                  "value": "Dotácie na obecné školy3"
+                },
+                {
+                  "name": "Agroturistika3",
+                  "value": "Agroturistika3"
+                }
+              ]
+            },
+            {
+              "name": "Typ Kontaktu",
+              "group": 3,
+              "id": "obsah",
+              "isCheckBox": true,
+              "filterClass": "idsk-search-results__content-type-filter",
+              "searchInputId": "idsk-search-input__content-type",
+              "searchInputTitle": "Filter typ kontaktu",
+              "checkBoxItems": [
+                {
+                  "value": "Rozvoj regiónov",
+                  "text": "Rozvoj regiónov",
+                  "id": "rozvoj1"
+                },
+                {
+                  "value": "Novinky a komunikačné vyhlásenia",
+                  "text": "Novinky a komunikačné vyhlásenia",
+                  "id": "novinky1"
+                },
+                {
+                  "value": "Transparentnosť a sloboda prístupu k informáciám",
+                  "text": "Transparentnosť a sloboda prístupu k informáciám",
+                  "id": "transparentnost1"
+                },
+                {
+                  "value": "Legislatíva",
+                  "text": "Legislatíva",
+                  "id": "legislativa1"
+                },
+                {
+                  "value": "Štatistické údaje",
+                  "text": "Štatistické údaje",
+                  "id": "statistika1"
+                },
+                {
+                  "value": "Rodová rovnosť a postavenia žien v pracovom prostredí",
+                  "text": "Rodová rovnosť a postavenia žien v pracovom prostredí",
+                  "id": "rodova1"
+                },
+                {
+                  "value": "Rozvoj regiónov",
+                  "text": "Rozvoj regiónov",
+                  "id": "rozvoj21"
+                },
+                {
+                  "value": "Novinky a komunikačné vyhlásenia",
+                  "text": "Novinky a komunikačné vyhlásenia",
+                  "id": "novinky21"
+                },
+                {
+                  "value": "Transparentnosť a sloboda prístupu k informáciám",
+                  "text": "Transparentnosť a sloboda prístupu k informáciám",
+                  "id": "transparentnost21"
+                },
+                {
+                  "value": "Legislatíva",
+                  "text": "Legislatíva",
+                  "id": "legislativa21"
+                },
+                {
+                  "value": "Štatistické údaje",
+                  "text": "Štatistické údaje",
+                  "id": "statistika21"
+                },
+                {
+                  "value": "Rodová ro2vnosť a postavenia žien v pracovom prostredí",
+                  "text": "Rodová rovnosť a postavenia žien v pracovom prostredí",
+                  "id": "rodova21"
+                }
+              ]
+            }
+          ]
+        }) }}
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+  {{ idskFooterExtended({
+    characterLength : 500,
+    showFeedback : "true",
+    upButtonEnabled : "true",
+    designAddress : "#",
+    logo: "footer-extended-logo.svg",
+    feedbackButtonAddress : "idsk.gov.sk",
+    firstColumn: {
+      title: "Navigácia v 2 stĺpcoch (2/3)",
+      leftItems: [
+        {
+          name:"Link small Regular 12/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 13/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 14/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 15/20",
+          href:"#"
+        }
+      ],
+      rightItems: [
+        {
+          name:"Link small Regular 16/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 17/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 18/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 19/20",
+          href:"#"
+        }
+      ]
+    },
+
+    secondColumn: {
+      title: "Navigácia v 1 stĺpci (1/3)",
+      items: [
+        {
+          name:"Link small Regular 20/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 21/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 22/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 23/20",
+          href:"#"
+        }
+      ]
+    },
+
+    thirdColumn: {
+      title: "Dodatočná hyperlinková navigácia (2/3)",
+      leftItems: [
+        {
+          name:"Link small Regular 12/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 13/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 14/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 15/20",
+          href:"#"
+        }
+      ],
+      rightItems: [
+        {
+          name:"Link small Regular 16/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 17/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 18/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 19/20",
+          href:"#"
+        }
+      ]
+    },
+
+    fourthColumn: {
+      title: "Navigácia v 1 stĺpci (1/3)",
+      items: [
+        {
+          name:"Link small Regular 28/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 29/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 30/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 31/20",
+          href:"#"
+        }
+      ]
+    },
+
+    subtitles: [
+      {
+        item:"Pomoc",
+        href:"#"
+      },
+      {
+        item:"Cookies",
+        href:"#"
+      },
+      {
+        item:"Kontakty",
+        href:"#"
+      },
+      {
+        item:"Mapa Stránky",
+        href:"#"
+      },
+      {
+        item:"RSS",
+        href:"#"
+      },
+      {
+        item:"Vyhlásenie o prístupnosti",
+        href:"#"
+      }
+    ],
+    dropdownItems: [
+      {
+        text:"Gramatická chyba",
+        value:"#"
+      },
+      {
+        text:"chyba zobrazovania",
+        value:"#"
+      },
+      {
+        text:"chyba obsahu",
+        value:"#"
+      }
+    ]
+  })
+}}
+{% endblock %}

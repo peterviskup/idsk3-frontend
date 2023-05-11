@@ -1,0 +1,363 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "idsk-card/macro.njk" import idskCard %}
+
+{% set pageName = "Karta" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      { text: 'ID-SK frontend', href: '/' + legacyQuery },
+      { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+    <span class="govuk-caption-xl">Webové komponenty</span>
+    <h1 class="govuk-heading-xl">{{ pageName }}</h1>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-s">Obsah:</h2>
+        <ul class="govuk-list">
+          <li><a class="govuk-link" href="#card-basic" title="Hlavná kartička">Hlavná kartička</a></li>
+          <li><a class="govuk-link" href="#card-hero-secondary" title="Sekundárna kartička">Sekundárna kartička</a></li>
+          <li><a class="govuk-link" href="#card-hero-secondary-horizontal" title="Sekundárna kartička horizontálna">Sekundárna
+              kartička horizontálna</a></li>
+          <li><a class="govuk-link" href="#card-simple" title="Jednoduchá kartička">Jednoduchá kartička</a></li>
+          <li><a class="govuk-link" href="#card-hero" title="Hero kartička">Hero kartička</a></li>
+          <li><a class="govuk-link" href="#card-basic-no-image" title="Základná kartička bez obrázka">Základná kartička
+              bez obrázka</a></li>
+          <li><a class="govuk-link" href="#card-basic-no-image-no-desc" title="Základná kartička bez obrázka a popisu">Základná
+              kartička bez obrázka a popisu</a></li>
+          <li><a class="govuk-link" href="#card-profile-vertical" title="Profilová kartička - vertikálna">Profilová
+              kartička - vertikálna</a></li>
+          <li><a class="govuk-link" href="#card-profile-horizontal" title="Profilová kartička - horizontálna">Profilová
+              kartička - horizontálna</a></li>
+        </ul>
+      </div>
+
+      <div class="govuk-grid-column-full">
+        <p class="govuk-body">
+          Pozrite si <a class="govuk-link" href="/vzory/aktuality" title="Aktuality"> vzor použitia kartičiek</a>.
+        </p>
+      </div>
+
+      <div class="govuk-grid-column-full">
+        <h3 class="govuk-heading-m" id="card-basic">Hlavná kartička</h3>
+        <p class="govuk-body">
+          Hlavnú kartičku použijete pre najaktuálnejší obsah v aktualitách alebo, ako dôležitý obsah, ktorý chcete, aby
+          používateľ videl/našiel. Použite iba 1 hlavnú kartičku v jednom bloku, to znamená, že treba použiť grid systém
+          na celú šírku <code class="govuk-!-font-size-16  language-markup">&lt;div
+            class="govuk-grid-column-full"></code> Použite maximálne 2 tagy.
+        </p>
+        <p class="govuk-body">Kartička je obalená v <code class="govuk-!-font-size-16  language-markup">&lt;div></code>
+          elemente ktorý vždy používa triedu <code class="govuk-!-font-size-16  language-markup">idsk-card</code>. Túto
+          triedu je potrebné písať ako prvú a za ňou všetky ostatné. V prípade hlavnej kartičky pridávame ešte triedu
+          <code class="govuk-!-font-size-16  language-markup">idsk-card-basic</code>.</p>
+        <div class="example example-error">
+          {% set exampleComponentHtml %}
+            {{ idskCard({
+              "type": "basic",
+              "imgSrc": "/public/assets/images/image-placeholder.jpg",
+              "link": "#",
+              "heading": "Lorem ipsum dolor sit amet: consectetur adipiscing elit!",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+              "date": { "date": "1.7.2020", "link": "#" },
+              "tags": [ { "tag": "Tag 1", "link": "#" }, { "tag": "Tag 2", "link": "#" } ]
+            }) }}
+          {% endset %}
+          {{ exampleComponentHtml | safe }}
+        </div>
+        <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+      </div>
+
+      <div class="govuk-grid-column-full">
+        <h3 class="govuk-heading-m" id="card-hero-secondary">Sekundárna kartička</h3>
+        <p class="govuk-body">
+          Sekundárnu kartičku použite v jednom bloku spolu so základnou kartičkou alebo s hero kartičkou. V jednom bloku
+          môžete použiť aj iba sekundárne kartičky no odporúčame ich používať po základnej, alebo po hero kartičke.
+          Názov článku musí byť výstižný, maximálne na 4 riadky. Popis článku by mal byť maximálne na 6 riadkov. Použite
+          maximálne 2 tagy tak, aby sa zmestili do jedného riadku spolu s dátum publikovania článku.
+        </p>
+        <p class="govuk-body">Pri sekundárnej kartičke odporúčame použiť grid systém s rozložením 1/3 alebo 1/4. V
+          prípade použitia pomeru 1/3 použiť obaľovací tag <code class="govuk-!-font-size-16  language-markup">&lt;div
+            class="govuk-grid-column-one-third"></code>. A v prípade použitia grid rozloženia 1/4 použiť obaľovací tag
+          <code class="govuk-!-font-size-16  language-markup">&lt;div class="govuk-grid-one-quarter"></code>. Týmto
+          spôsobom je jednoduché rozlíšiť sekundárnu kartičku od základnej a taktiež je možné ich použiť viacero vedľa
+          seba.</p>
+        <p class="govuk-body">Kartička je obalená v <code class="govuk-!-font-size-16  language-markup">&lt;div></code>
+          elemente ktorý vždy používa triedu <code class="govuk-!-font-size-16  language-markup">idsk-card</code>. Túto
+          triedu je potrebné písať ako prvú a za ňou triedu <code class="govuk-!-font-size-16  language-markup">idsk-card-secondary</code>.
+        </p>
+        <div class="example example-error">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+              {% set exampleComponentHtml %}
+                {{ idskCard({
+                  "type": "secondary",
+                  "imgSrc": "/public/assets/images/image-placeholder.jpg",
+                  "link": "#",
+                  "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do",
+                  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+                  "date": { "date": "1.7.2020", "link": "#" },
+                  "tags": [ { "tag": "Tag 1", "link": "#" }, { "tag": "Tag 2", "link": "#" } ]
+                }) }}
+              {% endset %}
+              {{ exampleComponentHtml | safe }}
+            </div>
+          </div>
+        </div>
+        <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+      </div>
+
+      <div class="govuk-grid-column-full">
+        <h3 class="govuk-heading-m" id="card-hero-secondary-horizontal">Sekundárna kartička horizontálna</h3>
+        <p class="govuk-body">
+          Sekundárnu kartičku horizontálnu použite keď chcete zobraziť používateľovi pod článkom súvisiace články. Názov
+          kartičky musí byť výstižný. Popis kartičky nesmie presahovať pod fotografiu. Použite maximálne 2 tagy.
+        </p>
+        <p class="govuk-body">Pri tejto kartičke odporúčame použiť grid s plnou šírkou poprípade pomer 2/3. V prípade
+          použitia celej šírky používame obaľovací tag <code class="govuk-!-font-size-16  language-markup">&lt;div
+            class="govuk-grid-column-full"></code>. V prípade použitia gridu v pomere 2/3 treba použiť obaľovací tag
+          <code class="govuk-!-font-size-16  language-markup">&lt;div class="govuk-grid-column-two-thirds"></code>.</p>
+        <p class="govuk-body">Kartička je obalená v <code class="govuk-!-font-size-16  language-markup">&lt;div></code>
+          elemente ktorý vždy používa triedu <code class="govuk-!-font-size-16  language-markup">idsk-card</code>. Túto
+          triedu je potrebné písať ako prvú a za ňou triedu <code class="govuk-!-font-size-16  language-markup">idsk-card-secondary-horizontal</code>.
+        </p>
+        <div class="example example-error">
+          {% set exampleComponentHtml %}
+            {{ idskCard({
+              "type": "secondary-horizontal",
+              "imgSrc": "/public/assets/images/image-placeholder.jpg",
+              "link": "#",
+              "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+              "date": { "date": "1.7.2020", "link": "#" },
+              "tags": [ { "tag": "Tag 1", "link": "#" }, { "tag": "Tag 2", "link": "#" } ]
+            }) }}
+          {% endset %}
+          {{ exampleComponentHtml | safe }}
+        </div>
+        <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+      </div>
+
+      <div class="govuk-grid-column-full">
+        <h3 class="govuk-heading-m" id="card-simple">Jednoduchá kartička</h3>
+        <p class="govuk-body">
+          Jednoduchú kartičku použite, keď nepotrebujete pridať bližší popis. Názov musí byť výstižný, maximálne na 4
+          riadky. Použite maximálne 2 tagy.
+        </p>
+        <p class="govuk-body">Jednoduchá kartička by mala používať grid systém v pomere 1/3 alebo 1/4. Napr. rozloženie
+          1/3 používa obaľovací tag <code class="govuk-!-font-size-16  language-markup">&lt;div
+            class="govuk-grid-column-one-third"></code>.</p>
+        <p class="govuk-body">Kartička je obalená v <code class="govuk-!-font-size-16  language-markup">&lt;div></code>
+          elemente ktorý vždy používa triedu <code class="govuk-!-font-size-16  language-markup">idsk-card</code>. Túto
+          triedu je potrebné písať ako prvú a za ňou triedu <code class="govuk-!-font-size-16  language-markup">idsk-card-secondary-horizontal</code>.
+        </p>
+        <div class="example example-error">
+          {% set exampleComponentHtml %}
+            {{ idskCard({
+              "type": "simple",
+              "imgSrc": "/public/assets/images/image-placeholder.jpg",
+              "link": "#",
+              "heading": "Lorem ipsum dolor sit amet",
+              "date": { "date": "1.7.2020", "link": "#" },
+              "tags": [ { "tag": "Tag 1", "link": "#" }, { "tag": "Tag 2", "link": "#" } ]
+            }) }}
+          {% endset %}
+          {{ exampleComponentHtml | safe }}
+        </div>
+        <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+      </div>
+
+      <div class="govuk-grid-column-full">
+        <h3 class="govuk-heading-m" id="card-hero">Hero kartička</h3>
+        <p class="govuk-body">
+          Hero kartičku môžete použiť ako ekvivalent základnej kartičky (teda ako primárnu kartičku). Názov kartičky
+          musí byť výstižný. Popis kartičky nesmie presahovať pod fotografiu.
+        </p>
+        <p class="govuk-body">Používa horizontálne zobrazenie a rozdeľuje obrázok a kontent na dve polovice. Pri tejto
+          kartičke odporúčame použiť obaľovací tag plnej šírky <code class="govuk-!-font-size-16  language-markup">&lt;div
+            class="govuk-grid-column-full"></code>.</p>
+        <p class="govuk-body">Kartička je obalená v <code class="govuk-!-font-size-16  language-markup">&lt;div></code>
+          elemente ktorý vždy používa triedu <code class="govuk-!-font-size-16  language-markup">idsk-card</code>. Túto
+          triedu je potrebné písať ako prvú a za ňou triedu <code class="govuk-!-font-size-16  language-markup">idsk-card-hero</code>.
+        </p>
+        <div class="example example-error">
+          {% set exampleComponentHtml %}
+            {{ idskCard({
+              "type": "hero",
+              "imgSrc": "/public/assets/images/image-placeholder.jpg",
+              "link": "#",
+              "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed fo eiusmod tempor",
+              "description": "Lorem ipsum dolor sit amet, consenctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+              "date": { "date": "1.7.2020", "link": "#" },
+              "tags": [ { "tag": "Tag 1", "link": "#" }, { "tag": "Tag 2", "link": "#" } ]
+            }) }}
+          {% endset %}
+          {{ exampleComponentHtml | safe }}
+        </div>
+        <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+      </div>
+
+      <div class="govuk-grid-column-full">
+        <h3 class="govuk-heading-m" id="card-basic-no-image">Základná kartička bez obrázka</h3>
+        <p class="govuk-body">
+          Kartičku použite, ak chcete zobraziť viacero článkov na menšom priestore. Z toho dôvodu sa používa aj menší
+          font ako pri <a class="govuk-link" href="#card-basic" title="základná kartička">základnej kartičke</a>.
+          Použite maximálne 2 tagy.
+        </p>
+        <p class="govuk-body">Meta dáta pri tejto kartičke sa zobrazujú na konci kontentu. Pri tejto kartičke použivajte
+          zozbrazenie na celú šírku pomocou obaľovacieho tagu <code class="govuk-!-font-size-16  language-markup">&lt;div
+            class="govuk-grid-column-full"></code>.</p>
+        <p class="govuk-body">Kartička je obalená v <code class="govuk-!-font-size-16  language-markup">&lt;div></code>
+          elemente ktorý vždy používa triedu <code class="govuk-!-font-size-16  language-markup">idsk-card</code>. Túto
+          triedu je potrebné písať ako prvú a za ňou triedu <code class="govuk-!-font-size-16  language-markup">
+            idsk-card-basic-variant</code>.</p>
+        <div class="example example-error">
+          {% set exampleComponentHtml %}
+            {{ idskCard({
+              "type": "basic-variant",
+              "link": "#",
+              "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua/ Ut enim ad minim veniam, quis nonstrud exercitation ullamc Lorem ipsum dolor.",
+              "date": { "date": "1.7.2020", "link": "#" },
+              "tags": [ { "tag": "Tag 1", "link": "#" }, { "tag": "Tag 2", "link": "#" } ]
+            }) }}
+          {% endset %}
+          {{ exampleComponentHtml | safe }}
+        </div>
+        <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+      </div>
+
+      <div class="govuk-grid-column-full">
+        <h3 class="govuk-heading-m" id="card-basic-no-image-no-desc">Základná kartička bez obrázka a popisu</h3>
+        <p class="govuk-body">
+          Kartičku použite, ak chcete zobraziť viacero článkov na menšom priestore. Použite maximálne 2 tagy.
+        </p>
+        <p class="govuk-body">Meta dáta pri tejto kartičke sa zobrazujú na konci kontentu. Pri tejto kartičke použivajte
+          zozbrazenie na celú šírku pomocou obaľovacieho tagu <code class="govuk-!-font-size-16  language-markup">&lt;div
+            class="govuk-grid-column-full"></code>.</p>
+        <p class="govuk-body">Kartička je obalená v <code class="govuk-!-font-size-16  language-markup">&lt;div></code>
+          elemente ktorý vždy používa triedu <code class="govuk-!-font-size-16  language-markup">idsk-card</code>. Túto
+          triedu je potrebné písať ako prvú a za ňou triedu <code class="govuk-!-font-size-16  language-markup">
+            idsk-card-basic-variant</code>. Pri používaní tohto komponentu je potrebné vynechať odstavec s popisom.</p>
+        <div class="example example-error">
+          {% set exampleComponentHtml %}
+            {{ idskCard({
+              "type": "basic-variant",
+              "link": "#",
+              "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor magna aliqua",
+              "date": { "date": "1.7.2020", "link": "#" },
+              "tags": [ { "tag": "Tag 1", "link": "#" }, { "tag": "Tag 2", "link": "#" } ]
+            }) }}
+          {% endset %}
+          {{ exampleComponentHtml | safe }}
+        </div>
+        <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+      </div>
+
+      <div class="govuk-grid-column-full">
+        <h3 class="govuk-heading-m" id="card-profile-vertical">Profilová kartička - vertikálna</h3>
+        <p class="govuk-body">
+          Kartičku použite, keď chcete umiestniť viacero profilových kartičiek vedľa seba. Po kliknutí na meno sa
+          zobrazí stránka so životopisom. Po kliknutí na rolu/post/funkciu sa zobrazí stránka so všeobecným popisom
+          povinností a kompetencií danej funkcie.
+        </p>
+        <p class="govuk-body">Pri vertikálnej profilovej kartičke odporúčame použiť grid systém v pomere 1/3
+          nasledujúcim spôsobom pomocou obaľovacieho tagu<code class="govuk-!-font-size-16  language-markup">&lt;div
+            class="govuk-grid-column-one-third"></code>.</p>
+        <p class="govuk-body">Kartička je obalená v <code class="govuk-!-font-size-16  language-markup">&lt;div></code>
+          elemente ktorý vždy používa triedu <code class="govuk-!-font-size-16  language-markup">idsk-card</code>. Túto
+          triedu je potrebné písať ako prvú a za ňou triedu <code class="govuk-!-font-size-16  language-markup">idsk-card-profile-vertical</code>.
+        </p>
+        <div class="example example-error">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+              {% set exampleComponentHtml %}
+                {{ idskCard({
+                  "type": "profile-vertical",
+                  "link": "#",
+                  "imgSrc": "/public/assets/images/image-placeholder.jpg",
+                  "heading": "Meno Priezvisko",
+                  "description": "Rola/funkcia"
+                }) }}
+              {% endset %}
+              {{ exampleComponentHtml | safe }}
+            </div>
+          </div>
+        </div>
+        <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+      </div>
+
+      <div class="govuk-grid-column-full">
+        <h3 class="govuk-heading-m" id="card-profile-horizontal">Profilová kartička - horizontálna</h3>
+        <p class="govuk-body">
+          Kartičku použite, keď chcete zvýrazniť osobu alebo post, ktorý je zastavaný. Napríklad pri ministroch,
+          výkonných riaditeľoch podnikov a pod. Pri tejto kartičke sa môže použiť aj motto.
+        </p>
+        <p class="govuk-body">Pri horizonálnej profilovej kartičke odporúčame použiť grid systém v plnej šírke
+          nasledujúcim spôsobom pomocou obaľovacieho tagu <code class="govuk-!-font-size-16  language-markup">&lt;div
+            class="govuk-grid-column-full"></code>.</p>
+        <p class="govuk-body">Kartička je obalená v <code class="govuk-!-font-size-16  language-markup">&lt;div></code>
+          elemente ktorý vždy používa triedu <code class="govuk-!-font-size-16  language-markup">idsk-card</code>. Túto
+          triedu je potrebné písať ako prvú a za ňou triedu <code class="govuk-!-font-size-16  language-markup">idsk-card-profile-horizontal</code>.
+        </p>
+        <div class="example example-error">
+          {% set exampleComponentHtml %}
+            {{ idskCard({
+              "type": "profile-horizontal",
+              "link": "#",
+              "imgSrc": "/public/assets/images/image-placeholder.jpg",
+              "heading": "Meno Priezvisko",
+              "description": "Rola/funkcia",
+              "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            }) }}
+          {% endset %}
+          {{ exampleComponentHtml | safe }}
+        </div>
+        <pre class="app-code">
+                  <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                    {{- exampleComponentHtml | highlight("html") | safe -}}
+                  </code>
+                </pre>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

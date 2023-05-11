@@ -1,0 +1,205 @@
+[
+    {
+        "name": "designAddress",
+        "type": "string",
+        "required": false,
+        "description": "Url address for design page."
+    },
+    {
+        "name": "feedbackHeading",
+        "type": "string",
+        "required": false,
+        "description": "Heading for feedback."
+    },
+    {
+        "name": "feedbackEmail",
+        "type": "string",
+        "required": false,
+        "description": "Email for feedback."
+    },
+    {
+        "name": "feedbackSubject",
+        "type": "string",
+        "required": false,
+        "description": "Subject for feedback."
+    },
+    {
+        "name": "feedbackMessage",
+        "type": "string",
+        "required": false,
+        "description": "Message for feedback."
+    },
+    {
+        "name": "showFeedback",
+        "type": "string",
+        "required": false,
+        "description": "Determines whether feedback bar should be displayed."
+    },
+    {
+        "name": "showFeedbackMessage",
+        "type": "string",
+        "required": false,
+        "description": "Determines whether feedback message should be displayed."
+    },
+    {
+        "name": "upButtonEnabled",
+        "type": "string",
+        "required": false,
+        "description": "Determines whether up button should be displayed."
+    },
+    {
+        "name": "feedbackButtonAddress",
+        "type": "string",
+        "required": false,
+        "description": "Url address for feedback button."
+    },
+    {
+        "name": "fillFeedbackLink",
+        "type": "string",
+        "required": false,
+        "description": "Url address for form to fill feedback."
+    },
+    {
+        "name": "logo",
+        "type": "string",
+        "required": false,
+        "description": "Name of file for logo in footer.",
+        "params": [
+            {
+                "name": "alt",
+                "type": "string",
+                "required": false,
+                "description": "Alternative text for footer logo."
+            }
+        ]
+    },
+    {
+        "name": "assetsPath",
+        "type": "string",
+        "required": false,
+        "description": "Relative path for assets folder."
+    },
+    {
+        "name": "firstColumn",
+        "type": "object",
+        "required": false,
+        "description": "Object containing options for the footer first column.",
+        "params": [
+            {
+                "name": "title",
+                "type": "string",
+                "description": "Title for a first column section."
+            },
+            {
+                "name": "leftItems",
+                "type": "array",
+                "required": false,
+                "description": "Array of items for use in the first column section of the footer extended.",
+                "params": [
+                    {
+                        "name": "name",
+                        "type": "string",
+                        "required": false,
+                        "description": "Name of links in first column of footer extended"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "rightItems",
+        "type": "array",
+        "required": false,
+        "description": "Array of items for use in the first column section of the footer extended.",
+        "params": [
+            {
+                "name": "name",
+                "type": "string",
+                "required": false,
+                "description": "Name of links in first column of footer extended"
+            }
+        ]
+    },
+    {
+        "name": "secondColumn",
+        "type": "array",
+        "required": false,
+        "description": "Array of items for use in the second column section of the footer extended.",
+        "params": [
+            {
+                "name": "name",
+                "type": "string",
+                "required": false,
+                "description": "Name of links in second column of footer extended"
+            }
+        ]
+    },
+    {
+        "name": "thirdColumn",
+        "type": "array",
+        "required": false,
+        "description": "Array of items for use in the third column section of the footer extended.",
+        "params": [
+            {
+                "name": "name",
+                "type": "string",
+                "required": false,
+                "description": "Name of links in third column of footer extended"
+            }
+        ]
+    },
+    {
+        "name": "fourthColumn",
+        "type": "array",
+        "required": false,
+        "description": "Array of items for use in the fourth column section of the footer extended.",
+        "params": [
+            {
+                "name": "name",
+                "type": "string",
+                "required": false,
+                "description": "Name of links in fourth column of footer extended"
+            }
+        ]
+    },
+    {
+        "name": "subtitles",
+        "type": "array",
+        "required": false,
+        "description": "Array of navigation links for footer extended.",
+        "params": [
+            {
+                "name": "name",
+                "type": "string",
+                "required": false,
+                "description": "Name ofnavigation links"
+            },
+            {
+                "name": "href",
+                "type": "string",
+                "required": false,
+                "description": "Url address for navigation links"
+            }
+        ]
+    },
+    {
+        "name": "dropdownItems",
+        "type": "array",
+        "required": false,
+        "description": "Array of errors which should be in dropdown as a part of error form",
+        "params": [
+            {
+                "name": "name",
+                "type": "string",
+                "required": false,
+                "description": "Name of errors"
+            },
+            {
+                "name": "value",
+                "type": "string",
+                "required": false,
+                "description": "Value of errors"
+            }
+        ]
+    }
+]

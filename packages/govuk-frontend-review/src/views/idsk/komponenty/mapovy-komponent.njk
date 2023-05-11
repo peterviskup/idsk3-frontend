@@ -1,0 +1,205 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "idsk-interactive-map/macro.njk" import idskInteractiveMap %}
+{% set pageName = "Mapový komponent" %}
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      { text: 'ID-SK frontend', href: '/' + legacyQuery },
+      { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+{% block content %}
+    <span class="govuk-caption-xl">Webové komponenty</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">
+      Zobrazenie údajov v mape pomáha používateľom lepšie pochopiť prezentované údaje. Vždy poskytnite prezentované údaje tak, aby boli prístupné aj používateľom so zrakovým znevýhodnením.
+    </p>
+    <p class="govuk-body-l">
+      Mapový komponent použite, keď chcete používateľom zobrazovať nejaký jav vzťahujúci sa k priestoru (napr. počet zaočkovaných proti COVID-19 na Slovensku v krajoch).
+    </p>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-s">Obsah:</h2>
+        <ol class="govuk-list">
+            <li>
+                <a href="#z-coho-sa-sklada-mapovy-komponent" title="Z čoho sa skladá mapový komponent?" class="govuk-link">Z čoho sa skladá mapový komponent?</a>
+            </li>
+            <li>
+                <a href="#ako-funguje-interaktivna-mapa" title="Ako funguje interaktívna mapa?" class="govuk-link">Ako funguje interaktívna mapa?</a>
+            </li>
+            <li>
+                <a href="#priklady" title="Rozšírené príklady pre mapový komponent" class="govuk-link">Rozšírené príklady pre mapový komponent</a>
+            </li>
+        </ol>
+        <h2 class="govuk-heading-m" id="z-coho-sa-sklada-mapovy-komponent">Z čoho sa skladá mapový komponent?</h2>
+        <p class="govuk-body">Interaktívna mapa sa skladá z:</p>
+        <ol class="idsk-list idsk-list--letters">
+          <li>nadpisu,</li>
+          <li>prepínaču pre výber zobrazenia v mape alebo prostredníctvom tabuľkového zobrazenia údajov,</li>
+          <li>rozbalovacieho poľa/polí pre výber atribútov,</li>
+          <li>názvu mapy podľa vybraného atribútu,</li>
+          <li>mapového okna s interaktívnou mapou respektíve tabuľkového zobrazenia údajov,</li>
+          <li>vysvetliviek,</li>
+          <li>linku pre stiahnutie zdrojových údajov,</li>
+          <li>označenia zdroja údajov.</li>
+        </ol>
+      </div>
+
+      <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m" id="ako-funguje-interaktivna-mapa">Ako funguje interaktívna mapa?</h2>
+
+        <h3 class="govuk-heading-s">Prepínač</h3>
+        <p class="govuk-body">
+          Prepínačom je možné prepínať medzi mapovým a tabuľkovým zobrazením údajov. V takejto forme sú údaje prístupné aj pre zrakovo znevýhodnených používateľov.
+        </p>
+
+        <h3 class="govuk-heading-s">Rozbaľovacie okná</h3>
+        <p class="govuk-body">
+          V interaktívnej mape môžete použiť podľa rozsahu prezentovaných údajov 1 alebo 2 rozbaľovacie pole.
+        </p>
+        <h4 class="govuk-heading-s">Ako použiť 1 rozbaľovacie pole?</h4>
+        <p class="govuk-body">
+          Ak chcete používateľovi prezentovať iba jeden jav, tak v rozbaľovacom poli mu umožnite vybrať viaceré pohľady na tento jav. Napríklad obdobie: prírastok za predchádzajúci deň, prírastok za posledný mesiac alebo pomery ku populácii : počet zaočkovaných na 100 000 obyvateľov, na milión obyvateľov a podobne.
+        </p>
+        <p class="govuk-body">
+          Nadpis mapy bude v iba jeden, hlavný, pretože zobrazujete iba jeden jav.
+        </p>
+        <div class="example example-error">
+          {% set exampleComponentHtml %}
+            {{ idskInteractiveMap({
+              uniqueId: "map-id",
+              title: "Počet zaočkovaných ľudí (1. aj 2. dávkou)",
+              mapIframeSrc: "/vzory/interactive-map-sample",
+              mapIframeTitle: "Príkladová mapa na demonštráciu koponentu - interaktívna mapa",
+              tableIframeSrc: "/vzory/interactive-table-sample",
+              tableIframeTitle: "Príkladová tabuľka na demonštráciu koponentu - interaktívna mapa",
+              radioControlsName: "interactive-radios-a",
+              dataSource: "NCZI",
+              dataDownload: {
+                text: "Stiahnuť údaje (CSV, 42 kb)",
+                link: "/public/assets/data/korona.gov.sk.csv"
+              }
+          }) }}
+          {% endset %}
+          {{exampleComponentHtml | safe}}
+        </div>
+        <pre class="app-code">
+          <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+            {{- exampleComponentHtml | highlight("html") | safe -}}
+          </code>
+        </pre>
+
+        <h4 class="govuk-heading-s">Ako použiť 2 rozbaľovacie polia?</h4>
+        <p class="govuk-body">
+          Ak chcete používateľovi prezentovať viacero javov v jednej interaktívnej mape, hlavný nadpis musí vystihovať tieto javy - napríklad Koronavírus na Slovensku, a sním súvisiace javy. Ak to nie je možné, vytvorte pre každý jav samostatnú mapu. Nesnažte sa za každých okolností pridať všetko do jednej mapy, priveľa javov a informácií môže pôsobiť neprehľadne a používateľ môže byť zmätený alebo niečo prehliadnuť.
+        </p>
+        <p class="govuk-body">
+          V jednom rozbaľovacom okne bude napríklad “obdobie” ako je uvedené vyššie a v druhom rozbaľovacom okne mu ponúknite daný jav. Po vybratí daného javu sa zobrazí skekundárny nadpis nad mapovým oknom, aby používateľ vedel, ktorý jav sa mu práve zobrazuje.
+        </p>
+        <div class="example example-error">
+          {% set exampleComponentHtml %}
+            {{ idskInteractiveMap({
+              uniqueId: "map-id-1",
+              title: "Koronavírus na Slovensku",
+              mapIframeSrc: "/vzory/interactive-map-sample",
+              mapIframeTitle: "Príkladová mapa na demonštráciu koponentu - interaktívna mapa",
+              tableIframeSrc: "/vzory/interactive-table-sample",
+              tableIframeTitle: "Príkladová tabuľka na demonštráciu koponentu - interaktívna mapa",
+              radioControlsName: "interactive-radios-b",
+              indicatorOptions: [
+                {
+                  title: "Celkový stav",
+                  value: ""
+                },
+                {
+                  title: "Počet zaočkovaných 1. dávkou",
+                  value: "dose1"
+                },
+                {
+                  title: "Počet zaočkovaných 2. dávkou",
+                  value: "dose2"
+                }
+              ],
+              dataSource: "NCZI",
+              dataDownload: {
+                text: "Stiahnuť údaje (CSV, 42 kb)",
+                link: "/public/assets/data/korona.gov.sk.csv"
+              }
+          }) }}
+          {% endset %}
+          {{exampleComponentHtml | safe}}
+        </div>
+        <pre class="app-code">
+          <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+            {{- exampleComponentHtml | highlight("html") | safe -}}
+          </code>
+        </pre>
+
+        <h3 class="govuk-heading-s">Tabuľkové zobrazenie údajov v mape</h3>
+        <p class="govuk-body">
+          Ak si používateľ zvolí tabuľkové zobrazenie údajov, tie sa zobrazia namiesto mapového okna. Tieto údaje sa zobrazia podľa zvolených atribútov podľa možností v rozbaľovacích oknách. Údaje v tabuľke je možné zoraďovať.
+        </p>
+        <div class="example example-error">
+          {% set exampleComponentHtml %}
+            {{ idskInteractiveMap({
+              uniqueId: "map-id-2",
+              title: "Koronavírus na Slovensku",
+              mapIframeSrc: "/vzory/interactive-map-sample",
+              mapIframeTitle: "Príkladová mapa na demonštráciu koponentu - interaktívna mapa",
+              tableIframeSrc: "/vzory/interactive-table-sample",
+              tableIframeTitle: "Príkladová tabuľka na demonštráciu koponentu - interaktívna mapa",
+              checkedTable: true,
+              radioControlsName: "interactive-radios-c",
+              indicatorOptions: [
+                {
+                  title: "Celkový stav",
+                  value: ""
+                },
+                {
+                  title: "Počet zaočkovaných 1. dávkou",
+                  value: "dose1"
+                },
+                {
+                  title: "Počet zaočkovaných 2. dávkou",
+                  value: "dose2"
+                }
+              ],
+              dataSource: "NCZI",
+              dataDownload: {
+                text: "Stiahnuť údaje (CSV, 42 kb)",
+                link: "/public/assets/data/korona.gov.sk.csv"
+              }
+          }) }}
+          {% endset %}
+          {{exampleComponentHtml | safe}}
+        </div>
+        <pre class="app-code">
+          <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+            {{- exampleComponentHtml | highlight("html") | safe -}}
+          </code>
+        </pre>
+
+        <h3 class="govuk-heading-s">Vysvetlivky</h3>
+        <p class="govuk-body">
+          Po kliknutí na mapu sa používateľovi zobrazia údaje s popisom. Ak je potrebné pridať aj vysvetlivky, umiestnite ich v rámci mapového okna alebo pod mapové okno v súlade s kartografickými principmi.
+        </p>
+
+        <h3 class="govuk-heading-s">Zdrojové údaje a zdroj údajov</h3>
+        <p class="govuk-body">
+          Vždy pridajte k interaktívnej mape aj zdrojové údaje. Použite štandardné, strojovo spracovateľné údajové formáty ako napríklad csv, JSON, XML. Môžete dať používateľom na výber z viacerých formátov.
+        </p>
+        <p class="govuk-body">
+          Uvádzajte, kto alebo čo je zdrojom údajov, ktoré prezentuje.
+        </p>
+      </div>
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m" id="priklady">Rozšírené príklady pre mapový komponent</h2>
+        <ul class="govuk-list">
+            <li><a href="/components/idsk-interactive-map" title="Rozšírené príklady mapového komponentu" class="govuk-link">Rozšírené príklady mapového komponentu</a></li>
+        </ul>
+      </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,153 @@
+// stylelint-disable order/properties-order
+// stylelint-disable max-nesting-depth
+
+@include govuk-exports("idsk/component/interactive-map") {
+  .idsk-interactive-map {
+    @include govuk-font($size: 16);
+    @include govuk-text-colour;
+
+    & > .govuk-heading-l {
+      margin-bottom: govuk-spacing(4);
+    }
+
+    &__header {
+      &-controls {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: govuk-spacing(6);
+        position: relative;
+
+        @include mq($from: desktop) {
+          align-items: center;
+          flex-direction: row;
+        }
+      }
+
+      &-radios {
+        display: inline-block;
+        padding: 0;
+        width: auto;
+
+        .govuk-radios__item {
+          display: inline-block;
+          margin-bottom: 0;
+        }
+
+        .idsk-intereactive-map__radio-map,
+        .idsk-intereactive-map__radio-table {
+          top: 10px;
+        }
+
+        .idsk-intereactive-map__radio-table {
+          margin-right: 0;
+        }
+      }
+
+      .govuk-form-group {
+        margin-bottom: 0;
+      }
+
+      &-selects {
+        display: inline-block;
+        padding: 0;
+        width: auto;
+
+        @include mq($from: desktop) {
+          float: right;
+        }
+
+        & .govuk-form-group {
+          display: inline-block;
+          margin-top: govuk-spacing(4);
+          text-align: left;
+          width: 100%;
+
+          @include mq($from: desktop) {
+            margin-top: 0;
+            width: auto;
+          }
+
+          .govuk-select {
+            width: 100%;
+          }
+        }
+
+        & .govuk-form-group:first-child {
+          margin-right: govuk-spacing(4);
+        }
+
+        & .govuk-form-group:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    &__current-time-period {
+      text-transform: lowercase;
+    }
+
+    &__body {
+      clear: both;
+      display: block;
+      height: 465px;
+      overflow: auto;
+    }
+
+    &__table {
+      display: none;
+    }
+
+    &__map,
+    &__map-iframe,
+    &__table,
+    &__table-iframe {
+      border: none;
+      height: 100%;
+      width: 100%;
+      overflow-y: hidden;
+    }
+
+    &__meta {
+      margin-top: govuk-spacing(2);
+
+      &-data {
+        float: left;
+      }
+
+      &-source {
+        float: right;
+      }
+    }
+  }
+
+  @include mq($from: desktop) {
+    .idsk-interactive-map .govuk-radios .govuk-radios__input:hover + .govuk-radios__label:before {
+      box-shadow: 0 0 0 10px govuk-colour("mid-grey");
+    }
+
+    .idsk-interactive-map .govuk-radios .govuk-radios__item:hover .govuk-radios__input:focus + .govuk-radios__label:before {
+      box-shadow:
+        0 0 0 4px govuk-colour("yellow"),
+        0 0 0 10px govuk-colour("mid-grey");
+    }
+
+    .idsk-interactive-map .govuk-radios__label {
+      padding-left: 0;
+    }
+
+    .idsk-interactive-map .govuk-radios__label:before {
+      top: 8px;
+      width: 24px;
+      height: 24px;
+    }
+
+    .idsk-interactive-map .govuk-radios__label:after {
+      top: 15px;
+      left: 7px;
+      border-width: 5px;
+    }
+  }
+}
+
+/*# sourceMappingURL=_index.scss.map */

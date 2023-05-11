@@ -1,0 +1,63 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Mená" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Vzory</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Tento návod opisuje spôsob, ako žiadať od používateľov ich mená.</p>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-s">Obsah:</h2>
+            <ul class="govuk-list">
+                <li><a class="govuk-link" href="#uistite" title="Uistite sa, že polia fungujú pre väčšinu vašich používateľov">Uistite sa, že polia fungujú pre väčšinu vašich používateľov</a></li>
+                <li><a class="govuk-link" href="#kde" title="Kde je to možné, použite polia na celé meno">Kde je to možné, použite polia na celé meno</a></li>
+                <li><a class="govuk-link" href="#pomoc" title="Pomoc používateľom, ktorí majú stránku v záložkách">Pomoc používateľom, ktorí majú stránku v záložkách</a></li>
+            </ul>
+
+            <h3 class="govuk-heading-m" id="uistite">Uistite sa, že polia fungujú pre väčšinu vašich používateľov</h3>
+            <p class="govuk-body">Uistite sa, že sú polia dostatočne dlhé a podporujú všetky znaky potrebné na zahrnutie 95 % mien, ktoré potrebujete zachytiť.
+            </p>
+            <h3 class="govuk-heading-m" id="kde">Kde je to možné, použite polia na celé meno</h3>
+            <p class="govuk-body">Použite pole na celé meno, pretože práve to dokáže pokryť najširšiu škálu typov mien a vyžaduje od používateľa najmenšie úsilie pri porozumení. Takáto forma mena nie je vhodná, ak sa vyžaduje jednoduché spracovanie samostatného mena a priezviska.
+            </p>
+            <p class="govuk-body">Tu je ukážka:</p>
+            <img src="/public/assets/images/patterns/name.png" alt="name">
+            <h3 class="govuk-heading-m">Problém s viacerými poľami mien
+            </h3>
+
+            <p class="govuk-body">S viacerými poľami mien rastie riziko, že:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>meno človeka sa nezmestí do poľa, ktoré ste vybrali,</li>
+                <li>používatelia budú svoje mená vpisovať v zlom poradí,</li>
+                <li>používatelia sa budú snažiť napísať svoje celé mená do prvého poľa.</li>
+            </ul>
+
+
+            <h3 class="govuk-heading-m" id="pomoc">Pomoc používateľom, ktorí majú stránku v záložkách</h3>
+            <p class="govuk-body">Pre polia na celé meno použite označenie “Meno a priezvisko”.</p>
+            <p class="govuk-body">Ak musíte použiť dve oddelené polia na meno a priezvisko, tieto polia vždy umiestnite horizontálne vedľa seba, pri čom ako prvé pole vľavo uveďte meno, následne priezvisko.</p>
+
+            <p class="govuk-body">Nepoužívajte pole “stredné meno” pokiaľ nemusíte. Ak ho musíte použiť, uistite sa, že je dobrovoľné. Pole nemusíte označiť ako dobrovoľné.</p>
+
+            <p class="govuk-body">Uveďte, či potrebujete niekoho bežné meno (fyzická osoba) alebo jeho úplný právny názov, a to najmä v prípade ak je používateľom právnická osoba alebo fyzická osoba podnikateľ .</p>
+
+        </div>
+    </div>
+
+  </div>
+{% endblock %}

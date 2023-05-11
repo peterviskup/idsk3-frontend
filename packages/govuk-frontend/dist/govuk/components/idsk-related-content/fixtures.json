@@ -1,0 +1,27 @@
+{
+    "component": "idsk-related-content",
+    "fixtures": [
+        {
+            "name": "default",
+            "options": {
+                "heading": "Súvisiace témy",
+                "items": [
+                    {
+                        "title": "Súvisiaca téma č. 1",
+                        "link": "#"
+                    },
+                    {
+                        "title": "Súvisiaca téma č. 2",
+                        "link": "#"
+                    },
+                    {
+                        "title": "Súvisiaca téma č. 3",
+                        "link": "#"
+                    }
+                ]
+            },
+            "hidden": false,
+            "html": "<div class=\"govuk-grid-column-two-thirds\">\n  <div class=\"idsk-related-content \" data-module=\"idsk-related-content\">\n    <hr class=\"idsk-related-content__line\" aria-hidden=\"true\">\n    <h4 class=\"idsk-related-content__heading govuk-heading-s\">Súvisiace témy</h4>\n    <ul class=\"idsk-related-content__list govuk-list\">\n      <li class=\"idsk-related-content__list-item\">\n        <a class=\"idsk-related-content__link\" href=\"#\" title=\"Súvisiaca téma č. 1\">Súvisiaca téma č. 1</a>\n      </li>\n      <li class=\"idsk-related-content__list-item\">\n        <a class=\"idsk-related-content__link\" href=\"#\" title=\"Súvisiaca téma č. 2\">Súvisiaca téma č. 2</a>\n      </li>\n      <li class=\"idsk-related-content__list-item\">\n        <a class=\"idsk-related-content__link\" href=\"#\" title=\"Súvisiaca téma č. 3\">Súvisiaca téma č. 3</a>\n      </li>\n    </ul>\n  </div>\n</div>"
+        }
+    ]
+}

@@ -1,0 +1,58 @@
+<header class="idsk-header {{ params.classes if params.classes }}" data-module="idsk-header"
+        {%- for attribute, value in params.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+  <div class="idsk-header__container {{ params.containerClasses | default('govuk-width-container') }}">
+    <div class="idsk-header__logo">
+      <a href="{{ params.homepageUrl | default('/') }}" class="idsk-header__link idsk-header__link--homepage">
+        {% if params.logo %}
+        <span class="idsk-header__logotype">
+          <img src="{{ params.assetsPath | default('/assets/images/') + (params.headerLogoSrc if params.headerLogoSrc else 'slovensko_sk_logo.svg') }}" alt="hlavička logo">
+        </span>
+        {% endif %}
+        {% if (params.productName) %}
+        <span class="idsk-header__product-name">
+          {{ params.productName }}
+        </span>
+        {% endif %}
+      </a>
+    </div>
+    {% if params.serviceName or params.navigation  %}
+    <div class="idsk-header__content">
+
+    {% if params.serviceName %}
+    <a href="{{ params.serviceUrl }}" class="idsk-header__link idsk-header__link--service-name">
+      {{ params.serviceName }}
+    </a>
+    {% endif %}
+
+    {% if params.navigation %}
+    <button type="button" class="idsk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
+    <nav aria-label="Top Level Navigation">
+      <ul id="navigation" class="idsk-header__navigation {{ params.navigationClasses if params.navigationClasses }}">
+        {% for item in params.navigation %}
+          {% if item.href and item.text %}
+            <li class="idsk-header__navigation-item{{ ' idsk-header__navigation-item--active' if item.active }}">
+              <a class="idsk-header__link" href="{{ item.href }}"{% for attribute, value in item.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+                {{ item.text }}
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </nav>
+    {% endif %}
+
+    </div>
+    {% endif %}
+
+    {% if params.headerUser %}
+    <div class="idsk-header__user govuk-grid-column-one-quarter {{ params.usersClasses if params.usersClasses }}">
+      <svg class="idsk-header__user-icon" viewBox="0 0 28 28"><path d="M5 21.9C5 19.8 6.8 18 9 18h10c2.2 0 4 1.8 4 3.9 1.9-2.1 3-4.9 3-7.9 0-6.6-5.4-12-12-12S2 7.4 2 14c0 3 1.1 5.8 3 7.9zm9 6.1C6.3 28 0 21.7 0 14S6.3 0 14 0s14 6.3 14 14-6.3 14-14 14zm0-12c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+      <div class="idsk--header__user-name">
+        <span>Meno Priezvisko</span>
+        <div><a href="#" class="idsk--header__user-logout">Odhlásiť sa</a></div>
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+</header>

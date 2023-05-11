@@ -7,7 +7,7 @@ const fetchPath = (path, options) => {
 }
 
 describe('Banner', () => {
-  it('is visible by default', async () => {
+  it('is not visible by default', async () => {
     const response = await fetchPath('/')
     const body = await response.text()
     const $ = load(body)
@@ -18,7 +18,7 @@ describe('Banner', () => {
 
     // Check that the banner is visible
     const appBanner = $('[data-module="app-banner"]')
-    expect(appBanner.length).toBeTruthy()
+    expect(appBanner.length).toBeFalsy()
   })
 
   it('can be hidden using a url parameter', async () => {

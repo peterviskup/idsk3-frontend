@@ -1,0 +1,110 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Pomocný text" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Vzory</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Tento návod opisuje, kedy a ako napísať pomocný text pre vašu službu. Najlepší spôsob, ako pomôcť používateľom je vytvoriť čo najjednoduchšiu a najzrozumiteľnejšiu službu, akú môžete. Pomocný text doplňte, ak výskumom zistíte, že ho používatelia potrebujú.</p>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-s">Obsah:</h2>
+            <ul class="govuk-list">
+                <li><a class="govuk-link" href="#ako" title="Ako písať pre používateľov">Ako písať pre používateľov</a></li>
+                <li><a class="govuk-link" href="#ukazky" title="Ukážky">Ukážky</a></li>
+                <li><a class="govuk-link" href="#kedy" title="Kedy je pomocný text užitočný">Kedy je pomocný text užitočný</a></li>
+                <li><a class="govuk-link" href="#pouzitie1" title="Použitie pomocného textu">Použitie pomocného textu</a></li>
+                <li><a class="govuk-link" href="#pouzitie2" title="Použitie rozbaľovacieho pomocného textu">Použitie rozbaľovacieho pomocného textu</a></li>
+                <li><a class="govuk-link" href="#pouzitie3" title="Použitie detailného pomocného textu">Použitie detailného pomocného textu</a></li>
+            </ul>
+
+            <h3 class="govuk-heading-m" id="ako">Ako písať pre používateľov</h3>
+
+            <p class="govuk-body">Keď píšete pomocný text, mali by ste:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>ho vytvoriť krátky a jednoduchý – používatelia pravdepodobne nebudú čítať nič dlhšie ako tri riadky,</li>
+                <li>zamerať sa na činnosť, ktorú musí používateľ urobiť – text má byť relevantný k danej situácii,</li>
+                <li>vyhnite sa poskytnutiu nepotrebných informácií - napríklad “toto sa nazývalo X, ale v roku 2008 sa názov zmenil na Y”.</li>
+            </ul>
+
+            <h3 class="govuk-heading-m" id="ukazky">Ukážky</h3>
+            <p class="govuk-body">Tu je ukážka, ako písať pomocný text:</p>
+            <img src="/public/assets/images/patterns/help1.png" alt="Príklad pomocného textu">
+
+            <p class="govuk-body">Nepíšte pomocný text takto:</p>
+            <img src="/public/assets/images/patterns/help2.png" alt="Príklad pomocného textu">
+
+
+            <h3 class="govuk-heading-m" id="kedy">Kedy je pomocný text užitočný</h3>
+
+            <p class="govuk-body">Pomocný text môžete potrebovať pri vysvetlení:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>právneho žargónu,</li>
+                <li>neznámych konceptov,</li>
+                <li>kde nájsť málo známe informácie,</li>
+                <li>v akom formáte by mala byť poskytnutá informácia,</li>
+                <li>čo budete robiť s osobnými informáciami používateľa,</li>
+                <li>dôsledkov jedného rozhodnutia v porovnaní s druhým.</li>
+            </ul>
+            <p class="govuk-body">
+                Dôležité je uvedomiť si, že pomocný text nevysvetľuje rozloženie prvkov na obrazovke a ich význam. Ak to musíte urobiť, znamená to, že ste nevytvorili dostatočne jednoduchú službu. Napr. ak zistíte, že píšete pomocný text typu “Kliknite na zelené tlačidlo naspodku obrazovky”, viete, že rozhranie potrebuje úpravy.
+            </p>
+
+            <h3 class="govuk-heading-m" id="pouzitie1">Použitie pomocného textu</h3>
+            <p class="govuk-body">Pomocný text je krátky a jasný text umiestnený priamo vedľa tej časti stránky, s ktorou súvisí.</p>
+
+            <p class="govuk-body">Ako pomocný text použite informáciu, ktorá je relevantná pre väčšinu používateľov.</p>
+
+            <p class="govuk-body">Tu je ukážka:</p>
+            <img src="/public/assets/images/patterns/help3.png" alt="Príklad pomocného textu">
+
+            <p class="govuk-body">Pomocný text vo formulári umiestnite medzi štítok poľa a pole. Používatelia, prípadne čítače obrazoviek ho tak budú môcť prečítať ešte pred tým, ako sa dostanú k samotnému poľu.
+            </p>
+
+
+            <h3 class="govuk-heading-m" id="pouzitie2">Použitie rozbaľovacieho pomocného textu</h3>
+            <p class="govuk-body">Rozbaľovací pomocný text je krátky odkaz, ktorý sa rozbalí na detailnú pomoc, keď naň používateľ klikne.</p>
+
+            <p class="govuk-body">Tu je ukážka:</p>
+            <img src="/public/assets/images/patterns/help4.png" alt="Príklad pomocného textu">
+
+            <p class="govuk-body">Použite rozbaľovací pomocný text na to, aby sa vaša stránka prehľadnejšie čítala, avšak neschovávajte pomoc, ak ju bude potrebovať väčšina vašich používateľov.</p>
+
+            <p class="govuk-body">Uistite sa, že je text vo forme odkazu, a teda že používateľ rýchlo pochopí, že naň môže kliknúť.</p>
+
+
+            <h3 class="govuk-heading-m" id="pouzitie3">Použitie detailného pomocného textu</h3>
+
+            <p class="govuk-body">
+                Ak vaši používatelia musia urobiť náročné alebo komplexné rozhodnutia, na ktoré nepostačujú podporené prístupy spomenuté vyššie, môžete im poskytnúť viac detailnú pomoc.
+            </p>
+
+            <p class="govuk-body">Uistite sa, že používatelia:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>majú prístup k pomoci pred a počas transakcie,</li>
+                <li>majú zobrazenú pomoc, ktorá je relevantná v ich aktuálnej situácii.</li>
+            </ul>
+
+            <p class="govuk-body">Nepoužívajte detailnú pomoc na vysvetlenie rozhrania - to by malo byť natoľko jednoduché, že jeho vysvetlenie nie je potrebné.
+            </p>
+
+        </div>
+    </div>
+
+  </div>
+{% endblock %}

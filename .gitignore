@@ -16,6 +16,7 @@ dist/
 
 # Files to ignore
 .DS_Store
+.idea
 *.zip
 *.log
 

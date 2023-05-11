@@ -1,0 +1,40 @@
+[
+    {
+        "name": "items",
+        "type": "array",
+        "required": true,
+        "description": "Array of links.",
+        "params": [
+            {
+                "name": "title",
+                "type": "string",
+                "required": true,
+                "description": "Title of the item."
+            },
+            {
+                "name": "link",
+                "type": "string",
+                "required": true,
+                "description": "Link of the item."
+            }
+        ]
+    },
+    {
+        "name": "classes",
+        "type": "string",
+        "required": false,
+        "description": "Classes to add to the container."
+    },
+    {
+        "name": "heading",
+        "type": "string",
+        "required": true,
+        "description": "Heading of related content."
+    },
+    {
+        "name": "customWidthClass",
+        "type": "string",
+        "required": false,
+        "description": "Size of related content."
+    }
+]

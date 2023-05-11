@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../src/govuk/components/idsk-subscription-form/_idsk-subscription-form.scss"],"names":[],"mappings":"AAAA,oBAAoB;AACpB,iBAAiB","file":"_idsk-subscription-form.scss","sourcesContent":["@import \"../../base\";\n@import \"./index\";\n"]}

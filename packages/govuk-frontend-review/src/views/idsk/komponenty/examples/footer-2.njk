@@ -1,0 +1,22 @@
+{% from "idsk-footer/macro.njk" import idskFooter %}
+{{ idskFooter({
+    logo: true,
+    meta: {
+        copy: "Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky. Vytvorené v súlade s Jednotným dizajn manuálom elektronických služieb.",
+        footerLogoLink: "https://www.mirri.gov.sk/",
+        items: [
+            {
+                href: '#1',
+                text: 'Položka navigácie 1'
+            },
+            {
+                href: '#2',
+                text: 'Položka navigácie 2'
+            },
+            {
+                href: '#3',
+                text: 'Položka navigácie 3'
+            }
+        ]
+    }
+}) }}

@@ -1,0 +1,48 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Výber pohlavia" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Vzory</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Tento návod opisuje spôsob, ako požiadať používateľov o informáciu o ich pohlaví.</p>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-s">Obsah:</h2>
+            <ul class="govuk-list">
+                <li><a class="govuk-link" href="#priklad" title="Príklad">Príklad</a></li>
+                <li><a class="govuk-link" href="#vyhnite" title="Vyhnite sa používaniu rodových zámen">Vyhnite sa používaniu rodových zámen</a></li>
+            </ul>
+
+            <p class="govuk-body">Na pohlavie sa používateľov pýtajte len v prípade, ak nemôžete poskytnúť svoju službu bez týchto informácií.</p>
+
+            <h3 class="govuk-heading-m" id="nadizajnujte">Príklad</h3>
+            <p class="govuk-body">Tu je príklad toho, ako sa používateľov opýtať na ich pohlavie:</p>
+            <img src="/public/assets/images/patterns/gender.png" alt="Ukážka">
+            <p class="govuk-body">Ak sa chcete opýtať používateľov na pohlavie, mali by ste polia uviesť v abecednom poradí: "Muž", "Žena".</p>
+
+
+            <h3 class="govuk-heading-m" id="vyhnite">Vyhnite sa používaniu rodových zámen</h3>
+            <p class="govuk-body">
+                Používateľa by ste mali osloviť pomocou osobného zámena "vy", ak je to možné, a vyhnúť sa používaniu rodových zámen, ako je "on" a "ona".
+            </p>
+
+        </div>
+    </div>
+
+  </div>
+{% endblock %}

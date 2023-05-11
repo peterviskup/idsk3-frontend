@@ -1,0 +1,320 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "idsk-button/macro.njk" import idskButton %}
+
+{% set pageName = "Tlačidlá" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% set states = {
+    'Bez pseudo triedy': '',
+    'Stav visited': ':visited',
+    'Stav hover': ':hover',
+    'Stav active': ':active',
+    'Stav focus': ':focus',
+    'Stav focus visited': ':focus :visited',
+    'Stav focus hover': ':hover :focus',
+    'Stav focus active': ':focus :active'
+  } %}
+
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Webové komponenty</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Tlačidlá sa používajú na posun medzi krokmi v rámci procesov. Cieľom je používať jedno tlačidlo na stránku.</p>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-s">Obsah:</h2>
+            <ul class="govuk-list">
+                <li><a class="govuk-link" href="#button-text" title="Text tlačidla">Text tlačidla</a></li>
+                <li><a class="govuk-link" href="#button-alignment" title="Zarovnanie tlačidla">Zarovnanie tlačidla</a></li>
+                <li><a class="govuk-link" href="#button-default" title="Hlavné tlačidlá">Hlavné tlačidlo</a></li>
+                <li><a class="govuk-link" href="#button-start-now" title="Spúšťacie tlačidlo">Spúšťacie tlačidlo</a></li>
+                <li><a class="govuk-link" href="#button-secondary" title="Sekundárne tlačidlo">Sekundárne tlačidlo</a></li>
+                <li><a class="govuk-link" href="#button-warning" title="Výstražné tlačidlo">Výstražné tlačidlo</a></li>
+                <li><a class="govuk-link" href="#button-disabled" title="Neaktívne tlačidlo">Neaktívne tlačidlo</a></li>
+                <li><a class="govuk-link" href="#creating-buttons" title="Vytváranie tlačidiel">Vytváranie tlačidiel</a></li>
+            </ul>
+
+            <h3 class="govuk-heading-m" id="button-text">Text tlačidla</h3>
+            <p class="govuk-body">
+                Text v tlačidle by mal byť krátky a opisovať akciu, ktorá nastane po stlačení daného tlačidla.
+            </p>
+        </div>
+        <div class="govuk-grid-column-full">
+            <div class="example example-error">
+            {% set exampleComponentHtml %}
+{{ idskButton({
+  "text": "Uložiť a pokračovať"
+}) }}
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+            </div>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            <h3 class="govuk-heading-m" id="button-alignment">Zarovnanie tlačidla</h3>
+            <p class="govuk-body">
+                Hlavné tlačidlo zarovnávame na ľavú stranu formulára, v zornom poli používateľa.
+            </p>
+        </div>
+
+        <div class="govuk-grid-column-full">
+            <div class="example example-error">
+            {% set exampleComponentHtml %}
+                {% include "../komponenty/examples/button.njk" %}
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+            </div>
+            <pre class="app-code">
+              <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                {{- exampleComponentHtml | highlight("html") | safe -}}
+              </code>
+            </pre>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            <h3 class="govuk-heading-m" id="button-default">Hlavné tlačidlo</h3>
+            <p class="govuk-body">Hlavné tlačidlá sa používajú na vykonanie hlavnej akcie na stránke.</p>
+            <p class="govuk-body">Snažte sa vyhnúť použitiu viacerých hlavných tlačidiel na jednej stránke. Je to pretože používateľ môže byť zmätený a nebude vedieť, ktoré tlačidlo treba použiť.</p>
+            <p class="govuk-body">Základná trieda pre tlačidlá je <code class="govuk-!-font-size-16  language-markup">idsk-button</code>. Táto trieda by mala byť vždy prvá a ďalej by mali nasledovať viac špecifické triedy.</p>
+            <p class="govuk-body">Tlačidlá by mali obsahovať <code class="govuk-!-font-size-16  language-markup">data-module="idsk-button"</code> kvôli inicializácií tlačidiel na stránke.</p>
+        </div>
+
+        <div class="govuk-grid-column-full">
+            <div class="example example-error">
+            {% set exampleComponentHtml %}
+{{ idskButton({
+  "text": "Uložiť a pokračovať"
+}) }}
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+            </div>
+            <pre class="app-code">
+              <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                {{- exampleComponentHtml | highlight("html") | safe -}}
+              </code>
+            </pre>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+        <h3 class="govuk-heading-m">Design hlavného tlačidla pri jednotlivých stavoch</h3>
+
+        {% for state_description, state_class in states %}
+
+        <button type="submit" class="idsk-button {{ state_class }}" data-module="idsk-button">
+            {{ state_description}}
+          </button><br>
+      {% endfor %}
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            <h3 class="govuk-heading-m" id="button-start-now">Tlačidlo začať</h3>
+            <p class="govuk-body">
+                Tlačidlo “Začať” príp. “Chcem začať” používame na spustenie služby, procesu, alebo registrácie.
+            </p>
+            <p class="govuk-body">Tento typ tlačidla neodosiela dáta z formulárov preto sa používa <code class="govuk-!-font-size-16  language-markup">&lt;a></code> tag namiesta <code class="govuk-!-font-size-16  language-markup">&lt;button></code> tagu.</p>
+            <p class="govuk-body">Pre správne fungovanie tlačidla začať je potrebné použiť triedu <code class="govuk-!-font-size-16  language-markup">idsk-button--start</code> vo vnútri <code class="govuk-!-font-size-16  language-markup">&lt;a></code> elementu.</p>
+        </div>
+
+        <div class="govuk-grid-column-full">
+            <div class="example example-error">
+            {% set exampleComponentHtml %}
+{{ idskButton({
+  "text": "Začať",
+  "href": "#",
+  "isStartButton": true
+}) }}
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+            </div>
+            <pre class="app-code">
+              <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                {{- exampleComponentHtml | highlight("html") | safe -}}
+              </code>
+            </pre>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            <h3 class="govuk-heading-m">Design tlačidla začať pri jednotlivých stavoch</h3>
+            {% for state_description, state_class in states %}
+
+            <a href="#" role="button" draggable="false" class="idsk-button idsk-button--start {{ state_class }}" data-module="idsk-button">
+                {{ state_description}}
+                <svg class="idsk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" role="presentation" focusable="false">
+                  <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"/>
+                </svg></a><br>
+          {% endfor %}
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            <h3 class="govuk-heading-m" id="button-secondary">Sekundárne tlačidlo</h3>
+            <p class="govuk-body">Sekundárne tlačidlá používajte na vykonanie vedľajších úloh na stránke.</p>
+            <p class="govuk-body">Vyvarujte sa použitiu priveľa sekundárnych tlačidiel. Veľké množstvo tlačidiel môže byť pre používateľa mätúce a môže viesť k zblúdeniu na stránke. Aj keď napriek tomu budete potrebovať použiť viacero tlačidiel na stránke tak v prvom rade skúste zjednodušiť stránku alebo jej obsah rozdeliť na ďalšie podstránky.</p>
+            <p class="govuk-body">Sekundárne tlačidlá používajú triedu <code class="govuk-!-font-size-16  language-markup">idsk-button--secondary</code>.</p>
+        </div>
+
+        <div class="govuk-grid-column-full">
+            <div class="example example-error">
+            {% set exampleComponentHtml %}
+{{ idskButton({
+    text: "Sekundárne tlačidlo",
+    classes: "idsk-button--secondary"
+  }) }}
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+            </div>
+            <pre class="app-code">
+              <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                {{- exampleComponentHtml | highlight("html") | safe -}}
+              </code>
+            </pre>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            <h3 class="govuk-heading-m">Design sekundárneho tlačidla pri jednotlivých stavoch</h3>
+
+            {% for state_description, state_class in states %}
+
+            <button type="submit" class="idsk-button idsk-button--secondary {{ state_class }}" data-module="idsk-button">
+                {{ state_description}}
+              </button><br>
+          {% endfor %}
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            <h3 class="govuk-heading-m" id="button-warning">Výstražné tlačidlo</h3>
+            <p class="govuk-body">Výstražné tlačidlo je navrhnuté tak aby používateľ dobre zvážil jeho kliknutie naň. Najlepšie fungujú keď sa často nevyskytujú na stránke.</p>
+            <p class="govuk-body">Používajte ich na miestach kde nie je možné sa vrátiť späť alebo napraviť prípadné zmeny, ako napríklad zmazanie účtu.</p>
+            <p class="govuk-body">Výstražné tlačidlo je tiež možné použiť, ako druhotné kde prvý krok je vykonaný cez základné tlačidlo a výstražné sa zobrazí až následne spolu s dialógovým oknom kde bude otázka či naozaj si želáme uskutočniť danú operáciu.</p>
+            <p class="govuk-body">Text výstražného tlačidla by mal byť obzvlášť výstižní pretože stánku môže používať aj zrakovo znevýhodnená osoba a taktiež sa môže stať, že niekto nepochopí význam danej farby.</p>
+            <p class="govuk-body">Výstražné tlačidlá používajú triedu <code class="govuk-!-font-size-16  language-markup">idsk-button--warning</code>.</p>
+        </div>
+
+        <div class="govuk-grid-column-full">
+            <div class="example example-error">
+            {% set exampleComponentHtml %}
+{{ idskButton({
+    text: "Výstražné tlačidlo",
+    classes: "idsk-button--warning"
+  }) }}
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+            </div>
+            <pre class="app-code">
+              <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                {{- exampleComponentHtml | highlight("html") | safe -}}
+              </code>
+            </pre>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            <h3 class="govuk-heading-m">Design výstražného tlačidla pri jednotlivých stavoch</h3>
+
+            {% for state_description, state_class in states %}
+
+            <button type="submit" class="idsk-button idsk-button--warning {{ state_class }}" data-module="idsk-button">
+                {{ state_description}}
+              </button><br>
+          {% endfor %}
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            <h3 class="govuk-heading-m" id="button-disabled">Neaktívne tlačidlo</h3>
+
+            <p class="govuk-body">Neaktívne tlačidlá by sa nemali používať, ak na to nie je vážny dôvod.</p>
+            <p class="govuk-body">Ak už musíte použiť neaktívne tlačidlo, uistite sa, že jeho dizajn vyzerá tak, že sa naň nedá kliknúť (používa sa 50% priehľadnosť).</p>
+            <p class="govuk-body">Používajte atribút <code class="govuk-!-font-size-16  language-markup">aria-disabled</code> kvôli starším čítačkám obrazoviek.</p>
+            <p class="govuk-body">Príkladom neaktívneho tlačidla sú napr. v kalendároch dni, ktoré už nie je možné zvoliť alebo si na ne rezervovať termín.</p>
+            <p class="govuk-body">Je potrebné používateľovi poskytnúť informáciu, ako môže postupovať ďalej, napr. pridaním pomocného textu s vysvetlením prečo je tlačidlo neaktívne.</p>
+            <p class="govuk-body">Neaktívne tlačidlá používajú triedu <code class="govuk-!-font-size-16  language-markup">idsk-button--disabled</code>.</p>
+        </div>
+
+        <div class="govuk-grid-column-full">
+            <div class="example example-error">
+            {% set exampleComponentHtml %}
+{{ idskButton({
+  "text": "Neaktívne tlačidlo",
+  "disabled": true
+}) }}
+            {% endset %}
+            {{exampleComponentHtml | safe}}
+            </div>
+            <pre class="app-code">
+              <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                {{- exampleComponentHtml | highlight("html") | safe -}}
+              </code>
+            </pre>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            <h3 class="govuk-heading-m" id="creating-buttons">Vytváranie tlačidiel</h3>
+            <p class="govuk-body">
+                Pri programovaní tlačidiel použite z toolkitu JDMES Sass mixin štýl tlačidiel, ktorý nájdete vo frontend toolkite na JDMES v súbore <a class="govuk-link" href="https://github.com/alphagov/govuk_frontend_toolkit/blob/master/stylesheets/design-patterns/_buttons.scss" rel="external" title="buttons.scss">buttons.scss</a>.
+            </p>
+            <p class="govuk-body">
+                Pri vytváraní tlačidiel dbajte tiež na to, aby sa za tlačidlom nenachádzal obrázok prípadne,
+                aby tlačidlo nebolo inak upravované.
+            </p>
+        </div>
+
+        <div class="govuk-grid-column-full">
+            <div class="example example-error">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-third">
+                    {% set exampleComponentHtml %}
+{{ idskButton({
+  "text": "Uložiť a pokračovať"
+}) }}
+{% endset %}
+            {{exampleComponentHtml | safe}}
+                    </div>
+                    <div class="govuk-grid-column-one-third">
+                        <div class="swatch-wrapper">
+                            <h4 class="govuk-heading-s">Tlačidlo</h4>
+                            <div class="swatch swatch-green"></div>
+                            <ul>
+                                <li><b>green</b></li>
+                                <li>#00703C</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="govuk-grid-column-one-third">
+                        <div class="swatch-wrapper">
+                            <h4 class="govuk-heading-s">Aktívny&nbsp;stav</h4>
+                            <div class="swatch swatch-yellow"></div>
+                            <ul>
+                                <li><b>yellow</b></li>
+                                <li>#FFDF0F</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <pre class="app-code">
+              <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+                {{- exampleComponentHtml | highlight("html") | safe -}}
+              </code>
+            </pre>
+        </div>
+
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block bodyEnd %}
+  <script src="/public/assets/js/fake-element-state.js"></script>
+{% endblock %}

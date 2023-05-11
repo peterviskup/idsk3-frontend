@@ -1,0 +1,83 @@
+{% set openFilter = params.openFilter if params.openFilter else 'Rozbaliť obsah filtra' %}
+{% set closeFilter = params.closeFilter if params.closeFilter else 'Zbaliť obsah filtra' %}
+{% set openActiveFilters = params.openActiveFilters if params.openActiveFilters else 'Rozbaliť aktívny filter' %}
+{% set closeActiveFilters = params.closeActiveFilters if params.closeActiveFilters else 'Zbaliť aktívny filter' %}
+{% set openCategory = params.openCategory if params.openCategory else 'Rozbaliť sekciu filtra' %}
+{% set closeCategory = params.closeCategory if params.closeCategory else 'Zbaliť sekciu filtra' %}
+{% set filterContentTitle = params.filterContentTitle if params.filterContentTitle else 'Filtrovať obsah' %}
+{% set activeFiltersTitle = params.activeFiltersTitle if params.activeFiltersTitle else 'Aktívny filter' %}
+{% set filterSelectedText = params.filterSelectedText if params.filterSelectedText else 'Filtrovať' %}
+{% set removeAllFilters = params.removeAllFilters if params.removeAllFilters else 'Zrušiť všetko' %}
+{% set removeFilter = params.removeFilter if params.removeFilter else 'Zrušiť filter' %}
+
+{% macro filters(filters) %}
+  {% for item in filters %}
+    <div class="govuk-grid-column-one-third-from-desktop">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="{{ item.id }}">
+          {{ item.inputTitle }}
+        </label>
+        {% if item.options %}
+          <select tabindex="-1" class="govuk-select" id="{{ item.id }}" name="{{ item.id }}">
+            {% for option in item.options %}
+              <option {{ "selected" if option.selected == "True" }} {{ "disabled" if option.disabled == "True" }}
+                value="{{ option.value }}">{{ option.inputTitle }}</option>
+            {% endfor %}
+          </select>
+        {% else %}
+          <input tabindex="-1" class="govuk-input" type="text" id="{{ item.id }}" name="{{ item.id }}"
+            placeholder="{{ item.inputTitle }}"
+            aria-label="{{ item.inputTitle }}">
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+{% endmacro %}
+
+{% macro expandFilterToggle(params, openText, closeText, expanded, disableTabIndex, categoryName) %}
+  <button class="govuk-body govuk-link idsk-filter-menu__toggle"
+    tabindex="{{ -1 if disableTabIndex else 0 }}"
+    data-open-text="{{ openText }}"
+    data-close-text="{{ closeText }}"
+    data-category-name="{{ categoryName if categoryName }}"
+    aria-label="{{ closeText if expanded else openText }}{{ " " + categoryName if categoryName }}"
+    type="button">
+    {{ closeText if expanded else openText }}
+  </button>
+{% endmacro %}
+
+<div data-module="idsk-table-filter" id="{{ params.id }}" class="idsk-table-filter {{ params.classes if params.classes }}">
+  <div class="idsk-table-filter__panel idsk-table-filter__inputs">
+    <div class="idsk-table-filter__title govuk-heading-m">{{ filterContentTitle }}</div>
+    {{ expandFilterToggle(params, openFilter, closeFilter, false) }}
+    <form class="idsk-table-filter__content" aria-hidden="true" action="{{ params.formAction if params.formAction else '#' }}">
+      {% if params.categories %}
+        {% for category in params.categories %}
+          <div class="idsk-table-filter__category">
+            <div class="idsk-table-filter__title govuk-heading-s">{{ category.title }} <span class="count"></span></div>
+            {{ expandFilterToggle(params, openCategory, closeCategory, false, true, category.title) }}
+            <div class="idsk-table-filter__content">
+              <div class="govuk-grid-row idsk-table-filter__filter-inputs">
+                {{ filters(category.filters) }}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="govuk-grid-row idsk-table-filter__filter-inputs">
+          {{ filters(params.filters) }}
+        </div>
+      {% endif %}
+      <button type="submit" class="idsk-button submit-table-filter" disabled>
+        {{ filterSelectedText }} (<span class="count">0</span>)
+      </button>
+    </form>
+  </div>
+  <div class="idsk-table-filter__panel idsk-table-filter__active-filters idsk-table-filter__active-filters__hide idsk-table-filter--expanded"
+    data-remove-filter="{{ removeFilter }}"
+    data-remove-all-filters="{{ removeAllFilters }}">
+    <div class="govuk-body idsk-table-filter__title">{{ activeFiltersTitle }}</div>
+    {{ expandFilterToggle(params, openActiveFilters, closeActiveFilters, true) }}
+    <div class="govuk-clearfix idsk-table-filter__content"></div>
+  </div>
+</div>

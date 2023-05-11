@@ -1,0 +1,19 @@
+params:
+  - name: id
+    type: string
+    required: false
+    description: Unique id for textarea element.
+  - name: characterLength
+    type: integer
+    required: false
+    description: Number of allowed characters in textarea.
+  - name: label
+    type: string
+    required: false
+    description: Label for textarea element.
+examples:
+  - name: basic
+    data:
+      id: basic-textarea
+      label: Survey text
+      characterLength: 100

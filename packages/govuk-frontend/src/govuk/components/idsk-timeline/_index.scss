@@ -1,0 +1,227 @@
+// stylelint-disable order/properties-order
+
+@include govuk-exports("idsk/component/timeline") {
+  .idsk-timeline__content {
+    @include govuk-font($size: 14);
+    height: 75px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: govuk-spacing(2);
+
+    @include mq(375px) {
+      @include govuk-font($size: 19);
+    }
+
+    @include mq($from: tablet) {
+      margin-top: 0;
+    }
+
+    @include mq($from: desktop) {
+      height: 70px;
+    }
+  }
+
+  .idsk-timeline__content .govuk-body-m,
+  .idsk-timeline__content .govuk-body {
+    @include govuk-font($size: 14);
+
+    @include mq(375px) {
+      @include govuk-font($size: 19);
+    }
+  }
+
+  .idsk-timeline__content.govuk-body {
+    margin-bottom: -50px;
+    margin-top: govuk-spacing(4);
+    border-top: 1px solid govuk-colour("mid-grey");
+  }
+
+  .idsk-timeline__content.idsk-timeline__content__caption--long {
+    height: 100px;
+
+    @include mq($from: desktop) {
+      height: 70px;
+    }
+  }
+
+  .idsk-timeline__content__caption,
+  .idsk-timeline__content__title,
+  .idsk-timeline__content__date-line {
+    position: relative;
+    width: 67%;
+    margin-left: govuk-spacing(2);
+
+    @include mq(405px) {
+      width: 69%;
+    }
+
+    @include mq($from: tablet) {
+      width: 75%;
+      margin-left: govuk-spacing(3);
+    }
+  }
+
+  .idsk-timeline__content__date-line {
+    margin-bottom: govuk-spacing(3);
+  }
+
+  .idsk-timeline__content__time {
+    @include govuk-font($size: 16);
+  }
+
+  .idsk-timeline__left-side .govuk-body-m {
+    font-weight: bold;
+  }
+
+  .idsk-timeline__content__title-div {
+    margin-bottom: -20px;
+
+    @include mq(405px) {
+      margin-bottom: -50px;
+    }
+
+    @include mq(tablet) {
+      margin-bottom: -25px;
+    }
+  }
+
+  .idsk-timeline__content__title {
+    @include mq($from: tablet) {
+      margin-top: govuk-spacing(3);
+    }
+  }
+
+  .idsk-timeline__content__title .govuk-heading-m {
+    margin-bottom: 0;
+    margin-top: -40px;
+  }
+
+  .idsk-timeline__left-side {
+    width: 26.5%;
+
+    @include mq(405px) {
+      width: 23%;
+    }
+
+    @include mq($and: "(orientation: landscape)") {
+      width: 25%;
+    }
+
+    @include mq(tablet) {
+      width: 25%;
+    }
+
+    @include mq($from: desktop) {
+      width: 17%;
+    }
+  }
+
+  .idsk-timeline__middle {
+    width: 2%;
+
+    @include mq($and: "(orientation: landscape)") {
+      width: 7%;
+    }
+  }
+
+  .idsk-timeline__vertical-line,
+  .idsk-timeline__vertical-line--circle {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    border-left: solid 2px govuk-colour("grey-5");
+    background: govuk-colour("white");
+    top: 10px;
+    height: calc(100% + 30px);
+  }
+
+  .idsk-timeline__content .idsk-timeline__vertical-line--circle::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 5;
+    top: calc(50% - 32px);
+    width: 12px;
+    height: 12px;
+    color: govuk-colour("black");
+    background: govuk-colour("grey-5");
+    border-radius: 100px;
+    border: solid 2px govuk-colour("grey-5");
+    left: -7px;
+
+    @include mq(tablet) {
+      left: -8.5px;
+      top: calc(50% - 35px);
+      width: 16px;
+      height: 16px;
+    }
+
+    @include mq($from: desktop) {
+      left: -8.9px;
+    }
+  }
+
+  .idsk-timeline__button--left-arrow {
+    @include govuk-font($size: 19);
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+    color: govuk-colour("blue");
+  }
+
+  .idsk-timeline__button--back,
+  .idsk-timeline__button--forward {
+    @include govuk-font($size: 19);
+    position: relative;
+    z-index: 1;
+    border-width: 0;
+    color: govuk-colour("blue");
+    background: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    text-decoration: underline;
+    text-align: right;
+
+    @include govuk-link-common;
+    @include govuk-link-style-default;
+  }
+
+  .idsk-timeline__button--back {
+    padding-left: 0;
+    margin-bottom: govuk-spacing(2);
+  }
+
+  .idsk-timeline__button--forward {
+    margin-top: govuk-spacing(6);
+    padding-right: 0;
+    float: right;
+    margin-bottom: govuk-spacing(3);
+  }
+
+  .idsk-timeline__button__svg--previous {
+    padding-right: govuk-spacing(2);
+  }
+
+  .idsk-timeline__button__svg--next {
+    padding-left: govuk-spacing(2);
+  }
+
+  .idsk-timeline__content__text {
+    @include govuk-font($size: 16, $weight: bold);
+    float: right;
+    margin-top: -25px;
+    margin-right: -5px;
+
+    @include mq(405px) {
+      margin-right: -15px;
+    }
+
+    @include mq($and: "(orientation: landscape)") {
+      margin-right: 0;
+    }
+  }
+}

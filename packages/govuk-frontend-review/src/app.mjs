@@ -47,7 +47,7 @@ export default async () => {
   // Define routes
 
   // Index page - render the component list template
-  app.get('/', async function (req, res) {
+  app.get('/components', async function (req, res) {
     res.render('index', {
       componentNames,
       exampleNames,
@@ -65,7 +65,7 @@ export default async () => {
   // All components view
   app.get('/components/all', function (req, res, next) {
     res.locals.componentsData = componentsData.map((componentData) => {
-      const defaultExample = componentData.examples.find(({ name }) => name === 'default')
+      const defaultExample = componentData.examples[0]
 
       return {
         ...componentData,
@@ -152,6 +152,13 @@ export default async () => {
 
   // Full page example views
   routes.fullPageExamples(app)
+
+  // IDSK views
+  routes.idsk(app, {
+    govukComponentNames: componentNames,
+    govukExampleNames: exampleNames,
+    govukFullPageExamples: fullPageExamples
+  })
 
   return app
 }

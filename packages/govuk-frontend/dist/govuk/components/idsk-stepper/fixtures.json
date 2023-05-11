@@ -1,0 +1,134 @@
+{
+    "component": "idsk-stepper",
+    "fixtures": [
+        {
+            "name": "default",
+            "options": {
+                "id": "default-example",
+                "mainTitle": "Narodenie dieťaťa: krok po kroku",
+                "subtitle": "Pred narodením dieťaťa",
+                "caption": "Čo je potrebné vybaviť a zariadieť keď sa Vám má narodiť dieťa ?",
+                "attributes": {
+                    "data-attribute": "value"
+                },
+                "items": [
+                    {
+                        "heading": {
+                            "text": "Výber pediatra"
+                        },
+                        "contents": [
+                            {
+                                "subtitle": "Pri narodení dieťaťa máte nárok na viacero",
+                                "href": "#"
+                            },
+                            {
+                                "subtitle": "Pri narodení dieťaťa máte nárok na viacero",
+                                "href": "#"
+                            },
+                            {
+                                "subtitle": "Pri narodení dieťaťa máte nárok na viacero",
+                                "href": "#"
+                            },
+                            {
+                                "subtitle": "Pri narodení dieťaťa máte nárok na viacero",
+                                "href": "#"
+                            }
+                        ]
+                    },
+                    {
+                        "heading": {
+                            "text": "Žiadosť o materské v Sociálnej poisťovni"
+                        },
+                        "contents": [
+                            {
+                                "subtitle": "Pri narodení dieťaťa máte nárok na viacero",
+                                "href": "#"
+                            },
+                            {
+                                "subtitle": "Pri narodení dieťaťa máte nárok na viacero",
+                                "href": "#"
+                            }
+                        ]
+                    },
+                    {
+                        "heading": {
+                            "text": "Po narodení dieťaťa",
+                            "isTitle": true
+                        }
+                    },
+                    {
+                        "heading": {
+                            "text": "Výber zdravotnej poistovne a prihlásenie dieťaťa"
+                        },
+                        "contents": [
+                            {
+                                "subtitle": "Pri narodení dieťaťa máte nárok na viacero",
+                                "href": "#"
+                            },
+                            {
+                                "subtitle": "Pri narodení dieťaťa máte nárok na viacero alebo viac detí  alebo ktorým sa v priebehu dvoch rokov opakovane narodili dvojčatá,",
+                                "href": "#"
+                            },
+                            {
+                                "subtitle": "Príspevok pri narodení dieťaťa,Prídavok na dieťa,Rodičovský príspevok pre vlastné dieťa / pre zverené dieťa,",
+                                "href": "#"
+                            },
+                            {
+                                "subtitle": "Príspevok na starostlivosť o dieťa.",
+                                "href": "#"
+                            }
+                        ]
+                    },
+                    {
+                        "heading": {
+                            "text": "Príspevky pri narodení dieťaťa z Úradu práce, sociálnych vecí a rodiny",
+                            "showAnd": true
+                        },
+                        "contents": [
+                            {
+                                "subtitle": "Pri narodení dieťaťa máte nárok na viacero",
+                                "href": "#"
+                            },
+                            {
+                                "subtitle": "Pri narodení dieťaťa máte nárok na viacero alebo viac detí  alebo ktorým sa v priebehu dvoch rokov opakovane narodili dvojčatá,",
+                                "href": "#"
+                            }
+                        ]
+                    },
+                    {
+                        "heading": {
+                            "text": "Výber zdravotnej poistovne a prihlásenie dieťaťa"
+                        },
+                        "contents": [
+                            {
+                                "subtitle": "Pri narodení dieťaťa máte nárok na viacero",
+                                "href": "#"
+                            },
+                            {
+                                "subtitle": "Príspevok pre rodičov, ktorým sa narodili súčasne tri alebo viac detí  alebo ktorým sa v priebehu dvoch rokov opakovane narodili dvojčatá,",
+                                "href": "#"
+                            }
+                        ]
+                    },
+                    {
+                        "heading": {
+                            "text": "Výber zdravotnej poistovne a prihlásenie dieťaťa"
+                        },
+                        "contents": [
+                            {
+                                "subtitle": "Pri narodení dieťaťa máte nárok na viacero",
+                                "href": "#"
+                            },
+                            {
+                                "subtitle": "Príspevok pre rodičov, ktorým sa narodili súčasne tri alebo viac detí  alebo ktorým sa v priebehu dvoch rokov opakovane narodili dvojčatá,",
+                                "href": "#"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "hidden": false,
+            "html": "<h2 class=\"govuk-heading-l\">Narodenie dieťaťa: krok po kroku</h2>\n<p class=\"idsk-stepper__caption govuk-caption-m\">Čo je potrebné vybaviť a zariadieť keď sa Vám má narodiť dieťa ?</p>\n<div class=\"idsk-stepper\" data-module=\"idsk-stepper\" id=\"default-example\" data-attribute=\"value\" >\n    <div class=\"idsk-stepper__subtitle-container\">\n        <div class=\"idsk-stepper__subtitle--heading govuk-grid-column-three-quarters\">\n            <h3 class=\"govuk-heading-m idsk-stepper__section-subtitle\">Pred narodením dieťaťa</h3>\n        </div>\n        <div class=\"idsk-stepper__controls govuk-grid-column-one-quarter\" data-line1=\"Zobraziť všetko\" data-line2=\"Zatvoriť všetko\">\n        </div>\n    </div>\n            <div class=\"idsk-stepper__section  \">\n                <div class=\"idsk-stepper__section-header\">\n                        <span class=\"idsk-stepper__circle idsk-stepper__circle--number\">\n                            <span class=\"idsk-stepper__circle-inner\">\n                                <span class=\"idsk-stepper__circle-background\">\n                                    <span class=\"idsk-stepper__circle-step-label\">1</span>\n                                </span>\n                            </span>\n                        </span>\n                    <h4 class=\"idsk-stepper__section-heading\">\n                        <span class=\"idsk-stepper__section-button\" id=\"default-example-heading-1\">\n                            Výber pediatra\n                        </span>\n                    </h4>\n                </div>\n                <div id=\"default-example-content-1\" class=\"idsk-stepper__section-content\" aria-labelledby=\"default-example-heading-1\">\n                            <ul class=\"govuk-list\">\n                                <li>\n                                    <a class=\"govuk-link\" href=\"#\" title=\"Pri narodení dieťaťa máte nárok na viacero\">\n                                        Pri narodení dieťaťa máte nárok na viacero</a>\n                                </li>\n                            </ul>\n                            <ul class=\"govuk-list\">\n                                <li>\n                                    <a class=\"govuk-link\" href=\"#\" title=\"Pri narodení dieťaťa máte nárok na viacero\">\n                                        Pri narodení dieťaťa máte nárok na viacero</a>\n                                </li>\n                            </ul>\n                            <ul class=\"govuk-list\">\n                                <li>\n                                    <a class=\"govuk-link\" href=\"#\" title=\"Pri narodení dieťaťa máte nárok na viacero\">\n                                        Pri narodení dieťaťa máte nárok na viacero</a>\n                                </li>\n                            </ul>\n                            <ul class=\"govuk-list\">\n                                <li>\n                                    <a class=\"govuk-link\" href=\"#\" title=\"Pri narodení dieťaťa máte nárok na viacero\">\n                                        Pri narodení dieťaťa máte nárok na viacero</a>\n                                </li>\n                            </ul>\n                </div>\n            </div>\n            <div class=\"idsk-stepper__section  \">\n                <div class=\"idsk-stepper__section-header\">\n                        <span class=\"idsk-stepper__circle idsk-stepper__circle--number\">\n                            <span class=\"idsk-stepper__circle-inner\">\n                                <span class=\"idsk-stepper__circle-background\">\n                                    <span class=\"idsk-stepper__circle-step-label\">2</span>\n                                </span>\n                            </span>\n                        </span>\n                    <h4 class=\"idsk-stepper__section-heading\">\n                        <span class=\"idsk-stepper__section-button\" id=\"default-example-heading-2\">\n                            Žiadosť o materské v Sociálnej poisťovni\n                        </span>\n                    </h4>\n                </div>\n                <div id=\"default-example-content-2\" class=\"idsk-stepper__section-content\" aria-labelledby=\"default-example-heading-2\">\n                            <ul class=\"govuk-list\">\n                                <li>\n                                    <a class=\"govuk-link\" href=\"#\" title=\"Pri narodení dieťaťa máte nárok na viacero\">\n                                        Pri narodení dieťaťa máte nárok na viacero</a>\n                                </li>\n                            </ul>\n                            <ul class=\"govuk-list\">\n                                <li>\n                                    <a class=\"govuk-link\" href=\"#\" title=\"Pri narodení dieťaťa máte nárok na viacero\">\n                                        Pri narodení dieťaťa máte nárok na viacero</a>\n                                </li>\n                            </ul>\n                </div>\n            </div>\n                <div class=\"idsk-stepper__section-title\">\n                    <h1 class=\"idsk-stepper__section-header idsk-stepper__section-subtitle\">\n                        <span class=\"govuk-heading-m\">Po narodení dieťaťa</span>\n                    </h1>\n                </div>\n            <div class=\"idsk-stepper__section  \">\n                <div class=\"idsk-stepper__section-header\">\n                        <span class=\"idsk-stepper__circle idsk-stepper__circle--number\">\n                            <span class=\"idsk-stepper__circle-inner\">\n                                <span class=\"idsk-stepper__circle-background\">\n                                    <span class=\"idsk-stepper__circle-step-label\">3</span>\n                                </span>\n                            </span>\n                        </span>\n                    <h4 class=\"idsk-stepper__section-heading\">\n                        <span class=\"idsk-stepper__section-button\" id=\"default-example-heading-4\">\n                            Výber zdravotnej poistovne a prihlásenie dieťaťa\n                        </span>\n                    </h4>\n                </div>\n                <div id=\"default-example-content-4\" class=\"idsk-stepper__section-content\" aria-labelledby=\"default-example-heading-4\">\n                            <ul class=\"govuk-list\">\n                                <li>\n                                    <a class=\"govuk-link\" href=\"#\" title=\"Pri narodení dieťaťa máte nárok na viacero\">\n                                        Pri narodení dieťaťa máte nárok na viacero</a>\n                                </li>\n                            </ul>\n                            <ul class=\"govuk-list\">\n                                <li>\n                                    <a class=\"govuk-link\" href=\"#\" title=\"Pri narodení dieťaťa máte nárok na viacero alebo viac detí  alebo ktorým sa v priebehu dvoch rokov opakovane narodili dvojčatá,\">\n                                        Pri narodení dieťaťa máte nárok na viacero alebo viac detí  alebo ktorým sa v priebehu dvoch rokov opakovane narodili dvojčatá,</a>\n                                </li>\n                            </ul>\n                            <ul class=\"govuk-list\">\n                                <li>\n                                    <a class=\"govuk-link\" href=\"#\" title=\"Príspevok pri narodení dieťaťa,Prídavok na dieťa,Rodičovský príspevok pre vlastné dieťa / pre zverené dieťa,\">\n                                        Príspevok pri narodení dieťaťa,Prídavok na dieťa,Rodičovský príspevok pre vlastné dieťa / pre zverené dieťa,</a>\n                                </li>\n                            </ul>\n                            <ul class=\"govuk-list\">\n                                <li>\n                                    <a class=\"govuk-link\" href=\"#\" title=\"Príspevok na starostlivosť o dieťa.\">\n                                        Príspevok na starostlivosť o dieťa.</a>\n                                </li>\n                            </ul>\n                </div>\n            </div>\n            <div class=\"idsk-stepper__section  \">\n                <div class=\"idsk-stepper__section-header\">\n                        <span class=\"idsk-stepper__circle idsk-stepper__circle--letter\">\n                            <span class=\"idsk-stepper__circle-inner\">\n                                <span class=\"idsk-stepper__circle-background\">\n                                    <span class=\"idsk-stepper__circle-step-label\">a</span>\n                                </span>\n                            </span>\n                        </span>\n                    <h4 class=\"idsk-stepper__section-heading\">\n                        <span class=\"idsk-stepper__section-button\" id=\"default-example-heading-5\">\n                            Príspevky pri narodení dieťaťa z Úradu práce, sociálnych vecí a rodiny\n                        </span>\n                    </h4>\n                </div>\n                <div id=\"default-example-content-5\" class=\"idsk-stepper__section-content\" aria-labelledby=\"default-example-heading-5\">\n                            <ul class=\"govuk-list\">\n                                <li>\n                                    <a class=\"govuk-link\" href=\"#\" title=\"Pri narodení dieťaťa máte nárok na viacero\">\n                                        Pri narodení dieťaťa máte nárok na viacero</a>\n                                </li>\n                            </ul>\n                            <ul class=\"govuk-list\">\n                                <li>\n                                    <a class=\"govuk-link\" href=\"#\" title=\"Pri narodení dieťaťa máte nárok na viacero alebo viac detí  alebo ktorým sa v priebehu dvoch rokov opakovane narodili dvojčatá,\">\n                                        Pri narodení dieťaťa máte nárok na viacero alebo viac detí  alebo ktorým sa v priebehu dvoch rokov opakovane narodili dvojčatá,</a>\n                                </li>\n                            </ul>\n                </div>\n            </div>\n            <div class=\"idsk-stepper__section  \">\n                <div class=\"idsk-stepper__section-header\">\n                        <span class=\"idsk-stepper__circle idsk-stepper__circle--number\">\n                            <span class=\"idsk-stepper__circle-inner\">\n                                <span class=\"idsk-stepper__circle-background\">\n                                    <span class=\"idsk-stepper__circle-step-label\">4</span>\n                                </span>\n                            </span>\n                        </span>\n                    <h4 class=\"idsk-stepper__section-heading\">\n                        <span class=\"idsk-stepper__section-button\" id=\"default-example-heading-6\">\n                            Výber zdravotnej poistovne a prihlásenie dieťaťa\n                        </span>\n                    </h4>\n                </div>\n                <div id=\"default-example-content-6\" class=\"idsk-stepper__section-content\" aria-labelledby=\"default-example-heading-6\">\n                            <ul class=\"govuk-list\">\n                                <li>\n                                    <a class=\"govuk-link\" href=\"#\" title=\"Pri narodení dieťaťa máte nárok na viacero\">\n                                        Pri narodení dieťaťa máte nárok na viacero</a>\n                                </li>\n                            </ul>\n                            <ul class=\"govuk-list\">\n                                <li>\n                                    <a class=\"govuk-link\" href=\"#\" title=\"Príspevok pre rodičov, ktorým sa narodili súčasne tri alebo viac detí  alebo ktorým sa v priebehu dvoch rokov opakovane narodili dvojčatá,\">\n                                        Príspevok pre rodičov, ktorým sa narodili súčasne tri alebo viac detí  alebo ktorým sa v priebehu dvoch rokov opakovane narodili dvojčatá,</a>\n                                </li>\n                            </ul>\n                </div>\n            </div>\n            <div class=\"idsk-stepper__section   idsk-stepper__section--last-item\">\n                <div class=\"idsk-stepper__section-header\">\n                        <span class=\"idsk-stepper__circle idsk-stepper__circle--number\">\n                            <span class=\"idsk-stepper__circle-inner\">\n                                <span class=\"idsk-stepper__circle-background\">\n                                    <span class=\"idsk-stepper__circle-step-label\">5</span>\n                                </span>\n                            </span>\n                        </span>\n                    <h4 class=\"idsk-stepper__section-heading\">\n                        <span class=\"idsk-stepper__section-button\" id=\"default-example-heading-7\">\n                            Výber zdravotnej poistovne a prihlásenie dieťaťa\n                        </span>\n                    </h4>\n                </div>\n                <div id=\"default-example-content-7\" class=\"idsk-stepper__section-content\" aria-labelledby=\"default-example-heading-7\">\n                            <ul class=\"govuk-list\">\n                                <li>\n                                    <a class=\"govuk-link\" href=\"#\" title=\"Pri narodení dieťaťa máte nárok na viacero\">\n                                        Pri narodení dieťaťa máte nárok na viacero</a>\n                                </li>\n                            </ul>\n                            <ul class=\"govuk-list\">\n                                <li>\n                                    <a class=\"govuk-link\" href=\"#\" title=\"Príspevok pre rodičov, ktorým sa narodili súčasne tri alebo viac detí  alebo ktorým sa v priebehu dvoch rokov opakovane narodili dvojčatá,\">\n                                        Príspevok pre rodičov, ktorým sa narodili súčasne tri alebo viac detí  alebo ktorým sa v priebehu dvoch rokov opakovane narodili dvojčatá,</a>\n                                </li>\n                            </ul>\n                </div>\n            </div>\n</div>"
+        }
+    ]
+}

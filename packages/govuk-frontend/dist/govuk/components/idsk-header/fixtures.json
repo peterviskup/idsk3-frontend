@@ -1,0 +1,310 @@
+{
+    "component": "idsk-header",
+    "fixtures": [
+        {
+            "name": "default",
+            "options": {
+                "logo": true
+            },
+            "hidden": false,
+            "html": "<header class=\"idsk-header \" data-module=\"idsk-header\">\n  <div class=\"idsk-header__container govuk-width-container\">\n    <div class=\"idsk-header__logo\">\n      <a href=\"/\" class=\"idsk-header__link idsk-header__link--homepage\">\n        <span class=\"idsk-header__logotype\">\n          <img src=\"/assets/images/slovensko_sk_logo.svg\" alt=\"hlavička logo\">\n        </span>\n      </a>\n    </div>\n\n\n  </div>\n</header>"
+        },
+        {
+            "name": "with service name",
+            "options": {
+                "logo": "true,",
+                "serviceName": "Service Name",
+                "serviceUrl": "/components/header"
+            },
+            "hidden": false,
+            "html": "<header class=\"idsk-header \" data-module=\"idsk-header\">\n  <div class=\"idsk-header__container govuk-width-container\">\n    <div class=\"idsk-header__logo\">\n      <a href=\"/\" class=\"idsk-header__link idsk-header__link--homepage\">\n        <span class=\"idsk-header__logotype\">\n          <img src=\"/assets/images/slovensko_sk_logo.svg\" alt=\"hlavička logo\">\n        </span>\n      </a>\n    </div>\n    <div class=\"idsk-header__content\">\n\n    <a href=\"/components/header\" class=\"idsk-header__link idsk-header__link--service-name\">\n      Service Name\n    </a>\n\n\n    </div>\n\n\n  </div>\n</header>"
+        },
+        {
+            "name": "with navigation",
+            "options": {
+                "logo": "true,",
+                "navigation": [
+                    {
+                        "href": "#1",
+                        "text": "Navigation item 1",
+                        "active": true
+                    },
+                    {
+                        "href": "#2",
+                        "text": "Navigation item 2"
+                    },
+                    {
+                        "href": "#3",
+                        "text": "Navigation item 3"
+                    },
+                    {
+                        "href": "#4",
+                        "text": "Navigation item 4"
+                    }
+                ]
+            },
+            "hidden": false,
+            "html": "<header class=\"idsk-header \" data-module=\"idsk-header\">\n  <div class=\"idsk-header__container govuk-width-container\">\n    <div class=\"idsk-header__logo\">\n      <a href=\"/\" class=\"idsk-header__link idsk-header__link--homepage\">\n        <span class=\"idsk-header__logotype\">\n          <img src=\"/assets/images/slovensko_sk_logo.svg\" alt=\"hlavička logo\">\n        </span>\n      </a>\n    </div>\n    <div class=\"idsk-header__content\">\n\n\n    <button type=\"button\" class=\"idsk-header__menu-button govuk-js-header-toggle\" aria-controls=\"navigation\" aria-label=\"Show or hide Top Level Navigation\">Menu</button>\n    <nav aria-label=\"Top Level Navigation\">\n      <ul id=\"navigation\" class=\"idsk-header__navigation \">\n            <li class=\"idsk-header__navigation-item idsk-header__navigation-item--active\">\n              <a class=\"idsk-header__link\" href=\"#1\">\n                Navigation item 1\n              </a>\n            </li>\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"#2\">\n                Navigation item 2\n              </a>\n            </li>\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"#3\">\n                Navigation item 3\n              </a>\n            </li>\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"#4\">\n                Navigation item 4\n              </a>\n            </li>\n      </ul>\n    </nav>\n\n    </div>\n\n\n  </div>\n</header>"
+        },
+        {
+            "name": "with service name and navigation",
+            "options": {
+                "logo": "true,",
+                "serviceName": "Service Name",
+                "serviceUrl": "/components/header",
+                "navigation": [
+                    {
+                        "href": "#1",
+                        "text": "Navigation item 1",
+                        "active": true
+                    },
+                    {
+                        "href": "#2",
+                        "text": "Navigation item 2"
+                    },
+                    {
+                        "href": "#3",
+                        "text": "Navigation item 3"
+                    },
+                    {
+                        "href": "#4",
+                        "text": "Navigation item 4"
+                    }
+                ]
+            },
+            "hidden": false,
+            "html": "<header class=\"idsk-header \" data-module=\"idsk-header\">\n  <div class=\"idsk-header__container govuk-width-container\">\n    <div class=\"idsk-header__logo\">\n      <a href=\"/\" class=\"idsk-header__link idsk-header__link--homepage\">\n        <span class=\"idsk-header__logotype\">\n          <img src=\"/assets/images/slovensko_sk_logo.svg\" alt=\"hlavička logo\">\n        </span>\n      </a>\n    </div>\n    <div class=\"idsk-header__content\">\n\n    <a href=\"/components/header\" class=\"idsk-header__link idsk-header__link--service-name\">\n      Service Name\n    </a>\n\n    <button type=\"button\" class=\"idsk-header__menu-button govuk-js-header-toggle\" aria-controls=\"navigation\" aria-label=\"Show or hide Top Level Navigation\">Menu</button>\n    <nav aria-label=\"Top Level Navigation\">\n      <ul id=\"navigation\" class=\"idsk-header__navigation \">\n            <li class=\"idsk-header__navigation-item idsk-header__navigation-item--active\">\n              <a class=\"idsk-header__link\" href=\"#1\">\n                Navigation item 1\n              </a>\n            </li>\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"#2\">\n                Navigation item 2\n              </a>\n            </li>\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"#3\">\n                Navigation item 3\n              </a>\n            </li>\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"#4\">\n                Navigation item 4\n              </a>\n            </li>\n      </ul>\n    </nav>\n\n    </div>\n\n\n  </div>\n</header>"
+        },
+        {
+            "name": "with large navigation",
+            "options": {
+                "logo": "true,",
+                "navigation": [
+                    {
+                        "href": "/browse/benefits",
+                        "text": "Benefits"
+                    },
+                    {
+                        "href": "/browse/births-deaths-marriages",
+                        "text": "Births, deaths, marriages and care"
+                    },
+                    {
+                        "href": "/browse/business",
+                        "text": "Business and self-employed"
+                    },
+                    {
+                        "href": "/browse/childcare-parenting",
+                        "text": "Childcare and parenting"
+                    },
+                    {
+                        "href": "/browse/citizenship",
+                        "text": "Citizenship and living in the UK"
+                    },
+                    {
+                        "href": "/browse/justice",
+                        "text": "Crime, justice and the law"
+                    },
+                    {
+                        "href": "/browse/disabilities",
+                        "text": "Disabled people"
+                    },
+                    {
+                        "href": "/browse/driving",
+                        "text": "Driving and transport"
+                    },
+                    {
+                        "href": "/browse/education",
+                        "text": "Education and learning"
+                    },
+                    {
+                        "href": "/browse/employing-people",
+                        "text": "Employing people"
+                    },
+                    {
+                        "href": "/browse/environment-countryside",
+                        "text": "Environment and countryside"
+                    },
+                    {
+                        "href": "/browse/housing-local-services",
+                        "text": "Housing and local services"
+                    },
+                    {
+                        "href": "/browse/tax",
+                        "text": "Money and tax"
+                    },
+                    {
+                        "href": "/browse/abroad",
+                        "text": "Passports, travel and living abroad"
+                    },
+                    {
+                        "href": "/browse/visas-immigration",
+                        "text": "Visas and immigration"
+                    },
+                    {
+                        "href": "/browse/working",
+                        "text": "Working, jobs and pensions"
+                    }
+                ]
+            },
+            "hidden": false,
+            "html": "<header class=\"idsk-header \" data-module=\"idsk-header\">\n  <div class=\"idsk-header__container govuk-width-container\">\n    <div class=\"idsk-header__logo\">\n      <a href=\"/\" class=\"idsk-header__link idsk-header__link--homepage\">\n        <span class=\"idsk-header__logotype\">\n          <img src=\"/assets/images/slovensko_sk_logo.svg\" alt=\"hlavička logo\">\n        </span>\n      </a>\n    </div>\n    <div class=\"idsk-header__content\">\n\n\n    <button type=\"button\" class=\"idsk-header__menu-button govuk-js-header-toggle\" aria-controls=\"navigation\" aria-label=\"Show or hide Top Level Navigation\">Menu</button>\n    <nav aria-label=\"Top Level Navigation\">\n      <ul id=\"navigation\" class=\"idsk-header__navigation \">\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"/browse/benefits\">\n                Benefits\n              </a>\n            </li>\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"/browse/births-deaths-marriages\">\n                Births, deaths, marriages and care\n              </a>\n            </li>\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"/browse/business\">\n                Business and self-employed\n              </a>\n            </li>\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"/browse/childcare-parenting\">\n                Childcare and parenting\n              </a>\n            </li>\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"/browse/citizenship\">\n                Citizenship and living in the UK\n              </a>\n            </li>\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"/browse/justice\">\n                Crime, justice and the law\n              </a>\n            </li>\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"/browse/disabilities\">\n                Disabled people\n              </a>\n            </li>\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"/browse/driving\">\n                Driving and transport\n              </a>\n            </li>\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"/browse/education\">\n                Education and learning\n              </a>\n            </li>\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"/browse/employing-people\">\n                Employing people\n              </a>\n            </li>\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"/browse/environment-countryside\">\n                Environment and countryside\n              </a>\n            </li>\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"/browse/housing-local-services\">\n                Housing and local services\n              </a>\n            </li>\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"/browse/tax\">\n                Money and tax\n              </a>\n            </li>\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"/browse/abroad\">\n                Passports, travel and living abroad\n              </a>\n            </li>\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"/browse/visas-immigration\">\n                Visas and immigration\n              </a>\n            </li>\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"/browse/working\">\n                Working, jobs and pensions\n              </a>\n            </li>\n      </ul>\n    </nav>\n\n    </div>\n\n\n  </div>\n</header>"
+        },
+        {
+            "name": "with product name",
+            "options": {
+                "logo": "true,",
+                "navigationClasses": "govuk-header__navigation--end",
+                "productName": "Product Name"
+            },
+            "hidden": false,
+            "html": "<header class=\"idsk-header \" data-module=\"idsk-header\">\n  <div class=\"idsk-header__container govuk-width-container\">\n    <div class=\"idsk-header__logo\">\n      <a href=\"/\" class=\"idsk-header__link idsk-header__link--homepage\">\n        <span class=\"idsk-header__logotype\">\n          <img src=\"/assets/images/slovensko_sk_logo.svg\" alt=\"hlavička logo\">\n        </span>\n        <span class=\"idsk-header__product-name\">\n          Product Name\n        </span>\n      </a>\n    </div>\n\n\n  </div>\n</header>"
+        },
+        {
+            "name": "full width",
+            "options": {
+                "logo": "true,",
+                "containerClasses": "govuk-header__container--full-width",
+                "navigationClasses": "govuk-header__navigation--end",
+                "productName": "Product Name"
+            },
+            "hidden": false,
+            "html": "<header class=\"idsk-header \" data-module=\"idsk-header\">\n  <div class=\"idsk-header__container govuk-header__container--full-width\">\n    <div class=\"idsk-header__logo\">\n      <a href=\"/\" class=\"idsk-header__link idsk-header__link--homepage\">\n        <span class=\"idsk-header__logotype\">\n          <img src=\"/assets/images/slovensko_sk_logo.svg\" alt=\"hlavička logo\">\n        </span>\n        <span class=\"idsk-header__product-name\">\n          Product Name\n        </span>\n      </a>\n    </div>\n\n\n  </div>\n</header>"
+        },
+        {
+            "name": "full width with navigation",
+            "options": {
+                "logo": "true,",
+                "containerClasses": "govuk-header__container--full-width",
+                "navigationClasses": "govuk-header__navigation--end",
+                "productName": "Product Name",
+                "navigation": [
+                    {
+                        "href": "#1",
+                        "text": "Navigation item 1",
+                        "active": true
+                    },
+                    {
+                        "href": "#2",
+                        "text": "Navigation item 2"
+                    },
+                    {
+                        "href": "#3",
+                        "text": "Navigation item 3"
+                    }
+                ]
+            },
+            "hidden": false,
+            "html": "<header class=\"idsk-header \" data-module=\"idsk-header\">\n  <div class=\"idsk-header__container govuk-header__container--full-width\">\n    <div class=\"idsk-header__logo\">\n      <a href=\"/\" class=\"idsk-header__link idsk-header__link--homepage\">\n        <span class=\"idsk-header__logotype\">\n          <img src=\"/assets/images/slovensko_sk_logo.svg\" alt=\"hlavička logo\">\n        </span>\n        <span class=\"idsk-header__product-name\">\n          Product Name\n        </span>\n      </a>\n    </div>\n    <div class=\"idsk-header__content\">\n\n\n    <button type=\"button\" class=\"idsk-header__menu-button govuk-js-header-toggle\" aria-controls=\"navigation\" aria-label=\"Show or hide Top Level Navigation\">Menu</button>\n    <nav aria-label=\"Top Level Navigation\">\n      <ul id=\"navigation\" class=\"idsk-header__navigation govuk-header__navigation--end\">\n            <li class=\"idsk-header__navigation-item idsk-header__navigation-item--active\">\n              <a class=\"idsk-header__link\" href=\"#1\">\n                Navigation item 1\n              </a>\n            </li>\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"#2\">\n                Navigation item 2\n              </a>\n            </li>\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"#3\">\n                Navigation item 3\n              </a>\n            </li>\n      </ul>\n    </nav>\n\n    </div>\n\n\n  </div>\n</header>"
+        },
+        {
+            "name": "full width with user",
+            "options": {
+                "logo": "true,",
+                "containerClasses": "govuk-header__container--with-user govuk-header__container--full-width",
+                "usersClasses": "idsk-header__user--end",
+                "productName": "Product Name",
+                "navigation": [
+                    {
+                        "href": "#1",
+                        "text": "Navigation item 1",
+                        "active": true
+                    },
+                    {
+                        "href": "#2",
+                        "text": "Navigation item 2"
+                    },
+                    {
+                        "href": "#3",
+                        "text": "Navigation item 3"
+                    }
+                ],
+                "headerUser": true
+            },
+            "hidden": false,
+            "html": "<header class=\"idsk-header \" data-module=\"idsk-header\">\n  <div class=\"idsk-header__container govuk-header__container--with-user govuk-header__container--full-width\">\n    <div class=\"idsk-header__logo\">\n      <a href=\"/\" class=\"idsk-header__link idsk-header__link--homepage\">\n        <span class=\"idsk-header__logotype\">\n          <img src=\"/assets/images/slovensko_sk_logo.svg\" alt=\"hlavička logo\">\n        </span>\n        <span class=\"idsk-header__product-name\">\n          Product Name\n        </span>\n      </a>\n    </div>\n    <div class=\"idsk-header__content\">\n\n\n    <button type=\"button\" class=\"idsk-header__menu-button govuk-js-header-toggle\" aria-controls=\"navigation\" aria-label=\"Show or hide Top Level Navigation\">Menu</button>\n    <nav aria-label=\"Top Level Navigation\">\n      <ul id=\"navigation\" class=\"idsk-header__navigation \">\n            <li class=\"idsk-header__navigation-item idsk-header__navigation-item--active\">\n              <a class=\"idsk-header__link\" href=\"#1\">\n                Navigation item 1\n              </a>\n            </li>\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"#2\">\n                Navigation item 2\n              </a>\n            </li>\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"#3\">\n                Navigation item 3\n              </a>\n            </li>\n      </ul>\n    </nav>\n\n    </div>\n\n    <div class=\"idsk-header__user govuk-grid-column-one-quarter idsk-header__user--end\">\n      <svg class=\"idsk-header__user-icon\" viewBox=\"0 0 28 28\"><path d=\"M5 21.9C5 19.8 6.8 18 9 18h10c2.2 0 4 1.8 4 3.9 1.9-2.1 3-4.9 3-7.9 0-6.6-5.4-12-12-12S2 7.4 2 14c0 3 1.1 5.8 3 7.9zm9 6.1C6.3 28 0 21.7 0 14S6.3 0 14 0s14 6.3 14 14-6.3 14-14 14zm0-12c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5z\" fill-rule=\"evenodd\" clip-rule=\"evenodd\"></path></svg>\n      <div class=\"idsk--header__user-name\">\n        <span>Meno Priezvisko</span>\n        <div><a href=\"#\" class=\"idsk--header__user-logout\">Odhlásiť sa</a></div>\n      </div>\n    </div>\n\n  </div>\n</header>"
+        },
+        {
+            "name": "width with user",
+            "options": {
+                "logo": "true,",
+                "containerClasses": "govuk-header__container--with-user govuk-width-container",
+                "usersClasses": "idsk-header__user--end",
+                "productName": "Product Name",
+                "serviceName": "Service Name",
+                "navigation": [
+                    {
+                        "href": "#1",
+                        "text": "Navigation item 1",
+                        "active": true
+                    },
+                    {
+                        "href": "#2",
+                        "text": "Navigation item 2"
+                    },
+                    {
+                        "href": "#3",
+                        "text": "Navigation item 3"
+                    }
+                ],
+                "headerUser": true
+            },
+            "hidden": false,
+            "html": "<header class=\"idsk-header \" data-module=\"idsk-header\">\n  <div class=\"idsk-header__container govuk-header__container--with-user govuk-width-container\">\n    <div class=\"idsk-header__logo\">\n      <a href=\"/\" class=\"idsk-header__link idsk-header__link--homepage\">\n        <span class=\"idsk-header__logotype\">\n          <img src=\"/assets/images/slovensko_sk_logo.svg\" alt=\"hlavička logo\">\n        </span>\n        <span class=\"idsk-header__product-name\">\n          Product Name\n        </span>\n      </a>\n    </div>\n    <div class=\"idsk-header__content\">\n\n    <a href=\"\" class=\"idsk-header__link idsk-header__link--service-name\">\n      Service Name\n    </a>\n\n    <button type=\"button\" class=\"idsk-header__menu-button govuk-js-header-toggle\" aria-controls=\"navigation\" aria-label=\"Show or hide Top Level Navigation\">Menu</button>\n    <nav aria-label=\"Top Level Navigation\">\n      <ul id=\"navigation\" class=\"idsk-header__navigation \">\n            <li class=\"idsk-header__navigation-item idsk-header__navigation-item--active\">\n              <a class=\"idsk-header__link\" href=\"#1\">\n                Navigation item 1\n              </a>\n            </li>\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"#2\">\n                Navigation item 2\n              </a>\n            </li>\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"#3\">\n                Navigation item 3\n              </a>\n            </li>\n      </ul>\n    </nav>\n\n    </div>\n\n    <div class=\"idsk-header__user govuk-grid-column-one-quarter idsk-header__user--end\">\n      <svg class=\"idsk-header__user-icon\" viewBox=\"0 0 28 28\"><path d=\"M5 21.9C5 19.8 6.8 18 9 18h10c2.2 0 4 1.8 4 3.9 1.9-2.1 3-4.9 3-7.9 0-6.6-5.4-12-12-12S2 7.4 2 14c0 3 1.1 5.8 3 7.9zm9 6.1C6.3 28 0 21.7 0 14S6.3 0 14 0s14 6.3 14 14-6.3 14-14 14zm0-12c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5z\" fill-rule=\"evenodd\" clip-rule=\"evenodd\"></path></svg>\n      <div class=\"idsk--header__user-name\">\n        <span>Meno Priezvisko</span>\n        <div><a href=\"#\" class=\"idsk--header__user-logout\">Odhlásiť sa</a></div>\n      </div>\n    </div>\n\n  </div>\n</header>"
+        },
+        {
+            "name": "width with user",
+            "options": {
+                "logo": "true,",
+                "containerClasses": "govuk-header__container--with-user govuk-width-container",
+                "usersClasses": "idsk-header__user--end",
+                "productName": "Product Name",
+                "serviceName": "Service Name",
+                "navigation": [
+                    {
+                        "href": "#1",
+                        "text": "Navigation item 1",
+                        "active": true
+                    },
+                    {
+                        "href": "#2",
+                        "text": "Navigation item 2"
+                    },
+                    {
+                        "href": "#3",
+                        "text": "Navigation item 3"
+                    }
+                ],
+                "headerUser": true
+            },
+            "hidden": false,
+            "html": "<header class=\"idsk-header \" data-module=\"idsk-header\">\n  <div class=\"idsk-header__container govuk-header__container--with-user govuk-width-container\">\n    <div class=\"idsk-header__logo\">\n      <a href=\"/\" class=\"idsk-header__link idsk-header__link--homepage\">\n        <span class=\"idsk-header__logotype\">\n          <img src=\"/assets/images/slovensko_sk_logo.svg\" alt=\"hlavička logo\">\n        </span>\n        <span class=\"idsk-header__product-name\">\n          Product Name\n        </span>\n      </a>\n    </div>\n    <div class=\"idsk-header__content\">\n\n    <a href=\"\" class=\"idsk-header__link idsk-header__link--service-name\">\n      Service Name\n    </a>\n\n    <button type=\"button\" class=\"idsk-header__menu-button govuk-js-header-toggle\" aria-controls=\"navigation\" aria-label=\"Show or hide Top Level Navigation\">Menu</button>\n    <nav aria-label=\"Top Level Navigation\">\n      <ul id=\"navigation\" class=\"idsk-header__navigation \">\n            <li class=\"idsk-header__navigation-item idsk-header__navigation-item--active\">\n              <a class=\"idsk-header__link\" href=\"#1\">\n                Navigation item 1\n              </a>\n            </li>\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"#2\">\n                Navigation item 2\n              </a>\n            </li>\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"#3\">\n                Navigation item 3\n              </a>\n            </li>\n      </ul>\n    </nav>\n\n    </div>\n\n    <div class=\"idsk-header__user govuk-grid-column-one-quarter idsk-header__user--end\">\n      <svg class=\"idsk-header__user-icon\" viewBox=\"0 0 28 28\"><path d=\"M5 21.9C5 19.8 6.8 18 9 18h10c2.2 0 4 1.8 4 3.9 1.9-2.1 3-4.9 3-7.9 0-6.6-5.4-12-12-12S2 7.4 2 14c0 3 1.1 5.8 3 7.9zm9 6.1C6.3 28 0 21.7 0 14S6.3 0 14 0s14 6.3 14 14-6.3 14-14 14zm0-12c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5z\" fill-rule=\"evenodd\" clip-rule=\"evenodd\"></path></svg>\n      <div class=\"idsk--header__user-name\">\n        <span>Meno Priezvisko</span>\n        <div><a href=\"#\" class=\"idsk--header__user-logout\">Odhlásiť sa</a></div>\n      </div>\n    </div>\n\n  </div>\n</header>"
+        },
+        {
+            "name": "width without logo",
+            "options": {
+                "containerClasses": "govuk-header__container--with-user govuk-width-container",
+                "usersClasses": "idsk-header__user--end",
+                "productName": "Product Name",
+                "serviceName": "Service Name",
+                "navigation": [
+                    {
+                        "href": "#1",
+                        "text": "Navigation item 1",
+                        "active": true
+                    },
+                    {
+                        "href": "#2",
+                        "text": "Navigation item 2"
+                    },
+                    {
+                        "href": "#3",
+                        "text": "Navigation item 3"
+                    }
+                ],
+                "headerUser": true
+            },
+            "hidden": false,
+            "html": "<header class=\"idsk-header \" data-module=\"idsk-header\">\n  <div class=\"idsk-header__container govuk-header__container--with-user govuk-width-container\">\n    <div class=\"idsk-header__logo\">\n      <a href=\"/\" class=\"idsk-header__link idsk-header__link--homepage\">\n        <span class=\"idsk-header__product-name\">\n          Product Name\n        </span>\n      </a>\n    </div>\n    <div class=\"idsk-header__content\">\n\n    <a href=\"\" class=\"idsk-header__link idsk-header__link--service-name\">\n      Service Name\n    </a>\n\n    <button type=\"button\" class=\"idsk-header__menu-button govuk-js-header-toggle\" aria-controls=\"navigation\" aria-label=\"Show or hide Top Level Navigation\">Menu</button>\n    <nav aria-label=\"Top Level Navigation\">\n      <ul id=\"navigation\" class=\"idsk-header__navigation \">\n            <li class=\"idsk-header__navigation-item idsk-header__navigation-item--active\">\n              <a class=\"idsk-header__link\" href=\"#1\">\n                Navigation item 1\n              </a>\n            </li>\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"#2\">\n                Navigation item 2\n              </a>\n            </li>\n            <li class=\"idsk-header__navigation-item\">\n              <a class=\"idsk-header__link\" href=\"#3\">\n                Navigation item 3\n              </a>\n            </li>\n      </ul>\n    </nav>\n\n    </div>\n\n    <div class=\"idsk-header__user govuk-grid-column-one-quarter idsk-header__user--end\">\n      <svg class=\"idsk-header__user-icon\" viewBox=\"0 0 28 28\"><path d=\"M5 21.9C5 19.8 6.8 18 9 18h10c2.2 0 4 1.8 4 3.9 1.9-2.1 3-4.9 3-7.9 0-6.6-5.4-12-12-12S2 7.4 2 14c0 3 1.1 5.8 3 7.9zm9 6.1C6.3 28 0 21.7 0 14S6.3 0 14 0s14 6.3 14 14-6.3 14-14 14zm0-12c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5z\" fill-rule=\"evenodd\" clip-rule=\"evenodd\"></path></svg>\n      <div class=\"idsk--header__user-name\">\n        <span>Meno Priezvisko</span>\n        <div><a href=\"#\" class=\"idsk--header__user-logout\">Odhlásiť sa</a></div>\n      </div>\n    </div>\n\n  </div>\n</header>"
+        }
+    ]
+}

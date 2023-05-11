@@ -1,0 +1,566 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "idsk-header-web/macro.njk" import idskHeaderWeb %}
+{% from "idsk-intro-block/macro.njk" import idskIntroBlock %}
+{% from "idsk-card/macro.njk" import idskCard %}
+{% from "idsk-crossroad/macro.njk" import idskCrossroad %}
+{% from "idsk-accordion/macro.njk" import idskAccordion %}
+{% from "idsk-footer-extended/macro.njk" import idskFooterExtended %}
+
+{% block styles %}
+<style>
+  body {
+    overflow-x: hidden;
+  }
+
+  .govuk-accordion__open-all {
+      display: none;
+  }
+
+  .govuk-caption-l {
+    color: #000000;
+  }
+
+  .idsk-grey-banner{
+    background-color: #F3F2F1;
+    padding: 30px 0;
+    margin: 30px 0;
+    height: 100%;
+    position: relative;
+    display: inline-block;
+  }
+  .idsk-grey-banner::before {
+    content: "";
+    background: #F3F2F1;
+    position: absolute;
+    width: calc((100vw - 100%)/2);
+    height: 100%;
+    left: calc((100vw - 100%)/-2);
+    top: 0;
+    overflow: hidden;
+  }
+  .idsk-grey-banner::after {
+    content: "";
+    background: #F3F2F1;
+    position: absolute;
+    width: calc((100vw - 100%)/2);
+    height: 100%;
+    right: calc((100vw - 100%)/-2);
+    top: 0;
+    overflow: hidden;
+  }
+
+</style>
+{% endblock %}
+
+{% block skipLink %}
+    {{ idskSkipLink({
+        href: '#main-content',
+        text: 'Preskočiť na hlavný obsah',
+        classes: 'idsk-skip-link--sticky'
+    }) }}
+{% endblock %}
+
+{% block header %}
+  {{ idskHeaderWeb({
+    headerType: "website",
+    assetsPath: "/public/assets/images/header-web/",
+    search: true,
+    brand: {
+      gestor: true,
+      languages: [
+        {
+          text: "Slovenčina",
+          selected: true,
+          link: "#1"
+        },
+        {
+          text: "English",
+          link: "#2"
+        },
+        {
+          text: "German",
+          link: "#3"
+        }
+      ]
+    },
+    main: {
+      showLogo: true,
+      logoSrc: "logo-mirri-farebne.svg",
+      logoAlt: "logo miri"
+    },
+    navBar: {
+      navigation: [
+        {
+          text: "Eurofondy",
+          link: "#1"
+        },
+        {
+          text: "Regionálny rozvoj",
+          link: "#2"
+        },
+        {
+          text: "Informatizácia",
+          link: "#3"
+        },
+        {
+          text: "Investície",
+          link: "#4"
+        },
+        {
+          text: "Inovácie",
+          link: "#5"
+        }
+      ]
+    }
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+        { text: ' ID-SK frontend', href: '/' + legacyQuery },
+        { text: 'Investície' }
+        ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  {{ idskIntroBlock({
+    headline: "Investície",
+    mainTitle: "Všetky dôležité informácie týkajúce sa medzinárodnej a národnej digitálnej agendy, informačných sytémov a informačných technológií verejnej správy.",
+    sideMenu: [
+    {
+      item:"O Eurofondoch",
+      href:"#"},
+    {
+      item:"Aktuality",
+      href:"#"
+    },
+    {
+      item:"O Ministerstve",
+      href:"#"
+    },
+    {
+      item:"Aktuálne výzvy",
+      href:"#"
+    },
+    {
+      item:"Dokumenty",
+      href:"#"
+    }]
+  }) }}
+
+    <hr class="idsk-hr-separator govuk-!-margin-bottom-6">
+
+    <h2 class="govuk-heading-l">Aktuality</h2>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        {{ idskCard({
+            "type": "hero",
+            "imgSrc": "/public/assets/images/image-placeholder.jpg",
+            "link": "#",
+            "heading": "Podpora najmenej rozvinutých okresov: Nové výzvy po novom!",
+            "description": "Lorem ipsum dolor sit amet, consenctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "date": { "date": "1.7.2020", "link": "#" },
+            "tags": [ { "tag": "Tag 1", "link": "#" }, { "tag": "Tag 2", "link": "#" } ]
+        }) }}
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        {{ idskCard({
+            "type": "secondary",
+            "imgSrc": "/public/assets/images/image-placeholder.jpg",
+            "link": "#",
+            "heading": "Podpora najmenej rozvinutých okresov: Nové výzvy po novom!",
+            "description": "Lorem ipsum dolor sit amet, consenctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "date": { "date": "1.7.2020", "link": "#" },
+            "tags": [ { "tag": "Tag 1", "link": "#" }, { "tag": "Tag 2", "link": "#" } ]
+        }) }}
+      </div>
+      <div class="govuk-grid-column-one-third">
+        {{ idskCard({
+            "type": "secondary",
+            "imgSrc": "/public/assets/images/image-placeholder.jpg",
+            "link": "#",
+            "heading": "Podpora najmenej rozvinutých okresov: Nové výzvy po novom!",
+            "description": "Lorem ipsum dolor sit amet, consenctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "date": { "date": "1.7.2020", "link": "#" },
+            "tags": [ { "tag": "Tag 1", "link": "#" }, { "tag": "Tag 2", "link": "#" } ]
+        }) }}
+      </div>
+      <div class="govuk-grid-column-one-third">
+        {{ idskCard({
+            "type": "secondary",
+            "imgSrc": "/public/assets/images/image-placeholder.jpg",
+            "link": "#",
+            "heading": "Podpora najmenej rozvinutých okresov: Nové výzvy po novom!",
+            "description": "Lorem ipsum dolor sit amet, consenctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "date": { "date": "1.7.2020", "link": "#" },
+            "tags": [ { "tag": "Tag 1", "link": "#" }, { "tag": "Tag 2", "link": "#" } ]
+        }) }}
+      </div>
+    </div>
+
+    <hr class="idsk-hr-separator govuk-!-margin-bottom-6">
+
+    <h2 class="govuk-heading-l">Agenda 2030</h2>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        {{ idskCrossroad({
+            "columns": 2,
+            "classes": "govuk-clearfix",
+            "items": [
+                { "title": 'Východiská implementácie Agenda 2030 pre udržateľný rozvoj', "subtitle": 'Ciele NKIVS, OPII 2014-2020, 0EK programu pre IT výdavky zo štátneho IT a ciele pre PO 2021-2027', "link": '#' },
+                { "title": 'Návrh postupu vnútroštátnej implementácie Agendy 2030', "subtitle": 'Štandardizované postupy a dokumenty pre začatie prvej fázy projektového riadenia a založenie riadiaceho výboru', "link": '#' },
+                { "title": 'Návrh participatívneho procesu určenia národných priorít implementácie Agendy 2030', "subtitle": 'Štandardizované postupy a dokumenty pre začatie prvej fázy projektového riadenia a založenie riadiaceho výboru', "link": '#' },
+                { "title": 'Koncepcia implementácie Agenda 2030 v medzinárodnom prostredí', "subtitle": 'Databáza cien za jednotku človodeň podľa rolí a princípy k vypracovaniu rozpočtu IT systému', "link": '#' },
+                { "title": 'Východiská prípravy národných priorít implementácie Agenda 2030', "subtitle": 'Štandardizované postupy a dokumenty pre začatie druhej fázy projektového riadenia a postup pre získanie hodnotenia projektu', "link": '#' },
+                { "title": 'Zhodnotenie doterajšieho pokroku v implementácií Agendy 2020', "subtitle": 'Štandardizované postupy a dokumenty pre začatie druhej fázy projektového riadenia a postup pre získanie hodnotenia projektu', "link": '#' }
+            ]
+        }) }}
+      </div>
+    </div>
+
+    <p class="govuk-caption-l govuk-!-margin-bottom-6">
+        Agenda 2030 pre udržateľný rozvoj je súhrnom globálnych záväzkov, ktorými medzinárodné spoločenstvo reaguje na najzávažnejšie výzvy súčasnosti. Zmena klímy, chudoba, zvyšujúce sa ekonomické a sociálne nerovnosti alebo neudržateľnosť prevládajúcich vzorcov výroby a spotreby sú komplexné a navzájom previazané problémy. Izolované zásahy a opatrenia preto strácajú účinnosť pri ich riešení. Agenda 2030 bola prijatá členskými štátmi Organizácie Spojených národov v roku 2015 a vyzýva štáty k spoločnému koordinovanému postupu pri riešení globálnych výziev.
+    </p>
+
+    {{ idskAccordion({
+      "id": "default-example1",
+      "classes": "govuk-!-margin-bottom-4",
+      "attributes": {
+        "data-attribute": "value"
+      },
+      "items": [
+        {
+          "heading": {
+            "text": "Koho sa to týka?"
+          },
+          "summary": {
+          },
+          "content": {
+            "html": "<p class='govuk-body'>Koho sa to týka?</p>"
+          }
+        },
+        {
+          "heading": {
+            "text": "Napĺňanie cieľov udržateľného rozvoja na Slovensku"
+          },
+          "summary": {
+          },
+          "content": {
+            "html": "<p class='govuk-body'>Napĺňanie cieľov udržateľného rozvoja na Slovensku</p>"
+          }
+        },
+        {
+          "heading": {
+            "text": "Ako kroky podníka MIRRI?"
+          },
+          "summary": {
+          },
+          "content": {
+            "html": "<p class='govuk-body'>Ako kroky podníka MIRRI?</p>"
+          }
+        },
+        {
+          "heading": {
+            "text": "Monitorovanie cieľov agendy"
+          },
+          "summary": {
+          },
+          "content": {
+            "html": "<p class='govuk-body'>Monitorovanie cieľov agendy</p>"
+          }
+        },
+        {
+          "heading": {
+            "text": "Rada vlády pre Agendu 2030 pre udržateľný rozvoj"
+          },
+          "summary": {
+          },
+          "content": {
+            "html": "<p class='govuk-body'>Rada vlády pre Agendu 2030 pre udržateľný rozvoj</p>"
+          }
+        },
+        {
+          "heading": {
+            "text": "Možnosti participácie"
+          },
+          "summary": {
+          },
+          "content": {
+            "html": "<p class='govuk-body'>Možnosti participácie</p>"
+          }
+        },
+        {
+          "heading": {
+            "text": "Agenda 2030 v medzinárodnom prostredí"
+          },
+          "summary": {
+          },
+          "content": {
+            "html": "<p class='govuk-body'>Agenda 2030 v medzinárodnom prostredí</p>"
+          }
+        }
+      ]
+    }) }}
+
+    <div class="idsk-grey-banner">
+        <div class="govuk-grid-row">
+            <h2 class="govuk-heading-l govuk-!-margin-left-3">Inovačná diplomacia</h2>
+            <div class="govuk-grid-column-one-half">
+                <p class="govuk-body">
+                    Vláda SR schválila uznesením vlády SR č. 528 z 28. novembra 2018 Návrh inštitucionálneho zabezpečenia slovenskej inovačnej diplomacie. Inovační diplomati pôsobia od 1. júla 2019 v týchto krajinách:
+                </p>
+                <p class="govuk-body">
+                    Fínsko (Helsinki),<br>
+                    USA (Washington),<br>
+                    Izrael (Tel Aviv),<br>
+                    Čína (Peking).<br>
+                </p>
+            </div>
+            <div class="govuk-grid-column-one-half">
+                <p class="govuk-body">
+                    Úlohou inovačných diplomatov bude najmä napomáhať slovenským výskumným inštitúciám, univerzitám a podnikateľom v nadväzovaní spolupráce s inovačným prostredím v zahraničí a podpora verejno-súkromných partnerstiev
+                </p>
+                <p class="govuk-body">
+                    Kontakt: inovacna.diplomacia@vicepremier.gov.sk
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+            <h2 class="govuk-heading-l">Národný investičný plán</h2>
+            <p class="govuk-body">
+                Národný investičný plán (NIP SR) bude obsahovať investičné programy a projekty zamerané na podporu budovania zeleného hospodárstva, najmä pre nasledovné sektory – doprava, informačno-komunikačné technológie, energetika, zelená infraštruktúra, vodné a odpadové hospodárstvo, adaptácia a zmierňovanie dôsledkov zmeny klímy, výskum, vývoj a inovácie, bytová výstavba, zdravotníctvo a školstvo. Pre každé z uvedených odvetví bude mať nasledovnú štruktúru: strategické ciele vlády pre dané odvetvie, spôsob ich dosiahnutia (vo forme konkrétnych programov a projektov) a finančný rámec, t. j. uvažovaný spôsob financovania daného programu/projektu.
+            </p>
+            <p class="govuk-body">
+                Implementácia NIP SR predpokladá aj monitorovanie a hodnotenie pokroku a efektivity pri realizácii jednotlivých programov a projektov, čím sa NIP SR môže stať účinným kontrolným nástrojom v procese vynakladania verejných prostriedkov.
+            </p>
+            <p class="govuk-body">
+                <a class="govuk-link" href="#" title="Národný investičný plán (PDF, 1,27 MB)">Národný investičný plán (PDF, 1,27 MB)</a>
+            </p>
+            <p class="govuk-body">
+                <a class="govuk-link" href="#" title="Správa o hodnotení strategického dokumentu  2030 (PDF, 1,27 MB)">Správa o hodnotení strategického dokumentu  2030 (PDF, 1,27 MB)</a>
+            </p>
+            {{ idskAccordion({
+                "id": "default-example2",
+                "classes": "govuk-!-margin-bottom-4",
+                "attributes": {
+                    "data-attribute": "value"
+                },
+                "items": [
+                    {
+                    "heading": {
+                        "text": "Vládne dokumenty"
+                    },
+                    "summary": {
+                    },
+                    "content": {
+                        "html": "<p class='govuk-body'>Vládne dokumenty</p>"
+                    }
+                    }
+                ]
+            }) }}
+        </div>
+        <div class="govuk-grid-column-one-half">
+            <h2 class="govuk-heading-l">Vízia a Stratégia SR do roku 2030</h2>
+            <p class="govuk-body">
+                Víziou RIS3 SR je podnietenie štrukturálnej zmeny slovenskej ekonomiky smerom k rastu založenému na zvyšovaní inovačnej schopnosti a excelentnosti vo VaI s cieľom podporovať udržateľný rast príjmov, zamestnanosti a kvality života.
+            </p>
+            <p class="govuk-body">
+                <a class="govuk-link" href="#" title="Vízia a Stratégia SR do roku 2030 (PDF, 1,27 MB)">Vízia a Stratégia SR do roku 2030 (PDF, 1,27 MB)</a>
+            </p>
+            {{ idskAccordion({
+                "id": "default-example3",
+                "classes": "govuk-!-margin-bottom-4",
+                "attributes": {
+                    "data-attribute": "value"
+                },
+                "items": [
+                    {
+                    "heading": {
+                        "text": "Vládne dokumenty"
+                    },
+                    "summary": {
+                    },
+                    "content": {
+                        "html": "<p class='govuk-body'>Vládne dokumenty</p>"
+                    }
+                    }
+                ]
+            }) }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+  {{ idskFooterExtended({
+    characterLength : 500,
+    showFeedback : "true",
+    upButtonEnabled : "true",
+    designAddress : "#",
+    logo: "footer-extended-logo.svg",
+    feedbackButtonAddress : "idsk.gov.sk",
+    firstColumn: {
+      title: "Eurofondy",
+      leftItems: [
+        {
+          name:"O eurofondoch",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 13/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 14/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 15/20",
+          href:"#"
+        }
+      ],
+      rightItems: [
+        {
+          name:"Link small Regular 16/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 17/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 18/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 19/20",
+          href:"#"
+        }
+      ]
+    },
+
+    secondColumn: {
+      title: "Regionálny rozvoj",
+      items: [
+        {
+          name:"Link small Regular 20/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 21/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 22/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 23/20",
+          href:"#"
+        }
+      ]
+    },
+
+    thirdColumn: {
+      title: "Informatizácia",
+      leftItems: [
+        {
+          name:"Link small Regular 12/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 13/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 14/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 15/20",
+          href:"#"
+        }
+      ],
+      rightItems: [
+        {
+          name:"Link small Regular 16/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 17/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 18/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 19/20",
+          href:"#"
+        }
+      ]
+    },
+
+    fourthColumn: {
+      title: "Investície",
+      items: [
+        {
+          name:"Link small Regular 28/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 29/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 30/20",
+          href:"#"
+        },
+        {
+          name:"Link small Regular 31/20",
+          href:"#"
+        }
+      ]
+    },
+
+    subtitles: [
+      {
+        item:"Pomoc",
+        href:"#"
+      },
+      {
+        item:"Cookies",
+        href:"#"
+      },
+      {
+        item:"Kontakty",
+        href:"#"
+      },
+      {
+        item:"Mapa Stránky",
+        href:"#"
+      }
+    ],
+    dropdownItems: [
+      {
+        text:"Gramatická chyba",
+        value:"#"
+      },
+      {
+        text:"chyba zobrazovania",
+        value:"#"
+      },
+      {
+        text:"chyba obsahu",
+        value:"#"
+      }
+    ]
+  }) }}
+{% endblock %}

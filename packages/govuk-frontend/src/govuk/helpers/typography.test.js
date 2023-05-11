@@ -65,7 +65,7 @@ describe('@mixin govuk-typography-common', () => {
     })
 
     await expect(results).resolves.toMatchObject({
-      css: expect.stringContaining('font-family: "GDS Transport"')
+      css: expect.stringContaining('font-family: "Source Sans Pro"')
     })
   })
 
@@ -91,7 +91,7 @@ describe('@mixin govuk-typography-common', () => {
     })
 
     await expect(results).resolves.toMatchObject({
-      css: expect.not.stringContaining('font-family: "GDS Transport"')
+      css: expect.not.stringContaining('font-family: "Source Sans Pro"')
     })
   })
 
@@ -116,7 +116,7 @@ describe('@mixin govuk-typography-common', () => {
     })
 
     await expect(results).resolves.toMatchObject({
-      css: expect.stringContaining('font-family: "GDS Transport"')
+      css: expect.stringContaining('font-family: "Source Sans Pro"')
     })
   })
 })
@@ -356,7 +356,7 @@ describe('@mixin govuk-typography-responsive', () => {
         .toMatchObject({
           css: outdent`
             .foo {
-              font-family: "GDS Transport", arial, sans-serif;
+              font-family: "Source Sans Pro", arial, sans-serif;
               -webkit-font-smoothing: antialiased;
               -moz-osx-font-smoothing: grayscale;
               font-weight: 400;

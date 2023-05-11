@@ -1,0 +1,83 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "checkboxes/macro.njk" import govukCheckboxes %}
+{% from "inset-text/macro.njk" import govukInsetText %}
+{% from "idsk-button/macro.njk" import idskButton %}
+
+{% set pageName = "Nastavenia cookies" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full govuk-body">
+
+  {{ govukCheckboxes({
+    idPrefix: "necessary-cookies",
+    items: [
+      {
+        text: "Nevyhnutne nutné súbory cookie",
+        checked: "true",
+        disabled: "true"
+      }
+    ]
+  }) }}
+
+  {{ govukInsetText({
+    html: "Sú to základné súbory cookie, ktoré umožňujú pohybovať sa po webovej stránke a používať jej funkcie. Tieto súbory cookie neukladajú žiadne informácie o vás, ktoré by sa dali použiť na marketing alebo na zapamätaniesi, čo ste si na internete pozerali."
+  }) }}
+
+
+  {{ govukCheckboxes({
+    idPrefix: "ga-cookies",
+    items: [
+      {
+        text: "Analytické súbory cookie",
+        checked: "true"
+      }
+    ]
+  }) }}
+
+  {{ govukInsetText({
+    html: "Tieto súbory zbierajú informácie o tom, ako sa používala webová stránka, napríklad ktoré stránky najčastejšie navštevujete a či sa vám zobrazili chybové hlásenia. Nezbierajú informácie, na základe ktorých by bolo možné zistiť vašu totožnosť. Všetky informácie sú anonymné. Používajú sa na zlepšenie funkčnosti webových stránok."
+  }) }}
+
+  {{ govukCheckboxes({
+    idPrefix: "preferences-cookies",
+    items: [
+      {
+        text: "Preferenčné súbory cookie"
+      }
+    ]
+  }) }}
+
+  {{ govukInsetText({
+    html: "V týchto súboroch sa ukladajú vaše voľby (napr. jazykové preferencie) a osobné charakteristiky. Môžu sa v nich uložiť zmeny, ktoré ste na webovej stránke urobili. Dá sa zabezpečiť, aby sa informácie zbierali anonymne. Na ich základe nie je možné zistiť, ktoré iné webové stránky ste navštívili."
+  }) }}
+
+  {{ idskButton({
+  "classes": "save-cookie-settings",
+  "text": "Uložiť nastavenia"
+  }) }}
+
+        </div>
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block bodyEnd %}
+  <script src="/public/assets/js/nastavenia-cookies.js"></script>
+{% endblock %}
+

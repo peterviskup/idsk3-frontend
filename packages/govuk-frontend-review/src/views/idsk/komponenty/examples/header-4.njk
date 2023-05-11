@@ -1,0 +1,23 @@
+{% from "idsk-header/macro.njk" import idskHeader %}
+{{ idskHeader({
+    logo: true,
+    containerClasses: 'govuk-header__container--with-user govuk-header__container--full-width ',
+    usersClasses: 'idsk-header__user--end',
+    serviceName: 'Názov služby',
+    headerUser: true,
+    navigation: [
+        {
+            href: '#1',
+            text: 'Položka menu 1',
+            active: true
+        },
+        {
+            href: '#2',
+            text: 'Položka menu 2'
+        },
+        {
+            href: '#3',
+            text: 'Položka menu 3'
+        }
+    ]
+}) }}

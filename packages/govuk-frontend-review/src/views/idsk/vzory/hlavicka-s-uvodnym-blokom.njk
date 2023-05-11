@@ -1,0 +1,123 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "idsk-header-web/macro.njk" import idskHeaderWeb %}
+{% from "idsk-intro-block/macro.njk" import idskIntroBlock %}
+
+{% set pageName = "Hlavička s úvodným blokom" %}
+
+{% block styles %}
+  <style>
+    #main-content {
+      padding-top: 0;
+    }
+  </style>
+{% endblock %}
+
+{% block skipLink %}
+    {{ idskSkipLink({
+        href: '#main-content',
+        text: 'Preskočiť na hlavný obsah',
+        classes: 'idsk-skip-link--sticky'
+    }) }}
+{% endblock %}
+
+{% block header %}
+  {{ idskHeaderWeb({
+    headerType: "website",
+    search: true,
+    brand: {
+      gestor: true,
+      languages: [
+        {
+          text: "Slovenčina",
+          selected: true,
+          link: "#1"
+        },
+        {
+          text: "English",
+          link: "#2"
+        },
+        {
+          text: "German",
+          link: "#3"
+        }
+      ]
+    },
+    main: {
+      showLogo: true,
+      logoAlt: "ID-SK Frontend"
+    },
+    navBar: {
+      navigation: [
+        {
+          text: "Eurofondy",
+          link: "#1"
+        },
+        {
+          text: "Regionálny rozvoj",
+          link: "#2"
+        },
+        {
+          text: "Informatizácia",
+          link: "#3"
+        },
+        {
+          text: "Investície",
+          link: "#4"
+        },
+        {
+          text: "Inovácie",
+          link: "#5"
+        }
+      ]
+    }
+  }) }}
+{% endblock %}
+
+{% block content %}
+  {{ idskIntroBlock({
+    bottomMenu: [
+    {
+      item:"Eurofondy",
+      href:"#"},
+    {
+      item:"Kontakty",
+      href:"#"
+    },
+    {
+      item:"Informatizácia",
+      href:"#"
+    },
+    {
+      item:"Investície",
+      href:"#"
+    },
+    {
+      item:"O ministerstve",
+      href:"#"
+    }],
+    searchEnabled:"true",
+    sideMenu: [
+    {
+      item:"Aktuálne výzvy",
+      href:"#"},
+    {
+      item:"Dokumenty",
+      href:"#"
+    },
+    {
+      item:"O eurofondoch",
+      href:"#"
+    },
+    {
+      item:"Aktuality",
+      href:"#"
+    },
+    {
+      item:"O ministerstve",
+      href:"#"
+    }]
+})}}
+{% endblock %}
+
+{% block footer %}{% endblock %}

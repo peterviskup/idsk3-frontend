@@ -1,0 +1,79 @@
+{
+    "component": "idsk-registration-for-event",
+    "fixtures": [
+        {
+            "name": "Ukážka 1",
+            "options": {
+                "heading": "Registrácia na podujatie",
+                "formItems": [
+                    {
+                        "label": "Meno",
+                        "error": "Zadajte meno.",
+                        "tag": "input",
+                        "name": "name",
+                        "type": "text",
+                        "autocomplete": true,
+                        "required": true
+                    },
+                    {
+                        "label": "Priezvisko",
+                        "error": "Zadajte priezvisko.",
+                        "tag": "input",
+                        "name": "surname",
+                        "type": "text",
+                        "autocomplete": true,
+                        "required": true
+                    },
+                    {
+                        "label": "Emailová adresa",
+                        "hint": "Sem zadajte emailovú adresu v tvare email@email.sk",
+                        "error": "Zadajte správnu emailovú adresu.",
+                        "tag": "input",
+                        "name": "email",
+                        "type": "email",
+                        "autocomplete": true,
+                        "required": true
+                    },
+                    {
+                        "label": "Organizácia",
+                        "tag": "input",
+                        "name": "organization",
+                        "type": "text",
+                        "autocomplete": true
+                    },
+                    {
+                        "label": "Miesto konania podujatia",
+                        "tag": "select",
+                        "name": "city",
+                        "options": [
+                            {
+                                "value": "Bardejov",
+                                "name": "Bardejov"
+                            },
+                            {
+                                "value": "Kosice",
+                                "name": "Košice"
+                            },
+                            {
+                                "value": "Bratislava",
+                                "name": "Bratislava"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Súhlasím so spracovaním osobných údajov za účelom účasti na&nbsp;podujatí.",
+                        "error": "Prosím, akceptujte súhlas so spracovaním osobných údajov.",
+                        "tag": "input",
+                        "name": "terms",
+                        "type": "checkbox",
+                        "required": true
+                    }
+                ],
+                "buttonLabel": "Registrovať na podujatie",
+                "thankYouMsg": "Ďakujeme za registráciu na podujatie."
+            },
+            "hidden": false,
+            "html": "<div data-module=\"idsk-registration-for-event\" class=\"idsk-registration-for-event\">\n  <form class=\"idsk-registration-for-event__form\">\n    <fieldset class=\"govuk-fieldset\">\n      <legend class=\"govuk-fieldset__legend govuk-fieldset__legend--m\">\n        <h3 class=\"govuk-fieldset__heading idsk-customer-surveys--subtitle\">Registrácia na podujatie</h3>\n      </legend>\n        <div class=\"govuk-form-group\">\n              <label class=\"govuk-label\" for=\"name\">Meno</label>\n              <span class=\"govuk-hint\"></span>\n                <span class=\"govuk-error-message\">\n                <span class=\"govuk-visually-hidden\">Chyba:</span>Zadajte meno.\n            </span>\n              <input type=\"text\" class=\"govuk-input\" id=\"name\" name=\"name\" autocomplete=\"true\" required>\n        </div>\n        <div class=\"govuk-form-group\">\n              <label class=\"govuk-label\" for=\"surname\">Priezvisko</label>\n              <span class=\"govuk-hint\"></span>\n                <span class=\"govuk-error-message\">\n                <span class=\"govuk-visually-hidden\">Chyba:</span>Zadajte priezvisko.\n            </span>\n              <input type=\"text\" class=\"govuk-input\" id=\"surname\" name=\"surname\" autocomplete=\"true\" required>\n        </div>\n        <div class=\"govuk-form-group\">\n              <label class=\"govuk-label\" for=\"email\">Emailová adresa</label>\n              <span class=\"govuk-hint\">Sem zadajte emailovú adresu v tvare email@email.sk</span>\n                <span class=\"govuk-error-message\">\n                <span class=\"govuk-visually-hidden\">Chyba:</span>Zadajte správnu emailovú adresu.\n            </span>\n              <input type=\"email\" class=\"govuk-input\" id=\"email\" name=\"email\" autocomplete=\"true\" required>\n        </div>\n        <div class=\"govuk-form-group\">\n              <label class=\"govuk-label\" for=\"organization\">Organizácia</label>\n              <span class=\"govuk-hint\"></span>\n              <input type=\"text\" class=\"govuk-input\" id=\"organization\" name=\"organization\" autocomplete=\"true\" >\n        </div>\n        <div class=\"govuk-form-group\">\n            <label class=\"govuk-label\" for=\"city\">Miesto konania podujatia</label>\n            <select class=\"govuk-select\" id=\"city\" name=\"city\">\n              <option>Vyberte možnosť</option>\n                <option value=\"Bardejov\">Bardejov</option>\n                <option value=\"Kosice\">Košice</option>\n                <option value=\"Bratislava\">Bratislava</option>\n            </select>\n        </div>\n        <div class=\"govuk-form-group\">\n                <span class=\"govuk-error-message\">\n                <span class=\"govuk-visually-hidden\">Chyba:</span>Prosím, akceptujte súhlas so spracovaním osobných údajov.\n            </span>\n              <div class=\"govuk-checkboxes\">\n                <div class=\"govuk-checkboxes__item\">\n                  <input type=\"checkbox\" class=\"govuk-checkboxes__input\" id=\"terms\" name=\"terms\" required>\n                  <label class=\"govuk-label  govuk-checkboxes__label\" for=\"terms\">Súhlasím so spracovaním osobných údajov za účelom účasti na&nbsp;podujatí.</label>\n                </div>\n              </div>\n        </div>\n      <button type=\"submit\" draggable=\"false\" class=\"idsk-button idsk-button--start idsk-registration-for-event-js-submit\" data-module=\"idsk-button\">\n        Registrovať na podujatie\n        <svg class=\"idsk-button__start-icon\" width=\"17.5\" height=\"19\" viewBox=\"0 0 15 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n          <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M9.4016 10L0 0H5.59826L15 10H9.4016Z\" fill=\"white\"></path>\n          <path opacity=\"0.5\" fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M5.5984 20L15 10H9.40174L0 20H5.5984Z\" fill=\"white\"></path>\n        </svg>\n      </button>\n    </fieldset>\n  </form>\n  <h3 class=\"govuk-heading-m idsk-registration-for-event__thank-you-msg\">\n    Ďakujeme za registráciu na podujatie.\n  </h3>\n</div>"
+        }
+    ]
+}

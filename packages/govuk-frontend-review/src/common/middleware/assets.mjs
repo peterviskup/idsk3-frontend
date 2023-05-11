@@ -12,5 +12,6 @@ const router = express.Router()
 router.use('/assets', express.static(packageNameToPath('govuk-frontend', 'src/govuk/assets')))
 router.use('/javascripts', express.static(join(paths.app, 'dist/javascripts')))
 router.use('/stylesheets', express.static(join(paths.app, 'dist/stylesheets')))
+router.use('/public', express.static(join(paths.app, 'public')))
 
 export default router

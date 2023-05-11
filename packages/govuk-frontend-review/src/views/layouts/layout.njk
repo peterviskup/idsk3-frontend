@@ -2,11 +2,76 @@
 
 {% set htmlClasses = "app-no-canvas-background" %}
 
-{% block pageTitle %}GOV.UK Frontend{% endblock %}
+{% set pageName = pageName %}
 
-{# Turn the header and footer off #}
-{% block header %}{% endblock %}
-{% block footer %}{% endblock %}
+{% block pageTitle %}ID-SK Frontend{{ " - " + pageName if pageName }}{% endblock %}
+
+{% block header %}
+
+  {% from "idsk-header-web/macro.njk" import idskHeaderWeb %}
+  {{ idskHeaderWeb({
+    headerType: "website",
+    assetsPath: "/public/assets/images/",
+    brand: {
+      gestor: true
+    },
+    main: {
+      showLogo: true,
+      logoSrc: "idsk-logo.svg",
+      logoAlt: "ID-SK Frontend"
+    }
+  }) }}
+
+  {% from "phase-banner/macro.njk" import govukPhaseBanner %}
+  <div class="govuk-width-container">
+    {{ govukPhaseBanner({
+      "tag": {
+        "text": "ver. 2.10.0"
+      },
+      "html": "Nová verzia ID-SK Frontend nahradzuje pôvodnú verziu. Dokumentáciu staršej verzie nájdete na <a class=\"govuk-link\" href=\"https:\/\/github.com\/id-sk\/idsk_elements\" target=\"_blank\" title=\"ID-SK Elements\">ID-SK Elements</a>"
+    }) }}
+  </div>
+{% endblock %}
+
+{% block footer %}
+  {% from "idsk-footer-extended/macro.njk" import idskFooterExtended %}
+  {{ idskFooterExtended({
+    characterLength : 350,
+    feedbackHeading : "Pomôžte nám zlepšiť jednotný dizajn manuál",
+    showFeedback : "true",
+    showFeedbackMessage : "false",
+    upButtonEnabled : "true",
+    subtitles: [
+      {
+        item:"Cookies",
+        href:"/nastavenia-cookies"
+      },
+      {
+        item:"Ochrana osobných údajov",
+        href:"/ochrana-osobnych-udajov"
+      }
+    ],
+    dropdownItems: [
+      {
+        value: "Validačná chyba",
+        text: "Validačná chyba"
+      },
+      {
+        value: "Gramatická chyba",
+        text: "Gramatická chyba",
+        selected: true
+      },
+      {
+        value: "Chyba responzivity",
+        text: "Chyba responzivity"
+      },
+      {
+        value: "Chyba iná",
+        text: "Chyba iná"
+      }
+    ]
+  }) }}
+{% endblock %}
 
 {% block bodyEnd %}
   {{ super() }}

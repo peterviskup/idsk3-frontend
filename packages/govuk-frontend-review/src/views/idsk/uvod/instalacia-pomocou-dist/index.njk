@@ -1,0 +1,79 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Inštalácia ID-SK Frontend z dist" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Úvod</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds govuk-body">
+
+        <h2 class="govuk-heading-s">Obsah:</h2>
+        <ul class="govuk-list">
+          <li><a class="govuk-link" href="#obmedzenia" title="obmedzenia">Obmedzenia</a></li>
+          <li><a class="govuk-link" href="#kroky-k-instalacii" title="kroky k instalacii">Kroky k inštalácii</a></li>
+        </ul>
+
+        <h2 class="govuk-heading-l" id="obmedzenia">Obmedzenia</h2>
+            <p>Pri inštalácii z <code class="  language-markup govuk-!-font-size-16">dist</code> sa používajú kompilované a minifikované verzie šablóny so štýlmi. To znamená, že nebudete môcť:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>selektívne zahrnúť CSS alebo JavaScript pre jednotlivé komponenty</li>
+              <li>zostaviť si vlastné štýly alebo komponenty na základe palety alebo typografických či medzerových kombinácií.</li>
+              <li>prispôsobiť zostavu (napríklad prepísať farby alebo povoliť globálne štýly)</li>
+              <li>Použiť komponenty z Nunjucks šablón.</li>
+            </ul>
+
+            <p>Ak požadujete niektorú z týchto funkcií, je výhodnejšie nainštalovať ID-SK Frontend pomocou <a class="govuk-link" href="/instalacia-pomocou-npm" target="_blank" title="node package manager">node package manager</a>.</p>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds govuk-body govuk-!-margin-bottom-0">
+          <h2 class="govuk-heading-l" id="kroky-k-instalacii">Kroky k inštalácii</h2>
+          <h3 class="govuk-heading-m">1. Stiahnite si zdroje</h3>
+          <p>Stiahnite si najnovšie kompilované a minifikované verzie šablón štýlov, JavaScript a assetov:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a class="govuk-link" href="https://github.com/id-sk/id-sk-frontend/tree/master/dist" target="_blank" rel="noopener noreferrer" title="CSS a JS">CSS a JS</a></li>
+            <li><a class="govuk-link" href="https://github.com/id-sk/id-sk-frontend/tree/master/dist/assets" target="_blank" rel="noopener noreferrer" title="Assety">Assety</a></li>
+          </ul>
+
+          <h3 class="govuk-heading-m">2. Zahrňte zdroje</h3>
+          <p>Skopírujte celý <code class="  language-markup govuk-!-font-size-16">assets</code> priečinok do rootu vašej služby.</p>
+          <p>Podľa nižšie uvedeného príkladu pridajte súbory CSS a JavaScript do šablóny HTML. Tento príklad predpokladá, že ste skopírovali šablóny so štýlmi a JavaScript súbory do <code class="  language-markup govuk-!-font-size-16">/stylesheets</code> a <code class="  language-markup govuk-!-font-size-16">/javascript</code>.</p>
+        </div>
+
+        <div class="govuk-grid-column-full">
+          <pre class="language-markup"><code class="language-markup govuk-!-font-size-16">&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;title>Ukážka&lt;/title>
+    &lt;!--[if !IE 8]>&lt;!-->
+      &lt;link rel="stylesheet" href="stylesheets/govuk-frontend-[latest version].min.css">
+    &lt;!--&lt;![endif]-->
+    &lt;!--[if IE 8]>
+      &lt;link rel="stylesheet" href="stylesheets/govuk-frontend-ie8-[latest-version].min.css">
+    &lt;![endif]-->
+  &lt;/head>
+  &lt;body>
+    &lt;!-- Copy and paste component HTML-->
+    &lt;button class="govuk-button">Toto je komponent tlačidlo&lt;/button>
+    &lt;script src="javascript/govuk-frontend-[latest version].min.js">&lt;/script>
+    &lt;script>window.GOVUKFrontend.initAll()&lt;/script>
+  &lt;/body>
+&lt;/html></code></pre>
+        </div>
+    </div>
+
+  </div>
+{% endblock %}

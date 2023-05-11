@@ -1,0 +1,30 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Formulárova služba na ústrednom portály verejnej správy - slovensko.sk " %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h3 class="govuk-heading-m">Naspisy</h3>
+            <p class="govuk-body">
+                texty
+            </p>
+
+        </div>
+    </div>
+
+{% endblock %}

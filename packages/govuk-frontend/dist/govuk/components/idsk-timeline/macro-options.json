@@ -1,0 +1,54 @@
+[
+    {
+        "name": "events",
+        "type": "array",
+        "required": true,
+        "description": "An array of events for timeline component.",
+        "params": [
+            {
+                "name": "date",
+                "type": "string",
+                "required": true,
+                "description": "Date of event."
+            },
+            {
+                "name": "time",
+                "type": "string",
+                "required": true,
+                "description": "Time of event."
+            },
+            {
+                "name": "caption",
+                "type": "array",
+                "required": false,
+                "description": "array of captions",
+                "params": [
+                    {
+                        "name": "name",
+                        "type": "string",
+                        "required": false,
+                        "description": "Name of caption"
+                    },
+                    {
+                        "name": "href",
+                        "type": "html",
+                        "required": false,
+                        "description": "Url address for caption"
+                    }
+                ]
+            },
+            {
+                "name": "dateLine",
+                "type": "string",
+                "required": false,
+                "description": "Month and year for included events."
+            },
+            {
+                "name": "title",
+                "type": "string",
+                "required": true,
+                "description": "Title for event."
+            }
+        ]
+    }
+]

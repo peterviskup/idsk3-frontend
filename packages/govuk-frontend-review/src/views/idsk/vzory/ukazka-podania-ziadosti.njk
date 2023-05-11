@@ -1,0 +1,112 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Ukážka podania žiadosti" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Vzory</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Toto je názorná ukážka, ako by mala vyzerať elektronická služba, ktorá dodržiava pravidlá ID-SK.</p>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-s">Obsah:</h2>
+            <ul class="govuk-list">
+                <li><a class="govuk-link" href="#informacne-udaje" title="Informačné údaje">Informačné údaje</a></li>
+                <li><a class="govuk-link" href="#uvodna-obrazovka" title="Úvodná obrazovka">Úvodná obrazovka</a></li>
+                <li><a class="govuk-link" href="#osobne-informacie" title="Osobné informácie">Osobné informácie</a></li>
+                <li><a class="govuk-link" href="#kontaktne-udaje" title="Kontaktné údaje">Kontaktné údaje</a></li>
+                <li><a class="govuk-link" href="#informacie-tykajuce-sa-ziadosti" title="Informácie týkajúce sa žiadosti">Informácie týkajúce sa žiadosti</a></li>
+                <li><a class="govuk-link" href="#zhrnutie" title="Zhrnutie">Zhrnutie</a></li>
+                <li><a class="govuk-link" href="#platobna-stranka" title="Platobná stránka">Platobná stránka</a></li>
+                <li><a class="govuk-link" href="#potvrdenie-o-podani-ziadosti" title="Potvrdenie o podaní žiadosti">Potvrdenie o podaní žiadosti</a></li>
+            </ul>
+
+            <h3 class="govuk-heading-m" id="informacne-udaje">Informačné údaje</h3>
+            <p class="govuk-body">V rámci celého procesu podávania žiadosti je dôležité zachovať hlavičku a pätu ID-SK. Ak má proces podávania žiadosti viac ako štyri obrazovky, musí byť v hlavičke stránok vždy umiestnený názov služby, aby mal používateľ prehľad o tom, o akú žiadosť sa jedná.</p>
+
+            <h3 class="govuk-heading-m" id="uvodna-obrazovka">Úvodná obrazovka</h3>
+            <p class="govuk-body">Úvodná stránka pomáha používateľom pochopiť, o akú službu sa jedná, či ju potrebuje, resp. či je pre neho vhodná spolu so základnými informáciami, ktoré by mal o danej službe vedieť.<br>
+                Mala by určite obsahovať informácie, prípadne dokumenty, ktoré by si mali používatelia prichystať predtým, než prejdú k samotnému procesu podania žiadosti, prípadne aj časový odhad vyplnenia podania.<br>
+                Aby mal používateľ možnosť načítať uložené údaje z XML súboru, poskytujeme mu takúto možnosť v alternatívnych odkazoch.
+            </p>
+            <h4 class="govuk-heading-s">Ukážka</h4>
+            <img src="/public/assets/images/patterns/podanie1.png" alt="podanie">
+
+            <h3 class="govuk-heading-m" id="osobne-informacie">Osobné informácie</h3>
+            <p class="govuk-body">Proces podávania žiadosti rozdeľte na viacero stránok tak, aby sa každá stránka obsahovo týkala iba jednej veci, napríklad:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>jedna informácia, ktorú komunikujete používateľovi,</li>
+                <li>jedno rozhodnutie, ktoré musí používateľ urobiť,</li>
+                <li>jedna otázka, ktorú musí používateľ zodpovedať.</li>
+            </ul>
+            <p class="govuk-body">V titulke stránky uveďte buď názov sekcie, ktorej sa stránka venuje (napríklad “Osobné údaje”) alebo otázku, v prípade, ak sa pýtate iba na jednu konkrétnu informáciu (napríklad “Aký ste mali hrubý mesačný príjem za predchádzajúci rok?”).</p>
+            <h4 class="govuk-heading-s">Ukážka</h4>
+            <img src="/public/assets/images/patterns/podanie2.png" alt="podanie">
+
+
+            <h3 class="govuk-heading-m" id="kontaktne-udaje">Kontaktné údaje</h3>
+            <p class="govuk-body">Ak je nutné používateľa informovať o vybavení žiadosti, dajte mu na výber z viacerých možností jeho kontaktovania. Využite prepínače (ang. radio buttons), ak si používateľ musí vybrať jednu z možností kontaktu alebo začiarkávacie políčka (ang. checkboxes), ak je výber dobrovoľný.</p>
+            <h4 class="govuk-heading-s">Ukážka</h4>
+            <img src="/public/assets/images/patterns/podanie3.png" alt="podanie">
+
+
+            <h3 class="govuk-heading-m" id="informacie-tykajuce-sa-ziadosti">Informácie týkajúce sa žiadosti</h3>
+            <h4 class="govuk-heading-s">Ukážka</h4>
+            <img src="/public/assets/images/patterns/podanie4.png" alt="podanie">
+
+
+            <h3 class="govuk-heading-m" id="zhrnutie">Zhrnutie</h3>
+            <p class="govuk-body">Zhrnutie sa používa vždy na konci procesu, kedy používateľ musí potvrdiť správnosť svojich údajov.</p>
+            <p class="govuk-body">Zhrnutie má obsahovať:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>jasnú informáciu, že na stránke je potrebné vykonať úlohu a že proces nebude dokončený pokiaľ používatelia nepotvrdia svoje údaje,</li>
+                <li>zoznam všetkých predošlých odpovedí, ktoré používateľ v procese vyplnil,</li>
+                <li>informáciu o poplatku, ktorý bude používateľ musieť zaplatiť, a rovnako aj vysvetlenie, na základe čoho bola stanovená výška poplatku za službu,</li>
+                <li>potvrdzovacie tlačidlo, ktoré upovedomí používateľa na to, čo sa bude diať v ďalšom kroku.</li>
+            </ul>
+            <p class="govuk-body">Stránka zhrnutia by mala používateľovi poskytnúť možnosť vytlačiť vyplnené údaje vo formáte PDF, exportovať ich prostredníctvom alternatívnych odkazov a uložiť svoju žiadosť do konceptov v elektronickej schránke.</p>
+            <h4 class="govuk-heading-s">Ukážka</h4>
+            <img src="/public/assets/images/patterns/podanie5.png" alt="podanie">
+
+
+            <h3 class="govuk-heading-m" id="platobna-stranka">Platba</h3>
+            <p class="govuk-body">Po autorizácií prechádza používateľ k platbe za službu. Aby nestrácal pri platbe za službu prehľad, musí platobná stránka obsahovať nasledovné informácie:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>informácie o službe, ktorú ide používateľ zaplatiť,</li>
+                <li>poplatok za službu,</li>
+                <li>spôsob platby,</li>
+                <li>tlačidlá “Zaplatiť” a “Zaplatiť neskôr”,</li>
+                <li>možnosť zrušenia platby.</li>
+            </ul>
+
+            <h3 class="govuk-heading-m" id="potvrdenie-o-podani-ziadosti">Potvrdenie o podaní žiadosti</h3>
+            <p class="govuk-body">Ak podanie prebehlo úspešne, zobrazte používateľovi stránku s potvrdením o podaní žiadosti spolu s ďalšími údajmi ako:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>referenčné číslo podania (ak existuje),</li>
+                <li>detaily toho, ako bude proces pokračovať,</li>
+                <li>kontaktné údaje pre danú službu,</li>
+                <li>odkazy na informácie alebo služby, ktoré budú používatelia pravdepodobne potrebovať v nasledovnom procese,</li>
+                <li>odkaz na vašu stránku so spätnou väzbou, kde vám používatelia môžu povedať svoj názor o vašej službe,</li>
+                <li>spôsob, akým si používatelia môžu uložiť záznam o transakcii (napríklad ako PDF).</li>
+            </ul>
+            <h4 class="govuk-heading-s">Ukážka</h4>
+            <img src="/public/assets/images/patterns/podanie6.png" alt="podanie">
+
+        </div>
+    </div>
+
+  </div>
+{% endblock %}

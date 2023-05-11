@@ -1,0 +1,334 @@
+params:
+  - name: classes
+    type: string
+    required: false
+    description: Classes to add to the breadcrumbs container.
+  - name: headline
+    type: string
+    required: false
+    description: page headline
+  - name: mainSearchShow
+    type: boolean
+    required: false
+    description: determines whether should be showed big search or small one in filters section
+  - name: dropdownResults
+    type: array
+    required: false
+    description: Array of values for results per page dropdown
+    params:
+      - name: value
+        type: number
+        required: false
+        description: Dropdown value
+      - name: text
+        type: number
+        required: false
+        description: Dropdown text
+  - name: dropdownItems
+    type: array
+    required: false
+    description: Array of values for ordering results dropdown
+    params:
+      - name: value
+        type: string
+        required: false
+        description: Dropdown value
+      - name: text
+        type: string
+        required: false
+        description: Dropdown text
+  - name: searchResultsCard
+    type: array
+    required: false
+    description: Array of search results cards
+    params:
+      - name: heading
+        type: string
+        required: false
+        description: Title for card
+      - name: description
+        type: string
+        required: false
+        description: Description/caption for card
+      - name: subcards
+        type: array
+        required: false
+        description: Array of subcards
+        params:
+          - name: heading
+            type: string
+            required: false
+            description: Title for subcard
+          - name: description
+            type: string
+            required: false
+            description: Description/caption for subcard
+  - name: filters
+    type: array
+    required: false
+    description: Filters for search results
+    params:
+      - name: name
+        type: string
+        required: false
+        description: Name for filter
+      - name: group
+        type: string
+        required: false
+        description: Group for filter
+      - name: id
+        type: string
+        required: false
+        description: Id for filter
+      - name: isRadio
+        type: boolean
+        required: false
+        description: Determines wether is filter for radios or not
+      - name: searchInputId
+        type: string
+        required: false
+        description: Id for search input
+      - name: isSubtopic
+        type: boolean
+        required: false
+        description: Determines wether is filter subtopic
+      - name: filterClass
+        type: class
+        required: false
+        description: Class for filter
+      - name: isCheckBox
+        type: boolean
+        required: false
+        description: Determines wether is filter for checkboxes or not
+      - name: idFrom
+        type: string
+        required: false
+        description: Id for start date element
+      - name: idTo
+        type: string
+        required: false
+        description: Id for end date element
+      - name: isTextarea
+        type: boolean
+        required: false
+        description: Determines wether is filter using textArea/textInput
+      - name: radios
+        type: array
+        required: false
+        description: Array of radio items for filter
+        params:
+          - name: name
+            type: string
+            required: false
+            description: Name of radio item
+          - name: value
+            type: string
+            required: false
+            description: Value of radio item
+      - name: checkBoxItems
+        type: array
+        required: false
+        description: Array of checkbox items for filter
+        params:
+          - name: value
+            type: string
+            required: false
+            description: Value of checkbox item
+          - name: text
+            type: string
+            required: false
+            description: Text of checkbox item
+          - name: id
+            type: string
+            required: false
+            description: Id of checkbox item
+
+examples:
+  - name: default
+    data:
+      mainSearchShow: true
+      headline: Výsledky vyhľadávania
+      searchResultsCard:
+        - heading: Lorem ipsum dolor sit amet, consectetur adipisc
+          description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...
+          subcards:
+            - heading: Lorem ipsum dolor sitr adipisc
+              description: Lorem ipsum dolor sit amet, consectetur adipisc Lorem ipsum dolor sit amet, consectetur adipisc
+            - heading: Lorem ipsum sectetur adipisc
+              description: Lorem ipsum dolor sit amet, consectetur adipisc Lorem ipsum dolor sit amet, consectetur adipisc
+            - heading: Lorem ipsum dor adipisc
+              description: Lorem ipsum dolor sit amet, consectetur adipisc Lorem ipsum dolor sit amet, consectetur adipisc
+            - heading: Lorem ipsum dor adipisc
+              description: Lorem ipsum dolor sit amet, consectetur adipisc Lorem ipsum dolor sit amet, consectetur adipisc
+        - heading: Lorem ipsum dolor sit amet, consectetur adipiscing
+          description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...
+        - heading: Lorem ipsum dolor sit amet, consectetur adipiscing
+          description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...
+        - heading: Lorem ipsum dolor sit amet, consectetur adipiscing
+          description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...
+        - heading: Lorem ipsum dolor sit amet, consectetur adipiscing
+          description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...
+        - heading: Lorem ipsum dolor sit amet, consectetur adipiscing
+          description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...
+          subcards:
+            - heading: Lorem ipsum dolor sitr adipisc
+              description: Lorem ipsum dolor sit amet, consectetur adipisc Lorem ipsum dolor sit amet, consectetur adipisc
+            - heading: Lorem ipsum sectetur adipisc
+              description: Lorem ipsum dolor sit amet, consectetur adipisc Lorem ipsum dolor sit amet, consectetur adipisc
+        - heading: Lorem ipsum dolor sit amet, consectetur adipiscing
+          description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...
+        - heading: Lorem ipsum dolor sit amet, consectetur adipiscing
+          description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...
+        - heading: Lorem ipsum dolor sit amet, consectetur adipiscing
+          description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...
+        - heading: Lorem ipsum dolor sit amet, consectetur adipiscing
+          description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...
+        - heading: Lorem ipsum dolor sit amet, consectetur adipiscing
+          description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...
+        - heading: Lorem ipsum dolor sit amet, consectetur adipiscing
+          description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...
+        - heading: Lorem ipsum dolor sit amet, consectetur adipiscing
+          description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...
+        - heading: Lorem ipsum dolor sit amet, consectetur adipiscing
+          description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...
+        - heading: Lorem ipsum dolor sit amet, consectetur adipiscing
+          description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...
+        - heading: Lorem ipsum dolor sit amet, consectetur adipiscing
+          description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...
+        - heading: Lorem ipsum dolor sit amet, consectetur pes
+          description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...
+        - heading: Lorem ipsum dolor sit amet, consectetur des
+          description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...
+        - heading: Lorem ipsum dolor sit amet, consectetur adipiscing
+          description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...
+        - heading: Lorem ipsum dolor sit amet, consectetur pes
+          description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...
+        - heading: Lorem ipsum dolor sit amet, consectetur des
+          description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...
+      dropdownResults:
+        - value: 5
+          text: 5
+        - value: 10
+          text: 10
+        - value: 20
+          text: 20
+        - value: 30
+          text: 30
+        - value: 50
+          text: 50
+        - value: 100
+          text: 100
+        - value: 200
+          text: 200
+        - value: 300
+          text: 300
+        - value: 400
+          text: 400
+        - value: 500
+          text: 500
+      dropdownItems:
+        - value: relevant
+          text: Relevantnosti
+        - value: favourites
+          text: Obľúbenosti
+        - value: vzostupne
+          text: Vzostupne
+        - value: zostupne
+          text: Zostupne
+      filters:
+        - name: Téma
+          group: 1
+          id: 'tema'
+          isRadio: true
+          searchInputId: idsk-search-input__topic
+          searchInputTitle: Filter téma
+          radios:
+            - name: Eurofondy
+              value: Eurofondy
+            - name: Informatizácia
+              value: Informatizácia
+            - name: Regionálny rozvoj a komunity
+              value: Regionálny-rozvoj-a-komunity
+            - name: Investície
+              value: Investície
+            - name: Inovácie
+              value: Inovácie
+        - name: Podtéma
+          group: 2
+          id: 'podtema'
+          isRadio: true
+          isSubtopic: true
+          searchInputId: idsk-search-input__subtopic
+          searchInputTitle: Filter podtéma
+          radios:
+            - name: Výzvy pre rozvoj regiónov
+              value: Výzvy-pre-rozvoj-regiónov
+            - name: WiFi 4u
+              value: WiFi-4u
+            - name: Dotácie na obecné školy
+              value: Dotácie-na-obecné-školy
+            - name: Agroturistika
+              value: Agroturistika
+            - name: Podpora miestnej komunity
+              value: Podpora-miestnej-komunity
+            - name: Výzvy pre rozvoj regiónov2
+              value: Výzvy-pre-rozvoj-regiónov2
+            - name: WiFi 4u2
+              value: WiFi-4u2
+            - name: Dotácie na obecné školy2
+              value: Dotácie-na-obecné-školy2
+            - name: Agroturistika2
+              value: Agroturistika2
+            - name: Dotácie na obecné školy3
+              value: Dotácie-na-obecné-školy3
+            - name: Agroturistika3
+              value: Agroturistika3
+        - name: Typ obsahu
+          group: 3
+          id: 'obsah'
+          isCheckBox: true
+          filterClass: idsk-search-results__content-type-filter
+          searchInputId: idsk-search-input__content-type
+          searchInputTitle: Filter typ obsahu
+          checkBoxItems:
+            - value: Rozvoj regiónov
+              text: Rozvoj regiónov
+              id: rozvoj
+            - value: Novinky a komunikačné vyhlásenia
+              text: Novinky a komunikačné vyhlásenia
+              id: novinky
+            - value: Transparentnosť a sloboda prístupu k informáciám
+              text: Transparentnosť a sloboda prístupu k informáciám
+              id: transparentnost
+            - value: Legislatíva
+              text: Legislatíva
+              id: legislativa
+            - value: Štatistické údaje
+              text: Štatistické údaje
+              id: statistika
+            - value: Rodová rovnosť a postavenia žien v pracovom prostredí
+              text: Rodová rovnosť a postavenia žien v pracovom prostredí
+              id: rodova
+            - value: Rozvoj regiónov
+              text: Rozvoj regiónov
+              id: rozvoj2
+            - value: Novinky a komunikačné vyhlásenia
+              text: Novinky a komunikačné vyhlásenia
+              id: novinky2
+            - value: Transparentnosť a sloboda prístupu k informáciám
+              text: Transparentnosť a sloboda prístupu k informáciám
+              id: transparentnost2
+            - value: Legislatíva
+              text: Legislatíva
+              id: legislativa2
+            - value: Štatistické údaje
+              text: Štatistické údaje
+              id: statistika2
+            - value: Rodová ro2vnosť a postavenia žien v pracovom prostredí
+              text: Rodová rovnosť a postavenia žien v pracovom prostredí
+              id: rodova2
+        - name: Dátum aktualizácie
+          group: 3
+          idFrom: 'datum-od'
+          idTo: 'datum-do'
+          isTextarea: true

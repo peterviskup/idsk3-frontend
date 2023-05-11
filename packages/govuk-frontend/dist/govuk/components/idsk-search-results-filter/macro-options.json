@@ -1,0 +1,128 @@
+[
+    {
+        "name": "classes",
+        "type": "string",
+        "required": false,
+        "description": "Classes to add to the breadcrumbs container."
+    },
+    {
+        "name": "filters",
+        "type": "array",
+        "required": false,
+        "description": "Filters for search results",
+        "params": [
+            {
+                "name": "name",
+                "type": "string",
+                "required": false,
+                "description": "Name for filter"
+            },
+            {
+                "name": "group",
+                "type": "string",
+                "required": false,
+                "description": "Group for filter"
+            },
+            {
+                "name": "id",
+                "type": "string",
+                "required": false,
+                "description": "Id for filter"
+            },
+            {
+                "name": "isRadio",
+                "type": "boolean",
+                "required": false,
+                "description": "Determines wether is filter for radios or not"
+            },
+            {
+                "name": "searchInputId",
+                "type": "string",
+                "required": false,
+                "description": "Id for search input"
+            },
+            {
+                "name": "isSubtopic",
+                "type": "boolean",
+                "required": false,
+                "description": "Determines wether is filter subtopic"
+            },
+            {
+                "name": "filterClass",
+                "type": "class",
+                "required": false,
+                "description": "Class for filter"
+            },
+            {
+                "name": "isCheckBox",
+                "type": "boolean",
+                "required": false,
+                "description": "Determines wether is filter for checkboxes or not"
+            },
+            {
+                "name": "idFrom",
+                "type": "string",
+                "required": false,
+                "description": "Id for start date element"
+            },
+            {
+                "name": "idTo",
+                "type": "string",
+                "required": false,
+                "description": "Id for end date element"
+            },
+            {
+                "name": "isTextarea",
+                "type": "boolean",
+                "required": false,
+                "description": "Determines wether is filter using textArea/textInput"
+            },
+            {
+                "name": "radios",
+                "type": "array",
+                "required": false,
+                "description": "Array of radio items for filter",
+                "params": [
+                    {
+                        "name": "name",
+                        "type": "string",
+                        "required": false,
+                        "description": "Name of radio item"
+                    },
+                    {
+                        "name": "value",
+                        "type": "string",
+                        "required": false,
+                        "description": "Value of radio item"
+                    }
+                ]
+            },
+            {
+                "name": "checkBoxItems",
+                "type": "array",
+                "required": false,
+                "description": "Array of checkbox items for filter",
+                "params": [
+                    {
+                        "name": "value",
+                        "type": "string",
+                        "required": false,
+                        "description": "Value of checkbox item"
+                    },
+                    {
+                        "name": "text",
+                        "type": "string",
+                        "required": false,
+                        "description": "Text of checkbox item"
+                    },
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "required": false,
+                        "description": "Id of checkbox item"
+                    }
+                ]
+            }
+        ]
+    }
+]

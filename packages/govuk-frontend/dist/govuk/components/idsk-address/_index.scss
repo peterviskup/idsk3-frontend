@@ -1,0 +1,114 @@
+// stylelint-disable max-nesting-depth
+
+@include govuk-exports("idsk/component/address") {
+  .idsk-address {
+    @include govuk-font($size: 16);
+    @include govuk-text-colour;
+    @include govuk-grid-column("one-third");
+
+    padding: 0;
+
+    &__map {
+      width: 100%;
+      height: 148px;
+      margin-top: govuk-spacing(5);
+      margin-bottom: govuk-spacing(6);
+      border: 1px solid #000000;
+    }
+
+    &__separator {
+      &-top {
+        height: 2px;
+        border: none;
+        background-color: govuk-colour("dark-blue");
+      }
+
+      &-bottom {
+        display: none;
+      }
+    }
+
+    &__link-text {
+      margin-left: govuk-spacing(3);
+
+      &:before {
+        @include govuk-shape-arrow($direction: right, $base: 13px);
+
+        content: "";
+        display: inline-block;
+        position: absolute;
+        margin-top: 4px;
+        margin-left: -15px;
+
+        @include mq($from: tablet) {
+          margin-top: 6px;
+        }
+      }
+    }
+
+    .govuk-body {
+      margin-bottom: govuk-spacing(1);
+
+      & > .govuk-link {
+        display: inline-block;
+        margin-top: govuk-spacing(3);
+      }
+    }
+
+    .govuk-heading-m {
+      margin-bottom: govuk-spacing(2);
+    }
+  }
+
+  .idsk-address--full-width {
+    @include govuk-grid-column("full");
+
+    padding: 0;
+
+    .idsk-address {
+      &__content {
+        display: inline-block;
+        width: 100%;
+      }
+
+      &__description {
+        @include govuk-grid-column("full");
+        padding: 0;
+
+        @include mq($from: desktop) {
+          @include govuk-grid-column("one-half");
+          padding: 0;
+        }
+      }
+
+      &__map {
+        @include govuk-grid-column("full");
+
+        height: 202px;
+        margin-top: 0;
+        padding: 0;
+
+        @include mq($from: desktop) {
+          @include govuk-grid-column("one-half");
+          padding: 0;
+        }
+      }
+
+      &__separator {
+        &-bottom {
+          display: block;
+          height: 2px;
+          margin-top: 0;
+          border: none;
+          background-color: govuk-colour("lighter-grey");
+        }
+
+        &-top {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+/*# sourceMappingURL=_index.scss.map */

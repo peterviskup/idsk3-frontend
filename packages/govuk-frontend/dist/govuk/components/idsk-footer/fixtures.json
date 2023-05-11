@@ -1,0 +1,322 @@
+{
+    "component": "idsk-footer",
+    "fixtures": [
+        {
+            "name": "default",
+            "options": {
+                "logo": true,
+                "meta": {
+                    "copy": "Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky. Vytvorené v súlade s Jednotným dizajn manuálom elektronických služieb.",
+                    "footerLogoLink": "https://www.mirri.gov.sk/"
+                }
+            },
+            "hidden": false,
+            "html": "<footer class=\"idsk-footer \">\n  <div class=\"govuk-width-container \">\n    <div class=\"idsk-footer__meta\">\n      <div class=\"idsk-footer__meta-item\">\n        <a\n          class=\"idsk-footer__licence-logo idsk-footer__link\"\n          href=\"https://www.mirri.gov.sk/\"\n        >\n          <img src=\"/assets/images/header-extended/logo-mirri-farebne.svg\" alt=\"pätička logo\">\n        </a>\n      </div>\n      <div class=\"idsk-footer__meta-item idsk-footer__meta-item--grow\">\n        <span class=\"idsk-footer__licence-description\">\n          Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky. Vytvorené v súlade s Jednotným dizajn manuálom elektronických služieb.\n        </span>\n          <h2 class=\"govuk-visually-hidden\">Support links</h2>\n      </div>\n    </div>\n  </div>\n</footer>"
+        },
+        {
+            "name": "with empty meta",
+            "options": {
+                "meta": {}
+            },
+            "hidden": true,
+            "html": "<footer class=\"idsk-footer \">\n  <div class=\"govuk-width-container \">\n    <div class=\"idsk-footer__meta\">\n      <div class=\"idsk-footer__meta-item idsk-footer__meta-item--grow\">\n          <h2 class=\"govuk-visually-hidden\">Support links</h2>\n      </div>\n    </div>\n  </div>\n</footer>"
+        },
+        {
+            "name": "with meta",
+            "options": {
+                "logo": true,
+                "meta": {
+                    "copy": "Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky. Vytvorené v súlade s Jednotným dizajn manuálom elektronických služieb.",
+                    "footerLogoLink": "https://www.mirri.gov.sk/",
+                    "visuallyHiddenTitle": "Items",
+                    "items": [
+                        {
+                            "href": "#1",
+                            "text": "Item 1"
+                        },
+                        {
+                            "href": "#2",
+                            "text": "Item 2"
+                        },
+                        {
+                            "href": "#3",
+                            "text": "Item 3"
+                        }
+                    ]
+                }
+            },
+            "hidden": false,
+            "html": "<footer class=\"idsk-footer \">\n  <div class=\"govuk-width-container \">\n    <div class=\"idsk-footer__meta\">\n      <div class=\"idsk-footer__meta-item\">\n        <a\n          class=\"idsk-footer__licence-logo idsk-footer__link\"\n          href=\"https://www.mirri.gov.sk/\"\n        >\n          <img src=\"/assets/images/header-extended/logo-mirri-farebne.svg\" alt=\"pätička logo\">\n        </a>\n      </div>\n      <div class=\"idsk-footer__meta-item idsk-footer__meta-item--grow\">\n        <span class=\"idsk-footer__licence-description\">\n          Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky. Vytvorené v súlade s Jednotným dizajn manuálom elektronických služieb.\n        </span>\n          <h2 class=\"govuk-visually-hidden\">Items</h2>\n            <ul class=\"idsk-footer__inline-list\">\n                <li class=\"idsk-footer__inline-list-item\">\n                  <a class=\"idsk-footer__link\" href=\"#1\">\n                    Item 1\n                  </a>\n                </li>\n                <li class=\"idsk-footer__inline-list-item\">\n                  <a class=\"idsk-footer__link\" href=\"#2\">\n                    Item 2\n                  </a>\n                </li>\n                <li class=\"idsk-footer__inline-list-item\">\n                  <a class=\"idsk-footer__link\" href=\"#3\">\n                    Item 3\n                  </a>\n                </li>\n            </ul>\n      </div>\n    </div>\n  </div>\n</footer>"
+        },
+        {
+            "name": "with custom meta",
+            "options": {
+                "logo": true,
+                "meta": {
+                    "copy": "Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky. Vytvorené v súlade s Jednotným dizajn manuálom elektronických služieb.",
+                    "footerLogoLink": "https://www.mirri.gov.sk/",
+                    "text": "GOV.UK Prototype Kit v7.0.1"
+                }
+            },
+            "hidden": false,
+            "html": "<footer class=\"idsk-footer \">\n  <div class=\"govuk-width-container \">\n    <div class=\"idsk-footer__meta\">\n      <div class=\"idsk-footer__meta-item\">\n        <a\n          class=\"idsk-footer__licence-logo idsk-footer__link\"\n          href=\"https://www.mirri.gov.sk/\"\n        >\n          <img src=\"/assets/images/header-extended/logo-mirri-farebne.svg\" alt=\"pätička logo\">\n        </a>\n      </div>\n      <div class=\"idsk-footer__meta-item idsk-footer__meta-item--grow\">\n        <span class=\"idsk-footer__licence-description\">\n          Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky. Vytvorené v súlade s Jednotným dizajn manuálom elektronických služieb.\n        </span>\n          <h2 class=\"govuk-visually-hidden\">Support links</h2>\n            <div class=\"idsk-footer__meta-custom\">\n              GOV.UK Prototype Kit v7.0.1\n            </div>\n      </div>\n    </div>\n  </div>\n</footer>"
+        },
+        {
+            "name": "with meta links and meta content",
+            "options": {
+                "logo": true,
+                "meta": {
+                    "copy": "Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky. Vytvorené v súlade s Jednotným dizajn manuálom elektronických služieb.",
+                    "footerLogoLink": "https://www.mirri.gov.sk/",
+                    "items": [
+                        {
+                            "href": "#1",
+                            "text": "Bibendum Ornare"
+                        },
+                        {
+                            "href": "#2",
+                            "text": "Nullam"
+                        },
+                        {
+                            "href": "#3",
+                            "text": "Tortor Fringilla"
+                        },
+                        {
+                            "href": "#4",
+                            "text": "Tellus"
+                        },
+                        {
+                            "href": "#5",
+                            "text": "Egestas Nullam"
+                        },
+                        {
+                            "href": "#6",
+                            "text": "Euismod Etiam"
+                        },
+                        {
+                            "href": "#7",
+                            "text": "Fusce Sollicitudin"
+                        },
+                        {
+                            "href": "#8",
+                            "text": "Ligula Nullam Ultricies"
+                        }
+                    ],
+                    "html": "Built by the <a href=\"#\" class=\"govuk-footer__link\">Department of Magical Law Enforcement</a>"
+                }
+            },
+            "hidden": false,
+            "html": "<footer class=\"idsk-footer \">\n  <div class=\"govuk-width-container \">\n    <div class=\"idsk-footer__meta\">\n      <div class=\"idsk-footer__meta-item\">\n        <a\n          class=\"idsk-footer__licence-logo idsk-footer__link\"\n          href=\"https://www.mirri.gov.sk/\"\n        >\n          <img src=\"/assets/images/header-extended/logo-mirri-farebne.svg\" alt=\"pätička logo\">\n        </a>\n      </div>\n      <div class=\"idsk-footer__meta-item idsk-footer__meta-item--grow\">\n        <span class=\"idsk-footer__licence-description\">\n          Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky. Vytvorené v súlade s Jednotným dizajn manuálom elektronických služieb.\n        </span>\n          <h2 class=\"govuk-visually-hidden\">Support links</h2>\n            <ul class=\"idsk-footer__inline-list\">\n                <li class=\"idsk-footer__inline-list-item\">\n                  <a class=\"idsk-footer__link\" href=\"#1\">\n                    Bibendum Ornare\n                  </a>\n                </li>\n                <li class=\"idsk-footer__inline-list-item\">\n                  <a class=\"idsk-footer__link\" href=\"#2\">\n                    Nullam\n                  </a>\n                </li>\n                <li class=\"idsk-footer__inline-list-item\">\n                  <a class=\"idsk-footer__link\" href=\"#3\">\n                    Tortor Fringilla\n                  </a>\n                </li>\n                <li class=\"idsk-footer__inline-list-item\">\n                  <a class=\"idsk-footer__link\" href=\"#4\">\n                    Tellus\n                  </a>\n                </li>\n                <li class=\"idsk-footer__inline-list-item\">\n                  <a class=\"idsk-footer__link\" href=\"#5\">\n                    Egestas Nullam\n                  </a>\n                </li>\n                <li class=\"idsk-footer__inline-list-item\">\n                  <a class=\"idsk-footer__link\" href=\"#6\">\n                    Euismod Etiam\n                  </a>\n                </li>\n                <li class=\"idsk-footer__inline-list-item\">\n                  <a class=\"idsk-footer__link\" href=\"#7\">\n                    Fusce Sollicitudin\n                  </a>\n                </li>\n                <li class=\"idsk-footer__inline-list-item\">\n                  <a class=\"idsk-footer__link\" href=\"#8\">\n                    Ligula Nullam Ultricies\n                  </a>\n                </li>\n            </ul>\n            <div class=\"idsk-footer__meta-custom\">\n              Built by the <a href=\"#\" class=\"govuk-footer__link\">Department of Magical Law Enforcement</a>\n            </div>\n      </div>\n    </div>\n  </div>\n</footer>"
+        },
+        {
+            "name": "with custom meta",
+            "options": {
+                "logo": true,
+                "meta": {
+                    "copy": "Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky. Vytvorené v súlade s Jednotným dizajn manuálom elektronických služieb.",
+                    "footerLogoLink": "https://www.mirri.gov.sk/",
+                    "text": "GOV.UK Prototype Kit v7.0.1"
+                }
+            },
+            "hidden": false,
+            "html": "<footer class=\"idsk-footer \">\n  <div class=\"govuk-width-container \">\n    <div class=\"idsk-footer__meta\">\n      <div class=\"idsk-footer__meta-item\">\n        <a\n          class=\"idsk-footer__licence-logo idsk-footer__link\"\n          href=\"https://www.mirri.gov.sk/\"\n        >\n          <img src=\"/assets/images/header-extended/logo-mirri-farebne.svg\" alt=\"pätička logo\">\n        </a>\n      </div>\n      <div class=\"idsk-footer__meta-item idsk-footer__meta-item--grow\">\n        <span class=\"idsk-footer__licence-description\">\n          Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky. Vytvorené v súlade s Jednotným dizajn manuálom elektronických služieb.\n        </span>\n          <h2 class=\"govuk-visually-hidden\">Support links</h2>\n            <div class=\"idsk-footer__meta-custom\">\n              GOV.UK Prototype Kit v7.0.1\n            </div>\n      </div>\n    </div>\n  </div>\n</footer>"
+        },
+        {
+            "name": "with navigation",
+            "options": {
+                "logo": true,
+                "meta": {
+                    "copy": "Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky. Vytvorené v súlade s Jednotným dizajn manuálom elektronických služieb.",
+                    "footerLogoLink": "https://www.mirri.gov.sk/"
+                },
+                "navigation": [
+                    {
+                        "title": "Two column list",
+                        "columns": 2,
+                        "items": [
+                            {
+                                "href": "#1",
+                                "text": "Navigation item 1"
+                            },
+                            {
+                                "href": "#2",
+                                "text": "Navigation item 2"
+                            },
+                            {
+                                "href": "#3",
+                                "text": "Navigation item 3"
+                            },
+                            {
+                                "href": "#4",
+                                "text": "Navigation item 4"
+                            },
+                            {
+                                "href": "#5",
+                                "text": "Navigation item 5"
+                            },
+                            {
+                                "href": "#6",
+                                "text": "Navigation item 6"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Single column list",
+                        "items": [
+                            {
+                                "href": "#1",
+                                "text": "Navigation item 1"
+                            },
+                            {
+                                "href": "#2",
+                                "text": "Navigation item 2"
+                            },
+                            {
+                                "href": "#3",
+                                "text": "Navigation item 3"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "hidden": false,
+            "html": "<footer class=\"idsk-footer \">\n  <div class=\"govuk-width-container \">\n      <div class=\"idsk-footer__navigation\">\n          <div class=\"idsk-footer__section\">\n            <h2 class=\"idsk-footer__heading govuk-heading-m\">Two column list</h2>\n              <ul class=\"idsk-footer__list idsk-footer__list--columns-2\">\n                    <li class=\"idsk-footer__list-item\">\n                      <a class=\"idsk-footer__link\" href=\"#1\">\n                        Navigation item 1\n                      </a>\n                    </li>\n                    <li class=\"idsk-footer__list-item\">\n                      <a class=\"idsk-footer__link\" href=\"#2\">\n                        Navigation item 2\n                      </a>\n                    </li>\n                    <li class=\"idsk-footer__list-item\">\n                      <a class=\"idsk-footer__link\" href=\"#3\">\n                        Navigation item 3\n                      </a>\n                    </li>\n                    <li class=\"idsk-footer__list-item\">\n                      <a class=\"idsk-footer__link\" href=\"#4\">\n                        Navigation item 4\n                      </a>\n                    </li>\n                    <li class=\"idsk-footer__list-item\">\n                      <a class=\"idsk-footer__link\" href=\"#5\">\n                        Navigation item 5\n                      </a>\n                    </li>\n                    <li class=\"idsk-footer__list-item\">\n                      <a class=\"idsk-footer__link\" href=\"#6\">\n                        Navigation item 6\n                      </a>\n                    </li>\n              </ul>\n          </div>\n          <div class=\"idsk-footer__section\">\n            <h2 class=\"idsk-footer__heading govuk-heading-m\">Single column list</h2>\n              <ul class=\"idsk-footer__list \">\n                    <li class=\"idsk-footer__list-item\">\n                      <a class=\"idsk-footer__link\" href=\"#1\">\n                        Navigation item 1\n                      </a>\n                    </li>\n                    <li class=\"idsk-footer__list-item\">\n                      <a class=\"idsk-footer__link\" href=\"#2\">\n                        Navigation item 2\n                      </a>\n                    </li>\n                    <li class=\"idsk-footer__list-item\">\n                      <a class=\"idsk-footer__link\" href=\"#3\">\n                        Navigation item 3\n                      </a>\n                    </li>\n              </ul>\n          </div>\n      </div>\n      <hr class=\"idsk-footer__section-break\">\n    <div class=\"idsk-footer__meta\">\n      <div class=\"idsk-footer__meta-item\">\n        <a\n          class=\"idsk-footer__licence-logo idsk-footer__link\"\n          href=\"https://www.mirri.gov.sk/\"\n        >\n          <img src=\"/assets/images/header-extended/logo-mirri-farebne.svg\" alt=\"pätička logo\">\n        </a>\n      </div>\n      <div class=\"idsk-footer__meta-item idsk-footer__meta-item--grow\">\n        <span class=\"idsk-footer__licence-description\">\n          Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky. Vytvorené v súlade s Jednotným dizajn manuálom elektronických služieb.\n        </span>\n          <h2 class=\"govuk-visually-hidden\">Support links</h2>\n      </div>\n    </div>\n  </div>\n</footer>"
+        },
+        {
+            "name": "GOV.UK",
+            "options": {
+                "logo": true,
+                "navigation": [
+                    {
+                        "title": "Services and information",
+                        "columns": 2,
+                        "items": [
+                            {
+                                "href": "/browse/benefits",
+                                "text": "Benefits"
+                            },
+                            {
+                                "href": "/browse/births-deaths-marriages",
+                                "text": "Births, deaths, marriages and care"
+                            },
+                            {
+                                "href": "/browse/business",
+                                "text": "Business and self-employed"
+                            },
+                            {
+                                "href": "/browse/childcare-parenting",
+                                "text": "Childcare and parenting"
+                            },
+                            {
+                                "href": "/browse/citizenship",
+                                "text": "Citizenship and living in the UK"
+                            },
+                            {
+                                "href": "/browse/justice",
+                                "text": "Crime, justice and the law"
+                            },
+                            {
+                                "href": "/browse/disabilities",
+                                "text": "Disabled people"
+                            },
+                            {
+                                "href": "/browse/driving",
+                                "text": "Driving and transport"
+                            },
+                            {
+                                "href": "/browse/education",
+                                "text": "Education and learning"
+                            },
+                            {
+                                "href": "/browse/employing-people",
+                                "text": "Employing people"
+                            },
+                            {
+                                "href": "/browse/environment-countryside",
+                                "text": "Environment and countryside"
+                            },
+                            {
+                                "href": "/browse/housing-local-services",
+                                "text": "Housing and local services"
+                            },
+                            {
+                                "href": "/browse/tax",
+                                "text": "Money and tax"
+                            },
+                            {
+                                "href": "/browse/abroad",
+                                "text": "Passports, travel and living abroad"
+                            },
+                            {
+                                "href": "/browse/visas-immigration",
+                                "text": "Visas and immigration"
+                            },
+                            {
+                                "href": "/browse/working",
+                                "text": "Working, jobs and pensions"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Departments and policy",
+                        "items": [
+                            {
+                                "href": "/government/how-government-works",
+                                "text": "How government works"
+                            },
+                            {
+                                "href": "/government/organisations",
+                                "text": "Departments"
+                            },
+                            {
+                                "href": "/world",
+                                "text": "Worldwide"
+                            },
+                            {
+                                "href": "/government/policies",
+                                "text": "Policies"
+                            },
+                            {
+                                "href": "/government/publications",
+                                "text": "Publications"
+                            },
+                            {
+                                "href": "/government/announcements",
+                                "text": "Announcements"
+                            }
+                        ]
+                    }
+                ],
+                "meta": {
+                    "copy": "Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky. Vytvorené v súlade s Jednotným dizajn manuálom elektronických služieb.",
+                    "footerLogoLink": "https://www.mirri.gov.sk/",
+                    "items": [
+                        {
+                            "href": "/help",
+                            "text": "Help"
+                        },
+                        {
+                            "href": "/help/cookies",
+                            "text": "Cookies"
+                        },
+                        {
+                            "href": "/contact",
+                            "text": "Contact"
+                        },
+                        {
+                            "href": "/help/terms-conditions",
+                            "text": "Terms and conditions"
+                        },
+                        {
+                            "href": "/cymraeg",
+                            "text": "Rhestr o Wasanaethau Cymraeg"
+                        }
+                    ],
+                    "html": "Built by the <a class=\"govuk-footer__link\" href=\"#\">Government Digital Service</a>"
+                }
+            },
+            "hidden": false,
+            "html": "<footer class=\"idsk-footer \">\n  <div class=\"govuk-width-container \">\n      <div class=\"idsk-footer__navigation\">\n          <div class=\"idsk-footer__section\">\n            <h2 class=\"idsk-footer__heading govuk-heading-m\">Services and information</h2>\n              <ul class=\"idsk-footer__list idsk-footer__list--columns-2\">\n                    <li class=\"idsk-footer__list-item\">\n                      <a class=\"idsk-footer__link\" href=\"/browse/benefits\">\n                        Benefits\n                      </a>\n                    </li>\n                    <li class=\"idsk-footer__list-item\">\n                      <a class=\"idsk-footer__link\" href=\"/browse/births-deaths-marriages\">\n                        Births, deaths, marriages and care\n                      </a>\n                    </li>\n                    <li class=\"idsk-footer__list-item\">\n                      <a class=\"idsk-footer__link\" href=\"/browse/business\">\n                        Business and self-employed\n                      </a>\n                    </li>\n                    <li class=\"idsk-footer__list-item\">\n                      <a class=\"idsk-footer__link\" href=\"/browse/childcare-parenting\">\n                        Childcare and parenting\n                      </a>\n                    </li>\n                    <li class=\"idsk-footer__list-item\">\n                      <a class=\"idsk-footer__link\" href=\"/browse/citizenship\">\n                        Citizenship and living in the UK\n                      </a>\n                    </li>\n                    <li class=\"idsk-footer__list-item\">\n                      <a class=\"idsk-footer__link\" href=\"/browse/justice\">\n                        Crime, justice and the law\n                      </a>\n                    </li>\n                    <li class=\"idsk-footer__list-item\">\n                      <a class=\"idsk-footer__link\" href=\"/browse/disabilities\">\n                        Disabled people\n                      </a>\n                    </li>\n                    <li class=\"idsk-footer__list-item\">\n                      <a class=\"idsk-footer__link\" href=\"/browse/driving\">\n                        Driving and transport\n                      </a>\n                    </li>\n                    <li class=\"idsk-footer__list-item\">\n                      <a class=\"idsk-footer__link\" href=\"/browse/education\">\n                        Education and learning\n                      </a>\n                    </li>\n                    <li class=\"idsk-footer__list-item\">\n                      <a class=\"idsk-footer__link\" href=\"/browse/employing-people\">\n                        Employing people\n                      </a>\n                    </li>\n                    <li class=\"idsk-footer__list-item\">\n                      <a class=\"idsk-footer__link\" href=\"/browse/environment-countryside\">\n                        Environment and countryside\n                      </a>\n                    </li>\n                    <li class=\"idsk-footer__list-item\">\n                      <a class=\"idsk-footer__link\" href=\"/browse/housing-local-services\">\n                        Housing and local services\n                      </a>\n                    </li>\n                    <li class=\"idsk-footer__list-item\">\n                      <a class=\"idsk-footer__link\" href=\"/browse/tax\">\n                        Money and tax\n                      </a>\n                    </li>\n                    <li class=\"idsk-footer__list-item\">\n                      <a class=\"idsk-footer__link\" href=\"/browse/abroad\">\n                        Passports, travel and living abroad\n                      </a>\n                    </li>\n                    <li class=\"idsk-footer__list-item\">\n                      <a class=\"idsk-footer__link\" href=\"/browse/visas-immigration\">\n                        Visas and immigration\n                      </a>\n                    </li>\n                    <li class=\"idsk-footer__list-item\">\n                      <a class=\"idsk-footer__link\" href=\"/browse/working\">\n                        Working, jobs and pensions\n                      </a>\n                    </li>\n              </ul>\n          </div>\n          <div class=\"idsk-footer__section\">\n            <h2 class=\"idsk-footer__heading govuk-heading-m\">Departments and policy</h2>\n              <ul class=\"idsk-footer__list \">\n                    <li class=\"idsk-footer__list-item\">\n                      <a class=\"idsk-footer__link\" href=\"/government/how-government-works\">\n                        How government works\n                      </a>\n                    </li>\n                    <li class=\"idsk-footer__list-item\">\n                      <a class=\"idsk-footer__link\" href=\"/government/organisations\">\n                        Departments\n                      </a>\n                    </li>\n                    <li class=\"idsk-footer__list-item\">\n                      <a class=\"idsk-footer__link\" href=\"/world\">\n                        Worldwide\n                      </a>\n                    </li>\n                    <li class=\"idsk-footer__list-item\">\n                      <a class=\"idsk-footer__link\" href=\"/government/policies\">\n                        Policies\n                      </a>\n                    </li>\n                    <li class=\"idsk-footer__list-item\">\n                      <a class=\"idsk-footer__link\" href=\"/government/publications\">\n                        Publications\n                      </a>\n                    </li>\n                    <li class=\"idsk-footer__list-item\">\n                      <a class=\"idsk-footer__link\" href=\"/government/announcements\">\n                        Announcements\n                      </a>\n                    </li>\n              </ul>\n          </div>\n      </div>\n      <hr class=\"idsk-footer__section-break\">\n    <div class=\"idsk-footer__meta\">\n      <div class=\"idsk-footer__meta-item\">\n        <a\n          class=\"idsk-footer__licence-logo idsk-footer__link\"\n          href=\"https://www.mirri.gov.sk/\"\n        >\n          <img src=\"/assets/images/header-extended/logo-mirri-farebne.svg\" alt=\"pätička logo\">\n        </a>\n      </div>\n      <div class=\"idsk-footer__meta-item idsk-footer__meta-item--grow\">\n        <span class=\"idsk-footer__licence-description\">\n          Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky. Vytvorené v súlade s Jednotným dizajn manuálom elektronických služieb.\n        </span>\n          <h2 class=\"govuk-visually-hidden\">Support links</h2>\n            <ul class=\"idsk-footer__inline-list\">\n                <li class=\"idsk-footer__inline-list-item\">\n                  <a class=\"idsk-footer__link\" href=\"/help\">\n                    Help\n                  </a>\n                </li>\n                <li class=\"idsk-footer__inline-list-item\">\n                  <a class=\"idsk-footer__link\" href=\"/help/cookies\">\n                    Cookies\n                  </a>\n                </li>\n                <li class=\"idsk-footer__inline-list-item\">\n                  <a class=\"idsk-footer__link\" href=\"/contact\">\n                    Contact\n                  </a>\n                </li>\n                <li class=\"idsk-footer__inline-list-item\">\n                  <a class=\"idsk-footer__link\" href=\"/help/terms-conditions\">\n                    Terms and conditions\n                  </a>\n                </li>\n                <li class=\"idsk-footer__inline-list-item\">\n                  <a class=\"idsk-footer__link\" href=\"/cymraeg\">\n                    Rhestr o Wasanaethau Cymraeg\n                  </a>\n                </li>\n            </ul>\n            <div class=\"idsk-footer__meta-custom\">\n              Built by the <a class=\"govuk-footer__link\" href=\"#\">Government Digital Service</a>\n            </div>\n      </div>\n    </div>\n  </div>\n</footer>"
+        }
+    ]
+}

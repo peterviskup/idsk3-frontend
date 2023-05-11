@@ -43,7 +43,7 @@ describe(`http://localhost:${ports.app}`, () => {
 
   describe('/', () => {
     it('should display the list of components', async () => {
-      const response = await fetchPath('/')
+      const response = await fetchPath('/components')
       const $ = load(await response.text())
 
       const componentNames = await getDirectories(join(paths.package, 'src/govuk/components'))

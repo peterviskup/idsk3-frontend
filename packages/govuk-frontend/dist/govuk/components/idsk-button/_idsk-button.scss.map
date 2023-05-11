@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../src/govuk/components/idsk-button/_idsk-button.scss"],"names":[],"mappings":"AAAA,oBAAoB;AACpB,6BAA6B;AAC7B,iBAAiB","file":"_idsk-button.scss","sourcesContent":["@import \"../../base\";\n@import \"../../overrides/all\";\n@import \"./index\";\n"]}

@@ -1,0 +1,353 @@
+{
+    "component": "idsk-search-results",
+    "fixtures": [
+        {
+            "name": "default",
+            "options": {
+                "mainSearchShow": true,
+                "headline": "Výsledky vyhľadávania",
+                "searchResultsCard": [
+                    {
+                        "heading": "Lorem ipsum dolor sit amet, consectetur adipisc",
+                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...",
+                        "subcards": [
+                            {
+                                "heading": "Lorem ipsum dolor sitr adipisc",
+                                "description": "Lorem ipsum dolor sit amet, consectetur adipisc Lorem ipsum dolor sit amet, consectetur adipisc"
+                            },
+                            {
+                                "heading": "Lorem ipsum sectetur adipisc",
+                                "description": "Lorem ipsum dolor sit amet, consectetur adipisc Lorem ipsum dolor sit amet, consectetur adipisc"
+                            },
+                            {
+                                "heading": "Lorem ipsum dor adipisc",
+                                "description": "Lorem ipsum dolor sit amet, consectetur adipisc Lorem ipsum dolor sit amet, consectetur adipisc"
+                            },
+                            {
+                                "heading": "Lorem ipsum dor adipisc",
+                                "description": "Lorem ipsum dolor sit amet, consectetur adipisc Lorem ipsum dolor sit amet, consectetur adipisc"
+                            }
+                        ]
+                    },
+                    {
+                        "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+                    },
+                    {
+                        "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+                    },
+                    {
+                        "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+                    },
+                    {
+                        "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+                    },
+                    {
+                        "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...",
+                        "subcards": [
+                            {
+                                "heading": "Lorem ipsum dolor sitr adipisc",
+                                "description": "Lorem ipsum dolor sit amet, consectetur adipisc Lorem ipsum dolor sit amet, consectetur adipisc"
+                            },
+                            {
+                                "heading": "Lorem ipsum sectetur adipisc",
+                                "description": "Lorem ipsum dolor sit amet, consectetur adipisc Lorem ipsum dolor sit amet, consectetur adipisc"
+                            }
+                        ]
+                    },
+                    {
+                        "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+                    },
+                    {
+                        "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+                    },
+                    {
+                        "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+                    },
+                    {
+                        "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+                    },
+                    {
+                        "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+                    },
+                    {
+                        "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+                    },
+                    {
+                        "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+                    },
+                    {
+                        "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+                    },
+                    {
+                        "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+                    },
+                    {
+                        "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+                    },
+                    {
+                        "heading": "Lorem ipsum dolor sit amet, consectetur pes",
+                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+                    },
+                    {
+                        "heading": "Lorem ipsum dolor sit amet, consectetur des",
+                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+                    },
+                    {
+                        "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+                    },
+                    {
+                        "heading": "Lorem ipsum dolor sit amet, consectetur pes",
+                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+                    },
+                    {
+                        "heading": "Lorem ipsum dolor sit amet, consectetur des",
+                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si..."
+                    }
+                ],
+                "dropdownResults": [
+                    {
+                        "value": 5,
+                        "text": 5
+                    },
+                    {
+                        "value": 10,
+                        "text": 10
+                    },
+                    {
+                        "value": 20,
+                        "text": 20
+                    },
+                    {
+                        "value": 30,
+                        "text": 30
+                    },
+                    {
+                        "value": 50,
+                        "text": 50
+                    },
+                    {
+                        "value": 100,
+                        "text": 100
+                    },
+                    {
+                        "value": 200,
+                        "text": 200
+                    },
+                    {
+                        "value": 300,
+                        "text": 300
+                    },
+                    {
+                        "value": 400,
+                        "text": 400
+                    },
+                    {
+                        "value": 500,
+                        "text": 500
+                    }
+                ],
+                "dropdownItems": [
+                    {
+                        "value": "relevant",
+                        "text": "Relevantnosti"
+                    },
+                    {
+                        "value": "favourites",
+                        "text": "Obľúbenosti"
+                    },
+                    {
+                        "value": "vzostupne",
+                        "text": "Vzostupne"
+                    },
+                    {
+                        "value": "zostupne",
+                        "text": "Zostupne"
+                    }
+                ],
+                "filters": [
+                    {
+                        "name": "Téma",
+                        "group": 1,
+                        "id": "tema",
+                        "isRadio": true,
+                        "searchInputId": "idsk-search-input__topic",
+                        "searchInputTitle": "Filter téma",
+                        "radios": [
+                            {
+                                "name": "Eurofondy",
+                                "value": "Eurofondy"
+                            },
+                            {
+                                "name": "Informatizácia",
+                                "value": "Informatizácia"
+                            },
+                            {
+                                "name": "Regionálny rozvoj a komunity",
+                                "value": "Regionálny-rozvoj-a-komunity"
+                            },
+                            {
+                                "name": "Investície",
+                                "value": "Investície"
+                            },
+                            {
+                                "name": "Inovácie",
+                                "value": "Inovácie"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Podtéma",
+                        "group": 2,
+                        "id": "podtema",
+                        "isRadio": true,
+                        "isSubtopic": true,
+                        "searchInputId": "idsk-search-input__subtopic",
+                        "searchInputTitle": "Filter podtéma",
+                        "radios": [
+                            {
+                                "name": "Výzvy pre rozvoj regiónov",
+                                "value": "Výzvy-pre-rozvoj-regiónov"
+                            },
+                            {
+                                "name": "WiFi 4u",
+                                "value": "WiFi-4u"
+                            },
+                            {
+                                "name": "Dotácie na obecné školy",
+                                "value": "Dotácie-na-obecné-školy"
+                            },
+                            {
+                                "name": "Agroturistika",
+                                "value": "Agroturistika"
+                            },
+                            {
+                                "name": "Podpora miestnej komunity",
+                                "value": "Podpora-miestnej-komunity"
+                            },
+                            {
+                                "name": "Výzvy pre rozvoj regiónov2",
+                                "value": "Výzvy-pre-rozvoj-regiónov2"
+                            },
+                            {
+                                "name": "WiFi 4u2",
+                                "value": "WiFi-4u2"
+                            },
+                            {
+                                "name": "Dotácie na obecné školy2",
+                                "value": "Dotácie-na-obecné-školy2"
+                            },
+                            {
+                                "name": "Agroturistika2",
+                                "value": "Agroturistika2"
+                            },
+                            {
+                                "name": "Dotácie na obecné školy3",
+                                "value": "Dotácie-na-obecné-školy3"
+                            },
+                            {
+                                "name": "Agroturistika3",
+                                "value": "Agroturistika3"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Typ obsahu",
+                        "group": 3,
+                        "id": "obsah",
+                        "isCheckBox": true,
+                        "filterClass": "idsk-search-results__content-type-filter",
+                        "searchInputId": "idsk-search-input__content-type",
+                        "searchInputTitle": "Filter typ obsahu",
+                        "checkBoxItems": [
+                            {
+                                "value": "Rozvoj regiónov",
+                                "text": "Rozvoj regiónov",
+                                "id": "rozvoj"
+                            },
+                            {
+                                "value": "Novinky a komunikačné vyhlásenia",
+                                "text": "Novinky a komunikačné vyhlásenia",
+                                "id": "novinky"
+                            },
+                            {
+                                "value": "Transparentnosť a sloboda prístupu k informáciám",
+                                "text": "Transparentnosť a sloboda prístupu k informáciám",
+                                "id": "transparentnost"
+                            },
+                            {
+                                "value": "Legislatíva",
+                                "text": "Legislatíva",
+                                "id": "legislativa"
+                            },
+                            {
+                                "value": "Štatistické údaje",
+                                "text": "Štatistické údaje",
+                                "id": "statistika"
+                            },
+                            {
+                                "value": "Rodová rovnosť a postavenia žien v pracovom prostredí",
+                                "text": "Rodová rovnosť a postavenia žien v pracovom prostredí",
+                                "id": "rodova"
+                            },
+                            {
+                                "value": "Rozvoj regiónov",
+                                "text": "Rozvoj regiónov",
+                                "id": "rozvoj2"
+                            },
+                            {
+                                "value": "Novinky a komunikačné vyhlásenia",
+                                "text": "Novinky a komunikačné vyhlásenia",
+                                "id": "novinky2"
+                            },
+                            {
+                                "value": "Transparentnosť a sloboda prístupu k informáciám",
+                                "text": "Transparentnosť a sloboda prístupu k informáciám",
+                                "id": "transparentnost2"
+                            },
+                            {
+                                "value": "Legislatíva",
+                                "text": "Legislatíva",
+                                "id": "legislativa2"
+                            },
+                            {
+                                "value": "Štatistické údaje",
+                                "text": "Štatistické údaje",
+                                "id": "statistika2"
+                            },
+                            {
+                                "value": "Rodová ro2vnosť a postavenia žien v pracovom prostredí",
+                                "text": "Rodová rovnosť a postavenia žien v pracovom prostredí",
+                                "id": "rodova2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Dátum aktualizácie",
+                        "group": 3,
+                        "idFrom": "datum-od",
+                        "idTo": "datum-do",
+                        "isTextarea": true
+                    }
+                ]
+            },
+            "hidden": false,
+            "html": "<div class=\"idsk-search-results \" data-module=\"idsk-search-results\">\n  <div class=\"govuk-grid-column-full idsk-search-results__title\">\n    <h1 class=\"govuk-heading-xl\">Výsledky vyhľadávania\n    </h1>\n  </div>\n  <div class=\"govuk-grid-column-full idsk-search-results__search-bar \">\n      <div data-module=\"idsk-search-component\" class=\"idsk-search-component   \">\n  <label class=\"\" for=\"search-results-input\">\n    Zadajte hľadaný výraz\n  </label>\n  <input class=\"govuk-input idsk-search-component__input \" id=\"search-results-input\" name=\"search\" type=\"search\">\n    <button\n      type=\"submit\"\n      class=\"idsk-button idsk-search-component__button \">\n      <svg width=\"18\" height=\"18\" viewbox=\"0 0 31 30\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n        <path\n          d=\"M21.0115 13.103C21.0115 17.2495 17.5484 20.6238 13.2928 20.6238C9.03714 20.6238 5.57404 17.2495 5.57404 13.103C5.57404\n            8.95643 9.03714 5.58212 13.2928 5.58212C17.5484 5.58212 21.0115 8.95643 21.0115 13.103ZM29.833 27.0702C29.833 26.4994\n            29.5918 25.9455 29.1955 25.5593L23.2858 19.8012C24.6814 17.8371 25.4223 15.4868 25.4223 13.103C25.4223 6.57259 19.995\n            1.28451 13.2928 1.28451C6.59058 1.28451 1.16333 6.57259 1.16333 13.103C1.16333 19.6333 6.59058 24.9214 13.2928\n            24.9214C15.7394 24.9214 18.1515 24.1995 20.1673 22.8398L26.077 28.5811C26.4732 28.984 27.0418 29.219 27.6276\n            29.219C28.8337 29.219 29.833 28.2453 29.833 27.0702Z\"\n          fill=\"white\"/>\n        <path\n          fill-rule=\"evenodd\"\n          clip-rule=\"evenodd\"\n          d=\"M0.75708 13.103C0.75708 6.35398 6.36621 0.888672 13.2928 0.888672C20.2194 0.888672 25.8285 6.35398 25.8285\n            13.103C25.8285 15.4559 25.1301 17.7778 23.8094 19.7516L29.4827 25.2794C29.9551 25.7396 30.2392 26.3943 30.2392\n            27.0702C30.2392 28.464 29.058 29.6149 27.6276 29.6149C26.9347 29.6149 26.2611 29.3385 25.787 28.8584L20.1168\n            23.3497C18.0909 24.6367 15.7078 25.3172 13.2928 25.3172C6.36621 25.3172 0.75708 19.8519 0.75708 13.103ZM13.2928\n            1.68034C6.81494 1.68034 1.56958 6.7912 1.56958 13.103C1.56958 19.4147 6.81494 24.5256 13.2928 24.5256C15.6581 24.5256\n            17.9892 23.8275 19.9361 22.5143L20.2144 22.3265L26.3704 28.3071C26.6886 28.6308 27.1506 28.8232 27.6276 28.8232C28.6093\n            28.8232 29.4267 28.0267 29.4267 27.0702C29.4267 26.6046 29.2285 26.1513 28.9082 25.8392L22.7588 19.8475L22.9518\n            19.5759C24.2996 17.679 25.016 15.4076 25.016 13.103C25.016 6.7912 19.7706 1.68034 13.2928 1.68034ZM13.2928\n            5.97796C9.26151 5.97796 5.98029 9.17504 5.98029 13.103C5.98029 17.0309 9.26151 20.228 13.2928 20.228C17.3241 20.228\n            20.6053 17.0309 20.6053 13.103C20.6053 9.17504 17.3241 5.97796 13.2928 5.97796ZM5.16779 13.103C5.16779 8.73781 8.81278\n            5.18629 13.2928 5.18629C17.7728 5.18629 21.4178 8.73781 21.4178 13.103C21.4178 17.4681 17.7728 21.0196 13.2928\n            21.0196C8.81278 21.0196 5.16779 17.4681 5.16779 13.103Z\"\n          fill=\"white\"/>\n      </svg>\n      <span class=\"govuk-visually-hidden\">Vyhľadávanie\n      </span>\n    </button>\n</div>\n\n  </div>\n  <div class=\"idsk-search-results__filter-header-panel govuk-grid-column-full idsk-search-results--invisible\">\n    <div class=\"govuk-heading-xl idsk-search-results--half-width\">\n      <span>Filtre\n      </span>\n    </div>\n    <div class=\"idsk-search-results--half-width\">\n      <button class=\"idsk-search-results__button--back-to-results\" type=\"button\">Späť na výsledky\n      </button>\n    </div>\n  </div>\n  <div class=\"idsk-search-results__filter govuk-grid-column-one-quarter\">\n    <div class=\"idsk-search-results--order__dropdown\">\n      <div class=\"govuk-form-group\">\n  <label class=\"govuk-label\" for=\"sort1\">\n    Zoradiť podľa\n  </label>\n  <select class=\"govuk-select\" id=\"sort1\" name=\"sort1\">\n      <option value=\"relevant\">Relevantnosti</option>\n      <option value=\"favourites\">Obľúbenosti</option>\n      <option value=\"vzostupne\">Vzostupne</option>\n      <option value=\"zostupne\">Zostupne</option>\n  </select>\n</div>\n\n    </div>\n      <div class=\"idsk-search-results__link-panel \" tabindex=\"-1\">\n        <button class=\"idsk-search-results__link-panel-button \" tabindex=\"0\">\n          <span class=\"idsk-search-results__link-panel__title\">\n            Téma\n          </span>\n          <span class=\"idsk-search-results__link-panel--span\" data-lines=\"vybraté\"></span>\n        </button>\n        <div class=\"idsk-search-results__list idsk-search-results--hidden\">\n            <div data-module=\"idsk-customer-surveys-radios\" class=\"idsk-customer-surveys-radios \">\n  <div class=\"govuk-radios\" data-id=\"tema\">\n    <fieldset class=\"govuk-fieldset\">\n      <legend></legend>\n<div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"Eurofondy\" name=\"1\" type=\"radio\" value=\"Eurofondy\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"Eurofondy\">\n            Eurofondy\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"Informatizácia\" name=\"1\" type=\"radio\" value=\"Informatizácia\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"Informatizácia\">\n            Informatizácia\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"Regionálny-rozvoj-a-komunity\" name=\"1\" type=\"radio\" value=\"Regionálny-rozvoj-a-komunity\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"Regionálny-rozvoj-a-komunity\">\n            Regionálny rozvoj a komunity\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"Investície\" name=\"1\" type=\"radio\" value=\"Investície\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"Investície\">\n            Investície\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"Inovácie\" name=\"1\" type=\"radio\" value=\"Inovácie\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"Inovácie\">\n            Inovácie\n          </label>\n        </div>    </fieldset>\n    <br>\n  </div>\n</div>\n\n        </div>\n      </div>\n      <div class=\"idsk-search-results__link-panel \" tabindex=\"-1\">\n        <button class=\"idsk-search-results__link-panel-button idsk-search-results__subtopic\" tabindex=\"0\">\n          <span class=\"idsk-search-results__link-panel__title\">\n            Podtéma\n          </span>\n          <span class=\"idsk-search-results__link-panel--span\" data-lines=\"vybraté\"></span>\n        </button>\n        <div class=\"idsk-search-results__list idsk-search-results--hidden\">\n              <input class=\"govuk-input idsk-search-results__search__input\" type=\"text\" title=\"idsk-search-input__subtopic\" name=\"idsk-search-input__subtopic\" id=\"idsk-search-input__subtopic\">\n            <div data-module=\"idsk-customer-surveys-radios\" class=\"idsk-customer-surveys-radios \">\n  <div class=\"govuk-radios\" data-id=\"podtema\">\n    <fieldset class=\"govuk-fieldset\">\n      <legend></legend>\n<div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"Výzvy-pre-rozvoj-regiónov\" name=\"2\" type=\"radio\" value=\"Výzvy-pre-rozvoj-regiónov\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"Výzvy-pre-rozvoj-regiónov\">\n            Výzvy pre rozvoj regiónov\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"WiFi-4u\" name=\"2\" type=\"radio\" value=\"WiFi-4u\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"WiFi-4u\">\n            WiFi 4u\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"Dotácie-na-obecné-školy\" name=\"2\" type=\"radio\" value=\"Dotácie-na-obecné-školy\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"Dotácie-na-obecné-školy\">\n            Dotácie na obecné školy\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"Agroturistika\" name=\"2\" type=\"radio\" value=\"Agroturistika\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"Agroturistika\">\n            Agroturistika\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"Podpora-miestnej-komunity\" name=\"2\" type=\"radio\" value=\"Podpora-miestnej-komunity\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"Podpora-miestnej-komunity\">\n            Podpora miestnej komunity\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"Výzvy-pre-rozvoj-regiónov2\" name=\"2\" type=\"radio\" value=\"Výzvy-pre-rozvoj-regiónov2\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"Výzvy-pre-rozvoj-regiónov2\">\n            Výzvy pre rozvoj regiónov2\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"WiFi-4u2\" name=\"2\" type=\"radio\" value=\"WiFi-4u2\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"WiFi-4u2\">\n            WiFi 4u2\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"Dotácie-na-obecné-školy2\" name=\"2\" type=\"radio\" value=\"Dotácie-na-obecné-školy2\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"Dotácie-na-obecné-školy2\">\n            Dotácie na obecné školy2\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"Agroturistika2\" name=\"2\" type=\"radio\" value=\"Agroturistika2\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"Agroturistika2\">\n            Agroturistika2\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"Dotácie-na-obecné-školy3\" name=\"2\" type=\"radio\" value=\"Dotácie-na-obecné-školy3\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"Dotácie-na-obecné-školy3\">\n            Dotácie na obecné školy3\n          </label>\n        </div><div class=\"govuk-radios__item \">\n          <input\n            class=\"govuk-radios__input \" \n            id=\"Agroturistika3\" name=\"2\" type=\"radio\" value=\"Agroturistika3\">\n          <label class=\"govuk-label govuk-radios__label\" for=\"Agroturistika3\">\n            Agroturistika3\n          </label>\n        </div>    </fieldset>\n    <br>\n  </div>\n</div>\n\n        </div>\n      </div>\n      <div class=\"idsk-search-results__link-panel idsk-search-results__content-type-filter\" tabindex=\"-1\">\n        <button class=\"idsk-search-results__link-panel-button \" tabindex=\"0\">\n          <span class=\"idsk-search-results__link-panel__title\">\n            Typ obsahu\n          </span>\n          <span class=\"idsk-search-results__link-panel--span\" data-lines=\"vybraté\"></span>\n        </button>\n        <div class=\"idsk-search-results__list idsk-search-results--hidden\">\n              <input class=\"govuk-input idsk-search-results__search__input\" type=\"text\" title=\"Filter typ obsahu\" name=\"idsk-search-input__content-type\" id=\"idsk-search-input__content-type\">\n            <div class=\"idsk-option-select-filter \">\n              <div class=\"govuk-form-group\">\n  <div class=\"govuk-checkboxes govuk-checkboxes--small\"    data-module=\"govuk-checkboxes\">\n          <div class=\"govuk-checkboxes__item\">\n            <input class=\"govuk-checkboxes__input\" id=\"rozvoj\" name=\"colours\" type=\"checkbox\" value=\"Rozvoj regiónov\">\n            <label class=\"govuk-label govuk-checkboxes__label\" for=\"rozvoj\">\n        Rozvoj regiónov\n      </label>\n          </div>\n          <div class=\"govuk-checkboxes__item\">\n            <input class=\"govuk-checkboxes__input\" id=\"novinky\" name=\"colours\" type=\"checkbox\" value=\"Novinky a komunikačné vyhlásenia\">\n            <label class=\"govuk-label govuk-checkboxes__label\" for=\"novinky\">\n        Novinky a komunikačné vyhlásenia\n      </label>\n          </div>\n          <div class=\"govuk-checkboxes__item\">\n            <input class=\"govuk-checkboxes__input\" id=\"transparentnost\" name=\"colours\" type=\"checkbox\" value=\"Transparentnosť a sloboda prístupu k informáciám\">\n            <label class=\"govuk-label govuk-checkboxes__label\" for=\"transparentnost\">\n        Transparentnosť a sloboda prístupu k informáciám\n      </label>\n          </div>\n          <div class=\"govuk-checkboxes__item\">\n            <input class=\"govuk-checkboxes__input\" id=\"legislativa\" name=\"colours\" type=\"checkbox\" value=\"Legislatíva\">\n            <label class=\"govuk-label govuk-checkboxes__label\" for=\"legislativa\">\n        Legislatíva\n      </label>\n          </div>\n          <div class=\"govuk-checkboxes__item\">\n            <input class=\"govuk-checkboxes__input\" id=\"statistika\" name=\"colours\" type=\"checkbox\" value=\"Štatistické údaje\">\n            <label class=\"govuk-label govuk-checkboxes__label\" for=\"statistika\">\n        Štatistické údaje\n      </label>\n          </div>\n          <div class=\"govuk-checkboxes__item\">\n            <input class=\"govuk-checkboxes__input\" id=\"rodova\" name=\"colours\" type=\"checkbox\" value=\"Rodová rovnosť a postavenia žien v pracovom prostredí\">\n            <label class=\"govuk-label govuk-checkboxes__label\" for=\"rodova\">\n        Rodová rovnosť a postavenia žien v pracovom prostredí\n      </label>\n          </div>\n          <div class=\"govuk-checkboxes__item\">\n            <input class=\"govuk-checkboxes__input\" id=\"rozvoj2\" name=\"colours\" type=\"checkbox\" value=\"Rozvoj regiónov\">\n            <label class=\"govuk-label govuk-checkboxes__label\" for=\"rozvoj2\">\n        Rozvoj regiónov\n      </label>\n          </div>\n          <div class=\"govuk-checkboxes__item\">\n            <input class=\"govuk-checkboxes__input\" id=\"novinky2\" name=\"colours\" type=\"checkbox\" value=\"Novinky a komunikačné vyhlásenia\">\n            <label class=\"govuk-label govuk-checkboxes__label\" for=\"novinky2\">\n        Novinky a komunikačné vyhlásenia\n      </label>\n          </div>\n          <div class=\"govuk-checkboxes__item\">\n            <input class=\"govuk-checkboxes__input\" id=\"transparentnost2\" name=\"colours\" type=\"checkbox\" value=\"Transparentnosť a sloboda prístupu k informáciám\">\n            <label class=\"govuk-label govuk-checkboxes__label\" for=\"transparentnost2\">\n        Transparentnosť a sloboda prístupu k informáciám\n      </label>\n          </div>\n          <div class=\"govuk-checkboxes__item\">\n            <input class=\"govuk-checkboxes__input\" id=\"legislativa2\" name=\"colours\" type=\"checkbox\" value=\"Legislatíva\">\n            <label class=\"govuk-label govuk-checkboxes__label\" for=\"legislativa2\">\n        Legislatíva\n      </label>\n          </div>\n          <div class=\"govuk-checkboxes__item\">\n            <input class=\"govuk-checkboxes__input\" id=\"statistika2\" name=\"colours\" type=\"checkbox\" value=\"Štatistické údaje\">\n            <label class=\"govuk-label govuk-checkboxes__label\" for=\"statistika2\">\n        Štatistické údaje\n      </label>\n          </div>\n          <div class=\"govuk-checkboxes__item\">\n            <input class=\"govuk-checkboxes__input\" id=\"rodova2\" name=\"colours\" type=\"checkbox\" value=\"Rodová ro2vnosť a postavenia žien v pracovom prostredí\">\n            <label class=\"govuk-label govuk-checkboxes__label\" for=\"rodova2\">\n        Rodová rovnosť a postavenia žien v pracovom prostredí\n      </label>\n          </div>\n  </div>\n</div>\n\n            </div>\n        </div>\n      </div>\n      <div class=\"idsk-search-results__link-panel \" tabindex=\"-1\">\n        <button class=\"idsk-search-results__link-panel-button \" tabindex=\"0\">\n          <span class=\"idsk-search-results__link-panel__title\">\n            Dátum aktualizácie\n          </span>\n          <span class=\"idsk-search-results__link-panel--span\" data-lines=\"vybraté\"></span>\n        </button>\n        <div class=\"idsk-search-results__list idsk-search-results--hidden\">\n            <span class=\"idsk-search-results__date__span\">Zobraziť len výsledky aktualizované po\n            </span>\n            <span class=\"idsk-search-results__date__span__example\">Napr. 2005, alebo 8.3.2021\n            </span>\n            <input class=\"govuk-input\" type=\"text\" name=\"datum-od\" id=\"datum-od\">\n              <span class=\"idsk-search-results__date__span\">Zobraziť len výsledky aktualizované pred\n              </span>\n              <span class=\"idsk-search-results__date__span__example\">Napr. 2005, alebo 8.3.2021\n              </span>\n            <input class=\"govuk-input\" type=\"text\" name=\"datum-do\" id=\"datum-do\">\n        </div>\n      </div>\n  </div>\n  <div class=\"idsk-search-results__content govuk-grid-column-three-quarters\">\n    <div class=\"govuk-grid-column-one-quarter\">\n      <span class=\"idsk-search-results__content__number-of-results\">21\n        výsledkov</span>\n    </div>\n    <div class=\"govuk-grid-column-two-quarters idsk-search-results__filter-panel--mobile govuk-clearfix\">\n      <button class=\"idsk-search-results__filters__button\" title=\"Filtre\">Filtre\n      </button>\n      <div class=\"idsk-search-results__per-page\">\n        <span>Výsledky na stranu</span>\n        <div class=\"govuk-form-group\">\n  \n  <select class=\"govuk-select\" id=\"sort2\" name=\"sort2\">\n      <option value=\"5\">5</option>\n      <option value=\"10\">10</option>\n      <option value=\"20\">20</option>\n      <option value=\"30\">30</option>\n      <option value=\"50\">50</option>\n      <option value=\"100\">100</option>\n      <option value=\"200\">200</option>\n      <option value=\"300\">300</option>\n      <option value=\"400\">400</option>\n      <option value=\"500\">500</option>\n  </select>\n</div>\n\n      </div>\n    </div>\n    <div class=\"idsk-search-results--order\">\n      <div class=\"govuk-form-group\">\n  <label class=\"govuk-label\" for=\"sort3\">\n    Zoradiť <strong>21 výsledkov</strong> podľa\n  </label>\n  <select class=\"govuk-select\" id=\"sort3\" name=\"sort3\">\n      <option value=\"relevant\">Relevantnosti</option>\n      <option value=\"favourites\">Obľúbenosti</option>\n      <option value=\"vzostupne\">Vzostupne</option>\n      <option value=\"zostupne\">Zostupne</option>\n  </select>\n</div>\n\n    </div>\n    <div class=\"idsk-search-results__page-number--mobile govuk-grid-column-full\">\n      <button type=\"button\" class=\"idsk-search-results__button--back__mobile\" aria-label=\"späť\">\n        <svg width=\"20\" height=\"15\" viewBox=\"0 0 20 15\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n          <path d=\"M7.44417 14.6753C7.84229 14.2311 7.84229 13.5134 7.44417 13.0691L3.49368 8.63774H18.9792C19.5406 8.63774 20 8.12512 20 7.49858C20 6.87203 19.5406 6.35941 18.9792 6.35941H3.49368L7.45438 1.93943C7.85249 1.49516 7.85249 0.777482 7.45438 0.333207C7.05627 -0.111069 6.41317 -0.111069 6.01506 0.333207L0.298584 6.70116C-0.0995279 7.14543 -0.0995279 7.86311 0.298584 8.30739L6.00485 14.6753C6.40296 15.1082 7.05627 15.1082 7.44417 14.6753Z\" fill=\"#0065B3\"/>\n        </svg>\n      </button>\n      <span class=\"idsk-search-results__page-number__mobile\"></span>\n      <button type=\"button\" class=\"idsk-search-results__button--forward__mobile\" aria-label=\"ďalej\">\n        <svg width=\"20\" height=\"15\" viewBox=\"0 0 20 15\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n          <path d=\"M12.5558 0.324663C12.1577 0.768939 12.1577 1.48662 12.5558 1.93089L16.5063 6.36226L1.0208 6.36226C0.45936 6.36226 1.90735e-06 6.87488 1.90735e-06 7.50142C1.90735e-06 8.12797 0.45936 8.64059 1.0208 8.64059L16.5063 8.64059L12.5456 13.0606C12.1475 13.5048 12.1475 14.2225 12.5456 14.6668C12.9437 15.1111 13.5868 15.1111 13.9849 14.6668L19.7014 8.29884C20.0995 7.85457 20.0995 7.13689 19.7014 6.69261L13.9952 0.324663C13.597 -0.108221 12.9437 -0.108221 12.5558 0.324663Z\" fill=\"#0065B3\"/>\n        </svg>\n      </button>\n    </div>\n    <div class=\"idsk-search-results__content__picked-filters govuk-grid-column-full idsk-search-results--invisible__mobile\">\n      <div class=\"idsk-search-results__content__picked-filters__topics idsk-search-results--invisible\">\n        <span class=\"idsk-search-results__text\">Len v témach</span>\n      </div>\n      <div class=\"idsk-search-results__content__picked-filters__content-type idsk-search-results--invisible\">\n        <span class=\"idsk-search-results__text\">Typ obsahu</span>\n      </div>\n      <div class=\"idsk-search-results__content__picked-filters__date idsk-search-results--invisible\" data-lines=\"Naposledy aktualizované\" data-after=\"po\" data-middle=\"medzi\" data-before=\"pred\">\n\n      </div>\n      <button class=\"idsk-search-results__button--turn-filters-off govuk-grid-column-full idsk-search-results--invisible\" type=\"button\">Vypnúť všetky filtre\n      </button>\n    </div>\n    <div class=\"govuk-grid-column-full idsk-search-results__show-results__button idsk-search-results--invisible\">\n      <button class=\"govuk-button idsk-search-results__button-show-results\" type=\"button\">Zobraziť\n        21\n        výsledkov\n      </button>\n    </div>\n    <div class=\"idsk-search-results__content__all\">\n        <div class=\"idsk-search-results__card govuk-grid-column-full\">\n          \n\n<div class=\"idsk-card idsk-card-basic-variant\">\n\n\n    <div class=\"idsk-card-content idsk-card-content-basic-variant\">\n\n        <h1 class=\"idsk-heading idsk-heading-basic-variant\">\n            <a href=\"#\" class=\"idsk-card-title govuk-link\" title=\"Lorem ipsum dolor sit amet, consectetur adipisc\">Lorem ipsum dolor sit amet, consectetur adipisc</a>\n        </h1>\n\n        <p class=\"idsk-body idsk-body-basic-variant\">\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...\n        </p>\n\n        \n\n\n    </div>\n</div>\n\n          <div class=\"govuk-grid-column-one-half idsk-search-results__subcards\">\n            \n\n<div class=\"idsk-card idsk-card-basic-variant\">\n\n\n    <div class=\"idsk-card-content idsk-card-content-basic-variant\">\n\n        <h1 class=\"idsk-heading idsk-heading-basic-variant\">\n            <a href=\"#\" class=\"idsk-card-title govuk-link\" title=\"Lorem ipsum dolor sitr adipisc\">Lorem ipsum dolor sitr adipisc</a>\n        </h1>\n\n        <p class=\"idsk-body idsk-body-basic-variant\">\n            Lorem ipsum dolor sit amet, consectetur adipisc Lorem ipsum dolor sit amet, consectetur adipisc\n        </p>\n\n        \n\n\n    </div>\n</div>\n\n          </div>\n          <div class=\"govuk-grid-column-one-half idsk-search-results__subcards\">\n            \n\n<div class=\"idsk-card idsk-card-basic-variant\">\n\n\n    <div class=\"idsk-card-content idsk-card-content-basic-variant\">\n\n        <h1 class=\"idsk-heading idsk-heading-basic-variant\">\n            <a href=\"#\" class=\"idsk-card-title govuk-link\" title=\"Lorem ipsum sectetur adipisc\">Lorem ipsum sectetur adipisc</a>\n        </h1>\n\n        <p class=\"idsk-body idsk-body-basic-variant\">\n            Lorem ipsum dolor sit amet, consectetur adipisc Lorem ipsum dolor sit amet, consectetur adipisc\n        </p>\n\n        \n\n\n    </div>\n</div>\n\n          </div>\n          <div class=\"govuk-grid-column-one-half idsk-search-results__subcards\">\n            \n\n<div class=\"idsk-card idsk-card-basic-variant\">\n\n\n    <div class=\"idsk-card-content idsk-card-content-basic-variant\">\n\n        <h1 class=\"idsk-heading idsk-heading-basic-variant\">\n            <a href=\"#\" class=\"idsk-card-title govuk-link\" title=\"Lorem ipsum dor adipisc\">Lorem ipsum dor adipisc</a>\n        </h1>\n\n        <p class=\"idsk-body idsk-body-basic-variant\">\n            Lorem ipsum dolor sit amet, consectetur adipisc Lorem ipsum dolor sit amet, consectetur adipisc\n        </p>\n\n        \n\n\n    </div>\n</div>\n\n          </div>\n          <div class=\"govuk-grid-column-one-half idsk-search-results__subcards\">\n            \n\n<div class=\"idsk-card idsk-card-basic-variant\">\n\n\n    <div class=\"idsk-card-content idsk-card-content-basic-variant\">\n\n        <h1 class=\"idsk-heading idsk-heading-basic-variant\">\n            <a href=\"#\" class=\"idsk-card-title govuk-link\" title=\"Lorem ipsum dor adipisc\">Lorem ipsum dor adipisc</a>\n        </h1>\n\n        <p class=\"idsk-body idsk-body-basic-variant\">\n            Lorem ipsum dolor sit amet, consectetur adipisc Lorem ipsum dolor sit amet, consectetur adipisc\n        </p>\n\n        \n\n\n    </div>\n</div>\n\n          </div>\n        </div>\n        <div class=\"idsk-search-results__card govuk-grid-column-full\">\n          \n\n<div class=\"idsk-card idsk-card-basic-variant\">\n\n\n    <div class=\"idsk-card-content idsk-card-content-basic-variant\">\n\n        <h1 class=\"idsk-heading idsk-heading-basic-variant\">\n            <a href=\"#\" class=\"idsk-card-title govuk-link\" title=\"Lorem ipsum dolor sit amet, consectetur adipiscing\">Lorem ipsum dolor sit amet, consectetur adipiscing</a>\n        </h1>\n\n        <p class=\"idsk-body idsk-body-basic-variant\">\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...\n        </p>\n\n        \n\n\n    </div>\n</div>\n\n        </div>\n        <div class=\"idsk-search-results__card govuk-grid-column-full\">\n          \n\n<div class=\"idsk-card idsk-card-basic-variant\">\n\n\n    <div class=\"idsk-card-content idsk-card-content-basic-variant\">\n\n        <h1 class=\"idsk-heading idsk-heading-basic-variant\">\n            <a href=\"#\" class=\"idsk-card-title govuk-link\" title=\"Lorem ipsum dolor sit amet, consectetur adipiscing\">Lorem ipsum dolor sit amet, consectetur adipiscing</a>\n        </h1>\n\n        <p class=\"idsk-body idsk-body-basic-variant\">\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...\n        </p>\n\n        \n\n\n    </div>\n</div>\n\n        </div>\n        <div class=\"idsk-search-results__card govuk-grid-column-full\">\n          \n\n<div class=\"idsk-card idsk-card-basic-variant\">\n\n\n    <div class=\"idsk-card-content idsk-card-content-basic-variant\">\n\n        <h1 class=\"idsk-heading idsk-heading-basic-variant\">\n            <a href=\"#\" class=\"idsk-card-title govuk-link\" title=\"Lorem ipsum dolor sit amet, consectetur adipiscing\">Lorem ipsum dolor sit amet, consectetur adipiscing</a>\n        </h1>\n\n        <p class=\"idsk-body idsk-body-basic-variant\">\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...\n        </p>\n\n        \n\n\n    </div>\n</div>\n\n        </div>\n        <div class=\"idsk-search-results__card govuk-grid-column-full\">\n          \n\n<div class=\"idsk-card idsk-card-basic-variant\">\n\n\n    <div class=\"idsk-card-content idsk-card-content-basic-variant\">\n\n        <h1 class=\"idsk-heading idsk-heading-basic-variant\">\n            <a href=\"#\" class=\"idsk-card-title govuk-link\" title=\"Lorem ipsum dolor sit amet, consectetur adipiscing\">Lorem ipsum dolor sit amet, consectetur adipiscing</a>\n        </h1>\n\n        <p class=\"idsk-body idsk-body-basic-variant\">\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...\n        </p>\n\n        \n\n\n    </div>\n</div>\n\n        </div>\n        <div class=\"idsk-search-results__card govuk-grid-column-full\">\n          \n\n<div class=\"idsk-card idsk-card-basic-variant\">\n\n\n    <div class=\"idsk-card-content idsk-card-content-basic-variant\">\n\n        <h1 class=\"idsk-heading idsk-heading-basic-variant\">\n            <a href=\"#\" class=\"idsk-card-title govuk-link\" title=\"Lorem ipsum dolor sit amet, consectetur adipiscing\">Lorem ipsum dolor sit amet, consectetur adipiscing</a>\n        </h1>\n\n        <p class=\"idsk-body idsk-body-basic-variant\">\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...\n        </p>\n\n        \n\n\n    </div>\n</div>\n\n          <div class=\"govuk-grid-column-one-half idsk-search-results__subcards\">\n            \n\n<div class=\"idsk-card idsk-card-basic-variant\">\n\n\n    <div class=\"idsk-card-content idsk-card-content-basic-variant\">\n\n        <h1 class=\"idsk-heading idsk-heading-basic-variant\">\n            <a href=\"#\" class=\"idsk-card-title govuk-link\" title=\"Lorem ipsum dolor sitr adipisc\">Lorem ipsum dolor sitr adipisc</a>\n        </h1>\n\n        <p class=\"idsk-body idsk-body-basic-variant\">\n            Lorem ipsum dolor sit amet, consectetur adipisc Lorem ipsum dolor sit amet, consectetur adipisc\n        </p>\n\n        \n\n\n    </div>\n</div>\n\n          </div>\n          <div class=\"govuk-grid-column-one-half idsk-search-results__subcards\">\n            \n\n<div class=\"idsk-card idsk-card-basic-variant\">\n\n\n    <div class=\"idsk-card-content idsk-card-content-basic-variant\">\n\n        <h1 class=\"idsk-heading idsk-heading-basic-variant\">\n            <a href=\"#\" class=\"idsk-card-title govuk-link\" title=\"Lorem ipsum sectetur adipisc\">Lorem ipsum sectetur adipisc</a>\n        </h1>\n\n        <p class=\"idsk-body idsk-body-basic-variant\">\n            Lorem ipsum dolor sit amet, consectetur adipisc Lorem ipsum dolor sit amet, consectetur adipisc\n        </p>\n\n        \n\n\n    </div>\n</div>\n\n          </div>\n        </div>\n        <div class=\"idsk-search-results__card govuk-grid-column-full\">\n          \n\n<div class=\"idsk-card idsk-card-basic-variant\">\n\n\n    <div class=\"idsk-card-content idsk-card-content-basic-variant\">\n\n        <h1 class=\"idsk-heading idsk-heading-basic-variant\">\n            <a href=\"#\" class=\"idsk-card-title govuk-link\" title=\"Lorem ipsum dolor sit amet, consectetur adipiscing\">Lorem ipsum dolor sit amet, consectetur adipiscing</a>\n        </h1>\n\n        <p class=\"idsk-body idsk-body-basic-variant\">\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...\n        </p>\n\n        \n\n\n    </div>\n</div>\n\n        </div>\n        <div class=\"idsk-search-results__card govuk-grid-column-full\">\n          \n\n<div class=\"idsk-card idsk-card-basic-variant\">\n\n\n    <div class=\"idsk-card-content idsk-card-content-basic-variant\">\n\n        <h1 class=\"idsk-heading idsk-heading-basic-variant\">\n            <a href=\"#\" class=\"idsk-card-title govuk-link\" title=\"Lorem ipsum dolor sit amet, consectetur adipiscing\">Lorem ipsum dolor sit amet, consectetur adipiscing</a>\n        </h1>\n\n        <p class=\"idsk-body idsk-body-basic-variant\">\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...\n        </p>\n\n        \n\n\n    </div>\n</div>\n\n        </div>\n        <div class=\"idsk-search-results__card govuk-grid-column-full\">\n          \n\n<div class=\"idsk-card idsk-card-basic-variant\">\n\n\n    <div class=\"idsk-card-content idsk-card-content-basic-variant\">\n\n        <h1 class=\"idsk-heading idsk-heading-basic-variant\">\n            <a href=\"#\" class=\"idsk-card-title govuk-link\" title=\"Lorem ipsum dolor sit amet, consectetur adipiscing\">Lorem ipsum dolor sit amet, consectetur adipiscing</a>\n        </h1>\n\n        <p class=\"idsk-body idsk-body-basic-variant\">\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...\n        </p>\n\n        \n\n\n    </div>\n</div>\n\n        </div>\n        <div class=\"idsk-search-results__card govuk-grid-column-full\">\n          \n\n<div class=\"idsk-card idsk-card-basic-variant\">\n\n\n    <div class=\"idsk-card-content idsk-card-content-basic-variant\">\n\n        <h1 class=\"idsk-heading idsk-heading-basic-variant\">\n            <a href=\"#\" class=\"idsk-card-title govuk-link\" title=\"Lorem ipsum dolor sit amet, consectetur adipiscing\">Lorem ipsum dolor sit amet, consectetur adipiscing</a>\n        </h1>\n\n        <p class=\"idsk-body idsk-body-basic-variant\">\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...\n        </p>\n\n        \n\n\n    </div>\n</div>\n\n        </div>\n        <div class=\"idsk-search-results__card govuk-grid-column-full\">\n          \n\n<div class=\"idsk-card idsk-card-basic-variant\">\n\n\n    <div class=\"idsk-card-content idsk-card-content-basic-variant\">\n\n        <h1 class=\"idsk-heading idsk-heading-basic-variant\">\n            <a href=\"#\" class=\"idsk-card-title govuk-link\" title=\"Lorem ipsum dolor sit amet, consectetur adipiscing\">Lorem ipsum dolor sit amet, consectetur adipiscing</a>\n        </h1>\n\n        <p class=\"idsk-body idsk-body-basic-variant\">\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...\n        </p>\n\n        \n\n\n    </div>\n</div>\n\n        </div>\n        <div class=\"idsk-search-results__card govuk-grid-column-full\">\n          \n\n<div class=\"idsk-card idsk-card-basic-variant\">\n\n\n    <div class=\"idsk-card-content idsk-card-content-basic-variant\">\n\n        <h1 class=\"idsk-heading idsk-heading-basic-variant\">\n            <a href=\"#\" class=\"idsk-card-title govuk-link\" title=\"Lorem ipsum dolor sit amet, consectetur adipiscing\">Lorem ipsum dolor sit amet, consectetur adipiscing</a>\n        </h1>\n\n        <p class=\"idsk-body idsk-body-basic-variant\">\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...\n        </p>\n\n        \n\n\n    </div>\n</div>\n\n        </div>\n        <div class=\"idsk-search-results__card govuk-grid-column-full\">\n          \n\n<div class=\"idsk-card idsk-card-basic-variant\">\n\n\n    <div class=\"idsk-card-content idsk-card-content-basic-variant\">\n\n        <h1 class=\"idsk-heading idsk-heading-basic-variant\">\n            <a href=\"#\" class=\"idsk-card-title govuk-link\" title=\"Lorem ipsum dolor sit amet, consectetur adipiscing\">Lorem ipsum dolor sit amet, consectetur adipiscing</a>\n        </h1>\n\n        <p class=\"idsk-body idsk-body-basic-variant\">\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...\n        </p>\n\n        \n\n\n    </div>\n</div>\n\n        </div>\n        <div class=\"idsk-search-results__card govuk-grid-column-full\">\n          \n\n<div class=\"idsk-card idsk-card-basic-variant\">\n\n\n    <div class=\"idsk-card-content idsk-card-content-basic-variant\">\n\n        <h1 class=\"idsk-heading idsk-heading-basic-variant\">\n            <a href=\"#\" class=\"idsk-card-title govuk-link\" title=\"Lorem ipsum dolor sit amet, consectetur adipiscing\">Lorem ipsum dolor sit amet, consectetur adipiscing</a>\n        </h1>\n\n        <p class=\"idsk-body idsk-body-basic-variant\">\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...\n        </p>\n\n        \n\n\n    </div>\n</div>\n\n        </div>\n        <div class=\"idsk-search-results__card govuk-grid-column-full\">\n          \n\n<div class=\"idsk-card idsk-card-basic-variant\">\n\n\n    <div class=\"idsk-card-content idsk-card-content-basic-variant\">\n\n        <h1 class=\"idsk-heading idsk-heading-basic-variant\">\n            <a href=\"#\" class=\"idsk-card-title govuk-link\" title=\"Lorem ipsum dolor sit amet, consectetur adipiscing\">Lorem ipsum dolor sit amet, consectetur adipiscing</a>\n        </h1>\n\n        <p class=\"idsk-body idsk-body-basic-variant\">\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...\n        </p>\n\n        \n\n\n    </div>\n</div>\n\n        </div>\n        <div class=\"idsk-search-results__card govuk-grid-column-full\">\n          \n\n<div class=\"idsk-card idsk-card-basic-variant\">\n\n\n    <div class=\"idsk-card-content idsk-card-content-basic-variant\">\n\n        <h1 class=\"idsk-heading idsk-heading-basic-variant\">\n            <a href=\"#\" class=\"idsk-card-title govuk-link\" title=\"Lorem ipsum dolor sit amet, consectetur adipiscing\">Lorem ipsum dolor sit amet, consectetur adipiscing</a>\n        </h1>\n\n        <p class=\"idsk-body idsk-body-basic-variant\">\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...\n        </p>\n\n        \n\n\n    </div>\n</div>\n\n        </div>\n        <div class=\"idsk-search-results__card govuk-grid-column-full\">\n          \n\n<div class=\"idsk-card idsk-card-basic-variant\">\n\n\n    <div class=\"idsk-card-content idsk-card-content-basic-variant\">\n\n        <h1 class=\"idsk-heading idsk-heading-basic-variant\">\n            <a href=\"#\" class=\"idsk-card-title govuk-link\" title=\"Lorem ipsum dolor sit amet, consectetur pes\">Lorem ipsum dolor sit amet, consectetur pes</a>\n        </h1>\n\n        <p class=\"idsk-body idsk-body-basic-variant\">\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...\n        </p>\n\n        \n\n\n    </div>\n</div>\n\n        </div>\n        <div class=\"idsk-search-results__card govuk-grid-column-full\">\n          \n\n<div class=\"idsk-card idsk-card-basic-variant\">\n\n\n    <div class=\"idsk-card-content idsk-card-content-basic-variant\">\n\n        <h1 class=\"idsk-heading idsk-heading-basic-variant\">\n            <a href=\"#\" class=\"idsk-card-title govuk-link\" title=\"Lorem ipsum dolor sit amet, consectetur des\">Lorem ipsum dolor sit amet, consectetur des</a>\n        </h1>\n\n        <p class=\"idsk-body idsk-body-basic-variant\">\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...\n        </p>\n\n        \n\n\n    </div>\n</div>\n\n        </div>\n        <div class=\"idsk-search-results__card govuk-grid-column-full\">\n          \n\n<div class=\"idsk-card idsk-card-basic-variant\">\n\n\n    <div class=\"idsk-card-content idsk-card-content-basic-variant\">\n\n        <h1 class=\"idsk-heading idsk-heading-basic-variant\">\n            <a href=\"#\" class=\"idsk-card-title govuk-link\" title=\"Lorem ipsum dolor sit amet, consectetur adipiscing\">Lorem ipsum dolor sit amet, consectetur adipiscing</a>\n        </h1>\n\n        <p class=\"idsk-body idsk-body-basic-variant\">\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...\n        </p>\n\n        \n\n\n    </div>\n</div>\n\n        </div>\n        <div class=\"idsk-search-results__card govuk-grid-column-full\">\n          \n\n<div class=\"idsk-card idsk-card-basic-variant\">\n\n\n    <div class=\"idsk-card-content idsk-card-content-basic-variant\">\n\n        <h1 class=\"idsk-heading idsk-heading-basic-variant\">\n            <a href=\"#\" class=\"idsk-card-title govuk-link\" title=\"Lorem ipsum dolor sit amet, consectetur pes\">Lorem ipsum dolor sit amet, consectetur pes</a>\n        </h1>\n\n        <p class=\"idsk-body idsk-body-basic-variant\">\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...\n        </p>\n\n        \n\n\n    </div>\n</div>\n\n        </div>\n        <div class=\"idsk-search-results__card govuk-grid-column-full\">\n          \n\n<div class=\"idsk-card idsk-card-basic-variant\">\n\n\n    <div class=\"idsk-card-content idsk-card-content-basic-variant\">\n\n        <h1 class=\"idsk-heading idsk-heading-basic-variant\">\n            <a href=\"#\" class=\"idsk-card-title govuk-link\" title=\"Lorem ipsum dolor sit amet, consectetur des\">Lorem ipsum dolor sit amet, consectetur des</a>\n        </h1>\n\n        <p class=\"idsk-body idsk-body-basic-variant\">\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum doloramet, consectetur.   consectetur. Lorem ipsum dolor Lorem ipsum  consectetur. Lorem ipsum dolor  dtetur adipi si...\n        </p>\n\n        \n\n\n    </div>\n</div>\n\n        </div>\n    </div>\n    <div class=\"idsk-search-results__content__page-changer govuk-grid-column-full\">\n      <button type=\"button\" class=\"idsk-search-results__button--back\">\n        <svg class=\"idsk-search-results__button__svg--previous\" width=\"20\" height=\"15\" viewbox=\"0 -2 25 15\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n          <path d=\"M7.2925 13.8005C7.6825 13.4105 7.6825 12.7805 7.2925 12.3905L3.4225 8.50047H18.5925C19.1425 8.50047 19.5925 8.05047 19.5925 7.50047C19.5925 6.95047 19.1425 6.50047 18.5925 6.50047H3.4225L7.3025 2.62047C7.6925 2.23047 7.6925 1.60047 7.3025 1.21047C6.9125 0.820469 6.2825 0.820469 5.8925 1.21047L0.2925 6.80047C-0.0975 7.19047 -0.0975 7.82047 0.2925 8.21047L5.8825 13.8005C6.2725 14.1805 6.9125 14.1805 7.2925 13.8005Z\" fill=\"#0065B3\"/>\n        </svg>Zobraziť predchádzajúce\n      </button>\n      <button type=\"button\" class=\"idsk-search-results__button--forward\">\n        Zobraziť ďalšie<svg class=\"idsk-search-results__button__svg--next\" width=\"20\" height=\"13\" viewbox=\"-5 0 25 13\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n          <path d=\"M12.5558 0.281376C12.1577 0.666414 12.1577 1.2884 12.5558 1.67344L16.5063 5.51395L1.0208 5.51395C0.45936 5.51395 1.90735e-06 5.95823 1.90735e-06 6.50123C1.90735e-06 7.04424 0.45936 7.48851 1.0208 7.48851L16.5063 7.48851L12.5456 11.3192C12.1475 11.7042 12.1475 12.3262 12.5456 12.7112C12.9437 13.0963 13.5868 13.0963 13.9849 12.7112L19.7014 7.19233C20.0995 6.80729 20.0995 6.1853 19.7014 5.80027L13.9952 0.281376C13.597 -0.0937901 12.9437 -0.0937901 12.5558 0.281376Z\" fill=\"#0065B3\"/>\n        </svg>\n      </button>\n      <div class=\"idsk-search-results__page-number govuk-grid-column-full\">\n        <span data-lines=\"Strana $value1 z $value2\"></span>\n      </div>\n    </div>\n  </div>\n</div>"
+        }
+    ]
+}

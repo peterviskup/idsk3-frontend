@@ -1,0 +1,121 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Ochrana osobných údajov" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      { text: 'ID-SK frontend', href: '/' + legacyQuery },
+      { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <h1 class="govuk-heading-xl">{{ pageName }}</h1>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <p class="govuk-body">S cieľom zabezpečiť riadne fungovanie tejto webovej lokality ukladáme niekedy na vašom
+          zariadení malé dátové súbory, tzv. cookies. Je to bežná prax väčšiny veľkých webových lokalít.</p>
+
+
+        <h3 class="govuk-heading-m">Cookies</h2>
+
+          <p class="govuk-body">Pre pro-užívateľské webové stránky a prispôsobenie prevádzky našich webových stránok
+            Vašim potrebám, môže náš portál používať súbory cookies. Súbor cookie je malý súbor, ktorý sa na Vašom
+            počítači ukladá lokálne, keď navštívite webové stránky. Keď navštívite webovú stránku na tom istom
+            zariadení, súbor cookie naznačuje napríklad, že ste opakovaným návštevníkom. Súbory cookie nám tiež umožňujú
+            analyzovať používanie našich webových stránok. Nezahŕňajú žiadne osobné údaje a nie je možné Vás
+            prostredníctvom nich identifikovať na webových stránkach tretích strán – vrátane stránok poskytovateľov
+            analýzy.</p>
+          <p class="govuk-body">Cookies môžete prijať alebo odmietnuť – vrátane tých, ktoré sa používajú na sledovanie
+            webových stránok – výberom vhodných nastavení pre váš prehliadač. Môžete nastaviť prehliadač, aby vás
+            upozornil, keď dostanete nový súbor cookie, alebo ich úplne zablokovať.</p>
+
+
+          <h3 class="govuk-heading-m">Anonymizované sledovanie webových stránok</h3>
+          <p class="govuk-body">S cieľom lepšie zosúladiť webové stránky s potrebami našich zákazníkov analyzujeme, ako
+            naši zákazníci komunikujú s webom. Anonymizujeme Vašu IP adresu a potom ju použijeme na analýzu údajov,
+            ktoré navštívil Váš prehliadač a Váš počítač . Na tento účel opäť používame cookie súbory. Súbor cookie
+            obsahuje iba jedno jedinečné číslo, pomocou ktorého Vás môžeme znovu identifikovať na našich webových
+            stránkach, ale nie na webových stránkach tretích strán.</p>
+          <p class="govuk-body">Zaznamenané údaje používame <strong>iba na štatistické účely</strong>. Najmä adresa IP
+            nebude priradená žiadnemu individuálnemu používateľovi. Údaje nebudú zdieľané s tretími stranami ani použité
+            na marketingové účely.</p>
+
+
+          <h3 class="govuk-heading-m">Google Universal analytics – podmienky používania</h3>
+
+          <p class="govuk-body">Táto webová lokalita využíva službu Google Universal Analytics, webovú analytickú službu
+            poskytovanú spoločnosťou Google, Inc. („Google“). Služba Google Universal Analytics používa cookies, ktoré
+            sú textovými súbormi umiestnenými vo Vašom počítači, aby pomohli webovej stránke analyzovať, ako užívatelia
+            stránky používajú.</p>
+          <p class="govuk-body">IP anonymizácia je na tejto webovej stránke sublementovaná. Spoločnosť Google skráti /
+            anonymizuje posledný oktet adresy IP pre členské štáty Európskej únie, ako aj pre ostatné strany Dohody o
+            Európskom hospodárskom priestore.</p>
+          <p class="govuk-body">V mene poskytovateľa webových stránok spoločnosť Google použije tieto informácie na
+            účely hodnotenia vášho používania webových stránok, zostavovania prehľadov o činnosti webových stránok pre
+            prevádzkovateľov webových stránok a poskytovania ďalších služieb týkajúcich sa činnosti webových stránok a
+            používania internetu poskytovateľovi webových stránok. Spoločnosť Google nebude Vašu IP adresu priraďovať k
+            iným údajom, ktoré má spoločnosť Google. Odmietnuť používanie súborov cookie môžete výberom príslušných
+            nastavení v prehliadači. Upozorňujeme však, že ak to urobíte, nebudete mať možnosť využiť plnú funkčnosť
+            týchto webových stránok. Okrem toho môžete zabrániť tomu, aby spoločnosť Google zhromažďovala a používala
+            údaje (súbory cookie a adresa IP) stiahnutím a inštaláciou doplnku prehliadača dostupného na stránke&nbsp;<a
+              rel="noreferrer noopener" href="https://tools.google.com/dlpage/gaoptout?hl=sk" target="_blank">https://tools.google.com/dlpage/gaoptout?hl=sk</a>.
+          </p>
+
+
+          <h3 class="govuk-heading-m">Zoznam súborov cookies aj s podrobným popisom</h3>
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Názov</th>
+              <th scope="col" class="govuk-table__header">Doména</th>
+              <th scope="col" class="govuk-table__header">Zdroj</th>
+              <th scope="col" class="govuk-table__header">Použitie</th>
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">_ga</td>
+              <td class="govuk-table__cell">.idsk.gov.sk</td>
+              <td class="govuk-table__cell">Google</td>
+              <td class="govuk-table__cell">Rozlíšenie používateľov a ich jedinečných návštev,
+                obsahuje náhodne vygenerované číslo - unikátny
+                klientsky identifikátor (Client ID), ktorý sa vytvára pri
+                každej návšteve stránky.
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">_gid</td>
+              <td class="govuk-table__cell">.idsk.gov.sk</td>
+              <td class="govuk-table__cell">Google</td>
+              <td class="govuk-table__cell">Rozlíšenie používateľov a ich jedinečných návštev,
+                obsahuje náhodne vygenerované číslo - unikátny
+                klientsky identifikátor (Client ID), ktorý sa vytvára pri
+                každej návšteve stránky.
+              </td>
+            </tr>
+
+            </tbody>
+          </table>
+
+
+          <h3 class="govuk-heading-m">Ako kontrolovať súbory cookies?</h3>
+
+          <p class="govuk-body">Súbory cookies môžete&nbsp;<strong>zmeniť alebo zmazať</strong>&nbsp;podľa uváženia –
+            podrobnosti si pozrite na stránke&nbsp;<a rel="noreferrer noopener" href="http://www.aboutcookies.org/"
+                                                      target="_blank">aboutcookies.org</a>.&nbsp; Môžete vymazať všetky
+            súbory cookies uložené vo vašom zariadení a väčšinu prehliadačov môžete nastaviť tak, aby ste im znemožnili
+            ich ukladanie. V takomto prípade však pravdepodobne budete musieť pri každej návšteve webovej lokality
+            manuálne upravovať niektoré nastavenia a niektoré služby a funkcie nebudú fungovať.</p>
+      </div>
+    </div>
+
+  </div>
+{% endblock %}

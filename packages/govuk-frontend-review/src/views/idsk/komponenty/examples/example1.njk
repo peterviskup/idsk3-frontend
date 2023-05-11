@@ -1,0 +1,50 @@
+{% from "idsk-button/macro.njk" import idskButton %}
+{% from "radios/macro.njk" import govukRadios %}
+{% from "error-summary/macro.njk" import govukErrorSummary %}
+
+
+<form action="/" method="post">
+
+{{ govukErrorSummary({
+    "titleText": "Miesto pre správu, ktorá upozorňuje, že nastal problém",
+    "descriptionText": "Priestor pre popis, k akým chybám došlo a ako ich opraviť.",
+    "classes": "optional-extra-class",
+    "errorList": [
+    {
+        "text": "Popis s odkazom na otázku, v ktorej nastala chyba",
+        "href": "#exampleRadio1"
+    }
+    ]
+}) }}
+
+<h1 class="govuk-heading-xl">Skontrolujte si svoje osobné údaje</h1>
+
+{{ govukRadios({
+  "idPrefix": "exampleRadio1",
+  "name": "exampleRadio1",
+  "errorMessage": {
+    "text": "Priestor na chybovú hlášku"
+  },
+  "fieldset": {
+    "legend": {
+      "text": "Sú vaše osobné údaje správne a aktuálne?"
+    }
+  },
+  "items": [
+    {
+      "value": "yes",
+      "text": "Áno, moje osobné údaje sú správne"
+    },
+    {
+      "value": "no",
+      "text": "Nie, niektoré údaje sú nesprávne alebo sa zmenili",
+      "checked": true
+    }
+  ]
+}) }}
+
+{{ idskButton({
+    "text": "Pokračovať"
+}) }}
+
+</form>

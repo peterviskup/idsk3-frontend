@@ -1,0 +1,14 @@
+
+<div class="govuk-grid-column-{{params.customWidthClass if params.customWidthClass else 'two-thirds' }}">
+  <div class="idsk-related-content {{ params.classes if params.classes }}" data-module="idsk-related-content">
+    <hr class="idsk-related-content__line" aria-hidden="true">
+    <h4 class="idsk-related-content__heading govuk-heading-s">{{ params.heading }}</h4>
+    <ul class="idsk-related-content__list govuk-list">
+      {% for item in params.items %}
+      <li class="idsk-related-content__list-item">
+        <a class="idsk-related-content__link" href="{{ item.link }}" title="{{item.title}}">{{ item.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

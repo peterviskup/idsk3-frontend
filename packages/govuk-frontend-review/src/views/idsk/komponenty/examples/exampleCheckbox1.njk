@@ -1,0 +1,13 @@
+{% from "checkboxes/macro.njk" import govukCheckboxes %}
+
+{{ govukCheckboxes({
+  "idPrefix": "nationality-2",
+  "name": "nationality",
+  "items": [
+    {
+      "value": "odpad3d",
+      "text": "Odpad z fariem a poľnohospodárstva",
+      "disabled": true
+    }
+  ]
+}) }}

@@ -1,0 +1,20 @@
+[
+    {
+        "name": "classes",
+        "type": "string",
+        "required": false,
+        "description": "Class name for component banner."
+    },
+    {
+        "name": "pageName",
+        "type": "string",
+        "required": false,
+        "description": "Name of page."
+    },
+    {
+        "name": "headline",
+        "type": "string",
+        "required": false,
+        "description": "Name of headline."
+    }
+]

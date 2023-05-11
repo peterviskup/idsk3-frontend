@@ -1,0 +1,12 @@
+{% from "input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  "label": {
+    "text": "Číslo preukazu poistenca"
+  },
+  "hint": {
+    "text": "Uvádza sa na vašom preukaze poistenca. Napríklad ‘QQ 12 34 56 C’."
+  },
+  "id": "input-example-3",
+  "name": "fullName"
+}) }}

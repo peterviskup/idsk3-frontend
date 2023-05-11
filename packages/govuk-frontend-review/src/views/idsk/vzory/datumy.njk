@@ -1,0 +1,126 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Dátumy" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Vzory</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Tento návod opisuje postup, ako žiadať od používateľov uvedenie dátumov.</p>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-s">Obsah:</h2>
+            <ul class="govuk-list">
+                <li><a class="govuk-link" href="#typy" title="Typy dátumov">Typy dátumov</a></li>
+                <li><a class="govuk-link" href="#poziadanie1" title="Požadovanie ľahko zapamätateľných dátumov">Požadovanie ľahko zapamätateľných dátumov</a></li>
+                <li><a class="govuk-link" href="#poziadanie2" title="Požadovanie dátumov z dokumentov a kariet">Požadovanie dátumov z dokumentov a kariet</a></li>
+                <li><a class="govuk-link" href="#poziadanie3" title="Požadovanie približných dátumov">Požadovanie približných dátumov</a></li>
+                <li><a class="govuk-link" href="#poziadanie4" title="Požadovanie relatívnych dátumov">Požadovanie relatívnych dátumov</a></li>
+                <li><a class="govuk-link" href="#pouzivanie" title="Používanie kalendára">Používanie kalendára</a></li>
+                <li><a class="govuk-link" href="#ako-pisat" title="Ako písať dátumy">Ako písať dátumy</a></li>
+                <li><a class="govuk-link" href="#overit" title="Ako overiť, že sú dátumy správne">Ako overiť, že sú dátumy správne</a></li>
+            </ul>
+
+            <h3 class="govuk-heading-m" id="typy">Typy dátumov</h3>
+            <p class="govuk-body">
+                Spôsob, akým sa pýtate používateľov na dátumy, závisí od typov dátumov, na ktoré sa pýtate. Napríklad:
+            </p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>ľahko zapamätateľné dátumy (ako dátum narodenia alebo svadby),</li>
+                <li>dátumy z dokumentov alebo kariet (ako pas alebo kreditná karta),</li>
+                <li>približné dátumy (ako “jún 1983”),</li>
+                <li>relatívne dátumy (ako “4 dni od dnes”).</li>
+            </ul>
+
+            <h3 class="govuk-heading-m" id="poziadanie1">Požadovanie ľahko zapamätateľných dátumov</h3>
+            <p class="govuk-body">
+                Na požadovanie ľahko zapamätateľných dátumov, ktoré má používateľ vyplniť, ako dátum narodenia, používajte textové polia.
+            </p>
+            <p class="govuk-body">
+                Napríklad:
+            </p>
+            <img src="/public/assets/images/patterns/date1.png" alt="Príklad dátumu">
+            <p class="govuk-body">
+                Použite tri polia, pretože bude jednoduchšie overiť jednotlivé časti než sa snažiť validovať jedno samostatné pole. Uvádzajte ich v poradí deň, mesiac, rok. Platnosť dátumu validujte. Ak celý dátum nemusí byť známy, umožnite vypĺňať iba známu časť dátumu.
+            </p>
+            <p class="govuk-body">
+                Neposúvajte používateľov medzi poľami automaticky. Môže to totiž kolidovať s používaním klávesnice a zmiasť používateľov.
+            </p>
+            <p class="govuk-body">
+                Použitie kalendára (vizuálne kalendáre, ktoré môžu byť použité na výber dátumu) nie sú zvlášť užitočné pri výbere známych dátumov a niektorí používatelia majú problém vybrať si dátum takýmto spôsobom.
+            </p>
+
+            <h4 class="govuk-heading-s">Spustenie numerickej klávesnice na zariadeniach iPhone</h4>
+
+            <p class="govuk-body">Na spustenie numerickej klávesnice na zariadeniach iPhone, pridajte do dátového poľa nasledovný pattern atribút: pattern="[0-9]*"</p>
+
+
+            <h3 class="govuk-heading-m" id="poziadanie2">Požadovanie dátumov z dokumentov alebo kariet</h3>
+            <p class="govuk-body">Ak požadujete údaje presne ako sú zobrazené na pase, kreditnej karte alebo podobnej položke, zobrazte polia v rovnakom formáte ako v originálnej položke. Takto uľahčíte používateľovi presné prekopírovanie údajov.</p>
+
+            <h3 class="govuk-heading-m" id="poziadanie3">Požadovanie približných dátumov</h3>
+            <p class="govuk-body">Ak nepotrebujete presný dátum a pýtate sa na dátum, ktorý si používateľ nemusí pamätať (napríklad “dátum kedy ste stratili svoj pas”), uistite sa, že dáte používateľovi možnosť uviesť približný dátum, ako napríklad “Jún 1983”.</p>
+            <p class="govuk-body">Tu je príklad:</p>
+            <img src="/public/assets/images/patterns/date2.png" alt="Príklad dátumu">
+
+            <h3 class="govuk-heading-m" id="poziadanie4">Požadovanie relatívnych dátumov</h3>
+            <p class="govuk-body">
+                Môžete prísť do situácie, kedy budete potrebovať dátumy, ktoré sú relatívne k dnešnému dátumu alebo k inému dňu – toto je bežné, ak si používateľ rezervuje stretnutie.
+            </p>
+            <p class="govuk-body">
+                Preto by ste mali umožniť používateľovi uviesť alebo vybrať relatívny dátum ako “zajtra” alebo “o 4 pracovné dni”, pričom v takomto prípade odporúčame aj informatívne zobraziť automaticky vypočítanú informáciu o výslednom dátume, napr. “približne 23. júna”. Ak je deň v týždni dôležitý, uveďte aj túto informáciu.
+            </p>
+
+            <h3 class="govuk-heading-m" id="pouzivanie">Používanie kalendára</h3>
+            <p class="govuk-body">
+                Kalendár použite iba v prípadoch, ak bude používateľ v nasledovných situáciách:
+            </p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>pozná deň v týždni a konkrétny dátum,</li>
+                <li>porovnáva dátumy,</li>
+                <li>uvádza rozsah dátumov.</li>
+            </ul>
+            <p class="govuk-body">
+                Použitie kalendára môže pomôcť používateľom, ktorí si napríklad potrebujú rezervovať stretnutie ako súčasť využitia vašej služby.
+            </p>
+            <p class="govuk-body">
+                Ak potrebujete zobraziť dostupné dátumy, vložte kalendár na stránku a uistite sa, že je dostatočne veľký na to, aby bol čitateľný.
+            </p>
+
+            <p class="govuk-body">Nikdy nevytvárajte ovládanie kalendára, ktoré je závislé od JavaScriptu, ako od jedinej vstupnej možnosti.</p>
+
+
+            <h2 class="govuk-heading-m" id="ako-pisat">Ako zobrazovať dátumy
+            </h2>
+            <p class="govuk-body">Ak potrebujete zobraziť dátum, použite formát “deň mesiac rok”, napríklad “8. júl 2017”. Nepoužívajte medzi mesiacom a rokom čiarku.
+            </p>
+            <p class="govuk-body">
+                Použite predložky “od, do” v rozsahu dátumov (nie pomlčku), napríklad “od 8. júla do 9. augusta”.
+            </p>
+            <h3 class="govuk-heading-m" id="overit">Ako kontrolovať, že sú dátumy správne</h3>
+            <p class="govuk-body">Aby ste overili, že sú dátumy používateľov správne, sústreďte sa na:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>prvý dátum v rozsahu dátumov je skorší ako druhý,</li>
+                <li>minulé dátumy sú v minulosti,</li>
+                <li>budúce dátumy sú v budúcnosti,</li>
+                <li>skontrolujte preklepy v dátumoch.</li>
+            </ul>
+
+        </div>
+    </div>
+
+  </div>
+{% endblock %}

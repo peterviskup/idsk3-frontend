@@ -1,0 +1,38 @@
+[
+    {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "description": "ID for the search input element."
+    },
+    {
+        "name": "name",
+        "type": "string",
+        "required": false,
+        "description": "Name for the search input element."
+    },
+    {
+        "name": "isSmall",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the search component should be small."
+    },
+    {
+        "name": "placeholderText",
+        "type": "string",
+        "required": false,
+        "description": "Placeholder text for the search component."
+    },
+    {
+        "name": "description",
+        "type": "string",
+        "required": false,
+        "description": "Description for the search component."
+    },
+    {
+        "name": "classes",
+        "type": "string",
+        "required": false,
+        "description": "Classes to add to the search component."
+    }
+]

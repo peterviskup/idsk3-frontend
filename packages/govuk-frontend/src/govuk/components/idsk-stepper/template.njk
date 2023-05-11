@@ -1,0 +1,75 @@
+{% set id = params.id %}
+{% set headingLevel = params.headingLevel if params.headingLevel else
+    2 %}
+{% set counter = 0 %}
+
+{% if params.mainTitle %}
+  <h2 class="govuk-heading-l">{{params.mainTitle}}</h2>
+{% endif -%}
+<p class="idsk-stepper__caption govuk-caption-m">{{params.caption}}</p>
+<div class="idsk-stepper {%- if params.classes %} {{ params.classes }}{% endif -%}" data-module="idsk-stepper" id="{{ id }}" {%- for attribute, value in params.attributes %} {{attribute}}="{{value}}" {% endfor %}>
+    <div class="idsk-stepper__subtitle-container">
+        <div class="idsk-stepper__subtitle--heading govuk-grid-column-three-quarters">
+            <h3 class="govuk-heading-m idsk-stepper__section-subtitle">{{params.subtitle}}</h3>
+        </div>
+        <div class="idsk-stepper__controls govuk-grid-column-one-quarter" data-line1="Zobraziť všetko" data-line2="Zatvoriť všetko">
+        </div>
+    </div>
+    {% for item in params.items %}
+        {% if item %}
+            {% if item.heading.isTitle %}
+                <div class="idsk-stepper__section-title">
+                    <h1 class="idsk-stepper__section-header idsk-stepper__section-subtitle">
+                        <span class="govuk-heading-m">{{item.heading.text}}</span>
+                    </h1>
+                </div>
+            {% else %}
+            {% set counter = counter + 1 %}
+            <div class="idsk-stepper__section {% if item.expanded %}idsk-stepper__section--expanded{% endif %} {{' idsk-stepper__section--last-item' if loop.index==params.items.length}}">
+                <div class="idsk-stepper__section-header">
+                    {% if item.heading.showAnd %}
+                        {% set counter = counter - 1 %}
+                        <span class="idsk-stepper__circle idsk-stepper__circle--letter">
+                            <span class="idsk-stepper__circle-inner">
+                                <span class="idsk-stepper__circle-background">
+                                    <span class="idsk-stepper__circle-step-label">a</span>
+                                </span>
+                            </span>
+                        </span>
+                    {% else %}
+                        <span class="idsk-stepper__circle idsk-stepper__circle--number">
+                            <span class="idsk-stepper__circle-inner">
+                                <span class="idsk-stepper__circle-background">
+                                    <span class="idsk-stepper__circle-step-label">{{counter}}</span>
+                                </span>
+                            </span>
+                        </span>
+                    {% endif %}
+                    <h4 class="idsk-stepper__section-heading">
+                        <span class="idsk-stepper__section-button" id="{{ id }}-heading-{{ loop.index }}">
+                            {{ item.heading.html | safe if item.heading.html else item.heading.text }}
+                        </span>
+                    </h4>
+                    {% if item.summary.html or item.summary.text %}
+                        <div class="idsk-stepper__section-summary govuk-body" id="{{ id }}-summary-{{ loop.index }}">
+                            {{ item.summary.html | safe if item.summary.html else item.summary.text }}
+                        </div>
+                    {% endif %}
+                </div>
+                <div id="{{ id }}-content-{{ loop.index }}" class="idsk-stepper__section-content" aria-labelledby="{{ id }}-heading-{{ loop.index }}">
+                    {% if item.contents %}
+                        {% for item in item.contents %}
+                            <ul class="govuk-list">
+                                <li>
+                                    <a class="govuk-link" href="#" title="{{item.subtitle}}">
+                                        {{item.subtitle}}</a>
+                                </li>
+                            </ul>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+</div>

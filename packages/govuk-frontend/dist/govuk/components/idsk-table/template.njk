@@ -1,0 +1,121 @@
+{% from "../idsk-button/macro.njk" import idskButton %}
+<div data-module="idsk-table" id="{{ params.uniqueId }}">
+  {% if params.title or params.caption or params.radioOptions %}
+    <div class="idsk-table__heading">
+      {% if params.title or params.caption %}
+        <div class="idsk-table__heading-container">
+          {% if params.title %}
+            <h2 class="govuk-heading-l govuk-!-margin-bottom-4">{{ params.title }}</h2>
+          {% endif %}
+          {% if params.caption %}
+            <p class="govuk-body {%- if params.captionClasses %} {{ params.captionClasses }}{% endif %}">{{ params.caption }}</p>
+          {% endif %}
+        </div>
+      {% endif -%}
+
+      {% if params.radioOptions %}
+        <div class="idsk-table__heading-extended">
+          <div class="govuk-form-group">
+            <div class="govuk-radios govuk-radios--inline">
+              <fieldset class="govuk-fieldset">
+                <legend></legend>
+                {% for radio in params.radioOptions.slice(0, 2) %}
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" type="radio" name="radio-{{ params.uniqueId }}" id="radio-{{ params.uniqueId + '-' + loop.index }}" value="{{ radio.value }}" {% if loop.index == 1 %}checked{% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="radio-{{ params.uniqueId + '-' + loop.index }}">{{ radio.title }}</label>
+                    </div>
+                {% endfor %}
+              </fieldset>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {{ params.filter }}
+
+  <table class="idsk-table
+    {%- if params.classes %} {{ params.classes }}{% endif -%}" {% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+
+    {% if params.head -%}
+    <thead class="idsk-table__head">
+      <tr class="idsk-table__row">
+      {% for item in params.head %}
+        <th scope="col" class="idsk-table__header
+          {%- if item.format %} idsk-table__header--{{ item.format }}{% endif %}
+          {%- if item.classes %} {{ item.classes }}{% endif %}"
+          {%- if item.colspan %} colspan="{{ item.colspan }}"{% endif %}
+          {%- if item.rowspan %} rowspan="{{ item.rowspan }}"{% endif %}{% for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+          <span class="th-span">
+            {{ item.html |safe if item.html else item.text }}
+            {% if not item.disableSort and not params.disableSort %}
+              <button class="arrowBtn"><span class="sr-only">{{ params.sortBtn if params.sortBtn else 'Nezoradený stĺpec - použije vzostupné zoradenie.' }}</span></button>
+            {% endif %}
+          </span>
+        </th>
+      {% endfor %}
+      </tr>
+    </thead>
+    {% endif %}
+    <tbody class="idsk-table__body" style="{{ ('max-height:' + (45.5 * params.maxRowsView) + 'px') if params.maxRowsView  }}">
+      {% for row in params.rows %}
+        {% if row %}
+          <tr class="idsk-table__row">
+          {% for cell in row %}
+            {% set commonAttributes %}
+              {%- if cell.colspan %} colspan="{{ cell.colspan }}"{% endif %}
+              {%- if cell.rowspan %} rowspan="{{ cell.rowspan }}"{% endif %}{% for attribute, value in cell.attributes %} {{ attribute }}="{{ value }}"{% endfor %}
+            {% endset %}
+            {% if loop.first and params.firstCellIsHeader %}
+            <th scope="row" class="idsk-table__header{%- if cell.classes %} {{ cell.classes }}{% endif %}"
+              {{- commonAttributes | safe -}}
+            >{{ cell.html | safe if cell.html else cell.text }}</th>
+            {% else %}
+            <td class="idsk-table__cell
+              {%- if cell.format %} idsk-table__cell--{{ cell.format }}{% endif %}
+              {%- if cell.classes %} {{ cell.classes }}{% endif %}"
+              {{- commonAttributes | safe -}}
+            >{{ cell.html | safe if cell.html else cell.text }}</td>
+            {% endif %}
+          {% endfor %}
+          </tr>
+        {% endif %}
+      {% endfor %}
+    </tbody>
+  </table>
+
+  {% if params.downloadButton or params.printTable or params.source %}
+    <div class="idsk-table__meta">
+      <div class="idsk-button-group idsk-table__meta-buttons">
+        {% if params.downloadButton %}
+          {{ idskButton({
+            "text": params.downloadButton.text if params.downloadButton.text else 'Exportovat CSV',
+            "type": "button",
+            "classes": "idsk-table__meta-download-button",
+            "href": params.downloadButton.href
+          }) }}
+        {% endif %}
+
+        {% if params.printTable %}
+          {{ idskButton({
+            "text": params.printTable.text if params.printTable.text else 'Vytlačiť',
+            "type": "button",
+            "classes": "idsk-table__meta-print-button"
+          }) }}
+        {% endif %}
+      </div>
+
+      {% if params.source %}
+        <div class="govuk-body idsk-table__meta-source">
+          {{ params.source.text if params.source.text else 'Zdroj: ' }}
+          {% if params.source.href %}
+            <a class="govuk-link" href="{{ params.source.href }}" target="_blank" title="{{ params.source.name }}">{{ params.source.name }}</a>
+          {% else %}
+            {{ params.source.name }}
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+</div>

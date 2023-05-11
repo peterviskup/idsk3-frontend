@@ -1,0 +1,62 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Úvodné obrazovky" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Vzory</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Ak vytvárate digitálnu službu, je nevyhnutné umiestniť jej úvodnú obrazovku na portál slovensko.sk.</p>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-s">Obsah:</h2>
+            <ul class="govuk-list">
+                <li><a class="govuk-link" href="#preco-musi-sluzba-zacat-na-portali-slovensko-sk" title="Prečo musí služba začať na portáli slovensko.sk">Prečo musí služba začať na portáli slovensko.sk</a>
+                </li>
+                <li><a class="govuk-link" href="#priklad" title="Príklad">Príklad</a></li>
+                <li><a class="govuk-link" href="#co-nesmie-chybat-na-uvodnej-obrazovke" title="Čo nesmie chýbať na úvodnej obrazovke">Čo nesmie chýbať na úvodnej obrazovke</a></li>
+            </ul>
+
+            <h3 class="govuk-heading-m" id="preco-musi-sluzba-zacat-na-portali-slovensko-sk">Prečo musí služba začať na portáli slovensko.sk</h3>
+            <p class="govuk-body">Všetky digitálne služby musia mať východiskový bod umiestnený na portáli slovensko.sk. Toto zabezpečí, že občan bude mať jednotný štartovací bod pre riešenie všetkých svojich životných situácii a náklady na marketing digitálnych služieb budú efektívne.</p>
+
+            <h3 class="govuk-heading-m" id="priklad">Príklad</h3>
+            <img src="/public/assets/images/patterns/dan.png" alt="dan">
+
+
+            <h3 class="govuk-heading-m" id="co-nesmie-chybat-na-uvodnej-obrazovke">Čo nesmie chýbať na úvodnej obrazovke</h3>
+            <p class="govuk-body">Úvodná obrazovka je pre používateľa kľúčová, a preto by mu mala poskytnúť všetky nevyhnutné informácie, ktoré v tejto fáze potrebuje. Z toho dôvodu by mala byť dizajnovaná tak, aby používateľ jednoznačne pochopil o akú službu sa jedná, či ju potrebuje, resp. či je pre neho vhodná spolu so základnými informáciami, ktoré by mal o danej službe vedieť.<br>
+                Aby úvodná stránka splnila svoj účel mala by určite obsahovať:</p>
+            <ol class="govuk-list govuk-list--bullet">
+                <li>Názov služby (stručný a výstižný k obsahu poskytovanej služby)</li>
+                <li>Stručný úvod s uvedením základných informácii, ktoré by mala väčšina používateľov vedieť. Napríklad:
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>čo im vaša služba umožní,</li>
+                    <li>aké sú podmienky dokončenia,</li>
+                    <li>čo budú potrebovať na dokončenie služby,</li>
+                    <li>aký poplatok bude potrebné za službu uhradiť.</li>
+                </ul>
+                </li>
+                <li>Ak je príjemca elektronického formulára známy, jeho identifikačné údaje sa zobrazia v prvom procesnom kroku.</li>
+                <li>Tlačidlo výzvy na akciu "Začať".</li>
+                <li>Zoznam ďalších spôsobov ako sa dá pristúpiť k využitiu vašej služby.</li>
+            </ol>
+
+        </div>
+    </div>
+
+  </div>
+{% endblock %}

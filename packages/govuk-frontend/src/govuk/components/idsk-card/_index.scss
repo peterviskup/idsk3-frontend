@@ -1,0 +1,188 @@
+@include govuk-exports("idsk/component/card") {
+  .idsk-card {
+    display: inline-block;
+    position: relative;
+    margin-bottom: govuk-spacing(3);
+
+    @include mq($from: tablet) {
+      margin-bottom: govuk-spacing(6);
+    }
+
+    &-simple {
+      @include govuk-grid-column("one-third");
+      padding: 0;
+      float: none;
+    }
+  }
+
+  .idsk-card-title {
+    margin: 0;
+    cursor: pointer;
+
+    &:hover {
+      color: govuk-colour("black");
+    }
+  }
+
+  .idsk-card-img {
+    width: 100%;
+
+    &-hero {
+      @include govuk-grid-column("one-half");
+      padding: 0;
+      float: none;
+
+      @include mq($from: tablet) {
+        padding-right: govuk-spacing(3);
+      }
+    }
+
+    &-secondary-horizontal,
+    &-profile-horizontal {
+      box-sizing: border-box;
+      width: 100%;
+      padding-right: govuk-spacing(3);
+      padding-bottom: govuk-spacing(3);
+      float: left;
+
+      @include mq($from: tablet) {
+        width: 33%;
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  .idsk-card-meta-container {
+    padding-bottom: govuk-spacing(2);
+  }
+
+  .idsk-card-meta {
+    @include govuk-font($size: 16);
+    display: inline;
+    color: govuk-colour("grey-1");
+    text-decoration: none;
+
+    &-date {
+      &::after {
+        content: "\00a0-\00a0";
+      }
+    }
+
+    &-tag {
+      &::after {
+        content: "\00a0|\00a0";
+      }
+    }
+  }
+
+  .idsk-card-meta .govuk-link {
+    @include govuk-font($size: 16);
+    color: govuk-colour("grey-1");
+
+    &:visited {
+      color: $govuk-link-visited-colour;
+    }
+  }
+
+  .idsk-card-meta-container span:last-child {
+    &::after {
+      content: "";
+    }
+  }
+
+  .idsk-card-content {
+    &-hero {
+      @include govuk-grid-column("one-half");
+      padding: 0;
+      float: none;
+
+      @include mq($from: tablet) {
+        padding: 0 0 0 govuk-spacing(3);
+      }
+    }
+
+    &-profile-horizontal {
+      @include govuk-grid-column("two-thirds");
+      float: none;
+    }
+
+    &-secondary-horizontal {
+      box-sizing: border-box;
+      width: 100%;
+      padding-left: 0;
+      float: left;
+
+      @include mq($from: tablet) {
+        width: 67%;
+        padding-left: govuk-spacing(3);
+      }
+    }
+  }
+
+  .idsk-heading {
+    @include govuk-responsive-padding(2, "bottom");
+
+    &-basic-variant,
+    &-simple {
+      @include govuk-font($size: 19, $weight: bold);
+    }
+
+    &-basic,
+    &-hero,
+    &-secondary-horizontal {
+      @include govuk-font($size: 24, $weight: bold);
+    }
+
+    &-secondary {
+      @include govuk-font($size: 19, $weight: bold);
+
+      @include mq($until: desktop) {
+        @include govuk-font($size: 24, $weight: bold);
+      }
+    }
+
+    &-profile-vertical,
+    &-profile-horizontal {
+      @include govuk-font($size: 24, $weight: bold);
+      text-decoration: underline;
+    }
+  }
+
+  .idsk-body {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    &-basic,
+    &-basic-variant,
+    &-hero,
+    &-secondary-horizontal {
+      @include govuk-font($size: 19);
+    }
+
+    &-secondary {
+      @include govuk-font($size: 16);
+
+      @include mq($until: desktop) {
+        @include govuk-font($size: 19);
+      }
+    }
+
+    &-profile-vertical,
+    &-profile-horizontal {
+      @include govuk-font($size: 19);
+      @include govuk-responsive-padding(2, "top");
+      @include govuk-responsive-padding(4, "bottom");
+    }
+  }
+
+  .idsk-quote {
+    @include govuk-responsive-padding(8, "right");
+    @include govuk-responsive-padding(8, "left");
+    @include govuk-font($size: 19);
+    margin-top: 0;
+
+    &-right {
+      float: right;
+    }
+  }
+}

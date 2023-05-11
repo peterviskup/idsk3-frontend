@@ -1,0 +1,81 @@
+{% extends "layout.njk" %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set pageName = "Informačná lišta / Lišta s varovaním" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+    { text: 'ID-SK frontend', href: '/' + legacyQuery },
+    { text: pageName }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <span class="govuk-caption-xl">Webové komponenty</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">
+      Lištu použite vtedy, keď chcete niečo zdôrazniť alebo na niečo upozorniť.<br>
+      K dispozícii sú dva typy lišty.
+    </p>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-s">Obsah:</h2>
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link" href="#ukazka1" title="Šedá lišta">Šedá lišta (informačná lišta)</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="#ukazka2" title="Žltá lišta">Žltá lišta (varovacia lišta)</a>
+          </li>
+        </ul>
+        <p class="govuk-body-m">
+          Obsah lišty musí byť výstižný. Optimálne odporúčame použiť rozsah textu na 1 riadok, max. však 3 riadky. Čím viac textu použijete, tým je pravdepodobnejšie, že štítok nesplní účel. Platí zásada, že krátky a výstižný text si používateľ prečíta skôr ako dlhý text (3 riadky).
+        </p>
+        <p class="govuk-body-m">
+          Obsah v štítku môžete zvýrazniť aj tučným rezom písma. Ak to charakter textu umožňuje, pridajte do lišty aj odkaz alebo link (napr. na vyhlášku alebo stránku), kde používateľ nájde obsah, na ktorý ho upozorňujete. Výrazne tak používateľovi uľahčíte vyhľadávanie.
+        </p>
+      </div>
+
+      <div class="govuk-grid-column-full">
+        <h3 class="govuk-heading-m" id="ukazka1">Šedý štítok (info štítok)</h3>
+        <p class="govuk-body-m">
+          Šedú lištu (informačná lišta) použite, keď chcete niečo zdôrazniť (napr.: nový obsah na stránke, nové znenie vyhlášky, novú stratégiu a podobne).
+        </p>
+        <div class="example">
+          {% set exampleComponentHtml %}
+              {% include "../komponenty/examples/stitokInfo.njk" %}
+          {% endset %}
+          {{exampleComponentHtml | safe}}
+        </div>
+        <pre class="app-code">
+          <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+            {{- exampleComponentHtml | highlight("html") | safe -}}
+          </code>
+        </pre>
+
+        <h3 class="govuk-heading-m" id="ukazka2">Žltý štítok (varovací štítok)</h3>
+        <p class="govuk-body-m">
+          Žltú lištu (varovacia lišta) použite, keď budete chcieť zdôrazniť alebo upriamiť pozornosť na obsah, ktorý považujete za veľmi dôležitý pre používateľa (napr.: povinnosti - "...do konca marca sa musíte zaregistrovať!", upozornenie - "do platnosti vstupuje nová vyhláška!").
+        </p>
+        <div class="example">
+          {% set exampleComponentHtml %}
+              {% include "../komponenty/examples/stitokVarovanie.njk" %}
+          {% endset %}
+          {{exampleComponentHtml | safe}}
+        </div>
+        <pre class="app-code">
+          <code class="app-code__container govuk-!-font-size-16 hljs language-html">
+            {{- exampleComponentHtml | highlight("html") | safe -}}
+          </code>
+        </pre>
+      </div>
+
+    </div>
+
+  </div>
+{% endblock %}

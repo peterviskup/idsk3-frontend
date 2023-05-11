@@ -1,0 +1,74 @@
+[
+    {
+        "name": "type",
+        "type": "string",
+        "required": false,
+        "description": "Type of the card to render. If none provided or if wrong value provded falls to 'basic' card. Supported types 'basic', 'basic-variant', 'simple', 'hero', 'secondary', 'secondary-horizontal', 'profile-vertical' and 'profile-horizontal'."
+    },
+    {
+        "name": "imgSrc",
+        "type": "string",
+        "required": false,
+        "description": "Source for the image to display with the card. It should be used with most of card types, except 'basic' which can be without image."
+    },
+    {
+        "name": "link",
+        "type": "string",
+        "required": true,
+        "description": "Link to the card main article"
+    },
+    {
+        "name": "heading",
+        "type": "string",
+        "required": true,
+        "description": "This is used as header for the card."
+    },
+    {
+        "name": "description",
+        "type": "string",
+        "required": false,
+        "description": "Additional description text for the card."
+    },
+    {
+        "name": "date",
+        "type": "object",
+        "required": false,
+        "description": "Card date object with value and link to news page for that day.",
+        "params": [
+            {
+                "name": "date",
+                "type": "string",
+                "description": "Date value in format DD-MM-YYYY, used to indicate creation time of news card."
+            },
+            {
+                "name": "link",
+                "type": "string",
+                "description": "Link to news page for date."
+            }
+        ]
+    },
+    {
+        "name": "tags",
+        "type": "array",
+        "required": false,
+        "description": "Array of tags for the news card.",
+        "params": [
+            {
+                "name": "tag",
+                "type": "string",
+                "description": "Small string value that represents type of the news card."
+            },
+            {
+                "name": "link",
+                "type": "string",
+                "description": "Link to news cards with the same tag"
+            }
+        ]
+    },
+    {
+        "name": "quote",
+        "type": "string",
+        "required": false,
+        "description": "String value that represents quote for profile card"
+    }
+]
