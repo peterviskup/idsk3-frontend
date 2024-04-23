@@ -198,11 +198,6 @@ examples:
   - name: with divider and None
     options:
       name: with-divider-and-none
-      fieldset:
-        legend:
-          text: Which types of waste do you transport regularly?
-          classes: govuk-fieldset__legend--l
-          isPageHeading: true
       items:
         - value: animal
           text: Waste from animal carcasses
@@ -218,11 +213,6 @@ examples:
   - name: with divider, None and conditional items
     options:
       name: with-divider-and-none-and-conditional-items
-      fieldset:
-        legend:
-          text: Do you have any access needs?
-          classes: govuk-fieldset__legend--l
-          isPageHeading: true
       items:
         - value: accessible-toilets
           text: Accessible toilets available
@@ -244,9 +234,6 @@ examples:
   - name: with id and name
     options:
       name: with-id-and-name
-      fieldset:
-        legend:
-          text: What is your nationality?
       hint:
         text: If you have dual nationality, select all options that are relevant to you.
       items:
@@ -265,11 +252,6 @@ examples:
   - name: with hints on items
     options:
       name: with-hints-on-items
-      fieldset:
-        legend:
-          text: How do you want to sign in?
-          classes: govuk-fieldset__legend--l
-          isPageHeading: true
       items:
         - name: gateway
           id: government-gateway
@@ -287,11 +269,6 @@ examples:
   - name: with disabled item
     options:
       name: sign-in
-      fieldset:
-        legend:
-          text: How do you want to sign in?
-          classes: govuk-fieldset__legend--l
-          isPageHeading: true
       items:
         - name: gateway
           id: government-gateway
@@ -310,11 +287,6 @@ examples:
   - name: with legend as a page heading
     options:
       name: waste
-      fieldset:
-        legend:
-          text: Which types of waste do you transport regularly?
-          classes: govuk-fieldset__legend--l
-          isPageHeading: true
       hint:
         text: Select all that apply
       items:
@@ -328,10 +300,6 @@ examples:
   - name: with a medium legend
     options:
       name: waste
-      fieldset:
-        legend:
-          text: Which types of waste do you transport regularly?
-          classes: govuk-fieldset__legend--m
       hint:
         text: Select all that apply
       errorMessage:
@@ -380,9 +348,6 @@ examples:
       name: nationality
       errorMessage:
         text: Please accept the terms and conditions
-      fieldset:
-        legend:
-          text: What is your nationality?
       items:
         - value: british
           text: British
@@ -396,9 +361,6 @@ examples:
       name: waste
       errorMessage:
         text: Please select an option
-      fieldset:
-        legend:
-          text: Which types of waste do you transport regularly?
       items:
         - value: animal
           text: Waste from animal carcasses
@@ -412,9 +374,6 @@ examples:
       name: waste
       errorMessage:
         text: Please select an option
-      fieldset:
-        legend:
-          text: Which types of waste do you transport regularly?
       items:
         - value: animal
           text: Waste from animal carcasses
@@ -436,9 +395,6 @@ examples:
         text: Nullam id dolor id nibh ultricies vehicula ut id elit.
       errorMessage:
         text: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      fieldset:
-        legend:
-          text: Maecenas faucibus mollis interdum?
       items:
         - value: nullam
           text:
@@ -468,9 +424,6 @@ examples:
     options:
       name: with-conditional-items
       idPrefix: how-contacted
-      fieldset:
-        legend:
-          text: How do you want to be contacted?
       items:
         - value: email
           text: Email
@@ -495,9 +448,6 @@ examples:
     options:
       name: contact-prefs
       idPrefix: user.profile[contact-prefs]
-      fieldset:
-        legend:
-          text: How do you want to be contacted?
       items:
         - value: email
           text: Email
@@ -522,9 +472,6 @@ examples:
     options:
       name: how-contacted-checked
       idPrefix: how-contacted-checked
-      fieldset:
-        legend:
-          text: How do you want to be contacted?
       items:
         - value: email
           text: Email
@@ -552,9 +499,6 @@ examples:
       idPrefix: how-contacted-checked
       formGroup:
         classes: 'govuk-form-group--error'
-      fieldset:
-        legend:
-          text: How do you want to be contacted?
       items:
         - value: email
           text: Email
@@ -582,9 +526,6 @@ examples:
       idPrefix: nationality
       name: nationality
       classes: govuk-checkboxes--small
-      fieldset:
-        legend:
-          text: Filter by
       items:
         - value: a
           text: a thing
@@ -598,9 +539,6 @@ examples:
       idPrefix: nationality
       name: nationality
       classes: govuk-checkboxes--small
-      fieldset:
-        legend:
-          text: Filter by
       items:
         - value: nullam
           text:
@@ -633,9 +571,6 @@ examples:
       classes: govuk-checkboxes--small
       errorMessage:
         text: 'Select a thing'
-      fieldset:
-        legend:
-          text: Filter by
       items:
         - value: a
           text: a thing
@@ -649,9 +584,6 @@ examples:
       idPrefix: nationality
       name: nationality
       classes: govuk-checkboxes--small
-      fieldset:
-        legend:
-          text: Filter by
       items:
         - value: a
           text: a thing
@@ -667,9 +599,6 @@ examples:
       idPrefix: nationality
       name: nationality
       classes: govuk-checkboxes--small
-      fieldset:
-        legend:
-          text: Filter by
       items:
         - value: a
           text: a thing
@@ -684,9 +613,6 @@ examples:
       name: how-contacted
       idPrefix: how-contacted
       classes: govuk-checkboxes--small
-      fieldset:
-        legend:
-          text: How do you want to be contacted?
       items:
         - value: a
           text: a thing
@@ -734,10 +660,6 @@ examples:
     hidden: true
     options:
       name: example-name
-      fieldset:
-        describedBy: test-target-element
-        legend:
-          text: Which option?
       items:
         - value: 1
           text: Option 1
@@ -831,9 +753,6 @@ examples:
           text: Irish
       errorMessage:
         text: Please select an option
-      fieldset:
-        legend:
-          text: What is your nationality?
       hint:
         text: If you have dual nationality, select all options that are relevant to you.
   - name: with error, hint and fieldset describedBy
@@ -842,10 +761,6 @@ examples:
       name: example
       errorMessage:
         text: Please select an option
-      fieldset:
-        describedBy: test-target-element
-        legend:
-          text: What is your nationality?
       hint:
         text: If you have dual nationality, select all options that are relevant to you.
       items:
@@ -870,13 +785,6 @@ examples:
       name: example-name
       errorMessage:
         text: Please select an option
-      fieldset:
-        legend:
-          text: What is your nationality?
-        classes: app-fieldset--custom-modifier
-        attributes:
-          data-attribute: value
-          data-second-attribute: second-value
       items:
         - value: british
           text: British
@@ -886,9 +794,6 @@ examples:
     hidden: true
     options:
       name: example-name
-      fieldset:
-        legend:
-          html: What is your <b>nationality</b>?
       items:
         - value: british
           text: British
@@ -932,10 +837,6 @@ examples:
       name: example
       errorMessage:
         text: Please select an option
-      fieldset:
-        describedBy: test-target-element
-        legend:
-          text: What is your nationality?
       items:
         - value: british
           text: British
