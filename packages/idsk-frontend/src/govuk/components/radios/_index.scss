@@ -105,7 +105,7 @@
 
   // Focused state
   .govuk-radios__input:focus + .govuk-radios__label::before {
-    border-width: 4px;
+    border-width: 2px;
 
     // When colours are overridden, the yellow box-shadow becomes invisible
     // which means the focus state is less obvious. By adding a transparent
@@ -120,7 +120,7 @@
       outline-color: Highlight;
     }
 
-    box-shadow: 0 0 0 $govuk-radios-focus-width $govuk-focus-colour;
+    box-shadow: 0 0 0 $govuk-radios-focus-width govuk-colour("greyN500");
   }
 
   // Selected state
