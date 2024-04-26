@@ -7,7 +7,7 @@
 /// @type Colour
 /// @access public
 
-$govuk-button-background-colour: govuk-colour("green") !default;
+$govuk-button-background-colour: govuk-colour("blue") !default;
 
 /// Button component text colour
 ///
@@ -60,7 +60,7 @@ $govuk-inverse-button-text-colour: $govuk-brand-colour !default;
   $button-shadow-size: $govuk-border-width-form-element;
 
   .govuk-button {
-    @include govuk-font($size: 19, $line-height: 19px);
+    @include govuk-font($size: 16, $line-height: 19px, $weight: bold);
 
     box-sizing: border-box;
     display: inline-block;
@@ -73,10 +73,9 @@ $govuk-inverse-button-text-colour: $govuk-brand-colour !default;
     padding: (govuk-spacing(2) - $govuk-border-width-form-element) govuk-spacing(2)
       (govuk-spacing(2) - $govuk-border-width-form-element - ($button-shadow-size / 2)); // s1
     border: $govuk-border-width-form-element solid transparent;
-    border-radius: 0;
+    border-radius: 5px;
     color: $govuk-button-text-colour;
     background-color: $govuk-button-colour;
-    box-shadow: 0 $button-shadow-size 0 $govuk-button-shadow-colour; // s0
     text-align: center;
     vertical-align: top;
     cursor: pointer;
@@ -86,14 +85,13 @@ $govuk-inverse-button-text-colour: $govuk-brand-colour !default;
       width: auto;
     }
 
-    // Ensure that any global link styles are overridden
-    &:link,
-    &:visited,
-    &:active,
-    &:hover {
-      color: $govuk-button-text-colour;
-      text-decoration: none;
+    &:focus-visible {
+      z-index: 10;
+      outline: govuk-colour("orange") solid 3px;
+      outline-offset: 2px;
     }
+
+    // Ensure that any global link styles are overridden
 
     // Fix unwanted button padding in Firefox
     &::-moz-focus-inner {
@@ -102,26 +100,14 @@ $govuk-inverse-button-text-colour: $govuk-brand-colour !default;
     }
 
     &:hover {
-      background-color: $govuk-button-hover-colour;
+      box-shadow: 0 0 0 2px #000000;
     }
 
-    &:active {
-      // Bump the button down so it looks like its being pressed in
-      top: $button-shadow-size;
-    }
-
-    &:focus {
-      border-color: $govuk-focus-colour;
-      outline: $govuk-focus-width solid transparent;
-      box-shadow: inset 0 0 0 1px $govuk-focus-colour;
-    }
-
-    &:focus:not(:active):not(:hover) {
-      border-color: $govuk-focus-colour;
-      color: $govuk-focus-text-colour;
-      background-color: $govuk-focus-colour;
-      box-shadow: 0 2px 0 $govuk-focus-text-colour;
-    }
+    // &:active {
+    //  // Bump the button down so it looks like its being pressed in
+    //  //top: $button-shadow-size;
+    //  background-color: #072c66;
+    // }
 
     // The following adjustments do not work for <input type="button"> as
     // non-container elements cannot include pseudo elements (i.e. ::before).
@@ -155,82 +141,166 @@ $govuk-inverse-button-text-colour: $govuk-brand-colour !default;
     &:active::before {
       top: -($govuk-border-width-form-element + $button-shadow-size);
     }
-  }
 
-  .govuk-button[disabled] {
-    opacity: (0.5);
-
-    &:hover {
-      background-color: $govuk-button-colour;
+    &[disabled] {
+      background-color: govuk-colour("greyN500");
+      box-shadow: none;
       cursor: not-allowed;
     }
 
-    &:active {
-      top: 0;
-      box-shadow: 0 $button-shadow-size 0 $govuk-button-shadow-colour; // s0
-    }
-  }
-
-  .govuk-button--secondary {
-    background-color: $govuk-secondary-button-colour;
-    box-shadow: 0 $button-shadow-size 0 $govuk-secondary-button-shadow-colour;
-
-    &,
-    &:link,
-    &:visited,
-    &:active,
-    &:hover {
-      color: $govuk-secondary-button-text-colour;
-    }
-
-    &:hover {
-      background-color: $govuk-secondary-button-hover-colour;
+    &__basic {
+      &:active {
+        background-color: govuk-colour("dark-blue");
+      }
 
       &[disabled] {
-        background-color: $govuk-secondary-button-colour;
+        background-color: govuk-colour("greyN500");
+        box-shadow: none;
+        cursor: not-allowed;
       }
     }
-  }
 
-  .govuk-button--warning {
-    background-color: $govuk-warning-button-colour;
-    box-shadow: 0 $button-shadow-size 0 $govuk-warning-button-shadow-colour;
+    &__success {
+      background-color: govuk-colour("green");
 
-    &,
-    &:link,
-    &:visited,
-    &:active,
-    &:hover {
-      color: $govuk-warning-button-text-colour;
+      &:hover {
+        box-shadow: 0 0 0 2px govuk-colour("dark-green");
+      }
+
+      &:active {
+        background: govuk-colour("dark-green");
+      }
     }
 
-    &:hover {
-      background-color: $govuk-warning-button-hover-colour;
+    &__warning {
+      background-color: $govuk-warning-button-colour;
+
+      &:hover {
+        box-shadow: 0 0 0 2px govuk-colour("dark-red");
+      }
+
+      &:active {
+        background: govuk-colour("dark-red");
+      }
+    }
+
+    &--sec {
+      border: 2px solid govuk-colour("blue");
+      color: govuk-colour("dark-blue");
+      background-color: govuk-colour("light-blue");
 
       &[disabled] {
-        background-color: $govuk-warning-button-colour;
+        border-color: transparent;
+        color: govuk-colour("dark-grey");
+        background: none;
+        box-shadow: none;
+
+        &:hover {
+          box-shadow: none;
+          cursor: not-allowed;
+        }
+
+        &:active {
+          border-color: transparent;
+        }
+      }
+
+      &:hover {
+        box-shadow: 0 0 0 2px govuk-colour("blue");
+      }
+
+      &:active {
+        border-color: govuk-colour("dark-blue");
+        box-shadow: 0 0 0 2px govuk-colour("dark-blue");
+      }
+
+      &__success {
+        border-color: govuk-colour("green");
+        color: govuk-colour("dark-green");
+        background: govuk-colour("light-green");
+
+        &:hover {
+          box-shadow: 0 0 0 2px govuk-colour("green");
+        }
+
+        &:active {
+          border-color: govuk-colour("dark-green");
+          box-shadow: 0 0 0 2px govuk-colour("dark-green");
+        }
+      }
+
+      &__warning {
+        border-color: govuk-colour("red");
+        color: govuk-colour("dark-red");
+        background: govuk-colour("light-red");
+
+        &:hover {
+          box-shadow: 0 0 0 2px govuk-colour("red");
+        }
+
+        &:active {
+          border-color: govuk-colour("dark-red");
+          box-shadow: 0 0 0 2px govuk-colour("dark-red");
+        }
+      }
+
+      &__contrast {
+        border-color: govuk-colour("blue");
+        color: govuk-colour("blue");
+        background: govuk-colour("greyN200");
+
+        &:hover {
+          box-shadow: 0 0 0 2px govuk-colour("blue");
+        }
+
+        &:active {
+          border-color: govuk-colour("medium-blue");
+          color: govuk-colour("medium-blue");
+          box-shadow: none;
+        }
       }
     }
-  }
 
-  .govuk-button--inverse {
-    background-color: $govuk-inverse-button-colour;
-    box-shadow: 0 $button-shadow-size 0 $govuk-inverse-button-shadow-colour;
+    &--texted {
+      border: none;
+      color: govuk-colour("blue");
+      background-color: transparent;
+      text-decoration: underline;
 
-    &,
-    &:link,
-    &:visited,
-    &:active,
-    &:hover {
-      color: $govuk-inverse-button-text-colour;
+      &:hover {
+        color: govuk-colour("dark-grey");
+        background-color: transparent;
+        box-shadow: none;
+        text-decoration: underline;
+      }
+
+      &__success {
+        color: govuk-colour("green");
+
+        &:hover {
+          color: govuk-colour("dark-green");
+        }
+      }
+
+      &__warning {
+        color: govuk-colour("red");
+
+        &:hover {
+          color: govuk-colour("dark-red");
+        }
+      }
+
+      &__contrast {
+        color: govuk-colour("blue");
+
+        &:hover {
+          color: govuk-colour("dark-blue");
+        }
+      }
     }
 
-    &:hover {
-      background-color: $govuk-inverse-button-hover-colour;
-
-      &[disabled] {
-        background-color: $govuk-inverse-button-colour;
-      }
+    &__large {
+      padding: 0.75rem 1.25rem;
     }
   }
 
