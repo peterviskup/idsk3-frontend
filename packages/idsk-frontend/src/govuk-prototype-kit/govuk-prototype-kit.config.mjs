@@ -52,7 +52,7 @@ export default async () => {
     sass: ['/dist/govuk-prototype-kit/init.scss'],
     scripts: [
       {
-        path: '/dist/govuk/govuk-frontend.min.js',
+        path: '/dist/govuk/idsk-frontend.min.js',
         type: 'module'
       },
       {

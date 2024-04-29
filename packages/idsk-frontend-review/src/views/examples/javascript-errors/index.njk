@@ -25,12 +25,12 @@
 {% endblock %}
 
 {% block bodyEnd %}
-  <script type="module" src="/javascripts/govuk-frontend.min.js"></script>
+  <script type="module" src="/javascripts/idsk-frontend.min.js"></script>
 
   <!-- SupportError -->
   <script type="module">
     // Calling `initAll` would result in errors being logged rather than thrown
-    import { CharacterCount } from '/javascripts/govuk-frontend.min.js'
+    import { CharacterCount } from '/javascripts/idsk-frontend.min.js'
 
     // Simulate GOV.UK Frontend not being supported
     document.body.classList.remove('govuk-frontend-supported')
