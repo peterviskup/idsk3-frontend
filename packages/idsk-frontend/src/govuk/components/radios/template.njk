@@ -3,7 +3,7 @@
 {# TODO #}
 {#{% from "../fieldset/macro.njk" import govukFieldset %}#}
 {#{% from "../hint/macro.njk" import govukHint %}#}
-{#{% from "../label/macro.njk" import govukLabel %}#}
+{% from "../label/macro.njk" import govukLabel %}
 
 {#- If an id 'prefix' is not passed, fall back to using the name attribute
   instead. We need this for error messages and hints as well -#}
@@ -34,13 +34,13 @@
         {%- if item.conditional.html %} data-aria-controls="{{ conditionalId }}"{% endif -%}
         {%- if hasHint %} aria-describedby="{{ itemHintId }}"{% endif -%}
         {{- govukAttributes(item.attributes) }}>
-{#      {{ govukLabel({#}
-{#        html: item.html,#}
-{#        text: item.text,#}
-{#        classes: 'govuk-radios__label' + (' ' + item.label.classes if item.label.classes),#}
-{#        attributes: item.label.attributes,#}
-{#        for: itemId#}
-{#      }) | trim | indent(6) }}#}
+      {{ govukLabel({
+        html: item.html,
+        text: item.text,
+        classes: 'govuk-radios__label' + (' ' + item.label.classes if item.label.classes),
+        attributes: item.label.attributes,
+        for: itemId
+      }) | trim | indent(6) }}
       {% if hasHint %}
 {#      {{ govukHint({#}
 {#        id: itemHintId,#}
