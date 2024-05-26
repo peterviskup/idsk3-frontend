@@ -15,9 +15,9 @@
     @include govuk-responsive-padding(7, "top");
     @include govuk-responsive-padding(5, "bottom");
 
-    border-top: 1px solid $govuk-footer-border;
+    border-top: 1px solid rgba(0, 0, 0, 0.25);
     color: $govuk-footer-text;
-    background: $govuk-footer-background;
+    background: govuk-colour("greyN100");
   }
 
   .govuk-footer__link {
