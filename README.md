@@ -4,7 +4,7 @@ ID-SK Frontend ·
 =====================
 Verzia: 3.0.1
 
-ID-SK je komunitne rozvíjaný jednotný dizajnový systém Slovenska, ktorý má za cieľ zjednotiť používateľské rozhrania a spôsob komunikácie s používateľom pri poskytovaní elektronických služieb na Slovensku.
+ID-SK je komunitne rozvíjaný jednotný dizajnový systém verejnej správy, ktorý má za cieľ zjednotiť používateľské rozhrania a spôsob komunikácie s používateľom pri poskytovaní elektronických služieb na Slovensku.
 
 ID-SK Frontend obsahuje zdrojový kód, ktorý vychádza z [britského dizajn manuálu elektronických služieb GOV.UK (GDS)](https://design-system.service.gov.uk/).
 
