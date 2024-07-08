@@ -556,7 +556,7 @@
   }
 
   .idsk-dropdown__wrapper {
-    position: absolute;
+    // position: absolute;
     right: 1rem;
     top: 0.4rem;
 
@@ -653,7 +653,7 @@
     position: relative;
 
     background: none;
-    color: white;
+    // color: white;
     border: none;
     display: inline-flex;
     @include govuk-font-size($size: 16);
@@ -674,6 +674,11 @@
     right: 0;
     display: flex;
     align-items: center;
+
+    .idsk-dropdown {
+      padding: 0;
+      color: govuk-colour("white");
+    }
 
     ul.idsk-dropdown__options {
       display: none;
