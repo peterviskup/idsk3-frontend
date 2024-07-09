@@ -1,4 +1,5 @@
 {% from "../../macros/attributes.njk" import govukAttributes %}
+{% from "../dropdown/macro.njk" import govukDropdown %}
 
 {%- set menuButtonText = params.menuButtonText if params.menuButtonText else 'Menu' -%}
 
@@ -33,22 +34,20 @@
               </div>
             </div>
           </div>
-
-          <div class="idsk-dropdown__wrapper idsk-secondary-navigation__dropdown">
-            <button class="idsk-button idsk-dropdown open" type="button">
-              <span>slovenčina</span>
-              <span class="material-icons">arrow_drop_down</span>
-            </button>
-            <ul class="idsk-dropdown__options idsk-shadow-medium" data-testid="dropdown-options">
-              <li class="idsk-dropdown__option" data-pseudolabel="english">
-                <a class="govuk-link" href="#">english</a>
-
-              </li>
-              <li class="idsk-dropdown__option" data-pseudolabel="українська">
-                <a class="govuk-link" href="#">українська</a>
-              </li>
-            </ul>
-          </div>
+          {{ govukDropdown({
+            classes: 'idsk-secondary-navigation__dropdown',
+            selected: 'slovenčina',
+            items: [
+              {
+                text: 'english',
+                href: '#'
+              },
+              {
+                text: 'українська',
+                href: '#'
+              }
+            ]
+          }) | trim | indent(2) }}
         </div>
       </div>
     </div>
