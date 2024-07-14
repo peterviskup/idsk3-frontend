@@ -47,7 +47,8 @@ describe('GOV.UK Frontend', () => {
         'PasswordInput',
         'Radios',
         'SkipLink',
-        'Tabs'
+        'Tabs',
+        'Textarea'
       ])
     })
   })
