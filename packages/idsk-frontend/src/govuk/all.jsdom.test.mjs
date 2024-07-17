@@ -10,6 +10,7 @@ jest.mock(`./components/accordion/accordion.mjs`)
 jest.mock(`./components/button/button.mjs`)
 jest.mock(`./components/character-count/character-count.mjs`)
 jest.mock(`./components/checkboxes/checkboxes.mjs`)
+jest.mock(`./components/dropdown/dropdown.mjs`)
 jest.mock(`./components/error-summary/error-summary.mjs`)
 jest.mock(`./components/exit-this-page/exit-this-page.mjs`)
 jest.mock(`./components/header/header.mjs`)
@@ -23,6 +24,7 @@ jest.mock(`./components/textarea/textarea.mjs`)
 describe('initAll', () => {
   const components = [
     'checkboxes',
+    'dropdown',
     'header',
     'radios',
     'skip-link',
