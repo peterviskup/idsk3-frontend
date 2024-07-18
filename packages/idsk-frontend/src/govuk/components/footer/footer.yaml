@@ -161,7 +161,7 @@ examples:
           - href: '#6'
             text: Oznamy
           - href: '#7'
-            text: Základné zásadz bezpečnosti
+            text: Základné zásady bezpečnosti
 
   - name: bez navigácie s odkazmi
     options:
@@ -296,7 +296,7 @@ examples:
           - href: '#6'
             text: Oznamy
           - href: '#7'
-            text: Základné zásadz bezpečnosti
+            text: Základné zásady bezpečnosti
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: attributes
