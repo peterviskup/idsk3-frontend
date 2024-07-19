@@ -144,7 +144,7 @@ examples:
   #    description: The standard header as used on information pages
   #    options: {}
 
-  - name: user not logged (without navigation).
+  - name: user not logged (without navigation)
     options:
       #      useTudorCrown: false
       actionPanel: false
