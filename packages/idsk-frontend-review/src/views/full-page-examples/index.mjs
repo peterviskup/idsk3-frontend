@@ -1,0 +1,3 @@
+/**
+ * Full page examples routes
+ */

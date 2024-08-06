@@ -1,0 +1,167 @@
+params:
+  - name: element
+    type: string
+    required: false
+    description: HTML element for the button component – `input`, `button` or `a`. In most cases you will not need to set this as it will be configured automatically if `href` is provided. This parameter will be removed in the next major version.
+  - name: text
+    type: string
+    required: true
+    description: If `html` is set, this is not required. Text for the `input`, `button` or `a` element. If `html` is provided, the `text` option will be ignored and `element` will be automatically set to `"button"` unless `href` is also set, or it has already been defined.
+  - name: html
+    type: string
+    required: true
+    description: If `text` is set, this is not required. HTML for the `button` or `a` element only. If `html` is provided, the `text` option will be ignored and `element` will be automatically set to `"button"` unless `href` is also set, or it has already been defined. This option has no effect if `element` is set to `"input"`.
+  - name: name
+    type: string
+    required: false
+    description: Name for the `input` or `button`. This has no effect on `a` elements.
+  - name: type
+    type: string
+    required: false
+    description: Type for the `input` or `button` element – `"button"`, `"submit"` or `"reset"`. Defaults to `"submit"`. This has no effect on `a` elements.
+  - name: value
+    type: string
+    required: false
+    description: Value for the `button` element only. This has no effect on `a` or `input` elements.
+  - name: disabled
+    type: boolean
+    required: false
+    description: Whether the button component should be disabled. For `input` and `button` elements, `disabled` and `aria-disabled` attributes will be set automatically. This has no effect on `a` elements.
+  - name: href
+    type: string
+    required: false
+    description: The URL that the button component should link to. If this is set, `element` will be automatically set to `"a"` if it has not already been defined.
+  - name: classes
+    type: string
+    required: false
+    description: Classes to add to the button component.
+  - name: attributes
+    type: object
+    required: false
+    description: HTML attributes (for example data attributes) to add to the button component.
+  - name: preventDoubleClick
+    type: boolean
+    required: false
+    description: Prevent accidental double clicks on submit buttons from submitting forms multiple times.
+  - name: isStartButton
+    type: boolean
+    required: false
+    description: Use for the main call to action on your service's start page.
+  - name: id
+    type: string
+    required: false
+    description: The ID of the button.
+
+examples:
+  - name: default
+    options:
+      text: Primary button
+      classes: govuk-button__basic
+  - name: with active state
+    description: Simulate triggering the :active CSS pseudo-class, not available in the production build.
+    options:
+      name: active
+      text: Active
+      classes: govuk-button__basic :active
+  - name: input disabled
+    options:
+      element: input
+      text: Explicit input button disabled
+      classes: govuk-button__basic
+      disabled: true
+  - name: successfully
+    options:
+      text: Successfully button
+      classes: govuk-button__success
+  - name: warning
+    options:
+      text: Warning button
+      classes: govuk-button__warning
+  - name: disabled
+    options:
+      text: Disabled button
+      disabled: true
+  - name: with hover state
+    description: Simulate triggering the :hover CSS pseudo-class, not available in the production build.
+    options:
+      name: hover
+      text: Hovered
+      classes: :hover
+  - name: with focus state
+    description: Simulate triggering the :focus CSS pseudo-class, not available in the production build.
+    options:
+      name: focus
+      text: Focussed
+      classes: :focus-visible
+  - name: large
+    description: Large button
+    options:
+      name: Button Large
+      text: Button Large
+      classes: govuk-button__large
+  - name: secondary
+    description: A button for secondary actions
+    options:
+      name: secondary
+      text: Secondary button
+      classes: govuk-button--sec
+  - name: secondary success
+    options:
+      name: secondary
+      text: Secondary success button
+      classes: govuk-button--sec__success
+  - name: secondary warning
+    options:
+      name: secondary
+      text: Secondary warning button
+      classes: govuk-button--sec__warning
+  - name: contrast success
+    options:
+      name: secondary
+      text: Secondary contrast button
+      classes: govuk-button--sec__contrast
+  - name: secondary disabled
+    options:
+      name: secondary
+      text: Secondary button disabled
+      classes: govuk-button--sec
+      disabled: true
+  - name: secondary link
+    description: A link button for secondary actions
+    options:
+      name: secondary
+      text: Secondary button
+      href: '/'
+      classes: govuk-button--sec
+  - name: warning
+    description: A button for actions that need a warning
+    options:
+      name: Warning
+      text: Warning button
+      classes: govuk-button__warning
+  - name: warning disabled
+    options:
+      name: warning
+      text: Warning button disabled
+      classes: govuk-button--warning
+      disabled: true
+  - name: texted btn
+    options:
+      name: Texted
+      text: Texted btn
+      classes: govuk-button--texted
+  - name: texted btn success
+    options:
+      name: Texted btn success
+      text: Texted btn success
+      classes: govuk-button--texted govuk-button--texted__success
+  - name: texted btn warning
+    options:
+      name: Texted
+      text: Texted btn warning
+      classes: govuk-button--texted govuk-button--texted__warning
+  - name: texted btn contrast
+    options:
+      name: Texted
+      text: Texted btn contrast
+      classes: govuk-button--texted govuk-button--texted__contrast

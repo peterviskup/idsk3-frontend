@@ -1,0 +1,127 @@
+@import "../error-message/index";
+@import "../../../../../govuk-frontend/src/govuk/components/hint/index";
+@import "../../../../../govuk-frontend/src/govuk/components/label/index";
+
+@include govuk-exports("govuk/component/input") {
+  .govuk-input {
+    @include govuk-font($size: 19);
+
+    box-sizing: border-box;
+
+    position: relative;
+    width: 100%;
+    height: govuk-px-to-rem(48px);
+    margin-top: 0;
+    padding: govuk-spacing(1) 1rem;
+    // setting any background-color makes text invisible when changing colours to dark backgrounds in Firefox (https://bugzilla.mozilla.org/show_bug.cgi?id=1335476)
+    // as background-color and color need to always be set together, color should not be set either
+    border: $govuk-border-width-form-element solid $govuk-input-border-colour;
+    border-radius: 5px;
+
+    // Disable inner shadow and remove rounded corners
+    appearance: none;
+
+    &:focus {
+      outline: govuk-colour("orange") solid 3px;
+      outline-offset: 2px;
+    }
+
+    &:disabled {
+      border-color: govuk-colour("greyN400");
+      color: inherit;
+      background-color: transparent;
+      cursor: not-allowed;
+    }
+
+    &.small {
+      height: govuk-px-to-rem(40px);
+    }
+  }
+
+  .govuk-input-container {
+    position: relative;
+
+    .input-icon {
+      position: absolute;
+      top: 50%;
+      right: 8px;
+      width: 24px;
+      height: 24px;
+      transform: translateY(-50%);
+    }
+
+    .govuk-body-s {
+      margin-bottom: 10px;
+      color: govuk-colour("dark-grey");
+    }
+
+    .descriptive-text {
+      margin-top: 10px;
+    }
+  }
+
+  .govuk-input::-webkit-outer-spin-button,
+  .govuk-input::-webkit-inner-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+  }
+
+  .govuk-input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  .govuk-input--error {
+    border-color: $govuk-error-colour;
+
+    &:focus {
+      border-color: $govuk-input-border-colour;
+    }
+  }
+
+  .govuk-input--extra-letter-spacing {
+    @include govuk-font-tabular-numbers;
+    letter-spacing: 0.05em;
+  }
+
+  .govuk-input__wrapper {
+    display: flex;
+
+    .govuk-input {
+      flex: 0 1 auto;
+    }
+
+    .govuk-input:focus {
+      // Hack to stop focus style being overlapped by the suffix
+      z-index: 1;
+    }
+
+    // Split prefix/suffix onto separate lines on narrow screens
+    @include govuk-media-query($until: mobile) {
+      display: block;
+
+      .govuk-input {
+        // Set max-width to override potential width override class on the input
+        max-width: 100%;
+      }
+    }
+  }
+
+  .govuk-input-component {
+    .govuk-label {
+      margin-bottom: 10px;
+
+      &.small {
+        @include govuk-font($size: 16);
+      }
+    }
+
+    .govuk-body-s {
+      margin-bottom: 10px;
+      color: govuk-colour("dark-grey");
+    }
+
+    .required {
+      color: govuk-colour("red");
+    }
+  }
+}

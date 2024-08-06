@@ -1,0 +1,162 @@
+@import "../error-message/index";
+@import "../../../../../govuk-frontend/src/govuk/components/hint/index";
+@import "../../../../../govuk-frontend/src/govuk/components/label/index";
+
+@include govuk-exports("govuk/component/file-upload") {
+  $component-padding: govuk-spacing(1);
+
+  .govuk-file-upload {
+    @include govuk-font($size: 19);
+    @include govuk-text-colour;
+    max-width: 100%;
+    margin-left: -$component-padding;
+    padding: $component-padding;
+
+    // The default file upload button in Safari does not
+    // support setting a custom font-size. Set `-webkit-appearance`
+    // to `button` to drop out of the native appearance so the
+    // font-size is set to 19px
+    // https://bugs.webkit.org/show_bug.cgi?id=224746
+    &::-webkit-file-upload-button {
+      -webkit-appearance: button;
+      color: inherit;
+      font: inherit;
+    }
+
+    &:focus {
+      outline: $govuk-focus-width solid $govuk-focus-colour;
+      // Use `box-shadow` to add border instead of changing `border-width`
+      // (which changes element size) and since `outline` is already used for the
+      // yellow focus state.
+      box-shadow: inset 0 0 0 4px $govuk-input-border-colour;
+    }
+
+    // Set "focus-within" to fix https://bugzilla.mozilla.org/show_bug.cgi?id=1430196
+    // so that component receives focus in Firefox.
+    // This can't be set together with `:focus` as all versions of IE fail
+    // to recognise `focus-within` and don't set any styles from the block
+    // when it's a selector.
+    &:focus-within {
+      outline: $govuk-focus-width solid $govuk-focus-colour;
+
+      box-shadow: inset 0 0 0 4px $govuk-input-border-colour;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &.just-file::file-selector-button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      color: govuk-colour("white");
+      background: govuk-colour("blue");
+    }
+  }
+
+  .file-upload-component.govuk-form-group--error {
+    padding-left: 0;
+
+    .govuk-heading-m {
+      margin-bottom: 0;
+    }
+
+    .govuk-error-message {
+      margin-left: 30px;
+    }
+  }
+
+  .file-upload-component.js-enabled {
+    .upload-container {
+      border: none;
+      background: none;
+      text-align: left;
+    }
+  }
+
+  .file-upload-component.disabled {
+    .upload-box {
+      cursor: not-allowed;
+    }
+
+    .upload-container {
+      border-color: govuk-colour("greyN300");
+
+      .upload-icon .material-icons,
+      .upload-text p {
+        color: govuk-colour("dark-grey");
+      }
+    }
+  }
+
+  .file-upload-component {
+    .govuk-heading-m {
+      margin-right: 30px;
+      margin-left: 30px;
+
+      @include govuk-media-query($until: tablet) {
+        margin-right: 10px;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .upload-container {
+    margin: 0 30px 30px;
+
+    text-align: center;
+
+    @include govuk-media-query($until: tablet) {
+      margin: 0 10px 10px;
+    }
+  }
+
+  .upload-box {
+    display: flex;
+    border: 2px dashed govuk-colour("greyN500");
+    border-radius: 5px;
+    background-color: govuk-colour("greyN90");
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .upload-box.dragover {
+    border-color: govuk-colour("blue");
+    background: govuk-colour("light-blue");
+  }
+
+  .upload-icon {
+    margin-top: 30px;
+
+    .material-icons {
+      color: govuk-colour("dark-blue");
+      font-size: 36px;
+    }
+  }
+
+  .upload-text p {
+    margin: 5px 0;
+    color: govuk-colour("dark-blue");
+  }
+
+  .upload-button {
+    display: flex;
+    width: auto;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-items: center;
+
+    .material-icons {
+      margin-right: 10px;
+    }
+  }
+
+  .upload-button:hover {
+    background-color: #0056b3;
+  }
+}

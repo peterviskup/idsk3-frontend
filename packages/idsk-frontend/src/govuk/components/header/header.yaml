@@ -1,0 +1,294 @@
+params:
+  - name: navbarHeader
+    type: boolean
+    required: false
+    description: Set True if you want navbar in head, near logo
+
+  - name: actionPanel
+    type: boolean
+    required: false
+    description: Set true or false to show action panel (notification, info, profile)
+
+  - name: homepageUrl
+    type: string
+    required: false
+    description: The URL of the homepage. Defaults to `"/"`.
+
+  - name: navigation
+    type: array
+    required: false
+    description: Can be used to add navigation to the header component.
+    params:
+      - name: text
+        type: string
+        required: true
+        description: Text for the navigation item. If `html` is provided, the `text` option will be ignored.
+      - name: html
+        type: string
+        required: true
+        description: HTML for the navigation item. If `html` is provided, the `text` option will be ignored.
+      - name: href
+        type: string
+        required: false
+        description: URL of the navigation item anchor.
+      - name: active
+        type: boolean
+        required: false
+        description: Flag to mark the navigation item as active or not.
+      - name: attributes
+        type: object
+        required: false
+        description: HTML attributes (for example data attributes) to add to the navigation item anchor.
+      - name: warning
+        type: string
+        required: false
+        description: On or Off red warning circle
+
+  - name: profileNavig
+    type: array
+    required: false
+    description: Can be used to add navigation to the header component.
+    params:
+      - name: text
+        type: string
+        required: true
+        description: Text for the navigation item. If `html` is provided, the `text` option will be ignored.
+      - name: html
+        type: string
+        required: true
+        description: HTML for the navigation item. If `html` is provided, the `text` option will be ignored.
+      - name: href
+        type: string
+        required: false
+        description: URL of the navigation item anchor.
+      - name: active
+        type: boolean
+        required: false
+        description: Flag to mark the navigation item as active or not.
+      - name: attributes
+        type: object
+        required: false
+        description: HTML attributes (for example data attributes) to add to the navigation item anchor.
+      - name: warning
+        type: string
+        required: false
+        description: On or Off red warning circle
+
+  - name: dropdown
+    type: boolean
+    required: false
+    description: Add dropdown menu or no
+
+  - name: navigationClasses
+    type: string
+    required: false
+    description: Classes for the navigation section of the header.
+
+  - name: navigationLabel
+    type: string
+    required: false
+    description: Text for the `aria-label` attribute of the navigation. Defaults to the same value as `menuButtonText`.
+
+  - name: menuButtonLabel
+    type: string
+    required: false
+    description: Text for the `aria-label` attribute of the button that opens the mobile navigation, if there is a mobile navigation menu.
+
+  - name: menuButtonText
+    type: string
+    required: false
+    description: Text of the button that opens the mobile navigation menu, if there is a mobile navigation menu. There is no enforced character limit, but there is a limited display space so keep text as short as possible. By default, this is set to 'Menu'.
+
+  - name: containerClasses
+    type: string
+    required: false
+    description: Classes for the container, useful if you want to make the header fixed width.
+
+  - name: classes
+    type: string
+    required: false
+    description: Classes to add to the header container.
+
+  - name: attributes
+    type: object
+    required: false
+    description: HTML attributes (for example data attributes) to add to the header container.
+
+  - name: useTudorCrown
+    type: boolean
+    required: false
+    description: Deprecated. If `true`, uses the Tudor crown from King Charles III's royal cypher. Otherwise, uses the St. Edward's crown. Default is `true`.
+
+previewLayout: full-width
+accessibilityCriteria: |
+  Text and links in the Header must:
+  - have a text contrast ratio higher than 4.5:1 against the background colour to meet [WCAG AA](https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast)
+
+  Links in the Header must:
+  - accept focus
+  - be focusable with a keyboard
+  - be usable with a keyboard
+  - indicate when they have focus
+  - change in appearance when touched (in the touch-down state)
+  - change in appearance when hovered
+  - have visible text
+
+  Images in the Header must:
+  - be presentational when linked to from accompanying text (crown icon).
+
+  Landmarks and Roles in the Header should:
+  - have a role of `"banner"` at the root of the component (<header>) (https://www.w3.org/TR/wai-aria-1.1/#banner)
+
+examples:
+  #  - name: default
+  #    description: The standard header as used on information pages
+  #    options: {}
+
+  - name: user not logged (without navigation)
+    options:
+      #      useTudorCrown: false
+      actionPanel: false
+      navigation: {}
+
+  - name: user login (without navigation)
+    options:
+      #      useTudorCrown: false
+      actionPanel: true
+      navigation: {}
+
+  - name: user not logged (with navigation)
+    options:
+      #      useTudorCrown: false
+      actionPanel: false
+      navigation:
+        - href: '#1'
+          text: Section 1
+          active: true
+        - href: '#2'
+          text: Section 2
+        - href: '#3'
+          text: Section 3
+        - href: '#4'
+          text: Section 4
+        - href: '#5'
+          text: Sekcia 5
+      dropdown: true
+
+  - name: user login (with navigation)
+    options:
+      #      useTudorCrown: false
+      actionPanel: true
+      navigation:
+        - href: '#1'
+          text: Section 1
+          active: true
+        - href: '#2'
+          text: Section 2
+        - href: '#3'
+          text: Section 3
+        - href: '#4'
+          text: Section 4
+        - href: '#5'
+          text: Sekcia 5
+      profileNavig:
+        - href: '#1'
+          text: Profile 1
+          active: true
+        - href: '#2'
+          text: Profile 2
+        - href: '#3'
+          text: Profile 3
+        - href: '#4'
+          text: Profile 4
+      dropdown: true
+
+  - name: with navigation in header
+    options:
+      navbarHeader: true
+      actionPanel: true
+      navigation:
+        - href: '#1'
+          text: Section 1
+          active: true
+        - href: '#2'
+          text: Section 2
+        - href: '#3'
+          text: Section 3
+        - href: '#4'
+          text: Section 4
+        - href: '#5'
+          text: Sekcia 5
+      dropdown: true
+
+  - name: without navigation in header
+    options:
+      navbarHeader: true
+      actionPanel: true
+
+  # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
+  - name: attributes
+    hidden: true
+    options:
+      attributes:
+        data-test-attribute: value
+        data-test-attribute-2: value-2
+  - name: classes
+    hidden: true
+    options:
+      classes: app-header--custom-modifier
+  - name: custom homepage url
+    hidden: true
+    options:
+      homepageUrl: https://placehold.co/220x40/000000/FFFFFF
+  - name: navigation item with attributes
+    hidden: true
+    options:
+      navigation:
+        - href: /link
+          text: Item
+          attributes:
+            data-attribute: my-attribute
+            data-attribute-2: my-attribute-2
+  - name: navigation item with html as text
+    hidden: true
+    options:
+      serviceName: Service Name
+      serviceUrl: '/components/header'
+      navigation:
+        - href: '#1'
+          text: <em>Navigation item 1</em>
+          active: true
+        - href: '#2'
+          text: <em>Navigation item 2</em>
+        - href: '#3'
+          text: <em>Navigation item 3</em>
+  - name: navigation item with html without link
+    hidden: true
+    options:
+      serviceName: Service Name
+      serviceUrl: '/components/header'
+      navigation:
+        - html: <em>Navigation item 1</em>
+          active: true
+        - html: <em>Navigation item 2</em>
+        - html: <em>Navigation item 3</em>
+  - name: with custom navigation label and custom menu button text
+    hidden: true
+    options:
+      menuButtonText: Custom menu button text
+      navigationLabel: Custom navigation label
+      navigation:
+        - href: '#1'
+          text: Navigation item 1
+          active: true
+        - href: '#2'
+          text: Navigation item 2
+        - href: '#3'
+          text: Navigation item 3
+        - href: '#4'
+          text: Navigation item 4
+
+  - name: empty navigation array
+    hidden: true
+    options:
+      navigation: []

@@ -1,0 +1,105 @@
+////
+/// @group helpers
+////
+
+@import "../tools/exports";
+
+/// Font Face - GDS Transport
+///
+/// Outputs the font-face declaration for GDS Transport at the root of the CSS document
+/// the first time it is called.
+///
+/// @access private
+
+@mixin _govuk-font-face-gds-transport {
+  @include govuk-exports("govuk/helpers/font-faces") {
+    @at-root {
+      /*! Copyright (c) 2011 by Margaret Calvert & Henrik Kubel. All rights reserved. The font has been customised for exclusive use on gov.uk. This cut is not commercially available. */ /* stylelint-disable-line scss/comment-no-loud  */
+      @font-face {
+        font-family: "Source Sans Pro";
+        font-style: normal;
+        font-weight: normal;
+        src:
+          govuk-font-url("SourceSansPro-Regular.woff2") format("woff2"),
+          govuk-font-url("SourceSansPro-Regular.woff") format("woff");
+        font-display: fallback;
+      }
+
+      @font-face {
+        font-family: "Source Sans Pro";
+        font-style: normal;
+        font-weight: bold;
+        src:
+          govuk-font-url("SourceSansPro-Bold.woff2") format("woff2"),
+          govuk-font-url("SourceSansPro-Bold.woff") format("woff");
+        font-display: fallback;
+      }
+
+      @font-face {
+        font-family: "Source Sans Pro";
+        font-style: normal;
+        font-weight: 900;
+        src:
+          govuk-font-url("SourceSansPro-Black.woff2") format("woff2"),
+          govuk-font-url("SourceSansPro-Black.woff") format("woff");
+        font-display: fallback;
+      }
+    }
+  }
+}
+
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src:
+    govuk-font-url("/material-icon/material-icons.woff2") format("woff2"),
+    govuk-font-url("/material-icon/material-icons.woff") format("woff");
+}
+
+.material-icons {
+  display: inline-block;
+  font-family: "Material Icons", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 1;
+  text-rendering: optimizelegibility;
+  text-transform: none;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+}
+
+@font-face {
+  font-family: "Material Icons Outlined";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src:
+    govuk-font-url("/material-icon/material-icons-outlined.woff2") format("woff2"),
+    govuk-font-url("/material-icon/material-icons-outlined.woff") format("woff");
+}
+
+.material-icons-outlined {
+  display: inline-block;
+  font-family: "Material Icons Outlined", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 1;
+  text-rendering: optimizelegibility;
+  text-transform: none;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+}

@@ -1,0 +1,95 @@
+////
+/// @group settings/colours
+////
+
+/// Colour palette
+///
+/// @type Map
+///
+/// @prop $colour - Representation for the given $colour, where $colour is the
+///   friendly name for the colour (e.g. "red": #ff0000);
+///
+/// @access public
+
+$govuk-colours: (
+  "purple": #4c2c92,
+  "light-purple": #6f72af,
+  "bright-purple": #912b88,
+
+  "mid-grey": #b1b4b6,
+
+  "black": #000000,
+  "dark-grey": #757575,
+  "light-grey": #e0e0e0,
+  "white": #ffffff,
+
+  "pink": #d53880,
+
+  "light-pink": #f499be,
+  "orange": #D96E00,
+  "brown": #b58840,
+  // "light-green": #85994b,
+  // Neutral palette
+  "greyN500": #9e9e9e,
+  "greyN400": #bdbdbd,
+  "greyN300": #e0e0e0,
+  "greyN200": #eeeeee,
+  "greyN100": #f5f5f5,
+  "greyN90": #fafafa,
+
+  // Warning palette
+  "dark-blue": #072c66,
+  "blue": #126dff,
+  "medium-blue": #c3d9f9,
+  "light-blue": #eff5fe,
+
+  "dark-red": #4e0711,
+  "red": #c3112b,
+  "medium-red": #f8b5b9,
+  "light-red": #fbeef0,
+
+  "dark-green": #033608,
+  "green": #078814,
+  "medium-green": #9fdaa5,
+  "light-green": #ebf5ec,
+
+  "dark-yellow": #4e2a00,
+  "yellow": #bd730c,
+  "medium-yellow": #ebcfaa,
+  "light-yellow": #faf4ec,
+
+  // Secondary palette
+  "greenG600": #2e3106,
+  "greenG500": #444a09,
+  "greenG400": #727b0f,
+  "greenG300": #b4b764,
+  "greenG200": #d5d6a2,
+  "greenG100": #f4f4ec,
+
+  "turquise600": #06372c,
+  "turquise500": #125041,
+  "turquise400": #1e856d,
+  "turquise300": #71bdab,
+  "turquise200": #a9d9cd,
+
+  "turquoise": #28a197,
+
+  "purple600": #3c1b66,
+  "purple500": #592999,
+  "purple400": #9544ff,
+  "purple300": #c79aff,
+  "purple200": #e0c5ff,
+
+  "pink600": #530250,
+  "pink500": #7c0478,
+  "pink400": #cf06c8,
+  "pink300": #e56fe3,
+  "pink200": #f0aaef,
+
+  "blueP600": #072c66,
+  "blueP500": #0b4199,
+  "blueP400": #126dff,
+  "blueP300": #88b3f6,
+  "blueP200": #c3d9f9,
+  "blueP100": #eff5fe
+) !default;

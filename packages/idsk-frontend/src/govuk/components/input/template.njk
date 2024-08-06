@@ -1,0 +1,55 @@
+{% from "../../macros/attributes.njk" import govukAttributes %}
+
+{#- a record of other elements that we need to associate with the input using
+  aria-describedby – for example hints or error messages -#}
+{% set describedBy = params.describedBy if params.describedBy else "" -%}
+
+{%- macro _inputElement(params) -%}
+  <label class="govuk-label {% if params.smallInput%} small {% endif %} govuk-body-m" for="{{ params.id }}">
+    Názov textového poľa
+    {% if params.requiredProps %}
+      <span class="required">*</span>
+    {% else %}
+      <span class="govuk-body-s">(nepovinné)</span>
+    {% endif %}
+    {% if params.hint %}
+      <p class="govuk-body-s">{{ params.hint.text }}</p>
+    {% endif %}
+  </label>
+  <div class="govuk-input-container">
+    <input class="govuk-input {%- if params.classes %} {{ params.classes }}{% endif %} {%- if params.errorMessage %} govuk-input--error{% endif %} {% if params.smallInput%} small {% endif %} " id="{{ params.id }}" name="{{ params.name }}" type="{{ params.type | default("text", true) }}"
+      {%- if (params.spellcheck === false) or (params.spellcheck === true) %} spellcheck="{{ params.spellcheck }}"{% endif %}
+      {%- if params.value %} value="{{ params.value }}"{% endif %}
+      {%- if params.disabled %} disabled{% endif %}
+      {%- if describedBy %} aria-describedby="{{ describedBy }}"{% endif %}
+      {%- if params.autocomplete %} autocomplete="{{ params.autocomplete }}"{% endif %}
+      {%- if params.pattern %} pattern="{{ params.pattern }}"{% endif %}
+      {%- if params.inputmode %} inputmode="{{ params.inputmode }}"{% endif %}
+      {%- if params.autocapitalize %} autocapitalize="{{ params.autocapitalize }}"{% endif %}
+      {{- govukAttributes(params.attributes) }}>
+
+    {% if params.descriptionText %}
+      <p class="govuk-body-s descriptive-text">Popisný text</p>
+    {% endif %}
+
+    {% if params.errorMessage %}
+      <div class="input-icon">
+        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.72543 17.4999H16.2754C17.5588 17.4999 18.3588 16.1083 17.7171 14.9999L11.4421 4.15828C10.8004 3.04994 9.20043 3.04994 8.55876 4.15828L2.28376 14.9999C1.64209 16.1083 2.44209 17.4999 3.72543 17.4999ZM10.0004 11.6666C9.54209 11.6666 9.16709 11.2916 9.16709 10.8333V9.16661C9.16709 8.70828 9.54209 8.33328 10.0004 8.33328C10.4588 8.33328 10.8338 8.70828 10.8338 9.16661V10.8333C10.8338 11.2916 10.4588 11.6666 10.0004 11.6666ZM10.8338 14.9999H9.16709V13.3333H10.8338V14.9999Z" fill="#C3112B"/>
+        </svg>
+      </div>
+    {% endif %}
+  </div>
+{%- endmacro -%}
+
+{%- macro _affixItem(affix, type) %}
+  <div class="govuk-input__{{ type }} {%- if affix.classes %} {{ affix.classes }}{% endif %}" aria-hidden="true" {{- govukAttributes(affix.attributes) }}>
+    {{- affix.html | safe | trim | indent(4) if affix.html else affix.text -}}
+  </div>
+{%- endmacro -%}
+
+<div class="govuk-form-group govuk-input-component {%- if params.formGroup.classes %} {{ params.formGroup.classes }}{% endif %}"
+  {{- govukAttributes(params.formGroup.attributes) }}>
+
+  {{ _inputElement(params) }}
+</div>

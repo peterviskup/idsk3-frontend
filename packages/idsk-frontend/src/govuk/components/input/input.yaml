@@ -1,0 +1,392 @@
+params:
+  - name: id
+    type: string
+    required: true
+    description: The ID of the input.
+  - name: name
+    type: string
+    required: true
+    description: The name of the input, which is submitted with the form data.
+  - name: type
+    type: string
+    required: false
+    description: Type of input control to render, for example, a password input control. Defaults to `"text"`.
+  - name: inputmode
+    type: string
+    required: false
+    description: Optional value for [inputmode](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode).
+  - name: value
+    type: string
+    required: false
+    description: Optional initial value of the input.
+  - name: disabled
+    type: boolean
+    required: false
+    description: If `true`, input will be disabled.
+  - name: describedBy
+    type: string
+    required: false
+    description: One or more element IDs to add to the `aria-describedby` attribute, used to provide additional descriptive information for screenreader users.
+  - name: label
+    type: object
+    required: true
+    description: The label used by the text input component.
+    isComponent: true
+  - name: hint
+    type: object
+    required: false
+    description: Can be used to add a hint to a text input component.
+    isComponent: true
+  - name: errorMessage
+    type: object
+    required: false
+    description: Can be used to add an error message to the text input component. The error message component will not display if you use a falsy value for `errorMessage`, for example `false` or `null`.
+    isComponent: true
+  - name: formGroup
+    type: object
+    required: false
+    description: Additional options for the form group containing the text input component.
+    params:
+      - name: classes
+        type: string
+        required: false
+        description: Classes to add to the form group (for example to show error state for the whole group).
+      - name: attributes
+        type: object
+        required: false
+        description: HTML attributes (for example data attributes) to add to the form group.
+      - name: beforeInput
+        type: object
+        required: false
+        description: Content to add before the input used by the text input component.
+        params:
+          - name: text
+            type: string
+            required: true
+            description: Text to add before the input. If `html` is provided, the `text` option will be ignored.
+          - name: html
+            type: string
+            required: true
+            description: HTML to add before the input. If `html` is provided, the `text` option will be ignored.
+      - name: afterInput
+        type: object
+        required: false
+        description: Content to add after the input used by the text input component.
+        params:
+          - name: text
+            type: string
+            required: true
+            description: Text to add after the input. If `html` is provided, the `text` option will be ignored.
+          - name: html
+            type: string
+            required: true
+            description: HTML to add after the input. If `html` is provided, the `text` option will be ignored.
+  - name: classes
+    type: string
+    required: false
+    description: Classes to add to the input.
+  - name: autocomplete
+    type: string
+    required: false
+    description: Attribute to [identify input purpose](https://www.w3.org/WAI/WCAG21/Understanding/identify-input-purpose.html), for instance "postal-code" or "username". See [autofill](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill) for full list of attributes that can be used.
+  - name: pattern
+    type: string
+    required: false
+    description: Attribute to [provide a regular expression pattern](https://html.spec.whatwg.org/multipage/sec-forms.html#the-pattern-attribute), used to match allowed character combinations for the input value.
+  - name: spellcheck
+    type: boolean
+    required: false
+    description: Optional field to enable or disable the `spellcheck` attribute on the input.
+  - name: autocapitalize
+    type: string
+    required: false
+    description: Optional field to enable or disable autocapitalisation of user input. See [autocapitalization](https://html.spec.whatwg.org/multipage/interaction.html#autocapitalization) for a full list of values that can be used.
+  - name: inputWrapper
+    type: object
+    required: false
+    description: If any of `prefix`, `suffix`, `formGroup.beforeInput` or `formGroup.afterInput` have a value, a wrapping element is added around the input and inserted content. This object allows you to customise that wrapping element.
+    params:
+      - name: classes
+        type: string
+        required: false
+        description: Classes to add to the wrapping element.
+      - name: attributes
+        type: object
+        required: false
+        description: HTML attributes (for example data attributes) to add to the wrapping element.
+  - name: attributes
+    type: object
+    required: false
+    description: HTML attributes (for example data attributes) to add to the input.
+
+  - name: requiredProps
+    type: boolean
+    required: false
+    description: property for required or no required input
+
+  - name: descriptionText
+    type: boolean
+    required: false
+    description: props to add descriptive text
+
+  - name: smallInput
+    type: boolean
+    required: false
+    description: change input and head size to small
+
+examples:
+  - name: default
+    options:
+      label:
+        text: Názov textového poľa
+      id: input-example
+      name: default
+
+  - name: with hover
+    options:
+      label:
+        text: Názov textového poľa
+      id: input-example-hover
+      name: hover
+      classes: :hover
+
+  - name: with focus
+    options:
+      label:
+        text: Názov textového poľa
+      id: input-example-focus
+      name: test-name-focus
+      classes: :focus
+
+  - name: with disabled
+    options:
+      label:
+        text: Názov textového poľa
+      id: input-example-disabled
+      name: test-name-disabled
+      disabled: true
+
+  - name: with hint text
+    options:
+      label:
+        text: Názov textového poľa
+      hint:
+        text: Popis textového poľa
+      id: input-with-hint-text
+      name: test-name-2
+
+  - name: with hint text and required
+    options:
+      requiredProps: true
+      label:
+        text: Názov textového poľa
+      hint:
+        text: Popis textového poľa
+      id: input-with-hint-text-required
+      name: test-name-3
+
+  - name: with error message
+    options:
+      label:
+        text: Názov textového poľa
+      hint:
+        text: Popis textového poľa
+      id: input-with-error-message
+      name: test-name-4
+      errorMessage:
+        text:
+
+  - name: with descriptive text
+    options:
+      label:
+        text: Názov textového poľa
+      id: input-with-hint-text-descriptiveText
+      name: test-name-5
+      descriptionText: true
+
+  - name: small
+    options:
+      label:
+        text: Názov textového poľa
+      id: input-small
+      name: test-name-6
+      smallInput: true
+
+  # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
+  - name: classes
+    hidden: true
+    options:
+      id: with-classes
+      name: with-classes
+      label:
+        text: With classes
+      classes: app-input--custom-modifier
+  - name: custom type
+    hidden: true
+    options:
+      id: with-custom-type
+      name: with-custom-type
+      label:
+        text: With custom type
+      type: number
+  - name: value
+    hidden: true
+    options:
+      id: with-value
+      name: with-value
+      label:
+        text: With value
+      value: QQ 12 34 56 C
+  - name: with describedBy
+    hidden: true
+    options:
+      id: with-describedby
+      name: with-describedby
+      label:
+        text: With describedBy
+      describedBy: test-target-element
+  - name: attributes
+    hidden: true
+    options:
+      id: with-attributes
+      name: with-attributes
+      label:
+        text: With attributes
+      attributes:
+        data-attribute: my data value
+  - name: error with describedBy
+    hidden: true
+    options:
+      id: with-error-describedby
+      name: with-error-describedby
+      label:
+        text: With error describedBy
+      describedBy: test-target-element
+      errorMessage:
+        text: Error message
+  - name: with error and hint
+    hidden: true
+    options:
+      id: with-error-hint
+      name: with-error-hint
+      label:
+        text: With error and hint
+      errorMessage:
+        text: Error message
+      hint:
+        text: Hint
+  - name: with error, hint and describedBy
+    hidden: true
+    options:
+      id: with-error-hint-describedby
+      name: with-error-hint-describedby
+      label:
+        text: With error, hint and describedBy
+      errorMessage:
+        text: Error message
+      hint:
+        text: Hint
+      describedBy: test-target-element
+  - name: inputmode
+    hidden: true
+    options:
+      id: with-inputmode
+      name: with-inputmode
+      label:
+        text: With inputmode
+      inputmode: decimal
+
+  - name: with prefix with html as text
+    hidden: true
+    options:
+      label:
+        text: Amount, in pounds
+      id: input-with-prefix
+      name: amount
+      prefix:
+        text: <span>£</span>
+  - name: with prefix with html
+    hidden: true
+    options:
+      label:
+        html: Amount, in pounds
+      id: input-with-prefix
+      name: amount
+      prefix:
+        html: <span>£</span>
+  - name: with prefix with classes
+    hidden: true
+    options:
+      label:
+        text: Amount, in pounds
+      id: input-with-prefix-element
+      name: amount
+      prefix:
+        text: £
+        classes: app-input__prefix--custom-modifier
+  - name: with prefix with attributes
+    hidden: true
+    options:
+      label:
+        text: Amount, in pounds
+      id: input-with-prefix-element
+      name: amount
+      prefix:
+        text: £
+        attributes:
+          data-attribute: value
+
+  - name: with suffix with html as text
+    hidden: true
+    options:
+      label:
+        text: Weight, in kilograms
+      id: input-with-suffix
+      name: weight
+      suffix:
+        text: <span>kg</span>
+  - name: with suffix with html
+    hidden: true
+    options:
+      label:
+        text: Weight, in kilograms
+      id: input-with-suffix
+      name: weight
+      suffix:
+        html: <span>kg</span>
+  - name: with suffix with classes
+    hidden: true
+    options:
+      label:
+        text: Weight, in kilograms
+      id: input-with-suffix
+      name: weight
+      suffix:
+        html: <span>kg</span>
+        classes: app-input__suffix--custom-modifier
+  - name: with suffix with attributes
+    hidden: true
+    options:
+      label:
+        text: Weight, in kilograms
+      id: input-with-suffix
+      name: weight
+      suffix:
+        html: <span>kg</span>
+        attributes:
+          data-attribute: value
+  - name: with customised input wrapper
+    hidden: true
+    options:
+      label:
+        text: Cost per item, in pounds
+      id: input-with-customised-input-wrapper
+      name: cost
+      inputWrapper:
+        classes: app-input-wrapper--custom-modifier
+        attributes:
+          data-attribute: value
+      prefix:
+        text: £
+      suffix:
+        text: per item
