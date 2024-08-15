@@ -16,6 +16,9 @@ export class Dropdown extends GOVUKFrontendComponent {
   /** @private */
   options
 
+  /** @private */
+  isOpen = false
+
   /**
    * Name for the component used when initialising using data-module attributes.
    */
@@ -57,24 +60,48 @@ export class Dropdown extends GOVUKFrontendComponent {
       })
     }
 
-    this.button.addEventListener('click', (event) => this.handleClick(event))
+    this.button?.addEventListener('click', () => this.handleClick())
+    document.addEventListener('click', (event) => {
+      if (
+        event.target instanceof Node &&
+        !this.$module.contains(event.target) &&
+        this.isOpen
+      ) {
+        this.handleClick()
+      }
+    })
   }
 
   /**
    * Trigger a click event
    *
    * @private
-   * @param {Event} event - Mouse event
    */
-  handleClick(event) {
-    const $target = event.target
-
-    if ($target instanceof HTMLElement) {
-      event.preventDefault() // prevent the page from scrolling
-      this.button
-        ?.querySelector('svg')
-        ?.classList.toggle('idsk-dropdown__icon--opened')
-      this.options?.classList.toggle('idsk-dropdown--opened')
+  handleClick() {
+    if (!this.button) {
+      return
     }
+
+    this.isOpen = !this.isOpen
+    const label = this.$module.dataset.pseudolabel ?? ''
+
+    if (this.isOpen) {
+      this.$module.classList.add('open')
+      this.button
+        .querySelector('svg')
+        ?.classList.add('idsk-dropdown__icon--opened')
+      this.button.ariaLabel = `Zavrieť ${label}`
+      this.options?.classList.add('idsk-dropdown--opened')
+      // this.$module.querySelector('.material-icons')?.classList.add('rotate180')
+    } else {
+      this.$module.classList.remove('open')
+      this.button
+        .querySelector('svg')
+        ?.classList.remove('idsk-dropdown__icon--opened')
+      this.button.ariaLabel = `Rozbaliť ${label}`
+      this.options?.classList.remove('idsk-dropdown--opened')
+    }
+
+    this.button.ariaExpanded = this.isOpen.toString()
   }
 }

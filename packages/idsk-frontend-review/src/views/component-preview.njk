@@ -1,6 +1,7 @@
 {% extends "layouts/" + previewLayout | default('layout') + ".njk" %}
 
-{% set templateTitle = ("Default " + componentName if exampleName == "default" else componentName + " " + exampleName) | unslugify %}
+{% set htmlLang = 'sk' %}
+{% set templateTitle = ("Default " + componentName if exampleName == "default" else componentName + " " + componentFixture.name) | unslugify %}
 
 {% block pageTitle %}{{ templateTitle }} - GOV.UK Frontend{% endblock %}
 
