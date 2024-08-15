@@ -291,7 +291,7 @@ export class Header extends GOVUKFrontendComponent {
    */
   clickOutsideClose(openedElem, className) {
     document.addEventListener('click', (event) => {
-      if (!openedElem.contains(event.target)) {
+      if (event.target instanceof Node && !openedElem.contains(event.target)) {
         openedElem.classList.remove(className.toString())
       }
     })
