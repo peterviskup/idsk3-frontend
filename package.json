@@ -12,7 +12,7 @@
     "packages/idsk-frontend",
     "packages/idsk-frontend-review",
     "shared/*",
-    "docs/examples/*"
+    "docs/examples/webpack/*"
   ],
   "scripts": {
     "postinstall": "npm ls --depth=0",
