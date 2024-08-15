@@ -269,9 +269,9 @@
     color: rgba(govuk-colour("white"), 0.99);
   }
 
-  &:focus {
-    color: $govuk-focus-text-colour;
-  }
+  // &:focus {
+  //   color: $govuk-focus-text-colour;
+  // }
 }
 
 /// Default link styles, without a visited state

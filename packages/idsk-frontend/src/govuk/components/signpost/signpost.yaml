@@ -46,7 +46,7 @@ examples:
   - name: with icon
     options:
       icon: |
-        <span class="material-icons">home</span>
+        <span class="material-icons" aria-hidden="true">home</span>
       asLink: true
   - name: with picture
     options:
@@ -55,13 +55,13 @@ examples:
   - name: horizontal
     options:
       icon: |
-        <span class="material-icons">home</span>
+        <span class="material-icons" aria-hidden="true">home</span>
       layout: 'horizontal'
       asLink: true
   - name: horizontal with arrow
     options:
       icon: |
-        <span class="material-icons">home</span>
+        <span class="material-icons" aria-hidden="true">home</span>
       layout: 'horizontal'
       withArrow: true
       asLink: true
