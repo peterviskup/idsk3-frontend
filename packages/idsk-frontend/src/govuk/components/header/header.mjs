@@ -12,12 +12,20 @@ export class Header extends GOVUKFrontendComponent {
   $module
 
   /** @private */
-  /** @type {HTMLElement} */
+  /** @type {HTMLElement | undefined} */
   $menuButton
 
   /** @private */
-  /** @type {HTMLElement} */
+  /** @type {HTMLElement | undefined} */
   $menu
+
+  /** @private */
+  /** @type {HTMLElement | undefined} */
+  $dropdownToggle
+
+  /** @private */
+  /** @type {HTMLElement | undefined} */
+  $header
 
   /**
    * Save the opened/closed state for the nav in memory so that we can
@@ -57,8 +65,11 @@ export class Header extends GOVUKFrontendComponent {
 
     this.$module = $module
     const $menuButton = $module.querySelector('.govuk-js-header-toggle')
-    /** @type {HTMLElement} */ this.header =
-      document.querySelector('.govuk-header')
+
+    const header = document.querySelector('.govuk-header')
+    if (header instanceof HTMLElement) {
+      this.$header = header
+    }
 
     // Headers don't necessarily have a navigation. When they don't, the menu
     // toggle won't be rendered by our macro (or may be omitted when writing
@@ -82,50 +93,46 @@ export class Header extends GOVUKFrontendComponent {
     const websitesNavBtn = $module.querySelector(
       '.idsk-secondary-navigation__heading-button'
     )
-    this.websitesNavBody = websitesNavBody
-    this.websitesNavBtn = websitesNavBtn
 
-    this.websitesNavBtn.addEventListener('click', () => {
-      this.websitesNavBody.classList.toggle('hidden')
-      this.websitesNavBtn
-        .querySelector('.material-icons')
-        .classList.toggle('rotate180')
-    })
+    if (
+      websitesNavBody instanceof HTMLElement &&
+      websitesNavBtn instanceof HTMLElement
+    ) {
+      websitesNavBtn.addEventListener('click', () => {
+        const menuIsOpen = !(websitesNavBtn.ariaExpanded === 'true')
+        const iconClassList =
+          websitesNavBtn.querySelector('.material-icons')?.classList
+        if (menuIsOpen) {
+          websitesNavBody.classList.remove('hidden')
+          iconClassList?.add('rotate180')
+          websitesNavBtn.ariaExpanded = 'true'
+        } else {
+          websitesNavBody.classList.add('hidden')
+          iconClassList?.remove('rotate180')
+          websitesNavBtn.ariaExpanded = 'false'
+        }
+      })
+    }
 
-    // Get language elems to open or close language list
-    this.langDiv = $module.querySelector('.idsk-secondary-navigation__dropdown')
-    this.handleLangClick()
-
-    let $menu
-    const $menus = document.querySelectorAll(`#${menuId}`)
-    $menus.forEach((menu) => {
-      if (menu.classList.contains('desktop-hidden')) {
-        $menu = menu
-      } else {
-        $menu = menu
-      }
-    })
-
-    this.$menu = $menu
-    this.$menuButton = $menuButton
+    const menu = document.querySelector(`#${menuId}`)
+    if (menu instanceof HTMLElement) {
+      this.$menu = menu
+    }
+    if ($menuButton instanceof HTMLElement) {
+      this.$menuButton = $menuButton
+      this.$menuButton.addEventListener('click', () => {
+        this.handleMenuButtonClick()
+      })
+    }
 
     this.setupResponsiveChecks()
 
-    this.$menuButton.addEventListener('click', () => {
-      this.handleMenuButtonClick()
-    })
-
     // Get dropdown menu and toggle. Then function for show or hide dropdown
     const dropdownToggle = $module.querySelector('.dropdown-toggle')
-    this.dropdownToggle = dropdownToggle
-    if (!dropdownToggle) {
-      throw new ElementError({
-        componentName: 'Dropdown toggle menu',
-        element: dropdownToggle,
-        identifier: 'Submenu dropdown'
-      })
+    if (dropdownToggle instanceof HTMLElement) {
+      this.$dropdownToggle = dropdownToggle
+      this.openCloseDropdownMenu()
     }
-    this.openCloseDropdownMenu()
   }
 
   /**
@@ -170,58 +177,63 @@ export class Header extends GOVUKFrontendComponent {
    * @private
    */
   checkMode() {
+    if (this.mql == null || !this.$header) {
+      return
+    }
+
     if (this.mql.matches) {
-      this.$menu.removeAttribute('hidden')
-      this.$menuButton.setAttribute('hidden', '')
+      // desktop mode
+      this.$menu?.removeAttribute('hidden')
+      this.$menuButton?.setAttribute('hidden', '')
+      this.$header // hide logo
+        .querySelector('.govuk-header__link--homepage')
+        ?.removeAttribute('hidden')
+      this.$header
+        .querySelector('.idsk-searchbar__wrapper')
+        ?.classList.remove('hide')
     } else {
-      this.$menuButton.removeAttribute('hidden')
-      this.$menuButton.setAttribute('aria-expanded', this.menuIsOpen.toString())
+      // mobile
+      this.$menuButton?.removeAttribute('hidden')
+      this.$menuButton?.setAttribute(
+        'aria-expanded',
+        this.menuIsOpen.toString()
+      )
+
+      if (!this.$menu) {
+        return
+      }
+
+      this.$menu.removeAttribute('hidden')
+      if (this.$menuButton) {
+        this.$menuButton.textContent = this.menuIsOpen ? 'Zatvoriť' : 'Menu'
+        this.createMaterialIcon('close', this.$menuButton)
+      }
 
       if (this.menuIsOpen) {
         this.$menu.removeAttribute('hidden')
-        this.$menuButton.textContent = 'Zavrieť'
-        this.createMaterialIcon(
-          'close',
-          /** @type {HTMLElement} */ (this.$menuButton)
-        )
-        this.header.style.background = '#fafafa'
-        this.header
-          .querySelector('.govuk-header__actionPanel.mobile-hidden')
+        // this.$header.style.background = '#fafafa'
+        this.$header // show actionPanel
+          .querySelector('.govuk-header__actionPanel.mobile')
           ?.classList.remove('mobile-hidden')
-        this.header
+        this.$header // hide hide logo
           .querySelector('.govuk-header__link--homepage')
           ?.setAttribute('hidden', '')
-        this.header
-          .querySelector('.govuk-header__actionPanel.desktop-hidden')
-          .classList.remove('hide')
+        console.log(this.$header.querySelector('.idsk-searchbar__wrapper'))
+        this.$header
+          .querySelector('.idsk-searchbar__wrapper')
+          ?.classList.remove('hide')
       } else {
         this.$menu.setAttribute('hidden', '')
-        this.$menuButton.textContent = 'Menu'
-        this.createMaterialIcon(
-          'menu',
-          /** @type {HTMLElement} */ (this.$menuButton)
-        )
-        this.header.style.background = '#fff'
-        this.header
-          .querySelector('.govuk-header__actionPanel')
+        // this.$header.style.background = '#fff'
+        this.$header // hide action panel
+          .querySelector('.govuk-header__actionPanel.mobile')
           ?.classList.add('mobile-hidden')
-        this.header
+        this.$header // show logo
           .querySelector('.govuk-header__link--homepage')
           ?.removeAttribute('hidden')
-        this.header
+        this.$header
           .querySelector('.idsk-searchbar__wrapper')
-          .classList.add('hide')
-
-        this.header
-          .querySelector('.material-icons.search')
-          .addEventListener('click', () => {
-            this.header
-              .querySelector('.govuk-header__actionPanel.desktop-hidden')
-              .classList.add('hide')
-            this.header
-              .querySelector('.idsk-searchbar__wrapper')
-              .classList.remove('hide')
-          })
+          ?.classList.add('hide')
       }
     }
   }
@@ -240,27 +252,21 @@ export class Header extends GOVUKFrontendComponent {
   }
 
   /**
-   * Toggle for open and close lang dropdown
-   */
-  handleLangClick() {
-    this.langDiv.addEventListener('click', () => {
-      this.langDiv.classList.toggle('open')
-      this.clickOutsideClose(this.langDiv, 'open')
-    })
-  }
-
-  /**
    * Toggle dropdown menu
    */
   openCloseDropdownMenu() {
-    this.dropdownToggle.addEventListener('click', (event) => {
-      if (this.dropdownToggle) {
+    if (!this.$dropdownToggle) {
+      return
+    }
+
+    this.$dropdownToggle.addEventListener('click', (event) => {
+      if (this.$dropdownToggle) {
         event.preventDefault()
-        this.dropdownToggle.classList.toggle('open')
+        this.$dropdownToggle.classList.toggle('open')
       }
     })
 
-    this.clickOutsideClose(this.dropdownToggle, 'open')
+    this.clickOutsideClose(this.$dropdownToggle, 'open')
   }
 
   /**
@@ -273,6 +279,7 @@ export class Header extends GOVUKFrontendComponent {
     const spanIcon = document.createElement('span')
     spanIcon.className = 'material-icons'
     spanIcon.textContent = iconName.toString()
+    spanIcon.ariaHidden = 'true'
     parentElem.appendChild(spanIcon)
   }
 
@@ -284,7 +291,7 @@ export class Header extends GOVUKFrontendComponent {
    */
   clickOutsideClose(openedElem, className) {
     document.addEventListener('click', (event) => {
-      if (!openedElem.contains(event.target)) {
+      if (event.target instanceof Node && !openedElem.contains(event.target)) {
         openedElem.classList.remove(className.toString())
       }
     })

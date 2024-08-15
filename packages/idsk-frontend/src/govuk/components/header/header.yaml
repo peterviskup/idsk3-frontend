@@ -44,36 +44,6 @@ params:
         required: false
         description: On or Off red warning circle
 
-  - name: profileNavig
-    type: array
-    required: false
-    description: Can be used to add navigation to the header component.
-    params:
-      - name: text
-        type: string
-        required: true
-        description: Text for the navigation item. If `html` is provided, the `text` option will be ignored.
-      - name: html
-        type: string
-        required: true
-        description: HTML for the navigation item. If `html` is provided, the `text` option will be ignored.
-      - name: href
-        type: string
-        required: false
-        description: URL of the navigation item anchor.
-      - name: active
-        type: boolean
-        required: false
-        description: Flag to mark the navigation item as active or not.
-      - name: attributes
-        type: object
-        required: false
-        description: HTML attributes (for example data attributes) to add to the navigation item anchor.
-      - name: warning
-        type: string
-        required: false
-        description: On or Off red warning circle
-
   - name: dropdown
     type: boolean
     required: false
@@ -144,83 +114,83 @@ examples:
   #    description: The standard header as used on information pages
   #    options: {}
 
-  - name: user not logged (without navigation)
+  - name: neprihlásený používateľ (bez navigácie)
     options:
       #      useTudorCrown: false
       actionPanel: false
       navigation: {}
 
-  - name: user login (without navigation)
+  - name: prihlásený používateľ (bez navigácie)
     options:
       #      useTudorCrown: false
       actionPanel: true
       navigation: {}
 
-  - name: user not logged (with navigation)
+  - name: neprihlásený používateľ (s navigáciou)
     options:
       #      useTudorCrown: false
       actionPanel: false
       navigation:
         - href: '#1'
-          text: Section 1
+          text: Sekcia 1
           active: true
         - href: '#2'
-          text: Section 2
+          text: Sekcia 2
         - href: '#3'
-          text: Section 3
+          text: Sekcia 3
         - href: '#4'
-          text: Section 4
+          text: Sekcia 4
         - href: '#5'
           text: Sekcia 5
       dropdown: true
 
-  - name: user login (with navigation)
+  - name: prihlásený používateľ (s navigáciou)
     options:
       #      useTudorCrown: false
       actionPanel: true
       navigation:
         - href: '#1'
-          text: Section 1
+          text: Sekcia 1
           active: true
         - href: '#2'
-          text: Section 2
+          text: Sekcia 2
         - href: '#3'
-          text: Section 3
+          text: Sekcia 3
         - href: '#4'
-          text: Section 4
+          text: Sekcia 4
         - href: '#5'
           text: Sekcia 5
-      profileNavig:
-        - href: '#1'
-          text: Profile 1
-          active: true
-        - href: '#2'
-          text: Profile 2
-        - href: '#3'
-          text: Profile 3
-        - href: '#4'
-          text: Profile 4
       dropdown: true
 
-  - name: with navigation in header
+  - name: prihlásený s navigáciou v hlavičke
     options:
       navbarHeader: true
       actionPanel: true
       navigation:
         - href: '#1'
-          text: Section 1
+          text: Sekcia 1
+          count: 10
+          type: Otvorených úloh
           active: true
         - href: '#2'
-          text: Section 2
+          text: Sekcia 2
+          count: 20
+          type: Neprečítaných správ
         - href: '#3'
-          text: Section 3
+          text: Sekcia 3
+          count: 15
+          type: Nevyžiadaných Správ
         - href: '#4'
-          text: Section 4
+          text: Sekcia 4
+          count: 78
+          type: Zverejnených položiek
         - href: '#5'
           text: Sekcia 5
-      dropdown: true
+          count: 67
+          type: Ukončených úloh
+      dropdown: false
 
-  - name: without navigation in header
+  - name: bez navigácie v hlavičke
     options:
       navbarHeader: true
       actionPanel: true

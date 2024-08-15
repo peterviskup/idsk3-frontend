@@ -40,14 +40,14 @@
   {% if not params.enableJs %}
     <label for="fileInput" class="upload-box" aria-label="File upload box">
       <div class="upload-icon" aria-hidden="true">
-        <span class="material-icons">cloud_upload</span>
+        <span class="material-icons" aria-hidden="true">cloud_upload</span>
       </div>
       <div class="upload-text" id="uploadInstructions">
         <p class="govuk-body"><b>Zvoľte súbor a nahrajte ho</b></p>
         <p class="govuk-body">alebo preneste zvolenú prílohu sem (max. veľkosť 50MB)</p>
       </div>
       <button class="govuk-button govuk-button__basic upload-button" aria-label="Add attachment" {% if params.disabled %} disabled {% endif %}>
-        <span class="material-icons">add</span>
+        <span class="material-icons" aria-hidden="true">add</span>
         <span>Pridať prílohu</span>
       </button>
     </label>

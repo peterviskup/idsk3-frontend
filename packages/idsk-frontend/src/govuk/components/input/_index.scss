@@ -22,8 +22,7 @@
     appearance: none;
 
     &:focus {
-      outline: govuk-colour("orange") solid 3px;
-      outline-offset: 2px;
+      @include govuk-focused-text;
     }
 
     &:disabled {
