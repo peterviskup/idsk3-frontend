@@ -15,10 +15,17 @@
             <div class="idsk-secondary-navigation__heading-title">
               <span class="idsk-secondary-navigation__heading-mobile">SK</span>
               <span class="idsk-secondary-navigation__heading-desktop">Oficiálna stránka</span>
+              {#
               <button class="idsk-secondary-navigation__heading-button" aria-expanded="false" aria-label="Oficiálna stránka verejnej správy">
                 <span class="idsk-secondary-navigation__heading-mobile">e-Gov</span>
                 <span class="idsk-secondary-navigation__heading-desktop"><b>verejnej správy</b></span>
                 <span class="material-icons idsk-secondary-navigation__heading-button-icon">arrow_drop_down</span>
+              </button>
+              #}
+              <button class="govuk-button govuk-button--texted--inverse idsk-secondary-navigation__heading-button" aria-expanded="false" aria-label="Oficiálna stránka verejnej správy">
+                <span class="idsk-secondary-navigation__heading-mobile">e-Gov</span>
+                <span class="idsk-secondary-navigation__heading-desktop"><b>verejnej správy</b></span>
+                <span class="material-icons">arrow_drop_down</span>
               </button>
             </div>
             <div class="idsk-secondary-navigation__body hidden" data-testid="secnav-children">
@@ -36,6 +43,7 @@
           </div>
           {{ govukDropdown({
             classes: 'idsk-secondary-navigation__dropdown',
+            btnClasses: 'govuk-button--texted--inverse',
             selected: 'slovenčina',
             attributes: { "data-pseudolabel": "jazykové menu" },
             items: [

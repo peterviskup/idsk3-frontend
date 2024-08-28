@@ -134,6 +134,7 @@ params:
     required: false
     description: change input and head size to small
 
+title: Vstupné pole
 examples:
   - name: default
     options:

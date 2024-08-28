@@ -32,6 +32,7 @@ params:
     required: false
     description: Add arrow icon to the horizontal signpost
 
+title: ???Nadpis???
 examples:
   - name: default
     options:

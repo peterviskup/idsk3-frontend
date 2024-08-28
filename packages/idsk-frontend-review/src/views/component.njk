@@ -17,15 +17,15 @@
   {{ govukBreadcrumbs({
     items: [
       {
-        text: "GOV.UK Frontend",
+        text: "ID-SK",
         href: "/"
       },
       {
-        text: "All components",
+        text: "Všetky komponenty",
         href: "/components"
       },
       {
-        text: componentName | unslugify
+        text: componentTitle
       }
     ]
   }) }}
@@ -36,6 +36,8 @@
     <h1 class="govuk-heading-xl">
       {% block componentName %}
         {{ componentName | unslugify }}
+        -
+        {{ componentTitle }}
       {% endblock %}
     </h1>
   </div>

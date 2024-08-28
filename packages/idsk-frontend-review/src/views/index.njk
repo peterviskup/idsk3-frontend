@@ -6,15 +6,15 @@
 
 {% block content %}
   <h1 class="govuk-heading-xl">
-    IDSK Frontend
+    IDSK
   </h1>
 
   <div class="govuk-grid-row">
 
     <div class="govuk-grid-column-one-third-from-desktop">
-      <h2 class="govuk-heading-l">Components</h2>
-      <h3 class="govuk-heading-m govuk-!-margin-bottom-2">All components</h3>
-      <p class="govuk-body"><a href="/components" class="govuk-link govuk-link--muted">View all components</a></p>
+      <h2 class="govuk-heading-l">Komponenty</h2>
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Všetky komponenty</h3>
+      <p class="govuk-body"><a href="/components" class="govuk-link govuk-link--muted">Zobraz všetky komponenty</a></p>
 
       <div class="govuk-grid-row govuk-!-margin-bottom-8">
 
@@ -22,7 +22,11 @@
         <div class="govuk-grid-column-one-half govuk-grid-column-full-from-desktop">
           <ul class="govuk-list govuk-!-margin-bottom-0">
           {% for componentName in componentNamesSlice %}
-            <li><a href="/components/{{ componentName }}" class="govuk-link">{{ componentName | unslugify }}</a></li>
+            <li>
+              <a href="/components/{{ componentName }}" class="govuk-link">
+                <span lang="en">{{ componentName | unslugify }}</span> {{ " - " + componentTitles[componentName] if componentTitles[componentName] else "" }}
+              </a>
+            </li>
           {% endfor %}
           </ul>
         </div>
@@ -33,13 +37,13 @@
     </div>
 
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      <h2 class="govuk-heading-l">Examples</h2>
+      <h2 class="govuk-heading-l">Vzory</h2>
 
       <div class="govuk-grid-row">
 
         <div class="govuk-grid-column-one-half">
-          <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Full page examples</h2>
-          <p class="govuk-body"><a href="/full-page-examples" class="govuk-link govuk-link--muted">View all full page examples</a></p>
+          <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Všetky vzory</h2>
+          <p class="govuk-body"><a href="/full-page-examples" class="govuk-link govuk-link--muted">Zobraz všetky vzory</a></p>
 
           <ul class="govuk-list govuk-!-margin-bottom-4">
           {% for example in fullPageExamples | rejectattr("hasPageConfirm") %}
@@ -55,7 +59,7 @@
         </div>
 
         <div class="govuk-grid-column-one-half">
-          <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Other examples</h3>
+          <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Ďalšie príklady</h3>
 
           <ul class="govuk-list govuk-!-margin-bottom-8">
           {% for exampleName in exampleNames | sort %}

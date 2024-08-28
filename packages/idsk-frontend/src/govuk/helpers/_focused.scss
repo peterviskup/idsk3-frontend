@@ -15,9 +15,10 @@
   // transparent outline which will be set to a visible colour.
 
   z-index: 1;
+  border-radius: 5px;
   outline: $govuk-focus-width solid $govuk-focus-colour;
   outline-offset: 2px;
-  color: $govuk-focus-text-colour;
+  // color: $govuk-focus-text-colour;
   // background-color: $govuk-focus-colour;
   // box-shadow:
   //   0 -2px $govuk-focus-colour,

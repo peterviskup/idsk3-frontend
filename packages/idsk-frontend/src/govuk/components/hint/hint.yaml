@@ -34,6 +34,7 @@ accessibilityCriteria: |
   When used with a group of multiple inputs, the hint SHOULD NOT:
   - be announced every time for each individual input
 
+title: Nápoveda
 examples:
   - name: default
     options:

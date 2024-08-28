@@ -3,8 +3,8 @@
 <div class="">
   <div data-module="govuk-dropdown" class="idsk-dropdown__wrapper {%- if params.classes %} {{ params.classes }}{% endif %}"
     {{- govukAttributes(params.attributes) }}>
-    <button class="idsk-button idsk-dropdown" type="button" aria-label="Rozbaliť {{ params.attributes['data-pseudolabel'] }}" aria-haspopup="listbox">
-      <span class="idsk-button__text">{% if params.selected %}{{params.selected}}{% else %}slovenčina{% endif %}</span>
+    <button class="govuk-button {{ params.btnClasses }} idsk-dropdown" aria-label="Rozbaliť {{ params.attributes['data-pseudolabel'] }}" aria-haspopup="listbox">
+      <span>{% if params.selected %}{{params.selected}}{% else %}slovenčina{% endif %}</span>
       <span class="material-icons" aria-hidden="true">arrow_drop_down</span>
     </button>
     <ul id="undefined-dropdown" class="idsk-dropdown__options idsk-dropdown__options--down" data-testid="dropdown-options">
@@ -19,9 +19,6 @@
       {% else %}
         <li class="idsk-dropdown__option idsk-pseudolabel__wrapper" data-pseudolabel="english">
           <a href="#" lang="en">english</a>
-        </li>
-        <li class="idsk-dropdown__option idsk-pseudolabel__wrapper" data-pseudolabel="український">
-          <a href="#" lang="uk">український</a>
         </li>
       {% endif %}
     </ul>

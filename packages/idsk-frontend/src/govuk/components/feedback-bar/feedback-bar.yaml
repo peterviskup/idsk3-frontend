@@ -12,6 +12,7 @@ params:
     required: true
     description: Label for the feedback bar
 
+title: Lišta spätnej väzby
 examples:
   - name: with button
     options:

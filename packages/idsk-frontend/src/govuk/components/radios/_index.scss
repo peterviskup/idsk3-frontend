@@ -103,6 +103,10 @@
     margin-bottom: 0;
   }
 
+  .govuk-radios__input:hover:not(:disabled) + .govuk-radios__label::before {
+    box-shadow: 0 0 0 $govuk-hover-width $govuk-hover-colour;
+  }
+
   // Focused state
   .govuk-radios__input:focus + .govuk-radios__label::before {
     border-width: 2px;
@@ -111,16 +115,17 @@
     // which means the focus state is less obvious. By adding a transparent
     // outline, which becomes solid (text-coloured) in that context, we ensure
     // the focus remains clearly visible.
-    outline: $govuk-focus-width solid transparent;
-    outline-offset: 1px;
+    // outline: $govuk-focus-width solid transparent;
+    // outline-offset: 1px;
+    outline: $govuk-focus-width solid $govuk-focus-colour;
+    outline-offset: 2px;
+    // box-shadow: 0 0 0 $govuk-radios-focus-width govuk-colour("greyN500");
 
     // When in an explicit forced-color mode, we can use the Highlight system
     // color for the outline to better match focus states of native controls
     @media screen and (forced-colors: active), (-ms-high-contrast: active) {
       outline-color: Highlight;
     }
-
-    box-shadow: 0 0 0 $govuk-radios-focus-width govuk-colour("greyN500");
   }
 
   // Selected state
@@ -222,6 +227,8 @@
     }
 
     .govuk-radios__label {
+      // max-width: calc(100% - #{($govuk-radios-label-padding-left-right)});
+      max-width: calc(100% - #{($govuk-touch-target-size + govuk-spacing(1) + 1px)});
       // Create a tiny space between the small radio hover state so that it
       // doesn't clash with the label
       padding-left: 1px;
@@ -286,24 +293,24 @@
       // Apply an outline for those modes to use instead.
       outline: $govuk-radios-focus-width dashed transparent;
       outline-offset: 1px;
-      box-shadow: 0 0 0 $govuk-hover-width $govuk-hover-colour;
+      box-shadow: 0 0 0 calc($govuk-hover-width / 4 * 3) $govuk-hover-colour;
     }
 
-    // Because we've overridden the border-shadow provided by the focus state,
-    // we need to redefine that too.
-    //
-    // We use two box shadows, one that restores the original focus state [1]
-    // and another that then applies the hover state [2].
-    .govuk-radios__item:hover .govuk-radios__input:focus + .govuk-radios__label::before {
-      // Set different HCM colour when we have both hover/focus applied at once
-      @media screen and (forced-colors: active), (-ms-high-contrast: active) {
-        outline-color: Highlight;
-      }
-      // prettier-ignore
-      box-shadow:
-        0 0 0 $govuk-radios-focus-width $govuk-focus-colour // 1,
-        0 0 0 $govuk-hover-width $govuk-hover-colour; // 2
-    }
+    // // Because we've overridden the border-shadow provided by the focus state,
+    // // we need to redefine that too.
+    // //
+    // // We use two box shadows, one that restores the original focus state [1]
+    // // and another that then applies the hover state [2].
+    // .govuk-radios__item:hover .govuk-radios__input:focus + .govuk-radios__label::before {
+    //   // Set different HCM colour when we have both hover/focus applied at once
+    //   @media screen and (forced-colors: active), (-ms-high-contrast: active) {
+    //     outline-color: Highlight;
+    //   }
+    //   // prettier-ignore
+    //   box-shadow:
+    //     0 0 0 $govuk-radios-focus-width $govuk-focus-colour // 1,
+    //     0 0 0 $govuk-hover-width $govuk-hover-colour; // 2
+    // }
 
     // For devices that explicitly don't support hover, don't provide a hover
     // state (e.g. on touch devices like iOS).

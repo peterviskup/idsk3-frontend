@@ -109,10 +109,11 @@ accessibilityCriteria: |
   Landmarks and Roles in the Header should:
   - have a role of `"banner"` at the root of the component (<header>) (https://www.w3.org/TR/wai-aria-1.1/#banner)
 
+title: Hlavička
 examples:
-  #  - name: default
-  #    description: The standard header as used on information pages
-  #    options: {}
+  - name: default
+    description: The standard header as used on information pages
+    options: {}
 
   - name: neprihlásený používateľ (bez navigácie)
     options:

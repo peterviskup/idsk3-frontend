@@ -545,34 +545,40 @@
       margin-left: auto;
       color: govuk-colour("white");
       justify-content: space-between;
+      letter-spacing: 0.5px;
     }
 
     .idsk-secondary-navigation__heading-title {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
       padding-top: 0.4rem;
     }
 
     .idsk-secondary-navigation__heading-button {
-      span > :not(.material-icons) {
-        &:hover {
-          text-decoration: underline;
-        }
-      }
+      // span > :not(.material-icons) {
+      //   &:hover {
+      //     text-decoration: underline;
+      //   }
+      // }
 
-      &:focus {
-        @include govuk-focused-text;
-        outline-color: govuk-colour("white");
-        color: govuk-colour("white");
-      }
+      // &:focus {
+      //   @include govuk-focused-text;
+      //   outline-color: govuk-colour("white");
+      //   color: govuk-colour("white");
+      // }
 
       display: inline-flex;
       border: none;
+      margin: 0 0 0 5px;
+      padding: 0 0 0 2px;
       color: govuk-colour("white");
       background: none;
-      font-size: 16px;
-      letter-spacing: 0.5px;
       cursor: pointer;
       align-items: center;
+
+      & > *:not(.material-icons) {
+        letter-spacing: 0.5px;
+      }
     }
 
     .idsk-secondary-navigation__text {

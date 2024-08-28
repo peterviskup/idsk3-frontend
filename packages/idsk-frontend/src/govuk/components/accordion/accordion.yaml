@@ -96,6 +96,7 @@ params:
         required: false
         description: Sets whether the section should be expanded when the page loads for the first time. Defaults to `false`.
 
+title: Akordeón
 examples:
   - name: default
     options:

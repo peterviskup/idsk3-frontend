@@ -79,7 +79,7 @@ $govuk-inverse-button-text-colour: $govuk-brand-colour !default;
     text-align: center;
     vertical-align: top;
     cursor: pointer;
-    -webkit-appearance: none;
+    appearance: none;
 
     @include govuk-media-query($from: tablet) {
       width: auto;
@@ -99,8 +99,8 @@ $govuk-inverse-button-text-colour: $govuk-brand-colour !default;
       border: 0;
     }
 
-    &:hover {
-      box-shadow: 0 0 0 2px #000000;
+    &:not([disabled]):hover {
+      outline: govuk-colour("dark-blue") solid 3px;
     }
 
     // &:active {
@@ -296,6 +296,36 @@ $govuk-inverse-button-text-colour: $govuk-brand-colour !default;
         &:hover {
           color: govuk-colour("dark-blue");
         }
+      }
+    }
+
+    &--texted--inverse {
+      border: none;
+      color: govuk-colour("white");
+      background-color: transparent;
+      letter-spacing: inherit;
+
+      & > *:not(.material-icons) {
+        text-decoration: underline;
+      }
+
+      &:not([disabled]):hover {
+        outline-color: govuk-colour("white");
+        background-color: transparent;
+        box-shadow: none;
+
+        // & > *:not(.material-icons) {
+        //   text-decoration: none;
+        // }
+      }
+
+      &:focus-visible {
+        @include govuk-focused-text;
+        outline-color: govuk-colour("white");
+
+        // & > *:not(.material-icons) {
+        //   text-decoration: none;
+        // }
       }
     }
 

@@ -52,6 +52,7 @@ params:
     required: false
     description: The HTML attributes that you want to add to the notification banner, for example, data attributes.
 
+title: Oznamovací baner
 examples:
   - name: default
     options:

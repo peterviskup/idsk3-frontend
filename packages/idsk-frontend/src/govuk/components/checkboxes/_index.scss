@@ -103,6 +103,10 @@
     margin-bottom: 0;
   }
 
+  .govuk-checkboxes__input:hover:not(:disabled) + .govuk-checkboxes__label::before {
+    box-shadow: 0 0 0 $govuk-hover-width $govuk-hover-colour;
+  }
+
   // Focused state
   .govuk-checkboxes__input:focus + .govuk-checkboxes__label::before {
     border-width: 2px;
@@ -112,10 +116,9 @@
     // which means the focus state is less obvious. By adding a transparent
     // outline, which becomes solid (text-coloured) in that context, we ensure
     // the focus remains clearly visible.
-    outline: $govuk-focus-width solid transparent;
-    outline-offset: 1px;
-
-    box-shadow: 0 0 0 $govuk-focus-width govuk-colour("mid-grey");
+    outline: $govuk-focus-width solid $govuk-focus-colour;
+    outline-offset: 2px;
+    // box-shadow: 0 0 0 $govuk-focus-width govuk-colour("mid-grey");
 
     // When in an explicit forced-color mode, we can use the Highlight system
     // color for the outline to better match focus states of native controls
@@ -266,25 +269,24 @@
     .govuk-checkboxes__item:hover .govuk-checkboxes__input:not(:disabled) + .govuk-checkboxes__label::before {
       // Forced colours modes tend to ignore box-shadow.
       // Apply an outline for those modes to use instead.
-      outline: $govuk-focus-width dashed transparent;
-      outline-offset: 1px;
+      box-shadow: 0 0 0 calc($govuk-hover-width / 4 * 3) $govuk-hover-colour;
     }
 
-    // Because we've overridden the border-shadow provided by the focus state,
-    // we need to redefine that too.
-    //
-    // We use two box shadows, one that restores the original focus state [1]
-    // and another that then applies the hover state [2].
-    .govuk-checkboxes__item:hover .govuk-checkboxes__input:focus + .govuk-checkboxes__label::before {
-      // Set different HCM colour when we have both hover/focus applied at once
-      @media screen and (forced-colors: active), (-ms-high-contrast: active) {
-        outline-color: Highlight;
-      }
-      // prettier-ignore
-      // box-shadow:
-      //  0 0 0 $govuk-focus-width $govuk-focus-colour, // 1
-      //  0 0 0 $govuk-hover-width $govuk-hover-colour; // 2
-    }
+    // // Because we've overridden the border-shadow provided by the focus state,
+    // // we need to redefine that too.
+    // //
+    // // We use two box shadows, one that restores the original focus state [1]
+    // // and another that then applies the hover state [2].
+    // .govuk-checkboxes__item:hover .govuk-checkboxes__input:focus + .govuk-checkboxes__label::before {
+    //   // Set different HCM colour when we have both hover/focus applied at once
+    //   @media screen and (forced-colors: active), (-ms-high-contrast: active) {
+    //     outline-color: Highlight;
+    //   }
+    //   // prettier-ignore
+    //   // box-shadow:
+    //   //  0 0 0 $govuk-focus-width $govuk-focus-colour, // 1
+    //   //  0 0 0 $govuk-hover-width $govuk-hover-colour; // 2
+    // }
 
     // For devices that explicitly don't support hover, don't provide a hover
     // state (e.g. on touch devices like iOS).
