@@ -299,6 +299,7 @@ module.exports = {
  * @property {ComponentExample[]} [examples] - Component examples with Nunjucks macro options (or params)
  * @property {string} [previewLayout] - Nunjucks layout for component preview
  * @property {string} [accessibilityCriteria] - Accessibility criteria
+ * @property {string} title - component title name
  */
 
 /**
@@ -364,4 +365,5 @@ module.exports = {
  * @property {string} component - Component name
  * @property {ComponentFixture[]} fixtures - Component fixtures with Nunjucks macro options (or params)
  * @property {string} [previewLayout] - Nunjucks layout for component preview
+ * @property {string} title - component title name
  */

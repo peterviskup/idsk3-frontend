@@ -86,6 +86,7 @@ params:
     required: false
     description: HTML attributes (for example data attributes) to add to the table container.
 
+title: Tabuľka
 examples:
   - name: default
     options:

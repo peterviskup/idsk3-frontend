@@ -199,18 +199,20 @@ export class Header extends GOVUKFrontendComponent {
         this.menuIsOpen.toString()
       )
 
+      /*
       if (!this.$menu) {
         return
       }
+        */
 
-      this.$menu.removeAttribute('hidden')
+      this.$menu?.removeAttribute('hidden')
       if (this.$menuButton) {
         this.$menuButton.textContent = this.menuIsOpen ? 'Zatvoriť' : 'Menu'
         this.createMaterialIcon('close', this.$menuButton)
       }
 
       if (this.menuIsOpen) {
-        this.$menu.removeAttribute('hidden')
+        this.$menu?.removeAttribute('hidden')
         // this.$header.style.background = '#fafafa'
         this.$header // show actionPanel
           .querySelector('.govuk-header__actionPanel.mobile')
@@ -223,7 +225,7 @@ export class Header extends GOVUKFrontendComponent {
           .querySelector('.idsk-searchbar__wrapper')
           ?.classList.remove('hide')
       } else {
-        this.$menu.setAttribute('hidden', '')
+        this.$menu?.setAttribute('hidden', '')
         // this.$header.style.background = '#fff'
         this.$header // hide action panel
           .querySelector('.govuk-header__actionPanel.mobile')

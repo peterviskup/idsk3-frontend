@@ -52,6 +52,7 @@ params:
     required: false
     description: The ID of the button.
 
+title: Tlačidlo
 examples:
   - name: default
     options:

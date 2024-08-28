@@ -36,6 +36,7 @@ params:
     required: false
     description: HTML attributes (for example data attributes) to add to the `<details>` element.
 
+title: Detaily
 examples:
   - name: default
     options:

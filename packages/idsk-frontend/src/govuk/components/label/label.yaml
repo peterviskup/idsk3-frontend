@@ -28,6 +28,7 @@ params:
     required: false
     description: HTML attributes (for example data attributes) to add to the label tag.
 
+title: Štítok
 examples:
   - name: default
     options:

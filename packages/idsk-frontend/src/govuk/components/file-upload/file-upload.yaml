@@ -107,6 +107,7 @@ params:
     required: false
     description: show error
 
+title: Nahratie súboru
 examples:
   - name: default
     options:
