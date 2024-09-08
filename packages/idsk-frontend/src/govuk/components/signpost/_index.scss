@@ -67,6 +67,10 @@
       color: govuk-colour("blue");
       text-decoration: underline;
     }
+
+    &:focus {
+      @include govuk-focused-text;
+    }
   }
 
   .govuk-signpost__description {

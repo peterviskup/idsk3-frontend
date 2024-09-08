@@ -99,17 +99,18 @@
     border-radius: 5px;
 
     &:hover {
-      font-weight: bold;
-      text-decoration-thickness: 1px;
+      // font-weight: bold;
+      text-decoration-thickness: 3px;
     }
 
     &:focus {
-      outline: none;
-      background-color: govuk-colour("light-blue");
-      box-shadow: none;
-      font-weight: bold;
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
+      @include govuk-focused-text;
+      // outline: none;
+      // background-color: govuk-colour("light-blue");
+      // box-shadow: none;
+      // font-weight: bold;
+      // text-decoration: underline;
+      // text-decoration-thickness: 1px;
     }
   }
 

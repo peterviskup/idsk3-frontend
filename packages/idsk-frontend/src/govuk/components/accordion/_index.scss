@@ -108,7 +108,7 @@
       background: none;
 
       cursor: pointer;
-      -webkit-appearance: none;
+      appearance: none;
 
       @include govuk-media-query($from: tablet) {
         margin-bottom: 14px;
@@ -209,15 +209,23 @@
       // Section headers have a pointer cursor as an additional affordance
       cursor: pointer;
       justify-content: space-between;
-      -webkit-appearance: none;
+      appearance: none;
 
       @include govuk-media-query($from: tablet) {
-        padding-bottom: govuk-spacing(2);
+        margin-bottom: govuk-spacing(2);
       }
 
       &:active {
         color: $govuk-link-active-colour;
         background: none;
+      }
+
+      &:hover {
+        text-decoration-thickness: 3px;
+      }
+
+      &:focus {
+        @include govuk-focused-text;
       }
 
       // Remove default button focus outline in Firefox

@@ -32,7 +32,7 @@ params:
     required: false
     description: Add arrow icon to the horizontal signpost
 
-title: ???Nadpis???
+title: Rázcestník
 examples:
   - name: default
     options:

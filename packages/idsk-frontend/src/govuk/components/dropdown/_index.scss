@@ -152,6 +152,10 @@
           &:hover {
             background-color: govuk-colour("greyN100");
           }
+
+          &:focus {
+            @include govuk-focused-text;
+          }
         }
       }
 
