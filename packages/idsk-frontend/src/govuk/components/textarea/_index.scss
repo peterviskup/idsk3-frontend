@@ -18,16 +18,14 @@
     border: $govuk-border-width-form-element solid $govuk-input-border-colour;
     border-radius: 0.25rem;
 
-    -webkit-appearance: none;
+    appearance: none;
 
     &:focus {
-      outline: $govuk-border-width-form-element solid $govuk-focus-colour;
-      // Ensure outline appears outside of the element
-      outline-offset: 2px;
-      // Double the border by adding its width again. Use `box-shadow` to do
-      // this instead of changing `border-width` (which changes element size) and
-      // since `outline` is already used for the yellow focus state.
-      // box-shadow: inset 0 0 0 $govuk-border-width-form-element;
+      @include govuk-focused-text;
+    }
+
+    &:hover {
+      box-shadow: 0 0 0 4px #757575;
     }
 
     &:disabled {

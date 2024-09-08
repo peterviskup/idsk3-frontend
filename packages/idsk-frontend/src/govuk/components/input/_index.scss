@@ -17,7 +17,7 @@
     appearance: none;
 
     &:not([disabled]):hover {
-      border: 1px solid $govuk-input-border-colour;
+      // border: 1px solid $govuk-input-border-colour;
       box-shadow: 0 0 0 4px #757575;
     }
 
@@ -26,7 +26,7 @@
     border: $govuk-border-width-form-element solid $govuk-input-border-colour;
     border-radius: 5px;
 
-    &:focus-visible {
+    &:focus {
       @include govuk-focused-text;
     }
 
