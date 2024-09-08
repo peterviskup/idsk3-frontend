@@ -11,7 +11,7 @@
     <div class="idsk-card__heading">
       <h3>
         {% if params.internalLink or params.externalLink %}
-          <a href="{{ params.internalLink or params.externalLink }}" target="{%- if params.externalLink %} _blank {% else %} _self {% endif %}">{{ params.title }}</a>
+          <a href="{{ params.internalLink or params.externalLink }}" class="govuk-link" target="{%- if params.externalLink %} _blank {% else %} _self {% endif %}">{{ params.title }}</a>
         {% else %}
           {{ params.title }}
         {% endif %}
@@ -27,7 +27,7 @@
             {% if tag.text %}
               <span>
                 {% if tag.href %}
-                  <a href="{{ tag.href }}">
+                  <a class="govuk-link" href="{{ tag.href }}">
                     {{ tag.text }}
                   </a>
                 {% else %}
