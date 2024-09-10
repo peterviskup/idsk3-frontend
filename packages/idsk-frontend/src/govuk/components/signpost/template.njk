@@ -34,7 +34,7 @@
             <img src='{{ image }}' class='govuk-signpost__image' alt='placeholder'/>
             {% endif %}
             {% if text %} <a href="#"> {% endif %}
-            <h3 class='govuk-signpost__title'>Dlhý nadpis</h3>
+            <h3 class='govuk-signpost__title' {% if params.titleId %} id='{{ params.titleId}}' {% endif %}>{{ params.title if params.title else "Dlhý nadpis" }}</h3>
             {% if text %} <a/> {% endif %}
             {% if text and params.subtitle%}
             <p class='govuk-signpost__subtitle'>{{ params.subtitle }}</p>
