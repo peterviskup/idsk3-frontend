@@ -149,7 +149,7 @@ accessibilityCriteria: |
 
   Note that we have known issues against this criteria: https://github.com/alphagov/govuk_elements/issues/575
 
-title: Prepínač
+title: Prepínacie pole
 examples:
   - name: default
     options:
@@ -299,6 +299,8 @@ examples:
       fieldset:
         legend:
           text: Have you changed your name?
+        attributes:
+          aria-invalid: true
       items:
         - value: yes
           text: Yes
@@ -316,6 +318,8 @@ examples:
       fieldset:
         legend:
           text: Maecenas faucibus mollis interdum?
+        attributes:
+          aria-invalid: true
       items:
         - value: nullam
           text:
@@ -354,18 +358,18 @@ examples:
           conditional:
             html: |
               <label class="govuk-label" for="context-email">Email address</label>
-              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="text" id="context-email">
+              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="email" autocomplete="email" id="context-email">
         - value: phone
           text: Phone
           conditional:
             html: |
               <label class="govuk-label" for="contact-phone">Phone number</label>
-              <input class="govuk-input govuk-!-width-one-third" name="contact-phone" type="text" id="contact-phone">
+              <input class="govuk-input govuk-!-width-one-third" name="contact-phone" type="tel" autocomplete="tel" id="contact-phone">
         - value: text
           text: Text message
           conditional:
             html: |
-              <label class="govuk-label" for="contact-text-message">Mobile phone number</label>
+              <label class="govuk-label" for="contact-text-message">Mobile text message</label>
               <input class="govuk-input govuk-!-width-one-third" name="contact-text-message" type="text" id="contact-text-message">
 
   - name: with conditional items with special characters
@@ -381,18 +385,18 @@ examples:
           conditional:
             html: |
               <label class="govuk-label" for="context-email">Email address</label>
-              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="text" id="context-email">
+              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="email" autocomplete="email" id="context-email">
         - value: phone
           text: Phone
           conditional:
             html: |
               <label class="govuk-label" for="contact-phone">Phone number</label>
-              <input class="govuk-input govuk-!-width-one-third" name="contact-phone" type="text" id="contact-phone">
+              <input class="govuk-input govuk-!-width-one-third" name="contact-phone" type="tel" autocomplete="tel" id="contact-phone">
         - value: text
           text: Text message
           conditional:
             html: |
-              <label class="govuk-label" for="contact-text-message">Mobile phone number</label>
+              <label class="govuk-label" for="contact-text-message">Mobile phone message</label>
               <input class="govuk-input govuk-!-width-one-third" name="contact-text-message" type="text" id="contact-text-message">
 
   - name: with conditional item checked
@@ -409,13 +413,13 @@ examples:
           conditional:
             html: |
               <label class="govuk-label" for="context-email">Email</label>
-              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="text" id="context-email">
+              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="email" autocomplete="email" id="context-email">
         - value: phone
           text: Phone
           conditional:
             html: |
               <label class="govuk-label" for="contact-phone">Phone number</label>
-              <input class="govuk-input govuk-!-width-one-third" name="contact-phone" type="text" id="contact-phone">
+              <input class="govuk-input govuk-!-width-one-third" name="contact-phone" type="tel" autocomplete="tel" id="contact-phone">
         - value: text
           text: Text message
           conditional:
@@ -458,13 +462,13 @@ examples:
           conditional:
             html: |
               <label class="govuk-label" for="context-email">Email</label>
-              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="text" id="context-email">
+              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="email" autocomplete="email" id="context-email">
         - value: phone
           text: Phone
           conditional:
             html: |
               <label class="govuk-label" for="contact-phone">Phone number</label>
-              <input class="govuk-input govuk-!-width-one-third" name="contact-phone" type="text" id="contact-phone">
+              <input class="govuk-input govuk-!-width-one-third" name="contact-phone" type="tel" autocomplete="tel" id="contact-phone">
         - value: text
           text: Text message
           conditional:
@@ -482,13 +486,15 @@ examples:
       fieldset:
         legend:
           text: How do you want to be contacted?
+        attributes:
+          aria-invalid: true
       items:
         - value: email
           text: Email
           conditional:
             html: |
               <label class="govuk-label" for="context-email">Email address</label>
-              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="text" id="context-email">
+              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="email" autocomplete="email" id="context-email">
         - value: phone
           text: Phone
           checked: true
@@ -496,7 +502,7 @@ examples:
             html: |
               <label class="govuk-label" for="contact-phone">Phone number</label>
               <span id="contact-phone-error" class="govuk-error-message">Problem with input</span>
-              <input class="govuk-input govuk-input--error govuk-!-width-one-third" name="contact-phone" type="text" id="contact-phone" aria-describedby="contact-phone-error">
+              <input class="govuk-input govuk-input--error govuk-!-width-one-third" name="contact-phone" type="tel" autocomplete="tel" id="contact-phone" aria-describedby="contact-phone-error">
         - value: text
           text: Text message
           conditional:
@@ -563,6 +569,8 @@ examples:
       fieldset:
         legend:
           text: How do you want to be contacted?
+        attributes:
+          aria-invalid: true
       errorMessage:
         text: 'Select a thing'
       items:
@@ -625,7 +633,7 @@ examples:
           conditional:
             html: |
               <label class="govuk-label" for="context-email">Foo</label>
-              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="text" id="context-email">
+              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="email" autocomplete="email" id="context-email">
         - value: phone
           text: Phone
         - value: text
@@ -925,6 +933,8 @@ examples:
         describedBy: test-target-element
         legend:
           text: Have you changed your name?
+        attributes:
+          aria-invalid: true
       items:
         - value: yes
           text: Yes

@@ -49,7 +49,7 @@ params:
     required: false
     description: HTML attributes (for example data attributes) to add to the card component container.
 
-title: Karta
+title: Kartička
 examples:
   - name: default
     description: Horizontálna kartička

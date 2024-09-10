@@ -39,8 +39,10 @@ examples:
       asLink: true
   - name: with action
     options:
+      title: Dlhý nadpis
+      titleId: signWithAction
       actions: |
-        <button class="govuk-button govuk-button__basic" aria-label="Akcia">
+        <button class="govuk-button govuk-button__basic" aria-labelledby="signWithAction">
           Akcia
         </button>
 
