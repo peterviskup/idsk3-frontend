@@ -38,7 +38,7 @@ accessibilityCriteria: |
   When used with a group of multiple inputs, the error message SHOULD NOT:
   - be announced every time for each individual input
 
-title: Chybová hláška
+title: Chybové hlásenie
 examples:
   - name: default
     options:

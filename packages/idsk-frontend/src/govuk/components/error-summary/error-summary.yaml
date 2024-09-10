@@ -56,7 +56,7 @@ params:
 accessibilityCriteria: |
   - Must be focused when the page loads
 
-title: Zoznam chýb
+title: Prehľad s chybovými hláseniami
 examples:
   - name: default
     options:

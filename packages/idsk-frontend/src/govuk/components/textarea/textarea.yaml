@@ -94,7 +94,7 @@ params:
     required: false
     description: HTML attributes (for example data attributes) to add to the textarea.
 
-title: Textové pole
+title: Viacriadkové textové pole
 examples:
   - name: default
     options:
