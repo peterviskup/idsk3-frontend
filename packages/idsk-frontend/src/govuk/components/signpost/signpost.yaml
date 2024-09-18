@@ -32,14 +32,17 @@ params:
     required: false
     description: Add arrow icon to the horizontal signpost
 
+title: Rázcestník
 examples:
   - name: default
     options:
       asLink: true
   - name: with action
     options:
+      title: Dlhý nadpis
+      titleId: signWithAction
       actions: |
-        <button class="govuk-button govuk-button__basic" aria-label="Akcia">
+        <button class="govuk-button govuk-button__basic" aria-labelledby="signWithAction">
           Akcia
         </button>
 

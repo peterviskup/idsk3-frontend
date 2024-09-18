@@ -151,6 +151,7 @@ params:
     required: false
     description: HTML attributes (for example data attributes) to add to the anchor tag.
 
+title: Začiarkavacie políčko
 accessibilityCriteria: |
   ## Conditional reveals
   Must:

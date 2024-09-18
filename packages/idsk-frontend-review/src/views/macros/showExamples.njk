@@ -3,6 +3,7 @@
 {% macro showExamples(componentFixtures, exampleNames) %}
 
 {% set componentName = componentFixtures.component %}
+{% set componentTitle = componentFixtures.title %}
 
 {% for example in componentFixtures.fixtures %}
   {% if (not exampleNames and not example.hidden) or (exampleNames and example.name in exampleNames) %}
@@ -10,10 +11,10 @@
   {% set exampleName = example.name | slugify %}
 
   {% if example.name == 'default' %}
-    {% set heading = componentName | unslugify %}
+    {% set heading = componentTitle | unslugify %}
     {% set path = '/components/' + componentName + "/preview" %}
   {% else %}
-    {% set heading %}{{ componentName | unslugify }} {{ example.name }}{% endset %}
+    {% set heading %}{{ componentTitle | unslugify }} {{ example.name }}{% endset %}
     {% set path = '/components/' + componentName + '/' + exampleName + "/preview" %}
   {% endif %}
 
@@ -22,7 +23,7 @@
       <h3 id="heading-{{ exampleName }}" class="govuk-heading-m govuk-!-margin-bottom-2">{{ heading | safe }}</h3>
       <p class="govuk-body">
         <a href="{{ path }}" class="govuk-link" rel="noreferrer noopener" target="_blank">
-          Open this example in a new tab<span class="govuk-visually-hidden">: {{ heading | safe | lower }}</span>
+          Otvoriť príklad na novej záložke<span class="govuk-visually-hidden">: {{ heading | safe | lower }}</span>
         </a>
       </p>
 

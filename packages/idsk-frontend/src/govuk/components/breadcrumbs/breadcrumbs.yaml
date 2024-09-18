@@ -33,67 +33,67 @@ params:
     required: false
     description: HTML attributes (for example data attributes) to add to the breadcrumbs container.
 
+title: Omrvinková navigácia
 examples:
   - name: default
     options:
       items:
-        - text: Section
+        - text: Sekcia
           href: '/section'
-        - text: Sub-section
+        - text: Podsekcia
           href: '/section/sub-section'
-  - name: with one level
+  - name: s jednou úrovňou
     options:
       items:
-        - text: Section
+        - text: Sekcia
           href: '/section'
-  - name: with multiple levels
+  - name: s viacerými úrovňami
     options:
       items:
-        - text: Home
+        - text: Domov
           href: '/'
-        - text: Section
+        - text: Sekcia
           href: '/section'
-        - text: Sub-section
+        - text: Podsekcia
           href: '/section/sub-section'
-        - text: Sub Sub-section
-          href: '/section/sub-section/sub-sub-section'
-  - name: without the home section
+        - text: Pod podsekcia
+          href: '/section/sub-section/sub-section'
+  - name: bez domácej sekcie
     options:
       items:
-        - text: Service Manual
+        - text: Servisná príručka
           href: '/service-manual'
-        - text: Agile Delivery
-          href: '/service-manual/agile-delivery'
-  - name: with last breadcrumb as current page
+        - text: Agílne doručenie
+          href: '/section'
+  - name: s poslednou omrvinkou ako súčasná stránka
     options:
       items:
-        - text: Home
+        - text: Domov
           href: '/'
-        - text: Passports, travel and living abroad
+        - text: Pasy, cestovanie a život v zahraničí
           href: '/browse/abroad'
-        - text: Travel abroad
-  - name: with collapse on mobile
+        - text: Cestujte do zahraničia
+  - name: so skrátením na mobile
     options:
       collapseOnMobile: true
       items:
-        - text: Home
+        - text: Domov
           href: '/'
-        - text: Education, training and skills
+        - text: Vzdelávanie, školenie a zručnosti
           href: '/education'
-        - text: Special educational needs and disability (SEND) and high needs
-          href: '/education/special-educational-needs-and-disability-send-and-high-needs'
+        - text: Špeciálne vzdelávacie potreby a zdravotné postihnutie a vysoké potreby
   - name: inverse
-    description: Breadcrumbs that appear on dark backgrounds
+    description: Navigácia na tmavom pozadí
     previewLayoutModifiers:
       - inverse
     options:
       classes: govuk-breadcrumbs--inverse
       items:
-        - text: Home
+        - text: Domov
           href: '/'
-        - text: Passports, travel and living abroad
+        - text: Pasy, cestovanie a život v zahraničí
           href: '/browse/abroad'
-        - text: Travel abroad
+        - text: Cestujte do zahraničia
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: classes

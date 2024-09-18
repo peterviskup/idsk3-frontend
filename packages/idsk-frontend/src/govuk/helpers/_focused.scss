@@ -15,16 +15,17 @@
   // transparent outline which will be set to a visible colour.
 
   z-index: 1;
+  border-radius: 5px;
   outline: $govuk-focus-width solid $govuk-focus-colour;
   outline-offset: 2px;
-  color: $govuk-focus-text-colour;
+  // color: $govuk-focus-text-colour;
   // background-color: $govuk-focus-colour;
   // box-shadow:
   //   0 -2px $govuk-focus-colour,
   //   0 4px $govuk-focus-text-colour;
   // When link is focussed, hide the default underline since the
   // box shadow adds the "underline"
-  text-decoration: none;
+  // text-decoration: none;
 
   // When a focused box is broken by e.g. a line break, ensure that the
   // box-shadow is applied to each fragment independently.

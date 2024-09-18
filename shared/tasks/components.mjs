@@ -136,6 +136,7 @@ async function generateFixture(componentDataPath, options) {
 
   return {
     component: componentName,
+    title: json.title,
     fixtures: await Promise.all(fixtures),
     previewLayout: json.previewLayout
   }

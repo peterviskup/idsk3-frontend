@@ -1,7 +1,33 @@
 {% from "../../macros/attributes.njk" import govukAttributes %}
-{% from "../dropdown/macro.njk" import govukDropdown %}
 
 {%- set menuButtonText = params.menuButtonText if params.menuButtonText else 'Menu' -%}
+
+{%- macro _dropdown(params) -%}
+<div>
+  <div class="idsk-dropdown__wrapper {%- if params.classes %} {{ params.classes }}{% endif %}"
+    {{- govukAttributes(params.attributes) }}>
+    <button class="govuk-button {{ params.btnClasses }} idsk-dropdown" aria-label="Rozbaliť {{ params.attributes['data-pseudolabel'] }}" aria-haspopup="listbox">
+      <span>{% if params.selected %}{{params.selected}}{% else %}slovenčina{% endif %}</span>
+      <span class="material-icons" aria-hidden="true">arrow_drop_down</span>
+    </button>
+    <ul id="undefined-dropdown" class="idsk-dropdown__options idsk-dropdown__options--down" data-testid="dropdown-options">
+      {% if params.items | length %}
+        {% for item in params.items %}
+          <li class="idsk-dropdown__option idsk-pseudolabel__wrapper" data-pseudolabel="{{ item.text }}">
+            <a href="{{ item.href }}" {% if item.lang %}lang="{{ item.lang }}"{% endif %}>
+              {{ item.text }}
+            </a>
+          </li>
+        {% endfor %}
+      {% else %}
+        <li class="idsk-dropdown__option idsk-pseudolabel__wrapper" data-pseudolabel="english">
+          <a href="#" lang="en">english</a>
+        </li>
+      {% endif %}
+    </ul>
+  </div>
+</div>
+{%- endmacro -%}
 
 <div class="govuk-header__wrapper">
   <header class="govuk-header idsk-shadow-head {%- if params.classes %} {{ params.classes }}{% endif %}" data-module="govuk-header"
@@ -15,10 +41,17 @@
             <div class="idsk-secondary-navigation__heading-title">
               <span class="idsk-secondary-navigation__heading-mobile">SK</span>
               <span class="idsk-secondary-navigation__heading-desktop">Oficiálna stránka</span>
+              {#
               <button class="idsk-secondary-navigation__heading-button" aria-expanded="false" aria-label="Oficiálna stránka verejnej správy">
                 <span class="idsk-secondary-navigation__heading-mobile">e-Gov</span>
                 <span class="idsk-secondary-navigation__heading-desktop"><b>verejnej správy</b></span>
                 <span class="material-icons idsk-secondary-navigation__heading-button-icon">arrow_drop_down</span>
+              </button>
+              #}
+              <button class="govuk-button govuk-button--texted--inverse idsk-secondary-navigation__heading-button" aria-expanded="false" aria-label="Oficiálna stránka verejnej správy">
+                <span class="idsk-secondary-navigation__heading-mobile">e-Gov</span>
+                <span class="idsk-secondary-navigation__heading-desktop"><b>verejnej správy</b></span>
+                <span class="material-icons">arrow_drop_down</span>
               </button>
             </div>
             <div class="idsk-secondary-navigation__body hidden" data-testid="secnav-children">
@@ -34,8 +67,9 @@
               </div>
             </div>
           </div>
-          {{ govukDropdown({
+          {{ _dropdown({
             classes: 'idsk-secondary-navigation__dropdown',
+            btnClasses: 'govuk-button--texted--inverse',
             selected: 'slovenčina',
             attributes: { "data-pseudolabel": "jazykové menu" },
             items: [
@@ -45,9 +79,9 @@
                 lang: 'en'
               },
               {
-                text: 'українська',
+                text: 'slovenčina',
                 href: '#',
-                lang: 'uk'
+                lang: 'sk'
               }
             ]
           }) | trim | indent(2) }}

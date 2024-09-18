@@ -149,6 +149,7 @@ accessibilityCriteria: |
 
   Note that we have known issues against this criteria: https://github.com/alphagov/govuk_elements/issues/575
 
+title: Prepínacie pole
 examples:
   - name: default
     options:
@@ -166,6 +167,9 @@ examples:
       idPrefix: example
       classes: govuk-radios--inline
       name: example
+      fieldset:
+        legend:
+          text: Have you changed your name?
       hint:
         text: This includes changing your last name or spelling your name differently.
       items:
@@ -179,6 +183,11 @@ examples:
     options:
       idPrefix: gov
       name: gov
+      fieldset:
+        legend:
+          text: How do you want to sign in?
+          classes: govuk-fieldset__legend--l
+          isPageHeading: true
       items:
         - value: gateway
           text: Sign in with Government Gateway
@@ -196,6 +205,11 @@ examples:
     options:
       idPrefix: housing-act
       name: housing-act
+      fieldset:
+        legend:
+          text: Which part of the Housing Act was your licence issued under?
+          classes: govuk-fieldset__legend--l
+          isPageHeading: true
       hint:
         text: Select one of the options below.
       items:
@@ -212,6 +226,10 @@ examples:
     options:
       idPrefix: housing-act
       name: housing-act
+      fieldset:
+        legend:
+          text: Which part of the Housing Act was your licence issued under?
+          classes: govuk-fieldset__legend--m
       hint:
         text: Select one of the options below.
       items:
@@ -228,6 +246,9 @@ examples:
     options:
       idPrefix: example-divider
       name: example
+      fieldset:
+        legend:
+          text: How do you want to sign in?
       items:
         - value: governement-gateway
           text: Use Government Gateway
@@ -241,6 +262,11 @@ examples:
     options:
       idPrefix: gov
       name: gov
+      fieldset:
+        legend:
+          text: How do you want to sign in?
+          classes: govuk-fieldset__legend--l
+          isPageHeading: true
       items:
         - value: gateway
           text: Sign in with Government Gateway
@@ -270,6 +296,11 @@ examples:
       name: example
       errorMessage:
         text: Please select an option
+      fieldset:
+        legend:
+          text: Have you changed your name?
+        attributes:
+          aria-invalid: true
       items:
         - value: yes
           text: Yes
@@ -284,6 +315,11 @@ examples:
         text: Nullam id dolor id nibh ultricies vehicula ut id elit.
       errorMessage:
         text: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      fieldset:
+        legend:
+          text: Maecenas faucibus mollis interdum?
+        attributes:
+          aria-invalid: true
       items:
         - value: nullam
           text:
@@ -313,54 +349,63 @@ examples:
     options:
       idPrefix: how-contacted
       name: how-contacted
+      fieldset:
+        legend:
+          text: How do you want to be contacted?
       items:
         - value: email
           text: Email
           conditional:
             html: |
               <label class="govuk-label" for="context-email">Email address</label>
-              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="text" id="context-email">
+              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="email" autocomplete="email" id="context-email">
         - value: phone
           text: Phone
           conditional:
             html: |
               <label class="govuk-label" for="contact-phone">Phone number</label>
-              <input class="govuk-input govuk-!-width-one-third" name="contact-phone" type="text" id="contact-phone">
+              <input class="govuk-input govuk-!-width-one-third" name="contact-phone" type="tel" autocomplete="tel" id="contact-phone">
         - value: text
           text: Text message
           conditional:
             html: |
-              <label class="govuk-label" for="contact-text-message">Mobile phone number</label>
+              <label class="govuk-label" for="contact-text-message">Mobile text message</label>
               <input class="govuk-input govuk-!-width-one-third" name="contact-text-message" type="text" id="contact-text-message">
 
   - name: with conditional items with special characters
     options:
       idPrefix: user.profile[contact-prefs]
       name: contact-prefs
+      fieldset:
+        legend:
+          text: How do you want to be contacted?
       items:
         - value: email
           text: Email
           conditional:
             html: |
               <label class="govuk-label" for="context-email">Email address</label>
-              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="text" id="context-email">
+              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="email" autocomplete="email" id="context-email">
         - value: phone
           text: Phone
           conditional:
             html: |
               <label class="govuk-label" for="contact-phone">Phone number</label>
-              <input class="govuk-input govuk-!-width-one-third" name="contact-phone" type="text" id="contact-phone">
+              <input class="govuk-input govuk-!-width-one-third" name="contact-phone" type="tel" autocomplete="tel" id="contact-phone">
         - value: text
           text: Text message
           conditional:
             html: |
-              <label class="govuk-label" for="contact-text-message">Mobile phone number</label>
+              <label class="govuk-label" for="contact-text-message">Mobile phone message</label>
               <input class="govuk-input govuk-!-width-one-third" name="contact-text-message" type="text" id="contact-text-message">
 
   - name: with conditional item checked
     options:
       idPrefix: 'how-contacted-checked'
       name: 'how-contacted-checked'
+      fieldset:
+        legend:
+          text: How do you want to be contacted?
       items:
         - value: email
           text: Email
@@ -368,13 +413,13 @@ examples:
           conditional:
             html: |
               <label class="govuk-label" for="context-email">Email</label>
-              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="text" id="context-email">
+              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="email" autocomplete="email" id="context-email">
         - value: phone
           text: Phone
           conditional:
             html: |
               <label class="govuk-label" for="contact-phone">Phone number</label>
-              <input class="govuk-input govuk-!-width-one-third" name="contact-phone" type="text" id="contact-phone">
+              <input class="govuk-input govuk-!-width-one-third" name="contact-phone" type="tel" autocomplete="tel" id="contact-phone">
         - value: text
           text: Text message
           conditional:
@@ -408,19 +453,22 @@ examples:
     options:
       idPrefix: 'how-contacted-checked'
       name: 'how-contacted-checked'
+      fieldset:
+        legend:
+          text: How do you want to be contacted?
       items:
         - value: email
           text: Email
           conditional:
             html: |
               <label class="govuk-label" for="context-email">Email</label>
-              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="text" id="context-email">
+              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="email" autocomplete="email" id="context-email">
         - value: phone
           text: Phone
           conditional:
             html: |
               <label class="govuk-label" for="contact-phone">Phone number</label>
-              <input class="govuk-input govuk-!-width-one-third" name="contact-phone" type="text" id="contact-phone">
+              <input class="govuk-input govuk-!-width-one-third" name="contact-phone" type="tel" autocomplete="tel" id="contact-phone">
         - value: text
           text: Text message
           conditional:
@@ -435,13 +483,18 @@ examples:
       name: 'how-contacted-2'
       formGroup:
         classes: 'govuk-form-group--error'
+      fieldset:
+        legend:
+          text: How do you want to be contacted?
+        attributes:
+          aria-invalid: true
       items:
         - value: email
           text: Email
           conditional:
             html: |
               <label class="govuk-label" for="context-email">Email address</label>
-              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="text" id="context-email">
+              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="email" autocomplete="email" id="context-email">
         - value: phone
           text: Phone
           checked: true
@@ -449,7 +502,7 @@ examples:
             html: |
               <label class="govuk-label" for="contact-phone">Phone number</label>
               <span id="contact-phone-error" class="govuk-error-message">Problem with input</span>
-              <input class="govuk-input govuk-input--error govuk-!-width-one-third" name="contact-phone" type="text" id="contact-phone" aria-describedby="contact-phone-error">
+              <input class="govuk-input govuk-input--error govuk-!-width-one-third" name="contact-phone" type="tel" autocomplete="tel" id="contact-phone" aria-describedby="contact-phone-error">
         - value: text
           text: Text message
           conditional:
@@ -463,6 +516,9 @@ examples:
       name: 'how-contacted-2'
       formGroup:
         classes: 'govuk-radios--small'
+      fieldset:
+        legend:
+          text: How do you want to be contacted?
       items:
         - value: email
           text: Email
@@ -476,6 +532,9 @@ examples:
       idPrefix: foo
       name: foo
       classes: govuk-radios--small
+      fieldset:
+        legend:
+          text: Venenatis Condimentum
       items:
         - value: nullam
           text:
@@ -507,6 +566,11 @@ examples:
       name: 'how-contacted-2'
       formGroup:
         classes: 'govuk-radios--small'
+      fieldset:
+        legend:
+          text: How do you want to be contacted?
+        attributes:
+          aria-invalid: true
       errorMessage:
         text: 'Select a thing'
       items:
@@ -523,6 +587,9 @@ examples:
       name: 'how-contacted-2'
       formGroup:
         classes: 'govuk-radios--small'
+      fieldset:
+        legend:
+          text: How do you want to be contacted?
       items:
         - value: email
           text: Email
@@ -539,6 +606,9 @@ examples:
       name: 'how-contacted-2'
       formGroup:
         classes: 'govuk-radios--small'
+      fieldset:
+        legend:
+          text: How do you want to be contacted?
       items:
         - value: email
           text: Email
@@ -554,13 +624,16 @@ examples:
       name: 'how-contacted-2'
       formGroup:
         classes: 'govuk-radios--small'
+      fieldset:
+        legend:
+          text: How do you want to be contacted?
       items:
         - value: email
           text: Email
           conditional:
             html: |
               <label class="govuk-label" for="context-email">Foo</label>
-              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="text" id="context-email">
+              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="email" autocomplete="email" id="context-email">
         - value: phone
           text: Phone
         - value: text
@@ -571,6 +644,9 @@ examples:
       idPrefix: sort
       classes: govuk-radios--small govuk-radios--inline
       name: example
+      fieldset:
+        legend:
+          text: Sort by
       items:
         - value: relevance
           text: relevance
@@ -584,6 +660,9 @@ examples:
       idPrefix: sort
       classes: govuk-radios--small govuk-radios--inline
       name: example
+      fieldset:
+        legend:
+          text: Sort by
       items:
         - value: relevance
           text: relevance
@@ -610,6 +689,9 @@ examples:
     options:
       idPrefix: example-small-divider
       name: example
+      fieldset:
+        legend:
+          text: How do you want to sign in?
       classes: govuk-radios--small
       items:
         - value: governement-gateway
@@ -654,6 +736,10 @@ examples:
     hidden: true
     options:
       name: example-name
+      fieldset:
+        describedBy: test-target-element
+        legend:
+          text: Which option?
       items:
         - value: yes
           text: Yes
@@ -710,6 +796,9 @@ examples:
     hidden: true
     options:
       name: example-multiple-hints
+      fieldset:
+        legend:
+          text: Have you changed your name?
       hint:
         text: This includes changing your last name or spelling your name differently.
       items:
@@ -725,6 +814,10 @@ examples:
     hidden: true
     options:
       name: example-hint-describedby
+      fieldset:
+        describedBy: test-target-element
+        legend:
+          text: Have you changed your name?
       hint:
         text: This includes changing your last name or spelling your name differently.
       items:
@@ -761,6 +854,9 @@ examples:
       name: example-error-message-hint
       errorMessage:
         text: Please select an option
+      fieldset:
+        legend:
+          text: Have you changed your name?
       hint:
         text: This includes changing your last name or spelling your name differently.
       items:
@@ -774,6 +870,10 @@ examples:
       name: example-error-message-hint
       errorMessage:
         text: Please select an option
+      fieldset:
+        describedBy: test-target-element
+        legend:
+          text: Have you changed your name?
       hint:
         text: This includes changing your last name or spelling your name differently.
       items:
@@ -796,6 +896,13 @@ examples:
     hidden: true
     options:
       name: example-fieldset-params
+      fieldset:
+        classes: app-fieldset--custom-modifier
+        legend:
+          text: Have you changed your name?
+        attributes:
+          data-attribute: value
+          data-second-attribute: second-value
       hint:
         text: This includes changing your last name or spelling your name differently.
       items:
@@ -807,6 +914,9 @@ examples:
     hidden: true
     options:
       name: with-fieldset-html
+      fieldset:
+        legend:
+          html: Have <b>you</b> changed your name?
       items:
         - value: yes
           text: Yes
@@ -819,6 +929,12 @@ examples:
       name: example
       errorMessage:
         text: Please select an option
+      fieldset:
+        describedBy: test-target-element
+        legend:
+          text: Have you changed your name?
+        attributes:
+          aria-invalid: true
       items:
         - value: yes
           text: Yes

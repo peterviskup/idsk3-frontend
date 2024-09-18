@@ -46,6 +46,10 @@ export default async () => {
     getDirectories(join(paths.app, 'src/views/examples')),
     getFullPageExamples()
   ])
+  const componentTitles = componentsFixtures.reduce(
+    (prev, curr) => ({ ...prev, [curr.component]: curr.title }),
+    {}
+  )
 
   // Feature flags
   const flags = /** @type {FeatureFlags} */ ({
@@ -110,6 +114,7 @@ export default async () => {
       res.locals.componentFixtures = componentFixtures
       res.locals.componentFixture = componentFixture
       res.locals.exampleName = 'default'
+      res.locals.componentTitle = componentTitles[componentName]
 
       next()
     }
@@ -153,7 +158,8 @@ export default async () => {
       componentNames,
       componentNamesWithJavaScript,
       exampleNames,
-      fullPageExamples
+      fullPageExamples,
+      componentTitles
     })
   })
 
@@ -177,7 +183,7 @@ export default async () => {
      * @returns {void}
      */
     (req, res, next) => {
-      const { componentName } = res.locals
+      const { componentName, componentTitle } = res.locals
 
       // Unknown component, continue to page not found
       if (componentName && !componentNames.includes(componentName)) {
@@ -186,7 +192,8 @@ export default async () => {
 
       res.render(componentName ? 'component' : 'components', {
         componentsFixtures,
-        componentName
+        componentName,
+        componentTitle
       })
     }
   )
@@ -272,6 +279,7 @@ export default async () => {
  * @property {import('@govuk-frontend/lib/components').ComponentFixture} [componentFixture] - Single component fixture
  * @property {string} componentName - Component name
  * @property {string} [exampleName] - Example name
+ * @property {string} componentTitle - Component title name
  */
 
 /**

@@ -52,9 +52,15 @@ params:
     required: false
     description: The ID of the button.
 
+title: Tlačidlo
 examples:
   - name: default
     options:
+      text: Primary button
+      classes: govuk-button__basic
+  - name: input
+    options:
+      element: input
       text: Primary button
       classes: govuk-button__basic
   - name: with active state
@@ -92,7 +98,7 @@ examples:
     options:
       name: focus
       text: Focussed
-      classes: :focus-visible
+      classes: :focus
   - name: large
     description: Large button
     options:
@@ -115,11 +121,6 @@ examples:
       name: secondary
       text: Secondary warning button
       classes: govuk-button--sec__warning
-  - name: contrast success
-    options:
-      name: secondary
-      text: Secondary contrast button
-      classes: govuk-button--sec__contrast
   - name: secondary disabled
     options:
       name: secondary
@@ -160,8 +161,21 @@ examples:
       name: Texted
       text: Texted btn warning
       classes: govuk-button--texted govuk-button--texted__warning
-  - name: texted btn contrast
+  - name: texted btn disabled
     options:
       name: Texted
-      text: Texted btn contrast
-      classes: govuk-button--texted govuk-button--texted__contrast
+      text: Texted btn
+      classes: govuk-button--texted
+      disabled: true
+  - name: texted btn success disabled
+    options:
+      name: Texted btn success
+      text: Texted btn success
+      classes: govuk-button--texted govuk-button--texted__success
+      disabled: true
+  - name: texted btn warning disabled
+    options:
+      name: Texted
+      text: Texted btn warning
+      classes: govuk-button--texted govuk-button--texted__warning
+      disabled: true

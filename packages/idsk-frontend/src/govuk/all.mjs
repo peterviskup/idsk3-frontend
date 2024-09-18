@@ -5,7 +5,6 @@ import { isSupported } from './common/index.mjs'
 import { Accordion } from './components/accordion/accordion.mjs'
 import { Button } from './components/button/button.mjs'
 import { Checkboxes } from './components/checkboxes/checkboxes.mjs'
-import { Dropdown } from './components/dropdown/dropdown.mjs'
 import { ErrorSummary } from './components/error-summary/error-summary.mjs'
 import { FileUpload } from './components/file-upload/file-upload.mjs'
 import { Header } from './components/header/header.mjs'
@@ -35,7 +34,6 @@ function initAll(config) {
     [Accordion, config.accordion],
     [Button, config.button],
     [Checkboxes],
-    [Dropdown],
     [ErrorSummary, config.errorSummary],
     [Header],
     [NotificationBanner, config.notificationBanner],
@@ -74,7 +72,6 @@ export {
   Accordion,
   Button,
   Checkboxes,
-  Dropdown,
   ErrorSummary,
   Header,
   NotificationBanner,

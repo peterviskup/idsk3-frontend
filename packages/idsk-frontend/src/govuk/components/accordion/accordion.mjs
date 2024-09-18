@@ -174,10 +174,10 @@ export class Accordion extends GOVUKFrontendComponent {
     this.$showAllButton.appendChild(this.$showAllIcon)
 
     // Create control wrapper and add controls to it
-    // const $accordionControls = document.createElement('div')
-    // $accordionControls.setAttribute('class', this.controlsClass)
-    // $accordionControls.appendChild(this.$showAllButton)
-    // this.$module.insertBefore($accordionControls, this.$module.firstChild)
+    const $accordionControls = document.createElement('div')
+    $accordionControls.setAttribute('class', this.controlsClass)
+    $accordionControls.appendChild(this.$showAllButton)
+    this.$module.insertBefore($accordionControls, this.$module.firstChild)
 
     // Build additional wrapper for Show all toggle text and place after icon
     this.$showAllText = document.createElement('span')
