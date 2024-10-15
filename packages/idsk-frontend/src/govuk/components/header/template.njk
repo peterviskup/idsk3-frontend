@@ -10,7 +10,7 @@
       <span>{% if params.selected %}{{params.selected}}{% else %}slovenčina{% endif %}</span>
       <span class="material-icons" aria-hidden="true">arrow_drop_down</span>
     </button>
-    <ul id="undefined-dropdown" class="idsk-dropdown__options idsk-dropdown__options--down" data-testid="dropdown-options">
+    <ul class="idsk-dropdown__options idsk-dropdown__options--down">
       {% if params.items | length %}
         {% for item in params.items %}
           <li class="idsk-dropdown__option idsk-pseudolabel__wrapper" data-pseudolabel="{{ item.text }}">
@@ -139,8 +139,8 @@
             </button>
             {% if params.actionPanel  %}
             <div class="govuk-header__actionPanel mobile desktop-hidden">
-              <a href="#" class="govuk-link" title="Notifikácie"><span role="button" class="material-icons" aria-hidden="true">notifications</span></a>
-              <a href="#" class="govuk-link" title="Informácie o portáli"><span role="button" class="material-icons" aria-hidden="true">info</span></a>
+              <button class="govuk-button" title="Notifikácie"><span role="button" class="material-icons" aria-hidden="true">notifications</span></button>
+              <button class="govuk-button" title="Informácie o portáli"><span role="button" class="material-icons" aria-hidden="true">info</span></button>
             </div>
             {% endif  %}
         </div>
@@ -153,17 +153,15 @@
         {% endif %}
         {% if params.actionPanel  %}
           <div class="govuk-header__actionPanel desktop mobile-hidden">
-            <a href="#" class="govuk-link" title="Notifikácie"><span role="button" class="material-icons" aria-hidden="true">notifications</span></a>
-            <a href="#" class="govuk-link" title="Informácie o portáli"><span role="button" class="material-icons" aria-hidden="true">info</span></a>
-            <a href="#" class="govuk-link" title="Profil"><img class="profile mobile-hidden" src="https://placehold.co/40x40/072C66/FFFFFF?text=Profile" alt="Profile"/></a>
+            <button class="govuk-button" title="Notifikácie"><span role="button" class="material-icons" aria-hidden="true">notifications</span></button>
+            <button class="govuk-button" title="Informácie o portáli"><span role="button" class="material-icons" aria-hidden="true">info</span></button>
+            <button class="govuk-button" title="Profil"><img class="profile mobile-hidden" src="https://placehold.co/40x40/072C66/FFFFFF?text=Profile" alt="Profile"/></button>
           </div>
         {% else %}
-          <button class="govuk-button govuk-button__basic mobile-hidden">Tlacidlo 1</button>
-          <button class="govuk-button govuk-button__basic mobile-hidden">Tlacidlo 2</button>
+          <button class="govuk-button govuk-button__basic mobile-hidden">Tlačidlo 1</button>
+          <button class="govuk-button govuk-button__basic mobile-hidden">Tlačidlo 2</button>
         {% endif %}
         {#    End some expression      #}
-
-
       </div>
     </div>
 
@@ -212,18 +210,39 @@
                     </li>
                   {% endif %}
                 {% endfor %}
+                <li>
+                            {{ _dropdown({
+            classes: '',
+            btnClasses: '',
+            selected: 'slovenčina',
+            attributes: { "data-pseudolabel": "jazykové menu" },
+            items: [
+              {
+                text: 'english',
+                href: '#',
+                lang: 'en'
+              },
+              {
+                text: 'slovenčina',
+                href: '#',
+                lang: 'sk'
+              }
+            ]
+          }) | trim | indent(2) }}
+
+                </li>
                 {% if params.dropdown %}
                   <li class="govuk-header__navigation-item dropdown-toggle">
-                    <a href="#" class="govuk-header__link" aria-haspopup="menu" title="Zobraziť menu položky">Rozbaľovacie menu<span class="material-icons" aria-hidden="true">expand_more</span></a>
+                    <a href="#" class="govuk-header__link" aria-haspopup="menu" title="Zobraziť menu položky"><span>Rozbaľovacia sekcia</span><span class="material-icons" aria-hidden="true">expand_more</span></a>
                     <ul class="submenu idsk-shadow-medium">
                       <li class="govuk-header__navigation-item">
-                        <a class="govuk-header__link" href="#">Menu 1</a>
+                        <a class="govuk-header__link" href="#">Podsekcia 1</a>
                       </li>
                       <li class="govuk-header__navigation-item">
-                        <a class="govuk-header__link" href="#">Menu 2 </a>
+                        <a class="govuk-header__link" href="#">Podekcia 2 </a>
                       </li>
                       <li class="govuk-header__navigation-item">
-                        <a class="govuk-header__link" href="#">Menu 3</a>
+                        <a class="govuk-header__link" href="#">Podsekcia 3</a>
                       </li>
                     </ul>
                   </li>

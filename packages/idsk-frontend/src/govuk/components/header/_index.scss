@@ -27,7 +27,7 @@
   .govuk-header {
     @include govuk-font($size: 16, $line-height: 1);
 
-    border-bottom: govuk-spacing(2) solid govuk-colour("white");
+    // border-bottom: govuk-spacing(2) solid govuk-colour("white");
     // color: $govuk-header-text;
 
     .hidden {
@@ -50,13 +50,15 @@
         gap: 5px;
       }
 
-      a {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
+      .govuk-button {
+        background-color: transparent;
         min-height: 40px;
         min-width: 40px;
-        justify-content: center;
+        padding: 0;
+
+        * {
+          vertical-align: middle;
+        }
       }
 
       & .material-icons {
@@ -401,6 +403,7 @@
 
     ul {
       margin-top: 0;
+      margin-bottom: 0;
     }
 
     .warning {
@@ -632,13 +635,18 @@
       }
     }
 
-    @include govuk-media-query($from: desktop) {
-      max-width: 300px;
-      .govuk-input {
-        width: 250px;
-        border-radius: 0;
-      }
+    .govuk-input {
+      width: 250px;
+      border-radius: 0;
     }
+
+    // @include govuk-media-query($from: desktop) {
+    //   max-width: 300px;
+    //   .govuk-input {
+    //     width: 250px;
+    //     border-radius: 0;
+    //   }
+    // }
 
     .govuk-input {
       border-right: none;

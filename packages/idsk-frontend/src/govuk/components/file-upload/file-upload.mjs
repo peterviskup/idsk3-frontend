@@ -1,3 +1,4 @@
+import { ElementError } from '../../errors/index.mjs'
 import { GOVUKFrontendComponent } from '../../govuk-frontend-component.mjs'
 
 /**
@@ -10,9 +11,27 @@ export class FileUpload extends GOVUKFrontendComponent {
   $module
 
   /**
+   * Container for file upload.
+   *
    * @private
-   * @type {FileUploadConfig}
+   * @type {HTMLElement | undefined}
    */
+  $uploadContainer
+
+  /**
+   * Hidden input for file selection.
+   *
+   * @private
+   * @type {HTMLInputElement | undefined}
+   */
+  $fileInput
+
+  /**
+   * Button to open the file selection dialog.
+   *
+   * @type {HTMLButtonElement | undefined}
+   */
+  $uploadButton
 
   /**
    * Creates an instance of FileUploader.
@@ -22,31 +41,35 @@ export class FileUpload extends GOVUKFrontendComponent {
   constructor($module) {
     super()
 
-    /**
-     * Container for file upload.
-     *
-     * @type {HTMLElement}
-     */
-    this.uploadContainer = $module.querySelector('.upload-box')
+    if (!($module instanceof HTMLElement)) {
+      throw new ElementError({
+        componentName: 'File-upload',
+        element: $module,
+        identifier: 'Root element (`$module`)'
+      })
+    }
 
-    /**
-     * Hidden input for file selection.
-     *
-     * @type {HTMLInputElement}
-     */
-    this.fileInput = $module.querySelector('#fileInput')
+    this.$module = $module
 
-    /**
-     * Button to open the file selection dialog.
-     *
-     * @type {HTMLButtonElement}
-     */
-    this.uploadButton = $module.querySelector('.upload-button')
+    const uploadContainer = $module.querySelector('.upload-box')
+    if (uploadContainer instanceof HTMLElement) {
+      this.$uploadContainer = uploadContainer
+    }
+
+    const fileInput = $module.querySelector('input[data-file-input]')
+
+    if (fileInput instanceof HTMLInputElement) {
+      this.$fileInput = fileInput
+    }
+
+    const uploadButton = $module.querySelector('.upload-button')
+
+    if (uploadButton instanceof HTMLButtonElement) {
+      this.$uploadButton = uploadButton
+    }
 
     // Initialize event listeners
-    if ($module) {
-      this.initEventListeners()
-    }
+    this.initEventListeners()
   }
 
   /**
@@ -54,22 +77,30 @@ export class FileUpload extends GOVUKFrontendComponent {
    */
   initEventListeners() {
     // Clicking the button opens the file selection dialog
-    this.uploadButton.addEventListener('click', () => this.fileInput.click())
+    if (this.$uploadButton) {
+      this.$uploadButton.addEventListener('click', () =>
+        this.$fileInput?.click()
+      )
+    }
 
     // Input change handles selected files
-    this.fileInput.addEventListener('change', () =>
-      this.handleFiles(this.fileInput.files)
+    this.$fileInput?.addEventListener('change', () =>
+      this.handleFiles(this.$fileInput?.files)
     )
 
-    // Drag-and-drop events
-    this.uploadContainer.addEventListener('dragenter', (e) =>
-      this.onDragEnter(e)
-    )
-    this.uploadContainer.addEventListener('dragover', (e) => this.onDragOver(e))
-    this.uploadContainer.addEventListener('dragleave', (e) =>
-      this.onDragLeave(e)
-    )
-    this.uploadContainer.addEventListener('drop', (e) => this.onDrop(e))
+    if (this.$uploadContainer) {
+      // Drag-and-drop events
+      this.$uploadContainer.addEventListener('dragenter', (e) =>
+        this.onDragEnter(e)
+      )
+      this.$uploadContainer.addEventListener('dragover', (e) =>
+        this.onDragOver(e)
+      )
+      this.$uploadContainer.addEventListener('dragleave', (e) =>
+        this.onDragLeave(e)
+      )
+      this.$uploadContainer.addEventListener('drop', (e) => this.onDrop(e))
+    }
   }
 
   /**
@@ -80,7 +111,7 @@ export class FileUpload extends GOVUKFrontendComponent {
   onDragEnter(event) {
     event.preventDefault()
     event.stopPropagation()
-    this.uploadContainer.classList.add('dragover')
+    this.$uploadContainer?.classList.add('dragover')
   }
 
   /**
@@ -101,7 +132,7 @@ export class FileUpload extends GOVUKFrontendComponent {
   onDragLeave(event) {
     event.preventDefault()
     event.stopPropagation()
-    this.uploadContainer.classList.remove('dragover')
+    this.$uploadContainer?.classList.remove('dragover')
   }
 
   /**
@@ -112,18 +143,18 @@ export class FileUpload extends GOVUKFrontendComponent {
   onDrop(event) {
     event.preventDefault()
     event.stopPropagation()
-    this.uploadContainer.classList.remove('dragover')
-    const files = event.dataTransfer.files
+    this.$uploadContainer?.classList.remove('dragover')
+    const files = event.dataTransfer?.files
     this.handleFiles(files)
   }
 
   /**
    * Handles the selected or dropped files.
    *
-   * @param {FileList} files - The list of files to handle.
+   * @param {FileList | null | undefined} files - The list of files to handle.
    */
   handleFiles(files) {
-    if (files.length > 0) {
+    if (files && files.length > 0) {
       alert(`Selected file: ${files[0].name}`)
       // Add your file handling logic here
     }
