@@ -50,55 +50,55 @@ examples:
   - name: default
     options:
       legend:
-        text: What is your address?
-  - name: styled as xl text
+        text: Aká je Vaša adresa?
+  - name: zobrazené ako extra veľký text
     options:
       legend:
-        text: What is your address?
+        text: Aká je Vaša adresa?
         classes: govuk-fieldset__legend--xl
-  - name: styled as large text
+  - name: zobrazené ako veľký text
     options:
       legend:
-        text: What is your address?
+        text: Aká je Vaša adresa?
         classes: govuk-fieldset__legend--l
-  - name: styled as medium text
+  - name: zobrazené ako stredný text
     options:
       legend:
-        text: What is your address?
+        text: Aká je Vaša adresa?
         classes: govuk-fieldset__legend--m
-  - name: styled as small text
+  - name: zobrazené ako malý text
     options:
       legend:
-        text: What is your address?
+        text: Aká je Vaša adresa?
         classes: govuk-fieldset__legend--s
-  - name: as page heading xl
+  - name: zobrazené ako extra veľký nadpis
     options:
       legend:
-        text: What is your address?
+        text: Aká je Vaša adresa?
         classes: govuk-fieldset__legend--xl
         isPageHeading: true
-  - name: as page heading l
+  - name: zobrazené ako veľký nadpis
     options:
       legend:
-        text: What is your address?
+        text: Aká je Vaša adresa?
         classes: govuk-fieldset__legend--l
         isPageHeading: true
-  - name: as page heading m
+  - name: zobrazené ako stredne veľký nadpis
     options:
       legend:
-        text: What is your address?
+        text: Aká je Vaša adresa?
         classes: govuk-fieldset__legend--m
         isPageHeading: true
-  - name: as page heading s
+  - name: zobrazené ako extra malý nadpis
     options:
       legend:
-        text: What is your address?
+        text: Aká je Vaša adresa?
         classes: govuk-fieldset__legend--s
         isPageHeading: true
-  - name: as page heading without class
+  - name: zobrazené ako nadpis bez štýlu
     options:
       legend:
-        text: What is your address?
+        text: Aká je Vaša adresa?
         isPageHeading: true
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
@@ -106,7 +106,7 @@ examples:
     hidden: true
     options:
       legend:
-        text: What is your address?
+        text: Aká je Vaša adresa?
       html: |
         <div class="my-content">
           <p>This is some content to put inside the fieldset</p>
@@ -131,7 +131,7 @@ examples:
     hidden: true
     options:
       legend:
-        text: What is your address?
+        text: Aká je Vaša adresa?
         classes: my-custom-class
   - name: classes
     hidden: true

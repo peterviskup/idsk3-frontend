@@ -39,7 +39,7 @@
 
     <div class="govuk-width-container">
       {% set codeExamplesHtml %}
-        <h4 class="govuk-heading-s">Markup</h4>
+        <h4 class="govuk-heading-s">HTML</h4>
         <pre class="app-code"><code tabindex="0" class="app-code__container hljs language-html">
           {{- getHTMLCode(componentName, {
             context: example.options,
@@ -47,7 +47,7 @@
           }) | highlight("html") | safe -}}
         </code></pre>
 
-        <h4 class="govuk-heading-s">Macro</h4>
+        <h4 class="govuk-heading-s">Makro</h4>
         <pre class="app-code"><code tabindex="0" class="app-code__container hljs language-js">
           {{- getNunjucksCode(componentName, {
             context: example.options
@@ -56,7 +56,7 @@
       {% endset %}
 
       {{ govukDetails({
-        summaryText: "Code",
+        summaryText: "Zdrojový kód",
         html: codeExamplesHtml
       }) }}
     </div>

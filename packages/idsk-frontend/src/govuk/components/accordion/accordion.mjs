@@ -599,12 +599,10 @@ export class Accordion extends GOVUKFrontendComponent {
    */
   static defaults = Object.freeze({
     i18n: {
-      hideAllSections: 'Hide all sections',
-      hideSection: 'Hide',
-      hideSectionAriaLabel: 'Hide this section',
-      showAllSections: 'Show all sections',
-      showSection: 'Show',
-      showSectionAriaLabel: 'Show this section'
+      hideAllSections: 'Zatvoriť všetko',
+      hideSectionAriaLabel: 'Zatvoriť túto sekciu',
+      showAllSections: 'Otvoriť všetko',
+      showSectionAriaLabel: 'Otvoriť túto sekciu'
     },
     rememberExpanded: true
   })
@@ -665,14 +663,10 @@ const helper = {
  * for the buttons toggling each section.
  * @property {string} [hideAllSections] - The text content for the 'Hide all
  *   sections' button, used when at least one section is expanded.
- * @property {string} [hideSection] - The text content for the 'Hide'
- *   button, used when a section is expanded.
  * @property {string} [hideSectionAriaLabel] - The text content appended to the
  *   'Hide' button's accessible name when a section is expanded.
  * @property {string} [showAllSections] - The text content for the 'Show all
  *   sections' button, used when all sections are collapsed.
- * @property {string} [showSection] - The text content for the 'Show'
- *   button, used when a section is collapsed.
  * @property {string} [showSectionAriaLabel] - The text content appended to the
  *   'Show' button's accessible name when a section is expanded.
  */

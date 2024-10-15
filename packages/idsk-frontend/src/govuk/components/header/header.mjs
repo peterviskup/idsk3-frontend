@@ -212,8 +212,11 @@ export class Header extends GOVUKFrontendComponent {
 
       this.$menu?.removeAttribute('hidden')
       if (this.$menuButton) {
-        this.$menuButton.textContent = this.menuIsOpen ? 'Zatvoriť' : 'Menu'
-        this.createMaterialIcon('close', this.$menuButton)
+        this.$menuButton.textContent = this.menuIsOpen ? 'Zavrieť' : 'Menu'
+        this.createMaterialIcon(
+          this.menuIsOpen ? 'close' : 'menu',
+          this.$menuButton
+        )
       }
 
       if (this.menuIsOpen) {

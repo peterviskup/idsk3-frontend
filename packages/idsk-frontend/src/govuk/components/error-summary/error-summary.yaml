@@ -69,25 +69,17 @@ examples:
           href: '#example-error-2'
         - text: Prosím, zadajte správny tvar vášho Tel.čísla.
           href: '#example-error-3'
-  - name: without links
+  - name: bez liniek
     options:
-      titleText: There is a problem
+      titleText: Nájdené chyby
       errorList:
-        - text: Invalid username or password
-  - name: mixed with and without links
+        - text: Nesprávne meno alebo heslo
+  - name: zmiešané s linkami aj ako text
     options:
-      titleText: There is a problem
+      titleText: Nájdené chyby
       errorList:
-        - text: Invalid username or password
-        - text: Agree to the terms of service to log in
-          href: '#example-error-1'
-  - name: with everything
-    options:
-      titleText: There is a problem
-      descriptionText: Please fix the errors below.
-      errorList:
-        - text: Invalid username or password
-        - text: Agree to the terms of service to log in
+        - text: Nesprávne meno alebo heslo
+        - text: Súhlas s podmienkami pre prihlásenie
           href: '#example-error-1'
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures

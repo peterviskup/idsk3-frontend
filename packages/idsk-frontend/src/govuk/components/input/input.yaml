@@ -143,7 +143,7 @@ examples:
       id: input-example
       name: default
 
-  - name: with hover
+  - name: so stavom :hover
     options:
       label:
         text: Názov textového poľa
@@ -151,7 +151,7 @@ examples:
       name: hover
       classes: :hover
 
-  - name: with focus
+  - name: so stavom :focus
     options:
       label:
         text: Názov textového poľa
@@ -159,7 +159,7 @@ examples:
       name: test-name-focus
       classes: :focus
 
-  - name: with disabled
+  - name: ako zneplatnené
     options:
       label:
         text: Názov textového poľa
@@ -167,7 +167,7 @@ examples:
       name: test-name-disabled
       disabled: true
 
-  - name: with hint text
+  - name: s nápovedou
     options:
       label:
         text: Názov textového poľa
@@ -176,7 +176,7 @@ examples:
       id: input-with-hint-text
       name: test-name-2
 
-  - name: with hint text and required
+  - name: s nápovedou a ako povinné
     options:
       requiredProps: true
       label:
@@ -186,7 +186,7 @@ examples:
       id: input-with-hint-text-required
       name: test-name-3
 
-  - name: with error message
+  - name: s chybovým výpisom
     options:
       label:
         text: Názov textového poľa
@@ -197,7 +197,7 @@ examples:
       errorMessage:
         text:
 
-  - name: with descriptive text
+  - name: s popisným textom
     options:
       label:
         text: Názov textového poľa
@@ -205,7 +205,7 @@ examples:
       name: test-name-5
       descriptionText: true
 
-  - name: small
+  - name: malé
     options:
       label:
         text: Názov textového poľa

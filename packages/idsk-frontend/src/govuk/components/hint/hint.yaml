@@ -39,13 +39,13 @@ examples:
   - name: default
     options:
       text: |
-        It's on your National Insurance card, benefit letter, payslip or P60.
-        For example, 'QQ 12 34 56 C'.
-  - name: with html
+        Teplotu udávajte v stupňoch Celsia s jedným desatinným miestom
+        Napríklad 28,5 °C.
+  - name: s HTML textom
     options:
       html: |
-        It's on your National Insurance card, benefit letter, payslip or <a class="govuk-link" href="#">P60</a>.
-        For example, 'QQ 12 34 56 C'.
+        Teplotu udávajte v stupňoch Celsia s <b>jedným desatinným miestom</b>.
+        Napríklad 28,5 °C.
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: classes

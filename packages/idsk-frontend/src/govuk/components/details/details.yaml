@@ -40,29 +40,29 @@ title: Detaily
 examples:
   - name: default
     options:
-      summaryText: Help with nationality
-      text: We need to know your nationality so we can work out which elections
-        you’re entitled to vote in. If you can’t provide your nationality,
-        you’ll have to send copies of identity documents through the post.
+      summaryText: Pomoc s národnosťou
+      text:
+        Potrebujeme poznať vašu národnosť, aby sme mohli určiť, ktoré položky
+        máte právo voliť. Ak nemôžete uviesť svoju štátnu príslušnosť,
+        budete musieť poslať kópie dokladov totožnosti poštou.
   - name: expanded
     options:
       id: help-with-nationality
-      summaryText: Help with nationality
-      text: We need to know your nationality so we can work out which elections
-        you’re entitled to vote in. If you can’t provide your nationality,
-        you’ll have to send copies of identity documents through the post.
+      summaryText: Pomoc s národnosťou
+      text:
+        Potrebujeme poznať vašu národnosť, aby sme mohli určiť, ktoré položky
+        máte právo voliť. Ak nemôžete uviesť svoju štátnu príslušnosť,
+        budete musieť poslať kópie dokladov totožnosti poštou.
       open: true
-  - name: with html
+  - name: s HTML položkami
     options:
-      summaryText: Where to find your National Insurance Number
+      summaryText: Kde nájdem svoje identifikaťné číslo
       html: |
-        Your National Insurance number can be found on
+        Vaše identifikačné číslo môžete uviesť z
         <ul>
-          <li>your National Insurance card</li>
-          <li>your payslip</li>
-          <li>P60</li>
-          <li>benefits information</li>
-          <li>tax return</li>
+          <li>občianskeho preukazu</li>
+          <li>čísla faktúry</li>
+          <li>daňového čísla</li>
         </ul>
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures

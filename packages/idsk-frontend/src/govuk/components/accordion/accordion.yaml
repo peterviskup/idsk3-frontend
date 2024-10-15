@@ -105,15 +105,15 @@ examples:
         - heading:
             text: Názov
           content:
-            text: We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+            text: Potrebujeme poznať vašu štátnu príslušnosť, aby sme mohli zistiť, v ktorých voľbách máte právo voliť. Ak nemôžete uviesť svoju štátnu príslušnosť, budete musieť poslať kópie dokladov totožnosti poštou.
         - heading:
             text: Názov
           summary:
             text: Popis
           content:
-            text: We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+            text: Potrebujeme poznať vašu štátnu príslušnosť, aby sme mohli zistiť, v ktorých voľbách máte právo voliť. Ak nemôžete uviesť svoju štátnu príslušnosť, budete musieť poslať kópie dokladov totožnosti poštou.
 
-  - name: default small
+  - name: predvolený malý
     options:
       id: default-example
       smallAccordion: true
@@ -121,16 +121,16 @@ examples:
         - heading:
             text: Názov A
           content:
-            text: We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+            text: Potrebujeme poznať vašu štátnu príslušnosť, aby sme mohli zistiť, v ktorých voľbách máte právo voliť. Ak nemôžete uviesť svoju štátnu príslušnosť, budete musieť poslať kópie dokladov totožnosti poštou.
         - heading:
             text: Názov B
           content:
             html: |
               <ul class="govuk-list govuk-list--bullet">
-                <li>Example item 2</li>
+                <li>Ukážka odrážky</li>
               </ul>
 
-  - name: with long content and description
+  - name: s dlhým obsahom a popisom
     options:
       id: with-long-content-and-description
       items:
@@ -147,83 +147,81 @@ examples:
           content:
             html: |
               <ul class="govuk-list govuk-list--bullet">
-                <li>Example item 2</li>
+                <li>Ukážka odrážky</li>
               </ul>
 
-  - name: with one section open
+  - name: s jednou otvorenou sekciou
     options:
       id: one-section-open-example
       items:
         - heading:
-            text: Section A
+            text: Sekcia A
           expanded: true
           content:
             html: |
               <ul class="govuk-list govuk-list--bullet">
-                <li>Example item 1</li>
+                <li>ukážka odrážky 1</li>
               </ul>
         - heading:
-            text: Section B
+            text: Sekcia B
           content:
             html: |
               <ul class="govuk-list govuk-list--bullet">
-                <li>Example item 2</li>
+                <li>ukážka odrážky 2</li>
               </ul>
 
-  - name: with all sections already open
+  - name: s otorenými všetkými sekciamo
     options:
       id: all-sections-open-example
       items:
         - heading:
-            text: Section A
+            text: Sekcia A
           expanded: true
           content:
             html: |
               <ul class="govuk-list govuk-list--bullet">
-                <li>Example item 1</li>
+                <li>ukážka odrážky 1</li>
               </ul>
         - heading:
-            text: Section B
+            text: Sekcia B
           expanded: true
           content:
             html: |
               <ul class="govuk-list govuk-list--bullet">
-                <li>Example item 2</li>
+                <li>ukážka odrážky 2</li>
               </ul>
 
-  - name: with focusable elements inside
+  - name: s linkami v obsahu
     options:
       id: with-focusable-elements
       items:
         - heading:
-            text: Section A
+            text: Sekcia A
           content:
-            html: <a class="govuk-link" href="#">Link A</a>
+            html: <a class="govuk-link" href="#">Linka A</a>
         - heading:
-            text: Section B
+            text: Sekcia B
           content:
-            html: <a class="govuk-link" href="#">Link B</a>
+            html: <a class="govuk-link" href="#">Linka B</a>
 
-  - name: with translations
+  - name: s vlastnými popiskami tlačidiel
     options:
       id: with-translations
-      hideAllSectionsText: Collapse all sections
-      showAllSectionsText: Expand all sections
-      hideSectionText: Collapse
-      hideSectionAriaLabelText: Collapse this section
-      showSectionText: Expand
-      showSectionAriaLabelText: Expand this section
+      hideAllSectionsText: Skryť všetky sekcie
+      showAllSectionsText: Odkryť všetky sekcie
+      hideSectionAriaLabelText: Skryť túto sekciu
+      showSectionAriaLabelText: Odkryť túto sekciu
       items:
         - heading:
-            text: Section A
+            text: Sekcia A
           content:
-            text: We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+            text: Potrebujeme poznať vašu štátnu príslušnosť, aby sme mohli zistiť, v ktorých voľbách máte právo voliť. Ak nemôžete uviesť svoju štátnu príslušnosť, budete musieť poslať kópie dokladov totožnosti poštou.
         - heading:
-            text: Section B
+            text: Sekcia B
           content:
             html: |
               <ul class="govuk-list govuk-list--bullet">
-                <li>Example item 2</li>
+                <li>ukážka odrážky 1</li>
               </ul>
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures

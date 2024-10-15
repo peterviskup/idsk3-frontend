@@ -82,7 +82,7 @@ examples:
         - text: Vzdelávanie, školenie a zručnosti
           href: '/education'
         - text: Špeciálne vzdelávacie potreby a zdravotné postihnutie a vysoké potreby
-  - name: inverse
+  - name: na tmavom pozadí
     description: Navigácia na tmavom pozadí
     previewLayoutModifiers:
       - inverse
