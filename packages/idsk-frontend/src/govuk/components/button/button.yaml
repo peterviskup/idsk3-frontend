@@ -56,124 +56,124 @@ title: Tlačidlo
 examples:
   - name: default
     options:
-      text: Primary button
+      text: Primárne tlačidlo
       classes: govuk-button__basic
-  - name: input
+  - name: ako odoslanie formuláru
     options:
       element: input
-      text: Primary button
+      text: Odoslať
       classes: govuk-button__basic
-  - name: with active state
-    description: Simulate triggering the :active CSS pseudo-class, not available in the production build.
+  - name: so stavom :active
+    description: Simuluje aktívny stav :active CSS pseudotriedy, nie je súčasťou produkčného balíčku.
     options:
       name: active
-      text: Active
+      text: Aktívne
       classes: govuk-button__basic :active
-  - name: input disabled
+  - name: zneplatnené
     options:
       element: input
-      text: Explicit input button disabled
+      text: Zneplatnené
       classes: govuk-button__basic
       disabled: true
-  - name: successfully
+  - name: úspešné
     options:
-      text: Successfully button
+      text: Súhlasím
       classes: govuk-button__success
-  - name: warning
+  - name: upozorňovacie
     options:
-      text: Warning button
+      text: Upozornenie
       classes: govuk-button__warning
-  - name: disabled
+  - name: zakázané
     options:
-      text: Disabled button
+      text: Zrušiť
       disabled: true
-  - name: with hover state
-    description: Simulate triggering the :hover CSS pseudo-class, not available in the production build.
+  - name: stav :hover
+    description: Simuluje aktívny stab :hover CSS pseudotriedy, nie je súčasťou produkčného balíčku.
     options:
       name: hover
-      text: Hovered
+      text: Stlačené tlačídlo
       classes: :hover
   - name: with focus state
-    description: Simulate triggering the :focus CSS pseudo-class, not available in the production build.
+    description: Simuluje aktívny stav :focus CSS pseudotriedy, nie je súčasťou produkčného balíčku.
     options:
       name: focus
       text: Focussed
       classes: :focus
-  - name: large
+  - name: veľké
     description: Large button
     options:
       name: Button Large
-      text: Button Large
+      text: Veľké tlačidlo
       classes: govuk-button__large
-  - name: secondary
-    description: A button for secondary actions
+  - name: sekundárne
+    description: Tlačidlo v stave sekundárne
     options:
       name: secondary
-      text: Secondary button
+      text: Sekundárne tlačidlo
       classes: govuk-button--sec
-  - name: secondary success
+  - name: sekundárne úspešné
     options:
       name: secondary
-      text: Secondary success button
+      text: Sekundárne úspešné
       classes: govuk-button--sec__success
-  - name: secondary warning
+  - name: sekundárne upozorňovacie tlačidlo
     options:
       name: secondary
-      text: Secondary warning button
+      text: Sekundárne upozorňovacie
       classes: govuk-button--sec__warning
-  - name: secondary disabled
+  - name: sekundárne zakázané
     options:
       name: secondary
-      text: Secondary button disabled
+      text: Sekundárne zakázané
       classes: govuk-button--sec
       disabled: true
-  - name: secondary link
-    description: A link button for secondary actions
+  - name: sekundárne ako linka
+    description: Tlačidlo vo forme sekundárnej linky
     options:
       name: secondary
-      text: Secondary button
+      text: Sekundárne tlačidlo
       href: '/'
       classes: govuk-button--sec
-  - name: warning
-    description: A button for actions that need a warning
+  - name: upozorňovacie
+    description: Tlačidlo kde potrebujeme varovať požívateľa
     options:
       name: Warning
-      text: Warning button
+      text: Upozornenie
       classes: govuk-button__warning
-  - name: warning disabled
+  - name: upozorňovacie zakázané
     options:
       name: warning
-      text: Warning button disabled
+      text: Upozornenie
       classes: govuk-button--warning
       disabled: true
-  - name: texted btn
+  - name: vo forme textu
     options:
       name: Texted
-      text: Texted btn
+      text: Textové tlačidlo
       classes: govuk-button--texted
-  - name: texted btn success
+  - name: textové úspešné
     options:
       name: Texted btn success
-      text: Texted btn success
+      text: Textové tlačidlo
       classes: govuk-button--texted govuk-button--texted__success
-  - name: texted btn warning
+  - name: textové upozorňovacie
     options:
       name: Texted
-      text: Texted btn warning
+      text: Textové tlačidlo
       classes: govuk-button--texted govuk-button--texted__warning
-  - name: texted btn disabled
+  - name: textové zakázané
     options:
       name: Texted
-      text: Texted btn
+      text: Textové tlačidlo
       classes: govuk-button--texted
       disabled: true
-  - name: texted btn success disabled
+  - name: textové úspešné zakázané
     options:
       name: Texted btn success
-      text: Texted btn success
+      text: Textové tlačidlo
       classes: govuk-button--texted govuk-button--texted__success
       disabled: true
-  - name: texted btn warning disabled
+  - name: textové upozorňovacie zakázané
     options:
       name: Texted
       text: Texted btn warning

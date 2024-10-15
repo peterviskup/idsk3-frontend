@@ -26,12 +26,14 @@ export default async () => {
   // Cache mapped components and examples
   const [
     componentsFixtures,
-    componentNames,
+    componentNamesUnsorted,
     componentNamesWithJavaScript,
     exampleNames,
     fullPageExamples
   ] = await Promise.all([
-    getComponentsFixtures(packageOptions),
+    getComponentsFixtures(packageOptions).then((fixture) =>
+      fixture.sort((a, b) => a.title.localeCompare(b.title, 'sk'))
+    ),
 
     // Components list
     getComponentNames(packageOptions),
@@ -46,9 +48,17 @@ export default async () => {
     getDirectories(join(paths.app, 'src/views/examples')),
     getFullPageExamples()
   ])
-  const componentTitles = componentsFixtures.reduce(
-    (prev, curr) => ({ ...prev, [curr.component]: curr.title }),
-    {}
+  /**
+   * @typedef {{name: string, lang: string}} Record
+   */
+  const componentTitles = /** @type {Record} */ (
+    componentsFixtures.reduce(
+      (prev, curr) => ({ ...prev, [curr.component]: curr.title }),
+      {}
+    )
+  )
+  const componentNames = componentNamesUnsorted.sort((a, b) =>
+    componentTitles[a].localeCompare(componentTitles[b], 'sk')
   )
 
   // Feature flags

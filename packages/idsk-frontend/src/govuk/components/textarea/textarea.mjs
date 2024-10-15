@@ -36,8 +36,6 @@ export class Textarea extends GOVUKFrontendComponent {
     const counterElement = this.$module.querySelector(
       '.idsk-textarea--counter span'
     )
-    this.textarea = textarea
-    this.counter = counterElement
 
     if (!textarea) {
       throw new ElementError({
@@ -55,7 +53,10 @@ export class Textarea extends GOVUKFrontendComponent {
       })
     }
 
-    this.counter.textContent = this.textarea?.value.length.toString()
+    this.textarea = textarea
+    this.counter = counterElement
+
+    this.counter.textContent = this.textarea.value.length.toString()
     this.textarea.addEventListener('input', (event) => this.handleChange(event))
   }
 
@@ -67,7 +68,10 @@ export class Textarea extends GOVUKFrontendComponent {
    */
   handleChange(event) {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-    this.counter.textContent = event.target?.value?.length.toString()
+    const el = event.target
+    if (el instanceof HTMLTextAreaElement) {
+      this.counter.textContent = el.value.length.toString()
+    }
   }
 
   /**

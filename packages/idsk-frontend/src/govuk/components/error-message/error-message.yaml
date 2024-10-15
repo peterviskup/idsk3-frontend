@@ -42,9 +42,9 @@ title: Chybové hlásenie
 examples:
   - name: default
     options:
-      text: Error message about full name goes here
+      text: Chybová hláška
 
-  - name: translated
+  - name: s doplňujúcim textom pre čítačky
     options:
       visuallyHiddenText: ''
       html: <span class="govuk-visually-hidden">Gwall:</span> Neges gwall am yr enw llawn yn mynd yma

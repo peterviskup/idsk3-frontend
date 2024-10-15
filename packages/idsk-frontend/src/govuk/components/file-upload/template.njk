@@ -1,21 +1,22 @@
 {% from "../../macros/attributes.njk" import govukAttributes %}
 {% from "../error-message/macro.njk" import govukErrorMessage %}
 
+{% set enableJs = false if params.enableJs == false else true %}
+
 {#- a record of other elements that we need to associate with the input using
   aria-describedby – for example hints or error messages -#}
 {% set describedBy = params.describedBy if params.describedBy else "" %}
 <div class="govuk-form-group file-upload-component
 {%- if params.errorMessage %} govuk-form-group--error{% endif %}
-{% if params.enableJs %} js-enabled {% endif %}
+{% if enableJs %} js-enabled {% endif %}
 {% if params.disabled %} disabled {% endif %}
 {%- if params.formGroup.classes %} {{ params.formGroup.classes }}{% endif %}" data-module="govuk-fileUpload"
   {{- govukAttributes(params.formGroup.attributes) }}>
-
 {% if params.hint %}
   {% set hintId = params.id + '-hint' %}
   {% set describedBy = describedBy + ' ' + hintId if describedBy else hintId %}
 {% endif %}
-  <h2 class="govuk-heading-m">Nahraj subor</h2>
+  <h2 class="govuk-heading-m">Nahraj súbor</h2>
   {% if params.errorMessage %}
     {% set errorId = params.id + '-error' %}
     {% set describedBy = describedBy + ' ' + errorId if describedBy else errorId %}
@@ -31,26 +32,49 @@
   <div class="upload-container" aria-label="File upload section" role="region">
 {#    <input type="file" id="fileInput" class="file-input" hidden aria-describedby="uploadInstructions">#}
 
-  <input class="govuk-file-upload file-input {%- if params.errorMessage %} govuk-file-upload--error{% endif %} {% if params.enableJs %} just-file {% endif %}" id="fileInput" type="file" aria-describedby="uploadInstructions"
-  {%- if not params.enableJs  %} hidden {% endif %}
+  <input class="govuk-file-upload just-file file-input {%- if params.errorMessage %} govuk-file-upload--error{% endif %}" {% if enableJs %} data-file-input {% endif %} id="fileInput" type="file" aria-describedby="uploadInstructions"
+  {%- if enableJs %} hidden {% endif %}
   {%- if params.disabled %} disabled{% endif %} >
   {% if params.formGroup.afterInput %}
     {{ params.formGroup.afterInput.html | safe | trim | indent(2) if params.formGroup.afterInput.html else params.formGroup.afterInput.text }}
   {% endif %}
-  {% if not params.enableJs %}
+  {% if enableJs %}
     <label for="fileInput" class="upload-box" aria-label="File upload box">
       <div class="upload-icon" aria-hidden="true">
         <span class="material-icons" aria-hidden="true">cloud_upload</span>
       </div>
       <div class="upload-text" id="uploadInstructions">
         <p class="govuk-body"><b>Zvoľte súbor a nahrajte ho</b></p>
-        <p class="govuk-body">alebo preneste zvolenú prílohu sem (max. veľkosť 50MB)</p>
+        <p class="govuk-body">alebo preneste zvolenú prílohu sem (max. veľkosť 10MB)</p>
       </div>
       <button class="govuk-button govuk-button__basic upload-button" aria-label="Add attachment" {% if params.disabled %} disabled {% endif %}>
         <span class="material-icons" aria-hidden="true">add</span>
         <span>Pridať prílohu</span>
       </button>
     </label>
+    {% if params.content %}
+      <h2 class="govuk-heading-m">Nahrané súbory</h2>
+        <ul class="upload-files">
+        {% for content in params.content %}
+          <li class="upload-file-box {%- if content.errorMessage %} error{% endif %}">
+            <span class="material-icons upload-file-icon" aria-hidden="true">{{ content.icon }}</span>
+            <div class="upload-file-content">
+              <span class="upload-file-content-filename">List_vlastníctva_obytny_orechova_Velke_Zaluzie_na...nazov_suboru_ale.csv</span>
+              {% if content.progress %}
+                <div class="upload-file-content-info">
+                  <progress id="file" value="{{ content.progress }}" max="100"></progress>
+                  <span id="progress-text">{{ content.progress }}%</span>
+                </div>
+              {% endif %}
+              {% if content.errorMessage %}
+                <span class="upload-file-content-info">{{ content.errorMessage }}</span>
+              {% endif %}
+            </div>
+            <button onclick="this.parentNode.style.display = 'none'" class="upload-file-close-icon"><div class="material-icons">close</div></button>
+          </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
   {% endif %}
   </div>
 </div>
