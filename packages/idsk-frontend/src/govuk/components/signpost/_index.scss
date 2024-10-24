@@ -61,6 +61,10 @@
   .govuk-signpost__link {
     &:hover {
       box-shadow: 0 0 0 3px govuk-colour("dark-grey");
+
+      .govuk-signpost__title {
+        text-decoration-thickness: 3px;
+      }
     }
 
     .govuk-signpost__title {

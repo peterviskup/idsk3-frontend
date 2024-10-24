@@ -257,10 +257,11 @@ $govuk-inverse-button-text-colour: $govuk-brand-colour !default;
       text-decoration: underline;
 
       &:hover {
-        color: govuk-colour("dark-grey");
+        color: govuk-colour("dark-blue");
         background-color: transparent;
         box-shadow: none;
         text-decoration: underline;
+        text-decoration-thickness: 3px;
       }
 
       &__success {
@@ -287,6 +288,7 @@ $govuk-inverse-button-text-colour: $govuk-brand-colour !default;
 
         &:hover {
           box-shadow: none;
+          text-decoration-thickness: initial;
         }
       }
     }

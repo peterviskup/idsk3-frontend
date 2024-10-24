@@ -120,7 +120,7 @@ $govuk-input-border-colour: #424242 !default;
 /// @type Colour
 /// @access public
 
-$govuk-hover-colour: #9e9e9e80 !default;
+$govuk-hover-colour: govuk-colour("greyN200") !default;
 
 // =============================================================================
 // Links
