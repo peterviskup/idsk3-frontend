@@ -61,6 +61,11 @@
         }
       }
 
+      .govuk-header__profile_button {
+        background-color: govuk-colour("black");
+        border-radius: 50%;
+      }
+
       & .material-icons {
         font-size: 28px;
         color: govuk-colour("blueP500");
@@ -78,6 +83,10 @@
     &__profile {
       display: none;
 
+      &[hidden] {
+        display: none;
+      }
+
       @include govuk-media-query($until: desktop) {
         display: flex;
         flex-direction: column;
@@ -89,11 +98,25 @@
         padding: 30px 20px 20px 20px;
       }
 
+      @include govuk-media-query($from: desktop) {
+        position: absolute;
+        right: 0;
+        top: -20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: govuk-colour("white");
+        margin: 0;
+        border: 1px solid govuk-colour("greyN300");
+        border-radius: 10px;
+        padding: 30px 20px 20px 20px;
+      }
+
       img.profile {
-        @include govuk-media-query($until: desktop) {
-          border-radius: 50%;
-          max-width: 50px;
-        }
+        // @include govuk-media-query($until: desktop) {
+        border-radius: 50%;
+        max-width: 50px;
+        // }
       }
 
       h4.govuk-heading-l {
@@ -371,6 +394,8 @@
   }
 
   .govuk-header__navigation {
+    position: relative;
+
     span.text {
       font-size: 16px;
       color: govuk-colour("black");
@@ -404,6 +429,8 @@
     ul {
       margin-top: 0;
       margin-bottom: 0;
+      padding: 0;
+      list-style: none;
     }
 
     .warning {
@@ -526,16 +553,22 @@
     width: 100%;
     flex-direction: column;
 
-    .idsk-dropdown__wrapper {
+    .idsk-secondary-navigation__dropdown {
       position: absolute;
       right: 0rem;
       top: 0.4rem;
-
-      /*
-      @media (min-width: 1120px) {
-        right: 2rem;
-      }*/
     }
+
+    // .idsk-dropdown__wrapper {
+    //   position: absolute;
+    //   right: 0rem;
+    //   top: 0.4rem;
+
+    //   /*
+    //   @media (min-width: 1120px) {
+    //     right: 2rem;
+    //   }*/
+    // }
 
     .idsk-secondary-navigation__header {
       display: flex;
@@ -802,39 +835,64 @@
   }
 
   .idsk-dropdown {
-    @include govuk-font($size: 16, $line-height: 1.5);
-    @include govuk-responsive-padding(4, "top");
-    @include govuk-responsive-padding(4, "bottom");
+    // @include govuk-font($size: 16, $line-height: 1.5);
+    // @include govuk-responsive-padding(4, "top");
+    // @include govuk-responsive-padding(4, "bottom");
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    gap: 0.125rem;
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    // width: 100%;
+    // gap: 0.125rem;
     // color: govuk-colour("black");
 
-    @include govuk-media-query($from: desktop) {
-      justify-content: flex-start;
-      height: 100%;
-    }
+    // @include govuk-media-query($from: desktop) {
+    //   justify-content: flex-start;
+    //   height: 100%;
+    // }
 
     &__wrapper {
       display: inline-block;
       position: relative;
 
       ul {
-        @include govuk-responsive-margin(0);
+        @include govuk-responsive-margin(1, "top");
         @include govuk-responsive-padding(0);
         display: none;
       }
 
       .idsk-dropdown {
-        padding: 0 0 0 5px;
+        padding: 0;
+        margin: 0;
+        font-weight: normal;
         // color: govuk-colour("white");
+        text-decoration: none;
+
+        &:hover > *:not(.material-icons) {
+          text-decoration: underline;
+        }
+
+        .material-icons {
+          text-decoration: none;
+        }
+
+        // &:hover {
+        //   text-decoration: underline;
+        // }
+
+        // > * {
+        //   &:hover {
+        //     text-decoration: underline;
+        //   }
+        // }
       }
 
       &.open > .idsk-dropdown__options {
         display: block;
+
+        @include govuk-media-query($until: desktop) {
+          position: static;
+        }
       }
 
       &.open > .idsk-dropdown > .material-icons {
@@ -878,10 +936,12 @@
       opacity: 0;
       color: govuk-colour("black");
       background-color: govuk-colour("white");
-      box-shadow:
-        0 0 #00000000,
-        0 0 #00000000,
-        0 12px 32px #1a1a1a3d;
+
+      &.idsk-shadow-medium {
+        @include govuk-media-query($until: desktop) {
+          box-shadow: none;
+        }
+      }
 
       hr {
         position: absolute;

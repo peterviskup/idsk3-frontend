@@ -117,7 +117,7 @@
     // outline, which becomes solid (text-coloured) in that context, we ensure
     // the focus remains clearly visible.
     outline: $govuk-focus-width solid $govuk-focus-colour;
-    outline-offset: 2px;
+    outline-offset: 3px;
     // box-shadow: 0 0 0 $govuk-focus-width govuk-colour("mid-grey");
 
     // When in an explicit forced-color mode, we can use the Highlight system
