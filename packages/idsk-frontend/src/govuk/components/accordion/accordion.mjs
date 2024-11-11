@@ -35,10 +35,10 @@ export class Accordion extends GOVUKFrontendComponent {
   controlsClass = 'govuk-accordion__controls'
 
   /** @private */
-  showAllClass = 'govuk-accordion__show-all'
+  showAllClass = 'govuk-button govuk-button--texted'
 
   /** @private */
-  showAllTextClass = 'govuk-accordion__show-all-text'
+  showAllTextClass = ''
 
   /** @private */
   sectionClass = 'govuk-accordion__section'
@@ -93,12 +93,6 @@ export class Accordion extends GOVUKFrontendComponent {
    * @type {HTMLButtonElement | null}
    */
   $showAllButton = null
-
-  /**
-   * @private
-   * @type {HTMLElement | null}
-   */
-  $showAllIcon = null
 
   /**
    * @private
@@ -163,8 +157,8 @@ export class Accordion extends GOVUKFrontendComponent {
     this.$showAllButton.setAttribute('aria-expanded', 'false')
 
     // Create icon, add to element
-    this.$showAllIcon = document.createElement('span')
-    this.$showAllButton.appendChild(this.$showAllIcon)
+    // this.$showAllIcon = document.createElement('span')
+    // this.$showAllButton.appendChild(this.$showAllIcon)
 
     // Create control wrapper and add controls to it
     const $accordionControls = document.createElement('div')
@@ -174,7 +168,9 @@ export class Accordion extends GOVUKFrontendComponent {
 
     // Build additional wrapper for Show all toggle text and place after icon
     this.$showAllText = document.createElement('span')
-    this.$showAllText.classList.add(this.showAllTextClass)
+    if (this.showAllTextClass) {
+      this.$showAllText.classList.add(this.showAllTextClass)
+    }
     this.$showAllButton.appendChild(this.$showAllText)
 
     // Handle click events on the show/hide all button
@@ -498,7 +494,7 @@ export class Accordion extends GOVUKFrontendComponent {
    * @param {boolean} expanded - Section expanded
    */
   updateShowAllButton(expanded) {
-    if (!this.$showAllButton || !this.$showAllText || !this.$showAllIcon) {
+    if (!this.$showAllButton || !this.$showAllText) {
       return
     }
 
