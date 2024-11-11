@@ -113,19 +113,25 @@ title: Hlavička
 examples:
   - name: default
     description: The standard header as used on information pages
-    options: {}
+    options:
+      searchPanel: true
+      headerButtons: false
 
   - name: neprihlásený používateľ (bez navigácie)
     options:
       #      useTudorCrown: false
       actionPanel: false
       navigation: {}
+      searchPanel: true
+      headerButtons: true
 
   - name: prihlásený používateľ (bez navigácie)
     options:
       #      useTudorCrown: false
       actionPanel: true
       navigation: {}
+      searchPanel: true
+      headerButtons: false
 
   - name: neprihlásený používateľ (s navigáciou)
     options:
@@ -143,7 +149,8 @@ examples:
           text: Sekcia 4
         - href: '#5'
           text: Sekcia 5
-      dropdown: true
+      searchPanel: true
+      headerButtons: true
 
   - name: prihlásený používateľ (s navigáciou)
     options:
@@ -161,13 +168,13 @@ examples:
           text: Sekcia 4
         - href: '#5'
           text: Sekcia 5
-      dropdown: true
+      searchPanel: true
+      headerButtons: false
 
   - name: prihlásený s navigáciou v hlavičke
     options:
-      navbarHeader: true
       actionPanel: true
-      navigation:
+      navbarHeader:
         - href: '#1'
           text: Sekcia 1
           count: 10
@@ -189,12 +196,14 @@ examples:
           text: Sekcia 5
           count: 67
           type: Ukončených úloh
-      dropdown: false
+      searchPanel: false
+      headerButtons: false
 
   - name: bez navigácie v hlavičke
     options:
-      navbarHeader: true
       actionPanel: true
+      searchPanel: false
+      headerButtons: false
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: attributes

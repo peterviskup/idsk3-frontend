@@ -27,6 +27,10 @@ export class Header extends GOVUKFrontendComponent {
   /** @type {HTMLElement | undefined} */
   $header
 
+  /** @private */
+  /** @type {HTMLElement | undefined} */
+  $headerProfileCard
+
   /**
    * Save the opened/closed state for the nav in memory so that we can
    * accurately maintain state when the screen is changed from small to big and
@@ -66,6 +70,11 @@ export class Header extends GOVUKFrontendComponent {
     const langDropdown = $module.querySelector('.idsk-dropdown__wrapper')
     if (langDropdown) {
       new Dropdown(langDropdown) // eslint-disable-line no-new
+    }
+
+    const myDropdown = $module.querySelector('.jano')
+    if (myDropdown) {
+      new Dropdown(myDropdown) // eslint-disable-line no-new
     }
 
     this.$module = $module
@@ -133,10 +142,42 @@ export class Header extends GOVUKFrontendComponent {
     this.setupResponsiveChecks()
 
     // Get dropdown menu and toggle. Then function for show or hide dropdown
+    // TODO: vyhodit a nahradit ComboBoxom
     const dropdownToggle = $module.querySelector('.dropdown-toggle')
     if (dropdownToggle instanceof HTMLElement) {
       this.$dropdownToggle = dropdownToggle
       this.openCloseDropdownMenu()
+    }
+
+    // document.getElementById("govuk-header__profile")
+    const headerProfileCard = $module.querySelector('.govuk-header__profile')
+    if (headerProfileCard instanceof HTMLElement) {
+      this.$headerProfileCard = headerProfileCard
+    }
+    const profileButton = $module.querySelector('.govuk-header__profile_button')
+    if (this.$headerProfileCard && profileButton) {
+      profileButton.addEventListener(
+        'click',
+        () => {
+          if (this.$headerProfileCard) {
+            this.$headerProfileCard.classList.toggle('hidden')
+          }
+        },
+        true
+      )
+      document.addEventListener('click', (event) => {
+        if (this.mql == null || !this.mql.matches) {
+          return
+        }
+        if (
+          this.$headerProfileCard &&
+          event.target instanceof Node &&
+          !this.$headerProfileCard.contains(event.target) &&
+          !profileButton.contains(event.target)
+        ) {
+          this.$headerProfileCard.classList.add('hidden')
+        }
+      })
     }
   }
 
@@ -196,6 +237,9 @@ export class Header extends GOVUKFrontendComponent {
       this.$header
         .querySelector('.idsk-searchbar__wrapper')
         ?.classList.remove('hide')
+      if (this.$headerProfileCard) {
+        this.$headerProfileCard.classList.add('hidden')
+      }
     } else {
       // mobile
       this.$menuButton?.removeAttribute('hidden')
@@ -203,6 +247,9 @@ export class Header extends GOVUKFrontendComponent {
         'aria-expanded',
         this.menuIsOpen.toString()
       )
+      if (this.$headerProfileCard) {
+        this.$headerProfileCard.classList.remove('hidden')
+      }
 
       /*
       if (!this.$menu) {
@@ -365,14 +412,14 @@ class Dropdown {
       })
     }
 
-    this.button?.addEventListener('click', () => this.handleClick())
+    this.button?.addEventListener('click', (event) => this.handleClick(event))
     document.addEventListener('click', (event) => {
       if (
         event.target instanceof Node &&
         !this.$module.contains(event.target) &&
         this.isOpen
       ) {
-        this.handleClick()
+        this.handleClick(event)
       }
     })
   }
@@ -380,12 +427,15 @@ class Dropdown {
   /**
    * Trigger a click event
    *
+   * @param {Event} event - click event
    * @private
    */
-  handleClick() {
+  handleClick(event) {
     if (!this.button) {
       return
     }
+
+    event.preventDefault()
 
     this.isOpen = !this.isOpen
     const label = this.$module.dataset.pseudolabel ?? ''

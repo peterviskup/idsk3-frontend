@@ -51,7 +51,7 @@
     }
 
     &:hover:not(:disabled)::file-selector-button {
-      box-shadow: 0 0 0 2px govuk-colour("dark-blue");
+      box-shadow: 0 0 0 3px govuk-colour("dark-blue");
     }
 
     &:active:not(:disabled)::file-selector-button {

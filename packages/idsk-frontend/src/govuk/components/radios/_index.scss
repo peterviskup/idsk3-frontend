@@ -118,7 +118,7 @@
     // outline: $govuk-focus-width solid transparent;
     // outline-offset: 1px;
     outline: $govuk-focus-width solid $govuk-focus-colour;
-    outline-offset: 2px;
+    outline-offset: 3px;
     // box-shadow: 0 0 0 $govuk-radios-focus-width govuk-colour("greyN500");
 
     // When in an explicit forced-color mode, we can use the Highlight system
@@ -303,7 +303,7 @@
     // and another that then applies the hover state [2].
     .govuk-radios__input:focus .govuk-radios__input:not(:disabled) + .govuk-radios__label::before {
       outline: $govuk-focus-width solid $govuk-focus-colour;
-      outline-offset: 2px;
+      outline-offset: 3px;
 
       // // Set different HCM colour when we have both hover/focus applied at once
       // @media screen and (forced-colors: active), (-ms-high-contrast: active) {
