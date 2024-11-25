@@ -28,8 +28,8 @@ export class Header extends GOVUKFrontendComponent {
   $header
 
   /** @private */
-  /** @type {HTMLElement | undefined} */
-  $headerProfileCard
+  /** @type {HTMLDialogElement | undefined} */
+  $profileDialog
 
   /**
    * Save the opened/closed state for the nav in memory so that we can
@@ -67,6 +67,10 @@ export class Header extends GOVUKFrontendComponent {
       })
     }
 
+    const dropdownItems = $module.querySelectorAll('.idsk-dropdown__wrapper')
+    dropdownItems.forEach((dropdownItem) => new Dropdown(dropdownItem))
+
+    /*
     const langDropdown = $module.querySelector('.idsk-dropdown__wrapper')
     if (langDropdown) {
       new Dropdown(langDropdown) // eslint-disable-line no-new
@@ -76,6 +80,12 @@ export class Header extends GOVUKFrontendComponent {
     if (myDropdown) {
       new Dropdown(myDropdown) // eslint-disable-line no-new
     }
+
+    const myDropdown2 = $module.querySelector('.jano2')
+    if (myDropdown2) {
+      new Dropdown(myDropdown2) // eslint-disable-line no-new
+    }
+      */
 
     this.$module = $module
     const $menuButton = $module.querySelector('.govuk-js-header-toggle')
@@ -112,7 +122,8 @@ export class Header extends GOVUKFrontendComponent {
       websitesNavBody instanceof HTMLElement &&
       websitesNavBtn instanceof HTMLElement
     ) {
-      websitesNavBtn.addEventListener('click', () => {
+      websitesNavBtn.addEventListener('click', (event) => {
+        event.preventDefault()
         const menuIsOpen = !(websitesNavBtn.ariaExpanded === 'true')
         const iconClassList =
           websitesNavBtn.querySelector('.material-icons')?.classList
@@ -149,7 +160,32 @@ export class Header extends GOVUKFrontendComponent {
       this.openCloseDropdownMenu()
     }
 
+    const profileDialog = document.getElementById('navigationProfileDialog')
+    if (profileDialog instanceof HTMLDialogElement) {
+      this.$profileDialog = profileDialog
+    }
+    const profileButton = $module.querySelector('.govuk-header__profile_button')
+    const profileCloseButton = $module.querySelector(
+      '.govuk-header__profile_close_button'
+    )
+    if (profileDialog instanceof HTMLDialogElement && this.$profileDialog) {
+      profileButton?.addEventListener('click', () => {
+        if (profileDialog.open) {
+          this.$profileDialog?.close()
+        } else {
+          this.$profileDialog?.showModal()
+        }
+      })
+      profileCloseButton?.addEventListener('click', () => profileDialog.close())
+      profileDialog.addEventListener('click', (event) => {
+        if (event.target === this.$profileDialog) {
+          this.$profileDialog.close()
+        }
+      })
+    }
+
     // document.getElementById("govuk-header__profile")
+    /*
     const headerProfileCard = $module.querySelector('.govuk-header__profile')
     if (headerProfileCard instanceof HTMLElement) {
       this.$headerProfileCard = headerProfileCard
@@ -159,26 +195,32 @@ export class Header extends GOVUKFrontendComponent {
       profileButton.addEventListener(
         'click',
         () => {
-          if (this.$headerProfileCard) {
-            this.$headerProfileCard.classList.toggle('hidden')
+          const el = document.getElementById("navigationProfileDialog");
+          if (el instanceof HTMLDialogElement) {
+            if (el.open) {
+              el.close()
+            } else {
+              el.show()
+            }
           }
         },
         true
       )
-      document.addEventListener('click', (event) => {
-        if (this.mql == null || !this.mql.matches) {
-          return
-        }
-        if (
-          this.$headerProfileCard &&
-          event.target instanceof Node &&
-          !this.$headerProfileCard.contains(event.target) &&
-          !profileButton.contains(event.target)
-        ) {
-          this.$headerProfileCard.classList.add('hidden')
-        }
-      })
+      // document.addEventListener('click', (event) => {
+      //   if (this.mql == null || !this.mql.matches) {
+      //     return
+      //   }
+      //   if (
+      //     this.$headerProfileCard &&
+      //     event.target instanceof Node &&
+      //     !this.$headerProfileCard.contains(event.target) &&
+      //     !profileButton.contains(event.target)
+      //   ) {
+      //     this.$headerProfileCard.classList.add('hidden')
+      //   }
+      // })
     }
+      */
   }
 
   /**
@@ -237,25 +279,16 @@ export class Header extends GOVUKFrontendComponent {
       this.$header
         .querySelector('.idsk-searchbar__wrapper')
         ?.classList.remove('hide')
-      if (this.$headerProfileCard) {
-        this.$headerProfileCard.classList.add('hidden')
-      }
     } else {
       // mobile
+      if (this.$profileDialog) {
+        this.$profileDialog.close()
+      }
       this.$menuButton?.removeAttribute('hidden')
       this.$menuButton?.setAttribute(
         'aria-expanded',
         this.menuIsOpen.toString()
       )
-      if (this.$headerProfileCard) {
-        this.$headerProfileCard.classList.remove('hidden')
-      }
-
-      /*
-      if (!this.$menu) {
-        return
-      }
-        */
 
       this.$menu?.removeAttribute('hidden')
       if (this.$menuButton) {
