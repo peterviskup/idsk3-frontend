@@ -17,7 +17,14 @@
     }
 
     &:hover {
-      border-color: govuk-colour("greyN500");
+      border-color: transparent;
+      box-shadow: 0 0 0 3px govuk-colour("dark-grey");
+
+      .idsk-card__heading {
+        a {
+          @include govuk-link-hover-decoration;
+        }
+      }
     }
 
     &--vertical {
