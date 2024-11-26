@@ -112,7 +112,7 @@ accessibilityCriteria: |
 title: Hlavička
 examples:
   - name: default
-    description: The standard header as used on information pages
+    description: Základná hlavička webovej stránky alebo služby
     options:
       searchPanel: true
       headerButtons: false
