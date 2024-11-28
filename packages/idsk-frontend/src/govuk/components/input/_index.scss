@@ -18,7 +18,7 @@
 
     &:not([disabled]):hover {
       // border: 1px solid $govuk-input-border-colour;
-      box-shadow: 0 0 0 4px #757575;
+      box-shadow: 0 0 0 3px #757575;
     }
 
     // setting any background-color makes text invisible when changing colours to dark backgrounds in Firefox (https://bugzilla.mozilla.org/show_bug.cgi?id=1335476)

@@ -14,17 +14,17 @@ params:
 
 title: Lišta spätnej väzby
 examples:
-  - name: with button
+  - name: s tlačidlom
     options:
       label: Boli tieto informácie pre vás užitočné?
       action: |
         <button name="secondary" class="govuk-button govuk-button--sec" data-module="govuk-button" aria-label="Nahlásiť chybu">
           Nahlásiť chybu
         </button>
-  - name: without button
+  - name: bez tlačidla
     options:
       label: Boli tieto informácie pre vás užitočné?
-  - name: submitted
+  - name: odoslaný formulár
     options:
       label: Ďakujeme za Váš čas a hodnotenie! Vaša spätná väzba nám pomáha vylepšovať kvalitu portálu.
       success: true

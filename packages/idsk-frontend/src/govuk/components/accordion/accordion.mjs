@@ -35,10 +35,10 @@ export class Accordion extends GOVUKFrontendComponent {
   controlsClass = 'govuk-accordion__controls'
 
   /** @private */
-  showAllClass = 'govuk-accordion__show-all'
+  showAllClass = 'govuk-button govuk-button--texted'
 
   /** @private */
-  showAllTextClass = 'govuk-accordion__show-all-text'
+  showAllTextClass = ''
 
   /** @private */
   sectionClass = 'govuk-accordion__section'
@@ -68,22 +68,16 @@ export class Accordion extends GOVUKFrontendComponent {
   sectionShowHideToggleClass = 'govuk-accordion__section-toggle'
 
   /** @private */
-  sectionShowHideToggleFocusClass = 'govuk-accordion__section-toggle-focus'
+  // sectionShowHideToggleFocusClass = 'govuk-accordion__section-toggle-focus'
 
   /** @private */
   sectionShowHideTextClass = 'material-icons'
 
   /** @private */
-  upChevronIconClass = 'material-icons'
-
-  /** @private */
-  downChevronIconClass = 'govuk-accordion-nav__chevron--down'
-
-  /** @private */
   sectionSummaryClass = 'govuk-accordion__section-summary'
 
   /** @private */
-  sectionSummaryFocusClass = 'govuk-accordion__section-summary-focus'
+  // sectionSummaryFocusClass = 'govuk-accordion__section-summary-focus'
 
   /** @private */
   sectionContentClass = 'govuk-accordion__section-content'
@@ -99,12 +93,6 @@ export class Accordion extends GOVUKFrontendComponent {
    * @type {HTMLButtonElement | null}
    */
   $showAllButton = null
-
-  /**
-   * @private
-   * @type {HTMLElement | null}
-   */
-  $showAllIcon = null
 
   /**
    * @private
@@ -169,9 +157,8 @@ export class Accordion extends GOVUKFrontendComponent {
     this.$showAllButton.setAttribute('aria-expanded', 'false')
 
     // Create icon, add to element
-    this.$showAllIcon = document.createElement('span')
-    this.$showAllIcon.classList.add(this.upChevronIconClass)
-    this.$showAllButton.appendChild(this.$showAllIcon)
+    // this.$showAllIcon = document.createElement('span')
+    // this.$showAllButton.appendChild(this.$showAllIcon)
 
     // Create control wrapper and add controls to it
     const $accordionControls = document.createElement('div')
@@ -181,7 +168,9 @@ export class Accordion extends GOVUKFrontendComponent {
 
     // Build additional wrapper for Show all toggle text and place after icon
     this.$showAllText = document.createElement('span')
-    this.$showAllText.classList.add(this.showAllTextClass)
+    if (this.showAllTextClass) {
+      this.$showAllText.classList.add(this.showAllTextClass)
+    }
     this.$showAllButton.appendChild(this.$showAllText)
 
     // Handle click events on the show/hide all button
@@ -292,18 +281,18 @@ export class Accordion extends GOVUKFrontendComponent {
     // See https://developers.google.com/search/docs/advanced/robots/robots_meta_tag#data-nosnippet-attr
     $showHideToggle.setAttribute('data-nosnippet', '')
     // Create an inner container to limit the width of the focus state
-    const $showHideToggleFocus = document.createElement('span')
-    $showHideToggleFocus.classList.add(this.sectionShowHideToggleFocusClass)
-    $showHideToggle.appendChild($showHideToggleFocus)
+    // const $showHideToggleFocus = document.createElement('span')
+    // $showHideToggleFocus.classList.add(this.sectionShowHideToggleFocusClass)
+    // $showHideToggle.appendChild($showHideToggleFocus)
     // Create wrapper for the show / hide text. Append text after the show/hide icon
     const $showHideText = document.createElement('span')
-    const $showHideIcon = document.createElement('span')
-    $showHideIcon.textContent = 'add'
-    $showHideIcon.classList.add(this.upChevronIconClass)
+    // const $showHideIcon = document.createElement('span')
+    // $showHideIcon.textContent = 'add'
     // $showHideIcon.classList.add('material-icons')
-    $showHideToggleFocus.appendChild($showHideIcon)
+    // $showHideToggleFocus.appendChild($showHideIcon)
     $showHideText.classList.add(this.sectionShowHideTextClass)
-    $showHideToggleFocus.appendChild($showHideText)
+    // $showHideToggleFocus.appendChild($showHideText)
+    $showHideToggle.appendChild($showHideText)
 
     // Append elements to the button:
     // 1. Heading text
@@ -378,6 +367,10 @@ export class Accordion extends GOVUKFrontendComponent {
   onSectionToggle($section) {
     const expanded = this.isExpanded($section)
     this.setExpanded(!expanded, $section)
+    const $button = $section.querySelector(`.${this.sectionButtonClass}`)
+    if ($button instanceof HTMLButtonElement) {
+      $button.focus()
+    }
 
     // Store the state in sessionStorage when a change is triggered
     this.storeState($section)
@@ -407,7 +400,6 @@ export class Accordion extends GOVUKFrontendComponent {
    * @param {Element} $section - Section element
    */
   setExpanded(expanded, $section) {
-    const $showHideIcon = $section.querySelector(`.${this.upChevronIconClass}`)
     const $showHideText = $section.querySelector(
       `.${this.sectionShowHideTextClass}`
     )
@@ -421,7 +413,7 @@ export class Accordion extends GOVUKFrontendComponent {
       })
     }
 
-    if (!$showHideIcon || !$showHideText || !$button) {
+    if (!$showHideText || !$button) {
       // Return early for elements we create
       return
     }
@@ -460,11 +452,9 @@ export class Accordion extends GOVUKFrontendComponent {
     if (expanded) {
       $content.removeAttribute('hidden')
       $section.classList.add(this.sectionExpandedClass)
-      $showHideIcon.classList.remove(this.downChevronIconClass)
     } else {
       $content.setAttribute('hidden', 'until-found')
       $section.classList.remove(this.sectionExpandedClass)
-      $showHideIcon.classList.add(this.downChevronIconClass)
     }
 
     // See if "Show all sections" button text should be updated
@@ -504,7 +494,7 @@ export class Accordion extends GOVUKFrontendComponent {
    * @param {boolean} expanded - Section expanded
    */
   updateShowAllButton(expanded) {
-    if (!this.$showAllButton || !this.$showAllText || !this.$showAllIcon) {
+    if (!this.$showAllButton || !this.$showAllText) {
       return
     }
 
@@ -512,7 +502,6 @@ export class Accordion extends GOVUKFrontendComponent {
     this.$showAllText.textContent = expanded
       ? this.i18n.t('hideAllSections')
       : this.i18n.t('showAllSections')
-    this.$showAllIcon.classList.toggle(this.downChevronIconClass, !expanded)
   }
 
   /**
@@ -599,12 +588,10 @@ export class Accordion extends GOVUKFrontendComponent {
    */
   static defaults = Object.freeze({
     i18n: {
-      hideAllSections: 'Hide all sections',
-      hideSection: 'Hide',
-      hideSectionAriaLabel: 'Hide this section',
-      showAllSections: 'Show all sections',
-      showSection: 'Show',
-      showSectionAriaLabel: 'Show this section'
+      hideAllSections: 'Zatvoriť všetko',
+      hideSectionAriaLabel: 'Zatvoriť túto sekciu',
+      showAllSections: 'Otvoriť všetko',
+      showSectionAriaLabel: 'Otvoriť túto sekciu'
     },
     rememberExpanded: true
   })
@@ -665,14 +652,10 @@ const helper = {
  * for the buttons toggling each section.
  * @property {string} [hideAllSections] - The text content for the 'Hide all
  *   sections' button, used when at least one section is expanded.
- * @property {string} [hideSection] - The text content for the 'Hide'
- *   button, used when a section is expanded.
  * @property {string} [hideSectionAriaLabel] - The text content appended to the
  *   'Hide' button's accessible name when a section is expanded.
  * @property {string} [showAllSections] - The text content for the 'Show all
  *   sections' button, used when all sections are collapsed.
- * @property {string} [showSection] - The text content for the 'Show'
- *   button, used when a section is collapsed.
  * @property {string} [showSectionAriaLabel] - The text content appended to the
  *   'Show' button's accessible name when a section is expanded.
  */

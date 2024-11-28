@@ -165,30 +165,30 @@ accessibilityCriteria: |
 examples:
   - name: default
     options:
-      name: nationality
+      name: národnosť
       items:
         - value: british
-          text: British
+          text: Britská
         - value: irish
-          text: Irish
+          text: Írska
         - value: other
-          text: Citizen of another country
+          text: Občan inej krajiny
 
-  - name: with pre-checked values
+  - name: s prednastavenou hodnotou
     options:
-      name: nationality
+      name: národnosť
       items:
         - value: british
-          text: British
+          text: Britská
         - value: irish
-          text: Irish
+          text: Írska
         - value: other
-          text: Citizen of another country
+          text: Občan inej krajiny
           conditional:
             html: |
               <div class="govuk-form-group">
                 <label class="govuk-label" for="other-country">
-                  Country
+                  Krajina
                 </label>
                 <input class="govuk-input" id="other-country" name="other-country" type="text" value="Ravka">
               </div>
@@ -196,200 +196,202 @@ examples:
         - british
         - other
 
-  - name: with divider and None
+  - name: s oddeľovačom a žiadnym výberom
     options:
       name: with-divider-and-none
       items:
         - value: animal
-          text: Waste from animal carcasses
+          text: Zvierací odpad
         - value: mines
-          text: Waste from mines or quarries
+          text: Vojenský odpad
         - value: farm
-          text: Farm or agricultural waste
+          text: Odpad z fariem
         - divider: or
         - value: none
-          text: None of these
+          text: Źiadne z uvedených
           behaviour: exclusive
 
-  - name: with divider, None and conditional items
+  - name: s oddeľovačom, žiadnym výberom a podmienenými hodnotami
     options:
       name: with-divider-and-none-and-conditional-items
       items:
         - value: accessible-toilets
-          text: Accessible toilets available
+          text: Bezbariérové toalety
         - value: braille
-          text: Braille translation service available
+          text: Služba s prekladom Braillovho písma
         - value: disabled-car-parking
-          text: Disabled car parking available
+          text: Parkovanie pre zdravotne postihnutých
         - value: another-access-need
-          text: Another access need
+          text: Iné požiadavky
           conditional:
             html: |
-              <label class="govuk-label" for="other-access-needs">Other access needs</label>
+              <label class="govuk-label" for="other-access-needs">Iné požiadavky</label>
               <textarea class="govuk-textarea govuk-!-width-one-third" name="other-access-needs" id="other-access-needs"></textarea>
-        - divider: or
+        - divider: oddelovač
         - value: none
-          text: None of these
+          text: Žiadne z uvedených
           behaviour: exclusive
 
-  - name: with id and name
+  - name: s atribútami "id" a "name"
     options:
       name: with-id-and-name
       hint:
-        text: If you have dual nationality, select all options that are relevant to you.
+        text: Ak máte dvojité občianstvo, vyberte všetky možnosti, ktoré sú pre vás relevantné.
       items:
         - name: british
           id: item_british
           value: yes
-          text: British
+          text: Britská
         - name: irish
           id: item_irish
           value: irish
-          text: Irish
+          text: Írska
         - name: custom-name-scottish
-          text: Scottish
+          text: Škótska
           value: scottish
 
-  - name: with hints on items
+  - name: s nápovedou na položkách
     options:
       name: with-hints-on-items
       items:
         - name: gateway
           id: government-gateway
           value: gov-gateway
-          text: Sign in with Government Gateway
+          text: Prihlásiť sa cez vládny portál (Government Gateway)
           hint:
-            text: You'll have a user ID if you've registered for Self Assessment or filed a tax return online before.
+            text: Máte používateľské ID, ak ste sa už zaregistrovali na podanie daňového priznania online alebo ste už podali daňové priznanie.
         - name: verify
           id: govuk-verify
           value: gov-verify
-          text: Sign in with GOV.UK Verify
+          text: Prihlásiť sa cez GOV.UK Verify
           hint:
-            text: You'll have an account if you've already proved your identity with either Barclays, CitizenSafe, Digidentity, Experian, Post Office, Royal Mail or SecureIdentity.
+            text: Máte účet, ak ste už overili svoju totožnosť cez Barclays, CitizenSafe, Digidentity, Experian, Slovenskú poštu, Royal Mail alebo SecureIdentity.
 
-  - name: with disabled item
+  - name: so zneplatnenými položkami
     options:
       name: sign-in
       items:
         - name: gateway
           id: government-gateway
           value: gov-gateway
-          text: Sign in with Government Gateway
+          text: Prihlásiť sa cez vládny portál (Government Gateway)
           hint:
-            text: You'll have a user ID if you've registered for Self Assessment or filed a tax return online before.
+            text: Máte používateľské ID, ak ste sa už zaregistrovali na podanie daňového priznania online alebo ste už podali daňové priznanie.
         - name: verify
           id: govuk-verify
           value: gov-verify
-          text: Sign in with GOV.UK Verify
+          text: Prihlásiť sa cez GOV.UK Verify
           hint:
-            text: You'll have an account if you've already proved your identity with either Barclays, CitizenSafe, Digidentity, Experian, Post Office, Royal Mail or SecureIdentity.
+            text: Máte účet, ak ste už overili svoju totožnosť cez Barclays, CitizenSafe, Digidentity, Experian, Slovenskú poštu, Royal Mail alebo SecureIdentity.
           disabled: true
 
-  - name: with legend as a page heading
+  - name: s legendou v nadpise
     options:
       name: waste
       hint:
-        text: Select all that apply
+        text: Vyberte všetky vyhovujúce
       items:
         - value: animal
-          text: Waste from animal carcasses
+          text: Zvierací odpad
         - value: mines
-          text: Waste from mines or quarries
+          text: Vojenský odpad
         - value: farm
-          text: Farm or agricultural waste
+          text: Odpad z fariem
 
-  - name: with a medium legend
+  - name: s podlegendou
     options:
       name: waste
       hint:
-        text: Select all that apply
+        text: Vyberte všetky vyhovujúce
       errorMessage:
-        text: Select which types of waste you transport regularly
+        text: Vyberte si všetky typy odpadu ktoré transportujete
       items:
         - value: animal
-          text: Waste from animal carcasses
+          text: Zvierací odpad
         - value: mines
-          text: Waste from mines or quarries
+          text: Vojenský odpad
         - value: farm
-          text: Farm or agricultural waste
+          text: Odpad z fariem
 
-  - name: without fieldset
+  - name: bez popisu
     options:
       name: colours
       items:
         - value: red
-          text: Red
+          text: Červená
         - value: green
-          text: Green
+          text: Zelená
         - value: blue
-          text: Blue
+          text: Modrá
 
-  - name: with single option set 'aria-describedby' on input
+  - name: s použitím 'aria-describedby' html elementu
     options:
       name: t-and-c
       errorMessage:
-        text: Please accept the terms and conditions
+        text: Potvrdenie súhlasu s podmienkami používania
       items:
         - value: yes
-          text: I agree to the terms and conditions
+          text: Súhlasím s podmienkami používania
 
-  - name: with single option (and hint) set 'aria-describedby' on input
+  - name: jedna možnosť s použitím nápovedy a html elementu 'aria-describedby'
     options:
       name: t-and-c-with-hint
       errorMessage:
-        text: Please accept the terms and conditions
+        text: Potvrdenie súhlasu s podmienkami používania
       items:
         - value: yes
-          text: I agree to the terms and conditions
+          text: Súhlasím s podmienkami používania
           hint:
-            text: Go on, you know you want to!
+            text: Poďme do toho, všetko mi je jasné!
 
-  - name: with fieldset and error message
+  - name: so zoskupením položiek a chybovou hláškou
     options:
       name: nationality
       errorMessage:
-        text: Please accept the terms and conditions
+        text: Musíte súhlasiť s podmienkami použivania
       items:
         - value: british
-          text: British
+          text: Britská
         - value: irish
-          text: Irish
+          text: Írska
         - value: other
-          text: Citizen of another country
+          text: Občan inej krajiny
+      fieldset:
+        describedBy: Výber národnosti
 
-  - name: with error message
+  - name: s chybovou hláškou
     options:
       name: waste
       errorMessage:
-        text: Please select an option
+        text: Prosím vyberte možnosť
       items:
         - value: animal
-          text: Waste from animal carcasses
+          text: Zvierací odpad
         - value: mines
-          text: Waste from mines or quarries
+          text: Vojenský odpad
         - value: farm
-          text: Farm or agricultural waste
+          text: Odpad z fariem
 
-  - name: with error message and hints on items
+  - name: s chybovou hláškou a popisom položiek
     options:
       name: waste
       errorMessage:
-        text: Please select an option
+        text: Vyberte si z možností
       items:
         - value: animal
-          text: Waste from animal carcasses
+          text: Zvierací odpad
           hint:
             text: Nullam id dolor id nibh ultricies vehicula ut id elit.
         - value: mines
-          text: Waste from mines or quarries
+          text: Vojenský odpad
           hint:
             text: Nullam id dolor id nibh ultricies vehicula ut id elit.
         - value: farm
-          text: Farm or agricultural waste
+          text: Odpad z fariem
           hint:
             text: Nullam id dolor id nibh ultricies vehicula ut id elit.
 
-  - name: with very long option text
+  - name: s veľmi dlhým popisom
     options:
       name: waste
       hint:
@@ -421,7 +423,7 @@ examples:
             mollis euismod. Etiam porta sem malesuada magna mollis euismod.
             Donec sed odio dui. Sed posuere consectetur est at lobortis.
 
-  - name: with conditional items
+  - name: s podmienenými položkami
     options:
       name: with-conditional-items
       idPrefix: how-contacted
@@ -430,46 +432,22 @@ examples:
           text: Email
           conditional:
             html: |
-              <label class="govuk-label" for="context-email">Email address</label>
-              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="text" id="context-email">
+              <label class="govuk-label" for="context-email">Email adresa</label>
+              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="email" id="context-email">
         - value: phone
-          text: Phone
+          text: Telefón
           conditional:
             html: |
-              <label class="govuk-label" for="contact-phone">Phone number</label>
-              <input class="govuk-input govuk-!-width-one-third" name="contact-phone" type="text" id="contact-phone">
+              <label class="govuk-label" for="contact-phone">Telefónne číslo</label>
+              <input class="govuk-input govuk-!-width-one-third" name="contact-phone" type="tel" id="contact-phone">
         - value: text
-          text: Text message
+          text: SMS správa
           conditional:
             html: |
-              <label class="govuk-label" for="contact-text-message">Mobile phone number</label>
-              <input class="govuk-input govuk-!-width-one-third" name="contact-text-message" type="text" id="contact-text-message">
+              <label class="govuk-label" for="contact-text-message">Mobilné telefónne číslo</label>
+              <input class="govuk-input govuk-!-width-one-third" name="contact-text-message" type="tel" id="contact-text-message">
 
-  - name: with conditional items with special characters
-    options:
-      name: contact-prefs
-      idPrefix: user.profile[contact-prefs]
-      items:
-        - value: email
-          text: Email
-          conditional:
-            html: |
-              <label class="govuk-label" for="context-email">Email address</label>
-              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="text" id="context-email">
-        - value: phone
-          text: Phone
-          conditional:
-            html: |
-              <label class="govuk-label" for="contact-phone">Phone number</label>
-              <input class="govuk-input govuk-!-width-one-third" name="contact-phone" type="text" id="contact-phone">
-        - value: text
-          text: Text message
-          conditional:
-            html: |
-              <label class="govuk-label" for="contact-text-message">Mobile phone number</label>
-              <input class="govuk-input govuk-!-width-one-third" name="contact-text-message" type="text" id="contact-text-message">
-
-  - name: with conditional item checked
+  - name: s podmienenými vybranými položkami
     options:
       name: how-contacted-checked
       idPrefix: how-contacted-checked
@@ -479,22 +457,22 @@ examples:
           checked: true
           conditional:
             html: |
-              <label class="govuk-label" for="context-email">Email address</label>
-              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="text" id="context-email">
+              <label class="govuk-label" for="context-email">Email adresa</label>
+              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="email" id="context-email">
         - value: phone
-          text: Phone
+          text: Telefón
           conditional:
             html: |
-              <label class="govuk-label" for="contact-phone">Phone number</label>
-              <input class="govuk-input govuk-!-width-one-third" name="contact-phone" type="text" id="contact-phone">
+              <label class="govuk-label" for="contact-phone">Telefónne číslo</label>
+              <input class="govuk-input govuk-!-width-one-third" name="contact-phone" type="tel" id="contact-phone">
         - value: text
-          text: Text message
+          text: SMS správa
           conditional:
             html: |
-              <label class="govuk-label" for="contact-text-message">Mobile phone number</label>
-              <input class="govuk-input govuk-!-width-one-third" name="contact-text-message" type="text" id="contact-text-message">
+              <label class="govuk-label" for="contact-text-message">Mobilné telefónne číslo</label>
+              <input class="govuk-input govuk-!-width-one-third" name="contact-text-message" type="tel" id="contact-text-message">
 
-  - name: with optional form-group classes showing group error
+  - name: s nepovinným štýlom skupiny a chybnou položkou
     options:
       name: how-contacted-checked
       idPrefix: how-contacted-checked
@@ -505,37 +483,37 @@ examples:
           text: Email
           conditional:
             html: |
-              <label class="govuk-label" for="context-email">Email address</label>
-              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="text" id="context-email">
+              <label class="govuk-label" for="context-email">Email adresa</label>
+              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="email" id="context-email">
         - value: phone
-          text: Phone
+          text: Telefón
           checked: true
           conditional:
             html: |
-              <label class="govuk-label" for="contact-phone">Phone number</label>
-              <span id="contact-phone-error" class="govuk-error-message">Problem with input</span>
-              <input class="govuk-input govuk-input--error govuk-!-width-one-third" name="contact-phone" type="text" id="contact-phone" aria-describedby="contact-phone-error">
+              <label class="govuk-label" for="contact-phone">Telefónne číslo</label>
+              <span id="contact-phone-error" class="govuk-error-message">Zadajte telefónne číslo v tvare 090123456</span>
+              <input class="govuk-input govuk-input--error govuk-!-width-one-third" name="contact-phone" type="tel" id="contact-phone" aria-describedby="contact-phone-error">
         - value: text
-          text: Text message
+          text: SMS správa
           conditional:
             html: |
-              <label class="govuk-label" for="contact-text-message">Mobile phone number</label>
-              <input class="govuk-input govuk-!-width-one-third" name="contact-text-message" type="text" id="contact-text-message">
+              <label class="govuk-label" for="contact-text-message">Mobilné telefónne číslo</label>
+              <input class="govuk-input govuk-!-width-one-third" name="contact-text-message" type="tel" id="contact-text-message">
 
-  - name: small
+  - name: malé
     options:
       idPrefix: nationality
       name: nationality
       classes: govuk-checkboxes--small
       items:
         - value: a
-          text: a thing
+          text: položka A
         - value: b
-          text: another thing
+          text: ďalšia položka
         - value: c
-          text: this thing
+          text: táto položka
 
-  - name: small with long text
+  - name: malé s dlhým textom
     options:
       idPrefix: nationality
       name: nationality
@@ -565,64 +543,64 @@ examples:
             mollis euismod. Etiam porta sem malesuada magna mollis euismod.
             Donec sed odio dui. Sed posuere consectetur est at lobortis.
 
-  - name: small with error
+  - name: malé s chybovou hláškou
     options:
       idPrefix: nationality
       name: nationality
       classes: govuk-checkboxes--small
       errorMessage:
-        text: 'Select a thing'
+        text: 'Vyber položku'
       items:
         - value: a
-          text: a thing
+          text: položka A
         - value: b
-          text: another thing
+          text: ďalšia položka
         - value: c
-          text: this thing
+          text: táto položka
 
-  - name: small with hint
+  - name: malé s nápovedou
     options:
       idPrefix: nationality
       name: nationality
       classes: govuk-checkboxes--small
       items:
         - value: a
-          text: a thing
+          text: položka A
           hint:
-            text: hint for a thing
+            text: nápoveda k položke A
         - value: b
-          text: another thing
+          text: ďalšia položka
         - value: c
-          text: this thing
+          text: táto položka
 
-  - name: small with disabled
+  - name: malé zneplatnené
     options:
       idPrefix: nationality
       name: nationality
       classes: govuk-checkboxes--small
       items:
         - value: a
-          text: a thing
+          text: položka A
         - value: b
-          text: another thing
+          text: ďalšia položka
         - value: c
-          text: this thing
+          text: táto položka
           disabled: true
 
-  - name: small with conditional reveal
+  - name: malé s rozklikávacou položkou
     options:
       name: how-contacted
       idPrefix: how-contacted
       classes: govuk-checkboxes--small
       items:
         - value: a
-          text: a thing
+          text: položka A
           conditional:
             html: |
-              <label class="govuk-label" for="context-email">Foo</label>
-              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="text" id="context-email">
+              <label class="govuk-label" for="context-email">Email adresa</label>
+              <input class="govuk-input govuk-!-width-one-third" name="context-email" type="email" id="context-email">
         - value: b
-          text: another thing
+          text: ďalšia položka
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: with idPrefix
@@ -734,13 +712,13 @@ examples:
         text: If you have dual nationality, select all options that are relevant to you.
       items:
         - value: british
-          text: British
+          text: Britská
           hint:
             text: Hint for british option here
         - value: irish
-          text: Irish
+          text: Írska
         - value: other
-          text: Citizen of another country
+          text: Občan inej krajiny
           hint:
             text: Hint for other option here
   - name: with error message and hint
@@ -749,9 +727,9 @@ examples:
       name: example
       items:
         - value: british
-          text: British
+          text: Britská
         - value: irish
-          text: Irish
+          text: Írska
       errorMessage:
         text: Please select an option
       hint:
@@ -766,9 +744,9 @@ examples:
         text: If you have dual nationality, select all options that are relevant to you.
       items:
         - value: british
-          text: British
+          text: Britská
         - value: irish
-          text: Irish
+          text: Írska
   - name: label with attributes
     hidden: true
     options:
@@ -788,18 +766,18 @@ examples:
         text: Please select an option
       items:
         - value: british
-          text: British
+          text: Britská
         - value: irish
-          text: Irish
+          text: Írska
   - name: fieldset html params
     hidden: true
     options:
       name: example-name
       items:
         - value: british
-          text: British
+          text: Britská
         - value: irish
-          text: Irish
+          text: Írska
   - name: with single option set 'aria-describedby' on input, and describedBy
     hidden: true
     options:
@@ -840,9 +818,9 @@ examples:
         text: Please select an option
       items:
         - value: british
-          text: British
+          text: Britská
         - value: irish
-          text: Irish
+          text: Írska
 
   - name: item checked overrides values
     hidden: true

@@ -32,15 +32,15 @@ title: Menovka
 examples:
   - name: default
     options:
-      text: National Insurance number
-  - name: with not required info
+      text: Číslo občianskeho preukazu
+  - name: so zvýraznením povinnosti
     options:
-      text: National Insurance number
+      text: Číslo občianskeho preukazu
       notRequired: not required
-  - name: with bold text
+  - name: hrubý text
     options:
       classes: govuk-label--s
-      text: National Insurance number
+      text: Číslo občianskeho preukazu
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: empty
@@ -49,25 +49,25 @@ examples:
   - name: classes
     hidden: true
     options:
-      text: National Insurance number
+      text: Číslo občianskeho preukazu
       classes: extra-class one-more-class
   - name: html as text
     hidden: true
     options:
-      text: National Insurance number, <em>NINO</em>
+      text: Číslo občianskeho preukazu, <em>NINO</em>
   - name: html
     hidden: true
     options:
-      html: National Insurance number <em>NINO</em>
+      html: Číslo občianskeho preukazu <em>NINO</em>
   - name: for
     hidden: true
     options:
       for: test-target-element
-      text: National Insurance number
+      text: Číslo občianskeho preukazu
   - name: attributes
     hidden: true
     options:
-      text: National Insurance number
+      text: Číslo občianskeho preukazu
       attributes:
         first-attribute: 'foo'
         second-attribute: 'bar'

@@ -24,7 +24,7 @@
           {% for componentName in componentNamesSlice %}
             <li>
               <a href="/components/{{ componentName }}" class="govuk-link">
-                <span lang="en">{{ componentName | unslugify }}</span> {{ " - " + componentTitles[componentName] if componentTitles[componentName] else "" }}
+                {{ componentTitles[componentName] if componentTitles[componentName] else "" }} (<span lang="en">{{ componentName | unslugify }}</span>)
               </a>
             </li>
           {% endfor %}

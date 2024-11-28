@@ -118,7 +118,7 @@
     // outline: $govuk-focus-width solid transparent;
     // outline-offset: 1px;
     outline: $govuk-focus-width solid $govuk-focus-colour;
-    outline-offset: 2px;
+    outline-offset: 3px;
     // box-shadow: 0 0 0 $govuk-radios-focus-width govuk-colour("greyN500");
 
     // When in an explicit forced-color mode, we can use the Highlight system
@@ -291,26 +291,25 @@
     .govuk-radios__item:hover .govuk-radios__input:not(:disabled) + .govuk-radios__label::before {
       // Forced colours modes tend to ignore box-shadow.
       // Apply an outline for those modes to use instead.
-      outline: $govuk-radios-focus-width dashed transparent;
-      outline-offset: 1px;
-      box-shadow: 0 0 0 calc($govuk-hover-width / 4 * 3) $govuk-hover-colour;
+      // outline: $govuk-radios-focus-width dashed transparent;
+      // outline-offset: 1px;
+      box-shadow: 0 0 0 $govuk-hover-width $govuk-hover-colour;
     }
 
-    // // Because we've overridden the border-shadow provided by the focus state,
-    // // we need to redefine that too.
-    // //
-    // // We use two box shadows, one that restores the original focus state [1]
-    // // and another that then applies the hover state [2].
-    // .govuk-radios__item:hover .govuk-radios__input:focus + .govuk-radios__label::before {
-    //   // Set different HCM colour when we have both hover/focus applied at once
-    //   @media screen and (forced-colors: active), (-ms-high-contrast: active) {
-    //     outline-color: Highlight;
-    //   }
-    //   // prettier-ignore
-    //   box-shadow:
-    //     0 0 0 $govuk-radios-focus-width $govuk-focus-colour // 1,
-    //     0 0 0 $govuk-hover-width $govuk-hover-colour; // 2
-    // }
+    // Because we've overridden the border-shadow provided by the focus state,
+    // we need to redefine that too.
+    //
+    // We use two box shadows, one that restores the original focus state [1]
+    // and another that then applies the hover state [2].
+    .govuk-radios__input:focus .govuk-radios__input:not(:disabled) + .govuk-radios__label::before {
+      outline: $govuk-focus-width solid $govuk-focus-colour;
+      outline-offset: 3px;
+
+      // // Set different HCM colour when we have both hover/focus applied at once
+      // @media screen and (forced-colors: active), (-ms-high-contrast: active) {
+      //   outline-color: Highlight;
+      // }
+    }
 
     // For devices that explicitly don't support hover, don't provide a hover
     // state (e.g. on touch devices like iOS).
@@ -318,14 +317,14 @@
     // We can't use `@media (hover: hover)` because we wouldn't get the hover
     // state in browsers that don't support `@media (hover)` (like Internet
     // Explorer) – so we have to 'undo' the hover state instead.
-    @media (hover: none), (pointer: coarse) {
-      .govuk-radios__item:hover .govuk-radios__input:not(:disabled) + .govuk-radios__label::before {
-        box-shadow: initial;
-      }
+    // @media (hover: none), (pointer: coarse) {
+    //   .govuk-radios__item:hover .govuk-radios__input:not(:disabled) + .govuk-radios__label::before {
+    //     box-shadow: initial;
+    //   }
 
-      .govuk-radios__item:hover .govuk-radios__input:focus + .govuk-radios__label::before {
-        box-shadow: 0 0 0 $govuk-radios-focus-width $govuk-focus-colour;
-      }
-    }
+    //   .govuk-radios__item:hover .govuk-radios__input:focus + .govuk-radios__label::before {
+    //     box-shadow: 0 0 0 $govuk-radios-focus-width $govuk-focus-colour;
+    //   }
+    // }
   }
 }

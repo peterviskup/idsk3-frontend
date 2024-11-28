@@ -41,6 +41,10 @@
     .govuk-signpost__title {
       color: govuk-colour("blue");
       text-decoration: underline;
+
+      &:hover {
+        text-decoration-thickness: 3px;
+      }
     }
   }
 
@@ -58,14 +62,39 @@
     margin: govuk-spacing(2) 0 0 0;
   }
 
+  .govuk-link {
+    .govuk-signpost__title {
+      @include govuk-link-decoration;
+      color: govuk-colour("blue");
+      text-decoration-color: govuk-colour("blue");
+
+      &:hover {
+        @include govuk-link-hover-decoration;
+        color: govuk-colour("blue");
+        text-decoration-color: "blue";
+      }
+    }
+  }
+
   .govuk-signpost__link {
+    // @include govuk-link-decoration;
+    // text-decoration-color: govuk-colour("blue");
+
     &:hover {
       box-shadow: 0 0 0 3px govuk-colour("dark-grey");
+
+      .govuk-signpost__title {
+        @include govuk-link-hover-decoration;
+      }
     }
 
     .govuk-signpost__title {
+      @include govuk-link-decoration;
       color: govuk-colour("blue");
-      text-decoration: underline;
+
+      &:hover {
+        @include govuk-link-hover-decoration;
+      }
     }
 
     &:focus {

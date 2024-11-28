@@ -85,6 +85,7 @@ params:
   - name: enableJs
     type: boolean
     required: false
+    default: true
     description: enable js in component or no
 
   - name: active
@@ -114,22 +115,41 @@ examples:
       label:
         text: Upload a file
 
-  - name: default with error
+  - name: so súbormi
+    options:
+      label:
+        text: Upload a file
+      content:
+        - icon: article
+          filename: List_vlastníctva_obytny_orechova_Velke_Zaluzie_na...nazov_suboru_ale.csv
+          progress: 32
+        - icon: error
+          filename: List_vlastníctva_obytny_orechova_Velke_Zaluzie_na...nazov_suboru_ale.csv
+          errorMessage: Vyskytol sa problém pri nahrávaní
+
+  - name: s chybou
     options:
       errorMessage:
         text: Veľkosť súboru musí byť menšia ako 10MB
+      content:
+        - icon: article
+          filename: List_vlastníctva_obytny_orechova_Velke_Zaluzie_na...nazov_suboru_ale.csv
+          progress: 32
+        - icon: error
+          filename: List_vlastníctva_obytny_orechova_Velke_Zaluzie_na...nazov_suboru_ale.csv
+          errorMessage: Vyskytol sa problém pri nahrávaní
 
-  - name: without javascript
+  - name: bez javascriptu
     options:
-      enableJs: true
+      enableJs: false
 
-  - name: without javascript with error
+  - name: bez javascriptu s chybou
     options:
-      enableJs: true
+      enableJs: false
       errorMessage:
         text: Veľkosť súboru musí byť menšia ako 10MB
 
-  - name: disabled
+  - name: zakázané
     options:
       label:
         text: Upload a photo

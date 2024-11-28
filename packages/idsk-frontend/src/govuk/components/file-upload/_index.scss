@@ -24,11 +24,7 @@
     }
 
     &:focus {
-      outline: $govuk-focus-width solid $govuk-focus-colour;
-      // Use `box-shadow` to add border instead of changing `border-width`
-      // (which changes element size) and since `outline` is already used for the
-      // yellow focus state.
-      box-shadow: inset 0 0 0 4px $govuk-input-border-colour;
+      @include govuk-focused-text;
     }
 
     // Set "focus-within" to fix https://bugzilla.mozilla.org/show_bug.cgi?id=1430196
@@ -37,9 +33,7 @@
     // to recognise `focus-within` and don't set any styles from the block
     // when it's a selector.
     &:focus-within {
-      outline: $govuk-focus-width solid $govuk-focus-colour;
-
-      box-shadow: inset 0 0 0 4px $govuk-input-border-colour;
+      @include govuk-focused-text;
     }
 
     &:disabled {
@@ -47,12 +41,25 @@
       cursor: not-allowed;
     }
 
-    &.just-file::file-selector-button {
-      padding: 12px 20px;
+    &::file-selector-button {
+      padding: govuk-spacing(1) govuk-spacing(4);
       border: none;
       border-radius: 5px;
+      @include govuk-typography-weight-bold;
       color: govuk-colour("white");
       background: govuk-colour("blue");
+    }
+
+    &:hover:not(:disabled)::file-selector-button {
+      box-shadow: 0 0 0 3px govuk-colour("dark-blue");
+    }
+
+    &:active:not(:disabled)::file-selector-button {
+      background: govuk-colour("dark-blue");
+    }
+
+    &:disabled::file-selector-button {
+      background: govuk-colour("dark-grey");
     }
   }
 
@@ -68,7 +75,7 @@
     }
   }
 
-  .file-upload-component.js-enabled {
+  .file-upload-component:not(.js-enabled) {
     .upload-container {
       border: none;
       background: none;
@@ -106,7 +113,10 @@
   .upload-container {
     margin: 0 30px 30px;
 
-    text-align: center;
+    .govuk-heading-m {
+      margin-right: 0;
+      margin-left: 0;
+    }
 
     @include govuk-media-query($until: tablet) {
       margin: 0 10px 10px;
@@ -115,9 +125,11 @@
 
   .upload-box {
     display: flex;
+    margin-bottom: 15px;
     border: 2px dashed govuk-colour("greyN500");
     border-radius: 5px;
     background-color: govuk-colour("greyN90");
+    text-align: center;
     cursor: pointer;
     flex-direction: column;
     align-items: center;
@@ -156,7 +168,107 @@
     }
   }
 
-  .upload-button:hover {
-    background-color: #0056b3;
+  .upload-files {
+    @include govuk-font($size: 14);
+    padding: 0;
+  }
+
+  .upload-file-box {
+    display: flex;
+    margin: govuk-spacing(2) 0;
+    padding: govuk-spacing(1) govuk-spacing(2);
+    border: 0.5px double govuk-colour("greyN300");
+    border-radius: 2.5px;
+    background-color: govuk-colour("greyN90");
+    gap: govuk-spacing(3);
+    justify-content: space-between;
+    align-items: center;
+    // border-width: 0.5px;
+    // border-style: double;
+    // border-radius: 2.5px;
+    // gap: 15px;
+    // background-color: #FAFAFA;
+
+    button {
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+
+    &.error {
+      border: 0.5px double govuk-colour("red");
+
+      .upload-file-icon {
+        color: $govuk-error-colour;
+      }
+
+      .upload-file-content .upload-file-content-info {
+        color: $govuk-error-colour;
+      }
+    }
+
+    .upload-file-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      flex-grow: 1;
+      align-items: center;
+      gap: govuk-spacing(1);
+      margin-right: govuk-spacing(2);
+
+      .material-icons {
+        color: govuk-colour("blue");
+      }
+
+      .upload-file-content-filename {
+        flex-grow: 1;
+        text-align: start;
+        word-break: break-word;
+      }
+
+      .upload-file-content-info {
+        display: flex;
+        align-items: center;
+        gap: govuk-spacing(1);
+        flex-shrink: 0;
+      }
+    }
+
+    .upload-file-close-icon {
+      padding: 0;
+      border: 0;
+      flex-shrink: 0;
+      background-color: transparent;
+    }
+  }
+
+  progress[value] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    min-width: 180px;
+    height: 5px;
+    border: 0.5px solid govuk-colour("blue");
+    border-radius: 2.5px;
+    background: none;
+
+    @include govuk-media-query($until: tablet) {
+      min-width: auto;
+    }
+  }
+
+  progress[value]::-webkit-progress-bar {
+    border-radius: 2.5px;
+    background: none;
+  }
+
+  progress[value]::-webkit-progress-value {
+    border-radius: 2.5px;
+    background: govuk-colour("blue");
+  }
+
+  progress[value]::-moz-progress-bar {
+    border-radius: 2.5px;
+    background: govuk-colour("blue");
   }
 }

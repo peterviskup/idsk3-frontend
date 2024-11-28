@@ -17,7 +17,7 @@
   z-index: 1;
   border-radius: 5px;
   outline: $govuk-focus-width solid $govuk-focus-colour;
-  outline-offset: 2px;
+  outline-offset: 3px;
   // color: $govuk-focus-text-colour;
   // background-color: $govuk-focus-colour;
   // box-shadow:
@@ -41,9 +41,9 @@
 ///
 /// @access public
 
-@mixin govuk-focused-box {
-  outline: $govuk-focus-width solid transparent;
-  box-shadow:
-    0 0 0 4px $govuk-focus-colour,
-    0 0 0 8px $govuk-focus-text-colour;
-}
+// @mixin govuk-focused-box {
+//   outline: $govuk-focus-width solid transparent;
+//   box-shadow:
+//     0 0 0 4px $govuk-focus-colour,
+//     0 0 0 8px $govuk-focus-text-colour;
+// }
