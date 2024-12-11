@@ -29,7 +29,7 @@
       visuallyHiddenText: params.errorMessage.visuallyHiddenText1
     }) | trim | indent(2) }}
   {% endif %}
-  <div class="upload-container" aria-label="File upload section" role="region">
+  <div class="upload-container" aria-label="Sekcia nahrávania súborov" role="region">
 {#    <input type="file" id="fileInput" class="file-input" hidden aria-describedby="uploadInstructions">#}
 
   <input class="govuk-file-upload just-file file-input {%- if params.errorMessage %} govuk-file-upload--error{% endif %}" {% if enableJs %} data-file-input {% endif %} id="fileInput" type="file" aria-describedby="uploadInstructions"
@@ -39,7 +39,8 @@
     {{ params.formGroup.afterInput.html | safe | trim | indent(2) if params.formGroup.afterInput.html else params.formGroup.afterInput.text }}
   {% endif %}
   {% if enableJs %}
-    <label for="fileInput" class="upload-box" aria-label="File upload box">
+    <div class="upload-box">
+      <label for="fileInput" aria-label="Nahratie súboru"></label>
       <div class="upload-icon" aria-hidden="true">
         <span class="material-icons" aria-hidden="true">cloud_upload</span>
       </div>
@@ -47,11 +48,11 @@
         <p class="govuk-body"><b>Zvoľte súbor a nahrajte ho</b></p>
         <p class="govuk-body">alebo preneste zvolenú prílohu sem (max. veľkosť 10MB)</p>
       </div>
-      <button class="govuk-button govuk-button__basic upload-button" aria-label="Add attachment" {% if params.disabled %} disabled {% endif %}>
+      <button class="govuk-button govuk-button__basic upload-button" aria-label="Pridať prílohu" {% if params.disabled %} disabled {% endif %}>
         <span class="material-icons" aria-hidden="true">add</span>
         <span>Pridať prílohu</span>
       </button>
-    </label>
+    </div>
     {% if params.content %}
       <h2 class="govuk-heading-m">Nahrané súbory</h2>
         <ul class="upload-files">
@@ -70,7 +71,7 @@
                 <span class="upload-file-content-info">{{ content.errorMessage }}</span>
               {% endif %}
             </div>
-            <button onclick="this.parentNode.style.display = 'none'" class="upload-file-close-icon"><div class="material-icons">close</div></button>
+            <button class="upload-close-button" onclick="this.parentNode.style.display = 'none'" class="upload-file-close-icon" aria-label="Zatvoriť súbor {{ loop.index }}"><div class="material-icons" aria-hidden="true">close</div></button>
           </li>
         {% endfor %}
         </ul>

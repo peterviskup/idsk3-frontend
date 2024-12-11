@@ -168,6 +168,16 @@
     }
   }
 
+  .upload-close-button {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+
+    &:focus {
+      @include govuk-focused-text;
+    }
+  }
+
   .upload-files {
     @include govuk-font($size: 14);
     padding: 0;

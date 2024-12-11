@@ -58,7 +58,8 @@ examples:
       description: V tejto časti nájdete všetky podtrebné informácie spojené s používaním a vytvorením občianského preukazu s čipom
       imgSrc: '/assets/images/placeholder.png'
       internalLink: '#'
-      date: 1. 1. 2023
+      date: '2023-01-01'
+      dateLocale: '1. 1. 2023'
       tags:
         - text: Tag 1
         - text: Tag 2
@@ -72,7 +73,8 @@ examples:
       description: V tejto časti nájdete všetky podtrebné informácie spojené s používaním a vytvorením občianského preukazu s čipom
       imgSrc: '/assets/images/placeholder.png'
       internalLink: '#'
-      date: 25. 02. 2018
+      date: '2018-02-25'
+      dateLocale: '25. 2. 2018'
       tags:
         - text: Tag 1
         - text: Tag 2
@@ -83,7 +85,8 @@ examples:
     options:
       title: Nadpis kartičky
       description: V tejto časti nájdete všetky podtrebné informácie spojené s používaním a vytvorením občianského preukazu s čipom
-      date: 25. 02. 2018
+      date: '2018-02-05'
+      dateLocale: '25. 2. 2018'
       tags:
         - text: Tag 1
         - text: Tag 2
