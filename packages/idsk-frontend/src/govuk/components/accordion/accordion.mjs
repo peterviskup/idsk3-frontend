@@ -291,6 +291,7 @@ export class Accordion extends GOVUKFrontendComponent {
     // $showHideIcon.classList.add('material-icons')
     // $showHideToggleFocus.appendChild($showHideIcon)
     $showHideText.classList.add(this.sectionShowHideTextClass)
+    $showHideText.ariaHidden = 'true'
     // $showHideToggleFocus.appendChild($showHideText)
     $showHideToggle.appendChild($showHideText)
 
