@@ -1,8 +1,8 @@
 import config from '@govuk-frontend/config'
+import * as GOVUKFrontend from '@id-sk/frontend/src/govuk/all.mjs'
 import { babel } from '@rollup/plugin-babel'
 import replace from '@rollup/plugin-replace'
 import terser from '@rollup/plugin-terser'
-import * as GOVUKFrontend from 'idsk-frontend/src/govuk/all.mjs'
 import { defineConfig } from 'rollup'
 
 /**
