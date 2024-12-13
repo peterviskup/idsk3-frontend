@@ -1,7 +1,7 @@
 {
-  "name": "idsk-frontend",
-  "description": "GOV.UK Frontend contains the code you need to start building a user interface for government platforms and services.",
-  "version": "5.2.0",
+  "name": "@id-sk/frontend",
+  "description": "ID-SK Frontend contains the code you need to start building a user interface for government platforms and services.",
+  "version": "3.0.0",
   "main": "dist/govuk/all.bundle.js",
   "module": "dist/govuk/all.mjs",
   "sass": "dist/govuk/all.scss",
@@ -27,18 +27,19 @@
     "node": ">= 4.2.0"
   },
   "author": {
-    "name": "GOV.UK Design System Team (Government Digital Service)",
-    "email": "design-system-developers@digital.cabinet-office.gov.uk"
+    "name": "ID-SK tím",
+    "email": "idsk@mirri.gov.sk"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/alphagov/govuk-frontend.git"
+    "url": "https://github.com/id-sk/idsk3-frontend.git"
   },
   "bugs": {
-    "url": "https://github.com/alphagov/govuk-frontend/issues"
+    "url": "https://github.com/id-sk/idsk3-frontend/issues"
   },
-  "homepage": "https://frontend.design-system.service.gov.uk/",
+  "homepage": "https://idsk.gov.sk/",
   "keywords": [
+    "idsk",
     "govuk",
     "frontend",
     "design system",
