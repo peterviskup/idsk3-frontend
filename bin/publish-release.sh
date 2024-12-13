@@ -47,7 +47,7 @@ fi
 
 echo "📦  Publishing package..."
 
-NPM_ARGS=( --workspace idsk-frontend )
+NPM_ARGS=( --workspace @id-sk/frontend )
 [ $NPM_TAG = "latest" ] || NPM_ARGS+=( --tag $NPM_TAG )
 
 # Try publishing
@@ -55,7 +55,7 @@ npm publish "${NPM_ARGS[@]}"
 echo "🗒 Package published!"
 
 # Extract tag version from ./packages/govuk-frontend/package.json
-ALL_PACKAGE_VERSION=$(npm run version --silent --workspace idsk-frontend)
+ALL_PACKAGE_VERSION=$(npm run version --silent --workspace @id-sk/frontend)
 TAG="v$ALL_PACKAGE_VERSION"
 
 if [ $(git tag -l "$TAG") ]; then

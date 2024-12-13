@@ -30,7 +30,7 @@ npm run test
 npm run build:package
 npm run build:release
 
-ALL_PACKAGE_VERSION=$(npm run version --silent --workspace idsk-frontend)
+ALL_PACKAGE_VERSION=$(npm run version --silent --workspace @id-sk/frontend)
 TAG="v$ALL_PACKAGE_VERSION"
 CURRENT_BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
 
