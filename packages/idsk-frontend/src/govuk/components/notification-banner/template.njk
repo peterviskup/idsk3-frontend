@@ -18,8 +18,11 @@
 
 {%- if params.role %}
   {% set role = params.role %}
-{% elif successBanner or warningBanner %}
-  {#- If type is success, add `role="alert"` to prioritise the information in the notification banner to users of assistive technologies -#}
+{% elif successBanner %}
+  {#- If type is success, add `role="status"` to prioritise the information in the notification banner to users of assistive technologies -#}
+  {% set role = "status" %}
+{% elif warningBanner %}
+  {#- If type is warning, add `role="alert"` to prioritise the information in the notification banner to users of assistive technologies -#}
   {% set role = "alert" %}
 {% else %}
   {#- Otherwise add `role="region"` to make the notification banner a landmark to help users of assistive technologies to navigate to the banner -#}

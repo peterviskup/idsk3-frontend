@@ -20,7 +20,7 @@
     <div class="idsk-card__description">{{ params.description }}</div>
     {% if params.date %}
       <p class="idsk-card__date-tags">
-        <time datetime="{{ params.date }}">{{ params.date }}</time>
+        <time datetime="{{ params.date }}">{{ params.dateLocale }}</time>
         <span>—</span>
         {% if params.tags | length %}
           {% for tag in params.tags %}

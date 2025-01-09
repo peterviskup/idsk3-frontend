@@ -203,7 +203,7 @@ examples:
         text: Názov textového poľa
       id: input-with-hint-text-descriptiveText
       name: test-name-5
-      descriptionText: true
+      descriptionText: Popisný text
 
   - name: malé
     options:

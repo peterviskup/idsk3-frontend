@@ -45,6 +45,7 @@
         text: item.text,
         classes: 'govuk-checkboxes__label' + (' ' + item.label.classes if item.label.classes),
         attributes: item.label.attributes,
+        disableRequired: true,
         for: itemId
       }) | trim | indent(6) }}
       {% if hasHint %}
