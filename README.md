@@ -2,7 +2,7 @@ ID-SK Frontend ·
 [![Build Status](https://github.com/alphagov/govuk-frontend/workflows/Tests/badge.svg)](https://github.com/alphagov/govuk-frontend/actions?query=workflow%3ATests+branch%3Amain)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 =====================
-Verzia: 3.0.1
+Verzia: 3.0.0
 
 ID-SK je komunitne rozvíjaný jednotný dizajnový systém verejnej správy, ktorý má za cieľ zjednotiť používateľské rozhrania a spôsob komunikácie s používateľom pri poskytovaní elektronických služieb na Slovensku.
 
@@ -19,7 +19,7 @@ ID-SK Frontend obsahuje zdrojový kód, ktorý vychádza z [britského dizajn ma
  Diskusia: [https://github.com/id-sk/idsk3-frontend/discussions](https://github.com/id-sk/idsk3-frontend/discussions)
 
 ## Kontakt na tím
-ID-SK je tvorený pod záštitou Oddelenia behaviorálnych inovácií (oKPS) Ministerstva investícií, regionálneho rozvoja a informatizácie. Pre viac informácií svoje otázky smerujte na e-mail [ID-SK tímu idsk@mirri.gov.sk](mailto:idsk@mirri.gov.sk).
+ID-SK je tvorený pod záštitou Oddelenia kvality používateľskej skúsenosti (oKPS) Ministerstva investícií, regionálneho rozvoja a informatizácie. Pre viac informácií svoje otázky smerujte na e-mail [ID-SK tímu idsk@mirri.gov.sk](mailto:idsk@mirri.gov.sk).
 
 
 ## Rýchly štart
