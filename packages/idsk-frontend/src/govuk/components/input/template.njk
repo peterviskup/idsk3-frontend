@@ -17,7 +17,9 @@
   <p class="govuk-body-s" id="hint-{{ params.id }}">{{ params.hint.text }}</p>
   {% endif %}
   <div class="govuk-input-container">
-    <input class="govuk-input {%- if params.classes %} {{ params.classes }}{% endif %} {%- if params.errorMessage %} govuk-input--error{% endif %} {% if params.smallInput%} small {% endif %} " {% if params.hint or params.descriptionText %} aria-describedby="{% if params.hint %}hint-{{ params.id }} {% endif %}{% if params.descriptionText %}description-{{ params.id }}{% endif %}" {% endif %} id="{{ params.id }}" name="{{ params.name }}" type="{{ params.type | default("text", true) }}"
+    <input class="govuk-input {%- if params.classes %} {{ params.classes }}{% endif %} {%- if params.errorMessage %} govuk-input--error{% endif %} {% if params.smallInput%} small {% endif %} "
+      id="{{ params.id }}" name="{{ params.name }}" type="{{ params.type | default("text", true) }}"
+      {%- if params.hint or params.descriptionText %} aria-describedby="{% if params.hint %}hint-{{ params.id }} {% endif %}{% if params.descriptionText %}description-{{ params.id }}{% endif %}" {% endif %}
       {%- if (params.spellcheck === false) or (params.spellcheck === true) %} spellcheck="{{ params.spellcheck }}"{% endif %}
       {%- if params.value %} value="{{ params.value }}"{% endif %}
       {%- if params.disabled %} disabled{% endif %}

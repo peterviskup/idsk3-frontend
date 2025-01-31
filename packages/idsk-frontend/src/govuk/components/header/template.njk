@@ -35,27 +35,27 @@
     {{- govukAttributes(params.attributes) }}>
     <div class="govuk-header__container {{ params.containerClasses | default("", true) }}">
 
-      <div class="idsk-secondary-navigation govuk-width-container">
-        <div class="idsk-secondary-navigation__header">
-          <div class="idsk-secondary-navigation__heading">
-            <div class="idsk-secondary-navigation__heading-title">
-              <span class="idsk-secondary-navigation__heading-mobile">SK</span>
-              <span class="idsk-secondary-navigation__heading-desktop">Oficiálna stránka</span>
+      <div class="idsk-header-brand govuk-width-container">
+        <div class="idsk-header-brand__header">
+          <div class="idsk-header-brand__heading">
+            <div class="idsk-header-brand__heading-title">
+              <span class="idsk-header-brand__heading-mobile">SK</span>
+              <span class="idsk-header-brand__heading-desktop">Oficiálna stránka</span>
               {#
-              <button class="idsk-secondary-navigation__heading-button" aria-expanded="false" aria-label="Oficiálna stránka verejnej správy">
-                <span class="idsk-secondary-navigation__heading-mobile">e-Gov</span>
-                <span class="idsk-secondary-navigation__heading-desktop"><b>verejnej správy</b></span>
-                <span class="material-icons idsk-secondary-navigation__heading-button-icon">arrow_drop_down</span>
+              <button class="idsk-header-brand__heading-button" aria-expanded="false" aria-label="Oficiálna stránka verejnej správy">
+                <span class="idsk-header-brand__heading-mobile">e-Gov</span>
+                <span class="idsk-header-brand__heading-desktop"><b>verejnej správy</b></span>
+                <span class="material-icons idsk-header-brand__heading-button-icon">arrow_drop_down</span>
               </button>
               #}
-              <button class="govuk-button govuk-button--texted--inverse idsk-secondary-navigation__heading-button" aria-expanded="false" aria-label="Oficiálna stránka verejnej správy">
-                <span class="idsk-secondary-navigation__heading-mobile">e-Gov</span>
-                <span class="idsk-secondary-navigation__heading-desktop"><b>verejnej správy</b></span>
-                <span class="material-icons">arrow_drop_down</span>
+              <button class="govuk-button govuk-button--texted--inverse idsk-header-brand__heading-button" aria-expanded="false" aria-label="Oficiálna stránka verejnej správy">
+                <span class="idsk-header-brand__heading-mobile">e-Gov</span>
+                <span class="idsk-header-brand__heading-desktop"><b>verejnej správy</b></span>
+                <span class="material-icons" aria-hidden="true">arrow_drop_down</span>
               </button>
             </div>
-            <div class="idsk-secondary-navigation__body hidden" data-testid="secnav-children">
-              <div class="idsk-secondary-navigation__text">
+            <div class="idsk-header-brand__body hidden" data-testid="secnav-children">
+              <div class="idsk-header-brand__text">
                 <div>
                   <h3 class="govuk-body-s"><b>Doména gov.sk je oficiálna</b></h3>
                   <p class="govuk-body-s">Toto je oficiálna webová stránka orgánu verejnej moci Slovenskej republiky. Oficiálne stránky využívajú najmä doménu gov.sk. <a class="govuk-link--inverse" href="https://www.slovensko.sk/sk/agendy/agenda/_organy-verejnej-moci" target="_blank">Odkazy na jednotlivé webové sídla orgánov verejnej moci nájdete na tomto odkaze.</a></p>
@@ -69,8 +69,8 @@
           </div>
           {{ _dropdown({
             type: 'button',
-            classes: 'idsk-secondary-navigation__dropdown',
-            btnClasses: 'govuk-button--texted--inverse idsk-secondary-navigation__heading-button',
+            classes: 'idsk-header-brand__dropdown',
+            btnClasses: 'govuk-button--texted--inverse idsk-header-brand__heading-button',
             selected: 'slovenčina',
             attributes: { "data-pseudolabel": "jazykové menu" },
             items: [
@@ -90,7 +90,7 @@
       </div>
     </div>
 
-    <div class="govuk-predheader govuk-width-container">
+    <div class="govuk-header-main govuk-width-container">
       <div class="govuk-header__logo">
         <a href="{{ params.homepageUrl | default("/", true) }}" class="govuk-header__link govuk-header__link--homepage" title="Odkaz na titulnú stránku">
           {#- The SVG needs `focusable="false"` so that Internet Explorer does
@@ -142,6 +142,7 @@
             <div class="govuk-header__actionPanel mobile desktop-hidden">
               <button class="govuk-button" title="Notifikácie"><span role="button" class="material-icons" aria-hidden="true">notifications</span></button>
               <button class="govuk-button" title="Informácie o portáli"><span role="button" class="material-icons" aria-hidden="true">info</span></button>
+              <button class="govuk-button govuk-header__profile_button" title="Profil"><span role="button" class="material-icons" aria-hidden="true">person</span></button>
             </div>
             {% endif  %}
         </div>
@@ -170,18 +171,100 @@
       {% if params.navigation or params.actionPanel or params.headerButtons %}
         <nav id="navigation" aria-label="{{ params.navigationLabel | default(menuButtonText, true) }}" class="govuk-header__navigation govuk-width-container {%- if params.navigationClasses %} {{ params.navigationClasses }}{% endif %}">
           {% if params.actionPanel %}
-          <dialog id="navigationProfileDialog">
-            <div class="govuk-header__profile">
-              <div class="govuk-header__profile__header mobile-hidden">
-                <div class="govuk-heading-m">Profil</div>
-                <button class="govuk-button govuk-button--texted govuk-header__profile_close_button"><span class="material-icons">close</span></button>
+          <dialog id="navigationProfileDialog" class="slide-in govuk-header__profile">
+            <div class="govuk-header__profile__header">
+              <div class="govuk-heading-m">Profil</div>
+              <button class="govuk-button govuk-button--texted govuk-header__profile_close_button" aria-label="Zatvoriť"><span class="material-icons" aria-hidden="true">close</span></button>
+            </div>
+            <div class="govuk-header__profile__body">
+              <div class="govuk-header__profile__info">
+                <div class="govuk-header__profile_icon" title="Profil">MM</div>
+                <div class="govuk-header__profile_text">
+                  <h4 class="govuk-heading-l">Janko Hruska</h4>
+                  RČ 123456/1234<br />
+                  RČ 123456/1234
+                </div>
               </div>
-              <div class="govuk-header__profile__body">
-                <img class="profile" src="https://placehold.co/100x100/072C66/FFFFFF?text=JH" alt="Profile"/>
-                <h4 class="govuk-heading-l">Janko Hruska</h4>
-                <span>RČ 123456/1234</span>
-
-                <button class="govuk-button govuk-button__basic">Primárne tlačidlo</button>
+              <div class="govuk-header__profile__links">
+                <a class="govuk-link" href="#">linka1</a>
+                <div>linka2</div>
+                linka3<br />
+                linka4<br />
+                <a class="govuk-link" href="#">linka1</a>
+                <div>linka2</div>
+                linka3<br />
+                linka4<br />
+                <a class="govuk-link" href="#">linka1</a>
+                <div>linka2</div>
+                linka3<br />
+                linka4<br />
+                <a class="govuk-link" href="#">linka1</a>
+                <div>linka2</div>
+                linka3<br />
+                linka4<br />
+                <a class="govuk-link" href="#">linka1</a>
+                <div>linka2</div>
+                linka3<br />
+                linka4<br />
+                <a class="govuk-link" href="#">linka1</a>
+                <div>linka2</div>
+                linka3<br />
+                linka4<br />
+                <a class="govuk-link" href="#">linka1</a>
+                <div>linka2</div>
+                linka3<br />
+                linka4<br />
+                <a class="govuk-link" href="#">linka1</a>
+                <div>linka2</div>
+                linka3<br />
+                linka4<br />
+                <a class="govuk-link" href="#">linka1</a>
+                <div>linka2</div>
+                linka3<br />
+                linka4<br />
+                <a class="govuk-link" href="#">linka1</a>
+                <div>linka2</div>
+                linka3<br />
+                linka4<br />
+                <a class="govuk-link" href="#">linka1</a>
+                <div>linka2</div>
+                linka3<br />
+                linka4<br />
+                <a class="govuk-link" href="#">linka1</a>
+                <div>linka2</div>
+                linka3<br />
+                linka4<br />
+                <a class="govuk-link" href="#">linka1</a>
+                <div>linka2</div>
+                linka3<br />
+                linka4<br />
+                <a class="govuk-link" href="#">linka1</a>
+                <div>linka2</div>
+                linka3<br />
+                linka4<br />
+                <a class="govuk-link" href="#">linka1</a>
+                <div>linka2</div>
+                linka3<br />
+                linka4<br />
+                <a class="govuk-link" href="#">linka1</a>
+                <div>linka2</div>
+                linka3<br />
+                linka4<br />
+                <a class="govuk-link" href="#">linka1</a>
+                <div>linka2</div>
+                linka3<br />
+                linka4<br />
+                <a class="govuk-link" href="#">linka1</a>
+                <div>linka2</div>
+                linka3<br />
+                linka4<br />
+                <a class="govuk-link" href="#">linka1</a>
+                <div>linka2</div>
+                linka3<br />
+                linka4<br />
+              </div>
+              <div class="govuk-header__profile__buttons">
+                <button class="govuk-button govuk-button__basic">Primárne tlačidlo</button><br />
                 <button class="govuk-button govuk-button--texted govuk-button--texted__warning">Textové tlačidlo</button>
               </div>
             </div>

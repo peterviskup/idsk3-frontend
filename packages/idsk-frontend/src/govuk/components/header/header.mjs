@@ -19,9 +19,9 @@ export class Header extends GOVUKFrontendComponent {
   /** @type {HTMLElement | undefined} */
   $menu
 
-  /** @private */
-  /** @type {HTMLElement | undefined} */
-  $dropdownToggle
+  // /** @private */
+  // /** @type {HTMLElement | undefined} */
+  // $dropdownToggle
 
   /** @private */
   /** @type {HTMLElement | undefined} */
@@ -152,30 +152,44 @@ export class Header extends GOVUKFrontendComponent {
 
     this.setupResponsiveChecks()
 
-    // Get dropdown menu and toggle. Then function for show or hide dropdown
-    // TODO: vyhodit a nahradit ComboBoxom
-    const dropdownToggle = $module.querySelector('.dropdown-toggle')
-    if (dropdownToggle instanceof HTMLElement) {
-      this.$dropdownToggle = dropdownToggle
-      this.openCloseDropdownMenu()
-    }
+    // // Get dropdown menu and toggle. Then function for show or hide dropdown
+    // // TODO: vyhodit a nahradit ComboBoxom
+    // const dropdownToggle = $module.querySelector('.dropdown-toggle')
+    // if (dropdownToggle instanceof HTMLElement) {
+    //   this.$dropdownToggle = dropdownToggle
+    //   this.openCloseDropdownMenu()
+    // }
 
     const profileDialog = document.getElementById('navigationProfileDialog')
     if (profileDialog instanceof HTMLDialogElement) {
       this.$profileDialog = profileDialog
     }
-    const profileButton = $module.querySelector('.govuk-header__profile_button')
+    const profileButtons = $module.querySelectorAll(
+      '.govuk-header__profile_button'
+    )
     const profileCloseButton = $module.querySelector(
       '.govuk-header__profile_close_button'
     )
+    profileButtons.forEach((profileButton) => {
+      if (profileDialog instanceof HTMLDialogElement && this.$profileDialog) {
+        profileButton.addEventListener('click', () => {
+          if (profileDialog.open) {
+            this.$profileDialog?.close()
+          } else {
+            this.$profileDialog?.showModal()
+          }
+        })
+      }
+    })
+
     if (profileDialog instanceof HTMLDialogElement && this.$profileDialog) {
-      profileButton?.addEventListener('click', () => {
-        if (profileDialog.open) {
-          this.$profileDialog?.close()
-        } else {
-          this.$profileDialog?.showModal()
-        }
-      })
+      // profileButton?.addEventListener('click', () => {
+      //   if (profileDialog.open) {
+      //     this.$profileDialog?.close()
+      //   } else {
+      //     this.$profileDialog?.showModal()
+      //   }
+      // })
       profileCloseButton?.addEventListener('click', () => profileDialog.close())
       profileDialog.addEventListener('click', (event) => {
         if (event.target === this.$profileDialog) {
@@ -281,9 +295,9 @@ export class Header extends GOVUKFrontendComponent {
         ?.classList.remove('hide')
     } else {
       // mobile
-      if (this.$profileDialog) {
-        this.$profileDialog.close()
-      }
+      // if (this.$profileDialog) {
+      //   this.$profileDialog.close()
+      // }
       this.$menuButton?.removeAttribute('hidden')
       this.$menuButton?.setAttribute(
         'aria-expanded',
@@ -341,23 +355,23 @@ export class Header extends GOVUKFrontendComponent {
     this.checkMode()
   }
 
-  /**
-   * Toggle dropdown menu
-   */
-  openCloseDropdownMenu() {
-    if (!this.$dropdownToggle) {
-      return
-    }
+  // /**
+  //  * Toggle dropdown menu
+  //  */
+  // openCloseDropdownMenu() {
+  //   if (!this.$dropdownToggle) {
+  //     return
+  //   }
 
-    this.$dropdownToggle.addEventListener('click', (event) => {
-      if (this.$dropdownToggle) {
-        event.preventDefault()
-        this.$dropdownToggle.classList.toggle('open')
-      }
-    })
+  //   this.$dropdownToggle.addEventListener('click', (event) => {
+  //     if (this.$dropdownToggle) {
+  //       event.preventDefault()
+  //       this.$dropdownToggle.classList.toggle('open')
+  //     }
+  //   })
 
-    this.clickOutsideClose(this.$dropdownToggle, 'open')
-  }
+  //   this.clickOutsideClose(this.$dropdownToggle, 'open')
+  // }
 
   /**
    * Create and add material icon to parent element
@@ -368,6 +382,7 @@ export class Header extends GOVUKFrontendComponent {
   createMaterialIcon(iconName, parentElem) {
     const spanIcon = document.createElement('span')
     spanIcon.className = 'material-icons'
+    spanIcon.ariaHidden = 'true'
     spanIcon.textContent = iconName.toString()
     spanIcon.ariaHidden = 'true'
     parentElem.appendChild(spanIcon)
